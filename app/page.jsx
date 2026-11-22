@@ -18,6 +18,7 @@ import {
   Minus, Loader2, UserCheck, KeyRound, ShieldCheck, Copy, EyeOff, Search, UserPlus, Pencil, Building2, LogIn, RefreshCw, Settings, ChevronDown, LayoutGrid, CameraOff, Trash2, Save, Ruler, Bomb, Gift, Repeat, Zap,
   ThumbsUp, ThumbsDown, Puzzle, Heart, Crown, Rocket, Flag, Dices, SpellCheck,
   Volume2, VolumeX, History, Medal, CalendarDays, Star, ListPlus, NotebookPen, CircleHelp,
+  ListOrdered, Shapes, Scale, Palette,
 } from 'lucide-react';
 
 /* ============================================================
@@ -8891,7 +8892,1303 @@ const ONA_TILI_8_PART8 = [
 ];
 
 /** Kontent xaritasi: fan → sinf → mavzular. Yangi fanlar shu yerga qo‘shiladi. */
+/* --- 8-sinf Adabiyot: 1–11-darslar (darslik 2025, 4–52-betlar; BSB/CHSB kiritilmagan) --- */
+const ADABIYOT_8 = [
+  /* ===================== 1 ===================== */
+  {
+    id: 'adab-kirish',
+    source: 'I chorak • 1-dars • 4–6-betlar',
+    title: 'Kirish: davr, ijodkor va adabiyot',
+    short: 'Badiiy matn, obraz va ijodkorning o‘z davriga munosabati',
+    lesson: [
+      {
+        title: 'Badiiy matn nimasi bilan farq qiladi?',
+        text: 'Ilmiy, ilmiy-ommabop yoki axborot matni voqelikni aniq faktlar bilan xabar qiladi. Badiiy matn esa hayotni obrazlar orqali qayta yaratadi, o‘quvchining his-tuyg‘ulariga ta’sir qiladi va uni o‘ylashga undaydi.',
+        table: {
+          head: ['Matn turi', 'Asosiy maqsadi', 'Tili'],
+          rows: [
+            ['Ilmiy', 'Bilim berish, isbotlash', 'Atamalar, aniq ta’riflar'],
+            ['Axborot (xabar)', 'Yangilikni yetkazish', 'Qisqa, rasmiy'],
+            ['Badiiy', 'Hayotni obrazlar orqali tasvirlash, ta’sir qilish', 'Obrazli: o‘xshatish, sifatlash, jonlantirish'],
+          ],
+        },
+      },
+      {
+        title: 'Adabiyot — hayotning in’ikosi',
+        rule: 'Badiiy adabiyot hayotning in’ikosi — tasviri, aksidir. Har bir ijodkor o‘zi yashagan davr voqealarini, uni quvontirgan yoki qayg‘uga solgan hodisalarni badiiy obrazlar vositasida qayta yaratadi.',
+        ruleLabel: 'Asosiy fikr',
+        text: 'Masalan, A. Chexovning «Xameleon» hikoyasidagi Ochumelov, uning yordamchisi va mo‘ltirab turgan it — hammasi obrazlardir. Muallif ular orqali o‘zi ko‘rgan yoki eshitgan hayotiy voqealarni ta’sirchan qilib qayta yaratgan.',
+      },
+      {
+        title: 'Asarda nimalar aks etadi?',
+        text: 'Ijodkor asarida uning orzu-intilishlari, ideallari, armonlari va asrlardan beri yashab kelayotgan milliy qadriyatlar akslanadi.',
+        list: [
+          '«Mehrobdan chayon» (A. Qodiriy) — o‘z davrining muhiti, adolatsizlik va sevgi.',
+          '«O‘g‘ri» (A. Qahhor) — oddiy odamning ojizligi, amaldorlarning befarqligi.',
+          '«Rahmat sizga, xonim» (L. Hyuz) — mehr va ishonch insonni o‘zgartirishi.',
+        ],
+        note: 'Har bir yozuvchi o‘z davri muammolari, millat dardi, erk va ozodlik haqida hikoya qiladi.',
+      },
+      {
+        title: 'Detal va badiiy tasvir vositalari',
+        text: 'Yozuvchi ko‘pchilik ilg‘amaydigan, arzimas ko‘rinadigan detallarga e’tibor beradi va ularni tasvir vositalari yordamida obraz darajasiga ko‘taradi. Masalan, Saida Zunnunova asfalt yorib chiqqan giyohni jonlantirib, qiyinchiliklarni yengish timsoliga aylantirgan.',
+        table: {
+          head: ['Vosita', 'Mohiyati', 'Muhammad Yusufning «Kuz» she’ridan'],
+          rows: [
+            ['Sifatlash', 'Narsaning belgisini obrazli ko‘rsatish', 'bargut yaproq, tillarang terakzorlar'],
+            ['Jonlantirish', 'Jonsiz narsaga inson xususiyatini berish', 'terakzorlarning yig‘lashi, yaproqning yuragi'],
+            ['O‘xshatish', 'Bir narsani boshqasiga qiyoslash', 'turnalarning arg‘imchoqdek uchishi'],
+          ],
+        },
+        note: 'She’rda sokin kuz manzarasi orqali tabiat va inson umri o‘rtasidagi uyg‘unlik ko‘rsatilgan. She’r matnini darslikning 4–5-betidan o‘qing.',
+      },
+      {
+        title: 'Ijodkor voqelikni qalb bilan ko‘radi',
+        text: 'Bir voqea har bir insonda har xil tuyg‘u uyg‘otadi. Kimdir kuzda daraxtlarning zarg‘aldoq rangga burkanishidan zavqlanadi, boshqa birov uchun xazonrezgi umrning yana bir bahoridan ayrilish belgisi bo‘ladi.',
+        rule: 'Ijodkor voqelikni ko‘z bilan emas, qalb bilan ko‘ruvchi insondir. Shuning uchun bir hodisaga turli ijodkorlar turlicha munosabat bildiradi.',
+        ruleLabel: 'Xulosa',
+      },
+      {
+        title: 'Bir davr — ikki xil nigoh',
+        text: '1960–1970-yillarda fan jadal rivojlandi: Yuriy Gagarin birinchi bo‘lib koinotga uchdi, Nil Armstrong Oyga qadam qo‘ydi. Bu voqealarni ikki o‘zbek shoiri turlicha talqin qilgan.',
+        table: {
+          head: ['', 'Abdulla Oripov, «Asrimiz odami» (1964)', 'Erkin Vohidov, «Inson» (1973)'],
+          rows: [
+            ['Inson qanday ko‘rsatiladi', 'Hamma narsani istaydigan, olamga hokim bo‘lishni xohlaydigan zot', 'Koinot karvonining sarboni, olam sultoni'],
+            ['Asosiy kayfiyat', 'O‘ylantiruvchi, savol beruvchi; baxt yonida g‘am ham bor', 'Faxr va ayni paytda ogohlantirish'],
+            ['Ziddiyat', 'O‘tmishdagi odamlar bir burda non va ozodlikni orzu qilgan', 'Oyda yurgan inson Yerda nohaq qon to‘kmoqda'],
+            ['Umumiy jihat', 'Insonning qudrati va mas’uliyati haqida o‘ylash', 'Insonning qudrati va mas’uliyati haqida o‘ylash'],
+          ],
+        },
+        note: 'Topshiriq: ikki she’rning o‘xshash va farqli jihatlarini Venn diagrammasida ko‘rsating (darslik, 5–6-betlar).',
+      },
+      {
+        title: 'O‘ylab ko‘ring',
+        list: [
+          'Badiiy asarda davrga xos ijtimoiy-ma’naviy muammolar qanday ifodalanadi?',
+          'Adabiyot orqali o‘tmishni o‘rganish mumkinmi? Misollar bilan tushuntiring.',
+          'Yozma ish: «Agar men yozuvchi bo‘lganimda...» mavzusida 5–7 gapdan iborat matn yozing.',
+        ],
+      },
+    ],
+    pairs: [
+      ['Obraz', 'Asarda badiiy qayta yaratilgan shaxs yoki narsa'],
+      ['Sifatlash', 'tillarang terakzorlar'],
+      ['Jonlantirish', 'terakzorlar yig‘lashga tushdi'],
+      ['O‘xshatish', 'turnalar arg‘imchoqdek uchdi'],
+      ['Abdulla Oripov', '«Asrimiz odami»'],
+      ['Erkin Vohidov', '«Inson»'],
+      ['A. Qahhor', '«O‘g‘ri»'],
+      ['A. Chexov', '«Xameleon»'],
+    ],
+    quiz: [
+      { q: 'Badiiy adabiyot nimaning in’ikosi deb ta’riflanadi?', options: ['hayotning', 'faqat tarixning', 'ilmning', 'tabiatning'], answer: 0 },
+      { q: 'Ijodkor voqelikni nima bilan ko‘radi deyiladi?', options: ['qalb bilan', 'faqat ko‘z bilan', 'kitob orqali', 'boshqalar orqali'], answer: 0 },
+      { q: '«Terakzorlar yig‘lashga tushdi» — qaysi tasvir vositasi?', options: ['jonlantirish', 'sifatlash', 'o‘xshatish', 'mubolag‘a'], answer: 0 },
+      { q: '«Tillarang terakzorlar» birikmasida qaysi vosita bor?', options: ['sifatlash', 'jonlantirish', 'takror', 'kinoya'], answer: 0 },
+      { q: '«Asrimiz odami» she’rining muallifi kim?', options: ['Abdulla Oripov', 'Erkin Vohidov', 'G‘afur G‘ulom', 'Muhammad Yusuf'], answer: 0 },
+      { q: '«Inson» she’ri qaysi yili yozilgan?', options: ['1973', '1964', '1945', '1991'], answer: 0 },
+      { q: '«Xameleon» hikoyasidagi bosh obraz kim?', options: ['Ochumelov', 'Otabek', 'Ravshan', 'Tulki'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Badiiy matnga xos', 'Ilmiy matnga xos'],
+      items: [
+        { text: 'obrazlar', cat: 0 }, { text: 'aniq ta’riflar', cat: 1 },
+        { text: 'jonlantirish', cat: 0 }, { text: 'atamalar', cat: 1 },
+        { text: 'his-tuyg‘uga ta’sir', cat: 0 }, { text: 'isbot va dalil', cat: 1 },
+        { text: 'o‘xshatish', cat: 0 }, { text: 'formulalar', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Nima uchun bir voqeaga turli ijodkorlar turlicha munosabat bildiradi?', a: 'Chunki ijodkor voqelikni o‘z his-tuyg‘ulari, dunyoqarashi va ideallari orqali, qalb bilan ko‘radi.' },
+      { q: 'Detal nima va yozuvchi undan qanday foydalanadi?', a: 'Kichik, arzimas ko‘rinadigan belgi; yozuvchi uni tasvir vositalari bilan obrazga aylantiradi.' },
+      { q: 'Abdulla Oripov va Erkin Vohidov she’rlaridagi umumiy jihat nima?', a: 'Ikkisi ham fan yutuqlari davrida insonning qudrati va mas’uliyati haqida o‘ylaydi.' },
+      { q: 'Muhammad Yusufning «Kuz» she’rida tabiat nima bilan uyg‘unlashtirilgan?', a: 'Inson umri bilan.' },
+      { q: 'Adabiyot orqali o‘tmishni o‘rganish mumkinmi?', a: 'Ha, asarlarda yozuvchi yashagan davr muhiti, muammolari va qadriyatlari aks etadi.' },
+    ],
+    odd: [
+      { items: ['sifatlash', 'jonlantirish', 'o‘xshatish', 'kesim'], answer: 3, why: 'Kesim — gap bo‘lagi; qolganlari badiiy tasvir vositalari.' },
+      { items: ['«Mehrobdan chayon»', '«O‘g‘ri»', '«Xameleon»', '«Inson»'], answer: 3, why: '«Inson» — she’r; qolganlari nasriy asarlar.' },
+      { items: ['Abdulla Qodiriy', 'Abdulla Qahhor', 'Anton Chexov', 'Abdulla Oripov'], answer: 2, why: 'Chexov — rus yozuvchisi; qolganlari o‘zbek ijodkorlari.' },
+      { items: ['ilmiy matn', 'axborot matni', 'badiiy matn', 'rasmiy hujjat'], answer: 2, why: 'Faqat badiiy matn obrazlar orqali ta’sir qiladi.' },
+    ],
+    debate: [
+      { claim: 'Yozuvchi o‘z davridan tashqarida yashay olmaydi — har bir asar o‘z davrining ko‘zgusi.', pro: 'Asarda davr muhiti, muammolari va tili albatta aks etadi.', con: 'Ertak va fantastika davrdan uzilgan dunyoni ham tasvirlay oladi.' },
+      { claim: 'Badiiy asar orqali tarixni darslikdan ham yaxshiroq o‘rganish mumkin.', pro: 'Asar odamlarning tuyg‘ularini ko‘rsatadi, tarix jonli bo‘ladi.', con: 'Yozuvchi to‘qima qo‘shadi, faktlar buzilishi mumkin.' },
+    ],
+    creative: [
+      { task: 'Sinf xonasidagi bitta oddiy narsani (bo‘r, parta, deraza) tanlang va uni 2 ta jonlantirish bilan tasvirlab bering.', time: 90 },
+      { task: 'Bugungi kunning qaysi voqeasi 50 yildan keyin she’rga mavzu bo‘ladi? Bir jumlada ayting va sababini tushuntiring.', time: 60 },
+      { task: '«Agar men yozuvchi bo‘lganimda...» deb boshlanadigan 3 ta gap tuzing.', time: 90 },
+    ],
+  },
+
+  /* ===================== 2 ===================== */
+  {
+    id: 'adab-hadislar',
+    source: 'I chorak • 2-dars • 7–9-betlar',
+    title: 'Hadislar',
+    short: 'Muhaddislar, hadislar mazmuni va tarbiyaviy ahamiyati',
+    lesson: [
+      {
+        title: 'Hadis nima?',
+        rule: 'Hadis (arabcha — xabar, gap, yangilik) — payg‘ambarimiz Muhammad sollallohu alayhi vasallamning gaplari va amallari, u zot tasdiqlagan diniy-axloqiy ko‘rsatmalar. Hadis islom dinida Qur’oni karimdan keyin ikkinchi muqaddas manba hisoblanadi.',
+        ruleLabel: 'Ta’rif',
+        text: 'Kattalar, ustozlar va ota-onalar bolalarga hadis o‘rgatadi, chunki hadislar odob, mehr, halollik va ilmga chorlaydi.',
+      },
+      {
+        title: 'Muhaddislar',
+        text: 'Hadislarni yig‘ish, soxta va to‘qimalaridan ajratish, tizimlashtirish va avloddan avlodga yetkazish bilan shug‘ullangan olimlar muhaddislar deyiladi.',
+        examples: ['Imom Buxoriy', 'Imom Termiziy', 'Imom Dorimiy', 'Abdulloh ibn Muborak', 'Ibn Hibbon', 'Haysam ibn Kulayb Shoshiy'],
+        note: 'Imom al-Buxoriy maqbarasi Samarqandda, memorial muzeyi Buxoroda joylashgan.',
+      },
+      {
+        title: '«Hadis ilmining sultoni»',
+        text: 'Vatandoshimiz Imom Buxoriy «Hadis ilmining sultoni» degan sharafli nomga muyassar bo‘lgan.',
+        table: {
+          head: ['Asar', 'Ma’lumot'],
+          rows: [
+            ['«Al-jome’ as-sahih» («Sahihi Buxoriy»)', 'Hadis ilmidagi eng ulug‘ manbalardan biri'],
+            ['O‘rni', 'Olti ishonchli hadis to‘plamidan biri'],
+            ['Hajmi', '7000 dan ortiq hadis jamlangan'],
+          ],
+        },
+      },
+      {
+        title: '1-hadis: salom va yarashish',
+        text: 'Hadis mazmuni: musulmon kishining o‘z birodari bilan uch kundan ortiq arazlashib yurishi, uchrashganda teskari qarab ketishi yaxshi emas. Ulardan qaysi biri birinchi salom bersa, o‘sha yaxshi odamdir.',
+        note: 'Maqsud Shayxzodaning to‘rtligida ham yaxshilarni tiriklik chog‘ida qadrlash, salomning salmog‘ini oqlash g‘oyasi bor (darslik, 8-bet). Nega aynan birinchi salom bergan kishi yaxshi odam deyilgan? Chunki u kibrini yengib, yarashishga birinchi qadam qo‘yadi.',
+      },
+      {
+        title: '2-hadis: illatlardan saqlanish',
+        text: 'Hadisda gumondan saqlanish buyuriladi, chunki eng yolg‘on so‘z — gumondir. Shuningdek, quyidagi illatlar qoralanadi:',
+        list: ['badgumonlik', 'birovning aybini kovlashtirish va josuslik', 'hasad', 'bir-biriga orqa o‘girish, yomon ko‘rish'],
+        rule: 'Hadis xulosasi: «Birodar bo‘linglar, Allohning bandalari!»',
+        ruleLabel: 'Hadis xulosasi',
+        note: 'Abdulla Oripovning «Hasadgo‘y» she’ri hadisning hasad haqidagi qismini ochib beradi: o‘g‘rini tarbiyalash, eng katta yovni yengish mumkin, ammo hasadgo‘yni daf qilib bo‘lmaydi.',
+      },
+      {
+        title: '3-hadis: ilm — xazina',
+        text: 'Hadis mazmuni: ilm — xazina, uning kaliti savoldir. So‘rashda to‘rt kishi savob oladi: so‘rovchi, javob beruvchi olim, eshituvchi va ularni do‘st tutuvchi.',
+        poem: {
+          lines: ['Bilmaganin so‘rab o‘rgangan olim,', 'Orlanib so‘ramagan o‘ziga zolim!'],
+          author: 'Alisher Navoiy',
+        },
+      },
+      {
+        title: '4-hadis: yaxshilikka yaxshilik',
+        text: 'Hadis mazmuni: kimga yaxshilik qilinsa, u ham yaxshilik qaytarsin. Qurbi yetmasa, yaxshilik qilgan kishini g‘oyibona maqtasin — maqtash tashakkur o‘rniga o‘tadi. Yaxshilikni yashirgan odam noshukurlik qilgan bo‘ladi. O‘zida yo‘q narsa bilan maqtangan esa ikki barobar yolg‘onchidir.',
+        poem: {
+          lines: ['Ki har kim ayon etsa yaxshi qiliq,', 'Yetar yaxshiliqdin anga yaxshiliq.'],
+          author: 'Alisher Navoiy',
+        },
+        note: 'Hadislar Imom Buxoriyning «Sahihi Buxoriy» to‘plamidan olingan. Uyga vazifa: ota-onani hurmat qilish haqidagi hadislardan yod oling.',
+      },
+    ],
+    pairs: [
+      ['Hadis', 'Payg‘ambarimizning gaplari va amallari'],
+      ['Muhaddis', 'Hadislarni yig‘ib tizimlashtirgan olim'],
+      ['Imom Buxoriy', '«Hadis ilmining sultoni»'],
+      ['«Al-jome’ as-sahih»', '7000 dan ortiq hadis'],
+      ['Ilmning kaliti', 'savol'],
+      ['Eng yolg‘on so‘z', 'gumon'],
+      ['Yaxshi odam', 'birinchi salom bergan kishi'],
+    ],
+    quiz: [
+      { q: '«Hadis» so‘zi arabchada nimani bildiradi?', options: ['xabar, gap', 'kitob', 'ibodat', 'qonun'], answer: 0 },
+      { q: 'Islomda Qur’ondan keyingi ikkinchi muqaddas manba?', options: ['hadis', 'doston', 'tafsir', 'rivoyat'], answer: 0 },
+      { q: '«Hadis ilmining sultoni» kim?', options: ['Imom Buxoriy', 'Imom Termiziy', 'Ibn Hibbon', 'Imom Dorimiy'], answer: 0 },
+      { q: '«Al-jome’ as-sahih»da nechadan ortiq hadis bor?', options: ['7000', '700', '1000', '40'], answer: 0 },
+      { q: 'Hadisga ko‘ra, ilmning kaliti nima?', options: ['savol', 'kitob', 'ustoz', 'sabr'], answer: 0 },
+      { q: 'Hadisga ko‘ra, eng yolg‘on so‘z nima?', options: ['gumon', 'maqtanchoqlik', 'g‘iybat', 'qasam'], answer: 0 },
+      { q: 'Arazlashganlardan qaysi biri yaxshi odam deyiladi?', options: ['avval salom bergani', 'yoshi kattasi', 'haq bo‘lgani', 'boyrog‘i'], answer: 0 },
+      { q: '«Bilmaganin so‘rab o‘rgangan olim...» baytining muallifi?', options: ['Alisher Navoiy', 'Bobur', 'Lutfiy', 'Ogahiy'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Hadis chorlaydi', 'Hadis qoralaydi'],
+      items: [
+        { text: 'birinchi salom berish', cat: 0 }, { text: 'hasad', cat: 1 },
+        { text: 'ilm so‘rash', cat: 0 }, { text: 'badgumonlik', cat: 1 },
+        { text: 'yaxshilikni qaytarish', cat: 0 }, { text: 'josuslik', cat: 1 },
+        { text: 'birodarlik', cat: 0 }, { text: 'yo‘q narsa bilan maqtanish', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Muhaddislar nima bilan shug‘ullangan?', a: 'Hadislarni yig‘ish, soxtalaridan ajratish, tizimlashtirish va avlodlarga yetkazish bilan.' },
+      { q: 'Ilm so‘rashda qaysi to‘rt kishi savob oladi?', a: 'So‘rovchi, javob beruvchi olim, eshituvchi va ularni do‘st tutuvchi.' },
+      { q: 'Yaxshilikka qurbi yetmagan odam nima qilishi kerak?', a: 'Yaxshilik qilgan kishini g‘oyibona maqtashi kerak.' },
+      { q: 'Nega birinchi salom bergan kishi yaxshi odam deyiladi?', a: 'U kibrini yengib, yarashishga birinchi qadam qo‘yadi.' },
+      { q: 'Imom Buxoriy maqbarasi qayerda?', a: 'Samarqandda.' },
+    ],
+    odd: [
+      { items: ['Imom Buxoriy', 'Imom Termiziy', 'Imom Dorimiy', 'Alisher Navoiy'], answer: 3, why: 'Navoiy — shoir; qolganlari muhaddislar.' },
+      { items: ['hasad', 'badgumonlik', 'josuslik', 'ilm so‘rash'], answer: 3, why: 'Ilm so‘rash — fazilat; qolganlari hadisda qoralangan illatlar.' },
+      { items: ['salom', 'savol', 'gumon', 'tashakkur'], answer: 2, why: 'Gumon — eng yolg‘on so‘z; qolganlari hadisda maqtalgan.' },
+    ],
+    debate: [
+      { claim: 'Arazlashganda birinchi bo‘lib salom berish — zaiflik emas, kuchlilik belgisi.', pro: 'O‘z kibrini yengish katta iroda talab qiladi.', con: 'Ba’zan aybdor tomon kechirim so‘rashi adolatli bo‘ladi.' },
+      { claim: 'Bilmagan narsani so‘rashdan uyalish kerak emas.', pro: 'Ilmning kaliti savol; so‘ramagan o‘ziga zolim.', con: 'Avval o‘zi izlab ko‘rib, keyin so‘ragan ma’qul.' },
+    ],
+    creative: [
+      { task: 'Hadisdagi «ilm — xazina, kaliti savol» fikrini rasm yoki sxema bilan doskada tasvirlang.', time: 120 },
+      { task: 'Hasad yoki badgumonlik oqibatini ko‘rsatadigan 30 soniyalik kichik sahna tayyorlang.', time: 120 },
+      { task: 'Birinchi salom berishga undaydigan qisqa shior (3–5 so‘z) o‘ylab toping.', time: 60 },
+    ],
+  },
+
+  /* ===================== 3 ===================== */
+  {
+    id: 'adab-ravshan-1',
+    source: 'I chorak • 3-dars • 10–17-betlar',
+    title: '«Ravshan» dostoni: doston janri',
+    short: 'Doston janri, baxshilar, Ravshanning safarga otlanishi',
+    lesson: [
+      {
+        title: 'Doston nima?',
+        rule: 'Doston (forscha — qissa, hikoya, tarix, el orasida mashhur bo‘lmoq) — xalq og‘zaki ijodining she’riy va nasriy qismlardan tarkib topgan yirik epik janri.',
+        ruleLabel: 'Ta’rif',
+        text: 'Doston quyidagi xususiyatlari bilan boshqa janrlardan ajralib turadi:',
+        list: [
+          'She’riy hamda nasriy yo‘lda yaratilgan qismlardan tarkib topadi.',
+          'Og‘zaki ijod mahsuli bo‘lib, avloddan avlodga o‘tib keladi.',
+          'Tarixiy, afsonaviy va mo‘jizaviy voqealar asosiga quriladi.',
+          'Maxsus ijrochilar — baxshilar ijro etadi.',
+        ],
+      },
+      {
+        title: 'Baxshi va do‘mbira',
+        text: 'Baxshilar dostonni yoddan, do‘mbira jo‘rligida kuylaydi. Do‘mbira — xalq dostonlarini kuylashda ishlatiladigan cholg‘u asbobi. «Alla», «Yor-yor», «Omonyor» kabi qo‘shiqlar kabi dostonlar ham xalq og‘zaki ijodi namunasidir.',
+        table: {
+          head: ['«Ravshan» dostoni', 'Ma’lumot'],
+          rows: [
+            ['Kuylagan baxshi', 'Ergash Jumanbulbul o‘g‘li (dostonni otasidan o‘rgangan)'],
+            ['Yozib olgan', 'Folklorshunos Hodi Zarif, 1928-yil'],
+            ['Nashr etilgan', '1941-yil'],
+            ['Turkum', '«Go‘ro‘g‘li» turkumi dostonlaridan'],
+          ],
+        },
+      },
+      {
+        title: 'Dostonning boshlanishi',
+        text: 'Chambil elida Go‘ro‘g‘libek davr suradi. Uning farzandi bo‘lmaydi, shuning uchun Hasanxon va Avazxonni o‘g‘il qilib oladi, Yunus va Misqol parilar ularni tarbiyalaydi. Hasanxonning o‘g‘li Ravshanbek, Avazxonning qizi Gulanor dunyoga keladi.',
+        table: {
+          head: ['Qahramon', 'Kim?'],
+          rows: [
+            ['Go‘ro‘g‘libek', 'Chambil hukmdori, Ravshanning bobosi'],
+            ['Hasanxon', 'Ravshanning otasi, mard polvon'],
+            ['Xon Dalli', 'Ravshanning onasi'],
+            ['Avazxon', 'Go‘ro‘g‘lining ikkinchi o‘g‘li, Gulanorning otasi'],
+            ['Yunus pari', 'Ravshanga sehrli uzuk bergan momosi'],
+          ],
+        },
+      },
+      {
+        title: 'Rad etilgan sovchilik',
+        text: 'Go‘ro‘g‘libek 13 yoshli Ravshanga Gulanorni so‘rab Avazxonga sovchi bo‘lib boradi. Avazxon jahl bilan rad etadi: Ravshanni o‘ziga teng ko‘rmaydi. Eshik orqasida turgan Ravshan bu gaplarni eshitib, qattiq ranjiydi.',
+        note: '«Bizni quzg‘un, o‘zini lochin tutdi» — Ravshan shunday deydi. Quzg‘un — o‘limtikxo‘r qush, lochin — ovchi, chaqqon qush. Bu iborada kamsitilganlik alami bor.',
+      },
+      {
+        title: 'Sehrli uzuk',
+        text: 'Yunus pari yig‘layotgan Ravshanga xosiyatli uzugini berib, yupatadi. Uzuk ko‘zida dunyodagi go‘zal qizlarning ismi va surati bor. Ravshan unda Shirvon podshosi Qoraxonning qizi Zulxumorni ko‘rib, g‘oyibona oshiq bo‘ladi va Jiyronqush otini egarlab, Shirvonga yo‘l oladi.',
+        rule: 'Sehrli uzuk, parilar, uch oylik yo‘lni bosib o‘tish — dostonga xos afsonaviy-mo‘jizaviy unsurlar.',
+        ruleLabel: 'E’tibor bering',
+      },
+      {
+        title: 'Ota nasihati',
+        text: 'Darvozada otasi Hasanxon uni to‘xtatadi. Ravshan uyalib bo‘lsa-da, dardini aytadi: «Yor deyman-ku, nomus-orga boraman». Hasanxon yolg‘iz o‘g‘lini uch oylik, suvsiz cho‘ldan o‘tadigan dushman eliga yuborishga qiynaladi, lekin mard emasmi, oq fotiha beradi.',
+        list: [
+          'Ota-onaning qadrini unutma.',
+          'O‘zingdan pastlar bilan har yo‘lga ketma.',
+          'Oldingdan kim chiqsa, salomsiz o‘tma.',
+          'G‘aribni ko‘rsang, zinhor og‘ritma.',
+          'Yaxshilik qil, yomonlikni ot.',
+        ],
+        note: 'Ota-o‘g‘il suhbatida xalqimizga xos an’analar — oq fotiha, ota duosi, kattalarga hurmat aks etgan.',
+      },
+      {
+        title: 'O‘ylab ko‘ring',
+        list: [
+          'Go‘ro‘g‘li qanday inson? Fikringizni asoslang.',
+          '«Shirin so‘zli, quralay ko‘zli, uzun bo‘yli» kabi birikmalarning qofiyalanib kelishi qanday maqsadga xizmat qiladi?',
+          'Hasanxon o‘g‘lini yolg‘iz yuborib to‘g‘ri qildimi?',
+          'Dostondagi maqol va iboralarni daftaringizga yozing.',
+        ],
+      },
+    ],
+    pairs: [
+      ['Doston', 'Xalq og‘zaki ijodining yirik epik janri'],
+      ['Baxshi', 'Dostonni kuylovchi xalq ijrochisi'],
+      ['Do‘mbira', 'Doston kuylanadigan cholg‘u'],
+      ['Hodi Zarif', '1928-yilda dostonni yozib olgan'],
+      ['Ergash Jumanbulbul o‘g‘li', 'Dostonni kuylagan baxshi'],
+      ['Jiyronqush', 'Ravshanning oti'],
+      ['Zulxumor', 'Qoraxonning qizi'],
+      ['Gulanor', 'Avazxonning qizi'],
+    ],
+    quiz: [
+      { q: '«Doston» so‘zi qaysi tildan olingan?', options: ['fors', 'arab', 'turk', 'rus'], answer: 0 },
+      { q: 'Dostonni kim ijro etadi?', options: ['baxshi', 'hofiz', 'masxaraboz', 'qissaxon'], answer: 0 },
+      { q: '«Ravshan» dostonini kim yozib olgan?', options: ['Hodi Zarif', 'Fozil Yo‘ldosh', 'Abdulla Qodiriy', 'Hamid Olimjon'], answer: 0 },
+      { q: 'Avazxon qizini Ravshanga bermaslik sababi?', options: ['o‘ziga teng ko‘rmadi', 'qizi kichik edi', 'Ravshan kambag‘al edi', 'qizi boshqaga unashtirilgan'], answer: 0 },
+      { q: 'Ravshan Zulxumorni qayerda ko‘radi?', options: ['sehrli uzukda', 'tushida', 'bozorda', 'to‘yda'], answer: 0 },
+      { q: 'Ravshanning otini toping.', options: ['Jiyronqush', 'G‘irko‘k', 'Boychibor', 'Majnunko‘k'], answer: 0 },
+      { q: 'Zulxumorning otasi kim?', options: ['Qoraxon', 'Avazxon', 'Hasanxon', 'Go‘ro‘g‘li'], answer: 0 },
+      { q: 'Shirvongacha necha oylik yo‘l?', options: ['uch oylik', 'bir oylik', 'bir yillik', 'bir haftalik'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Hayotiy unsur', 'Afsonaviy-mo‘jizaviy unsur'],
+      items: [
+        { text: 'sovchilik', cat: 0 }, { text: 'Yunus pari', cat: 1 },
+        { text: 'ota nasihati', cat: 0 }, { text: 'sehrli uzuk', cat: 1 },
+        { text: 'maktabda o‘qish', cat: 0 }, { text: 'Ko‘hiqof tog‘i', cat: 1 },
+        { text: 'oq fotiha', cat: 0 }, { text: 'Iram bog‘i', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Dostonning to‘rtta xususiyatini ayting.', a: 'She’riy va nasriy qismlar; og‘zaki, avloddan avlodga o‘tadi; tarixiy-afsonaviy voqealar; baxshilar ijro etadi.' },
+      { q: 'Ravshan nega Shirvonga ketishga qaror qiladi?', a: 'Avazxon kamsitgani uchun va sehrli uzukda Zulxumorni ko‘rib oshiq bo‘lgani uchun.' },
+      { q: '«Yor deyman-ku, nomus-orga boraman» satridan Ravshan qanday tasavvur qilinadi?', a: 'G‘ururli, or-nomusli, qat’iyatli yigit sifatida.' },
+      { q: 'Hasanxon o‘g‘liga qanday nasihatlar qiladi?', a: 'Ota-onani unutmaslik, salomsiz o‘tmaslik, g‘aribni og‘ritmaslik, yaxshilik qilish.' },
+      { q: 'Go‘ro‘g‘libek nega Hasanxon va Avazxonni o‘g‘il qilib olgan?', a: 'Chunki o‘zining farzandi bo‘lmagan.' },
+    ],
+    sequences: [
+      {
+        title: 'Voqealarni tartib bilan joylang',
+        items: [
+          'Go‘ro‘g‘libek Hasanxon va Avazxonni o‘g‘il qilib oladi',
+          'Go‘ro‘g‘li Gulanorni so‘rab sovchi bo‘ladi',
+          'Avazxon qizini bermaydi',
+          'Yunus pari Ravshanga sehrli uzuk beradi',
+          'Ravshan uzukda Zulxumorni ko‘radi',
+          'Hasanxon o‘g‘liga oq fotiha beradi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['Hasanxon', 'Avazxon', 'Go‘ro‘g‘libek', 'Qoraxon'], answer: 3, why: 'Qoraxon — Shirvon podshosi, dushman tomon; qolganlari Chambil ahli.' },
+      { items: ['Yunus pari', 'Misqol pari', 'Zulxumor', 'Ko‘hiqof'], answer: 2, why: 'Zulxumor — oddiy inson qiz; qolganlari afsonaviy olam unsurlari.' },
+      { items: ['baxshi', 'do‘mbira', 'doston', 'mikrofon'], answer: 3, why: 'Mikrofon — zamonaviy texnika; qolganlari doston ijrosiga oid.' },
+    ],
+    debate: [
+      { claim: 'Avazxon qizini bermay to‘g‘ri qildi — qizning taqdirini otasi hal qilishi kerak.', pro: 'Ota qizining kelajagi uchun mas’ul.', con: 'U o‘z otasining so‘zini sindirdi va Ravshanni nohaq kamsitdi.' },
+      { claim: 'Hasanxon 13 yoshli o‘g‘lini yolg‘iz yubormasligi kerak edi.', pro: 'Yo‘l uch oylik, dushman eli — xavf juda katta.', con: 'Mard o‘g‘il o‘z yo‘lini o‘zi tanlashi, sinovdan o‘tishi kerak.' },
+    ],
+    creative: [
+      { task: 'Ravshan Shirvonga ketishdan oldin onasi Xon Dalliga xat yozdi deb tasavvur qiling. 3 jumlada aytib bering.', time: 90 },
+      { task: 'Dostondagi «Tuya hammomni orzu qilibdi» kabi bitta maqolni jest bilan ko‘rsating, sinf topsin.', time: 60 },
+      { task: 'Sehrli uzuk bugun yaratilsa, unda nima bo‘lardi? Uning xosiyatini 2 gapda tasvirlang.', time: 60 },
+    ],
+  },
+
+  /* ===================== 4 ===================== */
+  {
+    id: 'adab-ravshan-2',
+    source: 'I chorak • 4-dars • 18–25-betlar',
+    title: '«Ravshan» dostoni: muhokama',
+    short: 'Shirvon bozori, Zulxumor, zindon va to‘rt kal',
+    lesson: [
+      {
+        title: 'Shirvon bozorida',
+        text: 'Ravshan cho‘l-u biyobonlardan o‘tib Shirvonga yetadi va bir kampirga o‘g‘il tutinib yashaydi. U Zulxumor har bozor kuni ko‘shk ustida qalpoq sotishini, yigitlar uni ko‘rish uchun bir lagan tilla «ko‘rmana» berishini bilib oladi.',
+        list: [
+          'Ravshan bozorma-bozor «Qalpoq bozori qaysidir?» deb so‘rab yuradi.',
+          'Un, jun, mis, go‘sht, qovun, choy, toy bozorlari birma-bir sanaladi.',
+          'Bozorlarning xilma-xilligi Shirvonning katta va obod shahar ekanini ko‘rsatadi.',
+        ],
+        note: 'Bir xil satr («Qalpoq bozori qaysidir?») takrorlanib turadi — bu xalq og‘zaki ijodiga xos naqarot.',
+      },
+      {
+        title: 'Zulxumor portreti',
+        text: 'Baxshi Zulxumorni xalq og‘zaki ijodiga xos mubolag‘ali o‘xshatishlar bilan tasvirlaydi: yuzi oyday, tishlari durday, ko‘zlari yulduzday, qoshlari yangi oyday. Uning 190 ta kokili bor, yarmi tilla, yarmi kumush suviga botirilgan.',
+        rule: 'Portret — qahramonning tashqi qiyofasi tasviri. Dostonlarda portret ko‘pincha mubolag‘a va turkum o‘xshatishlar orqali chiziladi.',
+        ruleLabel: 'Nazariya',
+      },
+      {
+        title: 'Bog‘dagi uchrashuv',
+        text: 'Ravshan Zulxumorni ko‘rib o‘zini yo‘qotadi, kechasi qizlar ortidan bog‘ga boradi va gul orasiga yashirinadi. Qizlar uni topib olishadi. Tillasi yo‘q Ravshan ko‘rmana o‘rniga sehrli uzukni yuboradi.',
+        list: [
+          'Zulxumor uzukda o‘z ismi va suratini ko‘radi.',
+          'U uzuk yozuvini taqdir bitigi deb biladi.',
+          'Yigitning chin oshiq ekanini sezib, uni qabul qiladi.',
+        ],
+      },
+      {
+        title: 'Hasad va zindon',
+        text: 'Ravshanga ko‘ngil qo‘ygan, lekin e’tiborini qozona olmagan hasadgo‘y kaniz Oqqiz voqeani Zulxumorning onasiga aytadi. Qoraxon Ravshanni osishga buyuradi. Shirvon kattalari esa maslahat beradi: yigitni qirq kun zindonda saqlab, so‘ng dinimizga kirsa — kuyov qilish, ko‘nmasa — osish.',
+        note: 'Bu yerda hadislar darsidagi hasad illati qanday falokat keltirishini ko‘ramiz.',
+      },
+      {
+        title: 'Mayna olib kelgan xat',
+        text: 'Zulxumor Ravshanning ota-onasiga xat yozadi. Mayna qushi xatni Chambilga — Xon Dallining qo‘liga olib boradi. Qirq kunlik muhlatning yigirma kuni o‘tgan. Hasanxon Go‘ro‘g‘lining G‘irko‘k otini minib, yolg‘iz o‘zi Shirvonga jo‘naydi.',
+        rule: 'Qushning xat tashishi, otning odamdek tushunishi — dostondagi mo‘jizaviy motivlar. Hasanxonning yo‘li she’riy shaklda, shiddatli ritm bilan kuylanadi.',
+        ruleLabel: 'E’tibor bering',
+      },
+      {
+        title: 'To‘rt aka-uka kallar',
+        text: 'Ravshan o‘g‘il tutingan kampirning olti o‘g‘li bo‘lgan, ular o‘lib ketgan. Katta o‘g‘lining sodiq polvoni Aynoq kal ukalari bilan Ravshanni qutqarishga va’da beradi.',
+        table: {
+          head: ['Kal', 'Xususiyati'],
+          rows: [
+            ['Aynoq kal', 'Eng zo‘r polvon, mingga barobar; ot ham uni ko‘tarolmaydi'],
+            ['Jaynoq kal', 'Masxaraboz, har qiyofaga kira oladi'],
+            ['Ersak kal', 'Mergan, qushni ko‘zidan uradi'],
+            ['Tersak kal', 'Sinchi: tulporni suyagidan, o‘tkir qilichni qinidan taniydi'],
+          ],
+        },
+        note: 'Tersak kal «devona» qiyofasidagi Hasanxonni sinchiklab qarab taniydi: «Shu o‘tirgan Hasan shunqor ekandi».',
+      },
+      {
+        title: 'O‘ylab ko‘ring',
+        list: [
+          'Bozorlarning bunchalik ko‘p sanalishi nimani anglatadi?',
+          'Zulxumor Ravshanni nima uchun qabul qildi?',
+          'Oqqiz obrazi orqali baxshi qanday illatni qoralagan?',
+          'Aka-uka kallar sizda qanday taassurot uyg‘otdi?',
+        ],
+      },
+    ],
+    pairs: [
+      ['Ko‘rmana', 'Zulxumorni ko‘rish uchun beriladigan tilla'],
+      ['Oqqiz', 'Hasadgo‘y kaniz'],
+      ['Mayna', 'Xatni Chambilga yetkazgan qush'],
+      ['G‘irko‘k', 'Go‘ro‘g‘lining oti'],
+      ['Aynoq kal', 'Mingga barobar polvon'],
+      ['Jaynoq kal', 'Masxaraboz, qiyofa o‘zgartiruvchi'],
+      ['Ersak kal', 'Mergan'],
+      ['Tersak kal', 'Sinchi'],
+    ],
+    quiz: [
+      { q: 'Zulxumor bozorda nima sotardi?', options: ['qalpoq', 'gilam', 'ipak', 'non'], answer: 0 },
+      { q: 'Ravshan ko‘rmana sifatida nima yuboradi?', options: ['sehrli uzuk', 'bir lagan tilla', 'qilich', 'otini'], answer: 0 },
+      { q: 'Ravshanning sirini kim fosh qiladi?', options: ['Oqqiz', 'Kampir', 'Jaynoq kal', 'Zulxumor'], answer: 0 },
+      { q: 'Ravshanga necha kun muhlat beriladi?', options: ['qirq kun', 'uch kun', 'yetti kun', 'bir yil'], answer: 0 },
+      { q: 'Xatni Chambilga kim yetkazadi?', options: ['mayna', 'kabutar', 'Yunus pari', 'chopar'], answer: 0 },
+      { q: 'Hasanxon Shirvonga qaysi otda boradi?', options: ['G‘irko‘k', 'Jiyronqush', 'Boychibor', 'Qorabayir'], answer: 0 },
+      { q: 'Tulporni suyagidan taniydigan sinchi kal?', options: ['Tersak', 'Ersak', 'Jaynoq', 'Aynoq'], answer: 0 },
+      { q: 'Zulxumorning nechta kokili bor edi?', options: ['190', '40', '99', '12'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Ravshanga yordam berdi', 'Ravshanga ziyon yetkazdi'],
+      items: [
+        { text: 'Zulxumor', cat: 0 }, { text: 'Oqqiz', cat: 1 },
+        { text: 'mayna', cat: 0 }, { text: 'Qoraxon', cat: 1 },
+        { text: 'Aynoq kal', cat: 0 }, { text: 'Oqqizning onasi', cat: 1 },
+        { text: 'kampir ona', cat: 0 }, { text: 'jallodlar', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Zulxumor Ravshanni nega qabul qildi?', a: 'Uzukdagi yozuvni taqdir bitigi deb bildi va yigitning chin oshiq ekanini sezdi.' },
+      { q: 'Shirvon kattalari Qoraxonga qanday maslahat berdi?', a: 'Ravshanni qirq kun zindonda saqlab, dinimizga kirsa kuyov qilish, ko‘nmasa osish.' },
+      { q: 'Aynoq kal nega Ravshanni qutqarishga rozi bo‘ldi?', a: 'Kampirning katta o‘g‘lidan yaxshilik ko‘rgani, tuzini ko‘p yegani uchun.' },
+      { q: '«Qalpoq bozori qaysidir?» satrining takrorlanishi nimani beradi?', a: 'Naqarot vazifasini bajaradi, ohangdorlik va ta’sirchanlikni oshiradi.' },
+      { q: 'Hasanxon Shirvonga yetganda muhlatdan necha kun qolgan edi?', a: 'Xat kelganda yigirma kun o‘tgan, ya’ni taxminan yigirma kun qolgan edi.' },
+    ],
+    sequences: [
+      {
+        title: 'Voqealarni tartib bilan joylang',
+        items: [
+          'Ravshan bozorda Zulxumorni ko‘radi',
+          'Ravshan bog‘da gul orasiga yashirinadi',
+          'Zulxumor uzukda o‘z suratini ko‘radi',
+          'Oqqiz sirni fosh qiladi',
+          'Ravshan qirq kunga zindonga tashlanadi',
+          'Mayna xatni Chambilga olib boradi',
+          'Hasanxon G‘irko‘kda Shirvonga yo‘l oladi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['Aynoq', 'Jaynoq', 'Ersak', 'Oqqiz'], answer: 3, why: 'Oqqiz — hasadgo‘y kaniz; qolganlari Ravshanga yordam bergan aka-uka kallar.' },
+      { items: ['un bozori', 'mis bozori', 'qalpoq bozori', 'kitob bozori'], answer: 3, why: 'Dostonda kitob bozori sanalmaydi.' },
+      { items: ['mayna', 'G‘irko‘k', 'sehrli uzuk', 'zindon'], answer: 3, why: 'Zindon — oddiy joy; qolganlari dostondagi mo‘jizaviy unsurlar.' },
+    ],
+    debate: [
+      { claim: 'Ravshan bog‘ga yashirincha kirib noto‘g‘ri ish qildi.', pro: 'Begona bog‘ga, qizlar oldiga ruxsatsiz kirish odobga zid.', con: 'Doston qahramoni uchun bu chin muhabbat va jasorat belgisi.' },
+      { claim: 'Oqqiz — dostondagi eng xavfli obraz, Qoraxondan ham xavfliroq.', pro: 'Hasad tufayli barcha falokat boshlandi.', con: 'Hukmni chiqargan va jazoga buyurgan Qoraxon.' },
+    ],
+    creative: [
+      { task: 'Ravshan zindondan Zulxumorga yuborgan maktubning dastlabki 2 gapini o‘ylab toping.', time: 90 },
+      { task: 'To‘rt kalning biri bo‘lib, o‘zingizni 15 soniyada tanishtiring — sinf qaysi kal ekanini topsin.', time: 60 },
+      { task: 'Shirvon bozoridagi bitta sotuvchi bo‘lib, mahsulotingizni dostoncha qofiyali ikki satrda maqtang.', time: 90 },
+    ],
+  },
+
+  /* ===================== 5 ===================== */
+  {
+    id: 'adab-ravshan-3',
+    source: 'I chorak • 5-dars • 26–31-betlar',
+    title: '«Ravshan» dostoni: topshiriqlar, ijodiy ish',
+    short: 'Dor maydoni, jang, nikoh va dostonga yakuniy tahlil',
+    lesson: [
+      {
+        title: 'Dor maydonida',
+        text: 'Qirq kunlik muhlat tugaydi. Ravshanni bo‘yniga zanjir solib, ko‘zini bog‘lab dor ostiga olib kelishadi. Bir tomonda Zulxumor, bir tomonda kampir ona yig‘laydi. Hasanxon eski to‘n kiyib, «devona» qiyofasida G‘irko‘k ustida kutib turadi.',
+        list: [
+          'Vazirlar Ravshanga: «Qoraxonning diniga kirsang, Zulxumorni olib beramiz», deydi.',
+          'Ravshan rad etadi: «Men o‘lmasam, o‘z elimdan kechmayman!»',
+          'Uning yagona tilagi — ko‘zini ochib, yorug‘ dunyoni bir ko‘rish.',
+        ],
+      },
+      {
+        title: 'Ravshan nega yig‘lab yubordi?',
+        text: 'Podshoga keskin javob berishdan qo‘rqmagan Ravshan otasini ko‘rib, yig‘lab yuboradi va qiynalgan kunlarini she’r bilan aytadi.',
+        rule: 'Dushman oldida qahramon mard va qat’iy, ota oldida esa bola. Bu qarama-qarshilik obrazni hayotiy va ta’sirchan qiladi.',
+        ruleLabel: 'Tahlil',
+      },
+      {
+        title: 'Jang va g‘alaba',
+        text: 'Hasanxon na’ra tortadi, kallar bilan birga dushman qo‘shiniga tashlanadi. Jang tasviri she’riy yo‘lda, tez ritm va takrorlar bilan beriladi. G‘irko‘k ham jangga qo‘shilib, dushmanni tishlaydi. Qoraxon qochadi, Hasanxon uni quvib yetib o‘ldiradi.',
+        note: 'Savol: nega shiddatli voqealar she’riy yo‘lda ifodalangan? Javob: she’rdagi ohang va takrorlar jangning tezligi va hayajonini kuchaytiradi.',
+      },
+      {
+        title: 'Dostonning yakuni',
+        list: [
+          'Hasanxon omon so‘raganlarga omonlik beradi, el-yurt tinchiydi.',
+          'Shirvonda qirq kun to‘y qilinib, Zulxumor Ravshanga nikohlanadi.',
+          'Hasanxon Shirvonni kallarga topshiradi: Aynoq — podsho, ukalari — vazir va mahram.',
+          'Ravshan Zulxumor bilan Chambilga qaytadi, Go‘ro‘g‘libek yana qirq kun to‘y beradi.',
+        ],
+        note: 'Savol: nega Hasanxon Shirvonga o‘g‘lini emas, kallarni podsho qildi? Siz qanday yo‘l tutardingiz?',
+      },
+      {
+        title: 'Xalq og‘zaki ijodiga xos belgilar',
+        table: {
+          head: ['Belgi', 'Dostondan misol', 'Mazmuni'],
+          rows: [
+            ['Raqamlar takrori', 'qirq kun to‘y, qirq yigit, qirq kun muhlat', 'Dabdaba, ko‘plik, muqaddas son'],
+            ['Mubolag‘a', 'Aynoq kalni ot ham ko‘tarolmaydi', 'Qahramon kuchini bo‘rttirish'],
+            ['Naqarot', '«...maydon ichinda», «Qalpoq bozori qaysidir?»', 'Ohangdorlik, ta’sirchanlik'],
+            ['Turkum o‘xshatishlar', 'yuzi oyday, tishlari durday', 'Go‘zallikni ulug‘lash'],
+            ['Maqol va iboralar', '«Yolg‘iz bola yovdan yomon»', 'Xalq donoligi'],
+            ['Mo‘jizaviy unsur', 'sehrli uzuk, mayna, parilar', 'Afsonaviylik'],
+          ],
+        },
+      },
+      {
+        title: 'Qahramonlarni qiyoslaymiz',
+        table: {
+          head: ['Qahramon', 'Fazilatlari'],
+          rows: [
+            ['Ravshan', 'Qahramonlik, jasurlik, mag‘rurlik, sadoqat, or-nomus'],
+            ['Hasanxon', 'Mardlik, otalik mehri, donolik, adolat'],
+            ['Aynoq kal va ukalari', 'Sadoqat, vafo, tuz haqqini unutmaslik, do‘stlik'],
+            ['O‘xshash jihat', 'Hammasi mard, so‘zida turadi, yaxshilikka xizmat qiladi'],
+          ],
+        },
+      },
+      {
+        title: 'Muhokama va ijodiy ish',
+        list: [
+          'Dostondagi qaysi obrazlarda odamiylik va do‘stlik xususiyatlarini kuzatdingiz?',
+          'Agar aka-uka kallar bo‘lmaganda, voqealar qanday davom etardi?',
+          'Dostondagi voqealar tarixda yuz bergan bo‘lishi mumkinmi?',
+          'Ijodiy ish: dostondagi bir maqolni sun’iy intellekt yordamida rasmga aylantiring yoki o‘zingiz chizing.',
+        ],
+      },
+    ],
+    pairs: [
+      ['Devona qiyofasi', 'Hasanxon dor maydonida'],
+      ['Qirq kun to‘y', 'Raqamlar takrori'],
+      ['Aynoq kal', 'Shirvon podshosi bo‘ldi'],
+      ['Naqarot', '«...maydon ichinda»'],
+      ['Mubolag‘a', 'Aynoqni ot ko‘tarolmaydi'],
+      ['Qoraxon', 'Hasanxon quvib o‘ldiradi'],
+      ['Ravshan', 'Zulxumorga uylanadi'],
+    ],
+    quiz: [
+      { q: 'Hasanxon dor maydoniga qanday qiyofada keladi?', options: ['devona', 'savdogar', 'baxshi', 'askar'], answer: 0 },
+      { q: 'Vazirlar Ravshanga qanday shart qo‘yadi?', options: ['Qoraxonning diniga kirish', 'tilla to‘lash', 'Shirvondan ketish', 'kallarni topshirish'], answer: 0 },
+      { q: 'Ravshanning so‘nggi tilagi nima edi?', options: ['ko‘zini ochib dunyoni ko‘rish', 'otasini chaqirish', 'Zulxumor bilan gaplashish', 'ozod qilinish'], answer: 0 },
+      { q: 'Ravshan kimni ko‘rib yig‘lab yuboradi?', options: ['otasini', 'Zulxumorni', 'kampirni', 'Qoraxonni'], answer: 0 },
+      { q: 'Qoraxonni kim o‘ldiradi?', options: ['Hasanxon', 'Ravshan', 'Aynoq kal', 'Ersak kal'], answer: 0 },
+      { q: 'Shirvon podshosi qilib kim tayinlanadi?', options: ['Aynoq kal', 'Ravshan', 'Hasanxon', 'Zulxumor'], answer: 0 },
+      { q: '«Qirq kun to‘y» qaysi xalq og‘zaki ijodi belgisi?', options: ['raqamlar takrori', 'jonlantirish', 'kinoya', 'tazod'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Nasriy qismda berilgan', 'She’riy qismda berilgan'],
+      items: [
+        { text: 'kallarning maslahati', cat: 0 }, { text: 'jang tasviri', cat: 1 },
+        { text: 'Hasanxonning yo‘lga chiqishi (tafsilot)', cat: 0 }, { text: 'Ravshanning otasiga arzi', cat: 1 },
+        { text: 'nikoh va to‘y haqida xabar', cat: 0 }, { text: 'Hasanxonning kallarga murojaati', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Nega Hasanxon devona qiyofasida keldi?', a: 'Dushman tanib qolmasligi va kutilmaganda hujum qilish uchun.' },
+      { q: 'Ravshan qirq kunlik bandilikdan qanday saboq chiqardi?', a: 'Ota-ona va el qadrini angladi, yolg‘izlik va o‘ylamay qilingan ishning og‘irligini his qildi.' },
+      { q: 'Nega jang tasviri she’riy yo‘lda berilgan?', a: 'Ohang va takrorlar jangning shiddatini, hayajonini kuchaytiradi.' },
+      { q: 'Dostondan uchta xalq og‘zaki ijodi belgisini ayting.', a: 'Raqamlar takrori, mubolag‘a, naqarot (yoki turkum o‘xshatishlar, maqollar).' },
+      { q: 'Ravshan, Hasanxon va kallarning umumiy fazilati nima?', a: 'Mardlik va sadoqat: so‘zida turadi, yaxshilikka xizmat qiladi.' },
+    ],
+    sequences: [
+      {
+        title: 'Dostonning yakuniy voqealari',
+        items: [
+          'Ravshanni dor ostiga olib kelishadi',
+          'Ravshan Qoraxonning diniga kirishni rad etadi',
+          'Ravshan otasini ko‘rib yig‘laydi',
+          'Hasanxon va kallar jang qiladi',
+          'Hasanxon Qoraxonni quvib o‘ldiradi',
+          'Shirvonda qirq kun to‘y bo‘ladi',
+          'Ravshan Zulxumor bilan Chambilga qaytadi',
+        ],
+      },
+      {
+        title: 'Butun doston: asosiy voqealar',
+        items: [
+          'Avazxon sovchini qaytaradi',
+          'Ravshan sehrli uzukda Zulxumorni ko‘radi',
+          'Ravshan Shirvon bozoriga keladi',
+          'Oqqiz sirni fosh qiladi',
+          'Mayna xatni Chambilga yetkazadi',
+          'Hasanxon o‘g‘lini dor ostidan qutqaradi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['qirq kun to‘y', 'qirq kun muhlat', 'qirq yigit', 'yetti yoshda'], answer: 3, why: 'Qolganlarida «qirq» soni takrorlangan.' },
+      { items: ['Ravshan', 'Hasanxon', 'Aynoq kal', 'Qoraxon'], answer: 3, why: 'Qoraxon — salbiy obraz; qolganlari ijobiy qahramonlar.' },
+      { items: ['mubolag‘a', 'naqarot', 'raqamlar takrori', 'qofiyasiz erkin she’r'], answer: 3, why: 'Erkin she’r — zamonaviy she’riyatga xos; qolganlari xalq og‘zaki ijodi belgilari.' },
+    ],
+    debate: [
+      { claim: 'Hasanxon Shirvonni Ravshanga emas, kallarga topshirib to‘g‘ri qildi.', pro: 'Kallar shu elni yaxshi biladi, ular sadoqatini isbotladi.', con: 'Ravshan Zulxumor orqali Shirvon taxtiga haqli edi.' },
+      { claim: 'Dostonning asl qahramoni Ravshan emas, Hasanxon.', pro: 'Uni qutqargan, jangda g‘alaba qozongan Hasanxon.', con: 'Voqealar Ravshanning muhabbati va jasorati atrofida quriladi.' },
+    ],
+    creative: [
+      { task: 'Dostonga yangi yakun o‘ylab toping: Hasanxon kech qolganda nima bo‘lardi? 3 gapda ayting.', time: 90 },
+      { task: 'Baxshi bo‘lib, jang tasvirini «...maydon ichinda» naqaroti bilan bitta yangi satr qo‘shib aytib bering.', time: 90 },
+      { task: 'Ravshanning Instagram sahifasi uchun 3 ta post sarlavhasini o‘ylab toping (bozor, zindon, to‘y).', time: 90 },
+    ],
+  },
+
+  /* ===================== 6 ===================== */
+  {
+    id: 'adab-shahzoda-1',
+    source: 'I chorak • 6-dars • 32–37-betlar',
+    title: 'Ekzyuperi. «Kichkina shahzoda»',
+    short: 'Yozuvchi hayoti, asarning yaratilishi va boshlanishi',
+    lesson: [
+      {
+        title: 'Antuan de Sent-Ekzyuperi (1900–1944)',
+        text: 'Fransuz yozuvchisi 1900-yili Lion shahrida kambag‘allashgan zodagon oilada tug‘ilgan. Otasidan erta yetim qolgan, onasi va buvilari uni erkalab «qirol-oftob» deb chaqirishgan.',
+        list: [
+          'Bolaligi o‘rta asr uslubidagi qasrda o‘tgan; tabiatni kuzatishni yaxshi ko‘rgan.',
+          'She’r yozgan, skripka chalgan, rasm chizgan, texnikaga qiziqqan.',
+          'Arxitektura o‘qishini tashlab, harbiy uchuvchi bo‘lgan.',
+          'Samolyotda dunyoning ko‘p joylarini aylanib chiqqan.',
+        ],
+      },
+      {
+        title: 'Ijodi va taqdiri',
+        table: {
+          head: ['Yil', 'Voqea'],
+          rows: [
+            ['1926', 'Ilk asari — «Uchuvchi» hikoyasi e’lon qilingan'],
+            ['—', '«Insonlar sayyorasi» romani Fransiya akademiyasi tomonidan eng yaxshi roman deb topilgan'],
+            ['1940', 'Fransiyani natsistlar bosib olgan, yozuvchi muhojirlikka ketgan'],
+            ['1943', '«Kichkina shahzoda» nashr etilgan'],
+            ['1944', 'Harbiy topshiriqdan samolyoti qaytib kelmagan'],
+          ],
+        },
+        note: 'Ekzyuperining aksariyat asarlari uchuvchilik tajribasidan ilhomlangan.',
+      },
+      {
+        title: 'Asarning yaratilish tarixi',
+        text: 'Asar Ikkinchi jahon urushi yillarida, muallif vatanidan uzoqda yashagan paytda yozilgan. U qisman hayotiy voqeaga asoslanadi: Ekzyuperining samolyoti Sahroyi Kabirda halokatga uchragan, bir necha kun suvsiz qolgan uchuvchini arablar qutqarib qolgan.',
+        rule: 'Asar mavzusi: yaxshilik va yomonlik, do‘stlik, sevgi, sadoqat, mas’uliyat kabi boqiy tushunchalar. Ular kichkina bolakayning sarguzashtlari orqali ochiladi.',
+        ruleLabel: 'Mavzu',
+      },
+      {
+        title: 'Bag‘ishlov siri',
+        text: 'Muallif kitobni do‘sti Leon Vertga bag‘ishlaydi va buning uchun bolalardan uzr so‘raydi. So‘ng bag‘ishlovga tuzatish kiritadi: «bir paytlar yosh bola bo‘lgan do‘stimga».',
+        note: 'Ma’nosi: kattalarning hammasi avval bola bo‘lgan, ammo buni ozchiligi eslaydi. Asar kattalarni o‘zidagi bolalik pokligini eslashga chaqiradi.',
+      },
+      {
+        title: '1- va 2-raqamli rasmlar',
+        text: 'Hikoyachi olti yoshida filni yutgan bo‘g‘ma ilon rasmini chizadi. Kattalar uni shlyapa deb o‘ylashadi. Ilonning ichini chizib ko‘rsatsa ham, kattalar unga rasm o‘rniga geografiya, tarix, arifmetika o‘rganishni maslahat berishadi.',
+        rule: 'Bu epizodda kattalar va bolalar olami qarama-qarshi qo‘yiladi: kattalar faqat tashqi ko‘rinishni ko‘radi, bola esa mohiyatni tasavvur qiladi.',
+        ruleLabel: 'Tahlil',
+      },
+      {
+        title: 'Sahrodagi uchrashuv',
+        text: 'Olti yil oldin hikoyachining samolyoti Sahroyi Kabirga qo‘nadi. Bir haftalik suvi qolgan. Ertalab uni ingichka ovoz uyg‘otadi: «Menga qo‘zichoq chizib ber!»',
+        list: [
+          'Birinchi qo‘zichoq juda oriq, ikkinchisi — qo‘chqor (shoxi bor), uchinchisi — qari.',
+          'Sabri tugagan uchuvchi bir quticha chizib: «Qo‘zichog‘ing shuning ichida», deydi.',
+          'Bolakay quvonib ketadi: unga aynan shunaqasi kerak edi!',
+        ],
+        note: 'Savol: quticha nega bolani quvontirdi? Javob: u qo‘zichoqni o‘zi tasavvur qila oladi — ko‘ngil ko‘zi bilan ko‘radi.',
+      },
+      {
+        title: 'O‘qish davomida',
+        list: [
+          'Asardagi har bir obraz insonning qaysi xususiyatini ko‘rsatadi? Jadval tuzib boring.',
+          'Ijodiy ish: «Mening sayyoram» mavzusida 5–7 gapdan iborat matn yozing.',
+          'Inson har qanday vaziyatda ham inson bo‘lib qolishi uchun eng muhim uch xislat qaysi?',
+        ],
+      },
+    ],
+    pairs: [
+      ['Ekzyuperi', 'Fransuz yozuvchisi va uchuvchi'],
+      ['Lion', 'Yozuvchi tug‘ilgan shahar'],
+      ['«Uchuvchi»', 'Yozuvchining ilk hikoyasi'],
+      ['«Insonlar sayyorasi»', 'Eng yaxshi roman deb topilgan asar'],
+      ['Leon Vert', 'Kitob bag‘ishlangan do‘st'],
+      ['Sahroyi Kabir', 'Samolyot qo‘ngan sahro'],
+      ['Quticha', 'Ichida qo‘zichoq bor rasm'],
+      ['Shlyapa', 'Kattalar 1-rasmni shunday deb o‘ylashdi'],
+    ],
+    quiz: [
+      { q: 'Ekzyuperi qaysi mamlakat yozuvchisi?', options: ['Fransiya', 'Germaniya', 'Angliya', 'Italiya'], answer: 0 },
+      { q: 'Yozuvchi qaysi kasbni egallagan?', options: ['uchuvchi', 'shifokor', 'o‘qituvchi', 'dengizchi'], answer: 0 },
+      { q: 'Kitob kimga bag‘ishlangan?', options: ['Leon Vertga', 'onasiga', 'Kichkina shahzodaga', 'Fransiyaga'], answer: 0 },
+      { q: 'Kattalar 1-raqamli rasmni nima deb o‘ylashdi?', options: ['shlyapa', 'tog‘', 'ilon', 'bulut'], answer: 0 },
+      { q: 'Bolakay uchuvchidan nima chizib berishni so‘radi?', options: ['qo‘zichoq', 'gul', 'tulki', 'samolyot'], answer: 0 },
+      { q: 'Oxirida uchuvchi nima chizdi?', options: ['quticha', 'qo‘chqor', 'fil', 'yulduz'], answer: 0 },
+      { q: 'Uchuvchining samolyoti qayerga qo‘nadi?', options: ['Sahroyi Kabirga', 'Alp tog‘lariga', 'okeanga', 'o‘rmonga'], answer: 0 },
+      { q: 'Yozuvchi qaysi yili halok bo‘lgan?', options: ['1944', '1900', '1926', '1960'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Kattalar olami', 'Bolalar olami'],
+      items: [
+        { text: 'shlyapani ko‘radi', cat: 0 }, { text: 'filni yutgan ilonni ko‘radi', cat: 1 },
+        { text: 'arifmetika o‘rgan, deydi', cat: 0 }, { text: 'qutichada qo‘zichoqni ko‘radi', cat: 1 },
+        { text: 'hamma narsani tushuntirish kerak', cat: 0 }, { text: 'ko‘ngil ko‘zi bilan ko‘radi', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Asar qanday hayotiy voqeaga asoslangan?', a: 'Ekzyuperining samolyoti Sahroyi Kabirda halokatga uchrab, suvsiz qolgani va arablar uni qutqargani.' },
+      { q: 'Muallif bag‘ishlovga qanday tuzatish kiritadi?', a: '«Leon Vertga — bir paytlar yosh bola bo‘lgan do‘stimga».' },
+      { q: 'Rasmlar epizodida qanday qarama-qarshilik bor?', a: 'Kattalar va bolalar olami: kattalar tashqi ko‘rinishni, bolalar mohiyatni ko‘radi.' },
+      { q: 'Nima uchun bolakay quticha rasmidan quvondi?', a: 'Qo‘zichoqni o‘zi xohlagancha tasavvur qila oladi.' },
+      { q: 'Asar qaysi boqiy mavzularni qalamga oladi?', a: 'Do‘stlik, sevgi, sadoqat, yaxshilik va yomonlik, mas’uliyat.' },
+    ],
+    sequences: [
+      {
+        title: 'Hikoyani tartib bilan joylang',
+        items: [
+          'Olti yoshli bola filni yutgan ilon rasmini chizadi',
+          'Kattalar rasmni shlyapa deb o‘ylashadi',
+          'Bola rassomlikdan voz kechadi',
+          'Uchuvchining samolyoti sahroga qo‘nadi',
+          'Bolakay qo‘zichoq chizib berishni so‘raydi',
+          'Uchuvchi quticha chizib beradi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['uchuvchi', 'yozuvchi', 'rassom', 'dengizchi'], answer: 3, why: 'Ekzyuperi uchuvchi, yozuvchi bo‘lgan va rasm chizgan, dengizchi bo‘lmagan.' },
+      { items: ['oriq qo‘zichoq', 'qo‘chqor', 'qari qo‘zichoq', 'quticha'], answer: 3, why: 'Faqat quticha bolakayni quvontirdi.' },
+      { items: ['«Uchuvchi»', '«Insonlar sayyorasi»', '«Kichkina shahzoda»', '«Xameleon»'], answer: 3, why: '«Xameleon» — Chexov asari.' },
+    ],
+    debate: [
+      { claim: 'Kattalar bolaga rasm o‘rniga arifmetika o‘rgan deb to‘g‘ri maslahat berishgan.', pro: 'Aniq fanlar hayotda zarur, kasb beradi.', con: 'Ular bolaning iste’dodi va tasavvurini so‘ndirib qo‘ydi.' },
+      { claim: 'Kattalar haqiqatan ham hech narsani o‘zicha tushuna olmaydi.', pro: 'Ular faqat tashqi ko‘rinish va raqamlarga qaraydi.', con: 'Hikoyachining o‘zi ham katta, lekin u tushunadi.' },
+    ],
+    creative: [
+      { task: 'Doskaga oddiy shakl chizing (masalan, doira). Sinf bu nima bo‘lishi mumkinligi haqida 5 ta g‘ayrioddiy javob topsin.', time: 90 },
+      { task: '«Mening sayyoram»: sayyorangizning 3 ta qoidasini aytib bering.', time: 90 },
+      { task: 'O‘zingizning «1-raqamli rasmingiz»ni tasvirlang: kattalar nimani ko‘radi, siz nimani nazarda tutgansiz?', time: 60 },
+    ],
+  },
+
+  /* ===================== 7 ===================== */
+  {
+    id: 'adab-shahzoda-2',
+    source: 'I chorak • 7-dars • 38–44-betlar',
+    title: '«Kichkina shahzoda»: muhokama',
+    short: 'Tulki saboqlari, gul, sayyoralar va sahrodagi buloq',
+    lesson: [
+      {
+        title: 'Sayyoralar bo‘ylab sayohat',
+        text: 'Kichkina shahzoda o‘z jimitdek sayyorasini tark etib, oltita asteroidga boradi. Har birida bitta odam yashaydi. Hech biri bilan suhbat uning ko‘nglini taskin topmaydi va u yettinchi sayyora — Yerga keladi.',
+        table: {
+          head: ['Asteroiddagi kimsa', 'Majoziy ma’nosi'],
+          rows: [
+            ['Qirol', 'Hokimiyatparastlik, «hamma narsa mening qo‘limda» deb o‘zini aldash'],
+            ['Shuhratparast', 'Maqtovga tashnalik, o‘zini hammadan ustun ko‘rish'],
+            ['Piyonista', 'Zararli odatning domiga tushish, o‘zidan qochish'],
+            ['Korchalon (ishbilarmon)', 'Boylikni hisoblash, mol-dunyoga mukkasidan ketish'],
+            ['Chiroqbon', 'Vazifaga sadoqat, ammo ma’nosiz takror'],
+            ['Jug‘rofiy olim', 'Hayotni ko‘rmasdan, faqat qog‘ozdan biluvchi bilarmon'],
+          ],
+        },
+      },
+      {
+        title: 'Tulki bilan tanishuv',
+        text: 'Yerda Kichkina shahzoda Tulkini uchratadi. Tulki «qo‘lga o‘rgatilmagan»ligini aytadi va bu so‘zning ma’nosini tushuntiradi.',
+        rule: '«Qo‘lga o‘rgatmoq — rishta bog‘lamoq demakdir». Rishta bog‘langach, ikki jon bir-biri uchun dunyoda yagonaga aylanadi.',
+        ruleLabel: 'Tulkining saboqi',
+        note: 'Tulki aytadi: odamlar hamma narsani do‘kondan tayyor sotib oladi, ammo do‘st sotadigan do‘kon yo‘q — shuning uchun odamlar do‘st orttirmay qo‘ydi.',
+      },
+      {
+        title: 'Do‘stlik qanday tug‘iladi?',
+        list: [
+          'Sabr: avval uzoqroqda o‘tirasan, har kuni sal yaqinroq kelasan.',
+          'Jimlik: «so‘z bir-birimizni anglashimizga xalaqit beradi».',
+          'Odat va kutish: har kuni bir paytda kelsang, kutish quvonchi paydo bo‘ladi.',
+          'Ramz: oltin bug‘doyzor endi Tulkiga do‘stining sochini eslatadi.',
+        ],
+      },
+      {
+        title: 'Gul va besh ming atirgul',
+        text: 'Shahzoda bog‘da besh ming atirgulni ko‘radi. Ular uning guliga o‘xshaydi, lekin: «Sizlar chiroylisizlar, ammo dilingiz bo‘m-bo‘sh», deydi.',
+        note: 'Uning guli qadrli, chunki uni sug‘organ, shamoldan asragan, arz-u dodini eshitgan. Qadr narsaning o‘zida emas, unga sarflangan mehrda.',
+      },
+      {
+        title: 'Asarning asosiy hikmatlari',
+        rule: '«Faqat ko‘ngil ko‘zigina ochiq, eng asosiy narsani ko‘z bilan ko‘rolmaysan.»',
+        ruleLabel: 'Tulkining siri',
+        list: [
+          'Guling senga qadrli, chunki unga ko‘nglingni bergansan.',
+          'Sen qo‘lga o‘rgatgan narsang uchun umrbod javobgarsan.',
+          'Sahro chiroyli, chunki qayerdadir buloq yashiringan.',
+          'Suv ba’zan yurakka ham kerak bo‘ladi.',
+        ],
+      },
+      {
+        title: 'Sahrodagi buloq',
+        text: 'Halokatdan bir hafta o‘tgach, suv tugaydi. Shahzoda va uchuvchi buloq izlab yo‘lga chiqishadi. Shahzoda charchab uxlab qolganda, uchuvchi uni qo‘lida ko‘tarib boradi va bu jajji jonning sham shu’lasidek nozikligini anglaydi. Tong chog‘i ular quduqqa yetadi.',
+        note: 'Asarni Xayriddin Sultonov o‘zbek tiliga tarjima qilgan. 2015-yilda Fransiyada «Kichkina shahzoda» multfilmi suratga olingan.',
+      },
+      {
+        title: 'Muhokama qilamiz',
+        list: [
+          'Muallif asarni nega urush yillarida, vatandan uzoqda yozgan?',
+          'Uchuvchi kattalar olamigami yoki bolalar olamiga mansubmi? Shahzoda va uchuvchi bir inson bo‘lishi mumkinmi?',
+          'Voqealar shahzoda tilidan hikoya qilinsa, asar qanday o‘zgarar edi?',
+          'Sizga eng kuchli ta’sir qilgan iqtibosni tanlang va sababini ayting.',
+        ],
+      },
+    ],
+    pairs: [
+      ['Qirol', 'Hokimiyatparastlik'],
+      ['Shuhratparast', 'Maqtovga tashnalik'],
+      ['Korchalon', 'Boylikka mukkasidan ketish'],
+      ['Chiroqbon', 'Vazifaga sadoqat'],
+      ['Qo‘lga o‘rgatmoq', 'Rishta bog‘lamoq'],
+      ['Bug‘doyzor', 'Do‘stning sochini eslatadi'],
+      ['Besh ming atirgul', 'Chiroyli, ammo dili bo‘m-bo‘sh'],
+      ['Xayriddin Sultonov', 'Asar tarjimoni'],
+    ],
+    quiz: [
+      { q: 'Tulkining fikricha, «qo‘lga o‘rgatmoq» nima?', options: ['rishta bog‘lamoq', 'buyruq bermoq', 'ovlamoq', 'sotib olmoq'], answer: 0 },
+      { q: 'Eng asosiy narsani nima bilan ko‘rish mumkin?', options: ['ko‘ngil ko‘zi bilan', 'ko‘z bilan', 'teleskop bilan', 'aql bilan'], answer: 0 },
+      { q: 'Kichkina shahzoda Yerga kelguncha nechta asteroidda bo‘ladi?', options: ['6', '3', '10', '1'], answer: 0 },
+      { q: 'Bug‘doyzor Tulkiga nimani eslatadi?', options: ['do‘stining sochini', 'ovqatni', 'quyoshni', 'uyini'], answer: 0 },
+      { q: 'Nega shahzodaning guli boshqa atirgullardan qadrli?', options: ['unga mehr bergan, asragan', 'eng chiroylisi', 'eng kattasi', 'sotib olgan'], answer: 0 },
+      { q: 'Sahro nega chiroyli?', options: ['qayerdadir buloq yashiringan', 'qumi oltin', 'issiq', 'keng'], answer: 0 },
+      { q: '«Hamma narsa mening amrim bilan» deb o‘ylaydigan obraz?', options: ['qirol', 'chiroqbon', 'jug‘rofiy olim', 'tulki'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Haqiqiy qadriyat', 'Soxta qadriyat'],
+      items: [
+        { text: 'do‘stlik', cat: 0 }, { text: 'shon-shuhrat', cat: 1 },
+        { text: 'sadoqat', cat: 0 }, { text: 'yulduzlarni sanab boyish', cat: 1 },
+        { text: 'mas’uliyat', cat: 0 }, { text: 'quruq buyruq berish', cat: 1 },
+        { text: 'mehr bilan asrash', cat: 0 }, { text: 'faqat tashqi chiroy', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Tulki do‘st orttirish uchun nima qilish kerakligini aytadi?', a: 'Sabr qilish, har kuni bir paytda kelib, asta-sekin yaqinlashish.' },
+      { q: 'Nima uchun odamlar do‘st orttirmay qo‘ygan?', a: 'Hamma narsani do‘kondan tayyor oladi, do‘st sotadigan do‘kon esa yo‘q.' },
+      { q: '«Sen qo‘lga o‘rgatgan narsang uchun javobgarsan» fikrini izohlang.', a: 'Rishta bog‘laganing uchun uni asrash, unga g‘amxo‘rlik qilish burchingga aylanadi.' },
+      { q: 'Qirol obrazi nimaning majozi?', a: 'Hokimiyatparastlik va hamma narsani boshqaraman deb o‘zini aldashning.' },
+      { q: 'Uchuvchi shahzodani ko‘tarib borarkan nimani angladi?', a: 'Uning sham shu’lasidek nozik ekanini, uni ehtiyot qilish kerakligini.' },
+    ],
+    sequences: [
+      {
+        title: 'Voqealarni tartib bilan joylang',
+        items: [
+          'Shahzoda o‘z sayyorasini tark etadi',
+          'Oltita asteroiddagi kimsalar bilan suhbatlashadi',
+          'Yerga kelib Tulki bilan tanishadi',
+          'Besh ming atirgulni ko‘radi',
+          'Tulki o‘z sirini aytadi',
+          'Uchuvchi bilan buloq izlab ketadi',
+        ],
+      },
+      {
+        title: 'Do‘stlik bosqichlari (Tulki bo‘yicha)',
+        items: [
+          'Uzoqroqda, maysa ustida jim o‘tirish',
+          'Har kuni bir oz yaqinroq kelish',
+          'Har kuni bir paytda kelish',
+          'Kutish quvonchini his qilish',
+          'Bir-biri uchun dunyoda yagonaga aylanish',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['qirol', 'shuhratparast', 'korchalon', 'Tulki'], answer: 3, why: 'Tulki Yerda yashaydi va hikmat o‘rgatadi; qolganlari asteroidlardagi kimsalar.' },
+      { items: ['do‘stlik', 'sadoqat', 'mas’uliyat', 'shuhrat'], answer: 3, why: 'Shuhrat — asarda soxta qadriyat; qolganlari haqiqiy qadriyatlar.' },
+      { items: ['gul', 'bug‘doyzor', 'buloq', 'samolyot'], answer: 3, why: 'Samolyot — oddiy texnika; qolganlari asarda ramziy ma’noga ega.' },
+    ],
+    debate: [
+      { claim: 'Inson qo‘lga o‘rgatgan narsasi uchun umrbod javobgar.', pro: 'Mehr bergan narsang senga ishonadi, uni tashlash xiyonat.', con: 'Har kim o‘z hayotini o‘zi qurishi kerak, abadiy majburiyat og‘ir.' },
+      { claim: 'Bugun ham odamlar hamma narsani tayyor sotib olib, do‘st orttirmay qo‘ygan.', pro: 'Ijtimoiy tarmoqdagi «do‘stlar» haqiqiy do‘st emas.', con: 'Internet orqali ham chin do‘stlik paydo bo‘lishi mumkin.' },
+      { claim: 'Shahzoda va uchuvchi — aslida bitta inson.', pro: 'Shahzoda uchuvchining ichidagi bolalikdir.', con: 'Ular alohida obrazlar, har biri o‘z hikoyasiga ega.' },
+    ],
+    creative: [
+      { task: 'Yettinchi asteroidni o‘ylab toping: unda kim yashaydi va u bugungi qaysi illatni ko‘rsatadi?', time: 90 },
+      { task: 'Tulki va shahzoda dialogini sahnalashtiring: bir o‘quvchi Tulki, biri shahzoda (30 soniya).', time: 120 },
+      { task: '«Eng asosiy narsani ko‘z bilan ko‘rolmaysan» fikriga hayotdan bitta misol keltiring.', time: 60 },
+    ],
+  },
+
+  /* ===================== 8 ===================== */
+  {
+    id: 'adab-majoz',
+    source: 'I chorak • 8-dars • 45-bet',
+    title: 'Nazariy ma’lumot. Majoz va ramz',
+    short: 'Majoz, ramz va «Kichkina shahzoda»dagi majoziy obrazlar',
+    lesson: [
+      {
+        title: 'Ramz va majoz',
+        rule: 'Majoz — ramzning bir ko‘rinishi bo‘lib, mavhum tushuncha o‘rnida aniq obrazni qo‘llash, ya’ni o‘quvchiga noaniq bo‘lgan tushunchani hammaga ma’lum narsalarga xos belgilar bilan ifodalash usuli.',
+        ruleLabel: 'Nazariy ma’lumot',
+        text: 'Masalan, «ochko‘zlik» degan mavhum tushunchani ko‘rsatish uchun yozuvchi bo‘ri obrazidan foydalanadi.',
+      },
+      {
+        title: 'Folklordan kelgan majoziy obrazlar',
+        text: 'Badiiy adabiyotdagi ko‘p majoziy obrazlar xalq og‘zaki ijodidan, ayniqsa, hayvonlar haqidagi ertaklardan olingan.',
+        table: {
+          head: ['Obraz', 'Majoziy ma’nosi'],
+          rows: [
+            ['Bo‘ri', 'ochko‘zlik'],
+            ['Tulki', 'ayyorlik'],
+            ['Chumoli', 'mehnatsevarlik, ertangi kunni o‘ylash'],
+            ['Ninachi', 'o‘yinqaroqlik, beg‘amlik'],
+            ['Sher', 'kuch, hukmronlik'],
+            ['Quyon', 'qo‘rqoqlik'],
+          ],
+        },
+      },
+      {
+        title: 'Majoz qaysi janrlarda ko‘p uchraydi?',
+        examples: ['masal', 'rivoyat', 'hajv', 'ertak', 'majoziy qissa'],
+        text: '«Ninachi va chumoli» masalida ninachi yozni o‘yin-kulgi bilan o‘tkazadi, qishga ovqat g‘amlayotgan chumolining ustidan kuladi. Qish kelgach, chumolidan yordam so‘rashga majbur bo‘ladi.',
+        note: 'Bu masal orqali muallif mehnatsevarlik va ertangi kunni o‘ylashni ulug‘laydi, beg‘amlik va yengiltaklikni qoralaydi.',
+      },
+      {
+        title: '«Kichkina shahzoda» — majoziy asar',
+        text: 'Asardagi har bir obraz orqali muallif o‘quvchiga biror g‘oyani yetkazadi.',
+        table: {
+          head: ['Obraz', 'Nimani ifodalaydi'],
+          rows: [
+            ['Qirol', '«Hamma narsa mening qo‘limda» deb o‘zini aldash'],
+            ['Tulki', 'Donolik, do‘stlik saboqlari (ertakdagi ayyorlikdan farqli!)'],
+            ['Gul', 'Muhabbat, mehr berilgan yagona narsa'],
+            ['Bo‘g‘ma ilon', 'Kattalarning tor, yuzaki dunyoqarashi'],
+            ['Sahro va buloq', 'Hayotdagi yashirin go‘zallik va umid'],
+          ],
+        },
+        note: 'Qirol bir o‘zi yashasa ham buyruq beradi, «quyosh mening amrim bilan botyapti» deydi — aslida hammasi uning buyrug‘isiz ham bo‘laveradi.',
+      },
+      {
+        title: 'Majozni qanday tahlil qilamiz?',
+        list: [
+          'Obrazni tanlang.',
+          'Uning asardagi xatti-harakatlari va gap-so‘zlarini yozing.',
+          'Muallif bu obraz orqali qanday g‘oyani ifodalayotganini aniqlang.',
+          'Shu g‘oyaga bugungi hayotdan misol keltiring.',
+        ],
+      },
+    ],
+    pairs: [
+      ['Majoz', 'Mavhum tushunchani aniq obraz bilan ifodalash'],
+      ['Bo‘ri', 'ochko‘zlik'],
+      ['Tulki (ertakda)', 'ayyorlik'],
+      ['Chumoli', 'mehnatsevarlik'],
+      ['Ninachi', 'beg‘amlik'],
+      ['Qirol (asarda)', 'o‘zini aldash'],
+      ['Masal', 'Majoz keng qo‘llanadigan janr'],
+    ],
+    quiz: [
+      { q: 'Majoz nimaning bir ko‘rinishi?', options: ['ramzning', 'qofiyaning', 'syujetning', 'portretning'], answer: 0 },
+      { q: 'Ertaklarda bo‘ri nimaning timsoli?', options: ['ochko‘zlik', 'donolik', 'mehnat', 'sadoqat'], answer: 0 },
+      { q: 'Tulki ertaklarda odatda nimani ifodalaydi?', options: ['ayyorlik', 'qo‘rqoqlik', 'kuch', 'saxiylik'], answer: 0 },
+      { q: '«Ninachi va chumoli» qaysi janrda?', options: ['masal', 'doston', 'g‘azal', 'roman'], answer: 0 },
+      { q: 'Majoziy obrazlarning ko‘pi qayerdan olingan?', options: ['hayvonlar haqidagi ertaklardan', 'ilmiy kitoblardan', 'gazetalardan', 'hujjatlardan'], answer: 0 },
+      { q: '«Quyosh mening amrim bilan botyapti» deydigan obraz?', options: ['qirol', 'tulki', 'uchuvchi', 'chiroqbon'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Majoziy obraz', 'Oddiy (to‘g‘ri ma’nodagi) obraz'],
+      items: [
+        { text: 'masaldagi chumoli', cat: 0 }, { text: 'hikoyadagi qorovul', cat: 1 },
+        { text: 'ertakdagi bo‘ri', cat: 0 }, { text: 'hujjatli filmdagi bo‘ri', cat: 1 },
+        { text: 'asardagi qirol', cat: 0 }, { text: 'tarixdagi Amir Temur', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Majozga o‘z so‘zingiz bilan ta’rif bering.', a: 'Mavhum tushunchani hammaga tanish aniq narsa yoki jonzot obrazi orqali ifodalash.' },
+      { q: '«Ninachi va chumoli» masali qanday fazilatni ulug‘laydi?', a: 'Mehnatsevarlik va ertangi kunni o‘ylashni.' },
+      { q: '«Kichkina shahzoda»dagi Tulki ertaklardagi tulkidan nimasi bilan farq qiladi?', a: 'Ayyor emas, aksincha dono — do‘stlik saboqlarini o‘rgatadi.' },
+      { q: 'Majoz qaysi janrlarda keng qo‘llanadi?', a: 'Masal, rivoyat, hajv, ertak.' },
+      { q: 'Majoziy obrazni tahlil qilish bosqichlarini ayting.', a: 'Obrazni tanlash, xatti-harakatini yozish, g‘oyasini aniqlash, hayotdan misol topish.' },
+    ],
+    odd: [
+      { items: ['bo‘ri — ochko‘zlik', 'tulki — ayyorlik', 'chumoli — mehnatsevarlik', 'sher — qo‘rqoqlik'], answer: 3, why: 'Sher kuch va hukmronlik timsoli, qo‘rqoqlik — quyon.' },
+      { items: ['masal', 'rivoyat', 'hajv', 'ilmiy maqola'], answer: 3, why: 'Ilmiy maqolada majoz ishlatilmaydi.' },
+      { items: ['qirol', 'shuhratparast', 'korchalon', 'uchuvchi'], answer: 3, why: 'Uchuvchi — hikoyachi; qolganlari illatlarni ifodalovchi majoziy obrazlar.' },
+    ],
+    debate: [
+      { claim: 'Hayvonlar orqali gapirish odamlarga to‘g‘ridan to‘g‘ri aytishdan ta’sirliroq.', pro: 'O‘quvchi xafa bo‘lmay, o‘zini chetdan ko‘radi.', con: 'Ba’zilar ma’noni tushunmay, oddiy ertak deb o‘ylaydi.' },
+    ],
+    creative: [
+      { task: 'Bitta majoziy obraz o‘ylab toping (hayvon, narsa yoki o‘simlik) va u qaysi xislatni ifodalashini ayting. Sinf taxmin qilsin.', time: 60 },
+      { task: '«Dangasalik»ni majoz orqali 2–3 gaplik kichik masal qilib aytib bering.', time: 120 },
+      { task: 'Sinfingiz uchun ramz tanlang: qaysi hayvon yoki narsa sinfingizni eng yaxshi ifodalaydi? Nega?', time: 60 },
+    ],
+  },
+
+  /* ===================== 10 ===================== */
+  {
+    id: 'adab-soginish',
+    source: 'I chorak • 10-dars • 46–49-betlar',
+    title: 'G‘afur G‘ulom. «Sog‘inish» she’ri',
+    short: 'Shoir hayoti va urushga ketgan o‘g‘lini kutayotgan ota tuyg‘ulari',
+    lesson: [
+      {
+        title: 'G‘afur G‘ulom (1903–1966)',
+        text: 'O‘zbek adabiyotining mashhur namoyandasi 1903-yili Toshkentning Qo‘rg‘ontegi mahallasida tug‘ilgan. Eski maktabda, so‘ng rus-tuzem maktabida o‘qigan, muallimlar kursini tamomlab, o‘qituvchilik qilgan.',
+        list: [
+          'Ota-onasidan erta ayrilib, og‘ir sinovlarni boshidan kechirgan.',
+          'Otasi «Mirzo» va «G‘ulom» taxalluslari bilan she’r yozgan; uylariga Muqimiy, Furqat kabi shoirlar kelgan.',
+          '1966-yili Toshkentda vafot etgan.',
+        ],
+      },
+      {
+        title: 'Ijodi',
+        table: {
+          head: ['Yo‘nalish', 'Asarlari'],
+          rows: [
+            ['She’riy to‘plamlar', '«Dinamo», «Tirik qo‘shiqlar» (1931–1932)'],
+            ['Doston va balladalar', '«Ko‘kan», «To‘y», «Ikki vasiqa»'],
+            ['Nasr', '«Netay», «Yodgor», «Tirilgan murda», «Shum bola» qissasi'],
+            ['Tarjima', 'Shekspirning «Otello», «Qirol Lir» dramalari'],
+          ],
+        },
+        note: '«Shum bola» qissasi shoirni jahon miqyosida mashhur qilgan. U ko‘plab davlat mukofotlariga sazovor bo‘lgan.',
+      },
+      {
+        title: '«Sog‘inish» (1942) — mavzu va g‘oya',
+        rule: 'She’rda Ikkinchi jahon urushiga ketgan o‘g‘lini sog‘ingan, uning g‘olib bo‘lib qaytishiga ishongan ota (lirik qahramon) tuyg‘ulari aks etgan.',
+        ruleLabel: 'Mavzu',
+        text: 'She’r matnini darslikning 47–49-betlaridan ifodali o‘qing. Unda sog‘inch, xavotir, umid va faxr tuyg‘ulari almashinib keladi.',
+      },
+      {
+        title: 'Kayfiyat qanday o‘zgaradi?',
+        table: {
+          head: ['Qism', 'Kayfiyat', 'Qanday ifodalangan'],
+          rows: [
+            ['Boshlanish', 'Sog‘inch, intizorlik', 'Ota o‘zini karvon yo‘lida qolgan yetim bo‘taga o‘xshatadi, Quyoshdan xabar so‘raydi'],
+            ['O‘g‘il kuzatilgan kun', 'Faxr', 'O‘g‘il ostonani o‘pib, Vatan uchun qasamyod qilib ketgan'],
+            ['Kechki dasturxon', 'Xavotir', 'Osh suzilganda bir nasiba kam — biri yetishmaydi'],
+            ['Bog‘da', 'Umid', 'Bahor kurtaklari, gul payvand qilish — hayot davom etadi'],
+            ['Yakun', 'Ishonch, g‘alaba', 'O‘g‘il qaytganda savatni shaftoliga to‘ldirish orzusi'],
+          ],
+        },
+      },
+      {
+        title: 'Badiiy tasvir vositalari',
+        table: {
+          head: ['Vosita', 'She’rdagi misol', 'Vazifasi'],
+          rows: [
+            ['O‘xshatish', '«yetim bo‘tadek»', 'Otaning yolg‘izligi, intizorligi'],
+            ['Murojaat', 'Quyoshga murojaat', 'Butun olamdan xabar kutish'],
+            ['Detal', '«uzilgan bir kiprik»', 'Eng kichik narsa ham yo‘qolmaydi — o‘g‘il ham omon qaytadi degan ishonch'],
+            ['Tabiat timsoli', 'bahor kurtagi, ko‘chat', 'Yangi hayot va umid'],
+            ['O‘xshatish', 'shaftoli — misoli kulgu', 'Quvonch va g‘alaba kutishi'],
+          ],
+        },
+        note: 'Shoir tabiat va inson ruhiyatini bog‘laydi: bahorda uyg‘ongan hayot otaning umidiga kuch beradi.',
+      },
+      {
+        title: 'Meros tushunchasi',
+        text: 'She’rda «meros» so‘zi bir necha marta uchraydi: meros mard g‘urur, meros bog‘, otaga topshirilgan merosiy haq.',
+        rule: 'Meros — faqat mol-mulk emas, balki mardlik, Vatan mehri, bog‘ va mehnat an’anasining avloddan avlodga o‘tishi.',
+        ruleLabel: 'Tahlil',
+      },
+      {
+        title: 'Muhokama qilamiz',
+        list: [
+          '«Sog‘inish» she’rida qanday kayfiyat hukmron? Qaysi so‘zlar uni yuzaga chiqargan?',
+          'Otaning sog‘inch iztiroblari qaysi satrlarda yaqqolroq ko‘rinadi?',
+          'Shoir nega bahor timsollarini sog‘inish bilan bog‘laydi?',
+          'Juftlikda ishlang: she’r asosida eydos-konspekt (kalit so‘z, rasm, shakl) yarating.',
+        ],
+      },
+    ],
+    pairs: [
+      ['G‘afur G‘ulom', '«Shum bola» qissasi muallifi'],
+      ['Qo‘rg‘ontegi', 'Shoir tug‘ilgan mahalla'],
+      ['«Dinamo»', 'Ilk she’riy to‘plam'],
+      ['«Otello»', 'Shoir tarjima qilgan drama'],
+      ['«Sog‘inish»', '1942-yil'],
+      ['Yetim bo‘ta', 'Otaning intizorligi o‘xshatishi'],
+      ['Shaftoli', 'Kulguga o‘xshatilgan meva'],
+    ],
+    quiz: [
+      { q: 'G‘afur G‘ulom qaysi shaharda tug‘ilgan?', options: ['Toshkent', 'Samarqand', 'Buxoro', 'Qo‘qon'], answer: 0 },
+      { q: 'Shoirni jahonga mashhur qilgan qissa?', options: ['«Shum bola»', '«O‘tgan kunlar»', '«Oq kema»', '«Sarob»'], answer: 0 },
+      { q: '«Sog‘inish» she’rida kim sog‘inmoqda?', options: ['ota', 'ona', 'singil', 'yor'], answer: 0 },
+      { q: 'Ota kimni sog‘inadi?', options: ['urushga ketgan o‘g‘lini', 'vafot etgan otasini', 'do‘stini', 'ustozini'], answer: 0 },
+      { q: '«Sog‘inish» qaysi yili yozilgan?', options: ['1942', '1966', '1931', '1903'], answer: 0 },
+      { q: 'G‘afur G‘ulom Shekspirning qaysi asarini tarjima qilgan?', options: ['«Otello»', '«Gamlet»', '«Romeo va Julyetta»', '«Makbet»'], answer: 0 },
+      { q: 'She’r yakunida ota qanday orzu qiladi?', options: ['savatni shaftoliga to‘ldirish', 'safarga chiqish', 'kitob yozish', 'bog‘ni sotish'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Sog‘inch va xavotir', 'Umid va ishonch'],
+      items: [
+        { text: 'yetim bo‘tadek intizorlik', cat: 0 }, { text: 'bahor kurtagi', cat: 1 },
+        { text: 'dasturxonda bir nasiba kam', cat: 0 }, { text: 'o‘g‘lim omon keladi', cat: 1 },
+        { text: 'ko‘zlarda halqa-halqa yosh', cat: 0 }, { text: 'g‘alaba kunlari yaqin', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'She’rning lirik qahramoni kim va u nimani his qiladi?', a: 'Urushga ketgan o‘g‘lini kutayotgan ota; sog‘inch, xavotir, umid va faxr.' },
+      { q: '«Uzilgan bir kiprik» detali nimani anglatadi?', a: 'Olamda eng kichik narsa ham yo‘qolmaydi — ota o‘g‘lining omon qaytishiga ishonadi.' },
+      { q: 'Nega shoir bahor timsollarini sog‘inish bilan bog‘laydi?', a: 'Bahor — yangi hayot va umid; tabiat otaning ruhiga tasalli beradi.' },
+      { q: 'She’rdagi «meros» so‘zi qanday ma’noda?', a: 'Mardlik, Vatan mehri, bog‘ va mehnat an’anasining avlodga o‘tishi.' },
+      { q: 'G‘afur G‘ulomning ilk to‘plamlarini ayting.', a: '«Dinamo» va «Tirik qo‘shiqlar».' },
+    ],
+    odd: [
+      { items: ['«Shum bola»', '«Yodgor»', '«Netay»', '«Oq kema»'], answer: 3, why: '«Oq kema» — Chingiz Aytmatov asari.' },
+      { items: ['sog‘inch', 'xavotir', 'umid', 'loqaydlik'], answer: 3, why: 'She’rda loqaydlik yo‘q; qolgan tuyg‘ular she’rda bor.' },
+      { items: ['«Otello»', '«Qirol Lir»', '«Dinamo»', '«Gamlet»'], answer: 2, why: '«Dinamo» — G‘afur G‘ulomning o‘z to‘plami; qolganlari Shekspir asarlari.' },
+    ],
+    debate: [
+      { claim: 'Urush haqidagi she’rlarni bugun o‘qish kerak emas — urush ortda qoldi.', pro: 'Bugungi yoshlarni zamonaviy mavzular ko‘proq qiziqtiradi.', con: 'Sog‘inch, Vatan, ota-ona mehri — boqiy tuyg‘ular; tarixni unutmaslik kerak.' },
+      { claim: 'She’rda ota ojiz emas, balki kuchli inson qilib ko‘rsatilgan.', pro: 'U xavotirni yengib, bog‘da ishlaydi, g‘alabaga ishonadi.', con: 'U yig‘laydi, vasvasaga tushadi — bu uning ojizligi.' },
+    ],
+    creative: [
+      { task: 'O‘g‘il frontdan otasiga javob xati yozdi. Uning birinchi 2 gapini ayting.', time: 90 },
+      { task: 'She’rdagi bitta detalni (kurtak, savat, shaftoli, osh) tanlab, doskaga rasm qilib chizing va ma’nosini tushuntiring.', time: 120 },
+      { task: '«Sog‘inch» so‘zini rang, tovush va hid orqali tasvirlang: u qanday rangda, qanday ovozda?', time: 60 },
+    ],
+  },
+
+  /* ===================== 11 ===================== */
+  {
+    id: 'adab-vaqt',
+    source: 'I chorak • 11-dars • 50–52-betlar',
+    title: 'G‘afur G‘ulom. «Vaqt» she’ri',
+    short: 'Lahzaning qadri, tarixiy onlar va «Umrimiz boqiy» g‘oyasi',
+    lesson: [
+      {
+        title: 'Mutolaadan oldin',
+        text: '«Vaqtimni behuda o‘tkazdim» deb o‘ylagan paytlaringiz bo‘lganmi? Nega? Vaqtning qadrini qachon his qilasiz?',
+        note: 'She’r (1945) shoirga soat sovg‘a qilgan jiyani — mayor Hamidulla Husan o‘g‘liga bag‘ishlangan. Matnni darslikning 50–51-betlaridan o‘qing.',
+      },
+      {
+        title: 'She’rning g‘oyasi',
+        rule: 'Har bir lahza qimmatli: bir onda butun bahor mazmuni, butun tarix taqdiri hal bo‘lishi mumkin. Shuning uchun umrni mehnat va muhabbat bilan mazmunli o‘tkazish kerak.',
+        ruleLabel: 'G‘oya',
+      },
+      {
+        title: 'Lahza qanday obrazlar orqali ulug‘lanadi?',
+        table: {
+          head: ['Obraz', 'Ma’nosi'],
+          rows: [
+            ['G‘uncha ochilguncha o‘tgan fursat — kapalak umri', 'Qisqa vaqt ham butun bir umrga teng'],
+            ['Bir nafaslik muddat — ming yulduz so‘nishi', 'Lahza ichida ulkan voqealar yuz beradi'],
+            ['Yashash soatining oltin kapgiri', 'Har bir tebranish — bir olam zamon'],
+            ['Oltin tarozu, olmos tosh ham oz', 'Bir onning bahosi o‘lchab bo‘lmas darajada qimmat'],
+            ['Qatrada osmon aks etganidek', 'Kichik narsada buyuk ma’no bo‘ladi'],
+          ],
+        },
+      },
+      {
+        title: 'Tarixiy onlar',
+        text: 'She’rning ikkinchi qismida 1945-yil voqealari tilga olinadi:',
+        list: [
+          'Reyxstag ustiga g‘alaba bayrog‘ining tikilishi — adolat qaror topgan lahza.',
+          'Mag‘lub nemis generalining taslimnomaga imzo chekishi — atigi uch soniya, lekin million yil la’nat.',
+          'Shu onlar insoniyatning muqaddas haqi — tinch yashash huquqini qaror toptirgan.',
+        ],
+        note: 'Reyxstag — Berlindagi Germaniya parlamenti binosi. 1945-yil mayida uning ustiga g‘alaba bayrog‘i tikilgan; bino urush tugashi va tinchlik timsoliga aylangan.',
+      },
+      {
+        title: 'Gerostrat va «bir g‘isht»',
+        text: 'Gerostrat — mashhur bo‘lish uchun qadimgi Efesdagi Diana (Artemida) ibodatxonasiga o‘t qo‘ygan odam. Shoir unga qarshi fikr bildiradi:',
+        rule: 'Nom qoldirish uchun buzish shart emas: ko‘pchilik baxti uchun ulug‘ binoga bitta g‘isht qo‘yish kifoya.',
+        ruleLabel: 'Shoirning fikri',
+      },
+      {
+        title: 'Kalit tushunchalar',
+        table: {
+          head: ['Ifoda', 'Izoh'],
+          rows: [
+            ['«Tiriklik ko‘rki»', 'Mehnat va muhabbat'],
+            ['«So‘nmas cho‘g‘imiz»', 'Xalqning abadiy hayot kuchi, avlodlar davomiyligi'],
+            ['«Fursat g‘animat»', 'Vaqtni qadrlash, behuda o‘tkazmaslik'],
+            ['«Umrimiz boqiy»', 'Inson yaxshi ishlari bilan abadiy yashaydi'],
+          ],
+        },
+      },
+      {
+        title: 'Muhokama va topshiriqlar',
+        list: [
+          'She’rda qaysi mash’um voqealar tilga olinadi?',
+          'Qaysi sifatlash she’r mazmunini ochishda alohida ahamiyatga ega?',
+          'Shoir nega «Umrimiz boqiy» deb xulosa qiladi?',
+          'Loyiha: «Vaqtning she’r va tasvirda ifodalanishi» mavzusida guruh ishi tayyorlang.',
+          'G‘afur G‘ulom she’rlaridan birini yod oling.',
+        ],
+      },
+    ],
+    pairs: [
+      ['Gerostrat', 'Nom chiqarish uchun ibodatxonani yoqqan'],
+      ['Reyxstag', 'Ustiga g‘alaba bayrog‘i tikilgan bino'],
+      ['Kapalak umri', 'Qisqa fursat timsoli'],
+      ['Tiriklik ko‘rki', 'mehnat va muhabbat'],
+      ['Uch soniya', 'Taslimnomaga imzo'],
+      ['Hamidulla Husan o‘g‘li', 'She’r bag‘ishlangan jiyan'],
+      ['Bir g‘isht', 'Umumiy baxtga hissa'],
+    ],
+    quiz: [
+      { q: '«Vaqt» she’ri qaysi yili yozilgan?', options: ['1945', '1942', '1966', '1931'], answer: 0 },
+      { q: 'She’r kimga bag‘ishlangan?', options: ['soat sovg‘a qilgan jiyaniga', 'o‘g‘liga', 'otasiga', 'Zulfiyaga'], answer: 0 },
+      { q: 'Shoir fikricha, tiriklik ko‘rki nima?', options: ['mehnat va muhabbat', 'boylik', 'shon-shuhrat', 'kuch'], answer: 0 },
+      { q: 'Gerostrat nima qilgan?', options: ['ibodatxonaga o‘t qo‘ygan', 'shahar qurgan', 'kitob yozgan', 'urushda g‘olib chiqqan'], answer: 0 },
+      { q: 'Nemis generali taslimnomaga necha soniyada imzo chekdi?', options: ['uch', 'o‘n', 'bir', 'oltmish'], answer: 0 },
+      { q: 'She’r qanday xulosa bilan tugaydi?', options: ['Umrimiz boqiy', 'Hammasi o‘tkinchi', 'Vaqt dushman', 'Kelajak noma’lum'], answer: 0 },
+      { q: 'Reyxstag qaysi shaharda joylashgan?', options: ['Berlin', 'Moskva', 'Parij', 'London'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Vaqtni qadrlash', 'Vaqtni behuda o‘tkazish'],
+      items: [
+        { text: 'bir g‘isht qo‘yish', cat: 0 }, { text: 'Gerostratdek nom izlash', cat: 1 },
+        { text: 'mehnat qilish', cat: 0 }, { text: 'maqsadsiz o‘tirish', cat: 1 },
+        { text: 'umr daftarini bezash', cat: 0 }, { text: 'fursatni boy berish', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: '«Bir lahza mazmuni...» satrini izohlang.', a: 'Bir on ham mazmunga to‘la bo‘lishi, butun bir faslga teng qadrga ega ekani.' },
+      { q: 'Shoir nega Gerostratni tilga oladi?', a: 'Nom qoldirish uchun buzish emas, ko‘pchilik baxtiga hissa qo‘shish kerakligini ko‘rsatish uchun.' },
+      { q: '«Basharning muqaddas, oliy huquqi» nima?', a: 'Tinch, erkin yashash huquqi.' },
+      { q: 'Shoir nega «Umrimiz boqiy» deb xulosa qiladi?', a: 'Inson ezgu ishlari va avlodlari orqali abadiy yashaydi.' },
+      { q: 'She’rda qaysi tarixiy voqealar tilga olinadi?', a: 'Reyxstag ustiga bayroq tikilishi va nemis generalining taslim bo‘lishi.' },
+    ],
+    odd: [
+      { items: ['lahza', 'on', 'sekund', 'asr'], answer: 3, why: 'Asr — juda uzoq vaqt; qolganlari qisqa fursat nomlari.' },
+      { items: ['mehnat', 'muhabbat', 'fursatni qadrlash', 'Gerostratning ishi'], answer: 3, why: 'Gerostratning ishi shoir qoralagan yo‘l.' },
+      { items: ['kapalak umri', 'g‘uncha ochilishi', 'bir nafas', 'tog‘ cho‘qqisi'], answer: 3, why: 'Tog‘ cho‘qqisi qisqa vaqt timsoli emas.' },
+    ],
+    debate: [
+      { claim: 'Mashhur bo‘lish uchun g‘ayrioddiy ish qilish kerak.', pro: 'Oddiy ishni hech kim eslamaydi.', con: 'Shoir aytganidek, ulug‘ binoga bir g‘isht qo‘yish ham umrni mazmunli qiladi.' },
+      { claim: 'Telefon va ijtimoiy tarmoqlar yoshlarning vaqtini o‘g‘irlaydi.', pro: 'Soatlab maqsadsiz lenta aylantiriladi.', con: 'To‘g‘ri foydalanilsa, ular bilim va ijod manbai.' },
+    ],
+    creative: [
+      { task: '1 daqiqa jim turing va shu lahzada sinfda nimalar sodir bo‘lganini 5 ta detal bilan aytib bering.', time: 90 },
+      { task: '«Mening eng qimmatli 10 soniyam» — hayotingizdagi bir lahzani 3 gapda hikoya qiling.', time: 90 },
+      { task: 'Vaqtni bir narsaga o‘xshating: «Vaqt — ... kabi, chunki ...». Eng o‘xshatishni sinf tanlasin.', time: 60 },
+    ],
+  },
+];
+
 const CONTENT = {
+  adabiyot: { 8: [...ADABIYOT_8] },
   'ona-tili': { 8: [...ONA_TILI_8, ...ONA_TILI_8_PART2, ...ONA_TILI_8_PART3, ...ONA_TILI_8_PART4, ...ONA_TILI_8_PART5, ...ONA_TILI_8_PART6, ...ONA_TILI_8_PART7, ...ONA_TILI_8_PART8] },
 };
 
@@ -9078,6 +10375,10 @@ function gameAvailable(gameId, topic) {
   if (gameId === 'anagram' || gameId === 'hangman') return wordCards(topic).length >= 3;
   if (gameId === 'millioner') return (topic.quiz || []).length >= 3;
   if (gameId === 'race') return (topic.quiz || []).length + (topic.pairs || []).length >= 6;
+  if (gameId === 'sequence') return (topic.sequences || []).some((x) => (x.items || []).length >= 3);
+  if (gameId === 'odd') return (topic.odd || []).length >= 2;
+  if (gameId === 'debate') return (topic.debate || []).length > 0;
+  if (gameId === 'creative') return (topic.creative || []).length > 0;
   return false;
 }
 
@@ -9093,6 +10394,10 @@ const GAMES = [
   { id: 'hangman', name: 'Yashirin so‘z', desc: 'Harflarni topib so‘zni oching', icon: SpellCheck, color: 'bg-fuchsia-600', fresh: true },
   { id: 'millioner', name: 'Millioner', desc: 'Narvon, 50:50 va sinf yordami', icon: Crown, color: 'bg-indigo-800', fresh: true },
   { id: 'race', name: 'Poyga', desc: 'Jamoalar marraga qarab yuguradi', icon: Rocket, color: 'bg-orange-500', fresh: true },
+  { id: 'sequence', name: 'Voqealar zanjiri', desc: 'Voqealarni to‘g‘ri tartibda tiklang', icon: ListOrdered, color: 'bg-cyan-600', fresh: true },
+  { id: 'odd', name: 'Ortiqchasini top', desc: 'To‘rttadan bittasi guruhga kirmaydi', icon: Shapes, color: 'bg-teal-700', fresh: true },
+  { id: 'debate', name: 'Bahs maydoni', desc: 'Ikki tomon dalil keltiradi, o‘qituvchi baholaydi', icon: Scale, color: 'bg-amber-600', fresh: true },
+  { id: 'creative', name: 'Ijodiy topshiriq', desc: 'Yopiq karta, taymer va yulduzli baho', icon: Palette, color: 'bg-fuchsia-700', fresh: true },
 ];
 
 /** Har bir mavzuda boshqacha «bugungi o‘yinlar» to‘plami — darslar bir xil bo‘lib qolmasin. */
@@ -9102,7 +10407,9 @@ const GAME_GROUPS = [
   { ids: ['quiz', 'truefalse', 'millioner', 'qa'], take: 2 },
   { ids: ['match', 'anagram', 'memory', 'hangman', 'sort'], take: 2 },
   { ids: ['boom', 'race'], take: 1 },
+  { ids: ['sequence', 'odd', 'debate', 'creative'], take: 2 },
 ];
+const THINK_GAMES = ['sequence', 'odd', 'debate', 'creative'];
 function featuredGames(topic, index) {
   if (!topic) return [];
   const avail = GAMES.filter((g) => !g.disabled && gameAvailable(g.id, topic)).map((g) => g.id);
@@ -9110,8 +10417,11 @@ function featuredGames(topic, index) {
   let seed = index;
   if (!(seed >= 0)) seed = [...String(topic.id)].reduce((a, c) => (a * 31 + c.charCodeAt(0)) >>> 0, 7) % 997;
   const out = [];
-  GAME_GROUPS.forEach(({ ids, take }) => {
+  const hasThink = avail.some((id) => THINK_GAMES.includes(id));
+  GAME_GROUPS.forEach(({ ids, take: baseTake }) => {
     const pool = ids.filter((id) => avail.includes(id));
+    // Fikrlash o‘yinlari bor mavzuda so‘z o‘yinlaridan bittasi kamroq chiqadi
+    const take = hasThink && ids.includes('match') ? 1 : baseTake;
     const start = (take === 2 && pool.length === 4 ? seed : seed * take) % (pool.length || 1);
     for (let k = 0; k < Math.min(take, pool.length); k++) out.push(pool[(start + k) % pool.length]);
   });
@@ -11192,10 +12502,19 @@ function SlideBody({ s }) {
       {s.rule && (
         <div className="mt-6 rounded-2xl border-l-8 border-blue-600 bg-blue-50 p-5 md:p-6">
           <div className="mb-1 flex items-center gap-2 text-base font-extrabold uppercase tracking-wide text-blue-700">
-            <Lightbulb size={20} /> Qoida
+            <Lightbulb size={20} /> {s.ruleLabel || 'Qoida'}
           </div>
           <p className="text-xl md:text-2xl font-semibold leading-relaxed text-blue-950">{s.rule}</p>
         </div>
+      )}
+
+      {s.poem?.lines?.length > 0 && (
+        <figure className="mt-6 rounded-2xl border-l-8 border-violet-500 bg-violet-50 p-5 md:p-6">
+          <div className="space-y-1 text-xl md:text-2xl font-semibold italic leading-relaxed text-violet-950">
+            {s.poem.lines.map((l, k) => <p key={k}>{l}</p>)}
+          </div>
+          {s.poem.author && <figcaption className="mt-3 text-lg font-bold text-violet-700">— {s.poem.author}</figcaption>}
+        </figure>
       )}
 
       {s.list?.length > 0 && (
@@ -13257,6 +14576,378 @@ function ResultModal({ teams, onReplay, onOtherGame, onTopics, saveState }) {
   );
 }
 
+/* ============================================================
+   Fikrlash o‘yinlari: Voqealar zanjiri, Ortiqchasini top, Bahs, Ijodiy topshiriq
+   ============================================================ */
+
+/* 12) Voqealar zanjiri — voqealarni to‘g‘ri tartibda joylash */
+function SequenceGame({ topic, award, nextTurn, onFinish, teamName }) {
+  const rounds = useMemo(() => (topic.sequences || []).filter((s) => (s.items || []).length >= 3), [topic]);
+  const [round, setRound] = useState(0);
+  const next = () => {
+    nextTurn();
+    if (round + 1 >= rounds.length) onFinish();
+    else setRound(round + 1);
+  };
+  if (!rounds.length) return null;
+  return <SequenceRound key={round} seq={rounds[round]} idx={round} total={rounds.length} award={award} onNext={next} teamName={teamName} last={round + 1 >= rounds.length} />;
+}
+
+function SequenceRound({ seq, idx, total, award, onNext, teamName, last }) {
+  const cards = useMemo(() => {
+    let s = shuffle(seq.items.map((text, order) => ({ text, order })));
+    // Tasodifan to‘g‘ri tartib chiqib qolmasin
+    if (s.every((c, i) => c.order === i) && s.length > 1) s = [...s.slice(1), s[0]];
+    return s;
+  }, [seq]);
+  const [placed, setPlaced] = useState([]); // order raqamlari
+  const [wrong, setWrong] = useState(null);
+  const [mistakes, setMistakes] = useState(0);
+  const done = placed.length === seq.items.length;
+  const bonusGiven = useRef(false);
+
+  useEffect(() => {
+    if (done && !bonusGiven.current) {
+      bonusGiven.current = true;
+      if (mistakes === 0) award(10);
+      playSound('win');
+    }
+  }, [done, mistakes, award]);
+
+  const pick = (c) => {
+    if (done || placed.includes(c.order)) return;
+    if (c.order === placed.length) {
+      setPlaced((p) => [...p, c.order]);
+      award(5);
+    } else {
+      setWrong(c.order);
+      setMistakes((m) => m + 1);
+      playSound('wrong');
+      setTimeout(() => setWrong(null), 600);
+    }
+  };
+
+  return (
+    <div className="mx-auto max-w-5xl">
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+        <span className="text-xl font-bold text-blue-600">{total > 1 ? `${idx + 1} / ${total} • ` : ''}Navbat: {teamName}</span>
+        <span className="rounded-2xl bg-rose-50 px-4 py-2 text-lg font-bold text-rose-600">Xato: {mistakes}</span>
+      </div>
+      <h2 className="text-2xl md:text-3xl font-extrabold text-blue-950">{seq.title || 'Voqealarni tartib bilan joylang'}</h2>
+      <p className="mt-1 text-lg text-slate-500">Qaysi voqea birinchi bo‘lgan? Kartalarni tartib bilan bosing.</p>
+
+      <ol className="mt-5 space-y-2">
+        {seq.items.map((text, i) => {
+          const ok = i < placed.length;
+          return (
+            <li key={i} className={`flex items-center gap-3 rounded-2xl border-2 px-4 py-3 text-lg md:text-2xl font-bold transition ${ok ? 'dp-pop border-emerald-300 bg-emerald-50 text-emerald-900' : 'border-dashed border-slate-200 bg-slate-50 text-slate-300'}`}>
+              <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-lg font-extrabold ${ok ? 'bg-emerald-500 text-white' : 'bg-slate-200 text-slate-400'}`}>{i + 1}</span>
+              {ok ? text : '...'}
+            </li>
+          );
+        })}
+      </ol>
+
+      {!done ? (
+        <div className="mt-6 grid gap-3 sm:grid-cols-2">
+          {cards.filter((c) => !placed.includes(c.order)).map((c) => (
+            <button
+              key={c.order}
+              onClick={() => pick(c)}
+              className={`rounded-2xl border-2 p-4 text-left text-lg md:text-2xl font-bold shadow-sm transition active:scale-95 ${wrong === c.order ? 'dp-shake border-rose-400 bg-rose-50 text-rose-700' : 'border-blue-200 bg-white text-blue-950 hover:border-blue-500 hover:bg-blue-50'}`}
+            >
+              {c.text}
+            </button>
+          ))}
+        </div>
+      ) : (
+        <div className="dp-pop mt-6 flex flex-wrap items-center justify-between gap-4 rounded-3xl bg-emerald-50 p-5">
+          <div className="text-2xl font-extrabold text-emerald-700">
+            Zanjir tiklandi! {mistakes === 0 ? '🌟 Xatosiz: +10 bonus' : `Xatolar: ${mistakes}`}
+          </div>
+          <PrimaryButton onClick={onNext} icon={ArrowRight}>{last ? 'Natijalar' : 'Keyingi zanjir'}</PrimaryButton>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* 13) Ortiqchasini top — mantiqiy guruhlash */
+function OddGame({ topic, award, nextTurn, onFinish, teamName }) {
+  const cards = useMemo(
+    () => shuffle(topic.odd || []).map((c) => ({ ...c, opts: shuffle(c.items.map((text, i) => ({ text, odd: i === c.answer }))) })),
+    [topic],
+  );
+  const LIMIT = 25;
+  const [idx, setIdx] = useState(0);
+  const [picked, setPicked] = useState(null); // indeks | 'time'
+  const card = cards[idx];
+  const time = useCountdown(LIMIT, picked === null, idx, () => setPicked('time'));
+  if (!card) return null;
+
+  const choose = (k) => {
+    if (picked !== null) return;
+    setPicked(k);
+    if (card.opts[k].odd) award(10 + (time >= 15 ? 5 : 0));
+  };
+  const next = () => {
+    nextTurn();
+    if (idx + 1 >= cards.length) onFinish();
+    else { setIdx(idx + 1); setPicked(null); }
+  };
+  const ok = picked !== null && picked !== 'time' && card.opts[picked].odd;
+
+  return (
+    <div className="mx-auto max-w-4xl">
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+        <span className="text-xl font-bold text-blue-600">{idx + 1} / {cards.length} • Javob beradi: {teamName}</span>
+        <TimerPill time={time} limit={LIMIT} />
+      </div>
+      <div className="rounded-[2rem] bg-gradient-to-br from-teal-600 to-cyan-700 p-6 text-center text-white shadow-xl">
+        <div className="text-2xl md:text-3xl font-extrabold">Qaysi biri ortiqcha?</div>
+        <p className="mt-1 text-lg text-teal-100">Uchtasini nima birlashtiradi? Bittasi bu guruhga kirmaydi.</p>
+      </div>
+      <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {card.opts.map((o, k) => {
+          let cls = 'border-teal-200 bg-white text-blue-950 hover:border-teal-500 hover:bg-teal-50';
+          if (picked !== null) {
+            if (o.odd) cls = 'border-emerald-400 bg-emerald-50 text-emerald-800';
+            else if (k === picked) cls = 'border-rose-400 bg-rose-50 text-rose-700';
+            else cls = 'border-slate-200 bg-white text-slate-400';
+          }
+          return (
+            <button key={k} onClick={() => choose(k)} disabled={picked !== null} className={`min-h-[96px] rounded-3xl border-4 p-5 text-2xl md:text-3xl font-extrabold transition active:scale-95 ${cls}`}>
+              {o.text}
+            </button>
+          );
+        })}
+      </div>
+      {picked !== null && (
+        <div className="dp-pop mt-6 flex flex-wrap items-center justify-between gap-4 rounded-3xl bg-slate-50 p-5">
+          <div className="min-w-0 flex-1">
+            <FeedbackBadge ok={ok} text={picked === 'time' ? 'Vaqt tugadi!' : ok ? 'To‘g‘ri!' : 'Noto‘g‘ri'} />
+            <p className="mt-3 text-xl font-semibold text-slate-700"><Lightbulb size={22} className="mr-1 inline text-amber-500" />{card.why}</p>
+          </div>
+          <PrimaryButton onClick={next} icon={ArrowRight}>{idx + 1 >= cards.length ? 'Natijalar' : 'Keyingi'}</PrimaryButton>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* 14) Bahs maydoni — tanqidiy fikrlash, ikki tomon dalillari */
+const DEBATE_TIME = 60;
+function DebateGame({ topic, nextTurn, onFinish, teams, turn, updateTeams }) {
+  const claims = useMemo(() => shuffle(topic.debate || []), [topic]);
+  const [idx, setIdx] = useState(0);
+  const [phase, setPhase] = useState('ready'); // ready | pro | con | judge
+  const [hint, setHint] = useState(false);
+  const [given, setGiven] = useState({ pro: null, con: null });
+  const claim = claims[idx];
+  const multi = teams.length > 1;
+  const proIdx = turn;
+  const conIdx = multi ? (turn + 1) % teams.length : turn;
+  const proName = multi ? teams[proIdx]?.name : 'Qo‘shiluvchilar';
+  const conName = multi ? teams[conIdx]?.name : 'Qarshi chiquvchilar';
+  const running = phase === 'pro' || phase === 'con';
+  const time = useCountdown(DEBATE_TIME, running, `${idx}-${phase}`, () => {
+    playSound('flip');
+    setHint(false);
+    setPhase((p) => (p === 'pro' ? 'con' : 'judge'));
+  });
+  if (!claim) return null;
+
+  const give = (side, pts) => {
+    if (given[side] !== null) return;
+    setGiven((g) => ({ ...g, [side]: pts }));
+    if (pts > 0) {
+      playSound('correct');
+      const ti = side === 'pro' ? proIdx : conIdx;
+      updateTeams((ts) => ts.map((t, i) => (i === ti ? { ...t, score: t.score + pts } : t)));
+    }
+  };
+  const next = () => {
+    nextTurn();
+    if (idx + 1 >= claims.length) onFinish();
+    else { setIdx(idx + 1); setPhase('ready'); setHint(false); setGiven({ pro: null, con: null }); }
+  };
+  const skip = () => { setHint(false); setPhase((p) => (p === 'pro' ? 'con' : 'judge')); };
+
+  const Side = ({ side, name, active }) => (
+    <div className={`rounded-3xl border-4 p-5 transition ${active ? (side === 'pro' ? 'border-emerald-400 bg-emerald-50 shadow-lg' : 'border-rose-400 bg-rose-50 shadow-lg') : 'border-slate-100 bg-white opacity-70'}`}>
+      <div className={`flex items-center gap-2 text-xl font-extrabold ${side === 'pro' ? 'text-emerald-700' : 'text-rose-700'}`}>
+        {side === 'pro' ? <ThumbsUp size={26} /> : <ThumbsDown size={26} />} {side === 'pro' ? 'Qo‘shilaman' : 'Qarshiman'}
+      </div>
+      <div className="mt-1 truncate text-2xl font-extrabold text-blue-950">{name}</div>
+      {phase === 'judge' && (
+        <div className="mt-4">
+          <div className="mb-2 text-base font-bold text-slate-500">Dalillar kuchi:</div>
+          <div className="flex flex-wrap gap-2">
+            {[0, 5, 10, 15].map((p) => (
+              <button
+                key={p}
+                onClick={() => give(side, p)}
+                disabled={given[side] !== null}
+                className={`rounded-2xl px-4 py-3 text-xl font-extrabold transition active:scale-95 ${given[side] === p ? 'bg-blue-600 text-white' : given[side] !== null ? 'bg-slate-100 text-slate-300' : 'bg-white text-blue-900 ring-2 ring-blue-200 hover:bg-blue-50'}`}
+              >
+                {p === 0 ? '0' : `+${p}`}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+
+  return (
+    <div className="mx-auto max-w-5xl">
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+        <span className="text-xl font-bold text-blue-600">Bahs {idx + 1} / {claims.length}</span>
+        {running && <TimerPill time={time} limit={DEBATE_TIME} />}
+      </div>
+      <div className="rounded-[2rem] bg-gradient-to-br from-amber-500 to-orange-600 p-6 md:p-10 text-center text-white shadow-xl">
+        <div className="flex items-center justify-center gap-2 text-lg font-bold uppercase tracking-wide text-amber-100"><Scale size={24} /> Bahs mavzusi</div>
+        <h2 className="mt-3 text-2xl md:text-4xl font-extrabold leading-tight">«{claim.claim}»</h2>
+      </div>
+
+      <div className="mt-5 grid gap-4 md:grid-cols-2">
+        <Side side="pro" name={proName} active={phase === 'pro' || phase === 'judge'} />
+        <Side side="con" name={conName} active={phase === 'con' || phase === 'judge'} />
+      </div>
+
+      <div className="mt-5 rounded-3xl bg-slate-50 p-5">
+        {phase === 'ready' && (
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <p className="text-xl text-slate-700">Har bir tomonga <b>{DEBATE_TIME} soniya</b>. Avval qo‘shiluvchilar, keyin qarshi tomon dalil keltiradi. O‘qituvchi oxirida ball beradi.</p>
+            <PrimaryButton onClick={() => setPhase('pro')} icon={Play}>Bahsni boshlash</PrimaryButton>
+          </div>
+        )}
+        {running && (
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="min-w-0 flex-1">
+              <div className="text-2xl font-extrabold text-blue-950">
+                So‘z navbati: <span className={phase === 'pro' ? 'text-emerald-600' : 'text-rose-600'}>{phase === 'pro' ? proName : conName}</span>
+              </div>
+              {hint ? (
+                <p className="dp-pop mt-2 text-xl text-slate-700"><Lightbulb size={22} className="mr-1 inline text-amber-500" />{phase === 'pro' ? claim.pro : claim.con}</p>
+              ) : (
+                (phase === 'pro' ? claim.pro : claim.con) && (
+                  <button onClick={() => setHint(true)} className="mt-2 inline-flex items-center gap-2 rounded-xl bg-amber-100 px-4 py-2 text-lg font-bold text-amber-800 hover:bg-amber-200">
+                    <Lightbulb size={20} /> Yordamchi dalil
+                  </button>
+                )
+              )}
+            </div>
+            <button onClick={skip} className="inline-flex items-center gap-2 rounded-2xl border-2 border-blue-200 px-5 py-3 text-lg font-bold text-blue-900 hover:bg-blue-50">
+              Tugatdik <ArrowRight size={22} />
+            </button>
+          </div>
+        )}
+        {phase === 'judge' && (
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <p className="text-xl text-slate-700">Har bir tomonning dalillarini baholang: aniq misol, mantiq va asardan dalil uchun ko‘proq ball.</p>
+            <PrimaryButton onClick={next} disabled={given.pro === null || given.con === null} icon={ArrowRight}>
+              {idx + 1 >= claims.length ? 'Natijalar' : 'Keyingi bahs'}
+            </PrimaryButton>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/* 15) Ijodiy topshiriq — yopiq kartalar, taymer va yulduzli baho */
+function CreativeGame({ topic, award, nextTurn, onFinish, teamName }) {
+  const deck = useMemo(() => shuffle(topic.creative || []).slice(0, 6), [topic]);
+  const [used, setUsed] = useState([]);
+  const [open, setOpen] = useState(null);
+  const [phase, setPhase] = useState('pick'); // pick | show | run | rate
+  const task = open !== null ? deck[open] : null;
+  const limit = task?.time || 90;
+  const time = useCountdown(limit, phase === 'run', `${open}-${phase === 'run'}`, () => { playSound('flip'); setPhase('rate'); });
+
+  const flip = (k) => {
+    if (phase !== 'pick' || used.includes(k)) return;
+    playSound('flip');
+    setOpen(k);
+    setPhase('show');
+  };
+  const rate = (stars) => {
+    if (stars > 0) award(stars * 10);
+    const nu = [...used, open];
+    setUsed(nu);
+    nextTurn();
+    if (nu.length >= deck.length) { onFinish(); return; }
+    setOpen(null);
+    setPhase('pick');
+  };
+
+  if (phase === 'pick') {
+    return (
+      <div className="mx-auto max-w-5xl">
+        <div className="mb-4 text-xl font-bold text-blue-600">Navbat: {teamName} • Kartani tanlang</div>
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+          {deck.map((_, k) => (
+            <button
+              key={k}
+              onClick={() => flip(k)}
+              disabled={used.includes(k)}
+              className={`flex aspect-[4/3] flex-col items-center justify-center gap-2 rounded-3xl text-white shadow-lg transition active:scale-95 ${used.includes(k) ? 'bg-slate-200 text-slate-400 shadow-none' : 'bg-gradient-to-br from-fuchsia-500 to-violet-700 hover:scale-[1.02]'}`}
+            >
+              {used.includes(k) ? <Check size={44} /> : <Palette size={48} />}
+              <span className="text-3xl font-extrabold">{k + 1}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="mx-auto max-w-4xl">
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+        <span className="text-xl font-bold text-blue-600">{used.length + 1} / {deck.length} • Bajaradi: {teamName}</span>
+        {phase === 'run' && <TimerPill time={time} limit={limit} />}
+      </div>
+      <div key={open} className="dp-pop rounded-[2rem] bg-gradient-to-br from-fuchsia-600 to-violet-700 p-8 md:p-12 text-center text-white shadow-xl">
+        <div className="flex items-center justify-center gap-2 text-lg font-bold uppercase tracking-wide text-fuchsia-100"><Sparkles size={22} /> Ijodiy topshiriq</div>
+        <h2 className="mt-4 text-2xl md:text-4xl font-extrabold leading-snug">{task.task}</h2>
+        <div className="mt-4 text-lg text-fuchsia-100">Vaqt: {limit} soniya</div>
+      </div>
+      <div className="mt-6 rounded-3xl bg-slate-50 p-5">
+        {phase === 'show' && (
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <p className="text-xl text-slate-700">Jamoa tayyor bo‘lsa, taymerni ishga tushiring.</p>
+            <PrimaryButton onClick={() => setPhase('run')} icon={Timer}>Boshlash</PrimaryButton>
+          </div>
+        )}
+        {phase === 'run' && (
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <p className="text-xl font-bold text-slate-700">Jamoa ishlamoqda...</p>
+            <button onClick={() => setPhase('rate')} className="inline-flex items-center gap-2 rounded-2xl border-2 border-blue-200 px-5 py-3 text-lg font-bold text-blue-900 hover:bg-blue-50">
+              Tayyor <Check size={22} />
+            </button>
+          </div>
+        )}
+        {phase === 'rate' && (
+          <div>
+            <p className="mb-3 text-xl font-bold text-slate-700">Ijodkorlikni baholang:</p>
+            <div className="flex flex-wrap gap-3">
+              {[1, 2, 3].map((s) => (
+                <button key={s} onClick={() => rate(s)} className="inline-flex items-center gap-1 rounded-2xl bg-amber-400 px-5 py-4 text-2xl font-extrabold text-amber-950 shadow transition hover:bg-amber-300 active:scale-95">
+                  {Array.from({ length: s }).map((_, i) => <Star key={i} size={26} fill="currentColor" />)}
+                  <span className="ml-2 text-lg">+{s * 10}</span>
+                </button>
+              ))}
+              <button onClick={() => rate(0)} className="rounded-2xl border-2 border-slate-200 px-5 py-4 text-lg font-bold text-slate-500 hover:bg-white">Bajarilmadi</button>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 function PlayScreen({ game, topic, teams, turn, award, nextTurn, adjust, gameKey, onFinish, onBack, onOpenPicker, pickedStudent, updateTeams }) {
   const props = { topic, award, nextTurn, onFinish };
   const GameIcon = game.icon;
@@ -13301,6 +14992,10 @@ function PlayScreen({ game, topic, teams, turn, award, nextTurn, adjust, gameKey
         {game.id === 'hangman' && <HangmanGame key={gameKey} {...props} teamName={teams[turn]?.name} />}
         {game.id === 'millioner' && <MillionerGame key={gameKey} {...props} teamName={teams[turn]?.name} />}
         {game.id === 'race' && <RaceGame key={gameKey} {...props} teams={teams} turn={turn} />}
+        {game.id === 'sequence' && <SequenceGame key={gameKey} {...props} teamName={teams[turn]?.name} />}
+        {game.id === 'odd' && <OddGame key={gameKey} {...props} teamName={teams[turn]?.name} />}
+        {game.id === 'debate' && <DebateGame key={gameKey} {...props} teams={teams} turn={turn} updateTeams={updateTeams} />}
+        {game.id === 'creative' && <CreativeGame key={gameKey} {...props} teamName={teams[turn]?.name} />}
       </div>
     </div>
   );
