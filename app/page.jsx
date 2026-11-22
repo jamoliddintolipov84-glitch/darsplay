@@ -10187,8 +10187,1337 @@ const ADABIYOT_8 = [
   },
 ];
 
+/* --- 8-sinf Adabiyot: 12–23-darslar (darslik 2025, 53–107-betlar; BSB/CHSB kiritilmagan) --- */
+const ADABIYOT_8_P2 = [
+  /* ===================== 12 ===================== */
+  {
+    id: 'adab-oqkema-1',
+    source: 'I chorak • 12-dars • 53–60-betlar',
+    title: 'Chingiz Aytmatov. «Oq kema»: yaratilish tarixi',
+    short: 'Yozuvchi hayoti, qissaning yaratilishi va bolaning ikki ertagi',
+    lesson: [
+      {
+        title: 'Chingiz Aytmatov (1928–2008)',
+        text: 'XX asr jahon adabiyotining iste’dodli vakili 1928-yili Qirg‘izistonning Talas vodiysidagi Shakar ovulida ziyolilar oilasida tug‘ilgan. Avval rus, keyin qirg‘iz maktabida o‘qigan.',
+        table: {
+          head: ['Yil', 'Voqea'],
+          rows: [
+            ['1948', 'Jambul zooveterinariya texnikumini tamomlagan'],
+            ['1953', 'Qirg‘iziston qishloq xo‘jaligi institutini bitirgan'],
+            ['keyin', 'Moskvadagi Oliy adabiyot kursida o‘qigan'],
+            ['1970', '«Oq kema» qissasi e’lon qilingan'],
+            ['2008, 10-iyun', 'Vafot etgan'],
+          ],
+        },
+        note: 'Ovul — chorvachilik bilan shug‘ullaniladigan kichik qishloq. Yozuvchining asarlari 150 dan ortiq tilga tarjima qilingan; Toshkentda unga yodgorlik o‘rnatilgan.',
+      },
+      {
+        title: 'Buvisining ertaklari',
+        text: 'Aytmatov adabiyotga mehrini buvisiga bog‘laydi. Buvisi uning uchun ertak, doston va qadimiy qo‘shiqlarning bitmas-tuganmas xazinasi bo‘lgan, uni to‘y-hashamlarga olib borgan, o‘z tushlarini so‘zlab bergan.',
+        rule: 'Aytmatov ijodiga xos xususiyat: real hayot bilan xalq afsonalari, ertak va mif bir asarda uyg‘unlashadi. Afsona qahramonning ichki dunyosini ochishga xizmat qiladi.',
+        ruleLabel: 'Ijodiy uslub',
+      },
+      {
+        title: 'Qissa qanday yaratilgan?',
+        text: 'Asar hayotiy shaxs va voqealarga asoslanadi. Yozuvchi Issiqko‘l viloyatidagi Qarg‘ira yaylovlariga tosh haykallarni izlab boradi va Mo‘min ismli o‘rmonchi hamda uning yonidagi bolakay bilan tanishadi.',
+        list: [
+          'O‘rmonchi yozuvchi bilan qariyb ikki soat suhbatlashadi.',
+          'Aytmatov «izlaganimni topdim» deb, haykallarni qidirishdan voz kechadi.',
+          'Eshitganlari asosida «Oq kema» qissasini yozadi.',
+          'Asar 1970-yili «Yangi olam» jurnalida chop etilgan; uning boshqa nomi — «Ertakdan so‘ng».',
+        ],
+        note: 'Qissani o‘zbek tiliga Asil Rashidov tarjima qilgan.',
+      },
+      {
+        title: 'Bolaning ikki ertagi',
+        text: 'Qissa shunday boshlanadi: bolaning ikki ertagi bor edi. Biri faqat o‘ziniki, uni hech kim bilmasdi; ikkinchisini bobosi aytib bergan. Keyin ikkalasi ham qolmadi.',
+        table: {
+          head: ['Ertak', 'Mazmuni'],
+          rows: [
+            ['Bolaning o‘z ertagi', 'Baliqqa aylanib, Issiqko‘lga suzib borish va oq kemadagi matros otasini topish'],
+            ['Bobosining ertagi', 'Qirg‘izlarni o‘limdan qutqargan Shoxdor ona bug‘u haqidagi afsona'],
+          ],
+        },
+        rule: 'Bosh qahramon — «bola». Muallif unga ism bermagan: u har qanday pokiza, mehrga tashna bolaning timsoli.',
+        ruleLabel: 'E’tibor bering',
+      },
+      {
+        title: 'Portfel va durbin',
+        text: 'Bola yetti yoshga to‘lib, sakkizga qadam qo‘ygan. Bobosi Mo‘min ko‘chma do‘kondan unga qora dermantin portfel olib beradi. Bola quvonchidan qorovulxona hovlisini aylanib, hammaga portfelini ko‘rsatadi.',
+        list: [
+          'Bola tog‘dagi qorovulxonada bobosi bilan yashaydi; uni ota-onasi tashlab ketgan.',
+          'Uning eng aziz narsasi — bobosining eski durbini.',
+          'Qorovultog‘dan durbin bilan qarab, Issiqko‘lda oq kemani ko‘radi.',
+          'U oq kemada otasi — issiqko‘llik matros — suzib yuribdi, deb ishonadi.',
+        ],
+      },
+      {
+        title: 'Qorovulxona ahli',
+        table: {
+          head: ['Obraz', 'Kim?'],
+          rows: [
+            ['Bola', 'Yetti yashar, ismi yo‘q, xayolparast, ko‘ngli toza'],
+            ['Mo‘min bobo', 'Bolaning bobosi; mehribon, beozor, Bug‘u avlodidan ekanidan faxrlanadi'],
+            ['O‘rozgul', 'Qorovulxona boshlig‘i, Mo‘minning kuyovi; zolim, qo‘pol, farzandsizligi uchun xotinini uradi'],
+            ['Bekey xola', 'Mo‘minning qizi, O‘rozgulning xotini; farzandsiz, baxtsiz ayol'],
+            ['Seydahmad', 'O‘rozgulning yordamchisi, loqayd odam'],
+          ],
+        },
+        note: 'Mo‘min bobo nabirasi bexatar cho‘milsin deb, kun bo‘yi daryoda toshlardan ko‘lob yasaydi. Bu uning mehrini ko‘rsatuvchi muhim detal.',
+      },
+      {
+        title: 'O‘ylab ko‘ring',
+        list: [
+          '«Oq kema» qissasi nima haqida bo‘lishi mumkin? Nega aynan oq rangli kema?',
+          'Bolaning baliqqa aylanish orzusi bilan oq kema o‘rtasida qanday bog‘liqlik bor?',
+          'Nega bola o‘z ertagini hech kimga aytmaydi?',
+          'Muallif bosh qahramonga nega ism bermagan?',
+        ],
+      },
+    ],
+    pairs: [
+      ['Chingiz Aytmatov', 'Qirg‘iz yozuvchisi'],
+      ['Shakar ovuli', 'Yozuvchi tug‘ilgan joy'],
+      ['«Ertakdan so‘ng»', 'Qissaning boshqa nomi'],
+      ['Asil Rashidov', 'O‘zbek tiliga tarjimon'],
+      ['Mo‘min', 'Bolaning bobosi'],
+      ['O‘rozgul', 'Qorovulxona boshlig‘i'],
+      ['Durbin', 'Bola oq kemani ko‘radigan narsa'],
+      ['Portfel', 'Bobosi olib bergan sovg‘a'],
+    ],
+    quiz: [
+      { q: 'Chingiz Aytmatov qaysi yili tug‘ilgan?', options: ['1928', '1903', '1956', '1900'], answer: 0 },
+      { q: 'Aytmatovga ertak va dostonlarni kim so‘zlab bergan?', options: ['buvisi', 'otasi', 'o‘qituvchisi', 'akasi'], answer: 0 },
+      { q: '«Oq kema» qachon e’lon qilingan?', options: ['1970', '1945', '1990', '2008'], answer: 0 },
+      { q: 'Qissaning boshqa nomi qanday?', options: ['«Ertakdan so‘ng»', '«Issiqko‘l»', '«Ona bug‘u»', '«Bola»'], answer: 0 },
+      { q: 'Bola oq kemada kim bor deb o‘ylaydi?', options: ['otasi', 'onasi', 'bobosi', 'Seydahmad'], answer: 0 },
+      { q: 'Bolaning orzusi nima edi?', options: ['baliqqa aylanib suzib ketish', 'shaharga ketish', 'ovchi bo‘lish', 'qush bo‘lib uchish'], answer: 0 },
+      { q: 'Bosh qahramonning ismi nima?', options: ['ismi yo‘q', 'Mo‘min', 'Seydahmad', 'Bo‘ribek'], answer: 0 },
+      { q: 'Asar qaysi ko‘l bo‘yida kechadi?', options: ['Issiqko‘l', 'Orol', 'Baykal', 'Sariqamish'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Real hayot', 'Ertak va xayol'],
+      items: [
+        { text: 'portfel sotib olish', cat: 0 }, { text: 'baliqqa aylanish', cat: 1 },
+        { text: 'qorovulxona', cat: 0 }, { text: 'Shoxdor ona bug‘u', cat: 1 },
+        { text: 'O‘rozgulning zulmi', cat: 0 }, { text: 'oq kemadagi matros ota', cat: 1 },
+        { text: 'ko‘chma do‘kon', cat: 0 }, { text: 'sehrli beshik', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: '«Oq kema» qanday hayotiy voqeaga asoslangan?', a: 'Yozuvchi Qarg‘ira yaylovida Mo‘min ismli o‘rmonchi va bolakay bilan tanishgan.' },
+      { q: 'Bolaning ikki ertagi qaysilar?', a: 'Baliqqa aylanib oq kemaga suzish haqidagi o‘z ertagi va bobosining Shoxdor ona bug‘u haqidagi ertagi.' },
+      { q: 'Aytmatov uslubining asosiy xususiyati nima?', a: 'Real hayot bilan afsona, ertak va mifning uyg‘unlashuvi.' },
+      { q: 'Mo‘min bobo nabirasi uchun qanday g‘amxo‘rlik qiladi?', a: 'Portfel oladi, u bexatar cho‘milsin deb daryoda toshlardan ko‘lob yasaydi.' },
+      { q: 'Nima uchun bola oq kemada otasi bor deb ishonadi?', a: 'Otasi issiqko‘llik matros ekanini bilgan va shunday bo‘lishini juda istagan.' },
+    ],
+    sequences: [
+      {
+        title: 'Qissa boshlanishini tartib bilan joylang',
+        items: [
+          'Ko‘chma do‘kon tog‘dan tushib keladi',
+          'Bobosi bolaga portfel sotib oladi',
+          'Bola portfelini hammaga ko‘rsatib chiqadi',
+          'Bola Qorovultog‘ga chiqib durbinga qaraydi',
+          'Issiqko‘lda oq kema paydo bo‘ladi',
+          'Bola baliqqa aylanib suzib ketishni xayol qiladi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['Mo‘min', 'O‘rozgul', 'Seydahmad', 'Ravshan'], answer: 3, why: 'Ravshan — doston qahramoni; qolganlari «Oq kema» obrazlari.' },
+      { items: ['durbin', 'portfel', 'oq kema', 'sehrli uzuk'], answer: 3, why: 'Sehrli uzuk «Ravshan» dostonida; qolganlari «Oq kema»dagi detallar.' },
+      { items: ['«Oq kema»', '«Jamila»', '«Alvido, Gulsari!»', '«Shum bola»'], answer: 3, why: '«Shum bola» — G‘afur G‘ulom asari; qolganlari Aytmatovniki.' },
+    ],
+    debate: [
+      { claim: 'Muallif bosh qahramonga ism bermay to‘g‘ri qilgan.', pro: 'Bola har qanday pokiza bolaning timsoliga aylanadi.', con: 'Ismsiz qahramon o‘quvchiga begona, yaqin bo‘lmaydi.' },
+      { claim: 'Bolaning xayolparastligi uni hayotdan uzib qo‘yadi.', pro: 'U real muammolarni ko‘rmaydi, faqat orzu bilan yashaydi.', con: 'Xayol — uning yolg‘izlikdan qutulish, umid qilish yo‘li.' },
+    ],
+    creative: [
+      { task: 'Bola durbin bilan qarab oq kemada nimalarni ko‘rishini 4 ta detal bilan tasvirlang.', time: 90 },
+      { task: 'Bolaga ism tanlang: qaysi ism unga mos keladi va nima uchun?', time: 60 },
+      { task: 'Bola portfelini hammaga ko‘rsatib yurgan sahnani 20 soniyada jonlantirib bering.', time: 90 },
+    ],
+  },
+
+  /* ===================== 13 ===================== */
+  {
+    id: 'adab-oqkema-2',
+    source: 'I chorak • 13-dars • 61–68-betlar',
+    title: '«Oq kema»: Shoxdor ona bug‘u afsonasi',
+    short: 'Bobosining ertagi: Enasoy qirg‘izlari, ona bug‘u va Bug‘uboy avlodi',
+    lesson: [
+      {
+        title: 'Bola va oq kema',
+        text: 'Bola ota-onasini hech eslay olmaydi. Otasi Issiqko‘lda matros, onasi otasidan ajrashgach, o‘g‘lini boboga qoldirib, uzoq shaharga ketgan. Bola oq kemani ko‘rganda yuragi gupurib ketadi.',
+        rule: 'Oq kema — bolaning orzusi, mehrga, ota diydoriga intilishi, pokiza va olis dunyo timsoli.',
+        ruleLabel: 'Ramz',
+      },
+      {
+        title: 'Afsona boshlanishi: Enasoy bo‘yida',
+        text: 'Qadim zamonda qirg‘iz qabilasi Enasoy daryosi bo‘yida yashagan. Bir kuni qonxo‘r dushman bostirib kelib, butun qabilani qirib tashlaydi.',
+        list: [
+          'Faqat ikki bola — o‘g‘il va qiz omon qoladi: ular o‘sha paytda o‘rmonda bo‘lgan.',
+          'Dushman xoni ularni yo‘q qilishni Cho‘tir Baymoq kampirga buyuradi.',
+          'Kampir bolalarni Enasoy qirg‘og‘iga olib boradi.',
+        ],
+      },
+      {
+        title: 'Shoxdor ona bug‘u',
+        text: 'Shu payt oppoq Shoxdor ona bug‘u paydo bo‘ladi va bolalarni unga berishni so‘raydi. Kampir masxara qiladi: «Bular odam bolalari, katta bo‘lib, sening bolalaringni o‘ldirishadi.» Ona bug‘u baribir ularni o‘z bolasidek asrashini aytadi.',
+        rule: 'Ona bug‘u: «Endi men sizlarning onalaringman, sizlar esa mening bolalarimsiz.» U bolalarni uzoq yo‘l bosib Issiqko‘lga olib keladi.',
+        ruleLabel: 'Afsonaning yuragi',
+      },
+      {
+        title: 'Bug‘u avlodi va sehrli beshik',
+        text: 'Bolalar ulg‘ayib, turmush quradi. Farzandlari bo‘lmaganda Shoxdor ona bug‘u shoxlarida oppoq qayindan yasalgan, kumush qo‘ng‘iroqchali beshik keltiradi. Shundan keyin ular ko‘payib, Bug‘u avlodi paydo bo‘ladi.',
+        list: [
+          'Bug‘u avlodi ona bug‘uni muqaddas sanagan, bug‘ularga hech kim tegmagan.',
+          'Mo‘min bobo shu avloddan ekani bilan g‘oyatda faxrlanadi.',
+          'Bola O‘rozgul bilan Bekey xolaga ham ona bug‘u beshik keltirishini orzu qiladi.',
+        ],
+      },
+      {
+        title: 'Xiyonat va qirg‘in',
+        text: 'Vaqt o‘tib, boy Bug‘uboyning dafn marosimida qabrga bug‘u shoxlarini qo‘yish rasm bo‘ladi. Bug‘u shoxlari bilan savdo qilish odat tusiga kiradi, ba’zilar buni hunarga aylantiradi.',
+        list: [
+          'Issiqko‘l o‘rmonlarida bug‘ularga qirg‘in keladi.',
+          'Ovchilar tozilar bilan haydab, pistirmadan otishadi, garov bog‘lashadi.',
+          'Shoxdor ona bug‘u odamlardan qattiq ranjiydi.',
+          'U so‘nggi bolalarini boshqa tog‘larga olib ketib, bu yerlarga qaytmaslikka ahd qiladi.',
+        ],
+        note: 'Savol: insoniyatning tabiatga shafqatsiz munosabatini qanday izohlaysiz?',
+      },
+      {
+        title: 'Afsonaning ma’nosi',
+        table: {
+          head: ['Afsonadagi voqea', 'Asardagi ma’nosi'],
+          rows: [
+            ['Ona bug‘u yetimlarni asraydi', 'Mehr, onalik, tabiatning insonga saxovati'],
+            ['Beshik keltirishi', 'Hayot davomiyligi, avlodlar baraka topishi'],
+            ['Odamlar bug‘ularni qiradi', 'Noshukurlik, ota-bobolar ahdini unutish'],
+            ['Ona bug‘u ketib qoladi', 'Ezgulik o‘zini qadrlamagan joyni tark etadi'],
+          ],
+        },
+        rule: 'Aytmatov afsona orqali hozirgi odamlarning tabiatga, ajdodlar xotirasiga munosabatini sinovdan o‘tkazadi.',
+        ruleLabel: 'Xulosa',
+      },
+      {
+        title: 'Muhokama',
+        list: [
+          'Bobosi nega bolaga aynan shu ertakni aytib beradi?',
+          'Cho‘tir Baymoq kampir qanday obraz? Uning so‘zlari qanday ro‘yobga chiqdi?',
+          'Bug‘uboy avlodlarining yovuzlik qilishi sababini qanday izohlaysiz?',
+          'Afsonadagi qaysi voqea bugungi hayotga o‘xshaydi?',
+        ],
+      },
+    ],
+    pairs: [
+      ['Enasoy', 'Qirg‘izlar avval yashagan daryo'],
+      ['Cho‘tir Baymoq', 'Bolalarni o‘ldirishi kerak bo‘lgan kampir'],
+      ['Shoxdor ona bug‘u', 'Yetimlarni asragan ona'],
+      ['Beshik', 'Ona bug‘u shoxida keltirgan sovg‘a'],
+      ['Bug‘u avlodi', 'Mo‘min bobo mansub urug‘'],
+      ['Bug‘uboy', 'Qabriga shox qo‘yilgan boy'],
+      ['Oq kema', 'Bolaning orzusi timsoli'],
+    ],
+    quiz: [
+      { q: 'Qirg‘izlar qadimda qaysi daryo bo‘yida yashagan?', options: ['Enasoy', 'Amudaryo', 'Volga', 'Norin'], answer: 0 },
+      { q: 'Qirg‘indan nechta bola omon qoladi?', options: ['ikki', 'bir', 'uch', 'yetti'], answer: 0 },
+      { q: 'Bolalarni o‘ldirish kimga topshiriladi?', options: ['Cho‘tir Baymoq kampirga', 'O‘rozgulga', 'ovchilarga', 'xon o‘g‘liga'], answer: 0 },
+      { q: 'Ona bug‘u bolalarni qayerga olib keladi?', options: ['Issiqko‘lga', 'Enasoyga', 'Talasga', 'Olatovga'], answer: 0 },
+      { q: 'Ona bug‘u shoxlarida nima keltiradi?', options: ['beshik', 'non', 'qilich', 'oltin'], answer: 0 },
+      { q: 'Bug‘ularga qirg‘in nima sababdan boshlanadi?', options: ['shoxlari bilan savdo qilish', 'ochlik', 'urush', 'kasallik'], answer: 0 },
+      { q: 'Ona bug‘u oxirida nima qiladi?', options: ['boshqa tog‘larga ketib qoladi', 'odamlardan qasos oladi', 'o‘ladi', 'qaytib keladi'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Ezgulik', 'Yovuzlik'],
+      items: [
+        { text: 'yetimlarni asrash', cat: 0 }, { text: 'qabilani qirish', cat: 1 },
+        { text: 'beshik keltirish', cat: 0 }, { text: 'shox bilan savdo', cat: 1 },
+        { text: 'bug‘uni muqaddas sanash', cat: 0 }, { text: 'garov bog‘lab otish', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Cho‘tir Baymoq kampir ona bug‘uni qanday ogohlantiradi?', a: 'Odam bolalari katta bo‘lib, sening bolalaringni o‘ldirishadi, deydi.' },
+      { q: 'Bug‘u avlodi qanday paydo bo‘lgan?', a: 'Ona bug‘u yetimlarga beshik keltirgach, ularning farzandlari ko‘payib, Bug‘u avlodi bo‘lgan.' },
+      { q: 'Nega Shoxdor ona bug‘u Issiqko‘lni tark etdi?', a: 'Odamlar uning avlodini shox uchun qirgani, unga xiyonat qilgani uchun.' },
+      { q: 'Oq kema nimaning ramzi?', a: 'Bolaning orzusi, mehr va ota diydoriga intilishi, pokiza dunyo.' },
+      { q: 'Afsonaning asosiy g‘oyasi nima?', a: 'Ezgulikka noshukurlik qilish va tabiatga shafqatsizlik insonni baxtsiz qiladi.' },
+    ],
+    sequences: [
+      {
+        title: 'Afsona voqealarini tartib bilan joylang',
+        items: [
+          'Dushman Enasoy qirg‘izlarini qirib tashlaydi',
+          'Cho‘tir Baymoq bolalarni daryo bo‘yiga olib boradi',
+          'Shoxdor ona bug‘u bolalarni so‘rab oladi',
+          'Ona bug‘u ularni Issiqko‘lga olib keladi',
+          'Ona bug‘u shoxlarida beshik keltiradi',
+          'Odamlar bug‘ularni shox uchun qira boshlaydi',
+          'Ona bug‘u Issiqko‘lni tark etadi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['Enasoy', 'Issiqko‘l', 'Qorovultog‘', 'Shirvon'], answer: 3, why: 'Shirvon — «Ravshan» dostonidagi joy.' },
+      { items: ['beshik', 'qo‘ng‘iroqcha', 'oq qayin', 'zanjir'], answer: 3, why: 'Qolganlari sehrli beshik tasviriga oid.' },
+      { items: ['Shoxdor ona bug‘u', 'Cho‘tir Baymoq', 'Bug‘uboy', 'Tulki'], answer: 3, why: 'Tulki — «Kichkina shahzoda» obrazi.' },
+    ],
+    debate: [
+      { claim: 'Cho‘tir Baymoq kampir haq bo‘lib chiqdi: odamlar oxir-oqibat bug‘ularni qirdi.', pro: 'Uning bashorati to‘liq ro‘yobga chiqdi.', con: 'Hamma odamlar emas — Mo‘min kabi ahdga sodiqlar ham bor edi.' },
+      { claim: 'Afsona bolani yanada baxtsiz qildi.', pro: 'U ertakka ishonib, hayotdagi yovuzlikka tayyor bo‘lmadi.', con: 'Afsona unga ezgulikka ishonch va ma’naviy kuch berdi.' },
+    ],
+    creative: [
+      { task: 'Ona bug‘u Issiqko‘l bilan vidolashayotganda odamlarga nima degan bo‘lardi? 2 gapda ayting.', time: 90 },
+      { task: 'Bugungi kunda «Shoxdor ona bug‘u»ning o‘rnida qaysi hayvon yoki tabiat ne’mati bo‘lishi mumkin? Asoslang.', time: 90 },
+      { task: 'Sehrli beshikni doskaga chizing va unga uchta ramziy belgi qo‘shing.', time: 120 },
+    ],
+  },
+
+  /* ===================== 14 ===================== */
+  {
+    id: 'adab-oqkema-3',
+    source: 'I chorak • 14-dars • 69–77-betlar',
+    title: '«Oq kema»: muhokama va fojiaviy yakun',
+    short: 'Bug‘ularning qaytishi, O‘rozgul zulmi va bolaning so‘nggi qarori',
+    lesson: [
+      {
+        title: 'Bug‘ular qaytdi',
+        text: 'Bir kuni o‘rmonda bug‘ular paydo bo‘ladi. Bola ular orasida Shoxdor ona bug‘uni ko‘rgandek bo‘ladi va xayolan u bilan gaplashib, O‘rozgul bilan Bekey xolaga beshik keltirishini iltijo qiladi.',
+        note: 'Bolaning quvonchi ertak haqiqatga aylanayotgandek tuyuladi — shuning uchun keyingi voqea uning uchun ayniqsa dahshatli bo‘ladi.',
+      },
+      {
+        title: 'Mo‘min boboning majburiyati',
+        text: 'O‘rozgul zug‘umi va baxtsiz qizining iltijosi tufayli Mo‘min chol o‘z qo‘li bilan oq bug‘uni otishga majbur bo‘ladi. Aslida u Bug‘u avlodidan, ona bug‘uni muqaddas sanaydi.',
+        rule: 'Mo‘minning fojiasi: u yaxshi odam, ammo zulmga qarshi tura olmaydi. Qizining taqdiri uchun o‘z e’tiqodidan kechadi.',
+        ruleLabel: 'Tahlil',
+      },
+      {
+        title: 'Hovlidagi dahshat',
+        text: 'Bola hovlida yangi so‘yilgan go‘sht va devor tagida shoxli bug‘u kallasini ko‘radi. Mast O‘rozgul bolta bilan kallani maydalab, shoxlarini yulib oladi — o‘sha beshik keltirishi kerak bo‘lgan shoxlarni.',
+        list: [
+          'O‘rozgul bolaga buyrakni uzatib «kabob qil» deb buyuradi.',
+          'Bola o‘z ko‘zlariga ishonmaydi, qochishni istaydi, lekin oyoqlari itoat etmaydi.',
+          'Mo‘min bobo esa mast holda, yuzini yerga bosib yotadi.',
+        ],
+      },
+      {
+        title: 'Bolaning so‘nggi qarori',
+        text: 'Ko‘ngli behuzur bo‘lgan bola bobosiga «Men baliqqa aylanaman, suzib ketaman» deydi va daryoga kiradi. Muallif uni ayanchli xitob bilan kuzatadi: sen hech qachon baliqqa aylana olmaysan va oq kemani ko‘rolmaysan...',
+        rule: 'Yechim fojiaviy: pokiza bola yovuzlik va xiyonatni ko‘tara olmay, o‘z ertagiga — daryoga ketadi.',
+        ruleLabel: 'Yechim',
+      },
+      {
+        title: 'Ramzlar tizimi',
+        table: {
+          head: ['Ramz', 'Ma’nosi'],
+          rows: [
+            ['Oq kema', 'Orzu, mehr, pokiza va olis dunyo'],
+            ['Shoxdor ona bug‘u', 'Ona tabiat, ezgulik, ajdodlar xotirasi'],
+            ['Baliq', 'Erkinlik, yovuz dunyodan qochish'],
+            ['Durbin', 'Bolaning dunyoga orzu orqali qarashi'],
+            ['Shoxlarning yulib olinishi', 'Ezgulik va e’tiqodning toptalishi'],
+          ],
+        },
+      },
+      {
+        title: 'Muammolar jadvali',
+        table: {
+          head: ['Muammo', 'Sabab', 'Oqibat', 'Yechim'],
+          rows: [
+            ['Bolaning yolg‘izligi', 'Atrofidagi odamlar bilan til topisha olmadi', 'Bolaning o‘limiga sabab bo‘ldi', 'Bolani ezgulikka ishontirish, unga mehr berish'],
+            ['Tabiatga shafqatsizlik', 'Boylik va shon-shuhratga hirs', 'Bug‘ular yo‘qoldi', 'Tabiatni asrash, ajdodlar ahdiga sodiqlik'],
+            ['Zulm va loqaydlik', 'O‘rozgulning hukmronligi, boshqalarning qo‘rquvi', 'Mo‘min e’tiqodidan kechdi', 'Haqiqat uchun birga turish'],
+          ],
+        },
+      },
+      {
+        title: 'Muhokama qilamiz',
+        list: [
+          '«Oq kema»da Aytmatov uslubiga xos qanday xususiyatlarni kuzatdingiz?',
+          'Tabiat tasviri aks etgan o‘rinlar asar g‘oyasini ochishda qanday ahamiyatga ega?',
+          'Oq kema va Shoxdor ona bug‘u obrazlariga qanday ramziy ma’nolar yuklangan?',
+          'Mo‘min boboni ayblash mumkinmi?',
+        ],
+      },
+    ],
+    pairs: [
+      ['O‘rozgul', 'Bug‘u kallasini maydalagan zolim'],
+      ['Mo‘min', 'Majburan bug‘uni otgan bobo'],
+      ['Baliq', 'Erkinlik va qochish ramzi'],
+      ['Shoxlar', 'Beshik keltirishi kerak edi'],
+      ['Bekey', 'Farzandsiz, baxtsiz ayol'],
+      ['Durbin', 'Orzu orqali qarash'],
+      ['Fojiaviy yechim', 'Bola daryoga ketadi'],
+    ],
+    quiz: [
+      { q: 'Bug‘uni kim otadi?', options: ['Mo‘min bobo', 'O‘rozgul', 'Seydahmad', 'bola'], answer: 0 },
+      { q: 'Mo‘min nega bug‘uni otishga majbur bo‘ladi?', options: ['O‘rozgul zug‘umi va qizining iltijosi', 'ochlik', 'o‘z xohishi', 'ov musobaqasi'], answer: 0 },
+      { q: 'Bug‘u kallasini bolta bilan kim maydalaydi?', options: ['O‘rozgul', 'Mo‘min', 'Bekey', 'Seydahmad'], answer: 0 },
+      { q: 'O‘rozgul bolaga nima uzatadi?', options: ['buyrak', 'shox', 'pichoq', 'non'], answer: 0 },
+      { q: 'Bola oxirida bobosiga nima deydi?', options: ['Baliqqa aylanaman', 'Uyga ketaman', 'Seni kechiraman', 'Shaharga ketaman'], answer: 0 },
+      { q: 'Qissaning yechimi qanday?', options: ['fojiaviy', 'quvonchli', 'kulgili', 'ochiq qolgan to‘y'], answer: 0 },
+      { q: 'Shoxdor ona bug‘u nimaning ramzi?', options: ['ona tabiat va ezgulik', 'kuch va hokimiyat', 'boylik', 'qo‘rquv'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Mehr va ezgulik', 'Zulm va loqaydlik'],
+      items: [
+        { text: 'bolaning ona bug‘uga iltijosi', cat: 0 }, { text: 'O‘rozgulning boltasi', cat: 1 },
+        { text: 'Mo‘minning ko‘lob yasashi', cat: 0 }, { text: 'Seydahmadning kulgisi', cat: 1 },
+        { text: 'ona bug‘u afsonasi', cat: 0 }, { text: 'shoxlarni yulib olish', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Nima uchun bolaga bu voqea ayniqsa og‘ir botdi?', a: 'U bug‘ularni ertakdagi muqaddas ona bug‘u deb bilgan va undan beshik so‘ragan edi.' },
+      { q: 'Mo‘min boboning fojiasi nimada?', a: 'Yaxshi odam bo‘la turib, zulmga qarshi tura olmay, o‘z e’tiqodidan kechdi.' },
+      { q: 'Baliq obrazi nimani ifodalaydi?', a: 'Erkinlikni, yovuz dunyodan qochishni.' },
+      { q: 'Bolaning yolg‘izligi muammosining yechimi nima bo‘lishi mumkin edi?', a: 'Unga mehr berish, ezgulikka ishontirish, atrofdagilarning befarq bo‘lmasligi.' },
+      { q: 'Asardagi tabiat tasviri qanday vazifa bajaradi?', a: 'Bolaning ruhiyatini ochadi, ezgulik va go‘zallikni yovuzlikka qarama-qarshi qo‘yadi.' },
+    ],
+    sequences: [
+      {
+        title: 'Yakuniy voqealarni tartib bilan joylang',
+        items: [
+          'O‘rmonda bug‘ular paydo bo‘ladi',
+          'Bola ona bug‘udan beshik so‘raydi',
+          'Mo‘min bobo majburan bug‘uni otadi',
+          'Bola hovlida bug‘u kallasini ko‘radi',
+          'O‘rozgul shoxlarni yulib oladi',
+          'Bola daryoga kirib ketadi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['oq kema', 'ona bug‘u', 'baliq', 'portfel'], answer: 3, why: 'Portfel oddiy detal; qolganlari asardagi asosiy ramzlar.' },
+      { items: ['O‘rozgul', 'zulm', 'bolta', 'beshik'], answer: 3, why: 'Beshik — ezgulik ramzi; qolganlari zulmga oid.' },
+      { items: ['ekspozitsiya', 'tugun', 'kulminatsiya', 'radif'], answer: 3, why: 'Radif — she’riyat atamasi; qolganlari syujet elementlari.' },
+    ],
+    debate: [
+      { claim: 'Mo‘min boboni ayblab bo‘lmaydi — u majbur edi.', pro: 'O‘rozgul zug‘umi va qizining taqdiri uni majburladi.', con: 'U o‘z e’tiqodi va nabirasining ishonchiga xiyonat qildi.' },
+      { claim: 'Bolaning o‘limida eng katta aybdor — O‘rozgul.', pro: 'Uning zulmi barcha falokatga sabab bo‘ldi.', con: 'Loqayd kattalar — hammasi aybdor, chunki hech kim bolani himoya qilmadi.' },
+      { claim: 'Aytmatov asarni fojiali tugatmasligi kerak edi.', pro: 'Bolalar umidli yakunni ko‘rishi kerak.', con: 'Fojia o‘quvchini larzaga solib, yovuzlikka qarshi uyg‘otadi.' },
+    ],
+    creative: [
+      { task: 'Qissaga boshqa yakun yozing: kim bolaning yonida turishi mumkin edi? 3 gapda ayting.', time: 120 },
+      { task: 'Bola oq kemadagi otasiga so‘nggi xat yozgan bo‘lsa, unda nima bo‘lardi? 2 gap.', time: 90 },
+      { task: 'Asardagi bir ramzni (kema, bug‘u, baliq) tanlab, uni bir so‘z bilan ifodalang va sababini ayting.', time: 60 },
+    ],
+  },
+
+  /* ===================== 15 ===================== */
+  {
+    id: 'adab-syujet',
+    source: 'I chorak • 15-dars • 77–78-betlar',
+    title: 'Nazariy ma’lumot. Syujet va uning elementlari',
+    short: 'Ekspozitsiya, tugun, voqealar rivoji, kulminatsiya, yechim',
+    lesson: [
+      {
+        title: 'Syujet nima?',
+        rule: 'Syujet — badiiy asar mazmunini tashkil etadigan, qahramonlarning xatti-harakatlaridan tarkib topuvchi voqealar tizimi. U voqealarning ketma-ketligi, rivoji va o‘zaro bog‘liqligini tashkil etuvchi eng muhim element.',
+        ruleLabel: 'Ta’rif',
+        text: 'Badiiy asar syujeti beshta elementdan tarkib topadi:',
+        list: ['Ekspozitsiya', 'Tugun', 'Voqealar rivoji', 'Kulminatsiya', 'Yechim'],
+      },
+      {
+        title: 'Ekspozitsiya',
+        text: 'Syujetning boshlanish qismi. Unda muallif voqealar sodir bo‘ladigan joy, zamon va qahramonlar haqida ma’lumot beradi.',
+        note: 'Misol: G‘afur G‘ulomning «Shum bola» qissasida bozor, rastalar, Ilhom samovarchining choyxonasi, grammofonda aytilayotgan ashulalar tasvirlanadi — bu joy va ijtimoiy-madaniy muhit haqida ma’lumot.',
+      },
+      {
+        title: 'Tugun',
+        text: 'Asar voqealari boshlanishiga sabab bo‘lgan muammo, ziddiyat.',
+        note: 'Misol: Abdulla Qahhorning «O‘g‘ri» hikoyasida kampir tongda ho‘kiz yo‘qolganini ko‘radi. Ho‘kizni kim, qachon o‘g‘irlagani noma’lum — keyingi barcha voqealar shu muammoning yechimiga qaratiladi.',
+      },
+      {
+        title: 'Voqealar rivoji va kulminatsiya',
+        table: {
+          head: ['Element', 'Mohiyati', '«O‘g‘ri» hikoyasidan'],
+          rows: [
+            ['Voqealar rivoji', 'Syujet voqealarining bosqichma-bosqich rivojlanishi', 'Qobil boboning ho‘kizni izlashi, ellikboshi va amin bilan uchrashuvlari'],
+            ['Kulminatsiya', 'Voqealar rivojining eng yuqori nuqtasi', 'Qobil bobo va amin o‘rtasidagi suhbat'],
+          ],
+        },
+        note: 'A. Qodiriyning «Mehrobdan chayon» romanida kulminatsiya — Anvarning xon bilan to‘qnashuvi.',
+      },
+      {
+        title: 'Yechim',
+        text: 'Syujet voqealari rivojining yakuni. Qahramonlar hayotidagi muammolar, ziddiyatlar o‘z yechimini topadi.',
+        note: 'Misol: Qamchibek Kenjaning «Baliq ovi» hikoyasida Komilning o‘limi — asar yechimi.',
+      },
+      {
+        title: '«Oq kema» syujeti',
+        table: {
+          head: ['Element', '«Oq kema» qissasidan'],
+          rows: [
+            ['Ekspozitsiya', 'Tog‘dagi qorovulxona, bola, Mo‘min bobo, O‘rozgul; portfel va durbin'],
+            ['Tugun', 'Bolaning yolg‘izligi va O‘rozgulning zulmi; bug‘ularning qaytib kelishi'],
+            ['Voqealar rivoji', 'Bobosining afsonasi, bolaning ona bug‘uga iltijosi, O‘rozgulning bug‘u ovlashni talab qilishi'],
+            ['Kulminatsiya', 'Bola hovlida bug‘u kallasini ko‘radi, O‘rozgul shoxlarni yulib oladi'],
+            ['Yechim', 'Bola baliqqa aylanaman deb daryoga kiradi'],
+          ],
+        },
+      },
+      {
+        title: 'Syujet elementlarini qanday topamiz?',
+        list: [
+          'Asar qayerda, qachon, kimlar bilan boshlanadi? — ekspozitsiya.',
+          'Qanday muammo voqealarni harakatga keltiradi? — tugun.',
+          'Muammo qanday kuchayib boradi? — voqealar rivoji.',
+          'Qaysi lahzada keskinlik eng yuqori? — kulminatsiya.',
+          'Muammo qanday hal bo‘ladi? — yechim.',
+        ],
+      },
+    ],
+    pairs: [
+      ['Syujet', 'Voqealar tizimi'],
+      ['Ekspozitsiya', 'Joy, zamon, qahramonlar haqida ma’lumot'],
+      ['Tugun', 'Voqealarni boshlovchi muammo'],
+      ['Voqealar rivoji', 'Bosqichma-bosqich rivojlanish'],
+      ['Kulminatsiya', 'Eng yuqori nuqta'],
+      ['Yechim', 'Voqealar yakuni'],
+      ['Ho‘kizning yo‘qolishi', '«O‘g‘ri»dagi tugun'],
+    ],
+    quiz: [
+      { q: 'Syujetning boshlanish qismi qanday ataladi?', options: ['ekspozitsiya', 'tugun', 'yechim', 'kulminatsiya'], answer: 0 },
+      { q: 'Voqealar rivojining eng yuqori nuqtasi?', options: ['kulminatsiya', 'ekspozitsiya', 'tugun', 'prolog'], answer: 0 },
+      { q: '«O‘g‘ri» hikoyasidagi tugun nima?', options: ['ho‘kizning yo‘qolishi', 'amin bilan suhbat', 'kampirning xamir qilishi', 'ellikboshi'], answer: 0 },
+      { q: '«Baliq ovi» hikoyasida yechim nima?', options: ['Komilning o‘limi', 'baliq tutish', 'safarga chiqish', 'yarashish'], answer: 0 },
+      { q: '«Oq kema»da kulminatsiya qaysi lahza?', options: ['bola bug‘u kallasini ko‘radi', 'portfel olinadi', 'oq kemani ko‘radi', 'ertak aytiladi'], answer: 0 },
+      { q: 'Syujet nechta elementdan iborat?', options: ['5', '3', '4', '7'], answer: 0 },
+      { q: '«Mehrobdan chayon»da kulminatsiya?', options: ['Anvarning xon bilan to‘qnashuvi', 'Anvarning tug‘ilishi', 'Ra’noning to‘yi', 'Solih maxdumning maktabi'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Ekspozitsiya', 'Yechim'],
+      items: [
+        { text: 'qorovulxona va uning ahli', cat: 0 }, { text: 'bola daryoga kiradi', cat: 1 },
+        { text: 'bozor va choyxona tasviri', cat: 0 }, { text: 'Komilning o‘limi', cat: 1 },
+        { text: 'Chambil eli, Go‘ro‘g‘libek', cat: 0 }, { text: 'Ravshan Zulxumorga uylanadi', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Syujetga ta’rif bering.', a: 'Qahramonlarning xatti-harakatlaridan tarkib topgan, asar mazmunini tashkil etuvchi voqealar tizimi.' },
+      { q: 'Ekspozitsiyada qanday ma’lumot beriladi?', a: 'Voqealar sodir bo‘ladigan joy, zamon va qahramonlar haqida.' },
+      { q: 'Tugun bilan kulminatsiyaning farqi nima?', a: 'Tugun — muammoning boshlanishi, kulminatsiya — keskinlikning eng yuqori nuqtasi.' },
+      { q: '«Ravshan» dostonining tugunini ayting.', a: 'Avazxonning sovchini qaytarishi va Ravshanning Zulxumorni uzukda ko‘rishi.' },
+      { q: '«Ravshan» dostonining kulminatsiyasini ayting.', a: 'Ravshanning dor ostiga olib kelinishi va Hasanxonning jangga kirishi.' },
+    ],
+    sequences: [
+      {
+        title: 'Syujet elementlarini tartib bilan joylang',
+        items: ['Ekspozitsiya', 'Tugun', 'Voqealar rivoji', 'Kulminatsiya', 'Yechim'],
+      },
+      {
+        title: '«O‘g‘ri» hikoyasi syujeti',
+        items: [
+          'Kampir tongda ho‘kiz yo‘qolganini ko‘radi',
+          'Qobil bobo ellikboshiga boradi',
+          'Qobil bobo amin bilan uchrashadi',
+          'Amin bilan suhbat — eng keskin lahza',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['ekspozitsiya', 'tugun', 'yechim', 'qofiya'], answer: 3, why: 'Qofiya — she’riy atama; qolganlari syujet elementlari.' },
+      { items: ['joy', 'zamon', 'qahramonlar', 'yakun'], answer: 3, why: 'Joy, zamon, qahramonlar — ekspozitsiyada; yakun — yechimda.' },
+      { items: ['«O‘g‘ri»', '«Baliq ovi»', '«Oq kema»', '«Sog‘inish»'], answer: 3, why: '«Sog‘inish» — lirik she’r, unda syujet yo‘q.' },
+    ],
+    debate: [
+      { claim: 'Har qanday asarda beshta syujet elementi albatta bo‘lishi shart.', pro: 'Syujet to‘liq bo‘lmasa, voqea tushunarsiz bo‘ladi.', con: 'Lirik she’rda syujet yo‘q; ba’zi asarlar ekspozitsiyasiz, darhol tugundan boshlanadi.' },
+      { claim: 'Kulminatsiya — asarning eng muhim qismi.', pro: 'Butun asar shu nuqtaga qarab quriladi.', con: 'Yechimsiz kulminatsiya ma’nosiz; har bir element muhim.' },
+    ],
+    creative: [
+      { task: 'Sinfingiz hayotidan qisqa hikoya uchun tugun o‘ylab toping (bir gap).', time: 60 },
+      { task: 'Ertakni 5 gapda aytib bering — har bir gap bitta syujet elementi bo‘lsin.', time: 120 },
+      { task: '«Oq kema»ga yangi kulminatsiya o‘ylab toping: qaysi lahzada hamma narsa o‘zgarishi mumkin edi?', time: 90 },
+    ],
+  },
+
+  /* ===================== 16 ===================== */
+  {
+    id: 'adab-lab-1',
+    source: 'I chorak • 16-dars • 79-bet',
+    title: 'Adabiy laboratoriya: audiokitob tayyorlaymiz',
+    short: 'Guruhlarda asarning audionusxasini yaratish va taqdimot',
+    lesson: [
+      {
+        title: 'Audiokitob nima?',
+        rule: 'Audiokitob (audiomatn) — audio tashuvchi vositalar (CD disk, telefon xotirasi, internetdagi audiofayllar)ga yozilgan har qanday badiiy yoki badiiy bo‘lmagan asar.',
+        ruleLabel: 'Ta’rif',
+        text: 'So‘nggi yillarda butun dunyoda audiokitoblar tobora ommalashmoqda.',
+      },
+      {
+        title: 'Audiokitobning foydasi',
+        list: [
+          'Vaqtni tejaydi: yo‘lda, ish paytida tinglash mumkin.',
+          'Ko‘zi ojiz va zaif ko‘ruvchilar uchun mutolaa imkoniyati beradi.',
+          'Ifodali o‘qish va talaffuzni o‘rgatadi.',
+          'Asar qahramonlarini ovoz orqali «jonlantiradi».',
+        ],
+      },
+      {
+        title: 'Laboratoriya topshirig‘i',
+        text: 'Guruhlarga bo‘lining. Adabiyot darsida o‘tilgan yoki mustaqil o‘qigan asarlaringizdan birining audionusxasini yarating.',
+        table: {
+          head: ['Rol', 'Vazifasi'],
+          rows: [
+            ['Muallif ovozi', 'Hikoyachi matnini o‘qiydi'],
+            ['Qahramonlar', 'Har bir obrazning ovozini beradi'],
+            ['Ovoz rejissyori', 'Yozib oladi, fon va pauzalarni boshqaradi'],
+            ['Muharrir', 'Matnni qisqartiradi, xatolarni tekshiradi'],
+          ],
+        },
+      },
+      {
+        title: 'Audiomatn tayyorlash qoidalari',
+        list: [
+          'Gap va jumlalarni to‘g‘ri va ifodali o‘qing, so‘zlarni to‘g‘ri talaffuz qiling.',
+          'Qahramonlarning ruhiy holati va xarakterini ochish uchun intonatsiyaga e’tibor bering.',
+          'Imkon qadar sifatli ovoz yozish uskunasidan foydalaning.',
+          'Ayol va erkak obrazlarining ovozini farqlang.',
+        ],
+        note: '«Mutolaa» ilovasidagi audiohikoyalardan namuna sifatida foydalanishingiz mumkin.',
+      },
+      {
+        title: 'Taqdimotni baholash mezonlari',
+        table: {
+          head: ['Mezon', 'Nimaga qaraladi'],
+          rows: [
+            ['Ifodalilik', 'Intonatsiya, pauza, his-tuyg‘u'],
+            ['Talaffuz', 'So‘zlarning to‘g‘ri aytilishi'],
+            ['Obrazlar', 'Qahramonlar ovozining farqlanishi'],
+            ['Sifat', 'Ovoz tozaligi, fon, davomiylik'],
+            ['Jamoaviylik', 'Rollarning teng taqsimlanishi'],
+          ],
+        },
+      },
+      {
+        title: 'Qaysi parchani tanlash mumkin?',
+        examples: ['«Ravshan» — ota nasihati', '«Kichkina shahzoda» — Tulki saboqlari', '«Oq kema» — Shoxdor ona bug‘u afsonasi', 'Hadislar', '«Ravshan» — bozor sahnasi'],
+      },
+    ],
+    pairs: [
+      ['Audiokitob', 'Ovozga yozilgan asar'],
+      ['Intonatsiya', 'Ovoz ohangi, ruhiy holatni ifodalash'],
+      ['Muallif ovozi', 'Hikoyachi matnini o‘qiydi'],
+      ['Ovoz rejissyori', 'Yozib olish va pauzalarni boshqaradi'],
+      ['Talaffuz', 'So‘zni to‘g‘ri aytish'],
+      ['«Mutolaa» ilovasi', 'Namuna audiohikoyalar'],
+    ],
+    quiz: [
+      { q: 'Audiokitob qayerga yoziladi?', options: ['audio tashuvchi vositalarga', 'faqat qog‘ozga', 'devorga', 'kino tasmasiga'], answer: 0 },
+      { q: 'Audiokitob kimlar uchun ayniqsa foydali?', options: ['ko‘zi ojiz va zaif ko‘ruvchilar', 'faqat bolalar', 'faqat yozuvchilar', 'hech kim'], answer: 0 },
+      { q: 'Qahramon xarakterini ochishda nimaga e’tibor beriladi?', options: ['intonatsiyaga', 'shrift o‘lchamiga', 'qog‘oz rangiga', 'muqovaga'], answer: 0 },
+      { q: 'Audiomatnda ayol va erkak obrazlarining ovozi...', options: ['farqlanishi kerak', 'bir xil bo‘lishi kerak', 'o‘qilmaydi', 'musiqaga almashtiriladi'], answer: 0 },
+      { q: 'Namuna sifatida qaysi ilovadan foydalanish mumkin?', options: ['«Mutolaa»', '«Kalkulyator»', '«Xarita»', '«Ob-havo»'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Yaxshi audiomatn', 'Yomon audiomatn'],
+      items: [
+        { text: 'ifodali o‘qish', cat: 0 }, { text: 'bir xil zerikarli ovoz', cat: 1 },
+        { text: 'to‘g‘ri talaffuz', cat: 0 }, { text: 'shovqinli fon', cat: 1 },
+        { text: 'o‘rinli pauzalar', cat: 0 }, { text: 'shoshib o‘qish', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Audiokitobning uchta foydasini ayting.', a: 'Vaqtni tejaydi, ko‘zi ojizlar uchun imkoniyat beradi, ifodali o‘qishni o‘rgatadi.' },
+      { q: 'Audiomatn tayyorlashning to‘rt qoidasini ayting.', a: 'Ifodali o‘qish, intonatsiya, sifatli yozuv, obraz ovozlarini farqlash.' },
+      { q: 'Guruhda qanday rollar bo‘lishi mumkin?', a: 'Muallif ovozi, qahramonlar, ovoz rejissyori, muharrir.' },
+      { q: 'Intonatsiya nima uchun muhim?', a: 'Qahramonning ruhiy holati va xarakterini tinglovchiga yetkazadi.' },
+    ],
+    odd: [
+      { items: ['intonatsiya', 'pauza', 'talaffuz', 'muqova rasmi'], answer: 3, why: 'Muqova rasmi audiokitobda eshitilmaydi.' },
+      { items: ['CD disk', 'telefon xotirasi', 'audiofayl', 'gazeta'], answer: 3, why: 'Gazeta audio tashuvchi emas.' },
+      { items: ['muallif ovozi', 'ovoz rejissyori', 'muharrir', 'tomoshabin'], answer: 3, why: 'Tomoshabin audiokitob yaratuvchilari qatoriga kirmaydi.' },
+    ],
+    debate: [
+      { claim: 'Audiokitob tinglash — kitob o‘qish bilan teng.', pro: 'Mazmun, g‘oya va til bir xil yetib boradi, vaqt tejaladi.', con: 'O‘qishda tasavvur, imlo va diqqat ko‘proq rivojlanadi.' },
+      { claim: 'Maktabda adabiyot darslarini audiokitoblar bilan almashtirish kerak.', pro: 'Ifodali o‘qilgan asar o‘quvchiga kuchliroq ta’sir qiladi.', con: 'Asarni tahlil qilish va muhokama uchun o‘qituvchi va matn kerak.' },
+    ],
+    creative: [
+      { task: 'Bitta gapni («Men baliqqa aylanaman, suzib ketaman») uch xil kayfiyatda o‘qib bering: quvonch, qo‘rquv, g‘am.', time: 60 },
+      { task: 'Guruh bilan «Kichkina shahzoda»dagi Tulki va shahzoda dialogini 30 soniyalik audio sahna qilib ijro eting.', time: 120 },
+      { task: 'O‘z audiokitobingiz uchun nom va 1 jumlalik reklama matnini o‘ylab toping.', time: 60 },
+      { task: 'Hikoyachi ovozida «Ravshan» dostonining birinchi voqeasini 20 soniyada aytib bering.', time: 90 },
+    ],
+  },
+
+  /* ===================== 19 ===================== */
+  {
+    id: 'adab-lutfiy-1',
+    source: 'II chorak • 19-dars • 80–82-betlar',
+    title: 'Lutfiy. G‘azallar',
+    short: '«So‘z podshosi» Lutfiy va «Sensan sevarim», «Meni shaydo qiladurg‘on» g‘azallari',
+    lesson: [
+      {
+        title: 'Mavlono Lutfiy (1366–1465)',
+        text: 'XIV–XV asr o‘zbek mumtoz adabiyotining atoqli namoyandasi, o‘zbek va fors tillaridagi asarlari bilan Sharqda katta shuhrat qozongan so‘z san’atkori.',
+        list: [
+          'Zamondoshlari uni «malik ul-kalom» — «so‘z podshosi» deb e’zozlagan.',
+          '«Mavlono» — «ulug‘ ustod» ma’nosidagi sifat.',
+          'Alisher Navoiyning ustozlaridan biri bo‘lgan.',
+          'Madrasada tahsil olgan, arab va fors tillarini yaxshi bilgan.',
+          'G‘azal, qit’a, ruboiy, tuyuq va fard janrlarida ijod qilgan.',
+        ],
+        note: 'Navoiy «Majolis un-nafois»da yozadi: Lutfiy o‘z zamonasining malik ul-kalomi edi, forsiy va turkiyda unga teng keladigan yo‘q edi.',
+      },
+      {
+        title: '«Sensan sevarim...» g‘azali',
+        poem: {
+          lines: [
+            'Sensan sevarim, xoh inon, xoh inonma,',
+            'Qondur jigarim, xoh inon, xoh inonma.',
+            'Hijron kechasi charxi falakka yetar, ey moh,',
+            'Ohi saharim, xoh inon, xoh inonma.',
+          ],
+          author: 'Lutfiy (matla va ikkinchi bayt)',
+        },
+        table: {
+          head: ['So‘z', 'Ma’nosi'],
+          rows: [
+            ['inonma', 'ishonma'],
+            ['charxi falak', 'osmon'],
+            ['usruk', 'mast, sarxush'],
+            ['nuri basarim', 'ko‘zimning nuri'],
+            ['siymbar', 'oq badan, kumush badan'],
+          ],
+        },
+      },
+      {
+        title: '«Sensan sevarim» tahlili',
+        list: [
+          'Radif «xoh inon, xoh inonma» — oshiqning isbot talab qilmaydigan muhabbatini ta’kidlaydi.',
+          'Hijron kechasidagi ohning osmonga yetishi — mubolag‘a.',
+          'Ya’qub payg‘ambar Yusufni yig‘lay-yig‘lay kutib ko‘zi ojiz bo‘lgani — talmeh, oshiq ham yorsiz ko‘z nuridan ayrilgan.',
+          'Boshiga qilich kelsa ham yor eshigidan ketmaslik — sadoqat.',
+          '«Ishq o‘tida Lutfiy yuzi oltunni yoshurdi» — iztirobdan yuzi sarg‘aygan, oltin rangiga kirgan.',
+        ],
+      },
+      {
+        title: '«Meni shaydo qiladurg‘on...» g‘azali',
+        poem: {
+          lines: [
+            'Meni shaydo qiladurg‘on bu ko‘nguldur, bu ko‘ngul,',
+            'Xor-u rasvo qiladurg‘on bu ko‘nguldur, bu ko‘ngul.',
+          ],
+          author: 'Lutfiy (matla)',
+        },
+        text: 'G‘azalda oshiq ishq bobidagi barcha «ayb»ni ko‘ngilga yuklaydi: uni shaydo, xor-u rasvo qilgan, qaddini yoydek egdirgan, yor eshigiga qayta-qayta yuborgan ham ko‘ngil.',
+        rule: 'Shikoyat ichida e’tirof bor: oshiq ko‘ngildan nolisa ham, aslida ishqidan voz kechmaydi.',
+        ruleLabel: 'Tahlil',
+      },
+      {
+        title: 'Badiiy san’atlar',
+        table: {
+          head: ['San’at', 'Mohiyati', 'Misol'],
+          rows: [
+            ['Tashbih', 'O‘xshatish', 'qomatni yoydek egish; yuzni oyga qiyoslash'],
+            ['Tazod', 'Ziddiyat', 'dushman-u do‘st; xoh inon, xoh inonma'],
+            ['Mubolag‘a', 'Bo‘rttirish', 'ohning osmonga yetishi; ko‘z yoshining daryo bo‘lishi'],
+            ['Talmeh', 'Mashhur voqea yoki shaxsga ishora', 'Ya’qub va Yusuf qissasi'],
+          ],
+        },
+      },
+      {
+        title: 'Muhokama',
+        list: [
+          '«Meni shaydo qiladurg‘on» g‘azalida shikoyat ustunmi yoki e’tirof?',
+          'G‘azalning birinchi va oxirgi baytlarini taqqoslang: oshiq qarashlarini o‘zgartirdimi?',
+          'Azoblar ko‘p bo‘lsa ham oshiq ko‘ngli nega ma’shuqaga talpinaveradi?',
+          'Lutfiy g‘azallari asosida kuylangan qo‘shiqlarni tinglang.',
+        ],
+      },
+    ],
+    pairs: [
+      ['Lutfiy', '«Malik ul-kalom»'],
+      ['Mavlono', 'Ulug‘ ustod'],
+      ['Radif', '«xoh inon, xoh inonma»'],
+      ['Charxi falak', 'osmon'],
+      ['Nuri basar', 'ko‘z nuri'],
+      ['Ya’qub', 'Yusufni kutib ko‘zi ojiz bo‘lgan payg‘ambar'],
+      ['Tazod', 'dushman-u do‘st'],
+      ['«Majolis un-nafois»', 'Navoiy Lutfiy haqida yozgan asar'],
+    ],
+    quiz: [
+      { q: 'Lutfiyni zamondoshlari qanday atashgan?', options: ['malik ul-kalom', 'sohibqiron', 'shayx ul-islom', 'sulton ul-ulamo'], answer: 0 },
+      { q: 'Lutfiy kimning ustozi bo‘lgan?', options: ['Alisher Navoiyning', 'Boburning', 'Ogahiyning', 'Fitratning'], answer: 0 },
+      { q: 'Lutfiy qaysi yillarda yashagan?', options: ['1366–1465', '1441–1501', '1483–1530', '1903–1966'], answer: 0 },
+      { q: '«Sensan sevarim» g‘azalining radifi?', options: ['xoh inon, xoh inonma', 'bu ko‘ngul', 'sevarim', 'jigarim'], answer: 0 },
+      { q: '«Charxi falak» nima?', options: ['osmon', 'g‘ildirak', 'yulduz', 'tog‘'], answer: 0 },
+      { q: '«Meni shaydo qiladurg‘on» g‘azalida oshiq aybni kimga yuklaydi?', options: ['ko‘ngilga', 'yorga', 'raqibga', 'taqdirga'], answer: 0 },
+      { q: '«Dushman-u do‘st» qaysi san’at?', options: ['tazod', 'tashbih', 'talmeh', 'tajnis'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Tashbih (o‘xshatish)', 'Mubolag‘a (bo‘rttirish)'],
+      items: [
+        { text: 'oy yuzli yor', cat: 0 }, { text: 'oh osmonga yetadi', cat: 1 },
+        { text: 'yoydek egilgan qomat', cat: 0 }, { text: 'ko‘z yoshi daryo bo‘ladi', cat: 1 },
+        { text: 'guldek chiroyli', cat: 0 }, { text: 'boshga qilich kelsa ham ketmaslik', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Nima uchun Lutfiy «so‘z podshosi» deb atalgan?', a: 'O‘zbek va fors tillarida tengi yo‘q go‘zal asarlar yaratgani uchun.' },
+      { q: '«Xoh inon, xoh inonma» radifi qanday ma’no beradi?', a: 'Oshiqning muhabbati isbot talab qilmasligini, chin ekanini ta’kidlaydi.' },
+      { q: '«Ishq o‘tida Lutfiy yuzi oltunni yoshurdi» satri nimani anglatadi?', a: 'Ishq iztirobidan oshiqning yuzi sarg‘ayib, oltin rangiga kirgan.' },
+      { q: 'G‘azalda Ya’qub payg‘ambar nega tilga olinadi?', a: 'Yusufni kutib ko‘zi ojiz bo‘lgani kabi oshiq ham yorsiz ko‘z nuridan ayrilganini ko‘rsatish uchun.' },
+      { q: 'Lutfiy qaysi janrlarda ijod qilgan?', a: 'G‘azal, qit’a, ruboiy, tuyuq va fard.' },
+    ],
+    odd: [
+      { items: ['g‘azal', 'tuyuq', 'ruboiy', 'roman'], answer: 3, why: 'Roman — nasriy janr; qolganlari Lutfiy ijod qilgan she’riy janrlar.' },
+      { items: ['tashbih', 'tazod', 'mubolag‘a', 'ekspozitsiya'], answer: 3, why: 'Ekspozitsiya — syujet elementi, badiiy san’at emas.' },
+      { items: ['Lutfiy', 'Navoiy', 'Bobur', 'Aytmatov'], answer: 3, why: 'Aytmatov — XX asr nosiri; qolganlari mumtoz shoirlar.' },
+    ],
+    debate: [
+      { claim: 'Oshiq ko‘ngilni ayblashda haq.', pro: 'Uni xor-u rasvo qilgan, yor eshigiga yuborgan aynan ko‘ngil.', con: 'Ko‘ngil — insonning o‘zi; aybni boshqaga yuklash mas’uliyatdan qochish.' },
+      { claim: 'Mumtoz g‘azallar bugungi yoshlar uchun ham dolzarb.', pro: 'Sevgi, sadoqat, iztirob tuyg‘ulari abadiy.', con: 'Tili qiyin, lug‘atsiz tushunilmaydi.' },
+    ],
+    creative: [
+      { task: '«Xoh inon, xoh inonma» radifi bilan bugungi tilda bitta zamonaviy satr tuzing.', time: 90 },
+      { task: 'Ko‘ngilni sudga chaqiring: «ayblovchi» va «himoyachi» bittadan dalil aytsin.', time: 120 },
+      { task: 'G‘azaldagi bir eskirgan so‘zni (charxi falak, usruk, siymbar) jest bilan ko‘rsating — sinf topsin.', time: 60 },
+    ],
+  },
+
+  /* ===================== 20 ===================== */
+  {
+    id: 'adab-lutfiy-2',
+    source: 'II chorak • 20-dars • 83–86-betlar',
+    title: '«Ayoqingg‘a tushar...» Nazariy ma’lumot: g‘azal va uning turlari',
+    short: 'Irsoli masal san’ati, g‘azal tuzilishi va to‘rt turi',
+    lesson: [
+      {
+        title: '«Ayoqingg‘a tushar...» g‘azali',
+        poem: {
+          lines: [
+            'Ayoqingg‘a tushar har lahza gisu,',
+            'Masaldurkim: «Charog‘ tubi qorong‘u».',
+            'Tuturmen ko‘zki, ko‘rsam orazingni,',
+            'Ki derlar: «Oqqan ariqqa oqar su(v)».',
+          ],
+          author: 'Lutfiy',
+        },
+        table: {
+          head: ['So‘z', 'Ma’nosi'],
+          rows: [['gisu', 'soch'], ['masal', 'maqol'], ['oraz', 'chehra, yuz'], ['vasl', 'diydor']],
+        },
+      },
+      {
+        title: 'Irsoli masal san’ati',
+        rule: 'Irsoli masal — gapda yoki she’rda biror maqol, matal, ibora yoki hikmatli so‘z keltirib, nutq ta’sirchanligini oshirish usuli.',
+        ruleLabel: 'Nazariy ma’lumot',
+        table: {
+          head: ['G‘azaldagi maqol', 'Zamonaviy ko‘rinishi'],
+          rows: [
+            ['Charog‘ tubi qorong‘u', 'Chiroq tagi qorong‘i'],
+            ['Oqqan ariqqa oqar su(v)', 'Oqqan daryo oqaveradi'],
+            ['Kishining ko‘zidur, ore, tarozu', 'Ko‘z — tarozi'],
+            ['Tilaganni tilagu', 'Izlagan topadi'],
+          ],
+        },
+        note: 'Har bir baytning ikkinchi misrasi xalq maqoli bilan yakunlanadi — g‘azal butunlay irsoli masal asosiga qurilgan.',
+      },
+      {
+        title: 'G‘azal haqida tushuncha',
+        rule: 'G‘azal — mumtoz lirikaning mashhur janri. Dastlab ishqiy mavzuda yozilgan, keyin mavzu doirasi kengaygan. XV asrdan o‘zbek she’riyatida asosiy va yetakchi janrga aylangan.',
+        ruleLabel: 'Ta’rif',
+        table: {
+          head: ['Atama', 'Izoh'],
+          rows: [
+            ['Hajmi', '3 baytdan 21 baytgacha'],
+            ['Matla', 'G‘azalning ilk bayti'],
+            ['Maqta’', 'G‘azalning oxirgi bayti (odatda shoir taxallusi keladi)'],
+            ['Radif', 'Har bayt oxirida takrorlanadigan so‘z yoki so‘zlar'],
+            ['Qofiya', 'Ohangdosh so‘zlar; a-a, b-a, c-a tartibida'],
+          ],
+        },
+      },
+      {
+        title: 'G‘azal turlari',
+        table: {
+          head: ['Tur', 'Mazmuni'],
+          rows: [
+            ['Hamd', 'Allohni madh etuvchi g‘azallar'],
+            ['Na’t', 'Payg‘ambarimizning sifatlarini aks ettiruvchi g‘azallar'],
+            ['Oshiqona', 'Oshiqning ma’shuqaga muhabbati, ayriliq, iztirob, orzu-umidlari'],
+            ['Orifona', 'Ilohiy muhabbat, ma’naviy kamolot, inson ruhiyati'],
+          ],
+        },
+      },
+      {
+        title: '«Haq ul kunkim...» — qofiya tizimi',
+        poem: {
+          lines: [
+            'Haq ul kunkim, jamoling bor etibdur,',
+            'Jahon husnin borin sizga beribdur.',
+            'Pari-yu odami mundoq xo‘b ermas,',
+            'Farishta go‘yiyo ko‘ktin enibdur.',
+          ],
+          author: 'Lutfiy',
+        },
+        note: 'Qofiya tizimi: a-a, b-a, c-a... Matlada ikkala misra qofiyalanadi, keyingi baytlarda faqat ikkinchi misra.',
+      },
+      {
+        title: 'Topshiriqlar',
+        list: [
+          'Lutfiyning to‘rt g‘azalini turlarga ajrating: hamd, na’t, oshiqona yoki orifona.',
+          'Har bir g‘azalning asosiy g‘oyasini va kalit so‘zlarini jadvalga yozing.',
+          '«Ayoqingg‘a tushar» g‘azalining so‘nggi bayti shoirning hayotiy xulosasimi yoki vasl umidimi?',
+          '«Lutfiyxonlik» ko‘rsatuvini tomosha qiling, g‘azal so‘zlari bugungi tilga qanchalik yaqin ekanini aniqlang.',
+        ],
+      },
+    ],
+    pairs: [
+      ['Irsoli masal', 'She’rda maqol keltirish'],
+      ['Matla', 'G‘azalning ilk bayti'],
+      ['Maqta’', 'G‘azalning oxirgi bayti'],
+      ['Hamd', 'Allohni madh etuvchi g‘azal'],
+      ['Na’t', 'Payg‘ambar sifatlari'],
+      ['Orifona', 'Ilohiy muhabbat va kamolot'],
+      ['Gisu', 'soch'],
+      ['Charog‘ tubi qorong‘u', 'Chiroq tagi qorong‘i'],
+    ],
+    quiz: [
+      { q: 'She’rda maqol keltirish san’ati?', options: ['irsoli masal', 'tashbih', 'tazod', 'talmeh'], answer: 0 },
+      { q: 'G‘azal necha baytdan iborat bo‘lishi mumkin?', options: ['3–21', '1–2', '4 bayt', '30 dan ortiq'], answer: 0 },
+      { q: 'G‘azalning ilk bayti?', options: ['matla', 'maqta’', 'radif', 'misra'], answer: 0 },
+      { q: 'G‘azalning oxirgi bayti?', options: ['maqta’', 'matla', 'qofiya', 'hamd'], answer: 0 },
+      { q: 'Allohni madh etuvchi g‘azal turi?', options: ['hamd', 'na’t', 'oshiqona', 'orifona'], answer: 0 },
+      { q: '«Oqqan ariqqa oqar su(v)»ning zamonaviy ko‘rinishi?', options: ['Oqqan daryo oqaveradi', 'Suv kelguncha', 'Ariq qazigan', 'Suvni ko‘rmay etik yechma'], answer: 0 },
+      { q: 'G‘azal o‘zbek she’riyatida qachondan yetakchi janrga aylangan?', options: ['XV asrdan', 'XX asrdan', 'X asrdan', 'XVIII asrdan'], answer: 0 },
+    ],
+    sort: {
+      categories: ['G‘azal tuzilishiga oid', 'G‘azal turi'],
+      items: [
+        { text: 'matla', cat: 0 }, { text: 'hamd', cat: 1 },
+        { text: 'maqta’', cat: 0 }, { text: 'na’t', cat: 1 },
+        { text: 'radif', cat: 0 }, { text: 'oshiqona', cat: 1 },
+        { text: 'qofiya', cat: 0 }, { text: 'orifona', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Irsoli masal san’atiga ta’rif bering.', a: 'Nutqda maqol, matal yoki hikmatli so‘z keltirib, ta’sirchanlikni oshirish.' },
+      { q: 'G‘azalning to‘rt turini ayting.', a: 'Hamd, na’t, oshiqona, orifona.' },
+      { q: 'Matla va maqta’ nima?', a: 'Matla — birinchi bayt, maqta’ — oxirgi bayt.' },
+      { q: 'G‘azalda qofiya qanday tartibda keladi?', a: 'a-a, b-a, c-a: matlada ikki misra, keyin har baytning ikkinchi misrasi qofiyalanadi.' },
+      { q: '«Ayoqingg‘a tushar» qaysi turdagi g‘azal?', a: 'Oshiqona g‘azal.' },
+    ],
+    odd: [
+      { items: ['hamd', 'na’t', 'orifona', 'doston'], answer: 3, why: 'Doston — epik janr; qolganlari g‘azal turlari.' },
+      { items: ['matla', 'maqta’', 'radif', 'kulminatsiya'], answer: 3, why: 'Kulminatsiya — syujet elementi.' },
+      { items: ['Charog‘ tubi qorong‘u', 'Oqqan ariqqa oqar suv', 'Tilaganni tilagu', 'Sensan sevarim'], answer: 3, why: '«Sensan sevarim» — g‘azal nomi; qolganlari maqollar.' },
+    ],
+    debate: [
+      { claim: 'She’rda maqol ishlatish shoirning o‘z fikri yo‘qligini ko‘rsatadi.', pro: 'Tayyor maqol — boshqalarning so‘zi.', con: 'Irsoli masal — mahorat: xalq donoligini yangi ma’noda jilolaydi.' },
+      { claim: '«Ayoqingg‘a tushar» g‘azalining so‘nggi bayti — shoirning hayotiy xulosasi.', pro: '«Tilaganni tilagu» — umumiy hayot qonuni.', con: 'Bu oshiqning vaslga bo‘lgan shaxsiy umidi.' },
+    ],
+    creative: [
+      { task: 'Bitta zamonaviy maqolni tanlab, uni oshiqona misraga aylantiring (irsoli masal).', time: 90 },
+      { task: '3 baytdan iborat «mini-g‘azal» uchun radif o‘ylab toping va matlani ayting.', time: 120 },
+      { task: '«Chiroq tagi qorong‘i» maqoliga hayotdan kulgili misol keltiring.', time: 60 },
+    ],
+  },
+
+  /* ===================== 21 ===================== */
+  {
+    id: 'adab-saodat-1',
+    source: 'II chorak • 21-dars • 87–91-betlar',
+    title: 'Xayriddin Sultonov. «Saodat sohili»',
+    short: 'Yozuvchi ijodi, Hofiz Ko‘ykiy va Binoqulning Hindiston yo‘li',
+    lesson: [
+      {
+        title: 'Xayriddin Sultonov',
+        text: 'Yozuvchi 1956-yili Toshkent viloyati Qibray tumanidagi Tuzel qishlog‘ida tug‘ilgan. Ilk hikoyasi «Chol» 1970-yillarda «Toshkent oqshomi» gazetasida chop etilgan.',
+        table: {
+          head: ['Yo‘nalish', 'Asarlari'],
+          rows: [
+            ['Nasr', '«Quyosh barchaga barobar», «Onamning yurti», «Boburning tushlari», «Boburiynoma», «Ko‘ngul ozodadur...»'],
+            ['Ssenariy', '«Tushlarimda ko‘rib yig‘layman», «Yozning yolg‘iz yodgori»'],
+            ['So‘nggi kitoblar', '«Navoiy — 30», «Ishonch telefoni», «Osmoni falaklarda»'],
+            ['Tarjima', 'Ekzyuperi, Yu. Nagibin, V. Shukshin asarlari'],
+          ],
+        },
+        note: 'Siz o‘qigan «Kichkina shahzoda» ham Xayriddin Sultonov tarjimasida!',
+      },
+      {
+        title: 'Ijodiga xos xususiyatlar',
+        list: [
+          'Hayotiy voqealar, muallif guvohi bo‘lgan hodisalar asos qilinadi.',
+          'Turli insonlarning xarakteri, ruhiy kechinmalari, dard-u armonlari ochiladi.',
+          'Tarixiy mavzuda yozilsa ham, bugungi kitobxonga yaqin savollar ko‘tariladi.',
+        ],
+        rule: '«Saodat sohili» (1981) — tarixiy qissa: unda Bobur Mirzoning Hindistondagi so‘nggi kunlari va vatan sog‘inchi tasvirlangan.',
+        ruleLabel: 'Asar haqida',
+      },
+      {
+        title: 'Yo‘ldagi falokat',
+        text: 'Toshkentlik olim Hofiz Ko‘ykiy va uning shogirdi usta Binoqul karvon bilan Hindistonga yo‘l oladi. O‘n yetti kun vaqtichog‘lik bilan yo‘l bosadilar, o‘n sakkizinchi kuni sahar karvonni qaroqchi bosadi.',
+        list: [
+          'Ikkalasi tog‘ unguriga qochib qutuladi; Binoqul faqat kichik tugunchasini olishga ulguradi.',
+          'Hofiz Ko‘ykiy: «Jon qoldi, jon!» — deb shogirdiga dalda beradi.',
+          'Tog‘ yo‘lida Binoqul qoyadan yiqilib, umurtqasi qattiq shikastlanadi.',
+        ],
+      },
+      {
+        title: 'Binoqulning siri va vasiyati',
+        text: 'Binoqul go‘dakligida otasi Bobogul Boburning cherigiga qo‘shilib Hindistonga ketgan va qaytmagan. Onasi uning yo‘liga ko‘z tikib, bultur olamdan o‘tgan. Binoqul — ilmga ixlosmand, kitobat qiluvchi yigit.',
+        list: [
+          'Binoqul o‘zi ko‘chirgan Navoiyning «Nasoyim ul-muhabbat» kitobini ustoziga topshiradi.',
+          'So‘nggi o‘tinchi: otasi Bobogul, O‘ringul o‘g‘lining daragini so‘roqlash.',
+          'Ustoz va shogird bir-biridan rozi bo‘lib xayrlashadi.',
+        ],
+        note: 'Uch kundan so‘ng o‘tinchilar Hofiz Ko‘ykiyni dara etagida behush holda topib oladi.',
+      },
+      {
+        title: 'Obrazlar',
+        table: {
+          head: ['Obraz', 'Xususiyatlari'],
+          rows: [
+            ['Hofiz Ko‘ykiy', 'Dunyo kezgan olim, sabrli, hayot qadrini anglagan, shogirdiga g‘amxo‘r'],
+            ['Binoqul', 'Sodda, mehnatkash, ilmga tashna, otasini sog‘ingan yigit'],
+            ['Bobogul', 'Binoqulning otasi, Bobur qo‘shinidagi mard navkar'],
+          ],
+        },
+      },
+      {
+        title: 'O‘ylab ko‘ring',
+        list: [
+          'O‘z yurtidan uzoqda yashagan kishilarning vatanga muhabbatini qanday izohlaysiz?',
+          'Hofiz Ko‘ykiy va Binoqul suhbatidan nimalarni angladingiz?',
+          'Binoqul nega so‘nggi daqiqada kitobni ustoziga topshirdi?',
+        ],
+      },
+    ],
+    pairs: [
+      ['Xayriddin Sultonov', '«Saodat sohili» muallifi'],
+      ['Tuzel', 'Yozuvchi tug‘ilgan qishloq'],
+      ['Hofiz Ko‘ykiy', 'Toshkentlik olim'],
+      ['Binoqul', 'Hofiz Ko‘ykiyning shogirdi'],
+      ['Bobogul', 'Binoqulning otasi'],
+      ['«Nasoyim ul-muhabbat»', 'Binoqul ko‘chirgan Navoiy asari'],
+      ['«Chol»', 'Yozuvchining ilk hikoyasi'],
+    ],
+    quiz: [
+      { q: 'Xayriddin Sultonov qaysi yili tug‘ilgan?', options: ['1956', '1928', '1903', '1990'], answer: 0 },
+      { q: 'Yozuvchining ilk hikoyasi?', options: ['«Chol»', '«Saodat sohili»', '«Onamning yurti»', '«Boburnoma»'], answer: 0 },
+      { q: 'Karvonni nechanchi kuni qaroqchi bosadi?', options: ['o‘n sakkizinchi', 'uchinchi', 'qirqinchi', 'yettinchi'], answer: 0 },
+      { q: 'Binoqulning otasi kim edi?', options: ['Bobogul', 'Hofiz Ko‘ykiy', 'Yusufiy', 'Forig‘iy'], answer: 0 },
+      { q: 'Binoqul ustoziga qaysi kitobni topshiradi?', options: ['«Nasoyim ul-muhabbat»', '«Boburnoma»', '«Qutadg‘u bilig»', '«Xamsa»'], answer: 0 },
+      { q: 'Xayriddin Sultonov qaysi asarni tarjima qilgan?', options: ['«Kichkina shahzoda»', '«Oq kema»', '«Xameleon»', '«Otello»'], answer: 0 },
+      { q: '«Saodat sohili» qaysi yili yozilgan?', options: ['1981', '1945', '2008', '1970'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Hofiz Ko‘ykiyga xos', 'Binoqulga xos'],
+      items: [
+        { text: 'dunyoning yarmini kezgan', cat: 0 }, { text: 'otasini hech ko‘rmagan', cat: 1 },
+        { text: '«Jon qoldi, jon!» degan', cat: 0 }, { text: 'kitobni o‘zi ko‘chirgan', cat: 1 },
+        { text: 'behush holda topilgan', cat: 0 }, { text: 'qoyadan yiqilgan', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Xayriddin Sultonov ijodining o‘ziga xos jihati nima?', a: 'Hayotiy voqealar, turli insonlarning xarakteri va ruhiy kechinmalari tasvirlanadi.' },
+      { q: 'Hofiz Ko‘ykiy nega «Jon qoldi, jon!» deydi?', a: 'Hayot eng ulug‘ ne’mat ekanini anglab, shogirdiga dalda bermoqchi.' },
+      { q: 'Binoqulning so‘nggi o‘tinchi nima edi?', a: 'Otasi Bobogulning daragini so‘roqlab ko‘rish.' },
+      { q: 'Binoqul qanday yigit edi?', a: 'Sodda, mehnatkash, ilmga ixlosmand, kitobat qiluvchi.' },
+      { q: 'Binoqul kitobni topshirganda nima dedi?', a: 'Bu endi sizga qiyomatlik qarz, dedi.' },
+    ],
+    sequences: [
+      {
+        title: 'Voqealarni tartib bilan joylang',
+        items: [
+          'Karvon o‘n yetti kun vaqtichog‘lik bilan yo‘l bosadi',
+          'Karvonni qaroqchi bosadi',
+          'Binoqul qoyadan yiqilib shikastlanadi',
+          'Binoqul kitobni ustoziga topshiradi',
+          'Binoqul otasining daragini so‘rashni o‘tinadi',
+          'O‘tinchilar Hofiz Ko‘ykiyni behush topadi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['Hofiz Ko‘ykiy', 'Binoqul', 'Bobogul', 'O‘rozgul'], answer: 3, why: 'O‘rozgul — «Oq kema» obrazi.' },
+      { items: ['«Quyosh barchaga barobar»', '«Boburning tushlari»', '«Onamning yurti»', '«Shum bola»'], answer: 3, why: '«Shum bola» — G‘afur G‘ulom asari.' },
+      { items: ['qaroqchi', 'qoya', 'tog‘ unguri', 'Bog‘i Nurafshon'], answer: 3, why: 'Bog‘i Nurafshon — Boburning saroyi; qolganlari yo‘ldagi falokatga oid.' },
+    ],
+    debate: [
+      { claim: 'Hofiz Ko‘ykiy Binoqulni qoldirib, yo‘lida davom etishi kerak edi.', pro: 'Ikkalasi ham halok bo‘lishi mumkin edi, Binoqulning o‘zi so‘radi.', con: 'Ustoz shogirdni tashlab ketmaydi — bu insoniylik burchi.' },
+      { claim: 'Ilm yo‘lida jonni xavf ostiga qo‘yishga arziydi.', pro: 'Ilm abadiy, u avlodlarga qoladi.', con: 'Hayot eng ulug‘ ne’mat; ilmni xavfsiz yo‘l bilan ham egallash mumkin.' },
+    ],
+    creative: [
+      { task: 'Hofiz Ko‘ykiy Binoqulning onasiga xat yozganda nima degan bo‘lardi? 2 gap.', time: 90 },
+      { task: 'Agar siz uzoq safarga faqat bitta kitob olishingiz mumkin bo‘lsa, qaysi birini olardingiz va nega?', time: 60 },
+      { task: '«Jon qoldi, jon!» degan iborani bugungi hayotdagi bir vaziyatga bog‘lab sahnalashtiring.', time: 120 },
+    ],
+  },
+
+  /* ===================== 22 ===================== */
+  {
+    id: 'adab-saodat-2',
+    source: 'II chorak • 22-dars • 92–101-betlar',
+    title: '«Saodat sohili»: tahlil va muhokama',
+    short: 'Bobur va Hofiz Ko‘ykiy suhbatlari, chin olim haqidagi rivoyat, saodat sohili tushi',
+    lesson: [
+      {
+        title: '«Toshkanddin?..»',
+        text: 'Bog‘i Nurafshondagi oq marmar saroyda Boburga Toshkentdan olim kelganini aytishadi. Uzoq vaqtdan beri ona yurtidan hech kim yo‘qlamagan Boburning ko‘ngli to‘lib ketadi.',
+        list: [
+          'Hofiz Ko‘ykiy ona yurtdan duoyi salomlar keltiradi.',
+          'Bobur: ona yurt latofatini unutgan kishining ko‘ziga tiriklayin tuproq to‘lmasmi, deydi.',
+          'Hofiz Ko‘ykiy: komil inson kindik qoni to‘kilgan yurtni unutolmaydi.',
+        ],
+        note: 'Bobur Bobogulni eslaydi: u Panipat jangida jasorat ko‘rsatgan, boshidan zarb yeb, xayoli parishon bo‘lib qolgan, endi ko‘chalarda hamd aytib yuradi.',
+      },
+      {
+        title: 'Chin olim haqidagi rivoyat',
+        text: 'Bobur otasidan eshitgan rivoyatni aytadi: Imom G‘azzoliy Bag‘doddan qaytayotganda karvonni qaroqchi bosib, ikki sandiq kitobini tortib oladi.',
+        list: [
+          'Qaroqchiboshi: kitoblari yo‘qolsa ilmi ham yo‘qoladigan kishi olim emas, deydi.',
+          'G‘azzoliy Bag‘dodga qaytib, ikki sandiq kitobni yod oladi.',
+          'Shundan so‘ng ilm uning qalbida yashnay boshlaydi.',
+        ],
+        rule: '«Chin olim kishining ilmi sandiqda emas, yuragida bo‘lur.»',
+        ruleLabel: 'Rivoyat hikmati',
+      },
+      {
+        title: 'Bobur olimni sinaydi',
+        text: 'Bobur qalbaki allomalardan g‘azablanganini aytadi. Hofiz Ko‘ykiy jur’at qilib e’tiroz bildiradi: sizni ilm-ma’rifatning chin homiysi deb ta’riflagan edilar.',
+        rule: 'Bobur g‘azablanmay, kuladi: bu uning sinovi edi. «Chin fozil inson shunday bo‘lmog‘i lozim» — iymon avvalo kishining mard va haqgo‘yligi bilan o‘lchanadi.',
+        ruleLabel: 'Tahlil',
+        note: 'Bobur: huzurimizga ko‘plar ganj, rutba tilab kelgan, ammo kitob va ma’rifat izlab kelganini ko‘rmagan edik.',
+      },
+      {
+        title: 'Jamshid bayti',
+        text: 'Bobur Obiburdon yaqinidagi chashma yoqasidagi toshga yozdirgan baytni eslaydi. Uning mazmuni: bu chashma qoshiga ko‘plar biz kabi kelib o‘tirdilar va ko‘z ochib-yumguncha ketdilar.',
+        rule: 'Bobur xulosasi: hammamiz ketamiz, faqat o‘rtangan yurak bilan aytilgan haq so‘zgina asrlar osha yashaydi — u «o‘lmas so‘z».',
+        ruleLabel: 'O‘lmas so‘z',
+      },
+      {
+        title: 'Vatan sog‘inchi',
+        list: [
+          'Bobur O‘shdagi Baroqko‘h tog‘ida qurdirgan ayvonli hujrani sog‘inadi.',
+          'Saltanat — tilsim: uni ushlab turish uchun kishi o‘z ixtiyoridan voz kechishi kerak.',
+          'Unga «sohibqiron», «shahanshohi olam» deyishadi, lekin u o‘zini baxtli sezmaydi.',
+        ],
+      },
+      {
+        title: 'Saodat sohili tushi',
+        text: 'Bobur tushida muz qoplagan bepoyon dengiz ustida aso bilan yelib boradi, muz oyog‘i ostida qirs-qirs ushaladi. Munajjimlar: nazaringiz tushgan qirg‘oq saodat sohili bo‘lur, deyishadi.',
+        rule: 'Asar nomi shu tushdan olingan. Bobur: «Saodat sohili qayda? Qay baxtiyor unga yetibdir?» — inson baxtni qayerda izlashi kerak degan savol.',
+        ruleLabel: 'Asar nomi',
+      },
+      {
+        title: 'Muhokama',
+        list: [
+          'Asarda Bobur qanday shaxs sifatida tasvirlangan?',
+          '«Qalbaki tangalardan ko‘ra qalbaki allomalarni ko‘proq uchratdim» deganda Bobur kimlarni nazarda tutgan?',
+          'Bobur «o‘lmas so‘z» deganda qanday so‘zni nazarda tutgan?',
+          'Inson uchun qayerda yashash muhimmi yoki qanday yashash?',
+        ],
+      },
+    ],
+    pairs: [
+      ['Bog‘i Nurafshon', 'Boburning saroyi'],
+      ['Imom G‘azzoliy', 'Ilmini qalbiga jo qilgan olim'],
+      ['Qalbaki allomalar', 'Bobur g‘azablangan soxta olimlar'],
+      ['Baroqko‘h', 'O‘shdagi tog‘, Bobur hujrasi'],
+      ['Jamshid', 'Chashma toshiga bayt yozdirgan shoh'],
+      ['O‘lmas so‘z', 'Asrlar osha yashaydigan haq so‘z'],
+      ['Panipat', 'Bobogul jasorat ko‘rsatgan jang'],
+    ],
+    quiz: [
+      { q: 'Bobur qaysi saroyda yashaydi?', options: ['Bog‘i Nurafshon', 'Ko‘ksaroy', 'Oqsaroy', 'Arki oliy'], answer: 0 },
+      { q: 'Rivoyatda kitoblari tortib olingan olim?', options: ['Imom G‘azzoliy', 'Imom Buxoriy', 'Ulug‘bek', 'Ibn Sino'], answer: 0 },
+      { q: 'Qaroqchiboshining fikricha, chin olimning ilmi qayerda?', options: ['yuragida', 'sandiqda', 'kutubxonada', 'madrasada'], answer: 0 },
+      { q: 'Bobur Hofiz Ko‘ykiyning e’tirozidan keyin nima qiladi?', options: ['kuladi va olqishlaydi', 'jazolaydi', 'haydab yuboradi', 'zindonga tashlaydi'], answer: 0 },
+      { q: 'Bobur O‘shdagi qaysi tog‘da hujra qurdirgan?', options: ['Baroqko‘h', 'Qorovultog‘', 'Ko‘hiqof', 'Hisor'], answer: 0 },
+      { q: 'Tushida Bobur qayerda yurgan?', options: ['muz qoplagan dengizda', 'sahroda', 'bog‘da', 'jang maydonida'], answer: 0 },
+      { q: 'Munajjimlar tushni qanday ta’bir qiladi?', options: ['saodat sohili', 'yurtdan ayriliq', 'urush', 'boylik'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Bobur — shoh', 'Bobur — inson va shoir'],
+      items: [
+        { text: 'Hindistonni zabt etgan', cat: 0 }, { text: 'vatanini sog‘inadi', cat: 1 },
+        { text: '«shahanshohi olam» deb ulug‘lanadi', cat: 0 }, { text: 'Navoiyni o‘qib hayratlanadi', cat: 1 },
+        { text: 'qalbaki olimlarni jazolagan', cat: 0 }, { text: 'darvish bo‘lgisi keladi', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Rivoyatdagi asosiy hikmat nima?', a: 'Chin olimning ilmi sandiqda emas, yuragida bo‘ladi.' },
+      { q: 'Nega Bobur Hofiz Ko‘ykiyni jazolamadi?', a: 'Bu uning sinovi edi; u olimning mard va haqgo‘yligini qadrladi.' },
+      { q: 'Bobur iymonni nima bilan o‘lchaydi?', a: 'Kishining mard va haqgo‘yligi bilan.' },
+      { q: '«O‘lmas so‘z» nima?', a: 'O‘rtangan yurak bilan aytilgan, asrlar osha yashaydigan haq so‘z.' },
+      { q: 'Asar nomi qayerdan olingan?', a: 'Boburning tushi va munajjimlarning «saodat sohili» degan ta’biridan.' },
+    ],
+    sequences: [
+      {
+        title: 'Saroydagi voqealar ketma-ketligi',
+        items: [
+          'Boburga Toshkentdan olim kelganini aytishadi',
+          'Hofiz Ko‘ykiy ona yurtdan salom keltiradi',
+          'Bobur Bobogul taqdirini aytib beradi',
+          'Bobur G‘azzoliy haqidagi rivoyatni so‘zlaydi',
+          'Hofiz Ko‘ykiy jur’at qilib e’tiroz bildiradi',
+          'Bobur kulib, olimni olqishlaydi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['Bobur', 'Hofiz Ko‘ykiy', 'Yusufiy', 'Ochumelov'], answer: 3, why: 'Ochumelov — Chexov hikoyasi qahramoni.' },
+      { items: ['O‘sh', 'Farkat', 'Andijon', 'Shirvon'], answer: 3, why: 'Shirvon dostondagi yurt; qolganlari Bobur esga olgan ona yurt joylari.' },
+      { items: ['vatan sog‘inchi', 'ilm qadri', 'haqgo‘ylik', 'shon-shuhrat ishqi'], answer: 3, why: 'Asar shon-shuhratni emas, boshqa qadriyatlarni ulug‘laydi.' },
+    ],
+    debate: [
+      { claim: 'Inson uchun qayerda yashash emas, qanday yashash muhim.', pro: 'Bobur saroyda ham baxtsiz; baxt ichki holat.', con: 'Bobur aynan vatandan uzoqligi uchun baxtsiz — vatan o‘rnini hech narsa bosmaydi.' },
+      { claim: 'Hofiz Ko‘ykiy shohga e’tiroz bildirib, xato qildi — o‘limga olib kelishi mumkin edi.', pro: 'Ehtiyotkorlik ham donolik belgisi.', con: 'Chin olim haqiqat uchun qo‘rqmaydi; aynan shu uni ulug‘ qildi.' },
+    ],
+    creative: [
+      { task: 'Bobur toshga yozdirgandek, siz ham sinf devoriga yoziladigan bir jumlalik «o‘lmas so‘z» o‘ylab toping.', time: 90 },
+      { task: '«Saodat sohili» siz uchun qayerda? Uni 3 ta detal bilan tasvirlang.', time: 90 },
+      { task: 'Bobur va Hofiz Ko‘ykiy suhbatini 30 soniyalik sahna qilib ijro eting.', time: 120 },
+    ],
+  },
+
+  /* ===================== 23 ===================== */
+  {
+    id: 'adab-saodat-3',
+    source: 'II chorak • 23-dars • 102–107-betlar',
+    title: '«Saodat sohili»: matn ustida ishlash',
+    short: 'Halol luqma, Chandara jangi, Boburning ruboiysi va qissa yakuni',
+    lesson: [
+      {
+        title: 'Halol luqma',
+        text: 'Bobur Hofiz Ko‘ykiyni chaqirib, bakovullar undan ranjiganini aytadi: olim saroy taomlaridan bir luqma ham yemaydi, ko‘chada suv tashib, yer supurib yuradi.',
+        rule: 'Hofiz Ko‘ykiy naqshbandiya tariqatiga ko‘ra yashaydi: o‘zganing minnatisiz, o‘z mehnati bilan topilgan narsagina halol. Bobur buni «Qachon bu bandalig‘ xojalig‘ bila rost kelur?!» degan hikmat bilan tasdiqlaydi.',
+        ruleLabel: 'Tahlil',
+        note: 'Olim mulozimlarni ham qaytaradi: «Men bir Olloh quli, o‘zim qul bo‘lganim holda yana qanday qul saqlashga haddim sig‘sin?»',
+      },
+      {
+        title: 'Chandara jangi va Boburning iztirobi',
+        text: 'Bobur Chandara qal’asidagi jangni eslaydi: qurshovda qolgan o‘n besh nafar hind askari asir tushmaslik uchun o‘z jonini qurbon qiladi.',
+        rule: 'Bobur anglaydi: «Men ularning faqat jismlarini bo‘ysundira olur ekanman, ruhlarini emas. Ular o‘z yurtidan judo bo‘lishdan ko‘ra o‘limni afzal ko‘rdilar. Men esa o‘zga yurtni o‘z yurtimdan afzal bildim...»',
+        ruleLabel: 'Boburning e’tirofi',
+        note: 'Shundan beri Boburning darvish bo‘lib, hamma narsadan etak silkib ketgisi keladi; qalandar libosida bo‘lsa ham vatanga qaytishni orzu qiladi.',
+      },
+      {
+        title: 'Boburning ruboiysi',
+        text: 'Kasal Bobur oqshom yozgan ruboiysini o‘qib beradi. A’yonlar uni «oshiqona go‘zal lutf» deb maqtashadi, faqat Hofiz Ko‘ykiy bu misralar umri so‘nggi manzilga borayotgan qalbning hisobi ekanini anglaydi.',
+        poem: {
+          lines: [
+            'Yo qahr-u g‘azab birla meni tufroq qil,',
+            'Yo bahri inoyatingda mustag‘roq qil.',
+            'Yo Rab, sengadur yuzim, qaro, xoh oq qil,',
+            'Har nav’ sening rizong erur, andoq qil.',
+          ],
+          author: 'Zahiriddin Muhammad Bobur',
+        },
+      },
+      {
+        title: 'Qissa yakuni',
+        list: [
+          'Bobur olimga ko‘ngli tilagan kitoblarni olib ketishga ruxsat beradi.',
+          'Xayrlashuvda ko‘z yoshini yashirmay: «Sizga nechog‘li havasim kelishini bilsangiz edi!» deydi.',
+          'Karvon Hindiston sarhadidan chiqqanda chopar Boburning vafoti xabarini yetkazadi.',
+          'Hofiz Ko‘ykiy kichik karvon bilan Sharq sari — vatanga yo‘l oladi.',
+        ],
+        note: 'Qissa Boburning «Sharq sori gar yiroqtur...» degan misrasi bilan yakunlanadi: vatan uzoq bo‘lsa ham, ko‘ngil o‘sha tomonda.',
+      },
+      {
+        title: 'Tabiat tasviri (peyzaj)',
+        table: {
+          head: ['Peyzaj', 'Izoh'],
+          rows: [
+            ['Ufq quyoshni bag‘riga dafn etdi; bulutlar ko‘ksi qonga to‘ldi', 'Boburning mahzun ruhiy holatiga uyg‘un'],
+            ['Mag‘ribdan shamol turdi, gullarning boshi egildi', 'Saodat sohili haqidagi o‘ychan suhbat, so‘nish kayfiyati'],
+            ['Bog‘i Nurafshon avvalgidek shovullar edi', 'Inson ketadi, dunyo davom etadi'],
+            ['Bepoyon sahro, olov sochgan quyosh', 'Hofiz Ko‘ykiyning yolg‘izligi va uzoq yo‘l'],
+          ],
+        },
+      },
+      {
+        title: 'Hofiz Ko‘ykiy — tarixiy shaxs',
+        text: 'Ko‘hakiy Sulton Muhammad Hofiz Toshkandiy (1490–1584) — tarixchi, huquqshunos, tarjimon. Ali Qushchining nabirasi, parkentlik ziyoli Mirzo Kamoliddin oilasida tug‘ilgan.',
+        list: [
+          'Jug‘rofiya, handasa, riyoziyot, falsafa, mantiq, fiqh va adabiyot bilimdoni.',
+          'O‘ndan ziyod asar yozgan.',
+          '1528-yili to‘y munosabati bilan Toshkentdan Boburning huzuriga yuborilgan.',
+          'Bobur «Boburnoma»da Hofiz Toshkandiyga in’omlar berilganini yozadi.',
+        ],
+      },
+      {
+        title: 'Yakuniy muhokama',
+        list: [
+          'Boburga xos qaysi fazilatlar uni ham shoh, ham olim qilgan?',
+          '«Qachon bu bandalig‘ xojalig‘ bila rost kelur» jumlasini qanday izohlaysiz?',
+          'Tug‘ilgan joy sog‘inchi sizni ham qiynaganmi? Qalbingizdan nelar o‘tgan?',
+          'Asardan obrazlar ruhiyatiga mos peyzajlarni toping va izohlang.',
+        ],
+      },
+    ],
+    pairs: [
+      ['Halol luqma', 'O‘z mehnati bilan topilgan narsa'],
+      ['Naqshbandiya', 'Hofiz Ko‘ykiy tutgan tariqat'],
+      ['Chandara', 'Bobur eslagan qattol jang'],
+      ['Qalandar libosi', 'Bobur shu holda qaytishni orzu qiladi'],
+      ['Ruboiy', 'Bobur so‘nggi kunlarda o‘qigan she’r'],
+      ['Ali Qushchi', 'Hofiz Ko‘ykiyning bobosi'],
+      ['1528-yil', 'Hofiz Toshkandiy Boburga yuborilgan'],
+      ['Peyzaj', 'Tabiat tasviri'],
+    ],
+    quiz: [
+      { q: 'Hofiz Ko‘ykiy nega saroy taomini yemaydi?', options: ['faqat o‘z mehnati bilan topganini halol sanaydi', 'kasal edi', 'taom yoqmadi', 'ro‘za tutgan'], answer: 0 },
+      { q: 'Hofiz Ko‘ykiy qaysi tariqatga mansub?', options: ['naqshbandiya', 'yassaviya', 'kubraviya', 'qodiriya'], answer: 0 },
+      { q: 'Chandara jangida hind askarlari nima qildi?', options: ['asir tushmaslik uchun jonini qurbon qildi', 'taslim bo‘ldi', 'qochib ketdi', 'Boburga qo‘shildi'], answer: 0 },
+      { q: 'Bobur oxirida qanday holda vatanga qaytishni orzu qiladi?', options: ['qalandar libosida', 'katta qo‘shin bilan', 'elchi sifatida', 'savdogar bo‘lib'], answer: 0 },
+      { q: 'Ruboiyning asl dardini kim angladi?', options: ['Hofiz Ko‘ykiy', 'Yusufiy', 'Forig‘iy', 'a’yonlar'], answer: 0 },
+      { q: 'Hofiz Ko‘ykiy kimning nabirasi?', options: ['Ali Qushchining', 'Navoiyning', 'Ulug‘bekning', 'Lutfiyning'], answer: 0 },
+      { q: 'Boburning vafoti xabari qachon keladi?', options: ['karvon Hindiston sarhadidan chiqqanda', 'saroyda', 'Toshkentda', 'yo‘l boshida'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Hofiz Ko‘ykiyning fazilati', 'Boburning iztirobi'],
+      items: [
+        { text: 'halol mehnat bilan yashash', cat: 0 }, { text: 'o‘zga yurtni afzal bilgani', cat: 1 },
+        { text: 'mulozim saqlamaslik', cat: 0 }, { text: 'Chandara jangi xotirasi', cat: 1 },
+        { text: 'ruboiyning dardini anglash', cat: 0 }, { text: 'saltanat tilsimi', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: '«Qachon bu bandalig‘ xojalig‘ bila rost kelur» jumlasi nimani anglatadi?', a: 'Kishi bir vaqtning o‘zida ham qul (banda), ham xo‘ja bo‘la olmaydi; kamtarlik va boshqalarga hukmronlik sig‘ishmaydi.' },
+      { q: 'Chandara jangidan keyin Bobur nimani angladi?', a: 'Jismlarni bo‘ysundirsa ham, ruhlarni bo‘ysundirolmasligini va o‘zi o‘zga yurtni o‘z yurtidan afzal bilganini.' },
+      { q: 'Nega a’yonlar ruboiyni «oshiqona lutf» deb maqtashdi?', a: 'Ular uning chuqur dardini, so‘nggi hisob ekanini tushunmadi.' },
+      { q: 'Peyzaj asarda qanday vazifa bajaradi?', a: 'Qahramonlarning ruhiy holatini ochadi, kayfiyatni kuchaytiradi.' },
+      { q: 'Bobur xayrlashuvda nega Hofiz Ko‘ykiyga havas qiladi?', a: 'U ozod, vatanga qaytadi; Bobur esa saltanat tilsimida qolgan.' },
+    ],
+    sequences: [
+      {
+        title: 'Qissa yakuniy voqealari',
+        items: [
+          'Bobur olimdan taom yemaslik sababini so‘raydi',
+          'Bobur Chandara jangini eslab iztirob chekadi',
+          'Kasal Bobur ruboiysini o‘qiydi',
+          'Hofiz Ko‘ykiy Bobur bilan xayrlashadi',
+          'Chopar Boburning vafoti xabarini keltiradi',
+          'Hofiz Ko‘ykiy Sharq sari yo‘l oladi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['halol mehnat', 'kamtarlik', 'ilmga ixlos', 'mulozim saqlash'], answer: 3, why: 'Hofiz Ko‘ykiy mulozim saqlashdan bosh tortdi.' },
+      { items: ['ruboiy', 'g‘azal', 'tuyuq', 'qissa'], answer: 3, why: 'Qissa — nasriy janr; qolganlari she’riy janrlar.' },
+      { items: ['Panipat', 'Chandara', 'Obiburdon', 'Enasoy'], answer: 3, why: 'Enasoy «Oq kema»dagi daryo; qolganlari Bobur hayotiga oid joylar.' },
+    ],
+    debate: [
+      { claim: 'Hofiz Ko‘ykiy shoh taomini rad etib, mezbonni xafa qildi.', pro: 'Mehmonning mezbon taomini rad etishi odobga zid.', con: 'U o‘z e’tiqodiga sodiq qoldi; halollik odobdan ham yuqori.' },
+      { claim: 'Bobur o‘z hayotida baxtli inson bo‘lgan.', pro: 'U buyuk saltanat qurgan, shoir va olim sifatida tan olingan.', con: 'U vatan sog‘inchi, iztirob va pushaymonlik bilan o‘tgan.' },
+    ],
+    creative: [
+      { task: 'Hofiz Ko‘ykiy Toshkentga qaytib, shogirdlariga Bobur haqida birinchi nima dedi? 2 gap.', time: 90 },
+      { task: 'Qissadagi bir peyzajni tanlab, uni doskaga 3 ta rang bilan chizing va kayfiyatini tushuntiring.', time: 120 },
+      { task: '«Halol luqma» haqida bugungi o‘quvchi hayotidan bitta misol keltiring.', time: 60 },
+    ],
+  },
+];
+
 const CONTENT = {
-  adabiyot: { 8: [...ADABIYOT_8] },
+  adabiyot: { 8: [...ADABIYOT_8, ...ADABIYOT_8_P2] },
   'ona-tili': { 8: [...ONA_TILI_8, ...ONA_TILI_8_PART2, ...ONA_TILI_8_PART3, ...ONA_TILI_8_PART4, ...ONA_TILI_8_PART5, ...ONA_TILI_8_PART6, ...ONA_TILI_8_PART7, ...ONA_TILI_8_PART8] },
 };
 
