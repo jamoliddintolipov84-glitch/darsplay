@@ -14152,8 +14152,1887 @@ const ADABIYOT_8_P4 = [
   },
 ];
 
+/* --- 8-sinf Adabiyot: 48–66-darslar (darslik 2025, 190–238-betlar; BSB/CHSB kiritilmagan) --- */
+const ADABIYOT_8_P5 = [
+  /* ===================== 48 ===================== */
+  {
+    id: 'adab-genri-1',
+    source: 'III chorak • 48-dars • 190–194-betlar',
+    title: 'O. Genri. «Yigirma yildan so‘ng» hikoyasi',
+    short: 'Yozuvchi hayoti, ikki do‘stning ahdi va kutilmagan uchrashuv',
+    lesson: [
+      {
+        title: 'O. Genri (1862–1910)',
+        text: 'Asl ismi Uilyam Sidni Porter. Jahon adabiyotida qisqa hikoyalari bilan o‘chmas iz qoldirgan amerikalik yozuvchi. 1862-yili Shimoliy Karolina shtatida shifokor oilasida tug‘ilgan.',
+        list: [
+          'Onasidan erta ayrilib, ammasining qo‘lida tarbiyalangan.',
+          'Bolaligida kitob o‘qish va odamlarni kuzatishni sevgan.',
+          'Dorixonada ishlagan, so‘ng Texasga ko‘chib, hikoya yozishni boshlagan.',
+          'Nyu-Yorkda oddiy amerikaliklar hayotidan 200 dan ortiq hikoya yozgan.',
+          '1910-yilda vafot etgan.',
+        ],
+      },
+      {
+        title: 'Hikoya boshlanishi',
+        text: 'Kechki soat o‘nlar. Nam havo, shamol, bo‘m-bo‘sh ko‘chalar. Politsiyachi posbon dahani aylanib chiqmoqda. Temir buyumlar do‘koni eshigi oldida og‘zida sigara tishlagan bir kishi turibdi.',
+        rule: 'Ekspozitsiyadagi qorong‘i, yomg‘irli kecha tasviri sirli va xavotirli kayfiyat yaratadi — o‘quvchi nimadir sodir bo‘lishini sezadi.',
+        ruleLabel: 'Tahlil',
+      },
+      {
+        title: 'Yigirma yillik ahd',
+        text: 'Notanish kishi — Bob — politsiyachiga tushuntiradi: yigirma yil oldin shu yerdagi «Ota Jo Bredi» restoranida eng yaqin do‘sti Jimmi Uels bilan xayrlashgan. Ular yigirma yildan so‘ng aynan shu kun, shu soatda uchrashishga ahd qilgan.',
+        list: [
+          'Bob 18 yoshida baxt izlab G‘arbga ketgan, Jim Nyu-Yorkda qolgan.',
+          'Dastlab xat yozishgan, keyin bir-birini yo‘qotishgan.',
+          'Bob Jimga ishonadi: u tirik bo‘lsa, albatta keladi.',
+          'Restoran besh yil oldin buzib tashlangan.',
+        ],
+      },
+      {
+        title: 'Bobning detallari',
+        table: {
+          head: ['Detal', 'O‘quvchida qanday taassurot qoldiradi'],
+          rows: [
+            ['To‘rtburchak jag‘, o‘tkir ko‘zlar', 'Qat’iyatli, kuchli odam'],
+            ['O‘ng qoshi yonidagi oq chandiq', 'Sarguzashtli, xavfli hayot'],
+            ['Olmos ko‘zli to‘g‘nag‘ich', 'Boy, omadli'],
+            ['Olmos donachali soat', 'Badavlat, G‘arbda muvaffaqiyat qozongan'],
+          ],
+        },
+        note: 'Bob o‘zini G‘arb «charxlagan» deb maqtaydi, Nyu-Yorkda odam «to‘nkaligicha qoladi» deydi.',
+      },
+      {
+        title: 'Uchrashuv va burilish',
+        text: 'Yigirma daqiqadan so‘ng baland bo‘yli bir kishi keladi: «Bu senmisan, Bob?» Ular qo‘ltiqlashib yo‘lga tushadi. Dorixona chirog‘i yorug‘ida Bob to‘xtaydi: siz Jim Uels emassiz! Yigirma yil burunni o‘zgartiradigan darajada uzoq emas.',
+        rule: 'Novcha kishi — politsiya xodimi. U Bobni hibsga oladi: Chikago politsiyasi uni qidirmoqda edi. Va bir xat beradi.',
+        ruleLabel: 'Kulminatsiya',
+      },
+      {
+        title: 'Jimmining xati',
+        text: 'Xat mazmuni: Jim belgilangan joyga vaqtida kelgan. Bob gugurt chaqqanida, u butun Chikago izlayotgan jinoyatchining yuzini tanigan. Jim bu ishni o‘zi qila olmagan va boshqa agentni yuborgan.',
+        note: 'Ya’ni avvalroq Bob bilan gaplashgan politsiyachi — aynan Jimmi Uels edi! Hikoyani Amir Fayzulla tarjima qilgan.',
+      },
+    ],
+    pairs: [
+      ['O. Genri', 'Uilyam Sidni Porter'],
+      ['Bob', 'G‘arbdan kelgan jinoyatchi'],
+      ['Jimmi Uels', 'Politsiyachi do‘st'],
+      ['«Ota Jo Bredi»', 'Do‘stlar xayrlashgan restoran'],
+      ['Chandiq', 'Bobning qoshi yonidagi belgi'],
+      ['Gugurt', 'Jim Bobni tanigan lahza'],
+      ['Chikago', 'Bobni qidirgan politsiya shahri'],
+      ['Amir Fayzulla', 'Tarjimon'],
+    ],
+    quiz: [
+      { q: 'O. Genrining asl ismi?', options: ['Uilyam Sidni Porter', 'Mark Tven', 'Jek London', 'Ernest Heminguey'], answer: 0 },
+      { q: 'Do‘stlar necha yildan so‘ng uchrashishga ahd qilgan?', options: ['yigirma', 'o‘n', 'besh', 'o‘ttiz'], answer: 0 },
+      { q: 'Bob qayerga ketgan edi?', options: ['G‘arbga', 'Yevropaga', 'Chikagoga', 'Texasga emas, Sharqqa'], answer: 0 },
+      { q: 'Restoran nima bo‘lgan edi?', options: ['buzib tashlangan', 'yopilgan', 'yonib ketgan', 'hali ishlaydi'], answer: 0 },
+      { q: 'Bob soxta Jimni nimadan taniydi?', options: ['burnidan', 'ovozidan', 'kiyimidan', 'yurishidan'], answer: 0 },
+      { q: 'Haqiqiy Jim kim edi?', options: ['Bob bilan gaplashgan politsiyachi', 'novcha kishi', 'restoran egasi', 'do‘kondor'], answer: 0 },
+      { q: 'Jim Bobni qachon tanidi?', options: ['gugurt chaqqanida', 'xat o‘qiganda', 'dorixona oldida', 'telefonda'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Bob haqida', 'Jim haqida'],
+      items: [
+        { text: 'olmos to‘g‘nag‘ich', cat: 0 }, { text: 'politsiya posboni', cat: 1 },
+        { text: 'G‘arbda boyigan', cat: 0 }, { text: 'Nyu-Yorkni sevgan', cat: 1 },
+        { text: 'Chikago izlayotgan jinoyatchi', cat: 0 }, { text: 'do‘stini o‘zi hibsga olmadi', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Hikoya nima haqida? G‘oyasini ikki so‘z bilan ayting.', a: 'Do‘stlik va burch (yoki: sadoqat va qonun).' },
+      { q: 'Nega Jim Bobni o‘zi hibsga olmadi?', a: 'Do‘stligi va xotirasi bunga yo‘l qo‘ymadi, ammo burchini ham unutmadi.' },
+      { q: 'Bobning qaysi detallari o‘quvchini chalg‘itadi?', a: 'Olmos to‘g‘nag‘ich va soat — u boy, hurmatli kishi degan taassurot beradi.' },
+      { q: 'Bobga uchta sifat bering.', a: 'Masalan: sodiq (ahdiga keldi), maqtanchoq, jinoyatchi.' },
+      { q: 'Nega muallif hikoyani uchinchi shaxs tilidan bayon qiladi?', a: 'Burilish sirini oxirigacha saqlash uchun.' },
+    ],
+    sequences: [
+      {
+        title: 'Hikoya voqealarini tartiblang',
+        items: [
+          'Politsiyachi kechki ko‘chani aylanadi',
+          'Bob yigirma yillik ahdni so‘zlab beradi',
+          'Bob gugurt chaqib sigara tutatadi',
+          'Novcha kishi kelib o‘zini Jim deb tanishtiradi',
+          'Dorixona yorug‘ida Bob aldovni sezadi',
+          'Bob Jimmining xatini o‘qiydi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['Bob', 'Jimmi Uels', 'politsiyachi', 'Della'], answer: 3, why: 'Della — «Afsungarlar tuhfasi» qahramoni.' },
+      { items: ['olmos to‘g‘nag‘ich', 'soat', 'chandiq', 'tumor'], answer: 3, why: 'Tumor — «Jaloliddin Manguberdi»dagi detal.' },
+      { items: ['Nyu-York', 'Chikago', 'G‘arb', 'Kalkutta'], answer: 3, why: 'Kalkutta — «Shubxa» hikoyasida.' },
+    ],
+    debate: [
+      { claim: 'Jim to‘g‘ri ish qildi.', pro: 'Qonun do‘stlikdan ustun; jinoyatchi jazolanishi kerak.', con: 'Do‘stiga ogohlantirib, o‘zi taslim bo‘lishiga imkon berishi mumkin edi.' },
+      { claim: 'Bob haqiqiy do‘st edi.', pro: 'Ming millik yo‘l bosib, ahdiga sodiq qoldi.', con: 'Jinoyatchi bo‘lib, do‘stini qiyin ahvolga qo‘ydi.' },
+    ],
+    creative: [
+      { task: 'Tasavvur qiling: Bob politsiyachining Jim ekanini tanib qoldi. Ularning suhbatini 3 replikada davom ettiring.', time: 120 },
+      { task: 'O‘zingizni 20 yildan keyin tasavvur qiling: qayerda, kim bo‘lasiz? 2 gap.', time: 60 },
+      { task: 'Jimmining xatiga Bobning javobini 2 gapda yozing.', time: 90 },
+    ],
+  },
+
+  /* ===================== 49 ===================== */
+  {
+    id: 'adab-genri-2',
+    source: 'III chorak • 49-dars • 194–195-betlar',
+    title: 'Badiiy tahlil asoslari. Syujet burilishi',
+    short: 'Kutilmagan yakun, chalg‘ituvchi detallar va «Afsungarlar tuhfasi»',
+    lesson: [
+      {
+        title: 'Syujet burilishi nima?',
+        rule: 'Badiiy asarda voqealar rivojining keskin o‘zgarishi, kutilmagan tarzda davom etishi yoki yakun topishi syujet burilishi deyiladi.',
+        ruleLabel: 'Nazariy ma’lumot',
+        text: 'O. Genri — syujet burilishining ustasi. Uning hikoyalari deyarli har doim o‘quvchi kutmagan yakun bilan tugaydi.',
+      },
+      {
+        title: '«Afsungarlar tuhfasi»',
+        text: 'Della eri Jimga cho‘ntak soati uchun zanjir sovg‘a qilish maqsadida uzun sochlarini kesib sotadi. Jim esa unga taroq sovg‘a qilish uchun soatini sotgan bo‘lib chiqadi.',
+        note: 'Ikkala sovg‘a ham endi «keraksiz» — lekin ular eng qimmatli narsani: bir-biriga bo‘lgan muhabbatni ko‘rsatadi.',
+      },
+      {
+        title: 'Chalg‘ituvchi detallar',
+        rule: 'Muallif ayrim detallar yordamida o‘quvchini chalg‘itadi, uning fikrini noto‘g‘ri tomonga buradi. Burilish ana shu detallar orqali tayyorlanadi.',
+        ruleLabel: 'Usul',
+        table: {
+          head: ['Detal', 'Birinchi taassurot', 'Aslida'],
+          rows: [
+            ['Olmos to‘g‘nag‘ich va soat', 'Bob — boy, hurmatli odam', 'Jinoyatchi, o‘g‘irlik puli'],
+            ['Qoshidagi chandiq', 'Sarguzashtli hayot', 'Jinoyatchining belgisi, uni tanitgan alomat'],
+            ['Politsiyachining savollari', 'Oddiy qiziqish', 'Jim do‘stini tekshirmoqda'],
+            ['Novchaning yuzini yoqasiga yashirishi', 'Sovuqdan', 'Tanib qolmasligi uchun'],
+          ],
+        },
+      },
+      {
+        title: 'Burilish bosqichlari',
+        list: [
+          'O‘quvchi ishonchi shakllanadi: Bob sodiq do‘st, Jim keladi.',
+          'Ishoralar beriladi: chandiq, politsiyachining savollari.',
+          'Kutilmagan lahza: «Siz Jim Uels emassiz!»',
+          'Ikkinchi burilish: xat — haqiqiy Jim politsiyachi bo‘lgan.',
+        ],
+        note: '«Yigirma yildan so‘ng»da ikki qavatli burilish bor: soxta Jim, so‘ng haqiqiy Jimning kimligi.',
+      },
+      {
+        title: 'Hikoyaviy nuqtai nazar',
+        table: {
+          head: ['Kim aytib bersa', 'Nima o‘zgaradi'],
+          rows: [
+            ['Uchinchi shaxs (muallif)', 'Sir oxirigacha saqlanadi'],
+            ['Jim tilidan', 'Sir boshidanoq ochiladi, ammo iztirobi ko‘rinadi'],
+            ['Bob tilidan', 'O‘quvchi u bilan birga aldanadi, hayrat kuchliroq'],
+          ],
+        },
+      },
+      {
+        title: 'Topshiriqlar',
+        list: [
+          '«Afsungarlar tuhfasi»ni o‘qing va yakunga ishora qiluvchi detallarni toping.',
+          'Bu detallar o‘quvchini chalg‘itadimi yoki yordam beradimi?',
+          'O‘qigan boshqa asarlaringizda syujet burilishi bormi? («Jaloliddin Manguberdi»dagi asir, «Oq kema»dagi bug‘u)',
+        ],
+      },
+    ],
+    pairs: [
+      ['Syujet burilishi', 'Voqealarning keskin o‘zgarishi'],
+      ['Della', 'Sochini sotgan ayol'],
+      ['Zanjir', 'Della olgan sovg‘a'],
+      ['Taroq', 'Jim olgan sovg‘a'],
+      ['Chalg‘ituvchi detal', 'O‘quvchini noto‘g‘ri tomonga buruvchi belgi'],
+      ['Ikki qavatli burilish', '«Yigirma yildan so‘ng»dagi usul'],
+    ],
+    quiz: [
+      { q: 'Voqealarning kutilmagan o‘zgarishi nima deyiladi?', options: ['syujet burilishi', 'ekspozitsiya', 'peyzaj', 'remarka'], answer: 0 },
+      { q: '«Afsungarlar tuhfasi»da Della nima sotadi?', options: ['sochini', 'soatini', 'uzugini', 'kitobini'], answer: 0 },
+      { q: 'Jim Dellaga nima sovg‘a qiladi?', options: ['taroq', 'zanjir', 'ko‘ylak', 'gul'], answer: 0 },
+      { q: '«Yigirma yildan so‘ng»da Bobni boy deb o‘ylatgan detal?', options: ['olmos to‘g‘nag‘ich', 'chandiq', 'sigara', 'yoqa'], answer: 0 },
+      { q: 'Chalg‘ituvchi detal qanday vazifa bajaradi?', options: ['o‘quvchini noto‘g‘ri tomonga buradi', 'yechimni oshkor qiladi', 'qahramonni tanishtiradi', 'joyni tasvirlaydi'], answer: 0 },
+      { q: 'O. Genri hikoyalarining asosiy xususiyati?', options: ['kutilmagan yakun', 'she’riy shakl', 'uzun tasvirlar', 'afsonaviy qahramonlar'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Ishora (yakunni tayyorlaydi)', 'Chalg‘itish (fikrni buradi)'],
+      items: [
+        { text: 'qoshdagi chandiq', cat: 0 }, { text: 'olmos to‘g‘nag‘ich', cat: 1 },
+        { text: 'politsiyachining savollari', cat: 0 }, { text: 'Bobning maqtanishi', cat: 1 },
+        { text: 'novchaning yuzini yashirishi', cat: 0 }, { text: 'qimmat soat', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Syujet burilishiga ta’rif bering.', a: 'Voqealar rivojining keskin o‘zgarishi yoki kutilmagan yakuni.' },
+      { q: '«Afsungarlar tuhfasi»dagi burilish nimada?', a: 'Della sochini, Jim soatini sotadi — ikkala sovg‘a ham keraksiz bo‘lib qoladi.' },
+      { q: 'Chalg‘ituvchi detallar nima uchun kerak?', a: 'Burilish ta’sirini kuchaytirish uchun o‘quvchini boshqa tomonga yo‘naltiradi.' },
+      { q: '«Yigirma yildan so‘ng»da nechta burilish bor?', a: 'Ikkita: soxta Jim va haqiqiy Jimning politsiyachi ekani.' },
+    ],
+    odd: [
+      { items: ['Della', 'Jim', 'Bob', 'Shubxa'], answer: 3, why: 'Shubxa — Thakur hikoyasi qahramoni.' },
+      { items: ['syujet burilishi', 'chalg‘ituvchi detal', 'kutilmagan yakun', 'radd ul-matla'], answer: 3, why: 'Radd ul-matla — mumtoz she’riyat san’ati.' },
+      { items: ['zanjir', 'taroq', 'soch', 'durbin'], answer: 3, why: 'Durbin «Oq kema»da.' },
+    ],
+    debate: [
+      { claim: 'Kutilmagan yakun — yaxshi hikoyaning eng muhim belgisi.', pro: 'O‘quvchi hayratda qoladi, hikoyani unutmaydi.', con: 'Asosiysi g‘oya va xarakter; burilish shunchaki usul.' },
+      { claim: 'Della va Jim ahmoqona ish qilishdi.', pro: 'Eng qimmat narsalarini keraksiz sovg‘aga almashdilar.', con: 'Ular eng muhim sovg‘ani — fidoyi muhabbatni berishdi.' },
+    ],
+    creative: [
+      { task: 'Bitta oddiy vaziyatni (masalan, sinfga yangi o‘quvchi keldi) kutilmagan yakun bilan 3 gapda hikoya qiling.', time: 120 },
+      { task: '«Yigirma yildan so‘ng»ni Jim tilidan birinchi 2 gapda aytib bering.', time: 90 },
+      { task: 'Bitta chalg‘ituvchi detal o‘ylab toping va qanday burilishga xizmat qilishini ayting.', time: 60 },
+    ],
+  },
+
+  /* ===================== 50 ===================== */
+  {
+    id: 'adab-lab-3',
+    source: 'III chorak • 50-dars • 196-bet',
+    title: 'Adabiy laboratoriya: «Adabiy Instagram — obrazlar sahifasi»',
+    short: 'Asar qahramonining ijtimoiy tarmoq profilini yaratish',
+    lesson: [
+      {
+        title: 'Loyiha haqida',
+        text: '«Adabiy Instagram» — badiiy asar qahramonlarini ijtimoiy tarmoq formatida tahlil qilishga asoslangan ijodiy laboratoriya. O‘quvchilar sevgan obrazlarining profilini yaratadi.',
+        list: [
+          'Qahramon xarakterini chuqur o‘rganish.',
+          'Asarni zamonaviy uslubda qayta talqin qilish.',
+          'Yozma nutq va tasvirlash qobiliyatini rivojlantirish.',
+          'Texnologik vositalardan ijodiy foydalanish.',
+        ],
+      },
+      {
+        title: 'Profil tuzilishi',
+        table: {
+          head: ['Qism', 'Nima yoziladi'],
+          rows: [
+            ['Profil rasmi', 'Qahramonni aks ettiruvchi chizma yoki rasm'],
+            ['Bio', 'Qisqacha ta’rif, 2–3 satr'],
+            ['Postlar', 'Qahramon hayotidagi muhim voqealar'],
+            ['Hikoya (stories)', 'Qahramonning muhim fikrlari, kechinmalari'],
+            ['Kuzatuvchilar', 'Qahramon kimlarni kuzatadi'],
+            ['Izohlar', 'Boshqa obrazlar yozgan izohlar'],
+          ],
+        },
+      },
+      {
+        title: 'Namuna: Santyago («Chol va dengiz»)',
+        text: 'Ernest Heminguey asari qahramoni uchun profil namunasi darslikda berilgan.',
+        table: {
+          head: ['Qism', 'Namuna'],
+          rows: [
+            ['Rasm', 'Quyosh ostida, yolg‘iz qayiqda, yonida ulkan marlin baliq, yelkasida yaralar, yuzida g‘urur'],
+            ['Bio', 'Qarigan baliqchi; iroda, bardosh va inson qadr-qimmati timsoli'],
+            ['Asosiy fikr', 'Insonni yo‘q qilish mumkin, ammo uni ruhan mag‘lub etib bo‘lmaydi'],
+            ['Kuzatuvchilar', 'Irodali insonlar, kitobxonlar'],
+          ],
+        },
+      },
+      {
+        title: 'Biz o‘qigan asarlardan g‘oyalar',
+        table: {
+          head: ['Qahramon', 'Bio g‘oyasi', 'Kim izoh qoldiradi'],
+          rows: [
+            ['Ravshan', 'Chambillik bahodir, ko‘nglim Shirvonda', 'Hasanxon, Zulxumor, Aynoq kal'],
+            ['Kichkina shahzoda', 'B-612 asteroidi, gulimni sog‘indim', 'Tulki, uchuvchi'],
+            ['Jaloliddin', 'Toj emas, erk muhim', 'Nasaviy, Sultonbegim'],
+            ['Bola («Oq kema»)', 'Oq kemani kutyapman', 'Mo‘min bobo'],
+            ['Mosye Amel', 'Qirq yil — bir maktab', 'Frans'],
+          ],
+        },
+      },
+      {
+        title: 'Baholash mezonlari',
+        list: [
+          'Profil qahramon xarakteriga mosmi?',
+          'Postlar asar voqealariga asoslanganmi?',
+          'Izohlar boshqa obrazlarning fe’l-atvorini to‘g‘ri ko‘rsatadimi?',
+          'Til savodli va ijodiymi?',
+          'Vizual ko‘rinish jozibadormi?',
+        ],
+        note: 'Diqqat: profil faqat dars uchun, qog‘ozda yoki taqdimotda tayyorlanadi — haqiqiy ijtimoiy tarmoqqa joylash shart emas.',
+      },
+    ],
+    pairs: [
+      ['Bio', 'Qahramon haqida 2–3 satr'],
+      ['Post', 'Hayotidagi muhim voqea'],
+      ['Stories', 'Kechinma va fikrlar'],
+      ['Santyago', '«Chol va dengiz» qahramoni'],
+      ['Heminguey', '«Chol va dengiz» muallifi'],
+      ['Izohlar', 'Boshqa obrazlar fikri'],
+    ],
+    quiz: [
+      { q: '«Adabiy Instagram» loyihasida nima yaratiladi?', options: ['qahramon profili', 'kitob muqovasi', 'audiokitob', 'flayer'], answer: 0 },
+      { q: 'Bio qancha bo‘lishi kerak?', options: ['2–3 satr', '1 sahifa', '10 gap', 'bir so‘z'], answer: 0 },
+      { q: 'Namunadagi qahramon kim?', options: ['Santyago', 'Ravshan', 'Bob', 'Frans'], answer: 0 },
+      { q: '«Chol va dengiz» muallifi?', options: ['Heminguey', 'O. Genri', 'Dode', 'Thakur'], answer: 0 },
+      { q: 'Izohlarni kim yozadi?', options: ['boshqa obrazlar', 'muallif', 'o‘qituvchi', 'hech kim'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Profilda bo‘ladi', 'Profilda bo‘lmaydi'],
+      items: [
+        { text: 'qahramon rasmi', cat: 0 }, { text: 'o‘quvchining shaxsiy telefon raqami', cat: 1 },
+        { text: 'asar voqealari postlari', cat: 0 }, { text: 'asarga aloqasiz reklama', cat: 1 },
+        { text: 'boshqa obrazlar izohlari', cat: 0 }, { text: 'haqoratli izohlar', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Loyihaning maqsadi nima?', a: 'Qahramon xarakterini zamonaviy, qiziqarli va vizual tarzda tahlil qilish.' },
+      { q: 'Profilning olti qismini ayting.', a: 'Rasm, bio, postlar, stories, kuzatuvchilar, izohlar.' },
+      { q: 'Santyago qanday g‘oya timsoli?', a: 'Iroda, bardosh va insoniy qadr-qimmat.' },
+      { q: 'Izohlar qahramonni qanday ochadi?', a: 'Boshqa obrazlarning unga munosabati orqali.' },
+    ],
+    odd: [
+      { items: ['bio', 'post', 'izoh', 'remarka'], answer: 3, why: 'Remarka — drama atamasi.' },
+      { items: ['Santyago', 'Ravshan', 'Jaloliddin', 'Instagram'], answer: 3, why: 'Instagram — ijtimoiy tarmoq, qahramon emas.' },
+      { items: ['Heminguey', 'O. Genri', 'Thakur', 'Navoiy'], answer: 3, why: 'Navoiy — mumtoz shoir; qolganlari XIX–XX asr nosirlari.' },
+    ],
+    debate: [
+      { claim: 'Qahramonlarni ijtimoiy tarmoq formatida o‘rganish adabiyotni yengillashtiradi.', pro: 'Bu asar ruhini soddalashtirib, jiddiyligini yo‘qotadi.', con: 'Aksincha, qiziqish uyg‘otadi va xarakterni chuqur tahlil qildiradi.' },
+      { claim: 'Mumtoz asar qahramonlarini zamonaviy formatga olib kirish to‘g‘ri.', pro: 'Yoshlarga yaqinlashtiradi.', con: 'Davr ruhi buziladi.' },
+    ],
+    creative: [
+      { task: 'Bir qahramon uchun 2–3 satrli bio yozing, sinf kimligini topsin.', time: 90 },
+      { task: 'Ravshanning Shirvon safari haqidagi postiga Hasanxon nomidan izoh yozing.', time: 60 },
+      { task: 'Mosye Amelning «so‘nggi dars» kunidagi stories matnini 1 gapda yozing.', time: 60 },
+      { task: 'Bitta qahramon profil rasmini 2 daqiqada doskaga chizing.', time: 120 },
+    ],
+  },
+
+  /* ===================== 53 ===================== */
+  {
+    id: 'adab-ozbeklar-1',
+    source: 'IV chorak • 53-dars • 197–200-betlar',
+    title: 'Shukur Xolmirzayev. «O‘zbeklar» hikoyasi',
+    short: 'Yozuvchi hayoti, paxta dalasidagi talabalar va hikoyaning boshlanishi',
+    lesson: [
+      {
+        title: 'Shukur Xolmirzayev (1940–2005)',
+        text: 'Yozuvchi 1940-yili Surxondaryo viloyatining Boysun tumanida tug‘ilgan. Hikoya, roman va qissa janrlarida ijod qilgan, avvalo hikoyanavis sifatida shuhrat qozongan.',
+        list: [
+          '«Oq otli», «To‘lqinlar», «O‘n sakkizga kirmagan kim bor?» — 60-yillar qissalarining eng yaxshi namunalari.',
+          'Asarlarida yoshlik romantikasi va Boysun kishilarining turfa tabiati aks etgan.',
+          'O‘zbek hikoyanavisligini rus va Yevropa adabiyoti tajribalari bilan boyitgan.',
+          'Asarlarida milliy xarakter, inson va tabiat munosabatlari teran talqin qilingan.',
+          '2005-yili Toshkentda vafot etgan.',
+        ],
+      },
+      {
+        title: 'Hikoya haqida',
+        text: '«O‘zbeklar» (1988) — yonimizda yurgan oddiy o‘zbek kishilari haqida. Unda millatimizga xos soddalik, ochiqko‘ngillik, bag‘rikenglik va saxovatpeshalik bilan birga ayrim salbiy jihatlar ham ochib berilgan.',
+        rule: 'Hikoya roviy — hikoyachi Ergashvoy tilidan suhbatdoshga murojaat shaklida aytiladi («qadrdon», «azizim»). Bu jonli, samimiy ohang beradi.',
+        ruleLabel: 'Hikoya shakli',
+      },
+      {
+        title: 'Paxtaga safar',
+        text: 'Hikoyachi ikkinchi kursda talabalar bilan Bo‘ka tumanidagi chetroq kolxozga paxtaga boradi. Joylar Surxon vohasiga o‘xshaydi: qamishzor, ajriqzor, loy suvoqli, tomiga pichan uyilgan uychalar.',
+        list: [
+          'Talabalarni bitmagan, derazasiz, zax imoratga joylashtirishadi.',
+          'Hikoyachi kurs yoshlari ichida eng kichiklardan, uyatchan, kitobxon yigit.',
+          'Unga «shoir» deb laqab qo‘yishadi — nozik, xayolparast bo‘lgani uchun.',
+        ],
+      },
+      {
+        title: 'Talabalar obrazlari',
+        table: {
+          head: ['Obraz', 'Xususiyati'],
+          rows: [
+            ['Ergashvoy (hikoyachi)', 'Qishloqdan chiqqan, uyatchan, kitobxon, vijdonli'],
+            ['O‘rmon aka', 'Kurskom; uddaburon, pishiq, gapdon, manfaatparast'],
+            ['Azimjon aka', 'Komsorg; Remark va Hemingueyni o‘qib, «yozuvchilarimiz yolg‘onchi» deydi'],
+            ['Saparboy', 'Qoraqalpoq yigit; mehribon, kasal hikoyachi uchun paxta terib bermoqchi bo‘ladi'],
+            ['Mirzag‘olib', '«Rais» laqabli polvon yigit'],
+          ],
+        },
+      },
+      {
+        title: 'Botir cho‘ponning oilasi',
+        text: 'Talabalar yonidagi kulbada cho‘pon Botir oilasi yashaydi. Ularning bir otar aralash moli bor. Hikoyachi bu manzaradan ko‘ngli iliydi: Toshkentda «bir otar» degan so‘zlarni eshitmaysan.',
+        note: 'Opa — eski kirza etik, rangi o‘chgan ko‘ylakli mehnatkash ayol — talabalarga darhol choy beradi: «Siz ham o‘qishlaringizni qoldirib keldinglar, baraka topinglar».',
+      },
+      {
+        title: 'O‘ylab ko‘ring',
+        list: [
+          '«O‘zbeklar» deganda ko‘z o‘ngingizda qanday kishilar namoyon bo‘ladi?',
+          'Talaba yigitning bu joylardan zavqlanishi sababi nima?',
+          'Qaysi detallar talaba xarakterini ochishga xizmat qilmoqda?',
+          'Ko‘nglingizga yaqin manzarani so‘z yoki rang bilan tasvirlang.',
+        ],
+      },
+    ],
+    pairs: [
+      ['Shukur Xolmirzayev', '«O‘zbeklar» muallifi'],
+      ['Boysun', 'Yozuvchi tug‘ilgan tuman'],
+      ['Ergashvoy', 'Hikoyachi talaba'],
+      ['O‘rmon aka', 'Kurskom'],
+      ['Azimjon aka', 'Komsorg'],
+      ['Saparboy', 'Qoraqalpoq yigit'],
+      ['Botir cho‘pon', 'Mehmondo‘st cho‘pon'],
+      ['Guvala', 'Loydan qo‘lda yasalgan qurilish materiali'],
+    ],
+    quiz: [
+      { q: 'Shukur Xolmirzayev qayerda tug‘ilgan?', options: ['Boysunda', 'Toshkentda', 'Namanganda', 'Buxoroda'], answer: 0 },
+      { q: '«O‘zbeklar» qaysi yili yozilgan?', options: ['1988', '1940', '2005', '1962'], answer: 0 },
+      { q: 'Talabalar qayerga borishadi?', options: ['paxtaga', 'sayohatga', 'qurilishga', 'tog‘ga'], answer: 0 },
+      { q: 'Hikoyachiga qanday laqab qo‘yishadi?', options: ['shoir', 'rais', 'polvon', 'domla'], answer: 0 },
+      { q: 'Yonidagi kulbada kim yashaydi?', options: ['Botir cho‘pon oilasi', 'brigadir', 'o‘qituvchi', 'rais'], answer: 0 },
+      { q: 'Kurskom kim?', options: ['O‘rmon aka', 'Azimjon aka', 'Saparboy', 'Mirzag‘olib'], answer: 0 },
+      { q: 'Qoraqalpoq yigitning ismi?', options: ['Saparboy', 'Abdug‘odir', 'Botir', 'Ergash'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Ijobiy xislat', 'Salbiy xislat'],
+      items: [
+        { text: 'Saparboyning mehribonligi', cat: 0 }, { text: 'O‘rmon akaning manfaatparastligi', cat: 1 },
+        { text: 'opaning mehmondo‘stligi', cat: 0 }, { text: 'kosadan go‘sht o‘g‘irlash', cat: 1 },
+        { text: 'hikoyachining vijdonliligi', cat: 0 }, { text: 'birovning qandini o‘marish', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Hikoyada qanday o‘zbekona fazilatlar ochilgan?', a: 'Soddalik, ochiqko‘ngillik, bag‘rikenglik, saxovatpeshalik, mehmondo‘stlik.' },
+      { q: 'Hikoya kim tilidan va qanday shaklda aytiladi?', a: 'Hikoyachi Ergashvoy tilidan, suhbatdoshga murojaat shaklida.' },
+      { q: 'Nega hikoyachini «shoir» deyishadi?', a: 'U nozik, xayolparast va kitobxon bo‘lgani uchun.' },
+      { q: 'Opaning talabalarga birinchi gaplari nimani ko‘rsatadi?', a: 'Mehribonlik va mehmondo‘stlikni — o‘zi kambag‘al bo‘lsa ham choy beradi, duo qiladi.' },
+    ],
+    sequences: [
+      {
+        title: 'Hikoya boshlanishini tartiblang',
+        items: [
+          'Talabalar paxtaga yo‘l oladi',
+          'Qishloq va ajriqzor tasvirlanadi',
+          'Zax, derazasiz imoratga joylashadi',
+          'Hikoyachi cho‘pon oilasi bilan tanishadi',
+          'Opa talabalarga choy beradi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['O‘rmon aka', 'Azimjon aka', 'Saparboy', 'Yoqubxo‘ja'], answer: 3, why: 'Yoqubxo‘ja — Mirkomilboy hikoyasidan.' },
+      { items: ['«Oq otli»', '«To‘lqinlar»', '«O‘n sakkizga kirmagan kim bor?»', '«Saodat sohili»'], answer: 3, why: '«Saodat sohili» — Xayriddin Sultonov asari.' },
+      { items: ['guvala', 'barak', 'kulba', 'qal’a'], answer: 3, why: 'Qal’a hikoyada yo‘q; qolganlari qishloq turar joylari.' },
+    ],
+    debate: [
+      { claim: 'Talabalarni paxtaga yuborish to‘g‘ri bo‘lgan.', pro: 'Mehnat va hayotni bilish tarbiyalaydi.', con: 'O‘qish qolib ketgan, og‘ir sharoit sog‘liqqa zarar bergan.' },
+      { claim: 'Hikoyachi «juda nozik» edi — bu uning kamchiligi.', pro: 'Hayotda pishiq, uddaburon bo‘lish kerak.', con: 'Nozik qalb — vijdon va insoflilik belgisi.' },
+    ],
+    creative: [
+      { task: 'Bobo yoki buvingizdagi bitta «o‘zbekona» xislatni ayting va misol keltiring.', time: 60 },
+      { task: 'Ko‘nglingizga yaqin qishloq yoki mahalla manzarasini 4 ta detal bilan tasvirlang.', time: 90 },
+      { task: 'Hikoyachi kabi «qadrdon» deb murojaat qilib, kechagi kuningiz haqida 2 gap ayting.', time: 60 },
+    ],
+  },
+
+  /* ===================== 54 ===================== */
+  {
+    id: 'adab-ozbeklar-2',
+    source: 'IV chorak • 54-dars • 201–206-betlar',
+    title: '«O‘zbeklar» hikoyasi matni ustida ishlash',
+    short: 'Ituzum, Abdug‘odir, tarvuz va tor uydagi keng ko‘ngil',
+    lesson: [
+      {
+        title: 'Ituzum va xotira',
+        text: 'Hikoyachining tomog‘i shamollaydi. Botir cho‘pon unga bir bog‘ ituzum beradi. Bu o‘simlik hikoyachiga bolaligini eslatadi: uning buvisi ham tomoqni ituzum bilan davolardi.',
+        note: 'Buvi obrazi: eri «xalq dushmani» deb otilgan, o‘n bir qursoqni boqaman deb umrini tog‘da o‘tkazgan kampir. Kichik detal orqali butun bir davr fojiasi ochiladi.',
+      },
+      {
+        title: 'Kasallik va mehr',
+        list: [
+          'Saparboy kasal hikoyachi uchun ikki fartuk paxta terib bermoqchi bo‘ladi — bu minglab egilib-turish degani.',
+          'Azimjon aka uni yotib qolishga ko‘ndiradi.',
+          'Hikoyachi yolg‘iz qolib, uyni supurib-tozalaydi.',
+        ],
+      },
+      {
+        title: 'Abdug‘odir va kuchukcha',
+        text: 'Hikoyachi devor oldida 10–11 yoshli bolakayni ko‘radi: u it bolasini olib o‘tayotgan onasini kuzatmoqda. Bola — Botir cho‘ponning o‘g‘li Abdug‘odir.',
+        list: [
+          'Bola kuchukchani ko‘chadan hovliga o‘tkazib qo‘yadi, ona it esa uni yana uyasiga olib qaytadi.',
+          'Hikoyachi: «Ming qilsa ham o‘zining uyi-da».',
+          'Abdug‘odir otasining ordeni yo‘qligidan g‘amgin: «Eshimboyning ordeni bor, lekin qo‘yi kam».',
+          'Uning ukasi chala tug‘ilib, nobud bo‘lgan.',
+        ],
+        rule: 'Bolalar ham kattalarning «mahinatsiya»larini bilishardi — hikoyada adolatsizlik ham yashirin ko‘rsatiladi.',
+        ruleLabel: 'Detal ma’nosi',
+      },
+      {
+        title: 'Og‘ir hayot',
+        text: 'Hikoyachi cho‘pon oilasining hayotini kuzatadi: ayol tong otmay turib, sigir sog‘adi, o‘rmak to‘qiydi, kechgacha paxta teradi; kechasi ham derazasidan nur tushib turadi.',
+        rule: 'Hikoyachi iqror bo‘ladi: biz bunday g‘arib kulbalarni ko‘rganmiz, lekin tan olishdan uyalardik. Bechora o‘zbek o‘zi yemay, mehmonga tutadi.',
+        ruleLabel: 'Muallif fikri',
+      },
+      {
+        title: 'Yarim palla tarvuz',
+        text: 'Abdug‘odir kasal hikoyachiga otasi bergan yarim palla tarvuzni olib keladi. Hikoyachi «qornim to‘q» deb rad etadi. Bola tarvuzni yerga qo‘yib, qochib ketadi.',
+        note: 'Ularning o‘zida bitta tarvuz bor edi — yarmini mehmonga berishdi. Bu — saxovatning eng sof ko‘rinishi.',
+      },
+      {
+        title: 'Tor uy — keng ko‘ngil',
+        text: 'Botir cho‘pon talabalarni oshga taklif qiladi: «Ko‘ngil keng bo‘lsa, bemalol sig‘ishamiz». To‘rt kishilik xonaga o‘n talaba kiradi.',
+        list: [
+          'Hikoyachi ovqatga qo‘l urmaydi — kambag‘al oilaning nonini yeyishga vijdoni yo‘l qo‘ymaydi.',
+          'Cho‘pon xafa bo‘ladi: «Yo bizni pisand qilmayaptilarmi?»',
+          'O‘rmon aka esa hech narsadan tap tortmaydi.',
+        ],
+        note: 'Hikoyachi tushuntiradi: talabalar o‘zlari ham to‘yib yashamasdi, biri birovning qandini, kosasidagi go‘shtni o‘g‘irlardi.',
+      },
+    ],
+    pairs: [
+      ['Ituzum', 'Tomoqqa dori bo‘ladigan o‘simlik'],
+      ['Abdug‘odir', 'Botir cho‘ponning o‘g‘li'],
+      ['Fartuk', 'Paxta teriladigan etak'],
+      ['Yarim palla tarvuz', 'Saxovat belgisi'],
+      ['Eshimboy', 'Ordenli, lekin qo‘yi kam cho‘pon'],
+      ['Kuchukcha', 'Onasi uyasiga qaytargan jonivor'],
+      ['Buvi', 'Ituzum bilan davolagan kampir'],
+    ],
+    quiz: [
+      { q: 'Botir cho‘pon hikoyachiga nima beradi?', options: ['ituzum', 'dori', 'asal', 'non'], answer: 0 },
+      { q: 'Ituzum hikoyachiga kimni eslatadi?', options: ['buvisini', 'onasini', 'o‘qituvchisini', 'do‘stini'], answer: 0 },
+      { q: 'Kim kasal hikoyachi uchun paxta terib bermoqchi bo‘ladi?', options: ['Saparboy', 'O‘rmon aka', 'Azimjon aka', 'Mirzag‘olib'], answer: 0 },
+      { q: 'Abdug‘odir nimani kuzatayotgan edi?', options: ['it va kuchukchani', 'qo‘ylarni', 'qushlarni', 'talabalarni'], answer: 0 },
+      { q: 'Abdug‘odir hikoyachiga nima olib keladi?', options: ['yarim palla tarvuz', 'qovun', 'non', 'choy'], answer: 0 },
+      { q: 'Botir cho‘pon talabalarni nimaga taklif qiladi?', options: ['oshga', 'to‘yga', 'ovga', 'sayrga'], answer: 0 },
+      { q: 'Hikoyachi nega ovqat yemaydi?', options: ['kambag‘al oilaning nonini yeyishdan iymandi', 'kasal edi', 'ovqat yoqmadi', 'shoshayotgan edi'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Cho‘pon oilasining saxovati', 'Talabalarning qilmishi'],
+      items: [
+        { text: 'ituzum berish', cat: 0 }, { text: 'qandni o‘g‘irlash', cat: 1 },
+        { text: 'yarim tarvuz yuborish', cat: 0 }, { text: 'kosadan go‘sht olish', cat: 1 },
+        { text: 'oshga taklif', cat: 0 }, { text: 'tap tortmay yeyish', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Ituzum detali hikoyada qanday vazifa bajaradi?', a: 'Hikoyachining bolaligi va buvisining fojiali taqdirini — butun bir davrni eslatadi.' },
+      { q: 'Kuchukcha epizodining ma’nosi nima?', a: 'Har kimga o‘z uyi aziz; ona mehri; bola qalbining mehribonligi.' },
+      { q: '«Ko‘ngil keng bo‘lsa, bemalol sig‘ishamiz» gapini izohlang.', a: 'Mehmondo‘stlik uyning kattaligiga emas, ko‘ngil kengligiga bog‘liq.' },
+      { q: 'Hikoyachi va O‘rmon akaning farqi nimada?', a: 'Hikoyachi vijdonli, kambag‘aldan olishga iymanadi; O‘rmon aka manfaatparast.' },
+    ],
+    sequences: [
+      {
+        title: 'Voqealarni tartib bilan joylang',
+        items: [
+          'Hikoyachining tomog‘i shamollaydi',
+          'Botir cho‘pon ituzum beradi',
+          'Hikoyachi Abdug‘odir bilan tanishadi',
+          'Abdug‘odir yarim palla tarvuz olib keladi',
+          'Botir cho‘pon talabalarni oshga chaqiradi',
+          'Hikoyachi ovqatga qo‘l urmaydi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['ituzum', 'tarvuz', 'osh', 'ma’jun'], answer: 3, why: 'Ma’jun — «Jaloliddin Manguberdi»dagi detal.' },
+      { items: ['Botir cho‘pon', 'Abdug‘odir', 'opa', 'O‘rmon aka'], answer: 3, why: 'O‘rmon aka talaba; qolganlari cho‘pon oilasi.' },
+      { items: ['saxovat', 'mehmondo‘stlik', 'bag‘rikenglik', 'ochko‘zlik'], answer: 3, why: 'Ochko‘zlik — cho‘pon oilasiga xos emas.' },
+    ],
+    debate: [
+      { claim: 'Hikoyachi ovqatdan bosh tortib, cho‘ponni xafa qildi.', pro: 'Mezbonning taomini rad etish odobsizlik.', con: 'U kambag‘al oilaga og‘irlik qilmaslikni o‘yladi — bu vijdon.' },
+      { claim: 'Og‘ir sharoit talabalarning o‘g‘irligini oqlaydi.', pro: 'Och odam o‘zini boshqara olmaydi.', con: 'Hech qanday sharoit nomardlikni oqlamaydi.' },
+    ],
+    creative: [
+      { task: 'Abdug‘odir tarvuzni yerga qo‘yib qochgan lahzada nimani o‘ylagan? 2 gap.', time: 60 },
+      { task: 'Botir cho‘ponning tor uyini doskaga chizing va unga «keng ko‘ngil» belgisini qo‘shing.', time: 90 },
+      { task: 'Oilangizdagi bir mehmondo‘stlik odatini sinfga aytib bering.', time: 60 },
+    ],
+  },
+
+  /* ===================== 55 ===================== */
+  {
+    id: 'adab-ozbeklar-3',
+    source: 'IV chorak • 55-dars • 207–211-betlar',
+    title: '«O‘zbeklar» hikoyasi tahlili. Muhokama',
+    short: 'Yo‘qolgan qo‘zi, vijdon azobi va laylakqor ostidagi ko‘z yoshlar',
+    lesson: [
+      {
+        title: 'Yo‘qolgan qo‘ylar',
+        text: 'Yomg‘irli kechada Botir cho‘ponning qo‘y-echkilari tarqab ketadi. Talabalar ularni izlab, ko‘pini topib kelishadi. Bitta qo‘zi topilmaydi.',
+        note: 'Cho‘pon: uni o‘zim topaman; topsam, ikki qo‘yimdan birini so‘yib beraman, deydi.',
+      },
+      {
+        title: 'Tungi o‘g‘rilik',
+        text: 'Kechasi O‘rmon aka, Azimjon aka va Mirzag‘olib hikoyachini chaqirishadi: ular topilmagan qo‘zini so‘yishmoqchi. Hikoyachi qarshilik qiladi: bu Botir akaning qo‘zisi-ku!',
+        list: [
+          'O‘rmon aka: kolxoz bizni ochdan o‘ldiradi; Botir bir qo‘zidan ochdan o‘lmaydi.',
+          'Hikoyachi qishloq tomonga bir-ikki qadam bosadi, lekin yolg‘izlanib qolishdan qo‘rqadi.',
+          'U go‘shtdan yemaydi, ammo o‘zini baribir o‘g‘rilikka sherik deb biladi.',
+        ],
+        rule: 'Hikoyachining iqrori: vijdon bilan qo‘rquv o‘rtasidagi kurash. Jim turish ham sheriklikdir.',
+        ruleLabel: 'Ma’naviy muammo',
+      },
+      {
+        title: 'Cho‘ponning javobi',
+        text: 'Ketish oldidan Botir cho‘pon va xotini talabalarni xayrlashuv mehmonligiga chaqiradi. Qo‘zi «topildi» deyishadi, aslida ular o‘g‘irlikni sezgan bo‘lishi mumkin, lekin yuzlariga solmaydi.',
+        rule: 'Kambag‘al cho‘pon o‘g‘irlikka yaxshilik bilan javob beradi — bu talabalar uchun eng og‘ir «jazo» bo‘ladi.',
+        ruleLabel: 'Kulminatsiya',
+      },
+      {
+        title: 'Pushaymonlik',
+        text: 'O‘sha kechasi kayfi oshgan talabalar o‘zaro gaplashadi. Azimjon aka ingraydi: biz ablahmiz, ko‘ra-bila turib ablahlik qilamiz; ana ularni o‘zbek desa bo‘ladi!',
+        list: [
+          'O‘rmon aka: hayot majbur qiladi-da.',
+          'Ular cho‘ponga pul yig‘ib berishni o‘ylashadi.',
+          'Ba’zilar esa hikoyachidan g‘azablanadi: u bir umr bizdan kulib yuradi.',
+        ],
+      },
+      {
+        title: 'Laylakqor va ko‘z yoshlar',
+        text: 'Ertasi kuni laylakqor yog‘ayotganda talabalar qaytadi. Abdug‘odir hikoyachiga ma’yus qarab turadi. Avtobusda hikoyachi derazadan qarab yig‘laydi.',
+        rule: 'Xulosa: hikoyachi sodda, jaydari o‘zbekning kengligi, qiyinchilik va faqirlikka qaramay fe’li tor bo‘lmagan, instinkt kabi yashayotgan afsonaviy mehmondo‘stligi uchun ich-ichidan quvonib yig‘laydi.',
+        ruleLabel: 'Yechim',
+      },
+      {
+        title: 'Sabab va oqibat',
+        table: {
+          head: ['Sabab', 'Voqea', 'Oqibat'],
+          rows: [
+            ['Talabalar och yashaydi', 'Qo‘zini o‘g‘irlab so‘yishadi', 'Vijdon azobi, pushaymonlik'],
+            ['Cho‘pon oilasi saxiy', 'Xayrlashuv mehmonligi beradi', 'Talabalar o‘zlarini «ablah» deb his qiladi'],
+            ['Hikoyachi qo‘rqadi', 'Jim turadi', 'O‘zini sherik deb biladi'],
+            ['Hikoyachi ezgulikni ko‘radi', 'Avtobusda yig‘laydi', 'Millat fazilatiga iftixor'],
+          ],
+        },
+      },
+      {
+        title: 'Muhokama',
+        list: [
+          'Hikoyada o‘zbek xarakterining qaysi jihatlari ochilgan?',
+          'Atrofimizda O‘rmonjon, Azimjonga o‘xshagan kishilar bo‘lmasligi uchun qanday tavsiyalar berardingiz?',
+          'Agar Ergashvoy cho‘ponga o‘g‘rilik haqida aytib berganida, voqealar qanday tus olardi?',
+          'Bugun ham bu xislatlarni «o‘zbek xarakteri» deya olamizmi?',
+        ],
+      },
+    ],
+    pairs: [
+      ['Qo‘zi', 'Talabalar o‘g‘irlab so‘ygan jonivor'],
+      ['Mirzag‘olib', '«Rais» laqabli polvon'],
+      ['Laylakqor', 'Ketish kuni yoqqan qor'],
+      ['«Biz ablahmiz»', 'Azimjon akaning pushaymon nidosi'],
+      ['Xayrlashuv mehmonligi', 'Cho‘ponning javobi'],
+      ['Vijdon', 'Hikoyachini qiynagan tuyg‘u'],
+    ],
+    quiz: [
+      { q: 'Nechta qo‘zi topilmaydi?', options: ['bitta', 'ikkita', 'beshta', 'hammasi topiladi'], answer: 0 },
+      { q: 'Qo‘zini kim so‘ymoqchi bo‘ladi?', options: ['O‘rmon aka va sheriklari', 'Botir cho‘pon', 'Abdug‘odir', 'brigadir'], answer: 0 },
+      { q: 'Hikoyachi go‘shtdan yeydimi?', options: ['yo‘q', 'ha', 'ozgina', 'keyin yeydi'], answer: 0 },
+      { q: 'Cho‘pon ketish oldidan nima qiladi?', options: ['mehmonlikka chaqiradi', 'shikoyat qiladi', 'politsiyaga boradi', 'urishadi'], answer: 0 },
+      { q: '«Biz ablahmiz» deb kim ingraydi?', options: ['Azimjon aka', 'O‘rmon aka', 'hikoyachi', 'Saparboy'], answer: 0 },
+      { q: 'Talabalar qaytgan kuni qanday ob-havo?', options: ['laylakqor', 'jazirama', 'yomg‘ir', 'shamol'], answer: 0 },
+      { q: 'Hikoyachi avtobusda nega yig‘laydi?', options: ['o‘zbek bag‘rikengligidan ta’sirlanib', 'kasal bo‘lgani uchun', 'qishloqni tark etgani uchun', 'sovqotgani uchun'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Vijdon ovozi', 'O‘zini oqlash'],
+      items: [
+        { text: '«Biz ablahmiz»', cat: 0 }, { text: '«Hayot majbur qiladi-da»', cat: 1 },
+        { text: 'go‘shtdan yemaslik', cat: 0 }, { text: '«Kolxoz bizni ochdan o‘ldiradi»', cat: 1 },
+        { text: 'pul yig‘ib berish fikri', cat: 0 }, { text: '«Botir bir qo‘zidan o‘lmaydi»', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Nega hikoyachi o‘zini o‘g‘rilikka sherik deb biladi?', a: 'Go‘sht yemagan bo‘lsa ham, qo‘rqib jim turdi va to‘xtatmadi.' },
+      { q: 'Cho‘ponning yaxshiligi talabalarga qanday ta’sir qildi?', a: 'Ular uyaldi, o‘zlarini «ablah» deb his qildi, vijdoni uyg‘ondi.' },
+      { q: 'Hikoyaning yechimi nima?', a: 'Hikoyachi o‘zbek bag‘rikengligi va mehmondo‘stligidan ta’sirlanib yig‘laydi.' },
+      { q: 'Hikoyada qanday salbiy jihatlar ham ko‘rsatilgan?', a: 'Manfaatparastlik, o‘g‘rilik, ikkiyuzlamachilik, qo‘rquvdan jim turish.' },
+    ],
+    sequences: [
+      {
+        title: 'Yakuniy voqealar',
+        items: [
+          'Yomg‘irli kechada qo‘ylar tarqab ketadi',
+          'Talabalar qo‘ylarni topib keladi',
+          'O‘rmon aka va sheriklari qo‘zini so‘yadi',
+          'Cho‘pon xayrlashuv mehmonligiga chaqiradi',
+          'Talabalar pushaymon bo‘lib gaplashadi',
+          'Hikoyachi avtobusda yig‘laydi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['pushaymonlik', 'vijdon azobi', 'uyat', 'g‘urur'], answer: 3, why: 'Qolganlari o‘g‘rilikdan keyingi tuyg‘ular.' },
+      { items: ['O‘rmon aka', 'Azimjon aka', 'Mirzag‘olib', 'Saparboy'], answer: 3, why: 'Saparboy o‘g‘rilikda qatnashmagan, mehribon yigit.' },
+      { items: ['ekspozitsiya', 'tugun', 'kulminatsiya', 'sonet'], answer: 3, why: 'Sonet — lirik janr.' },
+    ],
+    debate: [
+      { claim: 'Ergashvoy cho‘ponga o‘g‘rilik haqida aytishi kerak edi.', pro: 'Haqiqat hamma narsadan ustun; jim turish sheriklik.', con: 'Bu kursdoshlariga xiyonat bo‘lardi va cho‘ponni ham xijolatga qo‘yardi.' },
+      { claim: 'Bugun ham hikoyadagi xislatlar «o‘zbek xarakteri».', pro: 'Mehmondo‘stlik va bag‘rikenglik hamon xalqimizda bor.', con: 'Zamon o‘zgardi, shahar hayoti odamlarni yopiqroq qildi.' },
+    ],
+    creative: [
+      { task: 'Hikoyaga boshqa yakun o‘ylab toping: Ergashvoy cho‘ponga haqiqatni aytdi. 3 gapda davom ettiring.', time: 120 },
+      { task: '«O‘zbeklar» hikoyasiga yangi nom qo‘ying va asoslang.', time: 60 },
+      { task: 'Abdug‘odir 20 yildan keyin shu talabani uchratsa, nima der edi? 2 gap.', time: 90 },
+    ],
+  },
+
+  /* ===================== 56 ===================== */
+  {
+    id: 'adab-xarakter',
+    source: 'IV chorak • 56-dars • 211–212-betlar',
+    title: '«O‘zbeklar»: obrazlar tahlili. Nazariy ma’lumot: xarakter',
+    short: 'Xarakter tushunchasi va adabiyotdagi xarakter darajasidagi obrazlar',
+    lesson: [
+      {
+        title: 'Xarakter nima?',
+        rule: 'Xarakter (yunoncha — iz, belgi, farqlovchi xususiyat) — badiiy asarda biror davr, muhit kishilariga xos eng muhim, boshqalarga o‘xshamaydigan individual xususiyatlari bilan ajralib turadigan shaxs.',
+        ruleLabel: 'Nazariy ma’lumot',
+        text: 'Xarakter kishining ijobiy yoki salbiy xatti-harakatida, fe’l-atvorida, ruhiy kechinmalarida, nutqida, fikrlarida va voqelikka munosabatida namoyon bo‘ladi.',
+      },
+      {
+        title: 'Har qanday qahramon xarakter emas',
+        text: 'Asarlarda tasvirlangan qahramonlarning hammasi xarakter darajasiga ko‘tarila olmaydi. Qahramonning xususiy belgilarini ochish uchun ijodkordan yuksak mahorat talab qilinadi.',
+        table: {
+          head: ['Asar', 'Xarakter darajasidagi obraz'],
+          rows: [
+            ['A. Qodiriy, «O‘tkan kunlar»', 'Otabek, O‘zbek oyim'],
+            ['G‘. G‘ulom, «Mening o‘g‘rigina bolam»', 'Roqiya bibi'],
+            ['A. Qahhor, «O‘g‘ri»', 'Amin'],
+            ['A. Chexov, «Xameleon»', 'Ochumelov'],
+          ],
+        },
+      },
+      {
+        title: '«O‘zbeklar»dagi obrazlar',
+        table: {
+          head: ['Obraz', 'Xarakter belgilari', 'Matndan dalil'],
+          rows: [
+            ['Ergashvoy', 'Vijdonli, nozik, ammo qo‘rqoqroq', 'Go‘sht yemaydi, lekin jim turadi; avtobusda yig‘laydi'],
+            ['O‘rmon aka', 'Uddaburon, gapdon, manfaatparast', 'Qo‘zini so‘yishni boshlaydi, «hayot majbur qiladi» deydi'],
+            ['Azimjon aka', 'Ziyoli ko‘rinishli, ammo ikkiyuzlamachi', 'Yozuvchilarni yolg‘onchi deydi, o‘zi o‘g‘rilik qiladi, keyin pushaymon'],
+            ['Botir cho‘pon', 'Kambag‘al, saxiy, keng ko‘ngil', '«Ko‘ngil keng bo‘lsa, sig‘ishamiz»'],
+            ['Abdug‘odir', 'Mehribon, g‘ururli bola', 'Tarvuzni tashlab qochadi, kuchukchaga g‘amxo‘rlik'],
+          ],
+        },
+      },
+      {
+        title: 'Xarakter qanday ochiladi?',
+        list: [
+          'Xatti-harakat: kim nima qiladi?',
+          'Nutq: qanday gapiradi, qanday so‘zlar ishlatadi? (sheva, kinoya)',
+          'Ruhiy kechinma: nimani his qiladi?',
+          'Boshqalarning munosabati: unga qanday qarashadi?',
+          'Portret va detal: qiyofasi, kiyimi, buyumlari.',
+        ],
+        note: 'Hikoyada sheva so‘zlari («xush kepsizlar», «bo‘lgich edi») qahramonlarni jonli va hayotiy qiladi.',
+      },
+      {
+        title: 'Biz o‘rgangan xarakterlar',
+        table: {
+          head: ['Asar', 'Xarakter', 'Asosiy belgisi'],
+          rows: [
+            ['«Ravshan»', 'Hasanxon', 'Mard ota, adolatli'],
+            ['«Oq kema»', 'O‘rozgul', 'Zolim, qo‘pol'],
+            ['«Mirkomilboyning qazo bo‘lgan namozi»', 'Mirkomil', 'Haqgo‘y, qaysar'],
+            ['«Jaloliddin Manguberdi»', 'Badriddin', 'Mansabparast xoin'],
+            ['«So‘nggi saboq»', 'Mosye Amel', 'Fidoyi ustoz'],
+          ],
+        },
+      },
+    ],
+    pairs: [
+      ['Xarakter', 'Iz, belgi, farqlovchi xususiyat'],
+      ['Otabek', '«O‘tkan kunlar» qahramoni'],
+      ['Roqiya bibi', '«Mening o‘g‘rigina bolam»'],
+      ['Amin', '«O‘g‘ri» hikoyasi'],
+      ['Ochumelov', '«Xameleon»'],
+      ['Botir cho‘pon', 'Keng ko‘ngil'],
+      ['O‘rmon aka', 'Manfaatparast'],
+    ],
+    quiz: [
+      { q: '«Xarakter» so‘zi yunonchada nimani bildiradi?', options: ['iz, belgi', 'harakat', 'qo‘shiq', 'yuz'], answer: 0 },
+      { q: 'Har qanday qahramon xarakter bo‘ladimi?', options: ['yo‘q', 'ha', 'faqat bosh qahramon', 'faqat salbiy'], answer: 0 },
+      { q: '«O‘tkan kunlar»dagi xarakter darajasidagi obraz?', options: ['O‘zbek oyim', 'Ravshan', 'Bob', 'Frans'], answer: 0 },
+      { q: '«O‘g‘ri» hikoyasidagi xarakter?', options: ['amin', 'Botir', 'O‘rmon', 'Jim'], answer: 0 },
+      { q: 'Xarakter nimada namoyon bo‘ladi?', options: ['xatti-harakat, nutq, kechinmada', 'faqat ismida', 'faqat kiyimida', 'faqat yoshida'], answer: 0 },
+      { q: '«O‘zbeklar»da saxiylik timsoli?', options: ['Botir cho‘pon', 'O‘rmon aka', 'Azimjon aka', 'Mirzag‘olib'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Ijobiy xarakter', 'Salbiy xarakter'],
+      items: [
+        { text: 'Botir cho‘pon', cat: 0 }, { text: 'O‘rmon aka', cat: 1 },
+        { text: 'Mosye Amel', cat: 0 }, { text: 'Badriddin', cat: 1 },
+        { text: 'Hasanxon', cat: 0 }, { text: 'O‘rozgul', cat: 1 },
+        { text: 'Mirkomil', cat: 0 }, { text: 'Ochumelov', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Xarakterga ta’rif bering.', a: 'Davr va muhitga xos, boshqalarga o‘xshamaydigan individual xususiyatlari bilan ajralgan shaxs.' },
+      { q: 'Xarakter qanday vositalar orqali ochiladi?', a: 'Xatti-harakat, nutq, ruhiy kechinma, boshqalarning munosabati, portret va detal.' },
+      { q: '«O‘zbeklar»da qaysi obrazlar xarakter darajasiga ko‘tarilgan?', a: 'Ergashvoy, O‘rmon aka, Botir cho‘pon (asoslab).' },
+      { q: 'Azimjon akaning ikkiyuzlamachiligi nimada?', a: 'Yozuvchilarni yolg‘onchi deydi, o‘zi esa o‘g‘rilik qiladi.' },
+    ],
+    odd: [
+      { items: ['Otabek', 'O‘zbek oyim', 'Roqiya bibi', 'Zulxumor'], answer: 3, why: 'Zulxumor — doston qahramoni; qolganlari darslikda xarakter misoli sifatida keltirilgan.' },
+      { items: ['xatti-harakat', 'nutq', 'kechinma', 'qofiya'], answer: 3, why: 'Qofiya xarakter ochish vositasi emas.' },
+      { items: ['Botir cho‘pon', 'Abdug‘odir', 'Saparboy', 'O‘rmon aka'], answer: 3, why: 'O‘rmon aka — salbiy xarakter.' },
+    ],
+    debate: [
+      { claim: 'O‘rmon aka butunlay salbiy obraz.', pro: 'U o‘g‘rilikni boshlagan, manfaatparast.', con: 'U uddaburon, pushaymon ham bo‘ladi; hayot uni shunday qilgan.' },
+      { claim: 'Salbiy xarakterlar ijobiylardan qiziqroq.', pro: 'Ular murakkab, kutilmagan harakat qiladi.', con: 'Ijobiy xarakterlar ibrat beradi va qalbga yaqin.' },
+    ],
+    creative: [
+      { task: 'Bir sinfdoshingizni (yaxshi tomondan) 3 ta xarakter belgisi bilan tasvirlang, ismini aytmang — sinf topsin.', time: 90 },
+      { task: 'O‘rmon aka uchun «Adabiy Instagram» bio yozing (2 satr).', time: 60 },
+      { task: 'Botir cho‘ponning bir kunlik hayotini 4 ta harakat bilan ayting.', time: 60 },
+    ],
+  },
+
+  /* ===================== 57 ===================== */
+  {
+    id: 'adab-tavallo',
+    source: 'IV chorak • 57-dars • 213–215-betlar',
+    title: 'To‘ra Sulaymon. «Tavallo» she’ri',
+    short: 'Xalqona shoir va ona mehrining chinligi haqidagi she’r',
+    lesson: [
+      {
+        title: 'To‘ra Sulaymon',
+        text: 'Shoir 1934-yili Jizzax viloyatining Baxmal tumanidagi Aldashmon qishlog‘ida tug‘ilgan. Uning o‘zi tug‘ilgan yili aniq emasligini, oilasi quloq qilinganda onasining qo‘lida bo‘lganini eslaydi.',
+        list: [
+          'Ijodga havas xalq kitoblarini yaxshi bilgan ota-onasi ta’sirida uyg‘ongan.',
+          'Otasidan eshitgan «Boldirboy» ertagini alohida yaxshi ko‘rgan.',
+          'Birinchi kitobi — «Istar ko‘ngil» (1962).',
+          '«Qorasoch» dostoni, «Men qayga borar bo‘lsam» to‘plami nashr etilgan.',
+          'She’rlarini ko‘plab xonandalar kuylagan.',
+        ],
+        rule: 'To‘ra Sulaymon she’rlarida xalq og‘zaki ijodi ta’siri kuchli, tabiatga oshuftalik, inson va borliq o‘rtasidagi aloqa yaqqol ko‘rinadi.',
+        ruleLabel: 'Ijodiga xos',
+      },
+      {
+        title: '«Tavallo» — mazmun',
+        text: 'Tavallo — yolvorish, iltijo. She’r matnini darslikning 214–215-betlaridan ifodali o‘qing. Lirik qahramon hayotidagi og‘ir onlarni sanaydi va har bandni bir xil xulosa bilan tugatadi.',
+        rule: 'Naqarot mazmuni: musibat kelganda chin dildan faqat ona yig‘laydi, qolganlarning yig‘isi yolg‘on.',
+        ruleLabel: 'G‘oya',
+      },
+      {
+        title: 'Og‘ir onlar ro‘yxati',
+        table: {
+          head: ['Band', 'Qahramon holati', 'Ona'],
+          rows: [
+            ['1', 'Ko‘ngli g‘ash, egilmas boshi egilgan, ko‘zida yosh', 'Yig‘laydi'],
+            ['2', 'Ovdan quruq qaytgan, qozon qaynamay qolgan, qarzga botgan', 'Taskin berib yig‘laydi'],
+            ['3', 'Nohaq jabr ko‘rgan, qadri tuproqdan ham xor bo‘lgan', 'Ohlar urib yig‘laydi'],
+            ['4', 'Aka-ukalar o‘rtasida izzat va mulk talashi', 'Oq suti, mehriga xilof deb yig‘laydi'],
+            ['5–6', 'Maydonda nohaq yengilgan, dushman ustun, o‘zi nogiron', 'Oy tutilib yig‘laydi'],
+            ['Yakun', 'Qahramon Xudoga iltijo qiladi', 'Mushfiq onamni yig‘latma!'],
+          ],
+        },
+      },
+      {
+        title: 'Badiiy xususiyatlar',
+        list: [
+          'Naqarot — har band oxirida qaytuvchi xulosa; asosiy fikrni ta’kidlaydi.',
+          'Tazod — onaning chin yig‘isi va boshqalarning yolg‘on yig‘isi.',
+          'Xalqona ohang — sodda so‘zlar, qo‘shiqdek ritm.',
+          'Kuchayib boruvchi tasvir — har bandda musibat og‘irlashadi.',
+          'Yakunda burilish — qahramon o‘zi uchun emas, onasi yig‘lamasligi uchun iltijo qiladi.',
+        ],
+      },
+      {
+        title: 'Ona haqidagi asarlar',
+        table: {
+          head: ['Ijodkor', 'Asar', 'Onaning xususiyati'],
+          rows: [
+            ['To‘ra Sulaymon', '«Tavallo»', 'Mehribon, samimiy, chin dardkash'],
+            ['O‘tkir Hoshimov', '«Dunyoning ishlari»', 'Fidoyi, sabrli'],
+            ['Maqsud Shayxzoda', '«Jaloliddin Manguberdi»', 'Vatanparvar, fidoyi'],
+          ],
+        },
+        note: 'Uyga vazifa: «Tavallo» she’rini yod oling.',
+      },
+      {
+        title: 'Muhokama',
+        list: [
+          'She’rning ilk misralaridan lirik qahramonning tabiatiga izoh bering.',
+          'She’rning ona haqidagi boshqa she’rlardan o‘ziga xosligi nimada?',
+          'Maydonda nohaq mag‘lubiyat haqidagi band qanday kechinmani ifodalaydi?',
+          'Nega she’r yakunida qahramon o‘zi uchun emas, onasi uchun iltijo qiladi?',
+        ],
+      },
+    ],
+    pairs: [
+      ['To‘ra Sulaymon', '«Tavallo» muallifi'],
+      ['Baxmal', 'Shoir tug‘ilgan tuman'],
+      ['Tavallo', 'Yolvorish, iltijo'],
+      ['«Istar ko‘ngil»', 'Shoirning birinchi kitobi'],
+      ['«Boldirboy»', 'Shoir sevgan ertak'],
+      ['Naqarot', 'Har band oxirida qaytuvchi satr'],
+      ['Volida', 'Ona'],
+    ],
+    quiz: [
+      { q: 'To‘ra Sulaymon qayerda tug‘ilgan?', options: ['Jizzax viloyati, Baxmal', 'Surxondaryo', 'Andijon', 'Xorazm'], answer: 0 },
+      { q: 'Shoirning birinchi kitobi?', options: ['«Istar ko‘ngil»', '«Qorasoch»', '«Tanish teraklar»', '«Yurak»'], answer: 0 },
+      { q: '«Tavallo» so‘zining ma’nosi?', options: ['yolvorish', 'qo‘shiq', 'hikoya', 'sayohat'], answer: 0 },
+      { q: 'She’rga ko‘ra, chin dildan kim yig‘laydi?', options: ['ona', 'do‘stlar', 'qo‘shnilar', 'aka-ukalar'], answer: 0 },
+      { q: 'She’r yakunida qahramon nima so‘raydi?', options: ['onasini yig‘latmaslikni', 'boylik', 'shon-shuhrat', 'g‘alaba'], answer: 0 },
+      { q: 'Har band oxirida qaytuvchi satr?', options: ['naqarot', 'matla', 'radif', 'remarka'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Qahramon boshiga tushgan musibat', 'Onaning munosabati'],
+      items: [
+        { text: 'ovdan quruq qaytish', cat: 0 }, { text: 'taskin berib yig‘lash', cat: 1 },
+        { text: 'qarzga botish', cat: 0 }, { text: 'ohlar urib yig‘lash', cat: 1 },
+        { text: 'aka-ukalar nizosi', cat: 0 }, { text: 'oq sutiga xilof deyish', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'She’rning asosiy g‘oyasi nima?', a: 'Musibatda chin dildan faqat ona qayg‘uradi; ona mehri eng samimiy mehr.' },
+      { q: 'Naqarot she’rda qanday vazifa bajaradi?', a: 'Asosiy fikrni har bandda ta’kidlaydi, she’rga qo‘shiqdek ohang beradi.' },
+      { q: 'Aka-ukalar nizosi haqidagi band nimani ko‘rsatadi?', a: 'Farzandlarning izzat va mulk talashishi ona qalbini eng ko‘p og‘ritishini.' },
+      { q: 'Yakundagi iltijoning ma’nosi nima?', a: 'Qahramon o‘z dardidan ham ko‘ra onasining ko‘z yoshidan qo‘rqadi — farzandlik mehri.' },
+    ],
+    sequences: [
+      {
+        title: 'She’rdagi musibatlar kuchayib boradi: tartiblang',
+        items: [
+          'Ko‘ngil g‘ash, ko‘zda yosh',
+          'Ovdan quruq qaytish, qarz',
+          'Nohaq jabr, qadrning xorlanishi',
+          'Aka-ukalar o‘rtasida nizo',
+          'Maydonda nohaq mag‘lubiyat',
+          'Xudoga iltijo: onamni yig‘latma',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['«Istar ko‘ngil»', '«Qorasoch»', '«Men qayga borar bo‘lsam»', '«Tanish teraklar»'], answer: 3, why: '«Tanish teraklar» — Muhammad Yusuf kitobi.' },
+      { items: ['tavallo', 'iltijo', 'yolvorish', 'shikoyatnoma'], answer: 3, why: 'Qolganlari sinonimlar: yolvorish ma’nosida.' },
+      { items: ['ona', 'volida', 'ena', 'qayliq'], answer: 3, why: 'Qayliq — kelin; qolganlari «ona» ma’nosida.' },
+    ],
+    debate: [
+      { claim: 'Musibatda faqat ona chin dildan qayg‘uradi.', pro: 'Ona mehri beg‘araz, boshqalar o‘z manfaatini o‘ylaydi.', con: 'Chin do‘stlar va oila a’zolari ham samimiy qayg‘uradi.' },
+      { claim: 'Farzand o‘z muammolarini onasidan yashirishi kerak.', pro: 'Onani qayg‘uga solmaslik uchun.', con: 'Ona eng yaqin maslahatchi; yashirish uni battar xavotirga soladi.' },
+    ],
+    creative: [
+      { task: 'Onangizning eng mehribon lahzadagi yuz ifodasini 3 ta so‘z bilan tasvirlang.', time: 60 },
+      { task: 'Onangizga bir jumlalik «tavallo» — minnatdorlik so‘zini yozing.', time: 60 },
+      { task: '«Tavallo» qolipida bitta yangi band mazmunini o‘ylab toping: qahramonning qaysi holatida ona yig‘lardi?', time: 90 },
+    ],
+  },
+
+  /* ===================== 58 ===================== */
+  {
+    id: 'adab-iltijo',
+    source: 'IV chorak • 58-dars • 216–218-betlar',
+    title: 'To‘ra Sulaymon. «Iltijo» she’ri tahlili',
+    short: '«Bahor, ketma mening bog‘imdan»: tabiat va umr, «Armon» she’ri',
+    lesson: [
+      {
+        title: 'Tabiat lirikasi',
+        text: 'Tabiat tasviri ifodalangan she’rlarda shoir tabiat manzarasi orqali o‘z ruhiy holatini, hayot haqidagi o‘ylarini ifodalaydi.',
+        rule: '«Iltijo» she’rida bahor — hayot, yoshlik, umid va go‘zallik timsoli. Har band «Bahor, ketma mening bog‘imdan» naqaroti bilan tugaydi.',
+        ruleLabel: 'Asosiy obraz',
+        note: 'She’r matnini darslikning 216-betidan ifodali o‘qing. Uning asosida Sherali Jo‘rayev «Ketma bahor» qo‘shig‘ini kuylagan.',
+      },
+      {
+        title: 'Bandlar mazmuni',
+        table: {
+          head: ['Band', 'Mazmuni'],
+          rows: [
+            ['1', 'Bahor kelishi: bulbul xonishi, qushlar nag‘masi, lola sayli, qishloqlarda yil boshi'],
+            ['2', 'Bahorsiz yolg‘iz otga nom-nishon, vatangado kimsaga makon yo‘q'],
+            ['3', 'Shoirning oshiqligi: o‘langa, zamonga, ummonga, bo‘stonga — o‘lmaslik, saodat, teranlik, go‘zallik ishorasi'],
+            ['4', 'Ko‘klamning har nafasi umrga arziydi; bog‘siz, bog‘bonsiz yerda ezgulik ham ojiz'],
+            ['5', 'Qabrlar ustidagi maysa, shudringlar — kimlarning ko‘z yoshi? Otasi va uzangidoshlari xotirasi'],
+            ['6', 'Yoz bo‘yi qorga, qishda bahorga zor inson tabiati'],
+          ],
+        },
+      },
+      {
+        title: 'Badiiy vositalar',
+        list: [
+          'Murojaat va jonlantirish — shoir bahorga odamdek yolvoradi.',
+          'Naqarot — iltijo har bandda kuchayadi.',
+          'Ritorik so‘roq — bahorsiz tog‘-toshga jon qayda?',
+          'Metafora — maysadagi shudring = marhumlar uchun ko‘z yoshi.',
+          'Tazod — yoz va qor, qish va bahor.',
+        ],
+        note: 'Lug‘at: suralay — rang-barang patli qush; qishlov — qishloq; uzangidosh — birga ot chopgan do‘st; benazar — e’tibordan qolgan.',
+      },
+      {
+        title: 'Inson tabiati haqida',
+        rule: 'Yozda qorga, qishda bahorga zor bo‘lish — insonning yo‘qini qumsab, borini qadrlamasligi. Shoir har bir lahzani qadrlashga chaqiradi.',
+        ruleLabel: 'Falsafiy fikr',
+      },
+      {
+        title: '«Armon» she’ri',
+        text: '«Er yigit o‘zi uchun emas, eli uchun yashaydi» maqoli bilan boshlangan she’rda lirik qahramon el dardini o‘z dardi deb biladi.',
+        table: {
+          head: ['Armon sababi', 'O‘xshatish'],
+          rows: [
+            ['Bobosining orzulari amalga oshmasa, el baxtini kuylay olmasa', 'Cho‘kib qolgan nor (tuya)dek'],
+            ['Begunohni adashgan, mardni nopok bilan bir taqdirda ko‘rsa', 'Terskaydagi (soya joydagi) qordek'],
+            ['Vatandoshi «badkor» nom olsa, do‘sti yo‘lda qolsa', 'Ulab bo‘lmas tordek'],
+            ['Gulzorni alaf, bog‘ni zog‘ bossa', 'Buzilgan ro‘zg‘ordek'],
+            ['Kimdir vatanidan ayrilsa', 'Bebaxt, benazardek'],
+          ],
+        },
+      },
+      {
+        title: 'Muhokama',
+        list: [
+          'Nega tabiat tasviri yetakchi bo‘lsa ham, shoir she’rga «Iltijo» deb nom qo‘ygan?',
+          'Maysadagi shudringlar haqidagi misrada qanday ma’no bor?',
+          'Inson hayoti va bahor o‘rtasida qanday bog‘liqlik bor?',
+          'Shoir she’rlaridagi sokinlik va mahzunlik sababi nimada?',
+        ],
+      },
+    ],
+    pairs: [
+      ['Iltijo', 'Yolvorish, so‘rov'],
+      ['Bahor', 'Hayot va umid timsoli'],
+      ['Suralay', 'Rang-barang patli qush'],
+      ['Uzangidosh', 'Birga ot chopgan do‘st'],
+      ['Nor', 'Tuya'],
+      ['Terskay', 'Quyosh tushmaydigan joy'],
+      ['«Ketma bahor»', 'Sherali Jo‘rayev qo‘shig‘i'],
+      ['Benazar', 'E’tibordan qolgan'],
+    ],
+    quiz: [
+      { q: '«Iltijo» she’rining naqaroti mazmuni?', options: ['Bahor, ketma bog‘imdan', 'Onam yig‘laydir', 'Lola, lolajonim', 'Yashasin Fransiya'], answer: 0 },
+      { q: 'She’r asosida kim qo‘shiq kuylagan?', options: ['Sherali Jo‘rayev', 'Yulduz Usmonova', 'Ozodbek Nazarbekov', 'Munojot Yo‘lchiyeva'], answer: 0 },
+      { q: '«Uzangidosh» kim?', options: ['birga ot chopgan do‘st', 'qo‘shni', 'qarindosh', 'ustoz'], answer: 0 },
+      { q: '«Armon» she’ri qaysi maqol bilan boshlanadi?', options: ['Er yigit o‘zi uchun emas, eli uchun yashaydi', 'Ilm — xazina', 'Mehnat — rohat', 'Vatan — ona'], answer: 0 },
+      { q: 'Inson yozda nimaga zor deydi shoir?', options: ['qorga', 'bahorga', 'kuzga', 'yomg‘irga'], answer: 0 },
+      { q: '«Nor» qanday hayvon?', options: ['tuya', 'ot', 'sher', 'qo‘chqor'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Bahor timsollari', 'Armon timsollari'],
+      items: [
+        { text: 'bulbul xonishi', cat: 0 }, { text: 'cho‘kib qolgan nor', cat: 1 },
+        { text: 'lola sayli', cat: 0 }, { text: 'buzilgan ro‘zg‘or', cat: 1 },
+        { text: 'qushlar nag‘masi', cat: 0 }, { text: 'ulab bo‘lmas tor', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Nega she’r «Iltijo» deb nomlangan?', a: 'Shoir bahorga — hayot va yoshlikka — ketmasligi uchun yolvoradi.' },
+      { q: 'Maysadagi shudringlar kimning ko‘z yoshi?', a: 'Qabrlar ustidagi shudring — marhumlar, ota va do‘stlar uchun to‘kilgan ko‘z yoshi timsoli.' },
+      { q: '«Yoz bo‘yi qorga zorman, qishda bahorga zorman» fikri nimani anglatadi?', a: 'Inson borini qadrlamay, yo‘qini qumsaydi.' },
+      { q: '«Armon» she’rida qahramonning armoni nimada?', a: 'El dardini o‘z dardi deb bilishida: yurtdagi har bir adolatsizlik uning armoniga aylanadi.' },
+    ],
+    odd: [
+      { items: ['bulbul', 'sa’va', 'qumri', 'kalxat'], answer: 3, why: 'Kalxat sayroqi qush emas; qolganlari she’rlardagi bahor qushlari.' },
+      { items: ['«Tavallo»', '«Iltijo»', '«Armon»', '«Yoshlik»'], answer: 3, why: '«Yoshlik» — Usmon Nosir she’ri.' },
+      { items: ['o‘lan', 'zamon', 'ummon', 'qal’a'], answer: 3, why: 'Shoir oshiq bo‘lgan narsalar ro‘yxatida qal’a yo‘q.' },
+    ],
+    debate: [
+      { claim: 'Inson har doim borini qadrlamaydi.', pro: 'Shoir aytganidek, yozda qorga, qishda bahorga zor bo‘lamiz.', con: 'Ko‘p odamlar bugungi kunining qadriga yetadi, shukr qiladi.' },
+      { claim: 'Er yigit avvalo eli uchun yashashi kerak.', pro: 'Shaxs xalq bilan kuchli, el baxti — umumiy baxt.', con: 'Avval o‘zini, oilasini tiklagan odamgina elga foyda keltiradi.' },
+    ],
+    creative: [
+      { task: 'Sevgan faslingizga «Ketma, ...!» deb murojaat qilib, 2 ta sababini ayting.', time: 60 },
+      { task: '«Armon» qolipida bugungi bir muammo haqida bitta band mazmunini o‘ylab toping.', time: 90 },
+      { task: 'Bahor manzarasini 5 ta tovush bilan tasvirlang (bulbul, suv...).', time: 60 },
+    ],
+  },
+
+  /* ===================== 60 ===================== */
+  {
+    id: 'adab-myusuf-1',
+    source: 'IV chorak • 60-dars • 219–222-betlar',
+    title: 'Muhammad Yusuf. «O‘zbekiston» she’ri',
+    short: 'Xalqona shoir hayoti, ijodi va Vatanga iqror',
+    lesson: [
+      {
+        title: 'Muhammad Yusuf (1954–2001)',
+        text: 'Iste’dodli shoir, pokiza qalb egasi, xalqona she’riyat ijodkori. 1954-yili Andijon viloyatining Marhamat tumanida dehqon oilasida tug‘ilgan.',
+        list: [
+          'Adabiyotga muhabbatida buvisi Tursunxon enaning hissasi katta bo‘lgan.',
+          'Gazeta va jurnallarda, Yozuvchilar uyushmasida rahbar lavozimda ishlagan.',
+          'Ilk kitobi — «Tanish teraklar».',
+          'Ko‘plab she’rlari mashhur qo‘shiqlarga aylangan.',
+          'Toshkent va Marhamatdagi ko‘chalar, Andijondagi kutubxona va ijod maktabi uning nomida.',
+        ],
+      },
+      {
+        title: 'Kitoblari',
+        examples: ['«Tanish teraklar»', '«Bulbulga bir gapim bor»', '«Iltijo»', '«Halima enam allalari»', '«Ishq kemasi»', '«Erka kiyik»', '«Ulug‘imsan, Vatanim»', '«Xalq bo‘l, elim»'],
+        rule: 'Shoir aytgan: bolaligidan ichida qushlar bordek, ular tashqariga uchib chiqmoqchidek bo‘lardi — keyin bilsa, bu ijod ekan.',
+        ruleLabel: 'Shoir so‘zi',
+      },
+      {
+        title: 'She’riyatiga xos',
+        list: [
+          'Oddiy, ravon, sodda til — xalq og‘zaki ijodiga hamohang.',
+          'Oddiy insonlar dardi va iztirobiga yaqinlik.',
+          'Vatanni farzand sifatida dildan madh etish.',
+          'Qo‘shiqbop ohang — har she’r kuyga tushgandek o‘qiladi.',
+        ],
+      },
+      {
+        title: '«O‘zbekiston» she’ri',
+        text: 'She’r matnini darslikning 221-betidan ifodali o‘qing. Lirik qahramon dunyoning ko‘p yurtlarini ko‘rgan, lekin Vatanini hech narsaga almashmaydi.',
+        table: {
+          head: ['Qiyos', 'Ma’nosi'],
+          rows: [
+            ['Rim va Vatanning bedapoyasi', 'Mashhur shahar ham ona yurt dalasiga teng emas'],
+            ['Parij restoranlari va o‘zbek tandiri', 'Hashamat oddiy, qadrdon narsaning o‘rnini bosmaydi'],
+            ['Arab ohusi va Baxmal qo‘zisi', 'O‘zimizniki azizroq'],
+            ['Uch kunda sog‘inish', 'Sayohatlar chala qoladi — Vatan sog‘inchi kuchli'],
+          ],
+        },
+        rule: 'Yakuniy fikr: Vatanni bilganlarga ta’zim, bilmaganlarga rahm — Vatan qadri qalb bilan anglanadi.',
+        ruleLabel: 'G‘oya',
+      },
+      {
+        title: 'Badiiy vositalar',
+        list: [
+          'Murojaat — Vatanga «ota makon», «onajon o‘lka» deb.',
+          'Jonlantirish — tog‘lar ortimdan ergashib yuradi, «boshni tik tut» deydi.',
+          'Qiyos va tazod — Rim, Parij bilan oddiy qishloq manzaralari.',
+          'Mubolag‘a — uch kunda sog‘inish, sensiz bir on qolsam vahmim keladi.',
+        ],
+      },
+      {
+        title: 'Muhokama',
+        list: [
+          'She’rda milliy ruhga xos qanday xususiyatlarni kuzatdingiz?',
+          'Lirik qahramon nega bedapoya va tandirni Rim va Parijga almashmaydi?',
+          'Vatan tuprog‘iga yaqinlikni qanday izohlaysiz?',
+          'Uzoq safarda Vatanni sog‘inganmisiz? Ko‘nglingizdan nimalar o‘tgan?',
+          'Uyga vazifa: «O‘zbekiston» she’rini yod oling.',
+        ],
+      },
+    ],
+    pairs: [
+      ['Muhammad Yusuf', 'Xalqona shoir'],
+      ['Marhamat', 'Shoir tug‘ilgan tuman'],
+      ['«Tanish teraklar»', 'Ilk kitobi'],
+      ['Tursunxon ena', 'Shoirning buvisi'],
+      ['Bedapoya', 'Rimga almashtirilmaydigan dala'],
+      ['Tandir', 'Parij restoranidan aziz'],
+      ['Baxmal qo‘zisi', 'Arab ohusidan azizroq'],
+    ],
+    quiz: [
+      { q: 'Muhammad Yusuf qayerda tug‘ilgan?', options: ['Andijon, Marhamat', 'Jizzax', 'Boysun', 'Namangan'], answer: 0 },
+      { q: 'Shoirning ilk kitobi?', options: ['«Tanish teraklar»', '«Istar ko‘ngil»', '«Yurak»', '«Dinamo»'], answer: 0 },
+      { q: 'Shoir ijodni nimaga o‘xshatgan?', options: ['ichidagi qushlarga', 'daryoga', 'olovga', 'tog‘ga'], answer: 0 },
+      { q: 'Qahramon Vatan bedapoyasini qaysi shaharga almashmaydi?', options: ['Rim', 'London', 'Moskva', 'Qohira'], answer: 0 },
+      { q: 'Parij restoranlarini nimaga almashmaydi?', options: ['tandirga', 'choyxonaga', 'bozorga', 'bog‘ga'], answer: 0 },
+      { q: 'Qahramon necha kunda Vatanni sog‘inadi?', options: ['uch', 'o‘n', 'qirq', 'bir yil'], answer: 0 },
+      { q: 'Shoir qachon vafot etgan?', options: ['2001', '1954', '1991', '2010'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Vatan timsoli', 'Begona yurt timsoli'],
+      items: [
+        { text: 'bedapoya', cat: 0 }, { text: 'Rim', cat: 1 },
+        { text: 'tandir', cat: 0 }, { text: 'Parij restorani', cat: 1 },
+        { text: 'Baxmal qo‘zisi', cat: 0 }, { text: 'arab ohusi', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Muhammad Yusuf she’riyatining xususiyatlari?', a: 'Sodda va ravon til, xalqona ohang, oddiy inson dardi, Vatanga mehr.' },
+      { q: 'Nega qahramon tandirni Parij restoraniga almashmaydi?', a: 'Tandir — Vatan, ona, bolalik xotirasi; uning qadri hashamatdan ustun.' },
+      { q: '«Tog‘laring ortimdan ergashib yurar» qanday vosita?', a: 'Jonlantirish — Vatan har yerda qahramonga madad beradi.' },
+      { q: '«Seni bilmaslarga rahmim keladi» fikrini izohlang.', a: 'Vatan qadrini anglamagan inson eng katta boylikdan bexabar.' },
+    ],
+    odd: [
+      { items: ['Rim', 'Parij', 'arab yurti', 'Baxmal'], answer: 3, why: 'Baxmal — o‘zbek yurti; qolganlari she’rdagi begona yurtlar.' },
+      { items: ['«Tanish teraklar»', '«Erka kiyik»', '«Ishq kemasi»', '«Istar ko‘ngil»'], answer: 3, why: '«Istar ko‘ngil» — To‘ra Sulaymon kitobi.' },
+      { items: ['murojaat', 'jonlantirish', 'qiyos', 'remarka'], answer: 3, why: 'Remarka — drama atamasi.' },
+    ],
+    debate: [
+      { claim: 'Vatanni sevish uchun boshqa yurtlarni ko‘rish kerak.', pro: 'Qiyoslagandagina Vatan qadri anglanadi — she’rdagidek.', con: 'Vatan mehri tug‘ma, uni qiyoslashga hojat yo‘q.' },
+      { claim: 'Chet elda yashab ham Vatanga xizmat qilish mumkin.', pro: 'Bilim va tajriba orttirib, qaytib foyda keltirish mumkin.', con: 'She’rdagidek, Vatandan uzoqda qalb tinch bo‘lmaydi.' },
+    ],
+    creative: [
+      { task: 'Vataningizdagi bitta oddiy narsani tanlang va «uni ... ga almashmayman» deb sababini ayting.', time: 60 },
+      { task: 'O‘z qishlog‘ingiz yoki mahallangiz haqida 2 misralik she’r yozing.', time: 120 },
+      { task: 'Muhammad Yusuf kabi ijodni bir narsaga o‘xshating: «Ijod — ... kabi».', time: 60 },
+    ],
+  },
+
+  /* ===================== 61 ===================== */
+  {
+    id: 'adab-myusuf-2',
+    source: 'IV chorak • 61-dars • 222–223, 228-betlar',
+    title: 'Muhammad Yusuf. «Sevgi bu...» she’ri',
+    short: 'Sevgi — kechirish va o‘zini anglash; «Biz baxtli bo‘lamiz» bilan qiyos',
+    lesson: [
+      {
+        title: '«Sevgi bu...» — g‘oya',
+        text: 'She’r matnini darslikning 222-betidan ifodali o‘qing. Lirik qahramon sevgining mohiyati haqida falsafiy o‘ylaydi.',
+        rule: 'Shoirning ikki ta’rifi: sevmoq — kechirmoq; sevmoq — o‘zingni anglamoq. Kimnidir sevishdan oldin inson o‘zini sevishi, anglashi kerak.',
+        ruleLabel: 'Asosiy fikr',
+      },
+      {
+        title: 'She’r tahlili',
+        table: {
+          head: ['Band', 'Mazmuni'],
+          rows: [
+            ['1', 'Sevgi — kechirish; bahor faslida sodiq hamdam bo‘lishga chaqiriq'],
+            ['2', 'G‘iybatlarni eshitgan qahramon gumonlarini «beor do‘st»dek ko‘mib tashlaydi'],
+            ['3', 'Tanho tunlar, ko‘z yoshlar — va avval o‘zini sevib qolish'],
+            ['4', 'Sevgi — o‘zini anglash; sadoqatli yor bo‘lishga da’vat'],
+            ['5', 'Sevgi — har kun yorni ko‘rish baxti, uning oddiy belgilarini ham sevish'],
+          ],
+        },
+      },
+      {
+        title: 'Badiiy vositalar',
+        list: [
+          'Ta’rif-takror — «Sevmoq bu...» qolipi ikki marta qaytadi (takrir).',
+          'O‘xshatish — gumonlar beor do‘stga o‘xshatiladi.',
+          'Tabiat tasviri — yalpiz gullagan, rayhonga ko‘milgan bahor.',
+          'Samimiy detallar — oddiy, nomukammal belgilarni ham sevish.',
+        ],
+        note: 'Shoir ideal go‘zallikni emas, yorning oddiy, haqiqiy qiyofasini sevadi — sevgi tashqi ko‘rinishdan ustun.',
+      },
+      {
+        title: '«Biz baxtli bo‘lamiz»',
+        text: 'Bu she’rda lirik qahramon g‘iybat va tuhmatlarga qaramay baxtli bo‘lishga ishonadi: Xudo xohlamasa, uchrashmasdik. U yorini yorug‘ olamda yagona deb biladi va unga sabrli bo‘lishni maslahat beradi.',
+      },
+      {
+        title: 'Ikki she’r qiyosi (kichik tadqiqot)',
+        table: {
+          head: ['Jihat', '«Sevgi bu...»', '«Biz baxtli bo‘lamiz»'],
+          rows: [
+            ['Kayfiyat', 'O‘ychan, falsafiy', 'Ishonchli, quvnoq, da’vatkor'],
+            ['Sevgi tushunchasi', 'Kechirish va o‘zini anglash', 'Taqdir in’omi, baxtga ishonch'],
+            ['G‘iybatga munosabat', 'Gumonlarni ko‘mib tashlaydi', 'G‘iybatga chidashga chaqiradi'],
+            ['Umumiy', 'Samimiylik, sodda til, sadoqat', 'Samimiylik, sodda til, sadoqat'],
+          ],
+        },
+      },
+      {
+        title: 'Muhokama',
+        list: [
+          'Shoir sevgi va kechirim o‘rtasida qanday bog‘liqlik ko‘rsatadi?',
+          '«Sevmoq — o‘zingni anglamoq» misrasi qanday falsafiy fikrni ifodalaydi?',
+          'Gumonlarni nima uchun «beor do‘st»ga o‘xshatish mumkin?',
+          'Yalpiz gullagan bahor tasviri ko‘z oldingizda qanday manzara uyg‘otadi?',
+        ],
+      },
+    ],
+    pairs: [
+      ['Sevmoq', 'Kechirmoq (she’rdagi ta’rif)'],
+      ['O‘zini anglash', 'Sevgining ikkinchi ta’rifi'],
+      ['Beor do‘st', 'Gumonlarga o‘xshatish'],
+      ['Yalpiz', 'Bahor tasviridagi o‘simlik'],
+      ['G‘iybat', 'Qahramon eshitgan mish-mish'],
+      ['«Biz baxtli bo‘lamiz»', 'Qiyoslanadigan she’r'],
+    ],
+    quiz: [
+      { q: 'She’rga ko‘ra sevmoq — bu...', options: ['kechirmoq', 'unutmoq', 'qasos', 'talab'], answer: 0 },
+      { q: 'Qahramon gumonlarini nimaga o‘xshatadi?', options: ['beor do‘stga', 'dushmanga', 'bulutga', 'tikanga'], answer: 0 },
+      { q: 'Qahramon yorini sevishdan oldin kimni sevadi?', options: ['o‘zini', 'onasini', 'Vatanni', 'do‘stini'], answer: 0 },
+      { q: '«Sevmoq bu...» qolipining takrorlanishi?', options: ['takrir', 'talmeh', 'tazod', 'irsoli masal'], answer: 0 },
+      { q: '«Biz baxtli bo‘lamiz»da qahramon nimaga chidashni maslahat beradi?', options: ['g‘iybat va tuhmatga', 'sovuqqa', 'ochlikka', 'safarga'], answer: 0 },
+      { q: '«Sevgi bu...» she’rining kayfiyati?', options: ['o‘ychan, falsafiy', 'kulgili', 'g‘azabli', 'tantanali'], answer: 0 },
+    ],
+    sort: {
+      categories: ['«Sevgi bu...»', '«Biz baxtli bo‘lamiz»'],
+      items: [
+        { text: 'sevmoq — kechirmoq', cat: 0 }, { text: 'Xudo xohlamasa uchrashmasdik', cat: 1 },
+        { text: 'gumonlarni ko‘mish', cat: 0 }, { text: 'sen bittasan yorug‘ olamda', cat: 1 },
+        { text: 'o‘zini sevib qolish', cat: 0 }, { text: 'g‘iybatlarga chida', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Nega sevgi kechirish bilan bog‘liq?', a: 'Kechira olmagan inson chin sevolmaydi; sevgi xatolarni ko‘tara olishdir.' },
+      { q: '«O‘zini anglash» nima uchun sevgining sharti?', a: 'O‘zini bilmagan, sevmagan odam boshqani ham to‘g‘ri sevolmaydi.' },
+      { q: 'Ikki she’rning umumiy jihati nima?', a: 'Samimiylik, sodda til, sadoqat va g‘iybatga qarshi turish.' },
+      { q: 'Shoir yorning qanday belgilarini sevadi?', a: 'Oddiy, nomukammal belgilarini ham — sevgi tashqi ko‘rinishdan ustun.' },
+    ],
+    odd: [
+      { items: ['kechirim', 'sadoqat', 'o‘zini anglash', 'gumon'], answer: 3, why: 'Gumonni qahramon ko‘mib tashlaydi; qolganlari sevgi mohiyati.' },
+      { items: ['yalpiz', 'rayhon', 'gul', 'tikan'], answer: 3, why: 'Qolganlari she’rdagi bahor timsollari.' },
+      { items: ['«Sevgi bu...»', '«Biz baxtli bo‘lamiz»', '«O‘zbekiston»', '«Tavallo»'], answer: 3, why: '«Tavallo» — To‘ra Sulaymon she’ri.' },
+    ],
+    debate: [
+      { claim: 'Sevgi — avvalo kechira olish.', pro: 'Har kim xato qiladi; kechirmasdan munosabat yashamaydi.', con: 'Ba’zi xatolar (xiyonat) kechirilmasligi kerak.' },
+      { claim: 'Boshqani sevish uchun avval o‘zini sevish kerak.', pro: 'O‘zini hurmat qilmagan odam boshqani ham hurmat qilolmaydi.', con: 'Bu xudbinlikka olib kelishi mumkin.' },
+    ],
+    creative: [
+      { task: '«Do‘stlik bu...» deb boshlanadigan 2 ta ta’rif o‘ylab toping.', time: 60 },
+      { task: 'G‘iybatni bir narsaga o‘xshating va nega shunday deganingizni tushuntiring.', time: 60 },
+      { task: 'Ikki she’r kayfiyatini ikki rangda ifodalang va sababini ayting.', time: 90 },
+    ],
+  },
+
+  /* ===================== 62 ===================== */
+  {
+    id: 'adab-myusuf-3',
+    source: 'IV chorak • 62-dars • 224–227-betlar',
+    title: 'Muhammad Yusuf. «Lolaqizg‘aldoq» she’ri',
+    short: 'Vidolashuv she’ri: lola, qushlar va so‘nggi vasiyat',
+    lesson: [
+      {
+        title: 'She’r haqida',
+        text: 'She’r shoir Shavkat Rahmon xotirasiga bag‘ishlangan. Matnni darslikning 224–227-betlaridan ifodali o‘qing. Lirik qahramon xasta, umri so‘nggi kunlarida yaqinlari bilan vidolashadi.',
+        rule: 'Har band «Lola, lolajonim, Lolaqizg‘aldoq» naqaroti bilan tugaydi. Lola — mehribon yor, hayot va xotira timsoli.',
+        ruleLabel: 'Asosiy obraz',
+      },
+      {
+        title: 'Bandlar mazmuni',
+        table: {
+          head: ['Qism', 'Mazmuni'],
+          rows: [
+            ['Boshlanish', 'Mendan nima qoladi: bir necha misra she’r, kitoblar, bir uyum tuproq'],
+            ['Yorga nasihat', 'Men ketsam, yomondan yiroq bo‘l; yomon kun o‘tadi, yomon odam yaxshi bo‘lmaydi'],
+            ['Qushlar', 'Ko‘kda qaytayotgan qushlar xasta shoirga vido aytadi'],
+            ['Armon', 'Bitta qizini ham uzatolmagani; ammo kelajakda bu hovli to‘ylarga to‘lishiga ishonch'],
+            ['Hayot falsafasi', 'Kimga qasr yetmaydi, kimga mol-dunyo — menga esa havo yetmaydi'],
+            ['Vasiyat', 'Nomard kimsalarga ishing tushmasin; ishing tushsa, yaqin do‘stimga bor'],
+          ],
+        },
+      },
+      {
+        title: 'Obrazlar ma’nosi',
+        table: {
+          head: ['Obraz', 'Ma’nosi'],
+          rows: [
+            ['Lolaqizg‘aldoq', 'Yor, hayot go‘zalligi, sevgining xotira bayrog‘i'],
+            ['Ohu', 'Nozik, himoyaga muhtoj yor'],
+            ['Qaytayotgan qushlar', 'Umrning o‘tishi, vidolashuv'],
+            ['Kelin ko‘ylagi', 'Oppoq ruh, kelajak baxtiga ishonch'],
+          ],
+        },
+        note: 'Lola bir kun ochilib, bir kun so‘ladi — bu inson umri haqidagi o‘y.',
+      },
+      {
+        title: 'She’rning o‘ziga xosligi',
+        list: [
+          'Fojiaviy mavzu — o‘lim yaqinligi — sokin, mehrli ohangda aytiladi.',
+          'Qahramon o‘zi uchun emas, qoladiganlar uchun qayg‘uradi.',
+          'Umid bilan tugaydi: qizlari eng baxtli bo‘ladi.',
+          'Sodda so‘zlarda chuqur hayot falsafasi.',
+        ],
+        rule: 'Qadriyatlar: mol-dunyo emas, she’r, kitob va yaxshi nom qoladi; yaxshi odamga tayan, nomarddan yiroq bo‘l.',
+        ruleLabel: 'G‘oya',
+      },
+      {
+        title: 'Muhokama',
+        list: [
+          'She’rda lolaqizg‘aldoq va lirik qahramon tuyg‘ulari o‘rtasida qanday uyg‘unlik bor?',
+          'Yorga «yomondan yiroq bo‘l» degan nasihatda qanday mehr va ogohlantirish bor?',
+          'Lola, ohu va qushlar obrazlari qanday kechinmalarni ifodalaydi?',
+          'Ijodiy topshiriq: she’rdagi kechinmalarni rasm orqali tasvirlang.',
+        ],
+      },
+    ],
+    pairs: [
+      ['Lolaqizg‘aldoq', 'Yor va hayot timsoli'],
+      ['Shavkat Rahmon', 'She’r bag‘ishlangan shoir'],
+      ['Ohu', 'Nozik yor'],
+      ['Qushlar', 'Vidolashuv ramzi'],
+      ['Kelin ko‘ylagi', 'Oppoq ruh, umid'],
+      ['Naqarot', '«Lola, lolajonim»'],
+    ],
+    quiz: [
+      { q: 'She’r kimning xotirasiga bag‘ishlangan?', options: ['Shavkat Rahmon', 'Usmon Nosir', 'Erkin Vohidov', 'Abdulla Oripov'], answer: 0 },
+      { q: 'She’r naqaroti?', options: ['Lola, lolajonim, Lolaqizg‘aldoq', 'Bahor, ketma', 'Onam yig‘laydir', 'Sevgi bu...'], answer: 0 },
+      { q: 'Qahramondan nima qoladi?', options: ['she’r, kitoblar, tuproq', 'saroy', 'boylik', 'qo‘shin'], answer: 0 },
+      { q: 'Qahramonga nima yetmaydi?', options: ['havo', 'pul', 'qasr', 'non'], answer: 0 },
+      { q: 'Qushlar nima qilmoqda?', options: ['qaytib ketmoqda', 'in qurmoqda', 'sayramoqda', 'ovlanmoqda'], answer: 0 },
+      { q: 'Qahramon nimaga ishonadi?', options: ['qizlari baxtli bo‘lishiga', 'boyib ketishiga', 'mashhur bo‘lishiga', 'safar qilishiga'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Armon', 'Umid'],
+      items: [
+        { text: 'qizini uzatolmagani', cat: 0 }, { text: 'hovli to‘ylarga to‘ladi', cat: 1 },
+        { text: 'ayvondan qushlarni kuzatolmagani', cat: 0 }, { text: 'qizlarim eng baxtli bo‘ladi', cat: 1 },
+        { text: 'havo yetmasligi', cat: 0 }, { text: 'kelin ko‘ylagi ruhimdek oppoq', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'She’rning asosiy kayfiyati qanday?', a: 'Mahzun, ammo mehrli va umidli vidolashuv.' },
+      { q: '«Yomon kun yaxshi bo‘ladi, yomon odam yaxshi bo‘lmaydi» fikrini izohlang.', a: 'Qiyinchiliklar o‘tkinchi, ammo yomon fe’lli odamdan ehtiyot bo‘lish kerak.' },
+      { q: 'Lola obrazi nimani ifodalaydi?', a: 'Yorni, hayot go‘zalligini, bir kun ochilib bir kun so‘ladigan umrni.' },
+      { q: 'Qahramon o‘limidan oldin kim haqida qayg‘uradi?', a: 'Yori, qizlari va qoladiganlar haqida.' },
+    ],
+    odd: [
+      { items: ['lola', 'ohu', 'qushlar', 'durbin'], answer: 3, why: 'Durbin «Oq kema»da.' },
+      { items: ['she’r', 'kitob', 'tuproq', 'qasr'], answer: 3, why: 'Qasr qahramondan qoladigan narsalar qatorida yo‘q.' },
+      { items: ['«Lolaqizg‘aldoq»', '«Sevgi bu...»', '«O‘zbekiston»', '«Yana she’rimga»'], answer: 3, why: '«Yana she’rimga» — Usmon Nosir soneti.' },
+    ],
+    debate: [
+      { claim: 'Insondan mol-dunyo emas, yaxshi nom va ijod qoladi.', pro: 'Boylik tarqab ketadi, yaxshi ish va so‘z asrlar yashaydi.', con: 'Farzandlarga moddiy ta’minot ham muhim.' },
+      { claim: 'Og‘ir mavzularni (vidolashuv) maktabda o‘rganish kerak.', pro: 'Hayotni chuqur anglashga, mehrli bo‘lishga o‘rgatadi.', con: 'O‘quvchilarni g‘amgin qiladi.' },
+    ],
+    creative: [
+      { task: 'Lolaqizg‘aldoq manzarasini 3 rang bilan doskaga chizing va kayfiyatini tushuntiring.', time: 120 },
+      { task: '«Mendan nima qoladi?» savoliga o‘z javobingizni 2 gapda ayting.', time: 60 },
+      { task: 'Yaqin insoningizga bir jumlalik minnatdorlik xati yozing.', time: 60 },
+    ],
+  },
+
+  /* ===================== 63 ===================== */
+  {
+    id: 'adab-shubxa-1',
+    source: 'IV chorak • 63-dars • 229–232-betlar',
+    title: 'Robindranat Thakur. «Shubxa» hikoyasi',
+    short: 'Buyuk hind yozuvchisi, tilsiz qiz va ko‘z tili',
+    lesson: [
+      {
+        title: 'Robindranat Thakur (1861–1941)',
+        text: 'Hindistonlik buyuk yozuvchi, shoir va jamoat arbobi, Nobel mukofoti laureati. 1861-yili Kalkuttada 14 farzandli oilaning kenjasi bo‘lib tug‘ilgan.',
+        list: [
+          '8 yoshidan she’r yoza boshlagan; ilk to‘plami — «Oqshom qo‘shiqlari» (1882).',
+          'Asosan bengal tilida ijod qilgan.',
+          '«Gitanjali» to‘plami uchun 1913-yilda Nobel mukofotini olgan.',
+          'Mukofot puliga bolalar uchun bepul maktab ochgan, keyin u universitetga aylangan.',
+          'Uning qo‘shiqlari Hindiston va Bangladesh madhiyalariga aylangan.',
+        ],
+        note: 'Cho‘lpon 1925-yilda Thakur haqida: Himolaya kabi ulug‘ zot haqida hech narsa yoza olmay qaltiradim, deb yozgan.',
+      },
+      {
+        title: 'Stereotip nima?',
+        rule: 'Stereotip — bir xil qolipdagi, oldindan shakllangan, ko‘pincha asoslanmagan qarash. «Shubxa» hikoyasi jamiyat stereotiplarining inson taqdiriga ta’sirini ko‘rsatadi.',
+        ruleLabel: 'Kalit tushuncha',
+      },
+      {
+        title: 'Shubxa kim?',
+        text: 'Qizning to‘liq ismi Shubxashini — «shirin zabon». Uning opalari Shukeshini (zulfizar) va Shuxashini (xushtabassum). Otasi ohangdoshlik uchun shunday nom qo‘ygan, ammo qiz soqov bo‘lib chiqqan.',
+        list: [
+          'Odamlar gapirolmaganda his-tuyg‘u ham bo‘lmaydi deb, uning taqdiri haqida o‘z oldida gapirishadi.',
+          'Qiz o‘zini oilaga la’nat deb his qiladi va yolg‘izlikka intiladi.',
+          'Otasi Banikontxa uni hammadan ko‘proq yaxshi ko‘radi, onasi esa nomus qiladi.',
+        ],
+        rule: 'Ism bilan taqdir o‘rtasidagi zid — kinoya: «shirin zabon» tildan mahrum.',
+        ruleLabel: 'Kinoya',
+      },
+      {
+        title: 'Ko‘z tili',
+        text: 'Shubxaning qora, shahlo ko‘zlari va titroq lablari so‘zga muhtoj emas: ular yurakning o‘zini ifoda etadi. Ko‘z tilining kuchi cheksiz — dengizdek chuqur, osmondek tiniq.',
+        note: 'Soqovlarda tabiatdagidek tanholikning salobati bor — bolalar undan hayiqib, o‘ynashmaydi.',
+      },
+      {
+        title: 'Tabiat va do‘stlar',
+        table: {
+          head: ['Do‘st', 'Munosabat'],
+          rows: [
+            ['Daryo', 'Qiz ishini bitirib, darhol daryo bo‘yiga boradi — tabiat uning tili'],
+            ['Shorboshi va Panguli (sigirlar)', 'Qizning qadam tovushidan taniydi, uni so‘zsiz tushunadi, yupatadi'],
+            ['Echki va mushuk', 'Unga mehribon'],
+            ['Protap', 'Yagona inson do‘sti, baliqchi yalqov yigit'],
+          ],
+        },
+        rule: 'Yozuvchi qiz qalbi va tabiatni parallel tasvirlaydi: odamlar tushunmagan qizni tabiat va jonivorlar tushunadi.',
+        ruleLabel: 'Tahlil',
+      },
+      {
+        title: 'Muhokama',
+        list: [
+          'Nega Shubxashini o‘z musibatidan qattiq iztirob chekardi?',
+          'Onasi unga nega ro‘yixushlik bermasdi?',
+          'Yozuvchi qiz qalbi va tabiatni nega yonma-yon tasvirlaydi?',
+          'Nega sigirlar Shorboshi va Panguliga urg‘u berilgan?',
+        ],
+      },
+    ],
+    pairs: [
+      ['Thakur', 'Nobel mukofoti laureati'],
+      ['«Gitanjali»', 'Nobel olgan to‘plam'],
+      ['Shubxashini', '«Shirin zabon»'],
+      ['Banikontxa', 'Shubxaning otasi'],
+      ['Shorboshi va Panguli', 'Shubxaning sigirlari'],
+      ['Stereotip', 'Oldindan shakllangan asossiz qarash'],
+      ['Kalkutta', 'Thakur tug‘ilgan shahar'],
+      ['Chondipur', 'Shubxa yashagan qishloq'],
+    ],
+    quiz: [
+      { q: 'Thakur qaysi mamlakat yozuvchisi?', options: ['Hindiston', 'Pokiston', 'Eron', 'Xitoy'], answer: 0 },
+      { q: 'Thakur Nobel mukofotini qaysi asari uchun olgan?', options: ['«Gitanjali»', '«Shubxa»', '«Oqshom qo‘shiqlari»', '«Donishmand Roja»'], answer: 0 },
+      { q: '«Shubxashini» ismining ma’nosi?', options: ['shirin zabon', 'zulfizar', 'xushtabassum', 'ko‘zi shahlo'], answer: 0 },
+      { q: 'Shubxaning qanday nuqsoni bor?', options: ['soqov', 'ko‘r', 'kar', 'cho‘loq'], answer: 0 },
+      { q: 'Shubxani kim hammadan ko‘proq yaxshi ko‘radi?', options: ['otasi', 'onasi', 'opalari', 'qo‘shnilar'], answer: 0 },
+      { q: 'Shubxaning sigirlari?', options: ['Shorboshi va Panguli', 'Bo‘riboy va Olapar', 'Jiyron va G‘irko‘k', 'Mushuk va echki'], answer: 0 },
+      { q: 'Thakur mukofot puliga nima qildi?', options: ['bepul maktab ochdi', 'saroy qurdi', 'sayohat qildi', 'kitob nashr qildi'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Shubxani tushunadi', 'Shubxani tushunmaydi'],
+      items: [
+        { text: 'sigirlar', cat: 0 }, { text: 'bolalar', cat: 1 },
+        { text: 'daryo va tabiat', cat: 0 }, { text: 'qo‘shnilar', cat: 1 },
+        { text: 'otasi', cat: 0 }, { text: 'onasi (nomus qiladi)', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Hikoyadagi asosiy stereotip nima?', a: 'Gapira olmagan odamda his-tuyg‘u ham yo‘q degan qarash.' },
+      { q: 'Ism va taqdir o‘rtasidagi kinoya nimada?', a: '«Shirin zabon» ismli qiz tildan mahrum.' },
+      { q: 'Nega qiz daryo bo‘yiga boradi?', a: 'Tabiat uni tushunadi, unga malham bo‘ladi, u bilan «suhbat quradi».' },
+      { q: 'Jonivorlar Shubxaga qanday munosabatda?', a: 'Uni so‘zsiz tushunadi, dardini sezib, yupatadi.' },
+    ],
+    sequences: [
+      {
+        title: 'Hikoya boshlanishini tartiblang',
+        items: [
+          'Qizga Shubxashini deb nom qo‘yishadi',
+          'Uning soqov ekani ma’lum bo‘ladi',
+          'Opalari erga beriladi',
+          'Odamlar uning taqdiri haqida o‘z oldida gapirishadi',
+          'Qiz yolg‘izlikka va tabiatga intiladi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['Shukeshini', 'Shuxashini', 'Shubxashini', 'Sultonbegim'], answer: 3, why: 'Sultonbegim — Jaloliddinning singlisi.' },
+      { items: ['«Gitanjali»', '«Oqshom qo‘shiqlari»', '«Tonggi qo‘shiqlar»', '«Chol va dengiz»'], answer: 3, why: '«Chol va dengiz» — Heminguey asari.' },
+      { items: ['daryo', 'sigirlar', 'mushuk', 'kuyov'], answer: 3, why: 'Kuyov Shubxani tushunmagan; qolganlari uning do‘stlari.' },
+    ],
+    debate: [
+      { claim: 'Shubxaning onasi aybdor emas — jamiyat uni shunday qilgan.', pro: 'U odamlar gapidan, nomusdan qo‘rqqan.', con: 'Ona farzandini har holatda qo‘llashi kerak edi.' },
+      { claim: 'Ko‘z tili so‘zdan kuchliroq.', pro: 'Ko‘z yurakni yolg‘onsiz ifodalaydi.', con: 'Murakkab fikrni faqat so‘z bilan aniq yetkazish mumkin.' },
+    ],
+    creative: [
+      { task: 'Bir tuyg‘uni (quvonch, xafagarchilik) faqat ko‘z va yuz ifodasi bilan ko‘rsating — sinf topsin.', time: 60 },
+      { task: 'Shubxa daryoga dardini «aytsa», nima degan bo‘lardi? 2 gap.', time: 90 },
+      { task: 'Ismingizning ma’nosini ayting va u sizga mos keladimi?', time: 60 },
+    ],
+  },
+
+  /* ===================== 64 ===================== */
+  {
+    id: 'adab-shubxa-2',
+    source: 'IV chorak • 64-dars • 232–235-betlar',
+    title: '«Shubxa» hikoyasi matni ustida ishlash',
+    short: 'Protap, Kalkuttaga safar, to‘y va jamiyatning shafqatsizligi',
+    lesson: [
+      {
+        title: 'Protap',
+        text: 'Gonshayning kichik o‘g‘li Protap — yalqov yigit, ota-onasi unga hunar o‘rgatolmay, o‘z holiga qo‘yishgan. Uning asosiy mashg‘uloti — qarmoq bilan baliq ovlash.',
+        list: [
+          'Baliq ovida tilsiz sherikdan yaxshisi yo‘q — shuning uchun Shubxaning qadriga yetadi.',
+          'U qizni yaqinlik bilan «Shu» deb chaqiradi.',
+          'Shubxa unga betel tayyorlab beradi.',
+        ],
+      },
+      {
+        title: 'Shubxaning orzusi',
+        text: 'Shubxa Protap uchun biror ajoyib ish qilishni, uni hayratga solishni orzu qiladi. U suv parisi bo‘lsa, ilonlar shohining tojidan qimmatbaho tosh olib kelardi, deb xayol suradi.',
+        rule: 'Qiz yer yuzida ortiqcha emasligini isbotlamoqchi — bu uning eng chuqur dardi.',
+        ruleLabel: 'Ruhiy holat',
+      },
+      {
+        title: 'Balog‘at va oydin tun',
+        text: 'Shubxa balog‘atga yetadi, qalbida yangi tuyg‘ular paydo bo‘ladi. Bir oydin kechada u tashqariga chiqadi: o‘ziday yolg‘iz to‘lin oy uxlayotgan yerga boqib turadi.',
+        note: 'Peyzaj: to‘lin oy qizning yolg‘izligiga parallel qo‘yilgan.',
+      },
+      {
+        title: 'Qo‘shnilar g‘iybati va safar',
+        list: [
+          'Hasadgo‘y qo‘shnilar Banikontxa qizini erga berolmaydi deb g‘iybat qiladi.',
+          'Ota-ona qizni Kalkuttaga olib borishga qaror qiladi.',
+          'Protap kulib: «Senga er topishibdi, bizni esdan chiqarma» deydi.',
+          'Shubxa unga o‘q yegan kiyikdek qaraydi: «Men senga nima yomonlik qildim?»',
+          'U otasining oyog‘iga yiqilib yig‘laydi, ota ham ko‘z yoshini to‘xtatolmaydi.',
+        ],
+      },
+      {
+        title: 'Vidolashuv',
+        text: 'Ketish oldidan Shubxa molxonaga kirib, sigirlar bilan xayrlashadi. Oydin kechada daryo bo‘yidagi ko‘katlar ustiga o‘zini tashlab, ona yerga iltijo qiladi: meni qo‘yib yuborma!',
+        rule: 'Kulminatsiya tabiat bilan vidolashuvda: qizning yagona «tili» — tabiat endi undan ajralmoqda.',
+        ruleLabel: 'Tahlil',
+      },
+      {
+        title: 'To‘y va fojia',
+        list: [
+          'Kalkuttada onasi qizni yasantiradi — uning tabiiy chiroyini barbod qiladi.',
+          'Kuyov qizning ko‘z yoshlarini ota-onadan ayriliq dardi deb o‘ylaydi: «ko‘z yoshi qizning qadrini oshiradi».',
+          'To‘y bo‘ladi; ota-ona «beobro‘lik xavfidan qutulgani»dan yengil tortadi.',
+          'Bir haftada kelinning soqov ekani bilinadi. Qiz hech kimni aldamagan — ko‘zlari hamma haqiqatni aytib turardi.',
+          'Kuyov bu safar «quloqlarini ham ishga solib», boshqa — tili bor qizga uylanadi.',
+        ],
+        note: 'Hikoyani To‘xtasin Jalolov tarjima qilgan.',
+      },
+    ],
+    pairs: [
+      ['Protap', 'Shubxaning yagona inson do‘sti'],
+      ['Gonshay', 'Protapning otasi'],
+      ['«Shu»', 'Protapning Shubxaga murojaati'],
+      ['Betel', 'Chaynaladigan barg'],
+      ['Kalkutta', 'Kuyov topilgan shahar'],
+      ['To‘xtasin Jalolov', 'Tarjimon'],
+      ['O‘q yegan kiyik', 'Shubxaning nigohiga o‘xshatish'],
+    ],
+    quiz: [
+      { q: 'Protapning asosiy mashg‘uloti?', options: ['baliq ovlash', 'dehqonchilik', 'savdo', 'o‘qish'], answer: 0 },
+      { q: 'Protap Shubxani qanday chaqiradi?', options: ['Shu', 'Shubxa', 'singlim', 'soqov'], answer: 0 },
+      { q: 'Shubxa nima bo‘lishni orzu qiladi?', options: ['suv parisi', 'malika', 'qush', 'baliqchi'], answer: 0 },
+      { q: 'Oila qayerga boradi?', options: ['Kalkuttaga', 'Dehliga', 'Bombeyga', 'Londonga'], answer: 0 },
+      { q: 'Shubxa ketish oldidan kim bilan xayrlashadi?', options: ['sigirlar va daryo bilan', 'opalari bilan', 'Protap bilan quchoqlashib', 'qo‘shnilar bilan'], answer: 0 },
+      { q: 'Kuyov qizning ko‘z yoshlarini nima deb o‘ylaydi?', options: ['ota-onadan ayriliq dardi', 'kasallik', 'quvonch', 'g‘azab'], answer: 0 },
+      { q: 'Kuyov oxirida nima qiladi?', options: ['boshqa qizga uylanadi', 'Shubxani tushunadi', 'qishloqqa ko‘chadi', 'kechirim so‘raydi'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Shubxaning tuyg‘usi', 'Atrofdagilarning munosabati'],
+      items: [
+        { text: 'Protapni hayratga solish orzusi', cat: 0 }, { text: 'qo‘shnilar g‘iybati', cat: 1 },
+        { text: 'ona yerga iltijo', cat: 0 }, { text: 'onaning koyishi', cat: 1 },
+        { text: 'o‘q yegan kiyikdek nigoh', cat: 0 }, { text: 'kuyovning befarqligi', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Protap faqat baliq ovi uchun do‘st edimi?', a: 'Qisman: tilsiz sherik qulay edi, lekin u qizga yaqinlik bilan «Shu» deb murojaat qilgan.' },
+      { q: 'Protapning «er topishibdi» degan gapi Shubxaga qanday ta’sir qildi?', a: 'U o‘q yegan kiyikdek qattiq iztirob chekdi, do‘sti uni tushunmaganidan ozor chekdi.' },
+      { q: 'Kuyovning munosabatini qanday baholaysiz?', a: 'Yuzaki, befarq: qizni tushunmadi, faqat ko‘rinishga qaradi va oson tashlab ketdi.' },
+      { q: 'Shubxa fojiasining sabablari nimada?', a: 'Jamiyat stereotiplari, ota-onaning nomusdan qo‘rqishi, odamlarning befarqligi.' },
+    ],
+    sequences: [
+      {
+        title: 'Voqealarni tartib bilan joylang',
+        items: [
+          'Shubxa Protap bilan daryo bo‘yida do‘stlashadi',
+          'Qo‘shnilar g‘iybat qila boshlaydi',
+          'Protap qizga er topilganini aytadi',
+          'Shubxa sigirlar va daryo bilan xayrlashadi',
+          'Kalkuttada to‘y bo‘ladi',
+          'Kuyov boshqa qizga uylanadi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['Protap', 'Banikontxa', 'Gonshay', 'Botir cho‘pon'], answer: 3, why: 'Botir cho‘pon — «O‘zbeklar» hikoyasidan.' },
+      { items: ['qarmoq', 'betel', 'tamarind', 'tumor'], answer: 3, why: 'Tumor «Jaloliddin Manguberdi»da.' },
+      { items: ['g‘iybat', 'stereotip', 'befarqlik', 'mehr'], answer: 3, why: 'Mehr — Shubxa fojiasi sababi emas.' },
+    ],
+    debate: [
+      { claim: 'Shubxaning ota-onasi to‘g‘ri yo‘l tutdi.', pro: 'Qizining kelajagini ta’minlashga harakat qildi.', con: 'Haqiqatni yashirib, qizni baxtsizlikka mahkum qildi.' },
+      { claim: 'Hikoyadagi eng katta aybdor — kuyov.', pro: 'U qizni tushunishga urinmay, tashlab ketdi.', con: 'Haqiqatni yashirgan ota-ona va jamiyat asosiy aybdor.' },
+    ],
+    creative: [
+      { task: 'Shubxaning keyingi taqdiri haqida 3 gaplik kichik hikoya o‘ylab toping.', time: 120 },
+      { task: 'Protap Shubxaga «tilsiz» xat yozsa (rasm bilan), unda nima chizilardi?', time: 90 },
+      { task: 'Hikoyaga yangi nom qo‘ying va asoslang.', time: 60 },
+    ],
+  },
+
+  /* ===================== 65 ===================== */
+  {
+    id: 'adab-peyzaj',
+    source: 'IV chorak • 65-dars • 236–237-betlar',
+    title: '«Shubxa» hikoyasi tahlili. Nazariy ma’lumot: peyzaj',
+    short: 'Stereotiplar va ularning oqibati; peyzaj va uning vazifalari',
+    lesson: [
+      {
+        title: 'Stereotiplar jadvali',
+        table: {
+          head: ['Hikoyadagi stereotip', 'Bugungi jamiyatdagi ko‘rinishi', 'Oqibati'],
+          rows: [
+            ['Gapira olmagan odamda tuyg‘u yo‘q', 'Nogironligi bor insonlarni chetga surish', 'Yolg‘izlik, ruhiy iztirob'],
+            ['Nuqsonli farzand — oila uchun nomus', 'Farzandning muammosini yashirish', 'Yordam vaqtida berilmaydi'],
+            ['Qizni har qanday holda erga berish kerak', 'Odamlar gapidan qo‘rqib qaror qilish', 'Baxtsiz oilalar'],
+            ['Kelin tanlashda faqat ko‘rinish muhim', 'Tashqi ko‘rinishga ortiqcha baho berish', 'Insonning ichki dunyosi e’tiborsiz qoladi'],
+          ],
+        },
+      },
+      {
+        title: 'Ism ma’nosi va hikoya nomi',
+        list: [
+          'Shubxashini — «shirin zabon»: ism va taqdir ziddiyati, kinoya.',
+          'Hikoya bosh qahramon nomi bilan atalgan — u kichik bir qizning butun hayoti haqida.',
+          'Topshiriq: hikoyaga muqobil nomlar o‘ylab toping (masalan: «Ko‘z tili», «Tilsiz faryod»).',
+        ],
+      },
+      {
+        title: 'Peyzaj nima?',
+        rule: 'Peyzaj (fransuzcha paysage — mamlakat, joy) — badiiy adabiyotda tabiat tasviri.',
+        ruleLabel: 'Nazariy ma’lumot',
+        table: {
+          head: ['Vazifasi', 'Izoh'],
+          rows: [
+            ['1. Qahramon ichki olamini ochish', 'Tabiat orqali xarakter va kechinma ko‘rinadi'],
+            ['2. Muallif munosabatini aks ettirish', 'Joy yoki hodisaga muallif qanday qarashini ko‘rsatadi'],
+            ['3. G‘oyaviy ta’sirni oshirish', 'Voqealar rivojini tezlatadi yoki sekinlatadi'],
+            ['4. Parallel yoki kontrast tasvir', 'Qahramon ruhiyati tabiatga mos yoki zid qo‘yiladi'],
+          ],
+        },
+      },
+      {
+        title: 'Peyzaj misollari',
+        table: {
+          head: ['Asar', 'Peyzaj', 'Vazifasi'],
+          rows: [
+            ['A. Qahhor, «Dahshat»', 'Kuzak shamoli daraxtlarda chiyillaydi, eshik-darchalarga bosh urib uf tortadi', 'Xavotirli kayfiyat yaratadi'],
+            ['A. Qahhor, «Dahshat»', 'Ko‘r oydin, qop-qora daraxtlar, pishqirayotgan shamol', 'Unsinning qo‘rquviga parallel'],
+            ['Cho‘lpon, «Kuz»', 'Tuproqlar gezaradi, yaproqlar qizarib yonadi, qarg‘alar qag‘illaydi', 'Mustamlaka fojiasi ramzi'],
+            ['«Saodat sohili»', 'Ufq quyoshni dafn etdi, bulutlar ko‘ksi qonga to‘ldi', 'Boburning mahzunligiga uyg‘un'],
+          ],
+        },
+      },
+      {
+        title: '«Shubxa»dagi peyzaj',
+        table: {
+          head: ['Peyzaj', 'Qiz ruhiyati bilan munosabati'],
+          rows: [
+            ['Odob saqlab oqadigan himmatli daryo', 'Qizning sokin, kamtar tabiati — parallel'],
+            ['Jazirama, unsiz peshin', 'Qizning tilsiz, tanho holati — parallel'],
+            ['Yolg‘iz to‘lin oy', 'Qizning yolg‘izligi va uyg‘onayotgan tuyg‘ulari — parallel'],
+            ['Shovqinli, rang-barang Kalkutta (sezdiriladi)', 'Qishloq tabiatidan uzilgan qiz — kontrast'],
+          ],
+        },
+      },
+      {
+        title: 'Topshiriqlar',
+        list: [
+          '«Shubxa» hikoyasidan peyzaj aks etgan o‘rinlarni toping va ahamiyatini izohlang.',
+          'Tabiat qahramon ruhiyatiga parallel yoki zid qo‘yilgan o‘rinlarni dalillang.',
+          'O‘rgangan asarlaringizdan eng yoqqan peyzajni tanlang («Oq kema», «Iltijo», «Saodat sohili»).',
+        ],
+      },
+    ],
+    pairs: [
+      ['Peyzaj', 'Tabiat tasviri'],
+      ['Paysage', 'Mamlakat, joy (frans.)'],
+      ['Parallel tasvir', 'Ruhiyat va tabiat mos'],
+      ['Kontrast tasvir', 'Ruhiyat va tabiat zid'],
+      ['«Dahshat»', 'Abdulla Qahhor hikoyasi'],
+      ['«Kuz»', 'Cho‘lpon she’ri'],
+      ['Stereotip', 'Asossiz qolip qarash'],
+    ],
+    quiz: [
+      { q: '«Peyzaj» so‘zi qaysi tildan?', options: ['fransuz', 'ingliz', 'arab', 'yunon'], answer: 0 },
+      { q: 'Peyzaj nima?', options: ['tabiat tasviri', 'portret', 'dialog', 'syujet'], answer: 0 },
+      { q: 'Qahramon ruhiyati tabiatga mos qo‘yilsa, bu...', options: ['parallel tasvir', 'kontrast', 'kinoya', 'remarka'], answer: 0 },
+      { q: '«Dahshat» hikoyasi muallifi?', options: ['Abdulla Qahhor', 'Cho‘lpon', 'G‘afur G‘ulom', 'Oybek'], answer: 0 },
+      { q: 'Cho‘lponning «Kuz» she’ridagi peyzaj nimaning ramzi?', options: ['mustamlaka fojiasi', 'sevgi', 'bayram', 'bolalik'], answer: 0 },
+      { q: '«Shubxa»dagi yolg‘iz to‘lin oy nimaga parallel?', options: ['qizning yolg‘izligiga', 'to‘y quvonchiga', 'Protapning ovi', 'qo‘shnilar g‘iybatiga'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Parallel tasvir', 'Kontrast tasvir'],
+      items: [
+        { text: 'qo‘rqqan Unsin — qop-qora daraxtlar', cat: 0 }, { text: 'g‘amgin qahramon — quvnoq bahor', cat: 1 },
+        { text: 'yolg‘iz qiz — yolg‘iz oy', cat: 0 }, { text: 'motam — quyoshli bayram kuni', cat: 1 },
+        { text: 'mahzun Bobur — qonga to‘lgan bulutlar', cat: 0 }, { text: 'qishloq qizi — shovqinli shahar', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Peyzajning to‘rt vazifasini ayting.', a: 'Ichki olamni ochish, muallif munosabati, g‘oyaviy ta’sirni oshirish, parallel yoki kontrast tasvir.' },
+      { q: 'Parallel va kontrast tasvirning farqi?', a: 'Parallelda tabiat ruhiyatga mos, kontrastda zid qo‘yiladi.' },
+      { q: '«Shubxa»dagi asosiy stereotip va uning oqibati?', a: 'Tilsiz odamda tuyg‘u yo‘q degan qarash — qizning yolg‘izligi va baxtsizligi.' },
+      { q: '«Shubxa»da daryo qanday tasvirlangan va nimaga mos?', a: 'Odob saqlab oqadigan himmatli daryo — qizning sokin, kamtar tabiatiga.' },
+    ],
+    odd: [
+      { items: ['peyzaj', 'portret', 'interyer', 'naqarot'], answer: 3, why: 'Naqarot she’riy takror; qolganlari tasvir turlari.' },
+      { items: ['«Dahshat»', '«Kuz»', '«Shubxa»', '«Gitanjali»'], answer: 3, why: 'Darslikda peyzaj misoli sifatida «Gitanjali» berilmagan.' },
+      { items: ['daryo', 'oy', 'shamol', 'qarmoq'], answer: 3, why: 'Qarmoq tabiat unsuri emas.' },
+    ],
+    debate: [
+      { claim: 'Peyzajsiz asar quruq va jonsiz bo‘ladi.', pro: 'Tabiat tasviri kayfiyat va ruhiyatni ochadi.', con: 'Ba’zi zo‘r hikoyalar deyarli peyzajsiz, faqat dialog va harakatga quriladi.' },
+      { claim: 'Stereotiplar jamiyat uchun hech qachon foydali emas.', pro: 'Ular insonni adolatsiz baholashga olib keladi.', con: 'Ba’zi umumlashmalar tez qaror qabul qilishga yordam beradi.' },
+    ],
+    creative: [
+      { task: 'Hozirgi kayfiyatingizni peyzaj bilan tasvirlang: «Bugun ko‘nglim ... kabi».', time: 60 },
+      { task: 'Bitta stereotipni tanlab, uni buzadigan hayotiy misol keltiring.', time: 90 },
+      { task: 'Sinf derazasidan ko‘rinadigan manzarani parallel tasvir uchun 3 ta detal bilan tasvirlang.', time: 90 },
+    ],
+  },
+
+  /* ===================== 66 ===================== */
+  {
+    id: 'adab-lab-4',
+    source: 'IV chorak • 66-dars • 238-bet',
+    title: 'Adabiy laboratoriya: flayer tayyorlash',
+    short: 'O‘rganilgan asar yoki tadbir uchun reklama varaqasi yaratish',
+    lesson: [
+      {
+        title: 'Flayer nima?',
+        rule: 'Flayer (inglizcha — reklama qog‘ozi) — tadbir, kitob, film yoki mahsulotni targ‘ib qiluvchi varaqa.',
+        ruleLabel: 'Ta’rif',
+        list: [
+          'Ma’rifiy, madaniy, adabiy, ijtimoiy tadbirlarni e’lon qilish.',
+          'Yangi kitoblarni tanishtirish, kino premyeralarini taqdim etish.',
+          'Tashkilot va mahsulotlarni reklama qilish.',
+        ],
+      },
+      {
+        title: 'Flayer tayyorlash tavsiyalari',
+        list: [
+          'Sarlavha qisqa, lo‘nda va e’tiborni tortadigan bo‘lsin.',
+          'Ma’lumotlar oson o‘qilsin.',
+          'Matn, vizual ko‘rinish va ranglar uyg‘un bo‘lsin.',
+          'Tasvirlar sifatli bo‘lsin; ko‘pincha oddiy tasvirlar diqqatni yaxshiroq jalb qiladi.',
+          'O‘quvchi izlayotgan ma’lumotni (sana, vaqt, manzil) oson topsin.',
+        ],
+      },
+      {
+        title: 'Flayer tuzilishi',
+        table: {
+          head: ['Qism', 'Misol'],
+          rows: [
+            ['Sarlavha', '«Kitob taqdimoti», «Oq kema bilan uchrashuv»'],
+            ['Asosiy tasvir', 'Asar ramzi yoki qahramon silueti'],
+            ['Tadbir dasturi', 'Qahramon rolida chiqish, savol-javob, viktorina'],
+            ['Ishtirokchilar', '5–11-sinf o‘quvchilari'],
+            ['Sana, vaqt, manzil', 'Maktab faollar zali, soat 09:00'],
+          ],
+        },
+      },
+      {
+        title: 'Laboratoriya topshirig‘i',
+        text: 'Guruhlarga bo‘lining. Har bir guruh bob doirasida o‘rgangan yoki mustaqil o‘qigan asari (yoki u asosidagi film, spektakl) uchun flayer tayyorlaydi. Tayyor flayerlar guruhlarda muhokama qilinadi.',
+        rule: 'Tanlov: eng ko‘p ovoz olgan guruh g‘olib sanaladi va rag‘batlantiriladi.',
+        ruleLabel: 'Tanlov',
+      },
+      {
+        title: 'G‘oyalar',
+        table: {
+          head: ['Asar', 'Flayer sarlavhasi g‘oyasi'],
+          rows: [
+            ['«Jaloliddin Manguberdi»', '«Mardlik sahnasi: spektaklga taklif»'],
+            ['«Yigirma yildan so‘ng»', '«Siz bu yakunni kutmagansiz!»'],
+            ['«Shubxa»', '«Ko‘z tilini tushunasizmi?»'],
+            ['«O‘zbeklar»', '«Tor uy — keng ko‘ngil»'],
+            ['Muhammad Yusuf she’rlari', '«She’riyat kechasi: Lola, lolajonim»'],
+          ],
+        },
+      },
+      {
+        title: 'Baholash',
+        list: [
+          'Sarlavha e’tiborni tortadimi?',
+          'Asar ruhi va g‘oyasi aks etganmi?',
+          'Ma’lumot to‘liq va oson o‘qiladimi?',
+          'Ranglar va tasvir uyg‘unmi?',
+          'Guruh o‘z tanlovini asoslab bera oldimi?',
+        ],
+      },
+    ],
+    pairs: [
+      ['Flayer', 'Reklama varaqasi'],
+      ['Sarlavha', 'Qisqa, e’tiborni tortuvchi'],
+      ['Premyera', 'Filmning birinchi namoyishi'],
+      ['Viktorina', 'Savol-javob o‘yini'],
+      ['Tanlov', 'Eng yaxshi flayerni aniqlash'],
+      ['Targ‘ibot', 'Flayerning asosiy vazifasi'],
+    ],
+    quiz: [
+      { q: '«Flayer» so‘zi qaysi tildan?', options: ['ingliz', 'fransuz', 'nemis', 'arab'], answer: 0 },
+      { q: 'Flayerning asosiy vazifasi?', options: ['targ‘ibot', 'tahlil', 'tarjima', 'hikoya qilish'], answer: 0 },
+      { q: 'Flayer sarlavhasi qanday bo‘lishi kerak?', options: ['qisqa va lo‘nda', 'uzun va batafsil', 'mayda harflarda', 'sarlavhasiz'], answer: 0 },
+      { q: 'Flayerda qaysi ma’lumot albatta bo‘lishi kerak?', options: ['sana, vaqt, manzil', 'muallifning tug‘ilgan kuni', 'narx jadvali', 'kitob sahifalari soni'], answer: 0 },
+      { q: 'Tanlovda kim g‘olib bo‘ladi?', options: ['eng ko‘p ovoz olgan guruh', 'birinchi topshirgan', 'eng katta flayer', 'o‘qituvchi tanlagani'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Yaxshi flayer', 'Zaif flayer'],
+      items: [
+        { text: 'lo‘nda sarlavha', cat: 0 }, { text: 'mayda, o‘qib bo‘lmaydigan matn', cat: 1 },
+        { text: 'aniq sana va manzil', cat: 0 }, { text: 'ortiqcha ma’lumot', cat: 1 },
+        { text: 'uyg‘un ranglar', cat: 0 }, { text: 'sifatsiz rasm', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Flayer nima uchun ishlatiladi?', a: 'Tadbirlar, kitoblar, filmlar va mahsulotlarni targ‘ib qilish uchun.' },
+      { q: 'Flayer tayyorlashning uchta tavsiyasini ayting.', a: 'Lo‘nda sarlavha, oson o‘qiladigan ma’lumot, sifatli va uyg‘un tasvir.' },
+      { q: 'Flayerning asosiy qismlari?', a: 'Sarlavha, tasvir, dastur, ishtirokchilar, sana-vaqt-manzil.' },
+      { q: 'Nega oddiy tasvir ko‘pincha yaxshiroq ishlaydi?', a: 'U diqqatni tez jalb qiladi va asosiy fikrni chalg‘itmaydi.' },
+    ],
+    odd: [
+      { items: ['sarlavha', 'sana', 'manzil', 'remarka'], answer: 3, why: 'Remarka — drama atamasi.' },
+      { items: ['flayer', 'afisha', 'e’lon', 'g‘azal'], answer: 3, why: 'G‘azal lirik janr; qolganlari targ‘ibot vositalari.' },
+      { items: ['muqova', 'audiokitob', 'Adabiy Instagram', 'kulminatsiya'], answer: 3, why: 'Kulminatsiya syujet elementi; qolganlari adabiy laboratoriya loyihalari.' },
+    ],
+    debate: [
+      { claim: 'Yaxshi flayer kitobni o‘qishga undashi mumkin.', pro: 'Qiziqarli sarlavha va tasvir qiziqish uyg‘otadi.', con: 'Faqat kitobning mazmuni o‘quvchini ushlab qoladi.' },
+      { claim: 'Maktab tadbirlari uchun qog‘oz flayer emas, elektron e’lon yaxshiroq.', pro: 'Tez tarqaladi, qog‘oz tejaladi.', con: 'Qog‘oz flayer ko‘zga tashlanadi, hammaga yetib boradi.' },
+    ],
+    creative: [
+      { task: 'Yil davomida o‘qigan asarlaringizdan biriga 5 so‘zli flayer sarlavhasi o‘ylab toping.', time: 60 },
+      { task: 'Sinfingizning «Adabiyot kechasi» uchun flayer eskizini 2 daqiqada doskaga chizing.', time: 120 },
+      { task: 'Flayer uchun 3 bandli tadbir dasturini tuzing.', time: 90 },
+    ],
+  },
+];
+
 const CONTENT = {
-  adabiyot: { 8: [...ADABIYOT_8, ...ADABIYOT_8_P2, ...ADABIYOT_8_P3, ...ADABIYOT_8_P4] },
+  adabiyot: { 8: [...ADABIYOT_8, ...ADABIYOT_8_P2, ...ADABIYOT_8_P3, ...ADABIYOT_8_P4, ...ADABIYOT_8_P5] },
   'ona-tili': { 8: [...ONA_TILI_8, ...ONA_TILI_8_PART2, ...ONA_TILI_8_PART3, ...ONA_TILI_8_PART4, ...ONA_TILI_8_PART5, ...ONA_TILI_8_PART6, ...ONA_TILI_8_PART7, ...ONA_TILI_8_PART8] },
 };
 
