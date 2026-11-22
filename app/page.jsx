@@ -12843,8 +12843,1317 @@ const ADABIYOT_8_P3 = [
   },
 ];
 
+/* --- 8-sinf Adabiyot: 37–47-darslar (darslik 2025, 135–189-betlar; BSB/CHSB kiritilmagan) --- */
+const ADABIYOT_8_P4 = [
+  /* ===================== 37 ===================== */
+  {
+    id: 'adab-mirkomil-2',
+    source: 'III chorak • 37-dars • 135–138-betlar',
+    title: '«Mirkomilboyning qazo bo‘lgan namozi»: matn ustida ishlash',
+    short: 'Mahkamalar, xufyalar, mardikorlik va «Vatanni ko‘chirib bo‘lmaydi»',
+    lesson: [
+      {
+        title: 'Uyezd mahkamasida',
+        text: 'Mirkomil Kultepada masjid, madrasa, kasalxona va hammom qurish uchun ruxsat so‘raydi. Uyezd mahkamasidagi harbiy boshliq unga bepisand savollar beradi: bu qurilishlardan maqsad nima?',
+        list: [
+          'Boshliqning da’vosi: muassasalar faqat mahalliy aholiga xizmat qilar emish.',
+          'Mirkomil musulmon kasalxonasi va hammomning talablarini tushuntirmoqchi bo‘ladi, ammo niyatidan qaytadi.',
+          'U besh-olti yildan beri ish nega cho‘zilayotganini to‘satdan anglaydi.',
+          'Boshliq stol javonini ko‘rsatib: «ko‘p ma’lumotlar keltirganlar» — Mirkomil haqida chaqimchilar bor.',
+        ],
+        rule: 'Mirkomil o‘rischani chala biladi, ammo o‘zini bexabardek tutadi — bu uning kichik «hiylasi». Keyin u «drujno» (do‘stona) so‘zi ustida uzoq o‘ylaydi: savobing boshqalarga gunohdek botsa, kim do‘st, kim dushman?',
+        ruleLabel: 'Tahlil',
+      },
+      {
+        title: 'Xufyalar tarmog‘i',
+        text: 'Hikoyada mustamlaka ma’murlari kabinetidagi sahna ko‘rsatiladi: rotmistr Rozalion polkovnik Soshalskiyga «Chaquvlar» deb yozilgan varaqni beradi.',
+        table: {
+          head: ['Kim?', 'Vazifasi'],
+          rows: [
+            ['Polkovnik Soshalskiy', 'Mirkomil ustidan to‘plangan ma’lumotlarni yig‘adi'],
+            ['Rotmistr Rozalion', 'Chaqimchilardan xabar keltiradi'],
+            ['Keldi, Qori, Sodiq', 'Mirkomilning yurtdoshlari — pul evaziga uning har qadamini yetkazuvchi xufyalar'],
+          ],
+        },
+        note: 'Polkovnikning kinoyali gapi: bularga to‘rt tanga bersangiz, otasini ham sotadi. Bu — eng achchiq haqiqat: Mirkomilni bosqinchilar emas, o‘z yurtdoshlari sotadi.',
+      },
+      {
+        title: '1916-yil: mardikorlikka qarshi',
+        text: 'Madrayimhojining uyida yig‘in bo‘ladi, unga Mirkomil raislik qiladi: yigitlarni soldatlikka — mardikorlikka jo‘natmaslik haqida yozma da’vat tayyorlanadi.',
+        list: [
+          'Ertasi kuni Mirkomil Skobelevga (Farg‘ona) — harbiy hokim huzuriga boradi.',
+          'Hokim muovinidan so‘raydi: Andijondan qancha mardikor olasiz? Barining haqini to‘laymiz!',
+          'Sababi: yigitlarimiz Rossiya o‘rmonlarida sovuqqa chiday olmaydi.',
+          'Mirkomil: borimni beraman, lekin bironta farzandimizni jo‘natmaymiz!',
+        ],
+        note: 'Mardikorlar ishi (1916) — chor hukumatining Turkiston yigitlarini front orti ishlariga majburan olishi; bu xalq qo‘zg‘olonlariga sabab bo‘lgan.',
+      },
+      {
+        title: 'Achchiq xulosa',
+        rule: 'Mirkomil o‘ylaydi: hatto eng ezgu niyatga yetish uchun ham hiylakorroq bo‘lishga majbur ekansan, aks holda halol niyatlaringni hayot oyoq osti qiladi. Ammo u baribir o‘z tabiatini o‘zgartirmaydi.',
+        ruleLabel: 'Mirkomilning iztirobi',
+      },
+      {
+        title: 'Anvar posho bilan suhbat',
+        text: 'Istanbulda turk sarkardasi Anvar posho Mirkomilga Turkiyada qolishni taklif qiladi: oilangizni ham ko‘chirib keltiramiz, yurtingiz hurriyatga erishguncha shu yerda yashaysiz.',
+        rule: 'Mirkomilning javobi: bolalarni, nasllarni ko‘chirib kelarmiz, lekin Vatanni qanday olib kelamiz? Vatanni ko‘chirib bo‘lmaydi!',
+        ruleLabel: 'Hikoyaning kalit fikri',
+        note: 'Bu fikrni «Saodat sohili»dagi Boburning vatan sog‘inchi va «So‘nggi saboq»dagi ona tili dardi bilan qiyoslang.',
+      },
+      {
+        title: 'Muhokama',
+        list: [
+          'Nima uchun Mirkomilboyning maqsadiga hech kim ishonmadi?',
+          'Mirkomilboy haqida ko‘plab ma’lumotlarni kim yetkazishi mumkin edi?',
+          'Mirkomilboyning halokatga uchrashi sabablari nimada?',
+          '«Vatanni ko‘chirib bo‘lmaydi» degan fikrga qo‘shilasizmi?',
+        ],
+      },
+    ],
+    pairs: [
+      ['Soshalskiy', 'Polkovnik, ma’lumot yig‘uvchi'],
+      ['Rozalion', 'Rotmistr, chaqimchilardan xabar keltiruvchi'],
+      ['Keldi, Qori, Sodiq', 'Xufyalar'],
+      ['Madrayimhoji', 'Uyida yig‘in bo‘lgan kishi'],
+      ['Skobelev', 'Farg‘onaning o‘sha davrdagi nomi'],
+      ['Anvar posho', 'Turkiyada qolishni taklif qilgan sarkarda'],
+      ['Mardikorlik', '1916-yilgi majburiy safarbarlik'],
+      ['«Drujno»', 'Do‘stona, ittifoq'],
+    ],
+    quiz: [
+      { q: 'Mirkomil Kultepada nima qurmoqchi edi?', options: ['masjid, madrasa, kasalxona, hammom', 'zavod', 'saroy', 'qal’a'], answer: 0 },
+      { q: 'Mirkomil haqida ma’lumotni kimlar yetkazgan?', options: ['o‘z yurtdoshlari', 'turk sarkardalari', 'fransuzlar', 'hech kim'], answer: 0 },
+      { q: 'Madrayimhojining uyidagi yig‘in nima haqida edi?', options: ['yigitlarni mardikorlikka jo‘natmaslik', 'zakot', 'to‘y', 'savdo'], answer: 0 },
+      { q: 'Mirkomil harbiy hokimga nimani taklif qiladi?', options: ['mardikorlar haqini to‘lashni', 'qo‘shin yuborishni', 'qochib ketishni', 'zavod sovg‘a qilishni'], answer: 0 },
+      { q: 'Anvar posho nimani taklif qiladi?', options: ['Turkiyada qolishni', 'jangga kirishni', 'Andijonga qaytishni', 'zavod qurishni'], answer: 0 },
+      { q: 'Mirkomilning Anvar poshoga javobi?', options: ['Vatanni ko‘chirib bo‘lmaydi', 'Roziman', 'O‘ylab ko‘raman', 'Pul bering'], answer: 0 },
+      { q: '«Chaquvlar» varag‘ini polkovnikka kim beradi?', options: ['rotmistr Rozalion', 'Keldi', 'Yoqubxo‘ja', 'Mirkomil'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Mirkomilning ezgu ishi', 'Unga qarshi qilingan ish'],
+      items: [
+        { text: 'kasalxona qurish rejasi', cat: 0 }, { text: 'chaqimchilik', cat: 1 },
+        { text: 'mardikorlik haqini to‘lash taklifi', cat: 0 }, { text: 'ruxsatni cho‘zish', cat: 1 },
+        { text: 'yigitlarni asrash yig‘ini', cat: 0 }, { text: 'bepisand savollar', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Mirkomil mahkamada nimani to‘satdan angladi?', a: 'Ezgu rejalari besh-olti yildan beri nega cho‘zilayotganini — ataylab to‘sqinlik qilinayotganini.' },
+      { q: 'Polkovnikning «to‘rt tanga bersangiz, otasini ham sotadi» degan gapi nimani fosh etadi?', a: 'Xufyalarning pastkashligini va Mirkomilni o‘z yurtdoshlari sotganini.' },
+      { q: 'Nega Mirkomil yigitlarni mardikorlikka yubormaslikka harakat qildi?', a: 'Ular Rossiya o‘rmonlarida sovuqda halok bo‘lishidan qo‘rqdi, ularning hayotini boyligidan ustun qo‘ydi.' },
+      { q: '«Vatanni ko‘chirib bo‘lmaydi» fikrini izohlang.', a: 'Oilani ko‘chirish mumkin, ammo Vatan — tuproq, ajdodlar, xotira — yagona va o‘rnini hech narsa bosmaydi.' },
+      { q: 'Mirkomil qanday achchiq xulosaga keladi?', a: 'Ezgu niyat uchun ham hiylakorroq bo‘lish kerak ekan, aks holda halol niyat oyoq osti qilinadi.' },
+    ],
+    sequences: [
+      {
+        title: 'Voqealarni tartib bilan joylang',
+        items: [
+          'Mirkomil qurilish uchun ruxsat so‘raydi',
+          'Uyezd mahkamasida bepisand savollarga duch keladi',
+          'Madrayimhojinikida yig‘in bo‘ladi',
+          'Mirkomil Skobelevga harbiy hokim huzuriga boradi',
+          'Xufyalar har qadamini polkovnikka yetkazadi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['Keldi', 'Qori', 'Sodiq', 'Yoqubxo‘ja'], answer: 3, why: 'Yoqubxo‘ja — Mirkomilning hamrohi; qolganlari xufyalar.' },
+      { items: ['masjid', 'madrasa', 'kasalxona', 'qamoqxona'], answer: 3, why: 'Qamoqxona Mirkomil rejasida yo‘q edi.' },
+      { items: ['Soshalskiy', 'Rozalion', 'Anvar posho', 'Elbars'], answer: 3, why: 'Elbars — «Jaloliddin Manguberdi» dramasidagi obraz.' },
+    ],
+    debate: [
+      { claim: 'Mirkomil Anvar poshoning taklifini qabul qilishi kerak edi.', pro: 'Hayoti saqlanib, xorijdan ham xalqiga yordam berardi.', con: 'Vatanni tark etish — xalqni tashlab ketish; u o‘z yurtida kurashishni tanladi.' },
+      { claim: 'Ezgu maqsad uchun hiyla ishlatish mumkin.', pro: 'Aks holda yovuz kuchlar halol niyatni barbod qiladi.', con: 'Hiyla bilan qilingan ezgulik o‘z qadrini yo‘qotadi.' },
+    ],
+    creative: [
+      { task: 'Mirkomil mahkamaga yozgan arizaning birinchi 2 gapini rasmiy uslubda o‘ylab toping.', time: 90 },
+      { task: '«Vatanni ko‘chirib bo‘lmaydi» fikrini bitta rasm yoki ramz bilan doskada ifodalang.', time: 90 },
+      { task: 'Xufya Keldi vijdoni qiynalib, Mirkomilga xat yozsa, nima der edi? 2 gap.', time: 90 },
+    ],
+  },
+
+  /* ===================== 38 ===================== */
+  {
+    id: 'adab-mirkomil-3',
+    source: 'III chorak • 38-dars • 139–141-betlar',
+    title: '«Mirkomilboyning qazo bo‘lgan namozi»: tahlil',
+    short: 'So‘nggi sahar, ado etilmagan namoz va «Nahotki?» savoli',
+    lesson: [
+      {
+        title: 'Qochish taklifi',
+        text: 'Hibsga olinishidan bir kecha oldin do‘sti kelib, Afg‘oniston yoki Turkiyaga qochishni o‘tinadi. Mirkomil rad etadi: mening niyatim buzuq emas; hamma yerda Xudo bir, peshonadagini har yerda ko‘raveramiz.',
+        note: 'Saharda uni olib ketishadi. Uch oy o‘tadi — na so‘roq bor, na javob.',
+      },
+      {
+        title: 'Xandaq yoqasida',
+        text: 'Mirkomilni saharda o‘ziga xandaq qazishga majbur qilishadi. Yonida «inqilobiy tribunal» hukmini ijro etuvchi o‘zbek askarcha va moviy ko‘zli rus soqchi turadi.',
+        list: [
+          'Askarcha: «Endi kuningiz bitdi, boy!» deb miltiq o‘qtaladi.',
+          'Mirkomil uning otasining otini so‘raydi — askarcha o‘z ildizidan bexabar.',
+          'Mirkomil tahorat uchun suv so‘raganda askarcha masxara qiladi.',
+          'Moviy ko‘z soqchi askarchani koyiydi: o‘zingning musulmoning bo‘lsa, oxirgi iltimosini bajar!',
+        ],
+        rule: 'Kinoya: begona soqchi insoniylik ko‘rsatadi, o‘z yurtdoshi esa shafqatsiz. Bu hikoyaning asosiy g‘oyasini kuchaytiradi.',
+        ruleLabel: 'Tahlil',
+      },
+      {
+        title: 'Ado etilmagan namoz',
+        text: 'Mirkomil tahorat olib, chakmonini to‘shaydi va iltimos qiladi: ikki rakaat bomdodni o‘qib olay, «Allohu akbar» deb qo‘l ko‘targanimda otsalar otaversinlar.',
+        rule: 'U niyat qilib, takbir aytishga ulguradi, xolos — o‘qlar uziladi. Namoz qazo bo‘lib qoladi. Sarlavha ana shu fojiaviy lahzaga ishora qiladi.',
+        ruleLabel: 'Sarlavha ma’nosi',
+        note: 'Ramziy talqin: Mirkomilning millat uchun boshlagan ko‘p ezgu ishlari ham oxiriga yetmay «qazo» bo‘lib qoldi.',
+      },
+      {
+        title: '«Nahotki?»',
+        text: 'Hikoya davomida Mirkomil «Nahotki?» savolini takrorlaydi: nahotki uni o‘z yurtdoshlari sotgan bo‘lsa? So‘nggi daqiqada ham uni o‘q uzayotgan o‘zbek askarcha otadi, moviy ko‘z soqchi esa chetda tamaki chekib turadi.',
+        rule: 'Muallif: Mirkomil uchun dushmanini o‘z ko‘zi bilan ko‘rish ham arzimas narsaga aylangan — so‘nggi ibodatini ado etishdan muqaddasroq maqsad qolmagan edi.',
+        ruleLabel: 'Yechim',
+      },
+      {
+        title: 'Syujet elementlari',
+        table: {
+          head: ['Element', 'Hikoyadan'],
+          rows: [
+            ['Ekspozitsiya', 'Izvoshda Mirkomil va Yoqubxo‘ja; qahramonning haqgo‘y fe’li'],
+            ['Tugun', 'Haq gapi uchun g‘anim orttirishi, zakot haqidagi tuhmat'],
+            ['Voqealar rivoji', 'Mahkamalardagi to‘siqlar, xufyalar, mardikorlik, surgun'],
+            ['Kulminatsiya', 'Xandaq yoqasidagi so‘nggi suhbat'],
+            ['Yechim', 'Namoz qazo bo‘ladi, Mirkomil otib tashlanadi'],
+          ],
+        },
+      },
+      {
+        title: 'Mirkomil xarakteri',
+        table: {
+          head: ['Xislat', 'Matndan dalil'],
+          rows: [
+            ['Haqgo‘ylik', 'Temurhojiga haqni aytadi, to‘nni qaytaradi'],
+            ['Saxiylik', 'Mardikorlar haqini to‘lashga tayyor'],
+            ['Vatanparvarlik', '«Vatanni ko‘chirib bo‘lmaydi»'],
+            ['Iymon va matonat', 'So‘nggi daqiqada ham namozga turadi'],
+            ['Soddalik (zaif tomoni)', 'Niyatini yashirmaydi, yurtdoshlariga ishonadi'],
+          ],
+        },
+      },
+      {
+        title: 'Muhokama va loyiha',
+        list: [
+          'Hikoyaning bosh g‘oyasini aniqlay oldingizmi?',
+          'Mirkomil chet elga ketganida syujetda qanday burilish yuz berardi?',
+          'Mirkomil va u yashagan jamiyat o‘rtasidagi farqlarni ochib bering.',
+          '1-guruh: Mirkomilboy kabi millat qahramonlari haqida taqdimot.',
+          '2-guruh: 1916-yilgi «Mardikorlar ishi» haqida ma’lumot.',
+          '3-guruh: Anvar posho haqida ma’lumot va qiyos.',
+        ],
+      },
+    ],
+    pairs: [
+      ['Inqilobiy tribunal', 'Favqulodda sud organi'],
+      ['Obdasta', 'Yuz-qo‘l yuvish idishi'],
+      ['Chakmon', 'Erkaklar qishki to‘ni'],
+      ['Bomdod', 'Tong namozi'],
+      ['«Nahotki?»', 'Mirkomil takrorlagan savol'],
+      ['Moviy ko‘z soqchi', 'Insoniylik ko‘rsatgan begona'],
+      ['Qazo', 'O‘z vaqtida ado etilmagan namoz'],
+    ],
+    quiz: [
+      { q: 'Do‘sti Mirkomilga nimani taklif qiladi?', options: ['Afg‘oniston yoki Turkiyaga qochishni', 'yashirinishni', 'pora berishni', 'qurol olishni'], answer: 0 },
+      { q: 'Mirkomil qancha vaqt so‘roqsiz qamoqda yotadi?', options: ['uch oy', 'bir hafta', 'bir yil', 'qirq kun'], answer: 0 },
+      { q: 'Mirkomil so‘nggi daqiqada nima so‘raydi?', options: ['tahorat uchun suv', 'non', 'oilasini ko‘rishni', 'qog‘oz-qalam'], answer: 0 },
+      { q: 'Askarchani kim koyiydi?', options: ['moviy ko‘z soqchi', 'Mirkomil', 'Yoqubxo‘ja', 'polkovnik'], answer: 0 },
+      { q: 'Mirkomil qaysi namozni o‘qimoqchi edi?', options: ['bomdod', 'peshin', 'asr', 'xufton'], answer: 0 },
+      { q: 'Mirkomil qayerga yiqiladi?', options: ['o‘zi qazigan xandaqqa', 'daryoga', 'ko‘chaga', 'masjidga'], answer: 0 },
+      { q: 'Hikoyaning kulminatsiyasi?', options: ['xandaq yoqasidagi so‘nggi suhbat', 'izvoshdagi suhbat', 'zakot bahsi', 'Istanbul safari'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Insoniylik', 'Shafqatsizlik'],
+      items: [
+        { text: 'soqchining «oxirgi iltimosini bajar» degani', cat: 0 }, { text: 'askarchaning masxarasi', cat: 1 },
+        { text: 'do‘stining qochishni o‘tinishi', cat: 0 }, { text: 'so‘roqsiz uch oy qamoq', cat: 1 },
+        { text: 'obdasta keltirilishi', cat: 0 }, { text: 'namoz paytida o‘q uzish', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Nega Mirkomil qochishdan bosh tortdi?', a: 'Niyati pok ekaniga ishondi va Vatanni tashlab ketishni istamadi.' },
+      { q: 'Hikoya nomi nimaga ishora?', a: 'Mirkomil boshlagan bomdod namozi o‘qlar tufayli qazo bo‘lib qolganiga; ramziy ma’noda oxiriga yetmagan ezgu ishlariga.' },
+      { q: 'Askarcha va moviy ko‘z soqchi qiyosi nimani ko‘rsatadi?', a: 'Begona insoniylik ko‘rsatdi, o‘z yurtdoshi esa shafqatsiz bo‘ldi — millat ichidagi jaholat fojiasini.' },
+      { q: 'Mirkomilning «Nahotki?» savoli nimaga oid?', a: 'Uni o‘z yurtdoshlari sotganiga ishona olmasligiga.' },
+      { q: 'Mirkomil xarakterining zaif tomoni nima?', a: 'Haddan tashqari ochiqligi va hammaga ishonuvchanligi.' },
+    ],
+    sequences: [
+      {
+        title: 'Hikoyaning so‘nggi voqealari',
+        items: [
+          'Do‘sti qochishni maslahat beradi',
+          'Mirkomil saharda hibsga olinadi',
+          'Uch oy so‘roqsiz qamoqda yotadi',
+          'Saharda xandaq qazishga majbur qilinadi',
+          'Tahorat olib namozga turadi',
+          'Takbir aytayotganda otib tashlanadi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['obdasta', 'chakmon', 'tahorat', 'kokil'], answer: 3, why: 'Kokil bu sahnaga oid emas; qolganlari so‘nggi namoz detallari.' },
+      { items: ['haqgo‘ylik', 'saxiylik', 'vatanparvarlik', 'ikkiyuzlamachilik'], answer: 3, why: 'Ikkiyuzlamachilik — Mirkomil raqiblariga xos.' },
+      { items: ['Mirkomilboy', 'Jaloliddin', 'Ravshan', 'Ochumelov'], answer: 3, why: 'Ochumelov — salbiy, laganbardor obraz; qolganlari Vatan, or-nomus uchun kurashgan qahramonlar.' },
+    ],
+    debate: [
+      { claim: 'Mirkomilboy sodda emas, balki printsipial edi.', pro: 'U yashash uchun o‘z qadriyatlaridan voz kechmadi.', con: 'Ehtiyotkorlik qilsa, ko‘proq ezgu ishlarni oxiriga yetkazardi.' },
+      { claim: 'Hikoyadagi eng katta aybdor — askarcha.', pro: 'Aynan u shafqatsizlik qildi.', con: 'U — tizimning qurboni; asl aybdorlar buyruq berganlar va xufyalar.' },
+    ],
+    creative: [
+      { task: 'Hikoyaga epilog yozing: 100 yildan keyin Andijonda Mirkomilboy nomidagi maktab ochildi. Ochilish nutqining 2 gapini ayting.', time: 120 },
+      { task: 'Moviy ko‘z soqchi kundaligiga shu sahar haqida nima yozgan bo‘lardi? 2 gap.', time: 90 },
+      { task: 'Mirkomilboyga yodgorlik uchun bir jumlalik yozuv o‘ylab toping.', time: 60 },
+    ],
+  },
+
+  /* ===================== 40 ===================== */
+  {
+    id: 'adab-jaloliddin-1',
+    source: 'III chorak • 40-dars • 142–145-betlar',
+    title: 'Maqsud Shayxzoda. «Jaloliddin Manguberdi»: mutolaadan oldin',
+    short: 'Shoir hayoti, tarixiy fon, drama janri va asar qatnashuvchilari',
+    lesson: [
+      {
+        title: 'Maqsud Shayxzoda (1908–1967)',
+        text: 'Ozarbayjon elidan bo‘lib, o‘zbek xalqining sevimli shoiri, dramaturgi va olimiga aylangan ijodkor. 1908-yili Ozarbayjonning Oqtosh shahrida tug‘ilgan.',
+        list: [
+          'Boku Oliy pedagogika institutida sirtdan o‘qib, muallimlik qilgan.',
+          'Mavjud tuzumga qarshi ayblov bilan Toshkentga uch yillik surgunga hukm qilingan.',
+          'Yigirma yoshida Toshkentga kelib, umrining oxirigacha shu yerda ishlagan.',
+          '1952-yili asossiz ayblov bilan 25 yilga hukm qilingan, ikki yildan so‘ng oqlangan.',
+          '1967-yil 19-fevralda vafot etgan. O‘zbekiston uning ikkinchi vataniga aylangan.',
+        ],
+      },
+      {
+        title: 'Ijodi',
+        table: {
+          head: ['Yo‘nalish', 'Asarlari'],
+          rows: [
+            ['She’riy to‘plamlar', '«Loyiq soqchi», «Kurash nechun?», «Ko‘ngil deydiki...», «Zamon torlari», «Chorak asr devoni»'],
+            ['Dostonlar', '«Kapitan Gastello», «Toshkentnoma»'],
+            ['Dramalar (fojialar)', '«Jaloliddin Manguberdi», «Mirzo Ulug‘bek»'],
+          ],
+        },
+        note: 'Mirzo Ibrohimov uni yoniq qalb egasi deb ta’riflagan. Shoirning o‘zi: xalqning qahramonligi, kurash va ozodlik, yurt manzaralari qalamimga oshno bo‘ldi, degan.',
+      },
+      {
+        title: 'Tarixiy fon',
+        text: 'Fojia 1217–1224-yillarda mo‘g‘ul istilosiga qarshi kurashgan Jaloliddin Manguberdi haqida. Chingizxon qo‘shinlari Xorazmshohlar davlatiga 1219-yildan bostirib kira boshlagan.',
+        list: [
+          'Sulton Alovuddin Muhammad harbiy xatosi tufayli jang maydonini tark etgan.',
+          'Uning o‘g‘li Jaloliddin vatan himoyasiga otlangan.',
+          'Tarixchi Nasaviy yozishicha, sarkardaning ismi Jaloliddin Mangburni bo‘lgan; ba’zi tarixchilar buni «burnida xoli bor» deb talqin qiladi.',
+          'Shayxzoda uni «Manguberdi» deb atagan.',
+        ],
+        note: 'Asar Ikkinchi jahon urushi yillarida yozilgan. O‘sha davr rahbari Usmon Yusupov shoirga: xalq va armiya Jaloliddin haqidagi asarni intizorlik bilan kutyapti, degan.',
+      },
+      {
+        title: 'Drama nima?',
+        rule: 'Drama (yunoncha — «harakat») — asosan sahna uchun yozilgan asar.',
+        ruleLabel: 'Ta’rif',
+        list: [
+          'Yozuvchi fikri obrazlarning xatti-harakatlari orqali ifodalanadi.',
+          'Voqealar tomoshabin ko‘z o‘ngida sodir bo‘ladi.',
+          'Voqealar monolog va dialog ko‘rinishida beriladi.',
+          'Dramalar pardalarga, pardalar ko‘rinishlarga bo‘linadi.',
+          'Muallif remarkalardan foydalanadi — qavs ichidagi izohlar.',
+        ],
+      },
+      {
+        title: 'Qatnashuvchilar',
+        table: {
+          head: ['Obraz', 'Kim?'],
+          rows: [
+            ['Sulton Muhammad Alovuddin Xorazmshoh', 'Xorazm shohi'],
+            ['Jaloliddin Manguberdi', 'Shohning o‘g‘li, sarkarda'],
+            ['Sultonbegim', 'Jaloliddinning singlisi'],
+            ['Amir Badriddin', 'Samarqand hokimi, Sultonbegimning qallig‘i'],
+            ['Temur Malik', 'Sardor, Xo‘jand hokimi'],
+            ['Elbars pahlavon', 'Cho‘pon, nay chaluvchi'],
+            ['Muhammad Nasaviy', 'Tarixchi, Jaloliddinning kotibi'],
+            ['Ona', 'Jaloliddin va Sultonbegimning onasi'],
+            ['Chingizxon, Qodog‘on no‘yon', 'Mo‘g‘ul xoqoni va sarkardasi'],
+          ],
+        },
+        note: 'Asar besh pardali tarixiy fojia; voqealar XIII asrning birinchi choragida bo‘lib o‘tadi.',
+      },
+      {
+        title: 'Ikki tomonlama kundalik',
+        text: 'O‘qish davomida jadval yuriting: chap ustunga asardagi ishoralarni, o‘ng ustunga voqealar qanday davom etishi haqidagi farazingizni yozing. Asar oxirida farazlaringizni tekshiring.',
+        list: [
+          'Nima uchun xalq va armiya Jaloliddin haqidagi asarni intizorlik bilan kutgan?',
+          'Biz qanday insonlarni «qalbi yoniq» deymiz?',
+        ],
+      },
+    ],
+    pairs: [
+      ['Maqsud Shayxzoda', '«Jaloliddin Manguberdi» muallifi'],
+      ['Oqtosh', 'Shayxzoda tug‘ilgan shahar'],
+      ['Drama', '«Harakat»'],
+      ['Remarka', 'Qavs ichidagi muallif izohi'],
+      ['Nasaviy', 'Tarixchi, Jaloliddin kotibi'],
+      ['Temur Malik', 'Xo‘jand hokimi'],
+      ['Badriddin', 'Samarqand hokimi'],
+      ['Mangburni', 'Jaloliddinning tarixiy laqabi'],
+    ],
+    quiz: [
+      { q: 'Maqsud Shayxzoda qaysi xalq farzandi edi?', options: ['ozarbayjon', 'tatar', 'turkman', 'qozoq'], answer: 0 },
+      { q: 'Shayxzoda qachon tug‘ilgan?', options: ['1908', '1886', '1912', '1928'], answer: 0 },
+      { q: '«Drama» so‘zi yunonchada nimani bildiradi?', options: ['harakat', 'qo‘shiq', 'hikoya', 'sahna'], answer: 0 },
+      { q: 'Qavs ichida beriladigan muallif izohi?', options: ['remarka', 'monolog', 'dialog', 'parda'], answer: 0 },
+      { q: 'Chingizxon qo‘shinlari Xorazmga qachondan bostirib kira boshlagan?', options: ['1219', '1370', '1501', '1141'], answer: 0 },
+      { q: 'Fojia necha pardadan iborat?', options: ['besh', 'uch', 'ikki', 'yetti'], answer: 0 },
+      { q: 'Jaloliddinning kotibi kim?', options: ['Nasaviy', 'Badriddin', 'Elbars', 'Temur Malik'], answer: 0 },
+      { q: 'Shayxzodaning yana bir fojiasi?', options: ['«Mirzo Ulug‘bek»', '«Otello»', '«Shum bola»', '«Alpomish»'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Xorazmshohlar tomoni', 'Mo‘g‘ullar tomoni'],
+      items: [
+        { text: 'Jaloliddin', cat: 0 }, { text: 'Chingizxon', cat: 1 },
+        { text: 'Temur Malik', cat: 0 }, { text: 'Qodog‘on no‘yon', cat: 1 },
+        { text: 'Elbars pahlavon', cat: 0 }, { text: 'mo‘g‘ul elchilari', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Dramaning beshta xususiyatini ayting.', a: 'Fikr obrazlar harakati orqali; voqea ko‘z o‘ngida; monolog-dialog; parda va ko‘rinishlar; remarkalar.' },
+      { q: 'Fojia qaysi tarixiy davr haqida?', a: '1217–1224-yillar, mo‘g‘ul istilosiga qarshi kurash.' },
+      { q: 'Nega xalq va armiya bu asarni intizorlik bilan kutgan?', a: 'Ikkinchi jahon urushi yillarida vatanparvarlik va jasorat namunasi kerak edi.' },
+      { q: 'Shayxzoda hayotidagi qanday adolatsizliklar bo‘lgan?', a: 'Surgun qilingan, 1952-yilda asossiz 25 yilga hukm qilingan, keyin oqlangan.' },
+      { q: '«Mangburni» laqabi qanday talqin qilinadi?', a: 'Ba’zi tarixchilar «burnida xoli bor» deb izohlaydi.' },
+    ],
+    sequences: [
+      {
+        title: 'Shayxzoda hayoti',
+        items: [
+          'Oqtoshda tug‘iladi',
+          'Bokuda o‘qib, muallimlik qiladi',
+          'Toshkentga surgun qilinadi',
+          '«Jaloliddin Manguberdi» fojiasini yozadi',
+          '1952-yilda yana hibsga olinadi',
+          'Oqlanib, ijodga qaytadi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['monolog', 'dialog', 'remarka', 'radif'], answer: 3, why: 'Radif — she’riyat atamasi; qolganlari dramaga xos.' },
+      { items: ['Jaloliddin', 'Sultonbegim', 'Nasaviy', 'Mirkomil'], answer: 3, why: 'Mirkomil — boshqa asar qahramoni.' },
+      { items: ['«Loyiq soqchi»', '«Zamon torlari»', '«Toshkentnoma»', '«Yurak»'], answer: 3, why: '«Yurak» — Usmon Nosir kitobi.' },
+    ],
+    debate: [
+      { claim: 'Tarixiy asarlarni o‘qish orqali tarixni bilib olsa bo‘ladi.', pro: 'Asar tarixiy shaxslarni jonli ko‘rsatadi.', con: 'Muallif to‘qima qo‘shadi; tarixni ilmiy manbalardan o‘rganish kerak.' },
+      { claim: 'Drama sahnada ko‘rilgandagina to‘liq tushuniladi.', pro: 'U sahna uchun yozilgan, aktyor ijrosi uni jonlantiradi.', con: 'O‘qish ham tasavvurni ishlatadi, remarkalar sahnani ko‘rsatadi.' },
+    ],
+    creative: [
+      { task: 'Bitta remarka yozing: Jaloliddin sahnaga qanday kirib keladi? (qavs ichida 1 gap)', time: 60 },
+      { task: 'Asar qahramonlaridan biriga zamonaviy kasb tanlang va nega shunday qilganingizni ayting.', time: 90 },
+      { task: 'Ikki tomonlama kundalik uchun birinchi farazingizni ayting: fojia qanday tugaydi?', time: 60 },
+    ],
+  },
+
+  /* ===================== 41 ===================== */
+  {
+    id: 'adab-jaloliddin-2',
+    source: 'III chorak • 41-dars • 145–155-betlar',
+    title: '«Jaloliddin Manguberdi»: birinchi parda',
+    short: 'Samarqanddagi to‘y, mo‘g‘ul elchilari va ota-o‘g‘il ziddiyati',
+    lesson: [
+      {
+        title: 'To‘y va kutilmagan mehmonlar',
+        text: 'Birinchi parda Xorazmshohning Samarqanddagi saroyida — Sultonbegimni Amir Badriddinga uzatish to‘yida boshlanadi. Maddohlar Jaloliddinni olqishlaydi.',
+        rule: 'To‘y o‘rtasida qo‘rqinchli qiyofadagi mo‘g‘ul elchilari kirib keladi va talab qo‘yadi: xoqonga taslim bo‘ling, Chingizxonga boj to‘lang, aks holda jang boshlanadi.',
+        ruleLabel: 'Tugun',
+        note: 'Quvonch va xavf qarama-qarshi qo‘yilishi — dramatik keskinlikni oshiruvchi usul.',
+      },
+      {
+        title: 'Xorazmshohning javobi',
+        text: 'Shoh avval ikkilanadi, keyin dadillanib elchilarni haydaydi: xorazmshohlar hech kimga bo‘ysunmaydi. U qal’alarning mustahkam devorlariga ishonadi.',
+        list: [
+          'Shohning rejasi: qo‘shinni qal’alarga bo‘lib qo‘yish.',
+          'Badriddinga Samarqand qal’asi topshiriladi.',
+          'Shoh mo‘g‘ul qal’a devorlari ostida halok bo‘ladi, deb o‘ylaydi.',
+        ],
+      },
+      {
+        title: 'Jaloliddinning taklifi',
+        text: 'Jaloliddin otasiga qarshi chiqadi: Chingiz devor ostida yotmaydi, qal’alarni vayron qiladi. Dushmanni qal’alarga yaqinlashtirmaslik kerak.',
+        rule: 'Jaloliddin rejasi: barcha kuchni Sirdaryo bo‘yida bir mushtdek jamlab, Chingizni o‘sha yerda qaytarish. Poytaxtlar yiqilsa, kech bo‘ladi.',
+        ruleLabel: 'Sarkarda fikri',
+        note: 'Tarixda aynan qo‘shinni qal’alarga bo‘lib qo‘yish Xorazmshohlar mag‘lubiyatining asosiy sabablaridan biri bo‘lgan.',
+      },
+      {
+        title: 'Taxt vorisligi',
+        text: 'Shoh valiahd qilib beshikdagi kenja o‘g‘li Qutbiddin O‘zlig‘shohni e’lon qiladi. Jaloliddin tojini taxt oldiga qo‘yib chiqib ketadi: inson boshida toj bilan emas, erkka ehtiyoj bilan tug‘iladi; mening tojim — onamning qasami.',
+        list: [
+          'Imom Shahobiddin Xevaqiy shohga Jaloliddinni qadrlashni maslahat beradi.',
+          'Badriddin shohni qo‘ltiqlab olib ketadi — uning ta’siri kuchli.',
+          'Nasaviy: Xudo birovning davlatini olarkan, avval aqlidan judo qiladi.',
+        ],
+      },
+      {
+        title: 'Elbars pahlavon',
+        text: 'Toj-taxtni rad etgan Jaloliddin oldiga cho‘pon Elbars pahlavon keladi. Uning cho‘ntagida nay bor — u xalq ruhining timsoli.',
+        rule: 'Jaloliddin uchun el-yurt sog‘ bo‘lsa, toj kelib-ketaveradi. U xalq bilan birga kurashishni tanlaydi.',
+        ruleLabel: 'G‘oya',
+      },
+      {
+        title: 'Obrazlar qiyosi',
+        table: {
+          head: ['Obraz', 'Xususiyatlari'],
+          rows: [
+            ['Xorazmshoh', 'Mag‘rur, ikkilanuvchi, maslahatchilarga qaram, qal’alarga ishonadi'],
+            ['Jaloliddin', 'Dovyurak, uzoqni ko‘ruvchi, toj emas, Vatanni o‘ylaydi'],
+            ['Badriddin', 'Shohga yaqin, makkor, mansabparast'],
+            ['Nasaviy', 'Dono kuzatuvchi, tarixni yozib boruvchi'],
+          ],
+        },
+      },
+      {
+        title: 'Muhokama',
+        list: [
+          'Birinchi pardada qaysi qahramon sizni ko‘proq ta’sirlantirdi?',
+          'Ota va o‘g‘il o‘rtasidagi kelishmovchilik ko‘proq kimga kerak bo‘ldi?',
+          'Jaloliddinning Sirdaryo bo‘yida jang qilish taklifini qanday baholaysiz?',
+          'Jaloliddin nutqidan ibratli fikrlarni jadvalga yozing: fikr — u ifodalagan g‘oya.',
+        ],
+      },
+    ],
+    pairs: [
+      ['Mo‘g‘ul elchilari', 'Taslim va boj talab qiladi'],
+      ['Qutbiddin O‘zlig‘shoh', 'Beshikdagi valiahd'],
+      ['Imom Shahobiddin Xevaqiy', 'Shohga maslahat bergan ulamo'],
+      ['Elbars', 'Nay chaluvchi cho‘pon'],
+      ['Sirdaryo', 'Jaloliddin jang qilmoqchi bo‘lgan joy'],
+      ['Toj', 'Jaloliddin taxt oldiga qo‘ygan ramz'],
+      ['Badriddin', 'Shohni qo‘ltiqlab ketgan amir'],
+    ],
+    quiz: [
+      { q: 'Birinchi parda qayerda boshlanadi?', options: ['Samarqanddagi saroyda', 'Urganchda', 'daryo bo‘yida', 'jang maydonida'], answer: 0 },
+      { q: 'To‘y kimniki edi?', options: ['Sultonbegim va Badriddinning', 'Jaloliddinning', 'Temur Malikning', 'Nasaviyning'], answer: 0 },
+      { q: 'Mo‘g‘ul elchilari nima talab qiladi?', options: ['taslim bo‘lish va boj', 'to‘yga taklif', 'savdo', 'kelin'], answer: 0 },
+      { q: 'Xorazmshohning rejasi?', options: ['qo‘shinni qal’alarga bo‘lish', 'Sirdaryoda jang', 'sulh tuzish', 'qochish'], answer: 0 },
+      { q: 'Jaloliddin qayerda jang qilishni taklif qiladi?', options: ['Sirdaryo bo‘yida', 'Samarqandda', 'Urganchda', 'Hindistonda'], answer: 0 },
+      { q: 'Shoh valiahd qilib kimni e’lon qiladi?', options: ['kenja o‘g‘li Qutbiddinni', 'Jaloliddinni', 'Badriddinni', 'Temur Malikni'], answer: 0 },
+      { q: 'Jaloliddin tojini nima qiladi?', options: ['taxt oldiga qo‘yadi', 'kiyadi', 'sotadi', 'otib yuboradi'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Xorazmshoh fikri', 'Jaloliddin fikri'],
+      items: [
+        { text: 'qal’a devorlariga ishonish', cat: 0 }, { text: 'Sirdaryoda bir mushtdek jang', cat: 1 },
+        { text: 'qo‘shinni bo‘lib qo‘yish', cat: 0 }, { text: 'dushmanni qal’aga yaqinlashtirmaslik', cat: 1 },
+        { text: 'beshikdagi valiahd', cat: 0 }, { text: 'el-yurt sog‘ bo‘lsa, toj kelib-ketaveradi', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Nega mo‘g‘ul elchilari aynan to‘y paytida keladi?', a: 'Dramatik keskinlik uchun: quvonch va xavf to‘qnashadi, beparvolik fosh bo‘ladi.' },
+      { q: 'Jaloliddin otasining rejasini nega xato deb biladi?', a: 'Chingiz qal’alar ostida yotmaydi, ularni vayron qiladi; kuchlar bo‘linib zaiflashadi.' },
+      { q: 'Jaloliddin tojni taxt oldiga qo‘yib nimani anglatdi?', a: 'Unga toj emas, erk va Vatan muhim ekanini.' },
+      { q: 'Nasaviy shoh haqida qanday xulosa chiqaradi?', a: 'Xudo davlatini olayotgan kishini avval aqlidan judo qiladi.' },
+      { q: 'Elbars obrazi nimani ifodalaydi?', a: 'Xalqni, xalq ruhini va Jaloliddinning xalqqa tayanishini.' },
+    ],
+    sequences: [
+      {
+        title: 'Birinchi parda voqealari',
+        items: [
+          'Samarqandda to‘y boshlanadi',
+          'Mo‘g‘ul elchilari kirib keladi',
+          'Xorazmshoh elchilarni haydaydi',
+          'Jaloliddin Sirdaryoda jang qilishni taklif qiladi',
+          'Shoh Qutbiddinni valiahd qiladi',
+          'Jaloliddin tojni taxt oldiga qo‘yadi',
+          'Elbars pahlavon Jaloliddin oldiga keladi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['to‘y', 'elchilar', 'toj', 'durbin'], answer: 3, why: 'Durbin — «Oq kema» detali.' },
+      { items: ['Xorazmshoh', 'Badriddin', 'Qutbiddin', 'Elbars'], answer: 3, why: 'Elbars — xalq vakili, cho‘pon; qolganlari saroy ahli.' },
+      { items: ['Samarqand', 'Urganch', 'Xo‘jand', 'Andijon'], answer: 3, why: 'Andijon dramada tilga olinmaydi.' },
+    ],
+    debate: [
+      { claim: 'Jaloliddin otasiga ochiq qarshi chiqib to‘g‘ri qildi.', pro: 'Vatan taqdiri ota hurmatidan ham ustun.', con: 'Saroy oldida otasini obro‘sizlantirdi, nizo kuchaydi.' },
+      { claim: 'Xorazmshohning asosiy xatosi — maslahatchilarga qulay quloq solishi.', pro: 'Badriddin kabi makkorlar uni noto‘g‘ri yo‘lga boshladi.', con: 'Asosiy xato — o‘z kuchiga ortiqcha ishonch va mag‘rurlik.' },
+    ],
+    creative: [
+      { task: 'Jaloliddin va Xorazmshoh o‘rtasidagi bahsni 30 soniyalik sahna qilib ijro eting.', time: 120 },
+      { task: 'Mo‘g‘ul elchisiga javob xatini Jaloliddin nomidan 2 gapda yozing.', time: 90 },
+      { task: 'Elbars nayida qanday kuy chalardi? Uni 3 so‘z bilan tasvirlang.', time: 60 },
+    ],
+  },
+
+  /* ===================== 42 ===================== */
+  {
+    id: 'adab-jaloliddin-3',
+    source: 'III chorak • 42-dars • 155–167-betlar',
+    title: '«Jaloliddin Manguberdi»: ikkinchi parda. Muhokama',
+    short: 'Badriddinning siri, xalqning yo‘lni to‘sishi va onaning tumori',
+    lesson: [
+      {
+        title: 'Urganchdagi bazm va bezovtalik',
+        text: 'Ikkinchi parda Urganchda, Xorazmshohning qasrida boshlanadi. Saroyda bazm, hofizlar shohni maqtaydi. Sultonbegim esa bezovta: tushida doim ilonlar ko‘radi, Badriddindan xabar yo‘q.',
+        note: 'Bazm va xavotir yonma-yon — saroy beparvoligi va yaqinlashayotgan falokat.',
+      },
+      {
+        title: 'Badriddinning sandiqchasi',
+        text: 'Badriddin Samarqanddan qimmatbaho toshlar va gavharlar keltiradi. Sultonbegim quvonmaydi: ziynat o‘rniga Samarqanddan bitta g‘isht yoki mo‘g‘ul kallasi keltirsang, rahmat derdim, deydi.',
+        list: [
+          'Sandiqdan chiqqan bir uzukni Badriddin tezda yashiradi: bu mening tilsimli sirim, deydi.',
+          'U Sultonbegimga «Sen erkin malika, men esa...» deb gapini oxiriga yetkazmaydi.',
+          '«Bu sirni men bilay, sen hamda Olloh» — xiyonatning birinchi ishorasi.',
+        ],
+        rule: 'Badriddin Samarqandni himoya qilish o‘rniga Urganchga xazina bilan keldi — o‘quvchi undan shubhalana boshlaydi.',
+        ruleLabel: 'Ishora',
+      },
+      {
+        title: 'Yaroqbek va qasos',
+        text: 'Badriddinning mulozimi Yaroqbek otasini Temur Malik o‘ldirgan deb biladi va qasos olmoqchi. Badriddin uni yashirin qasosga undaydi va qulog‘iga nimadir pichirlaydi.',
+        rule: 'Badriddin Yaroqbekning dardidan foydalanib, Temur Malikka qarshi fitna tayyorlaydi.',
+        ruleLabel: 'Fitna',
+      },
+      {
+        title: 'Shohning qochishi',
+        text: 'Xorazmshoh poytaxtni tark etmoqchi. Xalq uni to‘xtatish uchun yoppasiga yerga yotib, yo‘lni to‘sadi: jasadlarimiz ustidan bosib o‘ting!',
+        list: [
+          'Imom Shahobiddin Xevaqiy shohni qolishga undaydi.',
+          'Jaloliddin otasidan lashkar so‘raydi: muhringiz bilan beklar menga bo‘ysunsin.',
+          'Badriddin shoh qulog‘iga shivirlaydi: o‘g‘lingiz taxtga havaskor.',
+          'Shoh baribir qo‘shinni beshikdagi Qutbiddinga topshirib, ketib qoladi.',
+        ],
+        note: 'Xalq kulgisi: «Qani o‘sha sarkarda?» — «Chiyillar beshikda beg‘am». Kinoya shohning qarorini fosh etadi.',
+      },
+      {
+        title: 'Onaning tumori',
+        text: 'Haram xotinlari bilan ketayotgan ona to‘xtab qoladi. Jaloliddin so‘raydi: ona, ayting, kim haqli — otammi yoki menmi?',
+        rule: 'Ona javobni tumor bilan beradi: otang bo‘lsam, dudama qilich berardim. Ya’ni u o‘g‘lini qo‘llaydi va duo qiladi.',
+        ruleLabel: 'Ona tanlovi',
+      },
+      {
+        title: 'Xalq bilan birga',
+        text: 'Temur Malik va Elbars pahlavon Jaloliddinga qo‘shiladi. Jaloliddin xalqni ko‘rsatib, kuchimiz shu deydi. Asar g‘oyasi: Vatanni shoh emas, xalq va uning mard farzandlari himoya qiladi.',
+        table: {
+          head: ['Ma’noni kuchaytiruvchi vosita', 'Asardan misol'],
+          rows: [
+            ['Antonimlar', 'dono — tentak; «yo‘q» — «ha»'],
+            ['Shakldosh so‘zlar (tajnis)', 'da’vo — davo'],
+            ['Sinonimlar', 'sevgi, ishq, muhabbat; nifoq-u nizo'],
+            ['O‘xshatish', 'xayollar Amudaryo suvidek qorishdi'],
+          ],
+        },
+      },
+      {
+        title: 'Muhokama',
+        list: [
+          'Ikkinchi pardadagi qaysi voqeadan ko‘proq ta’sirlandingiz?',
+          'Badriddin nima demoqchi edi va nega ochiq gapirmadi?',
+          'Ona kim tarafda: o‘g‘lining harakatini ma’qullaydimi yoki shohnikini?',
+          'Farazlar jadvalingizni tekshiring: Badriddin haqidagi taxminingiz to‘g‘ri chiqdimi?',
+        ],
+      },
+    ],
+    pairs: [
+      ['Urganch', 'Ikkinchi parda joyi'],
+      ['Sandiqcha', 'Badriddin keltirgan xazina'],
+      ['Uzuk', 'Badriddin yashirgan sir'],
+      ['Yaroqbek', 'Qasos olmoqchi bo‘lgan mulozim'],
+      ['Tumor', 'Onaning o‘g‘liga duosi'],
+      ['Yo‘lni to‘sish', 'Xalqning shohni to‘xtatishi'],
+      ['Da’vo — davo', 'Tajnis'],
+    ],
+    quiz: [
+      { q: 'Sultonbegim tushida nimani ko‘radi?', options: ['ilonlar', 'qushlar', 'daryo', 'yulduz'], answer: 0 },
+      { q: 'Badriddin Samarqanddan nima olib keladi?', options: ['qimmatbaho toshlar', 'qo‘shin', 'mo‘g‘ul kallasi', 'kitob'], answer: 0 },
+      { q: 'Sultonbegim ziynat o‘rniga nima keltirishni istardi?', options: ['bitta g‘isht yoki mo‘g‘ul kallasi', 'gul', 'ipak', 'oltin taxt'], answer: 0 },
+      { q: 'Yaroqbek kimdan qasos olmoqchi?', options: ['Temur Malikdan', 'Jaloliddindan', 'Chingizdan', 'shohdan'], answer: 0 },
+      { q: 'Xalq shohni qanday to‘xtatmoqchi bo‘ladi?', options: ['yerga yotib yo‘lni to‘sib', 'qurol bilan', 'xat yozib', 'to‘y qilib'], answer: 0 },
+      { q: 'Ona Jaloliddinga nima beradi?', options: ['tumor', 'qilich', 'toj', 'uzuk'], answer: 0 },
+      { q: 'Kim Jaloliddinga qo‘shiladi?', options: ['Temur Malik va Elbars', 'Badriddin va Yaroqbek', 'Chingiz', 'imom'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Xiyonat ishorasi', 'Sadoqat belgisi'],
+      items: [
+        { text: 'yashirilgan uzuk', cat: 0 }, { text: 'onaning tumori', cat: 1 },
+        { text: '«Bu sirni men bilay»', cat: 0 }, { text: 'xalqning yo‘lni to‘sishi', cat: 1 },
+        { text: 'Yaroqbekni qasosga undash', cat: 0 }, { text: 'Temur Malikning kelishi', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Badriddindan nega shubhalanish mumkin?', a: 'Samarqandni tashlab xazina bilan keldi, uzukni yashirdi, gapini yarim qoldirdi.' },
+      { q: 'Xalqning yerga yotishi nimani anglatadi?', a: 'Xalq shohdan Vatanni tashlab ketmaslikni so‘raydi, o‘z jonini garovga qo‘yadi.' },
+      { q: 'Ona nega o‘g‘liga qilich emas, tumor beradi?', a: 'U ayol — duo va mehr bilan qo‘llaydi; «otang bo‘lsam, qilich berardim» deb o‘g‘lini qo‘llashini bildiradi.' },
+      { q: '«Beshikdagi sarkarda» haqidagi xalq kulgisi qanday san’at?', a: 'Kinoya — shohning qarori bema’niligini fosh etadi.' },
+      { q: 'Badriddin Yaroqbekdan qanday foydalanmoqchi?', a: 'Uning qasos dardini Temur Malikka qarshi qurolga aylantirmoqchi.' },
+    ],
+    sequences: [
+      {
+        title: 'Ikkinchi parda voqealari',
+        items: [
+          'Urganchda bazm, Sultonbegim bezovta',
+          'Badriddin xazina olib keladi',
+          'Badriddin uzukni yashiradi',
+          'Badriddin Yaroqbekni fitnaga undaydi',
+          'Xalq shohning yo‘lini to‘sadi',
+          'Shoh ketib qoladi',
+          'Ona Jaloliddinga tumor beradi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['tumor', 'uzuk', 'sandiqcha', 'portfel'], answer: 3, why: 'Portfel — «Oq kema» detali.' },
+      { items: ['Temur Malik', 'Elbars', 'Nasaviy', 'Yaroqbek'], answer: 3, why: 'Yaroqbek Badriddin tomonida; qolganlari Jaloliddin bilan.' },
+      { items: ['antonim', 'sinonim', 'tajnis', 'remarka'], answer: 3, why: 'Remarka — dramadagi izoh, ma’noni kuchaytiruvchi til vositasi emas.' },
+    ],
+    debate: [
+      { claim: 'Sultonbegim Badriddinning sovg‘alarini qabul qilmasligi kerak edi.', pro: 'Vatan qayg‘usida ziynat o‘rinsiz, sovg‘a shubhali edi.', con: 'U hali xiyonatni bilmasdi, sevgilisini ranjitmaslik kerak edi.' },
+      { claim: 'Xalq shohni to‘xtatishga haqli edi.', pro: 'Shoh xalq uchun mas’ul, Vatanni tashlab ketolmaydi.', con: 'Shohning qarorini xalq emas, saroy hal qiladi — bu itoatsizlik.' },
+    ],
+    creative: [
+      { task: 'Badriddin yashirgan uzuk aslida kimdan? O‘z farazingizni 2 gapda ayting.', time: 60 },
+      { task: 'Xalqning yo‘lni to‘sgan sahnasini sinf bilan ommaviy pantomima qilib ko‘rsating.', time: 90 },
+      { task: 'Onaning tumoriga yozilgan duo qanday bo‘lishi mumkin? Bir jumla o‘ylab toping.', time: 60 },
+    ],
+  },
+
+  /* ===================== 43 ===================== */
+  {
+    id: 'adab-jaloliddin-4',
+    source: 'III chorak • 43-dars • 167–181-betlar',
+    title: '«Jaloliddin Manguberdi»: beshinchi parda. Tahlil',
+    short: 'Xiyonat fosh bo‘ladi, onaning fidoyiligi va daryodan sakrash',
+    lesson: [
+      {
+        title: 'G‘alaba va asir',
+        text: 'Beshinchi parda Jaloliddin qarorgohida zafar marshi bilan ochiladi. Sultonbegim jangda ulkan jasorat ko‘rsatgan — qalpog‘ini olganda qalin kokillari yelkasiga tushadi.',
+        rule: 'Asir mo‘g‘ul no‘yoni keltiriladi. Yorug‘da yuzi ko‘rinadi — bu Badriddin! U yarador holda asir tushganini aytadi, ammo muhrida «Badriddinshoh» yozuvi bor.',
+        ruleLabel: 'Kulminatsiyaga yo‘l',
+        note: 'Ko‘tarinki musiqa bilan ochilgan parda tez orada fojiaga aylanadi — kontrast.',
+      },
+      {
+        title: 'Xiyonatning jazosi',
+        list: [
+          'Badriddin Sultonbegimga sevgilarini eslatib, kechirim so‘raydi.',
+          'Jaloliddin: Vatan, sevgi, sadoqat sen uchun hech, o‘ylaganing faqat toj; Temur Malikni sotding!',
+          'Xorazmshohdan farmon keladi: kuyov ozod qilinsin.',
+          'Jaloliddin farmonni yirtadi: jangdan qochgan shohning farmoni ham soqit.',
+          'Badriddin jallodlarga topshiriladi.',
+        ],
+        rule: 'Jaloliddin otasining farmonini yirtib, shaxsiy itoatdan Vatan manfaatini ustun qo‘yadi.',
+        ruleLabel: 'Tahlil',
+      },
+      {
+        title: 'Lashkardagi nifoq',
+        text: 'Qipchoq amiri Ag‘roq va g‘urlar o‘zaro janjallashib, lashkardan ajralib ketadi. Jaloliddin: saltanat va el-urug‘lar bir bo‘lganida, jangda olamgir bo‘lardik, deb armon qiladi.',
+        note: 'Bu — tarixiy haqiqat: amirlar o‘rtasidagi nizolar Jaloliddin kuchini zaiflashtirgan.',
+      },
+      {
+        title: 'Onaning fidoyiligi',
+        text: 'Ona qal’adan kelib, farzandlari bilan uchrashadi. Jang avjida dushman ustunlik qila boshlaydi. Ona Sultonbegimga bir shisha ma’jun beradi: o‘g‘lim och qolsa ichsin — bu aslida uning tomiridan olingan qon.',
+        rule: 'Ona mo‘g‘ullarga cho‘ri bo‘lishdan ko‘ra daryoga o‘zini tashlashni afzal ko‘radi. Jaloliddin anglaydi: onaning qabri — butun Vatan, daryo — uning tobuti.',
+        ruleLabel: 'Fojiaviy cho‘qqi',
+      },
+      {
+        title: 'Nasaviyning so‘nggi satrlari',
+        text: 'Besh og‘ir yara olgan tarixchi Nasaviy daftarini chiqarib, yozishda davom etadi va oxirgi so‘zlarini ko‘ksidagi yara qoni bilan yozib, jon beradi.',
+        rule: 'Nasaviy obrazi — qalam ham qilichdek muqaddas: tarixni yozib qoldirish ham Vatanga xizmat.',
+        ruleLabel: 'Ramz',
+      },
+      {
+        title: 'Yakun: daryodan sakrash',
+        list: [
+          'Qayiqlar yo‘q, egarlarning ayillari jangda uzilgan, daryo toshgan.',
+          'Sultonbegim xanjar bilan kokillarini kesib beradi: arqonga ham yaraydi!',
+          'Jaloliddin bir qo‘lida Nasaviyning kitobini, ikkinchisida singlisini ko‘tarib, qaytib kelishga ahd qiladi.',
+          'Uzoqdan Elbarsning nayi eshitiladi: xalq ham bu kuy kabi mangu.',
+          'Ikkalasi jarga — daryoga sakraydi. Parda yopiladi.',
+        ],
+        note: 'Tarixda Jaloliddin Sind daryosi bo‘yidagi jangda (1221) oti bilan daryoga sakrab, Chingizxonni hayratda qoldirgan.',
+      },
+      {
+        title: 'Mavzu va g‘oya',
+        table: {
+          head: ['Mavzu', 'G‘oya'],
+          rows: [
+            ['XIII asrda mo‘g‘ul istilosiga qarshi kurash', 'Vatan har narsadan ustun; xalq birligi g‘alaba kaliti'],
+            ['Xiyonat va sadoqat', 'Xoin — sevgi va toj uchun Vatanni sotadi; sodiq — Vatan uchun hammasidan kechadi'],
+            ['Ota va o‘g‘il, taxt va erk', 'Inson toj bilan emas, erkka ehtiyoj bilan tug‘iladi'],
+          ],
+        },
+      },
+    ],
+    pairs: [
+      ['Badriddinshoh', 'Xoin muhridagi yozuv'],
+      ['Ag‘roq', 'Qipchoq amiri'],
+      ['Ma’jun', 'Onaning tomir qoni'],
+      ['Kokillar', 'Sultonbegim arqon uchun kesgan'],
+      ['Nasaviy', 'Qon bilan yozib jon bergan tarixchi'],
+      ['Farmon', 'Jaloliddin yirtgan qog‘oz'],
+      ['Nay sadosi', 'Xalq mangu ekanining ramzi'],
+    ],
+    quiz: [
+      { q: 'Asir mo‘g‘ul no‘yoni aslida kim bo‘lib chiqadi?', options: ['Badriddin', 'Yaroqbek', 'Temur Malik', 'Qodog‘on'], answer: 0 },
+      { q: 'Badriddin muhrida qanday yozuv bor?', options: ['Badriddinshoh', 'Jaloliddin', 'Chingiz', 'Xorazmshoh'], answer: 0 },
+      { q: 'Xorazmshoh farmonini Jaloliddin nima qiladi?', options: ['yirtadi', 'bajaradi', 'yashiradi', 'o‘padi'], answer: 0 },
+      { q: 'Ona Sultonbegimga nima beradi?', options: ['ma’jun', 'qilich', 'uzuk', 'kitob'], answer: 0 },
+      { q: 'Ona qanday qaror qiladi?', options: ['o‘zini daryoga tashlaydi', 'qochadi', 'taslim bo‘ladi', 'saroyga qaytadi'], answer: 0 },
+      { q: 'Nasaviy so‘nggi satrlarni nima bilan yozadi?', options: ['yara qoni bilan', 'siyoh bilan', 'ko‘mir bilan', 'bo‘r bilan'], answer: 0 },
+      { q: 'Sultonbegim kokillarini nega kesadi?', options: ['arqon uchun', 'motam belgisi', 'yashirinish uchun', 'qasam uchun'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Fidoyilik', 'Xiyonat va nifoq'],
+      items: [
+        { text: 'onaning daryoga o‘zini tashlashi', cat: 0 }, { text: 'Badriddinshoh muhri', cat: 1 },
+        { text: 'Nasaviyning qon bilan yozishi', cat: 0 }, { text: 'Ag‘roq va g‘urlar janjali', cat: 1 },
+        { text: 'Sultonbegimning kokil kesishi', cat: 0 }, { text: 'Temur Malikni sotish', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Nega Jaloliddin otasining farmonini yirtdi?', a: 'Jangdan qochgan shohning xoinni oqlovchi farmoni Vatan manfaatiga zid edi.' },
+      { q: 'Onaning qarorini qanday baholaysiz?', a: 'Fidoyilik: u dushmanga asir bo‘lishdan o‘limni afzal ko‘rdi va farzandlarini xavfdan ozod qildi.' },
+      { q: 'Nasaviy obrazi qanday g‘oyani ifodalaydi?', a: 'Tarixni yozib qoldirish ham Vatanga xizmat, qalam ham qilichdek muqaddas.' },
+      { q: 'Lashkardagi nifoq nimaga olib keldi?', a: 'Jaloliddin kuchi zaiflashdi; birlik bo‘lmagani mag‘lubiyat sababi bo‘ldi.' },
+      { q: 'Asar yakuni nega umidli?', a: 'Jaloliddin qaytishga ahd qiladi, nay sadosi xalq mangu ekanini bildiradi.' },
+    ],
+    sequences: [
+      {
+        title: 'Beshinchi parda voqealari',
+        items: [
+          'Qarorgohda zafar marshi chalinadi',
+          'Asir no‘yon Badriddin ekani ma’lum bo‘ladi',
+          'Jaloliddin shoh farmonini yirtadi',
+          'Ag‘roq va g‘urlar lashkardan ajraladi',
+          'Ona o‘zini daryoga tashlaydi',
+          'Nasaviy qon bilan yozib jon beradi',
+          'Jaloliddin va Sultonbegim daryoga sakraydi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['ma’jun', 'kokil', 'daftar', 'durbin'], answer: 3, why: 'Durbin «Oq kema»da; qolganlari beshinchi parda detallari.' },
+      { items: ['ona', 'Sultonbegim', 'Nasaviy', 'Badriddin'], answer: 3, why: 'Badriddin — xoin; qolganlari fidoyilar.' },
+      { items: ['kulminatsiya', 'yechim', 'parda', 'qofiya'], answer: 3, why: 'Qofiya — she’r atamasi.' },
+    ],
+    debate: [
+      { claim: 'Jaloliddin Badriddinni kechirishi kerak edi — u singlisining sevgilisi.', pro: 'Sevgi va oila rishtasi muhim, u asir edi.', con: 'Xiyonat kechirilmaydi — u Temur Malikni sotdi, minglab odam halok bo‘ldi.' },
+      { claim: 'Asar fojia emas, qahramonlik dostoni.', pro: 'Yakunda umid bor, Jaloliddin qaytishga ahd qiladi.', con: 'Ona, Nasaviy halok bo‘ladi, Vatan qo‘ldan ketadi — bu fojia.' },
+    ],
+    creative: [
+      { task: 'Nasaviy daftaridagi oxirgi jumla qanday bo‘lishi mumkin? Uni o‘ylab toping.', time: 60 },
+      { task: 'Jaloliddin daryodan o‘tgach, birinchi aytgan so‘zlari qanday bo‘lardi? 2 gap.', time: 90 },
+      { task: '«Mardlik va jasorat timsoli» mavzusidagi insho uchun 3 punktli reja tuzing.', time: 90 },
+    ],
+  },
+
+  /* ===================== 44 ===================== */
+  {
+    id: 'adab-drama',
+    source: 'III chorak • 44-dars • 182-bet',
+    title: 'Nazariy ma’lumot. Dramatik tur',
+    short: 'Monolog, dialog, parda, ko‘rinish, remarka va dekoratsiya',
+    lesson: [
+      {
+        title: 'Adabiy turlar',
+        rule: 'Badiiy asarlar uch turga bo‘linadi: epik, lirik va dramatik. Sahnada ijro etish uchun yoziladigan asarlar dramatik asarlar sanaladi.',
+        ruleLabel: 'Nazariy ma’lumot',
+        table: {
+          head: ['Tur', 'Asosiy belgisi', 'Misol'],
+          rows: [
+            ['Epik', 'Voqeani hikoya qiladi', '«Oq kema», «Ravshan», «So‘nggi saboq»'],
+            ['Lirik', 'Tuyg‘u-kechinmalarni ifodalaydi', 'G‘azallar, «Sog‘inish», «Yurt qayg‘usi»'],
+            ['Dramatik', 'Sahnada ijro uchun, obrazlar harakati orqali', '«Jaloliddin Manguberdi»'],
+          ],
+        },
+      },
+      {
+        title: 'Dramaning o‘ziga xosligi',
+        text: 'Dramatik asarlar teatr sahnalarida aktyor va aktrisalar tomonidan ijro etiladi. Muallif dramada obrazlarning xatti-harakatlariga bevosita o‘z munosabatini bildira olmaydi.',
+        note: 'Shuning uchun dramada muallif fikri qahramonlar nutqi va harakatlari, remarkalar orqali ochiladi.',
+      },
+      {
+        title: 'Dramatik asar atamalari',
+        table: {
+          head: ['Atama', 'Ma’nosi'],
+          rows: [
+            ['Monolog', 'Ishtirokchining o‘z-o‘ziga yoki o‘zgalarga qaratilgan nutqi'],
+            ['Dialog', 'Ikki shaxsning bir-biriga qaratilgan nutqi'],
+            ['Parda', 'Tanaffuslar bilan ajratiladigan qismlar'],
+            ['Ko‘rinish', 'Pardaning maxsus dekoratsiya talab etuvchi bir qismi'],
+            ['Remarka', 'Ishtirokchilarning qiyofasi, yoshi, xulqi, harakati, intonatsiyasi va sahna manzarasiga muallif izohi'],
+            ['Dekoratsiya', 'Teatr sahnasini spektakl mazmuniga moslab bezash'],
+          ],
+        },
+      },
+      {
+        title: '«Jaloliddin Manguberdi»dan misollar',
+        table: {
+          head: ['Atama', 'Misol'],
+          rows: [
+            ['Remarka', '(Xorazmshoh ikkilangan holda o‘yga botadi.) (Farmonni yirtib tashlaydi.)'],
+            ['Monolog', 'Nasaviyning shoh haqidagi o‘ylari; Jaloliddinning yakuniy nutqi'],
+            ['Dialog', 'Jaloliddin va onasi; Sultonbegim va Badriddin'],
+            ['Ko‘rinish', 'Ikkinchi parda, ikkinchi ko‘rinish — Urganch maydoni'],
+            ['Dekoratsiya', 'Samarqand saroyi, Jaloliddin qarorgohi, chodirlar, daryo sohili'],
+          ],
+        },
+      },
+      {
+        title: 'Drama janrlari',
+        list: [
+          'Fojia (tragediya) — qahramon halok bo‘ladigan yoki og‘ir yo‘qotishga uchraydigan asar: «Jaloliddin Manguberdi», «Mirzo Ulug‘bek».',
+          'Komediya — kulgili, hajviy asar.',
+          'Drama (tor ma’noda) — hayotiy ziddiyatlar ko‘rsatilgan jiddiy asar.',
+        ],
+        note: '«Jaloliddin Manguberdi» O‘zbek milliy akademik drama teatrida sahnalashtirilgan.',
+      },
+      {
+        title: 'Topshiriq',
+        list: [
+          'Asardan har bir atamaga bittadan misol toping.',
+          'Bir sahna uchun dekoratsiya eskizini chizing.',
+          'O‘zingiz bilgan biror ertakni 3 replikali dialog va 1 remarka bilan dramaga aylantiring.',
+        ],
+      },
+    ],
+    pairs: [
+      ['Monolog', 'Bir kishining nutqi'],
+      ['Dialog', 'Ikki kishining suhbati'],
+      ['Parda', 'Tanaffus bilan ajratilgan qism'],
+      ['Ko‘rinish', 'Pardaning bir qismi'],
+      ['Remarka', 'Muallif izohi'],
+      ['Dekoratsiya', 'Sahna bezagi'],
+      ['Fojia', 'Qahramon halok bo‘ladigan asar'],
+      ['Epik tur', 'Voqeani hikoya qiladi'],
+    ],
+    quiz: [
+      { q: 'Sahnada ijro uchun yozilgan asarlar qaysi turga kiradi?', options: ['dramatik', 'epik', 'lirik', 'publitsistik'], answer: 0 },
+      { q: 'Ikki shaxsning bir-biriga qaratilgan nutqi?', options: ['dialog', 'monolog', 'remarka', 'parda'], answer: 0 },
+      { q: 'Teatr sahnasini spektaklga moslab bezash?', options: ['dekoratsiya', 'remarka', 'ko‘rinish', 'monolog'], answer: 0 },
+      { q: 'Pardaning maxsus dekoratsiya talab etuvchi qismi?', options: ['ko‘rinish', 'akt', 'dialog', 'epizod'], answer: 0 },
+      { q: 'Dramada muallif o‘z munosabatini...', options: ['bevosita bildira olmaydi', 'har sahifada yozadi', 'hikoyachi orqali aytadi', 'she’rda beradi'], answer: 0 },
+      { q: '«Jaloliddin Manguberdi» qaysi janrda?', options: ['fojia', 'komediya', 'doston', 'roman'], answer: 0 },
+      { q: 'Lirik turga misol?', options: ['g‘azal', '«Oq kema»', '«Jaloliddin Manguberdi»', '«So‘nggi saboq»'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Dramatik asarga xos', 'Epik asarga xos'],
+      items: [
+        { text: 'remarka', cat: 0 }, { text: 'hikoyachi', cat: 1 },
+        { text: 'parda va ko‘rinish', cat: 0 }, { text: 'portret va peyzaj tasviri', cat: 1 },
+        { text: 'dekoratsiya', cat: 0 }, { text: 'muallif bayoni', cat: 1 },
+        { text: 'aktyor ijrosi', cat: 0 }, { text: 'boblar', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Adabiyotning uch turini ayting.', a: 'Epik, lirik, dramatik.' },
+      { q: 'Dramada muallif fikri qanday ochiladi?', a: 'Qahramonlarning nutqi, harakatlari va remarkalar orqali.' },
+      { q: 'Monolog va dialogning farqi nima?', a: 'Monolog — bir kishining nutqi, dialog — ikki kishining suhbati.' },
+      { q: 'Remarka qanday ma’lumot beradi?', a: 'Qahramon qiyofasi, yoshi, xulqi, harakati, intonatsiyasi va sahna manzarasi haqida.' },
+      { q: 'Fojiaga ta’rif bering.', a: 'Qahramon halok bo‘ladigan yoki og‘ir yo‘qotishga uchraydigan dramatik asar.' },
+    ],
+    sequences: [
+      {
+        title: 'Drama sahnaga qanday chiqadi? Bosqichlarni joylang',
+        items: [
+          'Dramaturg asarni yozadi',
+          'Rejissyor rollarni taqsimlaydi',
+          'Aktyorlar repetitsiya qiladi',
+          'Rassom dekoratsiya tayyorlaydi',
+          'Spektakl tomoshabinga ko‘rsatiladi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['monolog', 'dialog', 'remarka', 'matla'], answer: 3, why: 'Matla — g‘azal atamasi.' },
+      { items: ['fojia', 'komediya', 'drama', 'g‘azal'], answer: 3, why: 'G‘azal — lirik janr.' },
+      { items: ['epik', 'lirik', 'dramatik', 'kulminatsion'], answer: 3, why: 'Adabiy turlar uchta: epik, lirik, dramatik.' },
+    ],
+    debate: [
+      { claim: 'Dramani o‘qish emas, teatrda ko‘rish kerak.', pro: 'U sahna uchun yaratilgan, aktyor ijrosisiz to‘liq ochilmaydi.', con: 'O‘qish tasavvurni rivojlantiradi va matnni chuqurroq tahlil qilishga imkon beradi.' },
+      { claim: 'Remarkasiz drama ham tushunarli bo‘ladi.', pro: 'Dialoglar hammasini aytib beradi.', con: 'Remarka qahramon holatini va sahnani ko‘rsatadi, usiz ma’no yo‘qoladi.' },
+    ],
+    creative: [
+      { task: '«Ravshan» dostonidagi sovchilik sahnasini 3 replikali dialog va 1 remarka bilan dramaga aylantiring.', time: 120 },
+      { task: 'Sinfingiz uchun «dekoratsiya» o‘ylab toping: qaysi asarning qaysi sahnasini bu yerda o‘ynash mumkin?', time: 60 },
+      { task: 'Bir qahramonning 20 soniyalik monologini ijro eting, sinf kimligini topsin.', time: 90 },
+    ],
+  },
+
+  /* ===================== 45 ===================== */
+  {
+    id: 'adab-nosir-1',
+    source: 'III chorak • 45-dars • 183–186-betlar',
+    title: 'Usmon Nosir. She’rlar. «Yoshlik»',
+    short: '«O‘zbekning Lermontovi»: hayoti, ijodi va «Yoshlik» she’ri',
+    lesson: [
+      {
+        title: 'Usmon Nosir (1912–1944)',
+        text: 'Shoir, dramaturg va tarjimon. 1912-yili Namanganning Chuqurko‘cha dahasida tug‘ilgan. Maxsus internatda, Moskva kinematografiya institutining ssenariy fakultetida va Samarqand pedagogika akademiyasida tahsil olgan.',
+        list: [
+          'Qo‘qonda o‘qituvchi, ilmiy bo‘lim mudiri, shahar teatrida adabiy xodim bo‘lib ishlagan.',
+          'Ilk she’ri «Haqiqat qalami» — «Yangi yo‘l» gazetasida bosilgan.',
+          '1937-yili «xalq dushmani» tamg‘asi bilan Sibirga surgun qilingan.',
+          '1944-yili surgunda, 32 yoshida vafot etgan.',
+        ],
+        note: 'Rossiyaning Kemerovo viloyati Mariinsk shahrida Usmon Nosirga haykal o‘rnatilgan.',
+      },
+      {
+        title: 'Ijodi',
+        table: {
+          head: ['Yo‘nalish', 'Asarlari'],
+          rows: [
+            ['Dostonlar', '«Norbo‘ta», «Naxshon», «Nil va Rim»'],
+            ['She’riy kitoblar', '«Quyosh bilan suhbat», «Safarbar satrlar», «Traktorobod», «Yurak», «Mehrim»'],
+            ['Tarjimalar', 'Pushkinning «Bog‘chasaroy fontani», Lermontovning «Demon»i'],
+          ],
+        },
+        rule: 'Uni o‘z davrida «O‘zbekning Lermontovi» deyishgan, Moskva gazetalari «Sharqda Pushkin paydo bo‘ldi» deb yozgan.',
+        ruleLabel: 'E’tirof',
+      },
+      {
+        title: 'Uslubiga xos xususiyatlar',
+        text: 'Shoir Turob To‘la yozishicha, Usmon Nosir to‘polon va to‘lqin bilan kirib keldi. Uning she’rlarida jimjimadorlik va zo‘rma-zo‘rakilik yo‘q.',
+        list: [
+          'Fikr va tuyg‘ular sodda ifodalangan.',
+          'Kuchli lirik harorat va jozibadorlik.',
+          'Original o‘xshatishlar (tashbihlar).',
+          'She’r yozilgan vaziyat — hayotiy asos muhim.',
+        ],
+      },
+      {
+        title: '«Yoshlik» (1934)',
+        text: 'She’r matnini darslikning 184–185-betlaridan ifodali o‘qing. Lirik qahramon o‘z yoshligi haqida o‘ylaydi: u kunlarini ayamagan, yoshlikka nokaslikni ravo ko‘rmagan.',
+        table: {
+          head: ['She’rdagi fikr', 'Izoh'],
+          rows: [
+            ['Yoshlik tarozusining bir pallasi bahor toshi bilan og‘ir', 'Yoshlik sevinch, shodlik va biyron til bilan to‘la'],
+            ['Bolalik gul bog‘larni ko‘rmagan, ko‘chalarda mungli o‘tgan', 'Shoirning yetim, og‘ir bolaligiga ishora'],
+            ['Yuragida o‘lib qolgan bolalik erkaligini tiriltirdi', 'Yoshlikda ko‘rmagan quvonchlarini qaytarishga intilish'],
+            ['Tasodiflar zarur, hodisani sababiyat yetaklaydi', 'Hayotdagi har bir voqeaning sababi bor — falsafiy xulosa'],
+          ],
+        },
+      },
+      {
+        title: 'Badiiy tasvir vositalari',
+        table: {
+          head: ['Vosita', 'Misol', 'Izoh'],
+          rows: [
+            ['Jonlantirish / mubolag‘a', 'qiz sevganda qon yig‘lash; qalbning azmni so‘ramasligi', 'Kuchli sevgi iztirobi'],
+            ['Metafora', 'yoshlik tarozusi, bahor toshi', 'Yoshlikning qadri va og‘irligi'],
+            ['Ritorik so‘roq', 'qaysi umr bunday yoshlikni ko‘rgan? (mazmunan)', 'Faxr va hayrat'],
+            ['Detal', 'sharsharakning mungli kuyi', 'Bolalik g‘amginligi'],
+          ],
+        },
+      },
+      {
+        title: 'Muhokama',
+        list: [
+          'She’rdan nimalarni uqdingiz?',
+          '«Bolaligim gul bog‘larni ko‘rolmagan» satrini shoir hayoti asosida izohlang.',
+          'Nima uchun shoir inson hayotida tasodiflar zarur ekanini qayd etmoqda?',
+          'Odatda yoshlikni bahorga qiyoslashadi. Usmon Nosir yoshligini qaysi faslga o‘xshatardingiz?',
+        ],
+      },
+    ],
+    pairs: [
+      ['Usmon Nosir', '«O‘zbekning Lermontovi»'],
+      ['Namangan', 'Shoir tug‘ilgan shahar'],
+      ['«Haqiqat qalami»', 'Ilk she’ri'],
+      ['«Demon»', 'Lermontovdan tarjima'],
+      ['«Bog‘chasaroy fontani»', 'Pushkindan tarjima'],
+      ['Mariinsk', 'Shoirga haykal qo‘yilgan shahar'],
+      ['Turob To‘la', 'Usmon Nosir haqida yozgan shoir'],
+      ['Yoshlik tarozusi', 'Metafora'],
+    ],
+    quiz: [
+      { q: 'Usmon Nosir qaysi yili tug‘ilgan?', options: ['1912', '1908', '1886', '1928'], answer: 0 },
+      { q: 'Usmon Nosir qayerda tug‘ilgan?', options: ['Namangan', 'Toshkent', 'Buxoro', 'Andijon'], answer: 0 },
+      { q: 'Uni qanday nom bilan atashgan?', options: ['O‘zbekning Lermontovi', 'So‘z sultoni', 'Malik ul-kalom', 'Hadis sultoni'], answer: 0 },
+      { q: 'Usmon Nosir qaysi asarni tarjima qilgan?', options: ['«Demon»', '«Otello»', '«Kichkina shahzoda»', '«Oq kema»'], answer: 0 },
+      { q: 'Shoir necha yoshida vafot etgan?', options: ['32', '45', '27', '60'], answer: 0 },
+      { q: '«Yoshlik» she’ri qaysi yili yozilgan?', options: ['1934', '1945', '1917', '1958'], answer: 0 },
+      { q: 'She’r so‘ngida shoir nima zarur deydi?', options: ['tasodiflar', 'boylik', 'shon-shuhrat', 'yolg‘izlik'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Shoirning bolaligi', 'Shoirning yoshligi'],
+      items: [
+        { text: 'gul bog‘larni ko‘rmagan', cat: 0 }, { text: 'sevinchi ko‘p, tili biyron', cat: 1 },
+        { text: 'ko‘chalarda mungli yurgan', cat: 0 }, { text: 'kunlarini ayamagan', cat: 1 },
+        { text: 'yulduz sanab o‘tgan kechalar', cat: 0 }, { text: 'bahor toshi bilan og‘ir palla', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Usmon Nosir uslubining asosiy xususiyatlari?', a: 'Soddalik, lirik harorat, jozibadorlik, original o‘xshatishlar, jimjimadorlik yo‘qligi.' },
+      { q: '«Kunlarimni yoshligimdan ayamadim» satri nimani anglatadi?', a: 'Shoir yoshligini to‘liq, mazmunli yashadi, uni bekor o‘tkazmadi.' },
+      { q: 'Nega shoir bolaligini g‘amgin tasvirlaydi?', a: 'U yetim, qiyinchilikda o‘sgan, bolaligida quvonch kam bo‘lgan.' },
+      { q: '«Hodisani yetaklarkan sababiyat» fikrini izohlang.', a: 'Har bir voqea tasodifdek ko‘rinsa ham, uning ortida sabab bor.' },
+      { q: 'Usmon Nosir taqdiri qanday yakunlangan?', a: '1937-yilda surgun qilinib, 1944-yilda Sibirda 32 yoshida vafot etgan.' },
+    ],
+    sequences: [
+      {
+        title: 'Usmon Nosir hayoti',
+        items: [
+          'Namanganda tug‘iladi',
+          'Ilk she’ri «Haqiqat qalami» bosiladi',
+          'Moskva va Samarqandda tahsil oladi',
+          '«Yoshlik» she’rini yozadi',
+          'Sibirga surgun qilinadi',
+          '32 yoshida surgunda vafot etadi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['«Norbo‘ta»', '«Naxshon»', '«Nil va Rim»', '«Toshkentnoma»'], answer: 3, why: '«Toshkentnoma» — Shayxzoda dostoni.' },
+      { items: ['Pushkin', 'Lermontov', 'Geyne', 'Navoiy'], answer: 3, why: 'Navoiy — o‘zbek mumtoz shoiri; qolganlari Usmon Nosir tarjima qilgan yoki ilhomlangan Yevropa shoirlari.' },
+      { items: ['Usmon Nosir', 'Fitrat', 'Shayxzoda', 'Lutfiy'], answer: 3, why: 'Lutfiy XV asrda yashagan; qolganlari XX asrda qatag‘onga uchragan ijodkorlar.' },
+    ],
+    debate: [
+      { claim: 'Og‘ir bolalik insonni kuchli qiladi.', pro: 'Usmon Nosir qiyinchilikdan o‘tib, iste’dodini yuksaltirdi.', con: 'Og‘ir bolalik qalbda umrbod yara qoldiradi.' },
+      { claim: 'Hayotda tasodif yo‘q — hamma narsaning sababi bor.', pro: 'Shoir aytganidek, hodisani sababiyat yetaklaydi.', con: 'Ba’zi voqealar haqiqatan tasodifiy bo‘ladi.' },
+    ],
+    creative: [
+      { task: 'O‘z yoshligingizni bir narsaga o‘xshating: «Yoshligim — ... kabi, chunki ...»', time: 60 },
+      { task: 'Hayotingizdagi bir «tasodif» va uning ortidagi sababni 2 gapda hikoya qiling.', time: 90 },
+      { task: 'Usmon Nosirga Mariinskdagi haykal poyiga yoziladigan bir jumla o‘ylab toping.', time: 60 },
+    ],
+  },
+
+  /* ===================== 46 ===================== */
+  {
+    id: 'adab-nosir-2',
+    source: 'III chorak • 46-dars • 186–187-betlar',
+    title: 'Usmon Nosir. «Yana she’rimga» (sonet)',
+    short: 'She’rga murojaat, Majnun va Layli, «Yo‘lchi» she’ri',
+    lesson: [
+      {
+        title: '«Yana she’rimga» (1935)',
+        text: 'She’r matnini darslikning 186-betidan ifodali o‘qing. Shoir o‘z she’riga murojaat qiladi: she’r unga yana yaxshi, u hayotning o‘zi, yurak dardining naqshi.',
+        rule: 'Bu she’r — sonet: 14 misradan iborat, ikki to‘rtlik va ikki uchlikdan tuzilgan.',
+        ruleLabel: 'Shakl',
+      },
+      {
+        title: 'She’r tahlili',
+        table: {
+          head: ['She’rdagi fikr', 'Izoh'],
+          rows: [
+            ['She’r bog‘dagi gullarni ham uyaltiradi', 'She’r go‘zalligi tabiat go‘zalligidan ustun'],
+            ['She’r jon kabi shoirda yashaydi', 'She’r — shoir hayotining ajralmas qismi'],
+            ['Ishqsiz tanda o‘t bo‘lmaydi', 'Ilhom manbai — muhabbat'],
+            ['She’r Geyne va Lermontov bilan ko‘prik bo‘ldi', 'She’r millatlarni bog‘lovchi ko‘prik'],
+            ['Shoir — Majnun, she’r — Layli', 'She’rga cheksiz, fidoyi muhabbat (talmeh)'],
+          ],
+        },
+        note: 'Geyne — nemis shoiri, Lermontov — rus shoiri. Usmon Nosir ulardan ilhomlangan va tarjima qilgan.',
+      },
+      {
+        title: 'Majnun va Layli talmehi',
+        text: 'Mumtoz adabiyotda Majnun — ishq yo‘lida aqlini, hayotini fido qilgan oshiq timsoli. Shoir o‘zini Majnunga, she’rini Layliga o‘xshatib, ijodga fidoyiligini ko‘rsatadi.',
+        rule: 'She’r yakunida shoir she’r uchun hatto sog‘lig‘ini qurbon qilishga tayyorligini aytadi — bu uning og‘ir kasalligiga ham ishora.',
+        ruleLabel: 'Tahlil',
+      },
+      {
+        title: '«Yo‘lchi» (1935)',
+        text: 'Lirik qahramon o‘zini manzili dengizdan narida, lojuvard ufq tubida bo‘lgan yo‘lovchi deb biladi. Ko‘nglidagi dardlar daryodek oqadi.',
+        list: [
+          'Qora toychoq, qora yo‘rg‘a — harakat, intilish ramzi.',
+          'Murodga qasd qilib yugurgan yetadi — maqsadga intilish g‘oyasi.',
+          'Bo‘ronni sevmagan yurak nega uradi? — hayot kurash bilan mazmunli.',
+          'Mehnatsiz, g‘amsiz tiriklik kerak emas — g‘am ham hayotning belgisi.',
+        ],
+        note: 'Lojuvard — to‘q ko‘k, moviy rang.',
+      },
+      {
+        title: 'Obrazlar ma’nosi',
+        table: {
+          head: ['Obraz', 'Ma’nosi'],
+          rows: [
+            ['Dengiz', 'Cheksiz orzu, olis maqsad'],
+            ['Daryo', 'Ko‘ngil dardlarining oqimi'],
+            ['Toychoq, yo‘rg‘a', 'Yo‘l, harakat, shijoat'],
+            ['Bo‘ron', 'Kurash, sinovlar'],
+          ],
+        },
+      },
+      {
+        title: 'Muhokama',
+        list: [
+          'Nima uchun shoir «yana» so‘ziga urg‘u beryapti?',
+          'She’r millatlararo ko‘prik bo‘lishi mumkinligini qanday izohlaysiz?',
+          'Nima uchun shoir o‘zini Majnunga, she’rini Layliga o‘xshatyapti?',
+          'Bo‘ronni sevmaydigan yurak haqidagi misra zamirida qanday ma’no bor?',
+          'Uyga vazifa: «Yana she’rimga» sonetini yod oling.',
+        ],
+      },
+    ],
+    pairs: [
+      ['Sonet', '14 misrali she’r'],
+      ['Geyne', 'Nemis shoiri'],
+      ['Lermontov', 'Rus shoiri'],
+      ['Majnun', 'Shoirning o‘ziga o‘xshatishi'],
+      ['Layli', 'She’rga o‘xshatilgan'],
+      ['Lojuvard', 'to‘q ko‘k rang'],
+      ['Bo‘ron', 'Kurash va sinov ramzi'],
+    ],
+    quiz: [
+      { q: '«Yana she’rimga» she’ri qaysi janrda?', options: ['sonet', 'g‘azal', 'ruboiy', 'doston'], answer: 0 },
+      { q: 'Sonet necha misradan iborat?', options: ['14', '4', '12', '21'], answer: 0 },
+      { q: 'Shoir o‘zini kimga o‘xshatadi?', options: ['Majnunga', 'Farhodga', 'Rustamga', 'Yusufga'], answer: 0 },
+      { q: 'She’r shoirni kimlar bilan bog‘ladi?', options: ['Geyne va Lermontov', 'Navoiy va Lutfiy', 'Pushkin va Tolstoy', 'Shekspir va Bayron'], answer: 0 },
+      { q: '«Lojuvard» qanday rang?', options: ['to‘q ko‘k', 'qizil', 'sariq', 'yashil'], answer: 0 },
+      { q: '«Yo‘lchi» she’rida qahramonning manzili qayerda?', options: ['dengizdan narida', 'tog‘ ortida', 'shaharda', 'qishloqda'], answer: 0 },
+      { q: '«Yo‘lchi» she’rida bo‘ron nimaning ramzi?', options: ['kurash va sinovlar', 'tinchlik', 'baxt', 'qish'], answer: 0 },
+    ],
+    sort: {
+      categories: ['«Yana she’rimga»', '«Yo‘lchi»'],
+      items: [
+        { text: 'Majnun va Layli', cat: 0 }, { text: 'qora toychoq', cat: 1 },
+        { text: 'Geyne va Lermontov', cat: 0 }, { text: 'lojuvard ufq', cat: 1 },
+        { text: 'bog‘dagi gullar uyaladi', cat: 0 }, { text: 'bo‘ronni sevgan yurak', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'She’r shoir uchun nega «hayot shaxsi»?', a: 'She’r uning jonidek, hayotining ajralmas qismi, butun umrini unga bag‘ishlagan.' },
+      { q: 'She’r qanday qilib millatlararo ko‘prik bo‘ladi?', a: 'Tarjima va ilhom orqali turli xalq shoirlarini, madaniyatlarini bog‘laydi.' },
+      { q: 'Majnun talmehi nimani ko‘rsatadi?', a: 'Shoirning she’rga fidoyi, cheksiz muhabbatini.' },
+      { q: '«Yo‘lchi»da shoir nega g‘amni ham tiriklik belgisi deydi?', a: 'Kurash, dard va mehnatsiz hayot mazmunsiz, g‘am insonni tirik ekanini his qildiradi.' },
+      { q: 'Sonetning tuzilishi qanday?', a: 'Ikki to‘rtlik (8 misra) va ikki uchlik (6 misra), jami 14 misra.' },
+    ],
+    odd: [
+      { items: ['Majnun', 'Layli', 'Farhod', 'Frans'], answer: 3, why: 'Frans — «So‘nggi saboq» qahramoni; qolganlari mumtoz ishq qissalari obrazlari.' },
+      { items: ['dengiz', 'daryo', 'bo‘ron', 'qal’a'], answer: 3, why: 'Qal’a «Yo‘lchi» she’rida yo‘q.' },
+      { items: ['sonet', 'g‘azal', 'ruboiy', 'fojia'], answer: 3, why: 'Fojia — dramatik janr; qolganlari lirik janrlar.' },
+    ],
+    debate: [
+      { claim: 'Shoir uchun she’r hayotdan ham qimmat.', pro: 'Usmon Nosir she’rni jonidan aziz bildi, sog‘lig‘ini ham fido qilishga tayyor.', con: 'Hayot birinchi o‘rinda: shoir yashasa, yana ko‘p she’r yozadi.' },
+      { claim: 'Tarjima — yangi asar yaratish bilan teng ijod.', pro: 'Usmon Nosir tarjimalari o‘zbek she’riyatini boyitdi.', con: 'Tarjimon o‘z fikrini emas, boshqaning fikrini yetkazadi.' },
+    ],
+    creative: [
+      { task: 'O‘zingiz sevgan ishga (sport, rasm, musiqa) «Yana ...ga» deb murojaat qiluvchi 2 misra tuzing.', time: 90 },
+      { task: '«Yo‘lchi» she’ridagi yo‘lovchining manzilini doskaga chizing: dengiz, ufq, toychoq.', time: 120 },
+      { task: '«Bo‘ron (kurash) bo‘lmasa, yurak urmaydi» degan fikrga hayotdan bitta misol keltiring.', time: 60 },
+    ],
+  },
+
+  /* ===================== 47 ===================== */
+  {
+    id: 'adab-sonet',
+    source: 'III chorak • 47-dars • 187–189-betlar',
+    title: '«Yana she’rimga» va «Yoshlik»ni qiyoslash. Lirik tur: sonet',
+    short: 'Lirik turning xususiyatlari, sonet tuzilishi va ikki she’r qiyosi',
+    lesson: [
+      {
+        title: 'Lirik tur',
+        rule: 'Lirik turning muhim xususiyati — tuyg‘u-kechinmalarning tasviri. Lirik asarlar she’riy shaklda, muayyan vazn va qofiya asosida yoziladi, shuning uchun ohang, musiqiylik va intonatsiyaga ega.',
+        ruleLabel: 'Nazariy ma’lumot',
+        examples: ['fard', 'tuyuq', 'ruboiy', 'g‘azal', 'sonet'],
+      },
+      {
+        title: 'Sonet',
+        rule: 'Sonet — lirikaning 14 misradan iborat janri. Birinchi qismi ikki to‘rtlik (8 misra) — katren, ikkinchi qismi ikki uchlik (6 misra) — terset deb ataladi.',
+        ruleLabel: 'Ta’rif',
+        table: {
+          head: ['Qism', 'Misralar', 'Vazifasi'],
+          rows: [
+            ['1-katren', '4', 'Asosiy fikr aytiladi'],
+            ['2-katren', '4', 'Fikr rivojlanadi'],
+            ['1-terset', '3', 'Fikr cho‘qqiga chiqadi'],
+            ['2-terset', '3', 'Yechim, xulosa'],
+          ],
+        },
+        note: 'Sonetning qofiyalanishi o‘ziga xos: birinchi ikki band va ikkinchi ikki band zanjir halqasidek bog‘langan.',
+      },
+      {
+        title: 'O‘zbek sonetchilari',
+        examples: ['Usmon Nosir', 'Rauf Parfi', 'Barot Boyqobilov', 'Mirpo‘lat Mirzo'],
+        text: 'Rauf Parfining «Kuz kechi» (1958) soneti darslikda namuna sifatida berilgan: unda mudragan terakzor, muz ostida uxlagan suv, alla aytayotgan zar yaproqlar tasvirlangan, so‘nggi misra takrorlanadi.',
+      },
+      {
+        title: 'Ikki she’rni qiyoslaymiz',
+        table: {
+          head: ['Jihat', '«Yoshlik» (1934)', '«Yana she’rimga» (1935)'],
+          rows: [
+            ['Mavzu', 'Shoirning yoshligi va bolaligi', 'She’r va ijodga muhabbat'],
+            ['Murojaat', 'O‘ziga, o‘z hayotiga', 'She’rga'],
+            ['Shakl', 'To‘rtliklardan iborat erkin tuzilish', 'Sonet: 14 misra'],
+            ['Kayfiyat', 'Faxr va mung aralash, falsafiy', 'Ehtirosli, fidoyi'],
+            ['Umumiy jihat', 'Samimiylik, lirik harorat, sodda ifoda', 'Samimiylik, lirik harorat, sodda ifoda'],
+          ],
+        },
+      },
+      {
+        title: '«Yana she’rimga»ning tuzilishi',
+        table: {
+          head: ['Qism', 'Fikr rivoji'],
+          rows: [
+            ['Boshlanish', 'She’r yana yaxshi, u gullardan ham go‘zal'],
+            ['Rivoj', 'She’r — yurak dardining naqshi, ishq o‘ti'],
+            ['Cho‘qqi', 'She’r Geyne va Lermontov bilan ko‘prik bo‘ldi'],
+            ['Yechim', 'Butun umrim seniki; men Majnun, sen Layli'],
+          ],
+        },
+      },
+      {
+        title: '«Bog‘im» — mustaqil mutolaa',
+        text: 'Usmon Nosirning «Bog‘im» (1935) she’rini mustaqil o‘qing. Shoir bog‘ni o‘z hayoti va ijodi timsoli qiladi: barg kabi uzilib ketsa ham, bog‘i uni unutmaydi, she’rlari yangrab qoladi, o‘rniga bog‘bon keladi.',
+        note: 'Topshiriq: she’r bo‘yicha o‘zingiz to‘rtta savol tuzing.',
+      },
+    ],
+    pairs: [
+      ['Lirik tur', 'Tuyg‘u-kechinmalar tasviri'],
+      ['Sonet', '14 misrali lirik janr'],
+      ['Katren', 'Sonetning to‘rtlik qismi'],
+      ['Terset', 'Sonetning uchlik qismi'],
+      ['Rauf Parfi', '«Kuz kechi» soneti muallifi'],
+      ['«Bog‘im»', 'Usmon Nosirning mustaqil mutolaa she’ri'],
+      ['Tuyuq', 'Lirik janr'],
+    ],
+    quiz: [
+      { q: 'Lirik turning asosiy xususiyati?', options: ['tuyg‘u-kechinmalar tasviri', 'sahnada ijro', 'voqealar hikoyasi', 'dialoglar'], answer: 0 },
+      { q: 'Sonetning birinchi qismi qanday ataladi?', options: ['katren', 'terset', 'matla', 'maqta’'], answer: 0 },
+      { q: 'Terset necha misradan iborat?', options: ['3', '4', '2', '6'], answer: 0 },
+      { q: 'Sonetda nechta to‘rtlik bor?', options: ['2', '3', '4', '1'], answer: 0 },
+      { q: '«Kuz kechi» sonetining muallifi?', options: ['Rauf Parfi', 'Usmon Nosir', 'Fitrat', 'Shayxzoda'], answer: 0 },
+      { q: 'Qaysi biri lirik janr EMAS?', options: ['fojia', 'sonet', 'ruboiy', 'tuyuq'], answer: 0 },
+      { q: '«Yana she’rimga» va «Yoshlik»ning umumiy jihati?', options: ['samimiylik va lirik harorat', 'dramatik shakl', 'hajviy ohang', 'nasriy bayon'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Katren (to‘rtlik)', 'Terset (uchlik)'],
+      items: [
+        { text: 'asosiy fikr aytiladi', cat: 0 }, { text: 'fikr cho‘qqiga chiqadi', cat: 1 },
+        { text: 'fikr rivojlanadi', cat: 0 }, { text: 'yechim, xulosa', cat: 1 },
+        { text: '4 misra', cat: 0 }, { text: '3 misra', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Sonetning tuzilishini tushuntiring.', a: '14 misra: ikki to‘rtlik (katren) va ikki uchlik (terset).' },
+      { q: 'Sonetda fikr qanday rivojlanadi?', a: 'Boshida aytilgan fikr rivojlanib, cho‘qqiga chiqadi va oxirida yechim topadi.' },
+      { q: 'Lirik turga qaysi janrlar kiradi?', a: 'Fard, tuyuq, ruboiy, g‘azal, sonet va boshqalar.' },
+      { q: '«Yoshlik» va «Yana she’rimga»ning farqi nima?', a: 'Biri yoshlik va bolalik haqida, ikkinchisi she’rga murojaat; biri erkin to‘rtliklar, ikkinchisi sonet.' },
+      { q: 'O‘zbek adabiyotida qaysi shoirlar sonet yozgan?', a: 'Usmon Nosir, Rauf Parfi, Barot Boyqobilov, Mirpo‘lat Mirzo.' },
+    ],
+    sequences: [
+      {
+        title: 'Sonet qismlarini tartib bilan joylang',
+        items: ['1-katren: asosiy fikr', '2-katren: fikr rivoji', '1-terset: cho‘qqi', '2-terset: yechim'],
+      },
+    ],
+    odd: [
+      { items: ['katren', 'terset', 'sonet', 'remarka'], answer: 3, why: 'Remarka — drama atamasi.' },
+      { items: ['fard', 'tuyuq', 'sonet', 'qissa'], answer: 3, why: 'Qissa — epik janr.' },
+      { items: ['Usmon Nosir', 'Rauf Parfi', 'Barot Boyqobilov', 'Alfons Dode'], answer: 3, why: 'Dode — fransuz nosiri; qolganlari o‘zbek sonetchilari.' },
+    ],
+    debate: [
+      { claim: 'Qat’iy shaklli she’r (sonet, g‘azal) erkin she’rdan qiyinroq va qimmatliroq.', pro: 'Qoidaga sig‘dirish katta mahorat talab qiladi.', con: 'Erkin she’rda tuyg‘u cheklovsiz, tabiiyroq ifodalanadi.' },
+      { claim: '«Yoshlik» she’ri «Yana she’rimga»dan kuchliroq.', pro: 'Unda hayotiy dard va falsafiy xulosa bor.', con: '«Yana she’rimga» shakli mukammal, tuyg‘usi ehtirosli.' },
+    ],
+    creative: [
+      { task: 'Sinf bilan birgalikda «Bizning maktab» mavzusida sonetning birinchi katrenini (4 misra) tuzing.', time: 180 },
+      { task: '«Bog‘im» she’ri bo‘yicha 2 ta savol tuzing va sinfdoshingizga bering.', time: 90 },
+      { task: 'Usmon Nosir she’rlaridan bittasiga yangi sarlavha o‘ylab toping va asoslang.', time: 60 },
+    ],
+  },
+];
+
 const CONTENT = {
-  adabiyot: { 8: [...ADABIYOT_8, ...ADABIYOT_8_P2, ...ADABIYOT_8_P3] },
+  adabiyot: { 8: [...ADABIYOT_8, ...ADABIYOT_8_P2, ...ADABIYOT_8_P3, ...ADABIYOT_8_P4] },
   'ona-tili': { 8: [...ONA_TILI_8, ...ONA_TILI_8_PART2, ...ONA_TILI_8_PART3, ...ONA_TILI_8_PART4, ...ONA_TILI_8_PART5, ...ONA_TILI_8_PART6, ...ONA_TILI_8_PART7, ...ONA_TILI_8_PART8] },
 };
 
