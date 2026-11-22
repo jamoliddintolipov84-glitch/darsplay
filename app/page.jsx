@@ -11516,8 +11516,1335 @@ const ADABIYOT_8_P2 = [
   },
 ];
 
+/* --- 8-sinf Adabiyot: 25–36-darslar (darslik 2025, 108–135-betlar; BSB/CHSB kiritilmagan) --- */
+const ADABIYOT_8_P3 = [
+  /* ===================== 25 ===================== */
+  {
+    id: 'adab-navoiy-1',
+    source: 'II chorak • 25-dars • 108–111-betlar',
+    title: 'Alisher Navoiyning lirik merosi. G‘azallar',
+    short: '«So‘z mulkining sultoni», devonlari va «Kimki bir ko‘ngli buzug‘ning...» g‘azali',
+    lesson: [
+      {
+        title: 'Alisher Navoiy (1441–1501)',
+        text: 'Shoir, olim, faylasuf, davlat arbobi. Turkiy va forsiy tillarda birday mohirlik bilan ijod qilgan, «So‘z mulkining sultoni» deya ulug‘langan buyuk mutafakkir.',
+        list: [
+          '1441-yili Xurosonning madaniy markazi Hirotda tug‘ilgan.',
+          'Otasi G‘iyosiddin Muhammad temuriylar saroyida yuqori lavozimli amaldor bo‘lgan.',
+          'Tog‘alari Kobuliy va G‘aribiy ham she’r yozgan.',
+          'Bolaligida Farididdin Attorning 4600 baytli «Mantiq ut-tayr» («Qush tili») dostonini yod bilgan.',
+          'Lutfiy kabi ulug‘ shoirlar e’tirofiga sazovor bo‘lgan.',
+        ],
+        note: 'Xuroson — «kun chiqish, sharq» degan ma’noni anglatadi. Navoiy o‘z hisobidan madrasa, masjid va ko‘priklar qurdirgan.',
+      },
+      {
+        title: 'Navoiyning merosi',
+        table: {
+          head: ['Asar', 'Ahamiyati'],
+          rows: [
+            ['Lirik devonlar', 'Zamon va makon tanlamaydigan she’riyat'],
+            ['«Xamsa»', 'Besh dostondan iborat buyuk turkum'],
+            ['«Muhokamat ul-lug‘atayn»', '«Ikki til muhokamasi» — o‘zbek adabiy tili mavqeyini mustahkamlagan risola'],
+          ],
+        },
+        rule: '«Alisher Navoiy so‘z bobida yetuklik maydonining chavandozidir.» — tarixchi G‘iyosiddin Xondamir',
+        ruleLabel: 'Zamondoshi e’tirofi',
+      },
+      {
+        title: 'Navoiy devonlari',
+        table: {
+          head: ['Devon', 'Ma’nosi va tuzilgan vaqti'],
+          rows: [
+            ['«Ilk devon»', 'Dastlabki devon; muxlislari 1465–1466-yillarda tuzgan'],
+            ['«Oqqo‘yunli muxlislar devoni»', '1471-yil; 2012-yilda A. Erkinov fanga ma’lum qilgan'],
+            ['«Badoye’ ul-bidoya»', '«Go‘zallikning boshlanishi»; 1470–1480-yillar, Husayn Boyqaro topshirig‘i bilan'],
+            ['«Navodir un-nihoya»', '«Nihoyasiz nodirliklar»; 1480–1487-yillar'],
+            ['«Xazoyin ul-maoniy»', '«Ma’nolar xazinasi»; 1492–1498-yillar, to‘rt devondan iborat kulliyot'],
+            ['«Devoni Foniy»', 'Forsiy she’rlar (Foniy taxallusi), 12 ming misradan ortiq'],
+          ],
+        },
+      },
+      {
+        title: 'Kichik janrlar: ruboiy, qit’a, fard',
+        poem: {
+          lines: [
+            'Har kimki chuchuk so‘z elga izhor aylar,',
+            'Har nechaki ag‘yordurur, yor aylar,',
+            'So‘z qattig‘i el ko‘ngliga ozor aylar,',
+            'Yumshoqi ko‘ngullarni giriftor aylar.',
+          ],
+          author: 'Alisher Navoiy, ruboiy',
+        },
+        table: {
+          head: ['Janr', 'Belgisi', 'Misol'],
+          rows: [
+            ['Ruboiy', '4 misra, a-a-b-a qofiyalanadi', '«Har kimki chuchuk so‘z...»'],
+            ['Qit’a', '2 va undan ortiq bayt, matlasiz, falsafiy mazmun', '«Kamolot kasbkim...»'],
+            ['Fard', 'Bir baytli she’r, tugal fikr', '«Kishi aybin yuziga qilma izhor...»'],
+          ],
+        },
+      },
+      {
+        title: '«Kimki bir ko‘ngli buzug‘ning...» g‘azali',
+        poem: {
+          lines: [
+            'Kimki bir ko‘ngli buzug‘ning xotirin shod aylagay,',
+            'Oncha borkim, Ka’ba vayron bo‘lsa, obod aylagay.',
+          ],
+          author: 'Alisher Navoiy (matla)',
+        },
+        rule: 'Matla g‘oyasi: ko‘ngli vayron bir insonni shod qilish — vayron bo‘lgan Ka’bani obod qilish bilan barobar savob. Inson ko‘ngli muqaddas.',
+        ruleLabel: 'G‘oya',
+      },
+      {
+        title: 'G‘azal baytlari tahlili',
+        table: {
+          head: ['Bayt mazmuni', 'Izoh'],
+          rows: [
+            ['Ozod bo‘lsam ham, yor «bandam» desa', 'Bir qulni ozod qilgandek quvonaman — yorga bandalik eng oliy erkinlik'],
+            ['Sabr varaqlarini bir oh barbod qiladi', 'Ishq kuchi sabr-u bardoshdan ustun'],
+            ['Shayxdan riyo o‘rganiladi, haq yo‘l ko‘rsatuvchi pir qani?', 'Ikkiyuzlamachilikka tanqid, haqiqiy yo‘lboshchini izlash'],
+            ['Odam avlodida odamiylik odati kam', 'Inson bo‘lish — odam suratida tug‘ilish emas, odamiylik'],
+          ],
+        },
+        note: 'Lug‘at: mu’tod — o‘rganish, odat; dayr — dunyo; irshod — to‘g‘ri yo‘l ko‘rsatish; sheva — odat; kin — adovat.',
+      },
+      {
+        title: 'Muhokama',
+        list: [
+          'G‘azal matlasida shoir qanday g‘oyani ilgari surmoqda?',
+          '«Odam avlodida kamdur odamiylig‘ shevasi» misrasida qanday illatlar nazarda tutilgan?',
+          'G‘azaldagi qaysi baytni hayotingizda shior qilib olardingiz?',
+          'Navoiyning so‘zga munosabati ruboiy va g‘azalda qanday ifodalangan?',
+          'G‘azalning radifini aniqlang va nasriy bayonini tuzing.',
+        ],
+      },
+    ],
+    pairs: [
+      ['Alisher Navoiy', '«So‘z mulkining sultoni»'],
+      ['Hirot', 'Navoiy tug‘ilgan shahar'],
+      ['«Mantiq ut-tayr»', 'Navoiy bolaligida yod olgan doston'],
+      ['«Muhokamat ul-lug‘atayn»', '«Ikki til muhokamasi»'],
+      ['«Xazoyin ul-maoniy»', '«Ma’nolar xazinasi»'],
+      ['Foniy', 'Forsiy she’rlardagi taxallus'],
+      ['Ruboiy', 'To‘rt misrali she’r'],
+      ['Fard', 'Bir baytli she’r'],
+    ],
+    quiz: [
+      { q: 'Navoiy qaysi yili tug‘ilgan?', options: ['1441', '1366', '1483', '1501'], answer: 0 },
+      { q: 'Navoiy qaysi shaharda tug‘ilgan?', options: ['Hirot', 'Samarqand', 'Buxoro', 'Toshkent'], answer: 0 },
+      { q: 'Navoiyni «so‘z bobida yetuklik maydonining chavandozi» degan tarixchi?', options: ['Xondamir', 'Bobur', 'Lutfiy', 'Jomiy'], answer: 0 },
+      { q: '«Xazoyin ul-maoniy» nechta devondan iborat?', options: ['to‘rt', 'bir', 'besh', 'ikki'], answer: 0 },
+      { q: 'Navoiy forsiy she’rlarida qaysi taxallusni qo‘llagan?', options: ['Foniy', 'Lutfiy', 'Fitrat', 'Mashrab'], answer: 0 },
+      { q: 'Bir baytli she’r qanday ataladi?', options: ['fard', 'ruboiy', 'qit’a', 'g‘azal'], answer: 0 },
+      { q: '«Kimki bir ko‘ngli buzug‘ning» g‘azalida ko‘ngil shod qilish nimaga tenglashtiriladi?', options: ['Ka’bani obod qilishga', 'boylikka', 'jangda g‘alabaga', 'kitob yozishga'], answer: 0 },
+      { q: '«Oqqo‘yunli muxlislar devoni»ni kim fanga ma’lum qilgan?', options: ['Aftondil Erkinov', 'Hodi Zarif', 'Fitrat', 'Xondamir'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Navoiy asari', 'Boshqa muallif asari'],
+      items: [
+        { text: '«Xamsa»', cat: 0 }, { text: '«Mantiq ut-tayr»', cat: 1 },
+        { text: '«Muhokamat ul-lug‘atayn»', cat: 0 }, { text: '«Boburnoma»', cat: 1 },
+        { text: '«Badoye’ ul-bidoya»', cat: 0 }, { text: '«Saodat sohili»', cat: 1 },
+        { text: '«Nasoyim ul-muhabbat»', cat: 0 }, { text: '«Sensan sevarim»', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Nima uchun Navoiy «So‘z mulkining sultoni» deb ataladi?', a: 'Turkiy va forsiy tillarda tengsiz mahorat bilan ijod qilgani, o‘zbek adabiy tilini yuksaltirgani uchun.' },
+      { q: 'Navoiyning beshta devonini ayting.', a: '«Ilk devon», «Badoye’ ul-bidoya», «Navodir un-nihoya», «Xazoyin ul-maoniy», «Devoni Foniy».' },
+      { q: 'Ruboiyda Navoiy so‘z haqida qanday fikr aytadi?', a: 'Shirin so‘z begonani ham do‘st qiladi, qattiq so‘z ko‘ngilga ozor beradi, yumshoq so‘z ko‘ngillarni rom etadi.' },
+      { q: '«Odam ermas, ulki mayli odamizod aylagay» fikrini izohlang.', a: 'Odamlarga mehr qo‘ymaydigan, ularni yaxshi ko‘rmaydigan kishi haqiqiy inson emas.' },
+      { q: 'Navoiy xalq uchun qanday ishlar qilgan?', a: 'O‘z hisobidan madrasa, masjid, ko‘priklar qurdirgan, ilm va san’at ahlini qo‘llagan.' },
+    ],
+    sequences: [
+      {
+        title: 'Navoiy devonlarini tuzilish tartibida joylang',
+        items: ['«Ilk devon»', '«Oqqo‘yunli muxlislar devoni»', '«Badoye’ ul-bidoya»', '«Navodir un-nihoya»', '«Xazoyin ul-maoniy»'],
+      },
+    ],
+    odd: [
+      { items: ['ruboiy', 'qit’a', 'fard', 'qissa'], answer: 3, why: 'Qissa — nasriy janr; qolganlari Navoiy ijod qilgan she’riy janrlar.' },
+      { items: ['Hirot', 'Xuroson', 'Astrobod', 'Elzas'], answer: 3, why: 'Elzas — Fransiyadagi o‘lka, «So‘nggi saboq»da.' },
+      { items: ['«Badoye’ ul-bidoya»', '«Navodir un-nihoya»', '«Xazoyin ul-maoniy»', '«Mantiq ut-tayr»'], answer: 3, why: '«Mantiq ut-tayr» — Attorning dostoni.' },
+    ],
+    debate: [
+      { claim: 'Bir insonning ko‘nglini ko‘tarish — eng katta savob ish.', pro: 'Navoiy uni Ka’bani obod qilishga tenglashtiradi.', con: 'Ko‘pchilikka foyda keltiradigan ishlar (maktab, ko‘prik) undan ham muhim.' },
+      { claim: 'Chuchuk (yumshoq) so‘z har doim qattiq so‘zdan yaxshi.', pro: 'U dushmanni ham do‘st qiladi.', con: 'Ba’zan haqiqatni qattiq bo‘lsa ham aytish kerak.' },
+    ],
+    creative: [
+      { task: 'Bugun kimningdir «ko‘ngli buzug‘»ini shod qilish uchun sinfda qila oladigan 3 ta oddiy ishni ayting.', time: 60 },
+      { task: 'Navoiy ruboiysidagi fikrni bugungi ijtimoiy tarmoqlar uchun qisqa shiorga aylantiring.', time: 90 },
+      { task: 'Navoiyning zamonaviy maktab o‘quvchisiga yozgan bir jumlalik maslahatini o‘ylab toping.', time: 60 },
+    ],
+  },
+
+  /* ===================== 26 ===================== */
+  {
+    id: 'adab-navoiy-2',
+    source: 'II chorak • 26-dars • 112–116-betlar',
+    title: 'Alisher Navoiy g‘azallari tahlili',
+    short: '«Kecha kelgumdur...», «Qoshi yosinmu deyin...», «Qaro ko‘zum...»',
+    lesson: [
+      {
+        title: '«Kecha kelgumdur...»',
+        poem: {
+          lines: [
+            'Kecha kelgumdur debon ul sarvi gulro‘ kelmadi,',
+            'Ko‘zlarimg‘a kecha tong otquncha uyqu kelmadi.',
+          ],
+          author: 'Alisher Navoiy (matla)',
+        },
+        text: 'Oshiq yor va’da qilgan kecha uni tong otguncha kutadi. Har lahza yo‘lga chiqib intizor bo‘ladi, joni og‘ziga keladi, ammo yor kelmaydi.',
+        note: 'Sarvi gulro‘ — sarv qomatli, gul yuzli; badxo‘ — yomon fe’lli; tolibi sodiq — chin izlovchi.',
+      },
+      {
+        title: 'Tazod va mubolag‘a',
+        rule: 'Tazod — bir-biriga zid ma’noli so‘zlarni qo‘llash san’ati. G‘azalda yorning oydek yorug‘ yuzi bilan oshiqning qorong‘u ro‘zg‘ori, yig‘i bilan kulgu yonma-yon keladi.',
+        ruleLabel: 'Nazariy ma’lumot',
+        list: [
+          'Yor yuzi oydin, oshiq ro‘zg‘ori qorong‘u — tazod.',
+          'Oshiq devonavor yig‘laydi, uni ko‘rgan kulgidan o‘zini tutolmaydi — tazod.',
+          'Ko‘zdan suv emas, qon kelishi — mubolag‘a, iztirob cho‘qqisi.',
+          'Maqta’dagi «boda» — mumtoz she’riyatda ilohiy ishq va ma’rifat ramzi.',
+        ],
+      },
+      {
+        title: '«Qoshi yosinmu deyin...»',
+        poem: {
+          lines: [
+            'Qoshi yosinmu deyin, ko‘zi qarosinmu deyin,',
+            'Ko‘ngluma har birining dard-u balosinmu deyin?!',
+          ],
+          author: 'Alisher Navoiy (matla)',
+        },
+        text: 'G‘azal deyarli to‘liq so‘roq gaplardan tuzilgan. Oshiq yorning qaysi go‘zalligini tilga olishni bilmay hayron: qoshimi, ko‘zimi, kipriki, zulfi, xoli, qaddi...',
+        note: 'Lug‘at: kudurat — g‘am, g‘ashlik; safo — poklik; hajri nabard — hijron jangi; dom — tuzoq; ko‘nglak — ko‘ylak; qabo — uzun ust kiyim; shikanj — azob.',
+      },
+      {
+        title: '«Qoshi yosinmu deyin» tahlili',
+        table: {
+          head: ['Bayt', 'Mazmuni'],
+          rows: [
+            ['1-bayt', 'Yorning qoshi va ko‘zi — ko‘ngilning dard-u balosi'],
+            ['5-bayt', 'Moviy ko‘ylak ustidagi gulrang qabo — yorning nafis qiyofasi, ranglar uyg‘unligi'],
+            ['6-bayt', 'Charx (osmon) ranji va dahr (zamon) azobi — oshiq dardiga butun olam qo‘shiladi'],
+            ['Maqta’', 'Matlaning birinchi misrasi qaytariladi — radd ul-matla san’ati'],
+          ],
+        },
+        rule: 'So‘roq gaplar oshiqning hayrati va iztirobini kuchaytiradi: javob yo‘q, chunki yorning har bir go‘zalligi birdek dard beradi.',
+        ruleLabel: 'Tahlil',
+      },
+      {
+        title: '«Qaro ko‘zum...»',
+        poem: {
+          lines: [
+            'Qaro ko‘zum, kel-u mardumlig‘ emdi fan qilg‘il,',
+            'Ko‘zum qarosida mardum kibi vatan qilg‘il.',
+          ],
+          author: 'Alisher Navoiy (matla)',
+        },
+        text: 'Oshiq yorni ko‘zining qorachig‘ida — «mardum»dek vatan tutishga chorlaydi. Mardum so‘zi ikki ma’noda: «ko‘z qorachig‘i» va «odamiylik». Bu so‘z o‘yini — tajnis san’ati.',
+        note: 'Ko‘hkan — tog‘ qazuvchi, Farhodga ishora (talmeh). Gulob — gul suvi. Rasan — arqon.',
+      },
+      {
+        title: 'Muhokama',
+        list: [
+          'Yor yo‘liga intizor ko‘zlardan qon kelishi qanday manzarani gavdalantiradi?',
+          'Navoiy yorni «sarvi gulro‘» deb, yana «badxo‘» deb atashiga qanday qaraysiz?',
+          'Nega shoir «Qoshi yosinmu deyin» baytlarini so‘roq gaplardan tuzgan?',
+          'Qosh, ko‘z, kiprik, xol, yuz so‘zlari g‘azalda qanday badiiy vazifa bajargan?',
+          'Uyga vazifa: «Qoshi yosinmu deyin...» g‘azalini yod oling.',
+        ],
+      },
+    ],
+    pairs: [
+      ['Sarvi gulro‘', 'Sarv qomatli, gul yuzli'],
+      ['Badxo‘', 'Yomon fe’lli'],
+      ['Tazod', 'Zid so‘zlarni qo‘llash'],
+      ['Kudurat', 'g‘am, g‘ashlik'],
+      ['Dom', 'tuzoq'],
+      ['Mardum', 'ko‘z qorachig‘i / odamiylik'],
+      ['Ko‘hkan', 'Farhodga ishora'],
+      ['Boda', 'Ilohiy ishq ramzi'],
+    ],
+    quiz: [
+      { q: '«Kecha kelgumdur» g‘azalida oshiq qachongacha uxlamaydi?', options: ['tong otguncha', 'yarim tungacha', 'uch kun', 'bir hafta'], answer: 0 },
+      { q: 'Yor yuzi oydin, oshiq ro‘zg‘ori qorong‘u — qaysi san’at?', options: ['tazod', 'tanosib', 'takrir', 'talmeh'], answer: 0 },
+      { q: '«Qoshi yosinmu deyin» g‘azali asosan qanday gaplardan tuzilgan?', options: ['so‘roq gaplardan', 'buyruq gaplardan', 'darak gaplardan', 'atov gaplardan'], answer: 0 },
+      { q: '«Dom» so‘zining ma’nosi?', options: ['tuzoq', 'uy', 'tom', 'qo‘ng‘iroq'], answer: 0 },
+      { q: '«Qaro ko‘zum» g‘azalidagi «ko‘hkan» kimga ishora?', options: ['Farhodga', 'Majnunga', 'Rustamga', 'Iskandarga'], answer: 0 },
+      { q: '«Mardum» so‘zining ikki ma’nosi?', options: ['ko‘z qorachig‘i va odamiylik', 'tog‘ va dasht', 'yor va raqib', 'kun va tun'], answer: 0 },
+      { q: '«Badxo‘» nimani bildiradi?', options: ['yomon fe’lli', 'go‘zal', 'sodiq', 'aqlli'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Yor tasviri', 'Oshiq holati'],
+      items: [
+        { text: 'sarvi gulro‘', cat: 0 }, { text: 'tong otguncha uyqusizlik', cat: 1 },
+        { text: 'qoshi yosin, ko‘zi qaro', cat: 0 }, { text: 'ko‘zdan qon kelishi', cat: 1 },
+        { text: 'moviy ko‘nglak, gulrang qabo', cat: 0 }, { text: 'devonavor yig‘lash', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: '«Kecha kelgumdur» g‘azalida tazod qanday vazifa bajaradi?', a: 'Yor go‘zalligi va oshiq iztirobini qarama-qarshi qo‘yib, kechinmani kuchaytiradi.' },
+      { q: 'Ko‘zdan suv emas, qon kelishi nimani bildiradi?', a: 'Oshiq iztirobining eng yuqori darajasini, butun vujudi bilan qiynalayotganini.' },
+      { q: 'Nega «Qoshi yosinmu deyin» so‘roq gaplardan tuzilgan?', a: 'Oshiqning hayrati va qaysi go‘zallikni tilga olishni bilmay qolganini ko‘rsatish uchun.' },
+      { q: '«Qaro ko‘zum» g‘azalidagi «mardum» so‘zi qanday san’atga asos bo‘lgan?', a: 'Tajnisga: ko‘z qorachig‘i va odamiylik ma’nolarida o‘ynalgan.' },
+      { q: 'Mumtoz she’riyatda «boda» nimaning ramzi?', a: 'Ilohiy ishq va ma’rifatning.' },
+    ],
+    odd: [
+      { items: ['qosh', 'ko‘z', 'kiprik', 'qilich'], answer: 3, why: 'Qolganlari yor yuzi tasviriga oid — tanosib.' },
+      { items: ['tazod', 'tanosib', 'radd ul-matla', 'tugun'], answer: 3, why: 'Tugun — syujet elementi.' },
+      { items: ['Farhod', 'Majnun', 'Yusuf', 'Frans'], answer: 3, why: 'Frans — «So‘nggi saboq» qahramoni; qolganlari mumtoz she’riyatdagi talmeh obrazlari.' },
+    ],
+    debate: [
+      { claim: 'Oshiq yomon fe’lli («badxo‘») yorni sevishda davom etmasligi kerak.', pro: 'Jafokor yor sevgiga loyiq emas.', con: 'Mumtoz she’riyatda yor jafosi — ishqni sinash, chin oshiq undan qaytmaydi.' },
+      { claim: 'Mumtoz g‘azallarni yod olish shart emas, mazmunini bilish kifoya.', pro: 'Yod olish vaqt oladi, asosiysi tushunish.', con: 'Yod olingan bayt nutqni boyitadi, xotirani mustahkamlaydi, ohangni his qildiradi.' },
+    ],
+    creative: [
+      { task: '«...mu deyin?» qolipida yaqin insoningiz haqida 2 ta so‘roq misra tuzing.', time: 90 },
+      { task: '«Qoshi yosinmu deyin» g‘azalidagi yor qiyofasini (moviy ko‘ylak, gulrang qabo) 3 rang bilan doskaga chizing.', time: 120 },
+      { task: 'Bir so‘zni ikki ma’noda qo‘llab (tajnis kabi) qiziq gap tuzing.', time: 60 },
+    ],
+  },
+
+  /* ===================== 27 ===================== */
+  {
+    id: 'adab-sanat',
+    source: 'II chorak • 27-dars • 114–115-betlar',
+    title: 'Nazariy ma’lumot: she’riy san’atlar',
+    short: 'Takrir, tanosib, radd ul-matla va takrorlash',
+    lesson: [
+      {
+        title: 'She’riy san’atlar nima uchun kerak?',
+        text: 'Ijodkor salohiyati haqida so‘z borganda, uning nimani tasvirlagani emas, asosan qanday tasvirlaganiga e’tibor qaratilgan.',
+        rule: 'She’riy (badiiy) san’atlar — asar g‘oyasining ta’sirchan ifodalanishiga, timsollarning yorqin gavdalanishiga, misralarning nazokati va musiqiyligiga xizmat qiluvchi tasvir vositalari.',
+        ruleLabel: 'Asosiy fikr',
+        note: 'Ular o‘zbek mumtoz adabiyotining milliyligi, latofati, rang-barangligi va jozibadorligini ifodalaydi.',
+      },
+      {
+        title: 'Takrir',
+        rule: 'Takrir — «takrorlash» ma’nosidagi she’riy san’at: she’rda u yoki bu so‘zni takror qo‘llash orqali uning ma’nosi va mohiyatini ta’kidlab ko‘rsatish.',
+        ruleLabel: 'Ta’rif',
+        poem: {
+          lines: [
+            'Ishqi dardinmu deyin, hajri nabardinmu deyin,',
+            'Bu qatiq dard aro vaslining davosinmu deyin?!',
+          ],
+          author: 'Alisher Navoiy',
+        },
+        note: '«Qoshi yosinmu deyin...» g‘azalida takrir ustuvor: «deyin» so‘zi har misrada ikki martadan qaytariladi.',
+      },
+      {
+        title: 'Tanosib',
+        rule: 'Tanosib (arabcha — «mos, mutanosib, daxldor») — shoirning mantiqan bir-biriga bog‘liq, bir-birini taqozo etadigan so‘zlardan foydalanishi.',
+        ruleLabel: 'Ta’rif',
+        poem: {
+          lines: [
+            'Ko‘zi qahrinmu deyin, kirpiki zahrinmu deyin,',
+            'Bu kudurat ichra ruxsori safosinmu deyin?!',
+          ],
+          author: 'Alisher Navoiy',
+        },
+        note: '«Ko‘z» so‘zi o‘z-o‘zidan «kirpik», «ruxsor» (yuz) so‘zlarini taqozo etadi — ular bir guruh so‘zlar.',
+      },
+      {
+        title: 'Radd ul-matla',
+        rule: 'Radd ul-matla (arabcha — «matlaning takrorlanishi») — g‘azal yoki qasida matlasining birinchi misrasi maqta’da yoki boshqa baytlarda qayta keltirilishi.',
+        ruleLabel: 'Ta’rif',
+        table: {
+          head: ['O‘rni', 'Misra'],
+          rows: [
+            ['Matlada', 'Qoshi yosinmu deyin, ko‘zi qarosinmu deyin'],
+            ['Maqta’da', 'Ey Navoiy, dema qosh-u ko‘zining vasfini, ayt: Qoshi yosinmu deyin, ko‘zi qarosinmu deyin'],
+          ],
+        },
+        note: 'Bunday takror badiiy maqsadda: matlada ilgari surilgan g‘oya rivojlantiriladi va yakunda yana urg‘u bilan ta’kidlanadi.',
+      },
+      {
+        title: 'Takrorlash: barcha o‘rganilgan san’atlar',
+        table: {
+          head: ['San’at', 'Mohiyati', 'Misol'],
+          rows: [
+            ['Tashbih', 'O‘xshatish', 'oy yuzli yor; yoydek qomat'],
+            ['Tazod', 'Zid so‘zlar', 'oydin yuz — qorong‘u ro‘zg‘or'],
+            ['Mubolag‘a', 'Bo‘rttirish', 'ko‘zdan qon kelishi'],
+            ['Talmeh', 'Tarixiy shaxs, afsonaga ishora', 'Ya’qub, Farhod (ko‘hkan)'],
+            ['Irsoli masal', 'Maqol keltirish', '«Charog‘ tubi qorong‘u»'],
+            ['Tajnis', 'Shakldosh so‘z o‘yini', 'mardum — qorachiq / odamiylik'],
+            ['Takrir', 'So‘z takrori', '«...mu deyin»'],
+            ['Tanosib', 'Bog‘liq so‘zlar guruhi', 'ko‘z — kiprik — ruxsor'],
+            ['Radd ul-matla', 'Matla misrasining qaytishi', '«Qoshi yosinmu deyin»'],
+          ],
+        },
+      },
+      {
+        title: 'Topshiriq',
+        list: [
+          'Mavzu davomida o‘rganilgan g‘azallardan tanosib, takrir, tazod va tashbihga misollar toping.',
+          'Jadval tuzing: san’at nomi — misol — vazifasi.',
+          'Lutfiyning «Meni shaydo qiladurg‘on» g‘azalida takrir bormi? («bu ko‘nguldur, bu ko‘ngul»)',
+        ],
+      },
+    ],
+    pairs: [
+      ['Takrir', 'So‘zni takror qo‘llash'],
+      ['Tanosib', 'Bog‘liq so‘zlar guruhi'],
+      ['Radd ul-matla', 'Matla misrasining maqta’da qaytishi'],
+      ['Tashbih', 'O‘xshatish'],
+      ['Tazod', 'Zid so‘zlar'],
+      ['Talmeh', 'Tarixiy shaxs yoki afsonaga ishora'],
+      ['Tajnis', 'Shakldosh so‘z o‘yini'],
+      ['Irsoli masal', 'Maqol keltirish'],
+    ],
+    quiz: [
+      { q: 'So‘zni takror qo‘llab ma’noni ta’kidlash san’ati?', options: ['takrir', 'tanosib', 'tazod', 'talmeh'], answer: 0 },
+      { q: '«Tanosib» so‘zining ma’nosi?', options: ['mos, mutanosib', 'qarama-qarshi', 'takrorlash', 'nazar solmoq'], answer: 0 },
+      { q: '«Radd ul-matla» nimani bildiradi?', options: ['matlaning takrorlanishi', 'maqta’ning yo‘qligi', 'radifsiz g‘azal', 'qofiya almashinuvi'], answer: 0 },
+      { q: 'Ko‘z — kiprik — ruxsor so‘zlari qaysi san’atga misol?', options: ['tanosib', 'tazod', 'takrir', 'irsoli masal'], answer: 0 },
+      { q: '«Qoshi yosinmu deyin» g‘azalida ustuvor san’at?', options: ['takrir', 'talmeh', 'irsoli masal', 'tajnis'], answer: 0 },
+      { q: 'Matla misrasi qayerda qaytariladi (radd ul-matla)?', options: ['maqta’da', 'faqat 2-baytda', 'sarlavhada', 'hech qayerda'], answer: 0 },
+      { q: 'Shoir salohiyatida asosan nimaga e’tibor qaratilgan?', options: ['qanday tasvirlaganiga', 'nechta she’r yozganiga', 'qayerda yashaganiga', 'kimga bag‘ishlaganiga'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Takrorga asoslangan', 'Ma’no munosabatiga asoslangan'],
+      items: [
+        { text: 'takrir', cat: 0 }, { text: 'tazod', cat: 1 },
+        { text: 'radd ul-matla', cat: 0 }, { text: 'tanosib', cat: 1 },
+        { text: 'radif', cat: 0 }, { text: 'tashbih', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Takrir va radd ul-matlaning farqi nima?', a: 'Takrir — so‘z takrori, radd ul-matla — matlaning butun misrasi maqta’da qaytariladi.' },
+      { q: 'Tanosibga o‘zingiz misol keltiring.', a: 'Masalan: bog‘ — gul — bulbul; osmon — oy — yulduz.' },
+      { q: 'She’riy san’atlar qanday vazifa bajaradi?', a: 'G‘oyani ta’sirli ifodalaydi, timsollarni yorqin qiladi, she’rga musiqiylik va jozibadorlik beradi.' },
+      { q: '«Qoshi yosinmu deyin» g‘azalida qaysi uch san’at bor?', a: 'Takrir, tanosib va radd ul-matla.' },
+      { q: 'Tajnisga g‘azaldan misol keltiring.', a: '«Mardum» — ko‘z qorachig‘i va odamiylik ma’nosida.' },
+    ],
+    sequences: [
+      {
+        title: 'Radd ul-matla qanday ishlaydi? Bosqichlarni joylang',
+        items: [
+          'Matlada asosiy g‘oya aytiladi',
+          'Keyingi baytlarda g‘oya izchil rivojlanadi',
+          'Maqta’da shoir taxallusi keladi',
+          'Matlaning birinchi misrasi maqta’da qaytariladi',
+          'G‘oya yakunda urg‘u bilan ta’kidlanadi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['takrir', 'tanosib', 'radd ul-matla', 'ekspozitsiya'], answer: 3, why: 'Ekspozitsiya — syujet elementi.' },
+      { items: ['bog‘ — gul — bulbul', 'osmon — oy — yulduz', 'ko‘z — kiprik — qosh', 'kun — tun — oq'], answer: 3, why: 'Qolganlari tanosib; «kun — tun» esa tazod (zid so‘zlar).' },
+      { items: ['Farhod', 'Ya’qub', 'Temur', 'kiprik'], answer: 3, why: 'Kiprik — tanosib so‘zi; qolganlari talmehda tilga olinadigan shaxslar.' },
+    ],
+    debate: [
+      { claim: 'Zamonaviy she’rda ham mumtoz san’atlar kerak.', pro: 'Ular she’rni boy va ta’sirli qiladi.', con: 'Zamonaviy she’r erkin, sodda bo‘lishi kerak; san’atlar sun’iylik beradi.' },
+      { claim: 'Shoirni nimani emas, qanday tasvirlaganiga qarab baholash kerak.', pro: 'Mahorat — shakl va ifodada.', con: 'Mavzu va g‘oya ham juda muhim; bo‘sh mazmunni chiroyli shakl qutqarmaydi.' },
+    ],
+    creative: [
+      { task: 'Tanosib asosida 4 ta so‘zdan iborat «so‘z oilasi» tuzing (masalan, maktab — doska — bo‘r — ...) va ular bilan bitta gap ayting.', time: 90 },
+      { task: 'Bir so‘zni takrir qilib (3 marta) sinfingiz haqida shior tuzing.', time: 60 },
+      { task: 'To‘rt misrali kichik she’r yozing: birinchi misra oxirida qaytarilsin (radd ul-matla).', time: 120 },
+    ],
+  },
+
+  /* ===================== 28 ===================== */
+  {
+    id: 'adab-dode-1',
+    source: 'II chorak • 28-dars • 117–119-betlar',
+    title: 'Alfons Dode. «So‘nggi saboq» hikoyasi',
+    short: 'Yozuvchi, tarixiy sharoit va so‘nggi fransuz tili darsining boshlanishi',
+    lesson: [
+      {
+        title: 'Alfons Dode (1840–1897)',
+        text: 'Nasriy asarlari bilan mashhur fransuz yozuvchisi. 1840-yili Nim shahrida tug‘ilgan, o‘rta maktabni Lionda tamomlagan. Ijodni she’rlardan boshlagan, ammo nasri bilan shuhrat qozongan.',
+        list: [
+          'Maktabda o‘qituvchilik qilgan, jurnalistikaga qiziqqan.',
+          'Yozuvchi bo‘lish maqsadida Parijga ko‘chib kelgan.',
+          '1866-yilgi «Tegirmonimdan maktublar» uni dunyoga tanitgan.',
+          'Boshqa asarlari: «Arlezianka», «Borliq bilan kurash», «Surgundagi qirollar».',
+          '1897-yili Parijda vafot etgan.',
+        ],
+      },
+      {
+        title: 'Tarixiy sharoit',
+        text: '1870-yilgi Fransiya — Germaniya urushidan so‘ng Elzas va Lotaringiya o‘lkalari Prussiya (hozirgi Germaniya) qo‘l ostiga o‘tadi. Ko‘p cheklovlar kiritiladi.',
+        rule: 'Berlindan buyruq keladi: Elzas va Lotaringiya maktablarida darslar faqat nemis tilida o‘tiladi. Fransuz tilida o‘qitish taqiqlanadi.',
+        ruleLabel: 'Hikoya asosi',
+      },
+      {
+        title: 'Kechikkan Frans',
+        text: 'Hikoya elzaslik bola Frans tilidan aytiladi. U o‘sha kuni maktabga kech qoladi, sifatdosh qoidalarini yodlamagan. Bir zum darsga kirmay sayr qilish fikri keladi, lekin o‘zini qo‘lga olib maktabga yuguradi.',
+        list: [
+          'Meriya oldidagi e’lonlar taxtasi atrofida odamlar to‘planib turibdi.',
+          'Temirchi Vaxter: «Shoshma, bolakay, ulgurasan o‘sha maktabingga», deydi.',
+          'Odatda shovqinli sinf bugun yakshanba tongidek jimjit.',
+        ],
+        note: 'Meriya — shahar hokimining boshqaruv organi. Rekvizitsiya — mulkni majburiy davlat ixtiyoriga olish.',
+      },
+      {
+        title: 'G‘alati sinf',
+        table: {
+          head: ['Detal', 'Ma’nosi'],
+          rows: [
+            ['Mosye Amel Fransni muloyim kutib oladi', 'Bugun tanbeh kuni emas — vidolashuv kuni'],
+            ['Muallimning yashil syurtuk va qora ipak qalpoq kiyishi', 'Faqat inspektor kelganda kiyadigan bayramona libos — so‘nggi darsga hurmat'],
+            ['Orqa partalarda qariya Xauzer, sobiq mer, pochtachi', 'Xalq ham ona tili bilan xayrlashgani kelgan'],
+            ['Xauzerning tizzasidagi titilgan eski alifbe', 'O‘qishni vaqtida qadrlamaganlik armoni'],
+          ],
+        },
+      },
+      {
+        title: 'Larzaga solgan xabar',
+        text: 'Mosye Amel e’lon qiladi: bugun fransuz tilidan so‘nggi dars, ertaga yangi o‘qituvchi keladi. Frans larzaga tushadi: endi yozishni yaxshi o‘rganolmaydi!',
+        rule: 'Frans qush uyasi axtarib, muz ustida sirpanib yo‘qotgan vaqtiga achinadi. Zerikarli kitoblar endi unga qadrdon do‘stlardek tuyuladi.',
+        ruleLabel: 'Burilish',
+      },
+      {
+        title: 'Muhokama',
+        list: [
+          'Temirchi Vaxterning bolakayni chaqirishdan maqsadi nima edi?',
+          'Mosye Amel nega bugun maxsus kiyimida keldi?',
+          'Darsga qishloq odamlarining kelib o‘tirishi nimadan dalolat beradi?',
+          'Fransning vaqt qadri haqidagi fikrlaridan qanday xulosa chiqardingiz?',
+        ],
+      },
+    ],
+    pairs: [
+      ['Alfons Dode', 'Fransuz yozuvchisi'],
+      ['Nim', 'Dode tug‘ilgan shahar'],
+      ['«Tegirmonimdan maktublar»', 'Dodeni dunyoga tanitgan asar'],
+      ['Frans', 'Hikoyachi bola'],
+      ['Mosye Amel', 'Muallim'],
+      ['Vaxter', 'Temirchi'],
+      ['Xauzer', 'Eski alifbe ko‘targan qariya'],
+      ['Elzas', 'Hikoya voqealari kechgan o‘lka'],
+    ],
+    quiz: [
+      { q: 'Alfons Dode qaysi mamlakat yozuvchisi?', options: ['Fransiya', 'Germaniya', 'Rossiya', 'Italiya'], answer: 0 },
+      { q: 'Dodeni dunyoga tanitgan asar?', options: ['«Tegirmonimdan maktublar»', '«Kichkina shahzoda»', '«Oq kema»', '«Xameleon»'], answer: 0 },
+      { q: 'Elzas va Lotaringiya qaysi urushdan keyin nemislar qo‘liga o‘tadi?', options: ['1870-yilgi Fransiya—Germaniya urushi', 'Ikkinchi jahon urushi', 'Yuz yillik urush', 'Napoleon urushlari'], answer: 0 },
+      { q: 'Frans qaysi mavzuni yodlamagan edi?', options: ['sifatdoshlar', 'ot', 'fe’l zamonlari', 'olmosh'], answer: 0 },
+      { q: 'Fransni ko‘chada kim chaqiradi?', options: ['temirchi Vaxter', 'mosye Amel', 'Xauzer', 'pochtachi'], answer: 0 },
+      { q: 'Mosye Amel nega bayramona kiyingan?', options: ['so‘nggi fransuz tili darsi uchun', 'to‘yga borgani uchun', 'inspektor kelgani uchun', 'bayram bo‘lgani uchun'], answer: 0 },
+      { q: 'Orqa partada o‘tirmagan kim?', options: ['nemis askari', 'qariya Xauzer', 'sobiq mer', 'pochtachi'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Odatdagi kun', 'So‘nggi saboq kuni'],
+      items: [
+        { text: 'shovqinli sinf', cat: 0 }, { text: 'yakshanba tongidek jimjitlik', cat: 1 },
+        { text: 'chizg‘ich bilan tinchlantirish', cat: 0 }, { text: 'muloyim «Kira qol, Frans»', cat: 1 },
+        { text: 'bo‘sh orqa partalar', cat: 0 }, { text: 'qishloq odamlari darsda', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Hikoya qanday tarixiy voqeaga asoslangan?', a: '1870-yilgi urushdan so‘ng Elzas va Lotaringiyada fransuz tilida o‘qitish taqiqlangani.' },
+      { q: 'Nega sinf jimjit edi?', a: 'Hamma so‘nggi fransuz tili darsi ekanidan xabardor edi, kayfiyat g‘amgin edi.' },
+      { q: 'Xauzerning eski alifbesi nimani anglatadi?', a: 'Vaqtida o‘qimagani uchun armonni va ona tiliga muhabbatni.' },
+      { q: 'Xabardan keyin Fransning kitoblarga munosabati qanday o‘zgaradi?', a: 'Zerikarli kitoblar unga qadrdon do‘stlardek tuyuladi.' },
+      { q: 'Muallim nega Fransni urishmadi?', a: 'Bugun vidolashuv kuni edi, u shogirdlariga mehr bilan qaradi.' },
+    ],
+    sequences: [
+      {
+        title: 'Hikoya boshlanishini tartiblang',
+        items: [
+          'Frans maktabga kech qoladi',
+          'Sayr qilish fikridan qaytib maktabga yuguradi',
+          'Meriya oldida e’lonlarni o‘qiyotgan odamlarni ko‘radi',
+          'Jimjit sinfga kiradi',
+          'Mosye Amelning bayramona kiyimini ko‘radi',
+          'Muallim so‘nggi dars ekanini e’lon qiladi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['Frans', 'mosye Amel', 'Vaxter', 'Hofiz Ko‘ykiy'], answer: 3, why: 'Hofiz Ko‘ykiy — «Saodat sohili» qahramoni.' },
+      { items: ['«Tegirmonimdan maktublar»', '«Arlezianka»', '«Surgundagi qirollar»', '«Insonlar sayyorasi»'], answer: 3, why: '«Insonlar sayyorasi» — Ekzyuperi asari.' },
+      { items: ['Elzas', 'Lotaringiya', 'Parij', 'Issiqko‘l'], answer: 3, why: 'Issiqko‘l — «Oq kema»dagi joy.' },
+    ],
+    debate: [
+      { claim: 'Frans darsga kech qolgani uchun jazolanishi kerak edi.', pro: 'Intizom hamma uchun bir xil bo‘lishi kerak.', con: 'Uning eng katta jazosi — ona tilini endi o‘rganolmasligi.' },
+      { claim: 'Darsni qadrlash uchun uni yo‘qotish kerak bo‘ladi.', pro: 'Frans faqat oxirgi kuni darsni qadrladi.', con: 'Aqlli inson yo‘qotmasdan oldin qadrini biladi.' },
+    ],
+    creative: [
+      { task: 'Agar ertadan ona tilingizda dars bo‘lmasa, bugun eng avval nimani o‘rganib qolardingiz? 3 ta narsa.', time: 90 },
+      { task: 'Meriya oldidagi e’lon matnini o‘ylab toping va uni rasmiy ohangda o‘qib bering.', time: 90 },
+      { task: 'Mosye Amel bayramona kiyimida sinfga kirgan lahzani 20 soniyalik pantomima qilib ko‘rsating.', time: 60 },
+    ],
+  },
+
+  /* ===================== 29 ===================== */
+  {
+    id: 'adab-dode-2',
+    source: 'II chorak • 29-dars • 120–121-betlar',
+    title: '«So‘nggi saboq»: matn ustida ishlash',
+    short: 'Mosye Amelning nutqi, «Yashasin Fransiya!» va ona tili qadri',
+    lesson: [
+      {
+        title: 'Muallimning tanqidiy nutqi',
+        text: 'Frans sifatdosh qoidalarini aytolmay chalkashtirib yuboradi. Mosye Amel uni koyimaydi: «Shundoq ham jazolanganingni bilsang kerak», deydi.',
+        list: [
+          '«Ertaga yodlayman» deb o‘qishni doim ortga surish — elzasliklar fojiasi.',
+          'O‘zini fransuz deb bilib, ona tilida to‘g‘ri gapira va yoza olmaslik.',
+          'Ota-onalar bolalarni maktab o‘rniga dalaga, fabrikaga ishlashga yuborgan.',
+          'Muallim o‘zini ham ayblaydi: bolalarga gul sug‘ortirgan, baliq oviga borganda darsni qoldirgan.',
+        ],
+        rule: 'Mustamlaka xalq faqat o‘z ona tili yordamida yorug‘likka chiqa oladi. Til — xalqning qal’asi.',
+        ruleLabel: 'Mosye Amelning asosiy fikri',
+      },
+      {
+        title: 'Eng yaxshi dars',
+        text: 'Grammatika darsini Frans hayratlanarli darajada yaxshi tushunadi. Muallim ketishdan oldin bor bilimini qoldirmoqchidek edi. Yozuv mashqi uchun doskaga husnixat bilan «Fransiya, Elzas. Fransiya, Elzas» deb yozadi.',
+        note: 'Bu so‘zlar — vatan va o‘lka ajralmasligining ramzi. Har bir o‘quvchi ularni yozar ekan, vatanini yuragiga muhrlaydi.',
+      },
+      {
+        title: 'Kaptarlar va qirq yil',
+        list: [
+          'Maktab tomida kaptarlar g‘uv-g‘uvlaydi: «Ularni ham nemischa kuylashga majburlasharmikan?» — achchiq kinoya.',
+          'Mosye Amel qirq yillik umrini shu maktabga bag‘ishlagan: partalar yaltirab ketgan, kashtanlar osmonga bo‘y cho‘zgan.',
+          'U har bir narsaga xuddi boshqa ko‘rmaydigandek sinchiklab qaraydi.',
+          'Keksa Xauzer ko‘zoynagini taqib, alifbeni bolalar bilan birga hijjalab o‘qiydi.',
+        ],
+      },
+      {
+        title: 'Yakun: «Yashasin Fransiya!»',
+        text: 'Cherkov soati tush paytini chaladi, deraza ostidan pruss askarlarining trubalari jaranglaydi. Mosye Amel oqarib ketadi, gapira olmaydi. U bo‘r bilan kuchining boricha katta harflarda yozadi: «Yashasin Fransiya!»',
+        rule: 'Keyin boshini egib qotib qoladi va qo‘li bilan ishora qiladi: «Endi tamom... Ketinglar!» — so‘z bilan aytib bo‘lmaydigan alam.',
+        ruleLabel: 'Kulminatsiya va yechim',
+        note: 'Hikoyani o‘zbek tiliga Saidjalol Saidmurodov tarjima qilgan.',
+      },
+      {
+        title: 'Syujet elementlari',
+        table: {
+          head: ['Element', '«So‘nggi saboq»dan'],
+          rows: [
+            ['Ekspozitsiya', 'Elzasdagi qishloq, kech qolgan Frans, e’lonlar taxtasi'],
+            ['Tugun', 'So‘nggi fransuz tili darsi ekani haqidagi xabar'],
+            ['Voqealar rivoji', 'Fransning javob berolmasligi, muallimning nutqi, grammatika va yozuv'],
+            ['Kulminatsiya', 'Pruss trubalari va «Yashasin Fransiya!» yozuvi'],
+            ['Yechim', '«Endi tamom... Ketinglar!»'],
+          ],
+        },
+      },
+      {
+        title: 'Saboqlar jadvali',
+        table: {
+          head: ['Hikoyadan saboq', 'Hayotdan saboq', 'Ahamiyati'],
+          rows: [
+            ['O‘qishni ertaga qoldirma', 'Bugungi vazifani bugun bajar', 'Vaqt qaytmaydi'],
+            ['Ona tilini asra', 'Ona tilida to‘g‘ri gapir va yoz', 'Til — millat ruhi'],
+            ['Ustozni qadrla', 'O‘qituvchiga minnatdor bo‘l', 'Bilim ustozdan keladi'],
+          ],
+        },
+        note: 'Bog‘lang: Erkin Vohidovning «Ona tilim o‘lmaydi», Abdulla Oripovning «Ona tilim», Muhammad Yusufning «Kechir meni, ona tilim!» she’rlarini toping va hikoya bilan qiyoslang.',
+      },
+    ],
+    pairs: [
+      ['«Fransiya, Elzas»', 'Doskaga yozilgan husnixat namunasi'],
+      ['«Yashasin Fransiya!»', 'Muallimning so‘nggi yozuvi'],
+      ['Qirq yil', 'Mosye Amel maktabda ishlagan muddat'],
+      ['Kaptarlar', 'Achchiq kinoya: ular ham nemischa kuylarmikan?'],
+      ['Pruss trubalari', 'Bosqinchilar ovozi'],
+      ['Saidjalol Saidmurodov', 'Tarjimon'],
+      ['Sifatdosh', 'Frans aytolmagan qoida'],
+    ],
+    quiz: [
+      { q: 'Mosye Amel elzasliklarning fojiasini nimada ko‘radi?', options: ['o‘qishni doim ortga surishda', 'kambag‘allikda', 'urushda', 'kasallikda'], answer: 0 },
+      { q: 'Muallim doskaga husnixat bilan nima yozadi?', options: ['Fransiya, Elzas', 'Xayr, bolalar', 'Sifatdosh', 'Nemis tili'], answer: 0 },
+      { q: 'Mosye Amel maktabda necha yil ishlagan?', options: ['qirq', 'o‘n', 'yigirma', 'ellik'], answer: 0 },
+      { q: 'Muallimning eng so‘nggi yozuvi?', options: ['Yashasin Fransiya!', 'Ketinglar!', 'Elzas', 'Rahmat'], answer: 0 },
+      { q: 'Muallim kimlarni ham ayblaydi?', options: ['ota-onalarni va o‘zini', 'faqat nemislarni', 'faqat Fransni', 'hech kimni'], answer: 0 },
+      { q: 'Muallimga ko‘ra, mustamlaka xalq nima yordamida yorug‘likka chiqadi?', options: ['ona tili', 'boylik', 'qurol', 'savdo'], answer: 0 },
+      { q: 'Hikoyaning kulminatsiyasi?', options: ['«Yashasin Fransiya!» yozuvi', 'Fransning kech qolishi', 'e’lonlar taxtasi', 'grammatika darsi'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Muallim o‘zini ayblaydi', 'Muallim boshqalarni ayblaydi'],
+      items: [
+        { text: 'gul sug‘ortirgani', cat: 0 }, { text: 'ota-onalar bolani dalaga yuborgani', cat: 1 },
+        { text: 'baliq oviga borib darsni qoldirgani', cat: 0 }, { text: 'Fransning «ertaga yodlayman»i', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: '«Men seni koyimayman, shundoq ham jazolanganingni bilsang kerak» deganda muallim nimani nazarda tutgan?', a: 'Ona tilini endi o‘rganolmaslik — eng katta jazo ekanini.' },
+      { q: '«Fransiya, Elzas» yozuvidan nimani uqish mumkin?', a: 'Elzas Fransiyadan ajralmas, vatan o‘quvchilar qalbida qolishi kerak.' },
+      { q: 'Nega muallim «Endi tamom... Ketinglar!» deb ishora qildi?', a: 'Alamdan gapira olmadi; ona tilida dars berish imkoni tugadi.' },
+      { q: 'Nega asar «So‘nggi saboq» deb nomlangan?', a: 'Bu fransuz tilidagi so‘nggi dars va hayotiy eng katta saboq — ona tili va vaqt qadri.' },
+      { q: 'Kaptarlar haqidagi o‘y qanday san’at?', a: 'Kinoya: bosqinchilar tabiatni ham bo‘ysundirmoqchidek.' },
+    ],
+    sequences: [
+      {
+        title: 'So‘nggi dars voqealarini tartiblang',
+        items: [
+          'Frans qoidani aytolmay chalkashadi',
+          'Mosye Amel elzasliklar fojiasi haqida gapiradi',
+          'Grammatika darsi o‘tiladi',
+          'Doskaga «Fransiya, Elzas» yoziladi',
+          'Pruss askarlarining trubalari jaranglaydi',
+          'Muallim «Yashasin Fransiya!» deb yozadi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['ona tili', 'vatan', 'ustoz', 'trubalar'], answer: 3, why: 'Trubalar — bosqinchilar ramzi; qolganlari hikoya ulug‘lagan qadriyatlar.' },
+      { items: ['«Ona tilim o‘lmaydi»', '«Ona tilim»', '«Kechir meni, ona tilim!»', '«Kuz»'], answer: 3, why: '«Kuz» ona tili mavzusida emas.' },
+      { items: ['ekspozitsiya', 'tugun', 'kulminatsiya', 'matla'], answer: 3, why: 'Matla — g‘azalning ilk bayti.' },
+    ],
+    debate: [
+      { claim: 'Tilni yo‘qotgan xalq o‘zligini yo‘qotadi.', pro: 'Muallim aytganidek, til — qamoqdagi xalqning kaliti.', con: 'Xalq madaniyati, tarixi va an’analari bilan ham o‘zligini saqlay oladi.' },
+      { claim: 'Mosye Amel o‘zini ayblab to‘g‘ri qildi.', pro: 'Haqiqiy ustoz o‘z xatosini tan oladi.', con: 'Asosiy aybdor — bosqinchilar, uning gunohi kichik.' },
+    ],
+    creative: [
+      { task: 'Agar siz mosye Amel bo‘lsangiz, doskaga qaysi so‘zlarni yozardingiz? Nega?', time: 60 },
+      { task: 'Ona tilingizdagi eng sevimli 3 ta so‘zni ayting va nega yoqishini tushuntiring.', time: 90 },
+      { task: 'Frans 20 yildan keyin shu darsni eslab yozgan xatining birinchi gapini o‘ylab toping.', time: 90 },
+    ],
+  },
+
+  /* ===================== 30 ===================== */
+  {
+    id: 'adab-lab-2',
+    source: 'II chorak • 30-dars • 122-bet',
+    title: 'Adabiy laboratoriya: kitob muqovasi',
+    short: 'Guruhlarda o‘rganilgan asarlar uchun muqova yaratish va taqdimot',
+    lesson: [
+      {
+        title: 'Muqova — kitobning yuzi',
+        text: 'Kitob muqovasi faqat himoya o‘rami emas. U kitobxonga asar mazmuni va g‘oyasini tasavvur qilishga yordam beradi, kitob va o‘quvchi o‘rtasida muhim aloqa vositasi bo‘ladi.',
+        list: [
+          'Asar haqidagi dastlabki tasavvurni shakllantiradi.',
+          'Rang va tasvirlar orqali asar kayfiyatini beradi.',
+          'Asar yozilgan davrning an’analari va muammolari haqida ma’lumot berishi mumkin.',
+          'Ko‘pchilik kitobni muqovasiga qarab tanlaydi, ayniqsa yoshlar.',
+        ],
+      },
+      {
+        title: 'Muqova turlari',
+        table: {
+          head: ['Adabiyot turi', 'Muqovaga xos'],
+          rows: [
+            ['Mumtoz adabiyot', 'Jiddiy, sodda bezaklar, naqsh va hattotlik uslubi'],
+            ['Zamonaviy adabiyot', 'Rang-barang, ba’zan abstrakt yoki ramziy tasvirlar'],
+            ['Bolalar adabiyoti', 'Yorqin ranglar, qahramon rasmi'],
+          ],
+        },
+        note: 'Muqovadagi har bir detal — shrift, rang, tasvir — katta ma’no tashiydi.',
+      },
+      {
+        title: 'Laboratoriya topshirig‘i',
+        text: 'Guruhlarga bo‘lining. Har bir guruh bobda o‘rganilgan asarlardan biri uchun muqova tayyorlaydi.',
+        list: [
+          'Muqova e’tiborni jalb qilsin va kitobni o‘qishga undasin.',
+          'Asar janri haqida ma’lumot bersin.',
+          'Mavzuni ochadigan sifatli illyustratsiya yoki bezak ishlatilsin.',
+          'Asar yozilgan davrga xos adabiy, ijtimoiy an’analar aks etsin.',
+          'Asarni bilmagan kitobxonda dastlabki tasavvur uyg‘otsin.',
+        ],
+      },
+      {
+        title: 'Qaysi asarni tanlash mumkin?',
+        table: {
+          head: ['Asar', 'Muqova uchun g‘oya'],
+          rows: [
+            ['«Oq kema»', 'Ko‘l ustida oq kema, durbin, shoxli bug‘u silueti'],
+            ['«Saodat sohili»', 'Muz qoplagan dengiz, qirg‘oqdagi yorug‘lik, naqshli hoshiya'],
+            ['«So‘nggi saboq»', 'Doskadagi «Yashasin Fransiya!», bo‘r, kaptarlar'],
+            ['Lutfiy, Navoiy g‘azallari', 'Mumtoz naqsh, hattotlik, gul va bulbul'],
+          ],
+        },
+      },
+      {
+        title: 'Baholash mezonlari',
+        table: {
+          head: ['Mezon', 'Savol'],
+          rows: [
+            ['Jozibadorlik', 'Kitobni qo‘lga olgingiz keladimi?'],
+            ['Mazmunga moslik', 'Muqova asar g‘oyasini ochadimi?'],
+            ['Janr belgisi', 'Janr tushunarli bo‘ldimi?'],
+            ['Davr ruhi', 'Asar davri sezilyaptimi?'],
+            ['Himoya', 'Guruh tanlovini asoslab bera oldimi?'],
+          ],
+        },
+      },
+    ],
+    pairs: [
+      ['Muqova', 'Kitobning yuzi va himoyasi'],
+      ['Illyustratsiya', 'Asar mazmunini ochuvchi rasm'],
+      ['Shrift', 'Harflar shakli'],
+      ['Mumtoz muqova', 'Jiddiy, sodda bezaklar'],
+      ['Zamonaviy muqova', 'Rang-barang, ramziy tasvirlar'],
+      ['Janr belgisi', 'Asar turi haqida ma’lumot'],
+    ],
+    quiz: [
+      { q: 'Muqovaning vazifasi nima?', options: ['himoya va asar haqida dastlabki tasavvur berish', 'faqat bezak', 'faqat narx ko‘rsatish', 'hech qanday'], answer: 0 },
+      { q: 'Mumtoz adabiyot muqovalariga nima xos?', options: ['jiddiy, sodda bezaklar', 'abstrakt rasmlar', 'multfilm qahramonlari', 'neon ranglar'], answer: 0 },
+      { q: 'Zamonaviy adabiyot muqovalarida nima ustun?', options: ['rang-barang, ramziy tasvirlar', 'faqat matn', 'faqat oq rang', 'hattotlik'], answer: 0 },
+      { q: 'Muqovadagi qaysi detal ham ma’no tashiydi?', options: ['shrift va rang', 'faqat sarlavha', 'faqat narx', 'hech biri'], answer: 0 },
+      { q: 'Muqova kimga ayniqsa ta’sir qiladi?', options: ['yoshlarga', 'faqat noshirlarga', 'faqat yozuvchilarga', 'hech kimga'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Yaxshi muqova', 'Zaif muqova'],
+      items: [
+        { text: 'asar g‘oyasini ochadi', cat: 0 }, { text: 'mazmunga aloqasiz rasm', cat: 1 },
+        { text: 'janr tushunarli', cat: 0 }, { text: 'o‘qib bo‘lmaydigan shrift', cat: 1 },
+        { text: 'davr ruhi sezilgan', cat: 0 }, { text: 'tasodifiy ranglar', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Muqova nima uchun muhim?', a: 'Kitobxonda asar haqida dastlabki tasavvur uyg‘otadi va kitobni o‘qishga undaydi.' },
+      { q: 'Muqova tayyorlashda nimalarga e’tibor berish kerak?', a: 'Jozibadorlik, janr, mavzuga mos illyustratsiya, davr an’analari, dastlabki tasavvur.' },
+      { q: 'Mumtoz va zamonaviy muqovalarning farqi nima?', a: 'Mumtoz — jiddiy va sodda bezakli, zamonaviy — rang-barang va ramziy.' },
+      { q: '«Oq kema» muqovasi uchun qanday detallar mos?', a: 'Oq kema, Issiqko‘l, durbin, shoxli bug‘u.' },
+    ],
+    odd: [
+      { items: ['shrift', 'rang', 'illyustratsiya', 'sahifa raqami'], answer: 3, why: 'Sahifa raqami muqova dizayni elementi emas.' },
+      { items: ['«Oq kema» — bug‘u', '«So‘nggi saboq» — doska', '«Saodat sohili» — muz dengiz', '«Oq kema» — qilich'], answer: 3, why: 'Qilich «Oq kema» mazmuniga mos emas.' },
+      { items: ['jozibadorlik', 'janr belgisi', 'davr ruhi', 'kitob og‘irligi'], answer: 3, why: 'Kitob og‘irligi baholash mezoni emas.' },
+    ],
+    debate: [
+      { claim: 'Kitobni muqovasiga qarab tanlash noto‘g‘ri.', pro: 'Mazmun muhim, chiroyli muqova yomon kitobni yashirishi mumkin.', con: 'Yaxshi muqova asar ruhini beradi va o‘qishga undaydi.' },
+      { claim: 'Mumtoz asarlarga zamonaviy, yorqin muqova qilish kerak.', pro: 'Yoshlarni ko‘proq jalb qiladi.', con: 'Asar ruhi va davr uslubi buziladi.' },
+    ],
+    creative: [
+      { task: 'O‘rganilgan asarlardan biri uchun muqovani 2 daqiqada doskaga eskiz qiling, sinf asarni topsin.', time: 120 },
+      { task: 'Kitobning orqa muqovasi uchun 2 gaplik qiziqarli annotatsiya yozing.', time: 90 },
+      { task: '«Saodat sohili» uchun 3 ta rang tanlang va har birining ma’nosini tushuntiring.', time: 60 },
+    ],
+  },
+
+  /* ===================== 33 ===================== */
+  {
+    id: 'adab-fitrat-1',
+    source: 'III chorak • 33-dars • 123–126-betlar',
+    title: 'Abdurauf Fitrat she’rlari. Nazariy ma’lumot: talmeh',
+    short: 'Jadid ma’rifatparvari Fitrat, jadidchilik harakati va talmeh san’ati',
+    lesson: [
+      {
+        title: 'Abdurauf Fitrat (1886–1938)',
+        text: 'Davlat arbobi, shoir, olim, nosir, dramaturg, ma’rifatparvar. 1886-yili Buxoroda tug‘ilgan. Maktab, Mir Arab madrasasi, so‘ng Turkiyaning Istanbul universitetida tahsil olgan.',
+        list: [
+          'Turkistondagi jadidchilik harakatining taniqli vakili.',
+          '«Turon», «Buxoroyi sharif», «Oina» gazeta-jurnallarini tashkil etishga hissa qo‘shgan.',
+          '«Chig‘atoy gurungi» tashkilotiga asos solgan va rahbarlik qilgan.',
+          'Buxoroda musiqa maktabini ochgan.',
+          '1938-yil 4-oktyabrda «millatchi», «xalq dushmani» sifatida otib tashlangan.',
+        ],
+        note: 'Fitrat — shoirning taxallusi, «tug‘ma iste’dod» ma’nosini anglatadi.',
+      },
+      {
+        title: 'Tarixiy sharoit va jadidlar',
+        text: 'XIX asrning 60-yillarida Turkistonda Xiva va Qo‘qon xonliklari, Buxoro amirligi bo‘lgan. O‘zaro kurashlar o‘lkaning rus imperiyasi tomonidan bosib olinishiga zamin yaratdi.',
+        rule: 'Jadid (arabcha — «yangi») — millatni zalolatdan va mustamlakachilikdan qutqarish uchun milliy ozodlik harakatini boshlagan ziyolilar. Ular yangi usul maktablari ochish, yoshlarni xorijga o‘qishga yuborish, gazeta-jurnal chiqarish orqali mustaqil davlat qurishni maqsad qilgan.',
+        ruleLabel: 'Jadidchilik',
+        examples: ['Mahmudxo‘ja Behbudiy', 'Abdurauf Fitrat', 'Abdulla Qodiriy', 'Cho‘lpon'],
+      },
+      {
+        title: 'Jadidlar taqdiri',
+        text: 'Ular dastlab o‘zlarini «taraqqiyparvarlar», keyin «jadidlar» deb atashgan. Siyosat, ijod va ijtimoiy hayotda ko‘p maqsadlariga erishgan, ammo «aksilinqilobchi», «millatchi» deb qatl etilgan.',
+        note: 'Savol: nega jadidlar ozodlik uchun avval xalqni savodli qilish zarur deb hisoblagan?',
+      },
+      {
+        title: '«Yurt qayg‘usi»',
+        poem: {
+          lines: [
+            'Onam! Seni qutqarmoq uchun jonmi kerakdir?',
+            'Nomusmi, vijdon bila imonmi kerakdir?',
+            'Temur bila Chingiz qoni toshdi tomrimizdan,',
+            'Aytgil! Seni qutqarmoq uchun qonmi kerakdir?',
+          ],
+          author: 'Abdurauf Fitrat',
+        },
+        text: 'Shoir Vatanga ona deb murojaat qiladi va uni qutqarish uchun nima kerakligini so‘raydi: jonmi, nomusmi, qonmi? She’r so‘roq-undov ohangida, da’vatkor ruhda.',
+      },
+      {
+        title: 'Talmeh san’ati',
+        rule: 'Talmeh (arabcha — «nazar solmoq») — muallif mashhur tarixiy shaxslar, joy nomlari, afsonaviy qahramonlarga ishora qilish orqali fikrni ta’sirli ifodalaydi, ular orqali hayotiy haqiqatlarni tasvirlaydi.',
+        ruleLabel: 'Nazariy ma’lumot',
+        table: {
+          head: ['Talmeh', 'Qayerda', 'Vazifasi'],
+          rows: [
+            ['Temur va Chingiz', 'Fitrat, «Yurt qayg‘usi»', 'Ajdodlar qudratini eslatib, yoshlarni uyg‘otish'],
+            ['Turon', 'Fitrat, «Yurt qayg‘usi»', 'Buyuk o‘tmish va umumturkiy vatan timsoli'],
+            ['Ya’qub va Yusuf', 'Lutfiy, «Sensan sevarim»', 'Ayriliq iztirobi'],
+            ['Farhod (ko‘hkan)', 'Navoiy, «Qaro ko‘zum»', 'Fidoyi ishq'],
+          ],
+        },
+      },
+      {
+        title: 'Muhokama',
+        list: [
+          '«Yurt qayg‘usi»da qanday kayfiyat ustun? Qaysi so‘zlar uni yuzaga chiqargan?',
+          'Nega muallif she’rni onaga murojaat bilan boshlagan? Ona va yurt o‘rtasida qanday bog‘liqlik bor?',
+          'Bu she’r Vatanni ulug‘lovchi boshqa she’rlardan nimasi bilan farq qiladi?',
+          'She’rdan Fitrat shaxsiga xos qanday xususiyatlarni sezish mumkin?',
+        ],
+      },
+    ],
+    pairs: [
+      ['Fitrat', '«Tug‘ma iste’dod»'],
+      ['Jadid', '«Yangi»'],
+      ['Talmeh', '«Nazar solmoq»'],
+      ['Mir Arab', 'Fitrat o‘qigan madrasa'],
+      ['Istanbul', 'Fitrat o‘qigan universitet shahri'],
+      ['«Chig‘atoy gurungi»', 'Fitrat asos solgan tashkilot'],
+      ['Behbudiy', 'Jadidchilik yetakchisi'],
+      ['Temur va Chingiz', '«Yurt qayg‘usi»dagi talmeh'],
+    ],
+    quiz: [
+      { q: 'Fitrat qaysi yili tug‘ilgan?', options: ['1886', '1903', '1860', '1928'], answer: 0 },
+      { q: 'Fitrat qaysi shaharda tug‘ilgan?', options: ['Buxoro', 'Toshkent', 'Samarqand', 'Andijon'], answer: 0 },
+      { q: '«Jadid» so‘zining ma’nosi?', options: ['yangi', 'eski', 'ozod', 'ma’rifat'], answer: 0 },
+      { q: '«Fitrat» taxallusi nimani anglatadi?', options: ['tug‘ma iste’dod', 'ozodlik', 'nur', 'yulduz'], answer: 0 },
+      { q: '«Yurt qayg‘usi»da shoir Vatanga qanday murojaat qiladi?', options: ['Onam!', 'Yorim!', 'Do‘stim!', 'Ustozim!'], answer: 0 },
+      { q: '«Temur bila Chingiz qoni toshdi tomrimizdan» qaysi san’at?', options: ['talmeh', 'tazod', 'tanosib', 'takrir'], answer: 0 },
+      { q: 'Fitrat asos solgan tashkilot?', options: ['«Chig‘atoy gurungi»', '«Turon»', '«Oina»', '«Sho‘royi Islomiya»'], answer: 0 },
+      { q: 'Fitrat qachon qatl etilgan?', options: ['1938-yil', '1918-yil', '1966-yil', '1945-yil'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Jadidlar maqsadi', 'Mustamlakachilar maqsadi'],
+      items: [
+        { text: 'yangi usul maktablari', cat: 0 }, { text: 'millatni ruslashtirish', cat: 1 },
+        { text: 'yoshlarni xorijga o‘qitish', cat: 0 }, { text: 'huquqlarni cheklash', cat: 1 },
+        { text: 'gazeta-jurnal chiqarish', cat: 0 }, { text: 'mahalliy maktablarni yopish', cat: 1 },
+        { text: 'mustaqil davlat qurish', cat: 0 }, { text: 'rus-tuzem maktablari', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Jadidlar ozodlikka qanday yo‘l bilan erishmoqchi bo‘lgan?', a: 'Yangi usul maktablari, yoshlarni xorijda o‘qitish, matbuot va xalq ongini yuksaltirish orqali.' },
+      { q: 'Talmehga ta’rif bering.', a: 'Mashhur tarixiy shaxs, joy yoki afsonaga ishora qilib, fikrni ta’sirli ifodalash san’ati.' },
+      { q: 'Nega «Yurt qayg‘usi» onaga murojaat bilan boshlanadi?', a: 'Vatan — ona; uning qayg‘usi farzand uchun eng yaqin dard.' },
+      { q: 'Jadidchilikning to‘rt yetakchisini ayting.', a: 'Behbudiy, Fitrat, Abdulla Qodiriy, Cho‘lpon.' },
+      { q: 'Fitrat qaysi gazeta-jurnallarni tashkil etishga hissa qo‘shgan?', a: '«Turon», «Buxoroyi sharif», «Oina».' },
+    ],
+    sequences: [
+      {
+        title: 'Tarixiy voqealar ketma-ketligi',
+        items: [
+          'Turkistonda xonliklar o‘zaro kurashadi',
+          'Rus imperiyasi o‘lkani bosib oladi',
+          'Rus-tuzem maktablari ochiladi',
+          'Jadidlar milliy ozodlik harakatini boshlaydi',
+          'Jadidlar «millatchi» deb qatl etiladi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['Behbudiy', 'Fitrat', 'Cho‘lpon', 'Lutfiy'], answer: 3, why: 'Lutfiy — XV asr shoiri; qolganlari jadidlar.' },
+      { items: ['«Turon»', '«Oina»', '«Buxoroyi sharif»', '«Xamsa»'], answer: 3, why: '«Xamsa» — Navoiy dostonlari; qolganlari jadid matbuoti.' },
+      { items: ['Temur', 'Chingiz', 'Turon', 'Elzas'], answer: 3, why: 'Elzas — «So‘nggi saboq»dagi o‘lka; qolganlari Fitrat she’ridagi talmehlar.' },
+    ],
+    debate: [
+      { claim: 'Ozodlik uchun avval xalqni savodli qilish kerak.', pro: 'Savodsiz xalq o‘z haqini bilmaydi, uni oson aldash mumkin.', con: 'Siyosiy kurashsiz maktablar ham yopib qo‘yiladi.' },
+      { claim: '«Yurt qayg‘usi» bugungi yoshlar uchun ham dolzarb.', pro: 'Vatanga mas’uliyat har doim kerak.', con: 'Bugun mustaqil yurtda bunday qayg‘u tuyg‘usi o‘rinsiz.' },
+    ],
+    creative: [
+      { task: 'Fitratga 2 gaplik maktub yozing: undan nimani o‘rgandingiz?', time: 90 },
+      { task: 'Bugun jadid bo‘lganingizda, xalqni ma’rifatli qilish uchun qanday 3 ta loyiha boshlardingiz?', time: 90 },
+      { task: 'Bitta tarixiy shaxsga ishora qilib (talmeh), sinfdoshingizni maqtaydigan gap tuzing.', time: 60 },
+    ],
+  },
+
+  /* ===================== 34 ===================== */
+  {
+    id: 'adab-fitrat-2',
+    source: 'III chorak • 34-dars • 125–127-betlar',
+    title: '«Mirrix yulduziga» va «Yurt qayg‘usi»ni qiyoslash',
+    short: 'Yulduz obrazi, ijtimoiy illatlar tanqidi va ikki she’r qiyosi',
+    lesson: [
+      {
+        title: 'Yulduz obrazi',
+        text: 'Ko‘p ijodkorlar yulduz obraziga murojaat qiladi: u orzu, uzoq va pokiza olam, umid, ba’zan esa yolg‘izlik ramzi.',
+        note: 'Mirrix — Mars sayyorasining sharqona nomi.',
+      },
+      {
+        title: '«Mirrix yulduziga»',
+        poem: {
+          lines: [
+            'Go‘zal yulduz, yerimizning eng qadrli tuqqani!',
+            'Nega bizdan qochib, muncha uzoqlarg‘a tushibsan,',
+            'Tuvg‘aningga nechun sira gapurmasdan turibsan?',
+          ],
+          author: 'Abdurauf Fitrat',
+        },
+        text: 'Shoir yulduzni Yerning tug‘ishgani deb ataydi va undan so‘raydi: bizdagi tubanlik va xo‘rliklar senda ham bormi?',
+        note: 'Lug‘at: tuqqan — tug‘ishgan; dag‘i — ham; o‘ksuz — ko‘ngli o‘ksik; yo‘qsul — kambag‘al; tuzuk — qonun.',
+      },
+      {
+        title: 'Yulduzga berilgan savollar',
+        table: {
+          head: ['She’rdagi savol', 'Nimaga ishora'],
+          rows: [
+            ['Ikki yuzli ishbuzarlar, shaytonlar bormi?', 'Ikkiyuzlamachilik, xiyonat'],
+            ['O‘rtoq qonin ichgan zuluklar bormi?', 'O‘z yaqinini ezuvchi, ekspluatatsiya'],
+            ['Kambag‘al qonini ichkilikdek ichganlar bormi?', 'Xalqni talovchi boylar va amaldorlar'],
+            ['Dunyo qonunini qopchig‘i uchun buzganlar bormi?', 'Shaxsiy manfaat uchun adolatni oyoqosti qilish'],
+            ['Qorin uchun elin, yurtini sotganlar bormi?', 'Vatan xoinlari'],
+          ],
+        },
+        rule: 'Fitrat yulduzga murojaat orqali o‘z zamonasining ijtimoiy illatlarini, mustamlaka va xiyonatni fosh etadi.',
+        ruleLabel: 'G‘oya',
+      },
+      {
+        title: 'Ikki she’rni qiyoslaymiz',
+        table: {
+          head: ['Jihat', '«Mirrix yulduziga»', '«Yurt qayg‘usi»'],
+          rows: [
+            ['Murojaat', 'Yulduzga', 'Onaga (Vatanga)'],
+            ['Shakl', 'Ketma-ket so‘roqlar', 'So‘roq-undov, radifli («kerakdir»)'],
+            ['Kayfiyat', 'Alam, nafrat, tanqid', 'Qayg‘u, da’vat, fidoyilik'],
+            ['Maqsad', 'Illatlarni fosh etish', 'Yurtni qutqarishga chaqirish'],
+            ['Umumiy', 'Vatan dardi, ozodlik orzusi', 'Vatan dardi, ozodlik orzusi'],
+          ],
+        },
+      },
+      {
+        title: 'Badiiy vositalar',
+        list: [
+          'Ritorik so‘roq — javob kutilmaydigan, fikrni kuchaytiruvchi savollar.',
+          'Murojaat — yulduzga, onaga.',
+          'Jonlantirish — yulduz «tug‘ishgan», u gapirishi kerak.',
+          'Metafora — «zuluklar», «qoplonlar», «shaytonlar».',
+          'Takrir — «Bormi senda...» so‘zining qayta-qayta kelishi.',
+          'Talmeh — Temur, Chingiz, Turon.',
+        ],
+      },
+      {
+        title: 'Muhokama',
+        list: [
+          'Fitrat Mirrix yulduzi orqali qanday g‘oyalarni ifodalagan?',
+          'Qaysi misralarda mustamlakachilikning ayanchli oqibati ifodalangan?',
+          'Qaysi she’r mazmun va badiiylik jihatidan ustunroq? Nega?',
+          'Uyga vazifa: «Mirrix yulduziga» she’rini yod oling.',
+        ],
+      },
+    ],
+    pairs: [
+      ['Mirrix', 'Mars sayyorasi'],
+      ['Tuqqan', 'tug‘ishgan'],
+      ['Yo‘qsul', 'kambag‘al'],
+      ['Tuzuk', 'qonun'],
+      ['Zuluklar', 'O‘rtoq qonini ichuvchilar (metafora)'],
+      ['«Bormi senda...»', 'Takrir'],
+      ['Ritorik so‘roq', 'Javob kutilmaydigan savol'],
+    ],
+    quiz: [
+      { q: 'Mirrix qaysi sayyora?', options: ['Mars', 'Venera', 'Yupiter', 'Saturn'], answer: 0 },
+      { q: 'Fitrat yulduzni Yerning kimi deb ataydi?', options: ['tug‘ishgani', 'dushmani', 'mehmoni', 'farzandi'], answer: 0 },
+      { q: '«Yo‘qsul» so‘zining ma’nosi?', options: ['kambag‘al', 'yo‘lsiz', 'boy', 'yetim'], answer: 0 },
+      { q: '«Bormi senda...» so‘zining takrorlanishi qaysi san’at?', options: ['takrir', 'talmeh', 'tazod', 'tajnis'], answer: 0 },
+      { q: '«Mirrix yulduziga» she’rida asosan qanday kayfiyat?', options: ['alam va tanqid', 'quvonch', 'hazil', 'befarqlik'], answer: 0 },
+      { q: '«Yurt qayg‘usi»da shoir kimga murojaat qiladi?', options: ['onaga', 'yulduzga', 'yorga', 'podshoga'], answer: 0 },
+      { q: 'Ikki she’rning umumiy g‘oyasi?', options: ['Vatan dardi va ozodlik', 'sevgi', 'tabiat', 'do‘stlik'], answer: 0 },
+    ],
+    sort: {
+      categories: ['«Mirrix yulduziga»', '«Yurt qayg‘usi»'],
+      items: [
+        { text: 'yulduzga murojaat', cat: 0 }, { text: 'onaga murojaat', cat: 1 },
+        { text: '«Bormi senda...»', cat: 0 }, { text: '«...kerakdir?»', cat: 1 },
+        { text: 'zuluklar, qoplonlar', cat: 0 }, { text: 'Temur va Chingiz', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Nega shoir yulduzga murojaat qiladi?', a: 'Yerdagi illatlardan alamini to‘kish va ularni chetdan ko‘rsatish uchun.' },
+      { q: '«O‘z qopchig‘in to‘ldirg‘ali buzg‘anlar» kimlar?', a: 'Shaxsiy boylik uchun qonun va adolatni buzuvchilar.' },
+      { q: 'Ikki she’rning farqi nimada?', a: 'Biri illatlarni fosh etadi (tanqid), ikkinchisi yurtni qutqarishga da’vat qiladi.' },
+      { q: 'Ritorik so‘roq she’rda qanday vazifa bajaradi?', a: 'Fikrni kuchaytiradi, o‘quvchini o‘ylashga majbur qiladi.' },
+      { q: '«Zuluk» va «qoplon» qanday ma’noda?', a: 'Metafora: xalqni ezuvchi, talovchi odamlar.' },
+    ],
+    odd: [
+      { items: ['ikki yuzli ishbuzar', 'zuluk', 'qoplon', 'tuqqan yulduz'], answer: 3, why: 'Yulduz — ijobiy obraz; qolganlari illat ramzlari.' },
+      { items: ['ritorik so‘roq', 'murojaat', 'takrir', 'kulminatsiya'], answer: 3, why: 'Kulminatsiya — syujet elementi.' },
+      { items: ['Mirrix', 'Mars', 'yulduz', 'Issiqko‘l'], answer: 3, why: 'Issiqko‘l — Yerdagi ko‘l.' },
+    ],
+    debate: [
+      { claim: '«Mirrix yulduziga» she’ri «Yurt qayg‘usi»dan kuchliroq.', pro: 'Illatlarni aniq, ayovsiz fosh etadi.', con: '«Yurt qayg‘usi» qisqa, lekin fidoyilikka chaqiruvchi kuchli da’vat.' },
+      { claim: 'Fitrat sanab o‘tgan illatlar bugun ham bor.', pro: 'Ikkiyuzlamachilik, xiyonat, ochko‘zlik har davrda uchraydi.', con: 'Jamiyat o‘zgardi, qonunlar bu illatlarni cheklaydi.' },
+    ],
+    creative: [
+      { task: 'Siz ham bir sayyora yoki yulduzga 2 ta savol bering: bugungi Yer haqida nima so‘rardingiz?', time: 90 },
+      { task: 'Mirrix yulduzi Fitratga javob qaytarsa, nima der edi? 2 gap.', time: 90 },
+      { task: 'Ikki she’rni bitta rasmga birlashtiring: yulduz va ona-Vatan. Doskaga eskiz qiling.', time: 120 },
+    ],
+  },
+
+  /* ===================== 35 ===================== */
+  {
+    id: 'adab-fitrat-3',
+    source: 'III chorak • 35-dars • 127–128-betlar',
+    title: '«O‘git» va «Go‘zalim, bevafo gulistonim» she’rlari',
+    short: 'Yoshlarga da’vat va lirik she’rdagi naqarot',
+    lesson: [
+      {
+        title: '«O‘git» — yoshlarga murojaat',
+        poem: {
+          lines: [
+            'Turma — yugur, tinma — tirish, bukilma — yuksal,',
+            'Hurkma — kirish, qo‘rqma — yopish, yo‘rilma — qo‘zg‘al.',
+          ],
+          author: 'Abdurauf Fitrat, «O‘git»',
+        },
+        text: 'O‘git — yo‘l-yo‘riq ko‘rsatib aytiladigan gap, nasihat. Shoir yigitning ko‘zida millat saodati va baxtini, o‘ylashida yurt uchun qutulish yo‘lini ko‘radi.',
+        note: 'Lug‘at: yo‘rilma — sudralma; yopish — yopishib ol, qat’iy kirish.',
+      },
+      {
+        title: 'Da’vat tuzilishi',
+        table: {
+          head: ['Qilma', 'Qil'],
+          rows: [
+            ['turma', 'yugur'],
+            ['tinma', 'tirish'],
+            ['bukilma', 'yuksal'],
+            ['hurkma', 'kirish'],
+            ['qo‘rqma', 'yopish'],
+            ['yo‘rilma', 'qo‘zg‘al'],
+          ],
+        },
+        rule: 'Har bir juftlikda inkor va buyruq yonma-yon keladi — tazod va takrir orqali shiddatli, marshdek ohang yaratilgan.',
+        ruleLabel: 'Tahlil',
+      },
+      {
+        title: '«Eski bulutlar» va keskin yakun',
+        text: 'Shoir yigitni yel yo‘lini to‘sib turgan eski bulutlarni yondirib, yirtib, yo‘q qilishga chaqiradi. Eski bulutlar — taraqqiyotga to‘siq bo‘lgan jaholat, eskilik, qoloqlik.',
+        rule: 'She’r keskin xulosa bilan tugaydi: bu ishlarni qila olmasang — sen uchun bu xo‘rlik, yiqil, yo‘qol, ket! Bu pand-nasihat emas, qat’iy da’vat.',
+        ruleLabel: 'Kayfiyat',
+      },
+      {
+        title: '«Go‘zalim, bevafo gulistonim»',
+        text: 'Bu — Fitratning lirik she’ri. Oshiq tashlab ketgan yorga — «bevafo guliston»ga murojaat qiladi: u bir paytlar g‘am-qayg‘u hujumidan asragan mehribon nigahbon, munis va hamdam edi.',
+        list: [
+          'Oshiq yorning oyog‘iga yiqilib, to‘yib yig‘lashni, uning oyoq tuprog‘ini ko‘ziga surishni istaydi.',
+          'Yorsiz hayot o‘limdan og‘ir: «nega o‘ldirmay tark etding?» degan iztirob takrorlanadi.',
+          'Har bandning oxirida bir xil satrlar qaytadi — naqarot.',
+        ],
+        note: 'She’r matnini darslikning 128-betidan ifodali o‘qing. Ayrim adabiyotshunoslar «bevafo guliston» obrazida qo‘ldan ketgan Vatan ramzini ham ko‘radi — bu haqda sinfda bahslashing.',
+      },
+      {
+        title: 'Naqarot',
+        rule: 'Naqarot — she’rning har bandi oxirida takrorlanadigan satr yoki satrlar. U asosiy tuyg‘uni ta’kidlaydi va she’rga qo‘shiqdek ohang beradi.',
+        ruleLabel: 'Nazariy ma’lumot',
+        table: {
+          head: ['Asar', 'Naqarot'],
+          rows: [
+            ['«Go‘zalim, bevafo gulistonim»', 'Tashlab ketilganlik iztirobi qaytariladi'],
+            ['«Ravshan» dostoni', '«Qalpoq bozori qaysidir?», «...maydon ichinda»'],
+          ],
+        },
+      },
+      {
+        title: 'Muhokama',
+        list: [
+          'Shoir nega «O‘git»da aynan yigitlarga murojaat qilgan?',
+          'Shoir nazdida «bu yurt uchun qutulish» yo‘llari nimalarda?',
+          '«O‘git»da qanday kayfiyat ustun: pand-nasihatmi yoki da’vat?',
+          '«G‘am-u qayg‘ularim hujumindan» deganda qanday «hujumlar» nazarda tutilgan?',
+          'Naqarot she’r mazmuni va ohangiga qanday ta’sir qiladi?',
+        ],
+      },
+    ],
+    pairs: [
+      ['O‘git', 'Nasihat, yo‘l-yo‘riq'],
+      ['Yo‘rilma', 'sudralma'],
+      ['Eski bulutlar', 'Jaholat va eskilik ramzi'],
+      ['Naqarot', 'Band oxirida takrorlanuvchi satr'],
+      ['Bevafo guliston', 'Tashlab ketgan yor obrazi'],
+      ['Nigahbon', 'qo‘riqchi, asrovchi'],
+      ['«Turma — yugur»', 'Tazod asosidagi da’vat'],
+    ],
+    quiz: [
+      { q: '«O‘git» so‘zining ma’nosi?', options: ['nasihat', 'qo‘shiq', 'xat', 'ertak'], answer: 0 },
+      { q: '«O‘git» she’rida shoir kimga murojaat qiladi?', options: ['yigitga', 'onaga', 'yulduzga', 'yorga'], answer: 0 },
+      { q: '«Eski bulutlar» nimaning ramzi?', options: ['jaholat va eskilik', 'yomg‘ir', 'osmon', 'qish'], answer: 0 },
+      { q: '«Yo‘rilma» nimani bildiradi?', options: ['sudralma', 'yugurma', 'yig‘lama', 'kulma'], answer: 0 },
+      { q: '«O‘git»da qaysi kayfiyat ustun?', options: ['da’vat', 'g‘am', 'hazil', 'sevgi'], answer: 0 },
+      { q: 'Band oxirida takrorlanuvchi satr?', options: ['naqarot', 'matla', 'radif', 'maqta’'], answer: 0 },
+      { q: '«Go‘zalim, bevafo gulistonim» qanday she’r?', options: ['lirik', 'doston', 'masal', 'hajviya'], answer: 0 },
+    ],
+    sort: {
+      categories: ['«O‘git»ga xos', '«Go‘zalim, bevafo gulistonim»ga xos'],
+      items: [
+        { text: 'yigitga murojaat', cat: 0 }, { text: 'yorga murojaat', cat: 1 },
+        { text: 'eski bulutlar', cat: 0 }, { text: 'naqarot', cat: 1 },
+        { text: 'marshdek shiddatli ohang', cat: 0 }, { text: 'iztirobli, mungli ohang', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Shoir nega yigitlarga murojaat qiladi?', a: 'Yurt kelajagi va qutulishi yoshlarning g‘ayrati, ilmi va harakatiga bog‘liq.' },
+      { q: '«Turma — yugur, tinma — tirish» da’vatining mazmuni nima?', a: 'Harakatsizlik, dangasalik va qo‘rquvni yengib, faol, tirishqoq bo‘lishga chaqiriq.' },
+      { q: 'She’r nega keskin «Yiqil, yo‘qol, ket!» bilan tugaydi?', a: 'Shoir vaziyatning jiddiyligini, harakat qilmaslik xo‘rlik ekanini ta’kidlaydi.' },
+      { q: 'Naqarot qanday vazifa bajaradi?', a: 'Asosiy tuyg‘uni ta’kidlaydi, she’rga qo‘shiqdek ohang beradi.' },
+      { q: '«Bevafo guliston» obrazini qanday tushunish mumkin?', a: 'Tashlab ketgan yor; ba’zi talqinlarda qo‘ldan ketgan Vatan ramzi.' },
+    ],
+    sequences: [
+      {
+        title: '«O‘git» she’ridagi fikr rivoji',
+        items: [
+          'Shoir yigit ko‘zida millat baxtini ko‘radi',
+          'Yurt qutulishi yigitda ekanini aytadi',
+          'Harakatga chaqiradi: turma — yugur',
+          'Eski bulutlarni yo‘q qilishga undaydi',
+          'Qila olmasang — xo‘rlik, deb keskin yakunlaydi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['yugur', 'tirish', 'yuksal', 'bukil'], answer: 3, why: '«Bukil» — shoir taqiqlagan holat; qolganlari da’vat qilingan harakatlar.' },
+      { items: ['«O‘git»', '«Yurt qayg‘usi»', '«Mirrix yulduziga»', '«Qoshi yosinmu deyin»'], answer: 3, why: '«Qoshi yosinmu deyin» — Navoiy g‘azali.' },
+      { items: ['naqarot', 'takrir', 'radif', 'portret'], answer: 3, why: 'Portret takrorga asoslanmagan.' },
+    ],
+    debate: [
+      { claim: '«O‘git»dagi «Yiqil, yo‘qol, ket!» juda qattiq — yoshlarga bunday gapirib bo‘lmaydi.', pro: 'Qattiq so‘z ko‘ngilni sindiradi, ruhini tushiradi.', con: 'Og‘ir davrda keskin da’vat uyg‘otish uchun zarur edi.' },
+      { claim: '«Go‘zalim, bevafo gulistonim» — aslida Vatan haqidagi she’r.', pro: 'Fitrat ijodining asosiy dardi — Vatan; guliston — yurt timsoli.', con: 'Matnda oshiq va yor obrazlari aniq, bu lirik ishqiy she’r.' },
+    ],
+    creative: [
+      { task: '«Turma — yugur» qolipida sinfingiz uchun 3 juftlikli da’vat tuzing.', time: 90 },
+      { task: 'Sizning «eski bulutlaringiz» nima (yomon odat, qo‘rquv)? Uni qanday «yirtib tashlaysiz»?', time: 60 },
+      { task: 'O‘zingiz uchun bitta naqarot o‘ylab toping va uni turli ohangda 2 marta ayting.', time: 60 },
+    ],
+  },
+
+  /* ===================== 36 ===================== */
+  {
+    id: 'adab-mirkomil-1',
+    source: 'III chorak • 36-dars • 129–135-betlar',
+    title: 'Xurshid Do‘stmuhammad. «Mirkomilboyning qazo bo‘lgan namozi»',
+    short: 'Yozuvchi, tarixiy Mirkomilboy va hikoyaning boshlanishi',
+    lesson: [
+      {
+        title: 'Xurshid Do‘stmuhammad',
+        text: 'Jurnalist va yozuvchi 1951-yili Toshkentda tug‘ilgan, ToshDU jurnalistika fakultetini tugatgan. Bolaligida otasi bilan mahsido‘zlik qilgan.',
+        table: {
+          head: ['Janr', 'Asarlari'],
+          rows: [
+            ['Tarixiy-ma’rifiy qissalar', '«Yuz yillik qotillik» (Behbudiy), «Yolg‘iz» (A. Qodiriy), «Qahr» (A. Qahhor)'],
+            ['Romanlar', '«Bozor», «Donishmand Sizif», «O‘yin»'],
+            ['Qissa va hikoyalar', '«Hovli etagidagi uy», «Panoh», «Oromkursi», «Mahzuna»'],
+            ['Tarjima', 'Yapon, ispan, rus ijodkorlari asarlari'],
+          ],
+        },
+        note: 'Yozuvchi: «Kitob o‘qimagan kunimni behuda o‘tgan deb hisoblayman.»',
+      },
+      {
+        title: 'Tarixiy Mirkomilboy (1860–1918)',
+        list: [
+          '1860-yili Andijonda boy savdogar oilasida tug‘ilgan.',
+          'XX asr boshida shaxsiy mablag‘i 13–15 mln so‘mga yetgan.',
+          '1915-yilda bo‘hton bilan qamalib, surgun qilingan.',
+          'Andijonda maktab-internat, madrasa, kasalxona qurmoqchi bo‘lgan, ammo ma’murlar ruxsat bermagan.',
+          '1917-yilda nohaq qamoqqa olingan, 1918-yilda otib tashlangan.',
+        ],
+        rule: 'Yozuvchi fikri: nomlariga faqat qora bo‘yoq chaplangan boy-badavlat o‘tmishdoshlarimiz hayotini xolis o‘rganish zarur. Mirkomil Mirmo‘minboyev ana shunday yirik tarixiy shaxs.',
+        ruleLabel: 'Muallif maqsadi',
+      },
+      {
+        title: 'Hikoya qahramonlari',
+        table: {
+          head: ['Obraz', 'Xususiyati'],
+          rows: [
+            ['Mirkomilboy', 'Boy, adolatparvar, haqni yuziga aytadigan, qat’iyatli'],
+            ['Yoqubxo‘ja', 'Doimiy hamrohi va maslahatchisi, bosiq, muloyim'],
+            ['Temurhoji', 'Qozilikka mo‘ljallangan, rizolik uchun to‘n hadya qilmoqchi bo‘lgan'],
+            ['Hoshimboy, Nig‘monbek, G‘afurjon', 'Mirkomilga hasad qilib, uni zakot masalasida mulzam qilmoqchi bo‘lganlar'],
+          ],
+        },
+      },
+      {
+        title: 'Haqgo‘ylikning bahosi',
+        list: [
+          'Mirkomil qop o‘g‘irlagan odamni ko‘chada qattiq jazolaydi; Yoqubxo‘ja «hojatmand bo‘lsa-chi?» deb o‘pkalaydi.',
+          'Ellikboshi so‘raganda Mirkomil Temurhojini «halol odam» deb maqtaydi.',
+          'Temurhoji rizolik uchun zarbof to‘n olib keladi — Mirkomil uni qaytaradi: «Bu ishlaring durust emas».',
+          'Yoqubxo‘ja: «To‘g‘ri gapni aytaman deb dushman orttirasiz».',
+        ],
+        rule: 'Asosiy savol: haq gapni aytish dushmanlikmi? Mirkomil hech kimga yomonlik tilamagan, ammo haqgo‘yligi uchun g‘anim orttiradi.',
+        ruleLabel: 'Muammo',
+      },
+      {
+        title: 'Zakot haqidagi bahs',
+        text: 'Ubaydulla junfurushning uyidagi davrada Hoshimboy gapni zakotga buradi: zakotdan bo‘yin tovlash katta gunoh! Maqsad — «Mirkomil zakot to‘lamaydi» degan mish-mishni tasdiqlatish.',
+        rule: 'Mirkomil bahsni bir jumla bilan tugatadi: zakotdan oldin ushr bor, avval ushrni tushunib olinglar. Ushr — dehqonchilik daromadining o‘ndan biri miqdoridagi soliq.',
+        ruleLabel: 'Mirkomilning zakovati',
+        note: 'Nig‘monbek bir paytlar hurmat yuzasidan o‘g‘liga «Komiljon» deb ism qo‘ygan, endi esa Mirkomilni yomonotliq qilmoqchi — ikkiyuzlamachilik.',
+      },
+      {
+        title: 'O‘z yurtdoshlari ichidagi g‘anim',
+        text: 'Mirkomil fransuz zavodini Andijonga ko‘chirish niyatini yashirmay aytadi: «Uddasidan chiqqanlar harakatga tushsin». Ammo g‘anim orttirganini, u g‘animlar bosqinchilar emas, o‘z yurtdoshlari ekanini juda kech anglaydi.',
+        note: 'Kultepaga masjid, madrasa, kasalxona, hammom qurish rejasini mahkamalar cho‘zib, ish joyidan siljimaydi.',
+      },
+      {
+        title: 'O‘ylab ko‘ring',
+        list: [
+          '«O‘zingdan chiqqan baloga qayga borasan da’voga» maqolini qanday izohlaysiz?',
+          'Mirkomilboy qop o‘g‘risiga to‘g‘ri munosabatda bo‘ldimi?',
+          'Haq gapni aytish dushmanlikmi?',
+          'Hikoya nomidagi «qazo bo‘lgan namoz» qanday ma’no tashishi mumkin? Taxminingizni ayting.',
+        ],
+      },
+    ],
+    pairs: [
+      ['Xurshid Do‘stmuhammad', 'Hikoya muallifi'],
+      ['Mirkomilboy', 'Andijonlik adolatparvar boy'],
+      ['Yoqubxo‘ja', 'Mirkomilning hamrohi'],
+      ['Temurhoji', 'Yangi qozi'],
+      ['Ushr', 'Daromadning o‘ndan biri miqdoridagi soliq'],
+      ['Zarbof to‘n', 'Temurhojining hadyasi'],
+      ['«Yuz yillik qotillik»', 'Behbudiy haqidagi qissa'],
+      ['Nig‘monbek', 'O‘g‘liga «Komiljon» deb ism qo‘ygan'],
+    ],
+    quiz: [
+      { q: 'Xurshid Do‘stmuhammad qaysi yili tug‘ilgan?', options: ['1951', '1886', '1956', '1928'], answer: 0 },
+      { q: 'Mirkomilboy qaysi shaharda tug‘ilgan?', options: ['Andijon', 'Buxoro', 'Toshkent', 'Qo‘qon'], answer: 0 },
+      { q: 'Mirkomilboy qachon otib tashlangan?', options: ['1918', '1938', '1915', '1925'], answer: 0 },
+      { q: 'Temurhoji Mirkomilga nima olib keladi?', options: ['zarbof to‘n', 'oltin', 'ot', 'kitob'], answer: 0 },
+      { q: 'Yoqubxo‘ja Mirkomilni nimadan ogohlantiradi?', options: ['to‘g‘ri gap bilan dushman orttirishdan', 'boylikni yo‘qotishdan', 'safardan', 'kasallikdan'], answer: 0 },
+      { q: 'Zakot bahsida Mirkomil qaysi tushunchani tilga oladi?', options: ['ushr', 'xiroj', 'sadaqa', 'fitr'], answer: 0 },
+      { q: 'Yozuvchining A. Qodiriy haqidagi qissasi?', options: ['«Yolg‘iz»', '«Qahr»', '«Bozor»', '«Panoh»'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Mirkomilning fazilati', 'Raqiblarining illati'],
+      items: [
+        { text: 'haqni yuziga aytish', cat: 0 }, { text: 'hasad', cat: 1 },
+        { text: 'pora (hadya)ni qaytarish', cat: 0 }, { text: 'mish-mish tarqatish', cat: 1 },
+        { text: 'yurt uchun maktab qurish niyati', cat: 0 }, { text: 'ikkiyuzlamachilik', cat: 1 },
+        { text: 'niyatini yashirmaslik', cat: 0 }, { text: 'g‘iybat', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Yozuvchi nima uchun Mirkomilboy haqida yozdi?', a: 'Nomiga nohaq qora bo‘yoq chaplangan tarixiy shaxs hayotini xolis ko‘rsatish uchun.' },
+      { q: 'Mirkomil nega Temurhojining to‘nini qaytardi?', a: 'Rizolik uchun hadya — pora; u halol fikrini sotmaydi.' },
+      { q: 'Zakot bahsida Mirkomil raqiblarini qanday mulzam qildi?', a: 'Zakotdan oldin ushr borligini aytib, ularning bilimsizligini ko‘rsatdi.' },
+      { q: 'Mirkomil kimlardan g‘anim orttirganini kech angladi?', a: 'Bosqinchilardan emas, o‘z yurtdoshlaridan.' },
+      { q: 'Tarixiy Mirkomilboy qanday ezgu loyihalarni rejalashtirgan?', a: 'Maktab-internat, madrasa, kasalxona, masjid, hammom qurishni.' },
+    ],
+    sequences: [
+      {
+        title: 'Tarixiy Mirkomilboy hayoti',
+        items: [
+          'Andijonda savdogar oilasida tug‘iladi',
+          'Katta boylik to‘playdi',
+          'Bo‘hton bilan qamalib, surgun qilinadi',
+          'Surgundan ozod bo‘lib Andijonga qaytadi',
+          'Nohaq qamoqqa olinib, otib tashlanadi',
+        ],
+      },
+    ],
+    odd: [
+      { items: ['Yoqubxo‘ja', 'Temurhoji', 'Nig‘monbek', 'mosye Amel'], answer: 3, why: 'Mosye Amel — «So‘nggi saboq» qahramoni.' },
+      { items: ['«Yuz yillik qotillik»', '«Yolg‘iz»', '«Qahr»', '«Saodat sohili»'], answer: 3, why: '«Saodat sohili» — Xayriddin Sultonov asari.' },
+      { items: ['zakot', 'ushr', 'soliq', 'syujet'], answer: 3, why: 'Syujet — adabiyot atamasi.' },
+    ],
+    debate: [
+      { claim: 'Haq gapni har doim, hamma joyda aytish kerak.', pro: 'Haqiqatni yashirish — yolg‘onga sherik bo‘lish.', con: 'Yoqubxo‘ja aytganidek, vaqtini va usulini topish kerak, aks holda foydasiz dushman orttiriladi.' },
+      { claim: 'Mirkomil qop o‘g‘risini jazolab to‘g‘ri qildi.', pro: 'O‘g‘irlik qanday sababdan bo‘lsa ham jinoyat.', con: 'Avval sababini — balki ochlikni — so‘rash kerak edi.' },
+    ],
+    creative: [
+      { task: 'Mirkomil va Yoqubxo‘ja o‘rtasidagi «haq gap» haqidagi bahsni 30 soniyalik sahna qilib ijro eting.', time: 120 },
+      { task: 'Hikoya nomini o‘zgartiring: qanday nom qo‘yardingiz va nega?', time: 60 },
+      { task: 'Mirkomilboyga bugungi yoshlardan bir jumlalik minnatdorlik xati yozing.', time: 60 },
+    ],
+  },
+];
+
 const CONTENT = {
-  adabiyot: { 8: [...ADABIYOT_8, ...ADABIYOT_8_P2] },
+  adabiyot: { 8: [...ADABIYOT_8, ...ADABIYOT_8_P2, ...ADABIYOT_8_P3] },
   'ona-tili': { 8: [...ONA_TILI_8, ...ONA_TILI_8_PART2, ...ONA_TILI_8_PART3, ...ONA_TILI_8_PART4, ...ONA_TILI_8_PART5, ...ONA_TILI_8_PART6, ...ONA_TILI_8_PART7, ...ONA_TILI_8_PART8] },
 };
 
@@ -12246,7 +13573,7 @@ function LoginScreen({ onLogin }) {
         </p>
         <div className="mt-8 grid grid-cols-3 gap-3">
           {[
-            { icon: LayoutGrid, t: '11 xil o‘yin' },
+            { icon: LayoutGrid, t: '15 xil o‘yin' },
             { icon: Users, t: 'Tayyor sinf ro‘yxatlari' },
             { icon: UserCheck, t: '4 tanlash usuli' },
           ].map(({ icon: I, t }) => (
@@ -12838,7 +14165,7 @@ const GUIDE_STEPS = [
     text: 'Har bir darsga 5 ta o‘yin taklif qilinadi va ular darsdan darsga almashib turadi. Qolganlari «Boshqa o‘yinlar»da.',
     tips: [
       '«Tasodifiy o‘yin» tugmasi o‘yinni o‘zi tanlab beradi.',
-      'Jami 11 ta o‘yin: Test, Rostmi?, Millioner, Savol-javob, Moslashtirish, Harflar, Xotira, Yashirin so‘z, Joyda, Portlash, Poyga.',
+      'Jami 15 ta o‘yin: Test, Rostmi?, Millioner, Savol-javob, Moslashtirish, Harflar, Xotira, Yashirin so‘z, Joyda, Portlash, Poyga hamda fikrlash o‘yinlari — Voqealar zanjiri, Ortiqchasini top, Bahs maydoni, Ijodiy topshiriq (adabiyot darslarida).',
     ],
   },
   {
@@ -12959,7 +14286,7 @@ function WelcomeModal({ name, onGuide, onClose }) {
           Dars play — darslik mavzularini tushuntirish va sinf bilan o‘yin o‘ynash uchun. Qisqa qo‘llanma bilan 2 daqiqada tanishib chiqing.
         </p>
         <div className="mt-6 grid gap-3 text-left sm:grid-cols-3">
-          {[[BookOpen, 'Tushuntirish', 'darslik asosida slaydlar'], [LayoutGrid, '11 ta o‘yin', '2–4 jamoa bilan'], [Trophy, 'Reyting', 'sinf va maktab bo‘yicha']].map(([I, t, d]) => (
+          {[[BookOpen, 'Tushuntirish', 'darslik asosida slaydlar'], [LayoutGrid, '15 ta o‘yin', '2–4 jamoa bilan'], [Trophy, 'Reyting', 'sinf va maktab bo‘yicha']].map(([I, t, d]) => (
             <div key={t} className="rounded-2xl bg-blue-50 p-4">
               <I size={28} className="text-blue-700" />
               <div className="mt-2 text-lg font-extrabold text-blue-950">{t}</div>
@@ -13018,7 +14345,7 @@ function HomeScreen({ teacher, onStart, schoolClasses = [], onClassResults, onRa
       <div className="mt-8 grid gap-4 md:grid-cols-3">
         {[
           { icon: BookOpen, t: 'Dars tushuntirish', d: 'Har bir mavzu darslik asosida slaydlar bilan' },
-          { icon: LayoutGrid, t: 'Interaktiv o‘yinlar', d: '11 ta o‘yin, o‘z savollaringiz bilan ham' },
+          { icon: LayoutGrid, t: 'Interaktiv o‘yinlar', d: '15 ta o‘yin, o‘z savollaringiz bilan ham' },
           { icon: UserCheck, t: 'O‘quvchi tanlash', d: 'Kamera, ro‘yxat, doira va avtomatik guruhlash' },
         ].map(({ icon: I, t, d }) => (
           <div key={t} className="rounded-3xl border-2 border-blue-100 bg-white p-6">
