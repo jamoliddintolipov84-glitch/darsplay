@@ -27229,7 +27229,7 @@ function ClassScreen({ teacher, grade, schoolClasses, onPick, onCreate, onBack }
   };
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-8 md:px-8">
+    <div className="mx-auto max-w-7xl px-4 py-8 md:px-8">
       <PageTitle title={`${grade}-sinflar`} subtitle={`Qaysi sinfga dars berasiz? • ${teacher?.school}`} onBack={onBack} />
 
       {list.length > 0 && (
@@ -27478,58 +27478,187 @@ function WelcomeModal({ name, onGuide, onClose }) {
   );
 }
 
-function HomeScreen({ teacher, onStart, schoolClasses = [], onClassResults, onRating }) {
+const RECENT_KEY = 'darsplay_recent_v1';
+function loadRecent() {
+  try { return JSON.parse(localStorage.getItem(RECENT_KEY) || '[]'); } catch { return []; }
+}
+function pushRecent(item) {
+  try {
+    const list = loadRecent().filter((r) => !(r.topicId === item.topicId && r.classId === item.classId));
+    localStorage.setItem(RECENT_KEY, JSON.stringify([{ ...item, at: Date.now() }, ...list].slice(0, 8)));
+  } catch { /* localStorage yopiq bo‘lishi mumkin */ }
+}
+function timeAgo(ts) {
+  const m = Math.round((Date.now() - ts) / 60000);
+  if (m < 1) return 'hozirgina';
+  if (m < 60) return `${m} daqiqa oldin`;
+  const h = Math.round(m / 60);
+  if (h < 24) return `${h} soat oldin`;
+  const d = Math.round(h / 24);
+  return d === 1 ? 'kecha' : `${d} kun oldin`;
+}
+const UZ_MONTHS = ['yanvar', 'fevral', 'mart', 'aprel', 'may', 'iyun', 'iyul', 'avgust', 'sentyabr', 'oktyabr', 'noyabr', 'dekabr'];
+const UZ_DAYS = ['yakshanba', 'dushanba', 'seshanba', 'chorshanba', 'payshanba', 'juma', 'shanba'];
+const HOME_TIPS = [
+  ['Baraban', 'O‘quvchini tanlashda barabandan foydalaning — tanlangan o‘quvchini doiradan olib tashlash mumkin, hamma navbat bilan chiqadi.'],
+  ['To‘liq ekran', 'Proyektorda yuqoridagi to‘liq ekran tugmasini bosing — shriftlar yanada katta ko‘rinadi.'],
+  ['Tasodifiy o‘yin', 'O‘yinni tanlashga vaqt yo‘qmi? «Tasodifiy o‘yin» tugmasi mavzuga mosini o‘zi tanlaydi.'],
+  ['O‘z savollaringiz', 'Mavzular sahifasidagi «O‘z savollarim» orqali o‘z testingizni qo‘shing — u barcha o‘yinlarda ishlaydi.'],
+  ['Reyting', 'Har darsdan keyin natijalar saqlanadi. Sinf reytingini oy oxirida o‘quvchilarga ko‘rsating — bu katta rag‘bat.'],
+  ['Imlo o‘yinlari', '9-sinf ona tilida «Qaysi harf?» va «Imlo bellashuvi» bor — dars boshida 5 daqiqalik isinish uchun ideal.'],
+];
+
+function readyBooks() {
+  const out = [];
+  SUBJECTS.forEach((s) => Object.entries(CONTENT[s.id] || {}).forEach(([g, arr]) => out.push({ s, g: Number(g), n: arr.length })));
+  return out;
+}
+
+function HomeScreen({ teacher, onStart, schoolClasses = [], onClassResults, onRating, onQuick, onResume, onGuide }) {
+  const now = new Date();
+  const h = now.getHours();
+  const greet = h < 11 ? 'Xayrli tong' : h < 17 ? 'Xayrli kun' : 'Xayrli kech';
+  const dateStr = `${now.getDate()}-${UZ_MONTHS[now.getMonth()]}, ${UZ_DAYS[now.getDay()]}`;
+  const [recent] = useState(() => loadRecent().filter((r) => schoolClasses.some((c) => c.id === r.classId)).slice(0, 4));
+  const tip = HOME_TIPS[now.getDate() % HOME_TIPS.length];
+  const books = readyBooks();
+  const classes = [...schoolClasses].sort((a, b) => a.grade - b.grade || a.letter.localeCompare(b.letter));
+  const totalStudents = schoolClasses.reduce((a, c) => a + c.students.length, 0);
+
   return (
-    <div className="mx-auto max-w-6xl px-4 py-10 md:px-8">
-      <div className="overflow-hidden rounded-[2rem] bg-blue-900 p-8 text-white md:p-14">
-        <p className="text-xl font-semibold text-blue-200">Assalomu alaykum,</p>
-        <h1 className="mt-1 text-4xl md:text-6xl font-extrabold">{teacher?.name || 'Ustoz'}!</h1>
-        <p className="mt-4 max-w-2xl text-xl text-blue-100">
-          Bugungi darsni boshlaymizmi? Fan, sinf va mavzuni tanlang — avval qisqa tushuntirish, keyin o‘yinlar.
-        </p>
-        <button
-          onClick={onStart}
-          className="mt-8 inline-flex items-center gap-4 rounded-2xl bg-white px-10 py-5 text-2xl md:text-3xl font-extrabold text-blue-900 shadow-xl transition hover:bg-blue-50 active:scale-95"
-        >
-          <Play size={34} className="fill-blue-600 text-blue-600" /> Darsni boshlash
-        </button>
-      </div>
-      <div className="mt-8 rounded-3xl border-2 border-blue-100 bg-white p-6">
-        <div className="flex flex-wrap items-center gap-3">
-          <h3 className="flex flex-1 items-center gap-2 text-2xl font-extrabold text-blue-950"><School size={26} /> {teacher?.school} sinflari</h3>
-          <button onClick={() => onRating?.('school')} className="inline-flex items-center gap-2 rounded-2xl bg-amber-400 px-4 py-2.5 text-lg font-extrabold text-amber-950 shadow transition hover:bg-amber-300 active:scale-95">
-            <Trophy size={22} /> Maktab reytingi
-          </button>
-          <button onClick={() => onRating?.('global')} className="inline-flex items-center gap-2 rounded-2xl border-2 border-amber-300 bg-white px-4 py-2.5 text-lg font-bold text-amber-900 transition hover:bg-amber-50 active:scale-95">
-            <Building2 size={22} /> Maktablararo
-          </button>
-        </div>
-        {schoolClasses.length > 0 && <p className="mt-1 text-base text-slate-500">Sinfni bosing — o‘yinlar tarixi va o‘quvchilar reytingi ochiladi.</p>}
-        {schoolClasses.length ? (
-          <div className="mt-4 flex flex-wrap gap-2">
-            {[...schoolClasses].sort((a, b) => a.grade - b.grade || a.letter.localeCompare(b.letter)).map((c) => (
-              <button key={c.id} onClick={() => onClassResults?.(c)} title="Natijalar va reyting" className="inline-flex items-center gap-2 rounded-2xl bg-blue-50 px-4 py-2 text-lg font-bold text-blue-900 transition hover:bg-amber-100">
-                {classLabel(c)} <span className="font-semibold text-slate-500">• {c.students.length}</span> <Trophy size={16} className="text-amber-500" />
+    <div className="mx-auto max-w-7xl px-4 py-8 md:px-8">
+      {/* Salomlashish */}
+      <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-blue-900 via-blue-700 to-indigo-700 p-7 text-white shadow-2xl shadow-blue-900/20 md:p-12">
+        <div className="dp-grid pointer-events-none absolute inset-0 opacity-25" />
+        <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-sky-400/30 blur-3xl" />
+        <div className="relative grid items-center gap-8 lg:grid-cols-[1.4fr_1fr]">
+          <div>
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-base font-bold text-blue-100 ring-1 ring-white/20"><CalendarDays size={18} /> {dateStr}</span>
+            <h1 className="mt-4 text-4xl md:text-6xl font-black leading-tight">{greet},<br /><span className="text-amber-300">{teacher?.name || 'Ustoz'}</span>!</h1>
+            <p className="mt-3 text-xl text-blue-100">{teacher?.school} • Bugungi darsni o‘yinga aylantiramiz.</p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <button onClick={onStart} className="dp-glow inline-flex items-center gap-3 rounded-2xl bg-amber-400 px-8 py-4 text-2xl font-black text-amber-950 shadow-xl transition hover:bg-amber-300 active:scale-95">
+                <Play size={30} className="fill-amber-950" /> Darsni boshlash
               </button>
+              <button onClick={onGuide} className="inline-flex items-center gap-2 rounded-2xl bg-white/10 px-5 py-4 text-lg font-extrabold text-white ring-2 ring-white/25 hover:bg-white/20"><CircleHelp size={22} /> Qo‘llanma</button>
+            </div>
+          </div>
+          <div className="grid grid-cols-3 gap-3">
+            {[[School, schoolClasses.length, 'sinf'], [Users, totalStudents, 'o‘quvchi'], [BookOpen, books.reduce((a, b) => a + b.n, 0), 'mavzu']].map(([I, v, l]) => (
+              <div key={l} className="rounded-3xl bg-white/10 p-4 text-center ring-1 ring-white/15">
+                <I size={26} className="mx-auto text-amber-300" />
+                <div className="mt-1 text-3xl md:text-4xl font-black tabular-nums">{v}</div>
+                <div className="text-sm font-semibold text-blue-100">{l}</div>
+              </div>
             ))}
           </div>
-        ) : (
-          <p className="mt-2 text-lg text-slate-500">Hali sinf kiritilmagan. Birinchi darsda sinf va o‘quvchilar ro‘yxatini kiritasiz — keyin u maktabdagi barcha o‘qituvchilarga tayyor chiqadi.</p>
-        )}
+        </div>
       </div>
-      <div className="mt-8 grid gap-4 md:grid-cols-3">
-        {[
-          { icon: BookOpen, t: 'Dars tushuntirish', d: 'Har bir mavzu darslik asosida slaydlar bilan' },
-          { icon: LayoutGrid, t: 'Interaktiv o‘yinlar', d: '17 ta o‘yin, o‘z savollaringiz bilan ham' },
-          { icon: UserCheck, t: 'O‘quvchi tanlash', d: 'Kamera, ro‘yxat, doira va avtomatik guruhlash' },
-        ].map(({ icon: I, t, d }) => (
-          <div key={t} className="rounded-3xl border-2 border-blue-100 bg-white p-6">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-100 text-blue-700"><I size={30} /></div>
-            <h3 className="mt-4 text-2xl font-extrabold text-blue-950">{t}</h3>
-            <p className="mt-1 text-lg text-slate-500">{d}</p>
-          </div>
-        ))}
+
+      <div className="mt-8 grid gap-6 lg:grid-cols-3">
+        {/* Chap: davom ettirish + tezkor */}
+        <div className="space-y-6 lg:col-span-2">
+          {recent.length > 0 && (
+            <section className="rounded-[2rem] border-2 border-blue-100 bg-white p-6">
+              <h2 className="flex items-center gap-2 text-2xl font-extrabold text-blue-950"><History size={26} className="text-blue-600" /> Davom ettirish</h2>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                {recent.map((r) => {
+                  const subj = SUBJECTS.find((s) => s.id === r.subjectId);
+                  const cls = schoolClasses.find((c) => c.id === r.classId);
+                  const I = subj?.icon || BookOpen;
+                  return (
+                    <button key={r.topicId + r.classId} onClick={() => onResume(r)} className="group flex items-center gap-4 rounded-2xl border-2 border-blue-100 p-4 text-left transition hover:-translate-y-0.5 hover:border-blue-500 hover:shadow-lg">
+                      <span className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl ${subj?.color || 'bg-blue-600'} text-white`}><I size={28} /></span>
+                      <span className="min-w-0 flex-1">
+                        <span className="block truncate text-lg font-extrabold text-blue-950">{r.title}</span>
+                        <span className="block text-sm font-semibold text-slate-500">{subj?.name} • {classLabel(cls)} • {timeAgo(r.at)}</span>
+                      </span>
+                      <ArrowRight size={24} className="shrink-0 text-blue-400 transition group-hover:translate-x-1 group-hover:text-blue-600" />
+                    </button>
+                  );
+                })}
+              </div>
+            </section>
+          )}
+
+          <section className="rounded-[2rem] border-2 border-blue-100 bg-white p-6">
+            <h2 className="flex items-center gap-2 text-2xl font-extrabold text-blue-950"><Zap size={26} className="text-amber-500" /> Tayyor darsliklar</h2>
+            <p className="mt-1 text-base text-slate-500">Bir bosishda kerakli sinfga o‘ting — fan va sinfni qayta tanlash shart emas.</p>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+              {books.map(({ s, g, n }) => (
+                <button key={s.id + g} onClick={() => onQuick(s.id, g)} className="group relative overflow-hidden rounded-2xl border-2 border-blue-100 p-5 text-left transition hover:-translate-y-0.5 hover:border-blue-500 hover:shadow-lg">
+                  <span className={`absolute -right-6 -top-6 h-24 w-24 rounded-full ${s.color} opacity-10 transition group-hover:scale-125`} />
+                  <span className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl ${s.color} text-white`}><s.icon size={26} /></span>
+                  <span className="mt-3 block text-xl font-extrabold text-blue-950">{s.name} • {g}-sinf</span>
+                  <span className="mt-1 inline-flex items-center gap-1 rounded-full bg-emerald-50 px-3 py-0.5 text-sm font-bold text-emerald-700"><Check size={14} /> {n} ta mavzu</span>
+                </button>
+              ))}
+              <button onClick={onStart} className="flex flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-blue-200 p-5 text-blue-700 transition hover:border-blue-500 hover:bg-blue-50">
+                <LayoutGrid size={28} />
+                <span className="text-lg font-extrabold">Barcha fanlar</span>
+              </button>
+            </div>
+          </section>
+        </div>
+
+        {/* O‘ng: sinflar + maslahat */}
+        <div className="space-y-6">
+          <section className="rounded-[2rem] border-2 border-blue-100 bg-white p-6">
+            <h2 className="flex items-center gap-2 text-2xl font-extrabold text-blue-950"><School size={26} className="text-blue-600" /> Sinflar</h2>
+            {classes.length ? (
+              <>
+                <p className="mt-1 text-base text-slate-500">Bosing — natijalar va reyting.</p>
+                <div className="mt-4 grid grid-cols-2 gap-2">
+                  {classes.map((c) => (
+                    <button key={c.id} onClick={() => onClassResults?.(c)} className="rounded-2xl bg-blue-50 px-3 py-3 text-left transition hover:bg-amber-100">
+                      <span className="block text-2xl font-black text-blue-900">{classLabel(c)}</span>
+                      <span className="flex items-center gap-1 text-sm font-semibold text-slate-500"><Users size={14} /> {c.students.length} o‘quvchi</span>
+                    </button>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <p className="mt-2 text-lg text-slate-500">Hali sinf yo‘q. Birinchi darsda sinf va o‘quvchilar ro‘yxatini kiritasiz.</p>
+            )}
+            <div className="mt-4 grid gap-2">
+              <button onClick={() => onRating?.('school')} className="inline-flex items-center justify-center gap-2 rounded-2xl bg-amber-400 px-4 py-3 text-lg font-extrabold text-amber-950 transition hover:bg-amber-300"><Trophy size={22} /> Maktab reytingi</button>
+              <button onClick={() => onRating?.('global')} className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-amber-300 px-4 py-3 text-lg font-bold text-amber-900 transition hover:bg-amber-50"><Building2 size={22} /> Maktablararo reyting</button>
+            </div>
+          </section>
+
+          <section className="rounded-[2rem] bg-gradient-to-br from-amber-50 to-orange-50 p-6 ring-2 ring-amber-100">
+            <h2 className="flex items-center gap-2 text-xl font-extrabold text-amber-900"><Lightbulb size={24} /> Kun maslahati: {tip[0]}</h2>
+            <p className="mt-2 text-lg text-amber-900/80">{tip[1]}</p>
+          </section>
+        </div>
       </div>
+    </div>
+  );
+}
+
+/* ---------- Qadamlar paneli ---------- */
+function StepBar({ items, current, onJump }) {
+  return (
+    <div className="mx-auto max-w-7xl px-4 pt-5 md:px-8">
+      <ol className="flex flex-wrap items-center gap-2 rounded-2xl bg-white/80 p-2 ring-1 ring-blue-100">
+        {items.map((it, i) => {
+          const done = i < current;
+          const active = i === current;
+          return (
+            <li key={it.key} className="flex items-center gap-2">
+              <button
+                disabled={!done}
+                onClick={() => onJump(it.key)}
+                className={`inline-flex items-center gap-2 rounded-xl px-3 py-2 text-base font-extrabold transition ${active ? 'bg-blue-600 text-white shadow' : done ? 'bg-blue-50 text-blue-800 hover:bg-blue-100' : 'text-slate-400'}`}
+              >
+                <span className={`flex h-7 w-7 items-center justify-center rounded-full text-sm ${active ? 'bg-white text-blue-700' : done ? 'bg-emerald-500 text-white' : 'bg-slate-100 text-slate-400'}`}>{done ? <Check size={16} /> : i + 1}</span>
+                <span className="whitespace-nowrap">{done && it.value ? it.value : it.label}</span>
+              </button>
+              {i < items.length - 1 && <ChevronRight size={18} className="text-blue-200" />}
+            </li>
+          );
+        })}
+      </ol>
     </div>
   );
 }
@@ -27538,30 +27667,45 @@ function HomeScreen({ teacher, onStart, schoolClasses = [], onClassResults, onRa
    5. TANLOV BOSQICHLARI: FAN → SINF → MAVZU → DARS
    ============================================================ */
 
-function SubjectScreen({ onPick, onBack }) {
+function SubjectScreen({ onPick, onBack, onQuick }) {
+  const ready = SUBJECTS.filter((s) => CONTENT[s.id]);
+  const rest = SUBJECTS.filter((s) => !CONTENT[s.id]);
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 md:px-8">
-      <PageTitle title="Fanni tanlang" subtitle="1-qadam: dars o‘tiladigan fan" onBack={onBack} />
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-        {SUBJECTS.map((s) => {
-          const I = s.icon;
-          const ready = !!CONTENT[s.id];
+    <div className="mx-auto max-w-7xl px-4 py-6 md:px-8">
+      <PageTitle title="Fanni tanlang" subtitle="Tayyor darsliklar yuqorida — sinf raqamini bossangiz, to‘g‘ri o‘tasiz" onBack={onBack} />
+      <div className="grid gap-4 md:grid-cols-2">
+        {ready.map((s) => {
+          const grades = Object.entries(CONTENT[s.id]);
           return (
-            <button
-              key={s.id}
-              onClick={() => onPick(s.id)}
-              className="group relative flex flex-col items-center gap-4 rounded-3xl border-2 border-blue-100 bg-white p-6 md:p-8 text-center shadow-sm transition hover:-translate-y-1 hover:border-blue-500 hover:shadow-xl active:scale-95"
-            >
-              {ready && (
-                <span className="absolute right-3 top-3 rounded-full bg-emerald-100 px-3 py-1 text-sm font-bold text-emerald-700">Tayyor</span>
-              )}
-              <div className={`flex h-20 w-20 items-center justify-center rounded-3xl ${s.color} text-white shadow-lg`}>
-                <I size={42} />
+            <div key={s.id} className="group relative overflow-hidden rounded-[2rem] border-2 border-blue-100 bg-white p-6 transition hover:border-blue-400 hover:shadow-xl">
+              <span className={`absolute -right-10 -top-10 h-40 w-40 rounded-full ${s.color} opacity-10`} />
+              <button onClick={() => onPick(s.id)} className="flex w-full items-center gap-4 text-left">
+                <span className={`flex h-20 w-20 shrink-0 items-center justify-center rounded-3xl ${s.color} text-white shadow-lg`}><s.icon size={42} /></span>
+                <span>
+                  <span className="block text-3xl font-black text-blue-950">{s.name}</span>
+                  <span className="mt-1 inline-flex items-center gap-1 rounded-full bg-emerald-100 px-3 py-0.5 text-sm font-bold text-emerald-700"><Check size={14} /> Darslik asosida tayyor</span>
+                </span>
+              </button>
+              <div className="relative mt-5 flex flex-wrap gap-2">
+                {grades.map(([g, arr]) => (
+                  <button key={g} onClick={() => onQuick(s.id, Number(g))} className="inline-flex items-center gap-2 rounded-2xl bg-blue-600 px-5 py-3 text-lg font-extrabold text-white shadow-md shadow-blue-600/20 transition hover:bg-blue-700 active:scale-95">
+                    {g}-sinf <span className="rounded-full bg-white/20 px-2 text-sm">{arr.length} mavzu</span>
+                  </button>
+                ))}
+                <button onClick={() => onPick(s.id)} className="inline-flex items-center gap-2 rounded-2xl border-2 border-blue-100 px-4 py-3 text-lg font-bold text-blue-800 hover:border-blue-400">Boshqa sinf</button>
               </div>
-              <span className="text-xl md:text-2xl font-extrabold text-blue-950">{s.name}</span>
-            </button>
+            </div>
           );
         })}
+      </div>
+      <h3 className="mb-3 mt-10 text-xl font-extrabold text-slate-500">Boshqa fanlar — namunaviy mavzular va o‘z savollaringiz</h3>
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+        {rest.map((s) => (
+          <button key={s.id} onClick={() => onPick(s.id)} className="flex items-center gap-3 rounded-2xl border-2 border-blue-100 bg-white p-4 text-left transition hover:-translate-y-0.5 hover:border-blue-400 hover:shadow-lg active:scale-95">
+            <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${s.color} text-white`}><s.icon size={26} /></span>
+            <span className="text-lg font-extrabold text-blue-950">{s.name}</span>
+          </button>
+        ))}
       </div>
     </div>
   );
@@ -27569,25 +27713,26 @@ function SubjectScreen({ onPick, onBack }) {
 
 function GradeScreen({ subject, onPick, onBack, schoolClasses = [] }) {
   return (
-    <div className="mx-auto max-w-6xl px-4 py-8 md:px-8">
-      <PageTitle title="Sinfni tanlang" subtitle={`2-qadam: ${subject?.name}`} onBack={onBack} />
+    <div className="mx-auto max-w-7xl px-4 py-6 md:px-8">
+      <PageTitle title="Sinfni tanlang" subtitle={subject?.name} onBack={onBack} />
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-7">
         {GRADES.map((g) => {
-          const ready = !!CONTENT[subject?.id]?.[g];
+          const arr = CONTENT[subject?.id]?.[g];
+          const cls = schoolClasses.filter((c) => c.grade === g).length;
           return (
             <button
               key={g}
               onClick={() => onPick(g)}
-              className={`flex flex-col items-center justify-center gap-2 rounded-3xl border-2 p-6 transition hover:-translate-y-1 hover:shadow-xl active:scale-95 ${ready ? 'border-blue-600 bg-blue-600 text-white shadow-lg shadow-blue-600/30' : 'border-blue-100 bg-white text-blue-950 hover:border-blue-400'}`}
+              className={`relative flex flex-col items-center justify-center gap-1 rounded-3xl border-2 p-6 transition hover:-translate-y-1 hover:shadow-xl active:scale-95 ${arr ? 'border-blue-600 bg-gradient-to-b from-blue-500 to-blue-700 text-white shadow-lg shadow-blue-600/30' : 'border-blue-100 bg-white text-blue-950 hover:border-blue-400'}`}
             >
-              <span className="text-6xl font-extrabold">{g}</span>
-              <span className={`text-lg font-bold ${ready ? 'text-blue-100' : 'text-slate-500'}`}>sinf</span>
-              <span className={`mt-1 rounded-full px-3 py-1 text-sm font-bold ${ready ? 'bg-white text-blue-700' : 'bg-slate-100 text-slate-500'}`}>
-                {ready ? 'Tayyor' : 'Takrorlash'}
-              </span>
-              <span className={`text-sm font-semibold ${ready ? 'text-blue-100' : 'text-slate-400'}`}>
-                {schoolClasses.filter((c) => c.grade === g).length} ta sinf
-              </span>
+              <span className="text-6xl font-black">{g}</span>
+              <span className={`text-lg font-bold ${arr ? 'text-blue-100' : 'text-slate-400'}`}>sinf</span>
+              {arr ? (
+                <span className="mt-2 whitespace-nowrap rounded-full bg-white px-3 py-1 text-sm font-extrabold text-blue-700">{arr.length} mavzu</span>
+              ) : (
+                <span className="mt-2 text-sm font-semibold text-slate-400">namunaviy</span>
+              )}
+              {cls > 0 && <span className={`absolute right-2 top-2 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-bold ${arr ? 'bg-white/20 text-white' : 'bg-blue-50 text-blue-700'}`}><Users size={12} /> {cls}</span>}
             </button>
           );
         })}
@@ -27699,7 +27844,7 @@ function TopicScreen({ subject, grade, topics, onPick, onBack, lastTopicId, clas
   const regularCount = topics.filter((t) => !t.custom && !t.general).length;
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-8 md:px-8">
+    <div className="mx-auto max-w-7xl px-4 py-8 md:px-8">
       <PageTitle
         title="Mavzuni tanlang"
         subtitle={`3-qadam: ${subject?.name}, ${grade}-sinf${classInfo ? ` • ${classInfo} sinf` : ''}`}
@@ -28469,7 +28614,7 @@ function LessonScreen({ topic, onBack, onGames }) {
             <h2 className="mt-3 text-3xl md:text-4xl font-extrabold text-blue-950">{s.title}</h2>
             <SlideBody s={s} />
           </div>
-          <div className="mt-6 flex items-center justify-between gap-4">
+          <div className="sticky bottom-3 z-10 mt-6 flex items-center justify-between gap-4 rounded-3xl bg-white/90 p-3 shadow-xl shadow-blue-900/10 ring-1 ring-blue-100 backdrop-blur">
             <button
               onClick={() => setI((x) => Math.max(x - 1, 0))}
               disabled={i === 0}
@@ -28477,6 +28622,11 @@ function LessonScreen({ topic, onBack, onGames }) {
             >
               <ChevronLeft size={28} /> Oldingi
             </button>
+            <div className="hidden flex-1 items-center justify-center gap-1.5 sm:flex">
+              {slides.map((_, k) => (
+                <button key={k} aria-label={`${k + 1}-slayd`} onClick={() => setI(k)} className={`h-3 rounded-full transition-all ${k === i ? 'w-10 bg-blue-600' : k < i ? 'w-3 bg-blue-300' : 'w-3 bg-slate-200 hover:bg-blue-200'}`} />
+              ))}
+            </div>
             {last ? (
               <PrimaryButton onClick={onGames} icon={Play}>O‘yinlarni tanlash</PrimaryButton>
             ) : (
@@ -31447,6 +31597,10 @@ export default function DarsPlayApp() {
   const teacherSteps = ['home', 'subject', 'grade', 'class', 'topic', 'lesson', 'game', 'picker', 'play', 'custom', 'results'];
   const needsTopic = ['lesson', 'game', 'picker', 'play'].includes(step);
   const needsClass = ['topic', 'lesson', 'game', 'picker', 'play', 'custom'].includes(step);
+  const quickOpen = (sid, g) => { setSubjectId(sid); setGrade(g); resetTo(['home', 'subject', 'grade', 'class']); };
+  const resumeRecent = (r) => { setSubjectId(r.subjectId); setGrade(r.grade); setClassId(r.classId); setTopicId(r.topicId); setGroups(null); resetTo(['home', 'subject', 'grade', 'class', 'topic', 'lesson']); };
+  const FLOW = ['subject', 'grade', 'class', 'topic'];
+  const jumpTo = (key) => setHistory((h) => { const i = h.lastIndexOf(key); return i >= 0 ? h.slice(0, i + 1) : h; });
   let safeStep = step;
   if (booting) safeStep = 'boot';
   else if (teacherSteps.includes(step) && !teacher) safeStep = 'login';
@@ -31488,6 +31642,18 @@ export default function DarsPlayApp() {
       />}
 
       <main className="pb-16">
+        {FLOW.includes(safeStep) && (
+          <StepBar
+            current={FLOW.indexOf(safeStep)}
+            onJump={jumpTo}
+            items={[
+              { key: 'subject', label: 'Fan', value: subject?.name },
+              { key: 'grade', label: 'Sinf', value: grade ? `${grade}-sinf` : '' },
+              { key: 'class', label: 'Sinf guruhi', value: selectedClass ? classLabel(selectedClass) : '' },
+              { key: 'topic', label: 'Mavzu' },
+            ]}
+          />
+        )}
         {dataError && (
           <div className="mx-auto mt-4 max-w-6xl px-4 md:px-8">
             <div className="flex items-start justify-between gap-3 rounded-2xl bg-rose-50 px-5 py-3 text-base font-semibold text-rose-700">
@@ -31513,6 +31679,9 @@ export default function DarsPlayApp() {
             onStart={() => go('subject')}
             onClassResults={(c) => { setClassId(c.id); setGrade(c.grade); setRatingScope('class'); go('results'); }}
             onRating={(scope) => { setRatingScope(scope); go('results'); }}
+            onQuick={quickOpen}
+            onResume={resumeRecent}
+            onGuide={() => { markGuideSeen(); go('guide'); }}
           />
         )}
 
@@ -31550,7 +31719,7 @@ export default function DarsPlayApp() {
         )}
 
         {safeStep === 'subject' && (
-          <SubjectScreen onBack={back} onPick={(id) => { setSubjectId(id); go('grade'); }} />
+          <SubjectScreen onBack={back} onPick={(id) => { setSubjectId(id); go('grade'); }} onQuick={quickOpen} />
         )}
 
         {safeStep === 'grade' && (
@@ -31578,7 +31747,7 @@ export default function DarsPlayApp() {
             lastTopicId={topicId}
             classInfo={classLabel(selectedClass)}
             onBack={back}
-            onPick={(id, mode) => { setTopicId(id); go(mode === 'lesson' ? 'lesson' : 'game'); }}
+            onPick={(id, mode) => { setTopicId(id); const tp = topics.find((x) => x.id === id); if (tp && classId) pushRecent({ subjectId, grade, classId, topicId: id, title: tp.title }); go(mode === 'lesson' ? 'lesson' : 'game'); }}
             onResults={() => { setRatingScope('class'); go('results'); }}
             onNewSet={() => { setEditingSet(null); go('custom'); }}
             onEditSet={(t) => { setEditingSet((db.customSets || []).find((x) => x.id === t.customId) || null); go('custom'); }}
