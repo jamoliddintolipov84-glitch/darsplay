@@ -34,7 +34,7 @@ darsplay/
 
 - **8-sinf Ona tili** (2025-yil darsligi): 80 ta mavzu — butun darslik, I–X boblar (7–222-betlar). Har bir mavzuda kengaytirilgan tushuntirish slaydlari va o‘yinlar.
 - **8-sinf Adabiyot** (2025-yil darsligi): butun darslik — 56 ta dars, I–IV choraklar (4–238-betlar). Mavzular choraklar bo‘yicha guruhlangan, BSB/CHSB darslari kiritilmagan.
-- **9-sinf Ona tili** (2025-yil darsligi): 30 ta mavzu (7–83-betlar, I–IV bo‘limlar). Har bir mavzuda yangi imlo o‘yinlari: «Qaysi harf?» (x/h, q/k, b/p ...) va «Imlo bellashuvi».
+- **9-sinf Ona tili** (2025-yil darsligi): 40 ta mavzu (7–110-betlar, I–V bo‘limlar). Har bir mavzuda yangi imlo o‘yinlari: «Qaysi harf?» (x/h, q/k, b/p ...) va «Imlo bellashuvi».
 - Qolgan fan va sinflar uchun umumiy savollar bilan namunaviy mavzular.
 - **15 ta o‘yin:** Test, Rostmi?, Millioner, Savol-javob, Moslashtirish, Harflar, Xotira, Yashirin so‘z, Joyda, Portlash, Poyga, hamda fikrlash o‘yinlari — Voqealar zanjiri, Ortiqchasini top, Bahs maydoni, Ijodiy topshiriq. Har darsda boshqacha o‘yinlar to‘plami taklif qilinadi.
 - **O‘quvchi tanlash:** kamera, ro‘yxat (avtomatik guruhlash), baraban.
