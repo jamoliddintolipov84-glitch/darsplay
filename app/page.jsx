@@ -22216,9 +22216,1216 @@ const ONA_TILI_9_P5 = [
   },
 ];
 
+/* --- 9-sinf Ona tili: VII bo‘lim 3–7-darslar, VIII bo‘lim 1–5-darslar (138–168-betlar) --- */
+const ONA_TILI_9_P6 = [
+  /* ===================== 51 ===================== */
+  {
+    id: 'ot9-51',
+    source: 'VII bo‘lim. San’at • 3-dars • 138–140-betlar',
+    title: 'Nutq ravonligi: parazit, ma’nosiz va varvar so‘zlar',
+    short: 'Og‘zaki nutqni buzuvchi birliklar, ravonlikni baholash, fakt va fikr',
+    lesson: [
+      {
+        title: 'Nutq sofligini buzuvchilar',
+        rule: 'Og‘zaki nutqda fikr yetishmasligi, tajribasizlik tufayli «yopishqoq», ma’nosiz birliklar qo‘llanadi. Ular nutqning sofligini buzadi, ulardan tiyilish kerak.',
+        ruleLabel: 'Qoida',
+        table: {
+          head: ['Tur', 'Misollar'],
+          rows: [
+            ['Parazit so‘zlar (ayni ma’nosida ishlatilmaydi)', 'xo‘sh, haligi, anaqa, masalan, demak, anavi'],
+            ['Ma’nosiz birliklar', 'eee, imm, mmm, haa'],
+            ['Varvar so‘zlar (o‘rinsiz o‘zlashma)', 'tak shto, davay, uje'],
+          ],
+        },
+        examples: ['Chingizxon, haa, Samarqand, Buxoro, haa, Xivani egallashda shafqatsiz bo‘ldi.', 'Anavi, haligi, dandon sopli pichog‘ingiz sinib qolibdi.'],
+      },
+      {
+        title: 'Ravonlikni baholash mezoni',
+        table: {
+          head: ['Mezon', '3 ball', '2 ball', '1 ball'],
+          rows: [
+            ['Parazit so‘zlar', 'umuman yo‘q', '1–3 o‘rinda', '4–6 o‘rinda'],
+            ['Ma’nosiz birliklar', 'nutq ravon', '1–3 marta uzildi', '4–6 marta uzildi'],
+            ['Varvar so‘zlar', 'umuman yo‘q', '1–3 o‘rinda', '4–6 o‘rinda'],
+          ],
+        },
+      },
+      {
+        title: '«Musiqiy terapiya»dan: fakt yoki fikr?',
+        table: {
+          head: ['Jumla', 'Javob'],
+          rows: [
+            ['Petrovskiy murakkab amaliyotlarda sokin musiqa eshitgan.', 'fakt'],
+            ['Mumtoz kuylar zamonaviy musiqadan ustundir.', 'fikr'],
+            ['Musiqa — eng kuchli san’at turi.', 'fikr'],
+            ['G‘azabni musiqa sadolari bilan davolashgan.', 'fakt'],
+            ['Musiqaning baland qo‘yilishi yurak urishini tezlashtiradi.', 'fakt'],
+          ],
+        },
+      },
+      {
+        title: 'Muhokama',
+        list: [
+          'Qo‘shiqni so‘zi mashhur qiladimi yoki musiqasi? (muhokama essesi)',
+          '«Musiqiy terapiya» matnidan xulosangizni 1–2 daqiqalik nutqda bayon qiling — parazit so‘zlarsiz!',
+          '«Musiqa va salomatlik» mavzusida intervyu uchun 7–8 savol tuzing.',
+        ],
+      },
+    ],
+    pairs: [
+      ['xo‘sh, haligi', 'parazit so‘zlar'],
+      ['eee, mmm', 'ma’nosiz birliklar'],
+      ['davay, uje', 'varvar so‘zlar'],
+      ['ravon nutq', 'to‘xtalmasdan, toza nutq'],
+      ['terapiya', 'davolash usuli'],
+      ['mizoj', 'tana va fe’l tabiati'],
+      ['ritm', 'bir maromda takrorlanish'],
+    ],
+    quiz: [
+      { q: '«Haligi», «anaqa» qanday so‘zlar?', options: ['parazit so‘zlar', 'kirish so‘zlar', 'undalmalar', 'sinonimlar'], answer: 0 },
+      { q: '«Davay», «uje» qanday so‘zlar?', options: ['varvar so‘zlar', 'arxaizmlar', 'evfemizmlar', 'atamalar'], answer: 0 },
+      { q: '«Eee», «mmm» qanday birliklar?', options: ['ma’nosiz birliklar', 'undovlar', 'taqlid so‘zlar', 'ko‘makchilar'], answer: 0 },
+      { q: 'Nutqda 4–6 marta parazit so‘z ishlatilsa necha ball?', options: ['1', '3', '2', '0'], answer: 0 },
+      { q: '«Mumtoz kuylar zamonaviy musiqadan ustun» — ...', options: ['fikr', 'fakt', 'termin', 'ta’rif'], answer: 0 },
+      { q: 'Parazit so‘zlar nutqqa qanday ta’sir qiladi?', options: ['sofligini buzadi', 'boyitadi', 'chiroyli qiladi', 'tezlashtiradi'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Nutqni buzadi', 'Nutqqa kerak'],
+      items: [
+        { text: 'haligi', cat: 0 }, { text: 'shuning uchun', cat: 1 },
+        { text: 'eee', cat: 0 }, { text: 'birinchidan', cat: 1 },
+        { text: 'davay', cat: 0 }, { text: 'xulosa qilib aytganda', cat: 1 },
+        { text: 'anaqa', cat: 0 }, { text: 'masalan (misol keltirganda)', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Parazit so‘zlar nega paydo bo‘ladi?', a: 'Fikr yetishmasligi, mavzuni bilmaslik, tajribasizlik sababli.' },
+      { q: 'Varvar so‘z nima?', a: 'O‘zbek tilida muqobili bo‘la turib o‘rinsiz ishlatilgan chet so‘z: davay, uje.' },
+      { q: 'Ravon gapirishga qanday o‘rganish mumkin?', a: 'Nutqni oldindan rejalashtirish, mashq qilish, o‘zini yozib tinglash.' },
+      { q: '«Haligi» so‘zi qachon parazit emas?', a: 'Ayni ma’nosida, «boya aytilgan» ma’nosida ishlatilganda.' },
+    ],
+    letters: [
+      { w: 'para…it', opts: ['z', 's'], a: 'z' },
+      { w: 'var…ar', opts: ['v', 'f'], a: 'v' },
+      { w: 'ravo…lik', opts: ['n', 'nn'], a: 'n' },
+      { w: 'ma’no…iz', opts: ['s', 'z'], a: 's' },
+      { w: 'mi…oj', opts: ['z', 's'], a: 'z' },
+      { w: 'fer…ent', opts: ['m', 'mm'], a: 'm' },
+      { w: 'chas…ota', opts: ['t', 'd'], a: 't' },
+      { w: 'shafqa…siz', opts: ['t', 'd'], a: 't' },
+      { w: 'dan…on', opts: ['d', 't'], a: 'd' },
+      { w: 'intervy…', opts: ['u', 'yu'], a: 'u' },
+    ],
+    spell: [
+      { opts: ['parazit', 'parasit'], a: 0 },
+      { opts: ['varvar', 'farvar'], a: 0 },
+      { opts: ['ravonlik', 'ravvonlik'], a: 0 },
+      { opts: ['mizoj', 'mizoz'], a: 0 },
+      { opts: ['ferment', 'firment'], a: 0 },
+      { opts: ['chastota', 'chastata'], a: 0 },
+      { opts: ['intervyu', 'interviyu'], a: 0 },
+      { opts: ['shafqatsiz', 'shavqatsiz'], a: 0 },
+    ],
+    odd: [
+      { items: ['xo‘sh', 'haligi', 'anaqa', 'chunki'], answer: 3, why: 'Chunki — bog‘lovchi; qolganlari parazit so‘zlar.' },
+      { items: ['eee', 'mmm', 'imm', 'xayriyat'], answer: 3, why: 'Xayriyat — kirish so‘z.' },
+      { items: ['davay', 'uje', 'tak shto', 'kompyuter'], answer: 3, why: 'Kompyuter — o‘zlashgan termin, varvar emas.' },
+    ],
+  },
+
+  /* ===================== 52 ===================== */
+  {
+    id: 'ot9-52',
+    source: 'VII bo‘lim. San’at • 4-dars • 141–143-betlar',
+    title: 'Ohang, to‘xtam va yuz ifodasi',
+    short: 'Bir gap — turli ma’no: ohang, pauza, sur’at va tana tili',
+    lesson: [
+      {
+        title: '«Yaxshi bo‘pti!»',
+        text: 'Qiz yumshoq ohangda «Yaxshi bo‘pti» deydi — rozilik. Yigit istehzo bilan keskin ohangda «Yaxshi bo‘pti» deydi — norozilik, kinoya. So‘z bir xil, ma’no qarama-qarshi.',
+      },
+      {
+        title: 'Og‘zaki nutq vositalari',
+        rule: 'Og‘zaki nutq mazmuniga ohang, to‘xtam, yuz ifodasi ham ta’sir qiladi. Ohangning ko‘tarilishi yoki pasayishi taajjub, buyruq, norozilik kabi hislarni ifodalaydi.',
+        ruleLabel: 'Qoida',
+        table: {
+          head: ['Vosita', 'Nimani bildiradi'],
+          rows: [
+            ['Tez nutq', 'hayajon, shoshilish'],
+            ['Sekin nutq', 'jiddiylik, o‘ychanlik yoki tushkunlik'],
+            ['To‘xtam (pauza)', 'hayrat, noaniqlik, pushaymonlik'],
+            ['Baland ovoz', 'g‘azab yoki hayajon'],
+            ['Jilmayish', 'mamnunlik, yaqinlik yoki kinoya'],
+            ['Yuz ifodasi', 'norozilik, kinoya, charchoq, mamnunlik'],
+          ],
+        },
+      },
+      {
+        title: '«Sen keldingmi?»',
+        table: {
+          head: ['Ohang', 'Ma’no'],
+          rows: [
+            ['hayrat bilan, yuqori ohangda', 'kutilmagan quvonch'],
+            ['sovuqqonlik bilan, past ohangda', 'befarqlik'],
+            ['achchiqlanib, baland ohangda', 'norozilik, g‘azab'],
+          ],
+        },
+      },
+      {
+        title: 'Ohang va tinish belgisi',
+        text: 'Yozuvda ohangni tinish belgilari ko‘rsatadi.',
+        table: {
+          head: ['Talaffuz', 'Yozilishi'],
+          rows: [
+            ['Senga ishongandim, [pauza] lekin... barbod qilding [undov]', 'Senga ishongandim, lekin sen barchasini barbod qilding!'],
+            ['Voy [hayrat] bu juda ajoyib sovg‘a', 'Voy, bu juda ajoyib sovg‘a! Men buni kutmagandim.'],
+            ['Ha [tan olish] men aybdorman', 'Ha, men aybdorman, lekin meni tushunishga harakat qil.'],
+          ],
+        },
+      },
+      {
+        title: 'Mashq',
+        list: ['«Ha, sen haqsan.» — rozilik yoki kinoya?', '«Barakalla!» — maqtov yoki masxara?', '«Bo‘ldi, endi yetar.» — charchoq yoki g‘azab?', '«Men faqat yordam bermoqchi edim.» — xafalik yoki uzr?'],
+        note: 'Har bir gapni ikki xil ohangda ayting, sinfdoshlaringiz ma’nosini topsin.',
+      },
+    ],
+    pairs: [
+      ['tez nutq', 'hayajon'],
+      ['sekin nutq', 'jiddiylik, o‘ychanlik'],
+      ['pauza', 'hayrat, noaniqlik'],
+      ['baland ovoz', 'g‘azab'],
+      ['istehzo', 'masxara, kinoya'],
+      ['undov belgisi', 'kuchli his'],
+      ['ko‘p nuqta', 'to‘xtam, gap tugamagan'],
+    ],
+    quiz: [
+      { q: 'Tez nutq nimani bildiradi?', options: ['hayajon, shoshilish', 'jiddiylik', 'tushkunlik', 'befarqlik'], answer: 0 },
+      { q: 'To‘xtam qanday ma’no beradi?', options: ['hayrat, noaniqlik', 'buyruq', 'quvonch', 'g‘azab'], answer: 0 },
+      { q: 'Yozuvda ohangni nima ko‘rsatadi?', options: ['tinish belgilari', 'katta harf', 'qavs', 'sarlavha'], answer: 0 },
+      { q: '«Istehzo» so‘zining ma’nosi?', options: ['masxara, kinoya', 'quvonch', 'hurmat', 'qo‘rquv'], answer: 0 },
+      { q: '«Sen keldingmi?» past, sovuq ohangda — ...', options: ['befarqlik', 'quvonch', 'g‘azab', 'hayrat'], answer: 0 },
+      { q: 'Sekin nutq nimani bildirishi mumkin?', options: ['o‘ychanlik, tushkunlik', 'shoshilish', 'hayajon', 'g‘azab'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Ijobiy his', 'Salbiy his'],
+      items: [
+        { text: 'hayrat bilan «Sen keldingmi?!»', cat: 0 }, { text: 'achchiqlanib «Sen keldingmi?!»', cat: 1 },
+        { text: 'yumshoq «Yaxshi bo‘pti»', cat: 0 }, { text: 'istehzoli «Yaxshi bo‘pti»', cat: 1 },
+        { text: 'jilmayib «Barakalla!»', cat: 0 }, { text: 'masxaralab «Barakalla!»', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Bir gap turli ohangda qanday ma’no o‘zgaradi?', a: 'Rozilik kinoyaga, quvonch g‘azabga aylanishi mumkin.' },
+      { q: 'Yuz ifodasi nutqni tushunishga yordam beradimi?', a: 'Ha, u norozilik, mamnunlik, kinoya kabi hislarni ko‘rsatadi.' },
+      { q: 'Pauza nimalarni bildirishi mumkin?', a: 'Hayrat, noaniqlik, pushaymonlik.' },
+      { q: 'Intervyu yoki filmda nimaga e’tibor berish kerak?', a: 'Ohang, to‘xtamlar, yuz ifodasi va ularning mazmunga ta’siri.' },
+    ],
+    letters: [
+      { w: 'is…ehzo', opts: ['t', 'd'], a: 't' },
+      { w: 'pau…a', opts: ['z', 's'], a: 'z' },
+      { w: 'hayaj…n', opts: ['o', 'a'], a: 'o' },
+      { w: 'tushkunli…', opts: ['k', 'q'], a: 'k' },
+      { w: 'pushay…onlik', opts: ['m', 'mm'], a: 'm' },
+      { w: 'kino…a', opts: ['y', 'i'], a: 'y' },
+      { w: 'sovuqqo…lik', opts: ['n', 'nn'], a: 'n' },
+      { w: 'taaj…ub', opts: ['j', 'jj'], a: 'j' },
+      { w: 'barbo…', opts: ['d', 't'], a: 'd' },
+      { w: 'so…g‘a', opts: ['v', 'f'], a: 'v' },
+    ],
+    spell: [
+      { opts: ['istehzo', 'istexzo'], a: 0 },
+      { opts: ['pushaymonlik', 'pushaymonilik'], a: 0 },
+      { opts: ['taajjub', 'taajub'], a: 0 },
+      { opts: ['sovuqqonlik', 'sovuqonlik'], a: 0 },
+      { opts: ['hayajon', 'hayajan'], a: 0 },
+      { opts: ['kinoya', 'kinaya'], a: 0 },
+      { opts: ['barbod', 'barbot'], a: 0 },
+      { opts: ['sovg‘a', 'sovga'], a: 0 },
+    ],
+    odd: [
+      { items: ['ohang', 'to‘xtam', 'yuz ifodasi', 'imlo'], answer: 3, why: 'Imlo — yozma nutqqa oid.' },
+      { items: ['hayajon', 'shoshilish', 'tez nutq', 'o‘ychanlik'], answer: 3, why: 'O‘ychanlik sekin nutqqa xos.' },
+      { items: ['undov', 'so‘roq', 'ko‘p nuqta', 'chiziqcha'], answer: 3, why: 'Qolganlari gap ohangini ko‘rsatuvchi belgilar.' },
+    ],
+  },
+
+  /* ===================== 53 ===================== */
+  {
+    id: 'ot9-53',
+    source: 'VII bo‘lim. San’at • 5-dars • 143–145-betlar',
+    title: 'Xayriddin Sulton. «Navoiy — 30»dan: teatrga yo‘l',
+    short: 'Talabalarni teatrga olib borgan ustoz; hikoya tahlili, ibora sinonimlari',
+    lesson: [
+      {
+        title: 'Parcha mazmuni',
+        text: 'Muallif talabalik yillarini eslaydi. Antik adabiyot o‘qituvchisi, dotsent Viloyat Fayziyeva talabalarni Hamza teatriga «Shoh Edip» spektakliga taklif qiladi. Talabalar shanbani futbol va oshga almashtirmaydi — teatrga bormaydi. Ustoz ularni koyimaydi, faqat qayta taklif qiladi.',
+        list: [
+          'Ikkinchi safar 25 talabadan faqat 3 qiz boradi.',
+          'Uchinchi safar ustoz: «Teatr, galereya, muzeyni ko‘rmay qanday jurnalist, qanday ziyoli bo‘lasiz?» deydi.',
+          'Hamma teatrga boradi va Shukur Burhon, Qudrat Xo‘jayev, Amin Turdiyev o‘yinini ko‘rib, «butunlay boshqa odam» bo‘lib chiqadi.',
+          'Shu kundan barcha talabalar teatr shaydosiga aylanadi.',
+        ],
+        note: 'Asar matnini darslikning 143–144-betlaridan o‘qing.',
+      },
+      {
+        title: 'G‘oya',
+        rule: 'Haqiqiy ustoz o‘quvchini majburlamaydi, balki sabr va ishonch bilan go‘zallikka yetaklaydi. San’at insonni ichdan o‘zgartiradi. Ustozning qalbida millat va ziyoli avlod uchun qayg‘u bor edi.',
+        ruleLabel: 'Asosiy fikr',
+      },
+      {
+        title: 'Iboralar va sinonimlari',
+        table: {
+          head: ['Ibora', 'Matndagi sinonimi'],
+          rows: [
+            ['ruhi yengillashmoq', 'yengil tortmoq'],
+            ['yodidan ko‘tarilmoq', 'esdan chiqmoq'],
+            ['bo‘yin egmoq', 'boshini egmoq'],
+            ['kuchli o‘y-tashvish ostida qolmoq', 'g‘am bosmoq'],
+          ],
+        },
+      },
+      {
+        title: 'Qahramonlar',
+        table: {
+          head: ['Muallim', 'Talabalar (avval)', 'Talabalar (keyin)'],
+          rows: [
+            ['talabchan, sabrli, qattiqqo‘l lekin mehribon, millatparvar', 'o‘yinqaroq, beparvo, bahona qidiruvchi', 'teatr shaydosi, o‘zgargan, minnatdor'],
+          ],
+        },
+      },
+      {
+        title: 'Muhokama',
+        list: [
+          '«Spektaklga boshqa odamlar bo‘lib kirib, butunlay boshqa odamlar bo‘lib chiqdik» jumlasini izohlang.',
+          'Ustozning maqsadi faqat spektaklni ko‘rsatish edimi?',
+          'Bugungi yoshlar teatrga boradimi? Nega?',
+          'Yurtimizdagi teatrlardan biri haqida xabar matni yozing.',
+        ],
+      },
+    ],
+    pairs: [
+      ['Viloyat Fayziyeva', 'antik adabiyot ustozi'],
+      ['«Shoh Edip»', 'Sofokl tragediyasi'],
+      ['Shukur Burhon', 'bosh rol ijrochisi'],
+      ['yodidan ko‘tarilmoq', 'esdan chiqmoq'],
+      ['ruhi yengillashmoq', 'yengil tortmoq'],
+      ['teatral', 'teatr shaydosi'],
+      ['Hamza teatri', 'spektakl ko‘rilgan joy'],
+    ],
+    quiz: [
+      { q: 'Ustoz talabalarni qaysi spektaklga taklif qildi?', options: ['«Shoh Edip»', '«Hamlet»', '«Otello»', '«Navoiy»'], answer: 0 },
+      { q: 'Ikkinchi safar nechta talaba bordi?', options: ['3', '25', '22', '10'], answer: 0 },
+      { q: 'Ustoz qanday yo‘l tutdi?', options: ['koyimay, qayta-qayta taklif qildi', 'baho tushirdi', 'jazoladi', 'e’tibor bermadi'], answer: 0 },
+      { q: 'Spektakldan keyin talabalar kimga aylandi?', options: ['teatr shaydosiga', 'aktyorga', 'rejissyorga', 'tanqidchiga'], answer: 0 },
+      { q: '«Yodidan ko‘tarilmoq» iborasining sinonimi?', options: ['esdan chiqmoq', 'eslamoq', 'quvonmoq', 'tushunmoq'], answer: 0 },
+      { q: 'Parcha muallifi?', options: ['Xayriddin Sulton', 'Tog‘ay Murod', 'Abdulla Qahhor', 'Talant Bek'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Muallimga xos', 'Talabalarga xos (avval)'],
+      items: [
+        { text: 'talabchan', cat: 0 }, { text: 'o‘yinqaroq', cat: 1 },
+        { text: 'sabrli', cat: 0 }, { text: 'bahona qidiruvchi', cat: 1 },
+        { text: 'millatparvar', cat: 0 }, { text: 'beparvo', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Viloyat opa qanday o‘qituvchi?', a: 'Talabchan, sabrli, millat qayg‘usini yeydigan ziyoli.' },
+      { q: 'Nega talabalar «butunlay boshqa odam» bo‘lib chiqdi?', a: 'Buyuk aktyorlar ijrosi, san’at qudrati ularning qalbini o‘zgartirdi.' },
+      { q: 'Matnga sarlavha qo‘ying.', a: 'Masalan: «Teatrga yetaklagan ustoz», «Qalbdagi evrilish».' },
+      { q: 'Teatr, muzeyga borish har kim uchun muhimmi?', a: 'Javobni asoslang: dunyoqarash, did, ziyolilik.' },
+    ],
+    sequences: [
+      {
+        title: 'Voqealarni tartiblang',
+        items: [
+          'Ustoz «Shoh Edip»ga taklif qiladi',
+          'Hech kim teatrga bormaydi',
+          'Faqat uch qiz boradi',
+          'Ustoz «Qanday ziyoli bo‘lasiz?» deydi',
+          'Hamma teatrga boradi',
+          'Talabalar teatr shaydosiga aylanadi',
+        ],
+      },
+    ],
+    letters: [
+      { w: 'spekta…l', opts: ['k', 'kk'], a: 'k' },
+      { w: 'tea…r', opts: ['t', 'tt'], a: 't' },
+      { w: 'dot…ent', opts: ['s', 'ts'], a: 's' },
+      { w: 'galere…a', opts: ['y', 'i'], a: 'y' },
+      { w: 'konser…atoriya', opts: ['v', 'f'], a: 'v' },
+      { w: 'qattiqqo‘…', opts: ['l', 'll'], a: 'l' },
+      { w: 'evri…ish', opts: ['l', 'll'], a: 'l' },
+      { w: 'ma’ru…a', opts: ['z', 's'], a: 'z' },
+      { w: 'shay…o', opts: ['d', 't'], a: 'd' },
+      { w: 'mua…lima', opts: ['ll', 'l'], a: 'll' },
+    ],
+    spell: [
+      { opts: ['spektakl', 'spektakil'], a: 0 },
+      { opts: ['dotsent', 'dosent'], a: 0 },
+      { opts: ['galereya', 'galeriya'], a: 0 },
+      { opts: ['konservatoriya', 'konservatorya'], a: 0 },
+      { opts: ['qattiqqo‘l', 'qattiqo‘l'], a: 0 },
+      { opts: ['shaydo', 'shayto'], a: 0 },
+      { opts: ['ma’ruza', 'maruza'], a: 0 },
+      { opts: ['muallima', 'mualima'], a: 0 },
+    ],
+    odd: [
+      { items: ['teatr', 'galereya', 'muzey', 'choyxona'], answer: 3, why: 'Qolganlari san’at maskanlari.' },
+      { items: ['Shukur Burhon', 'Qudrat Xo‘jayev', 'Amin Turdiyev', 'Sofokl'], answer: 3, why: 'Sofokl — muallif; qolganlari aktyorlar.' },
+      { items: ['Sofokl', 'Esxil', 'Homer', 'Navoiy'], answer: 3, why: 'Qolganlari antik yunon adiblari.' },
+    ],
+  },
+
+  /* ===================== 54 ===================== */
+  {
+    id: 'ot9-54',
+    source: 'VII bo‘lim. San’at • 6-dars • 146–147-betlar',
+    title: 'Qo‘shma gapda tinish belgilari',
+    short: 'Vergul, tire, ikki nuqta: qachon qaysi belgi qo‘yiladi',
+    lesson: [
+      {
+        title: 'Uch holat',
+        list: [
+          'Qismlar bog‘lovchi yoki bog‘lovchi vosita bilan bog‘lansa — vergul.',
+          'Qismlar «va», «hamda» bilan bog‘lansa — tinish belgisi qo‘yilmaydi.',
+          'Bog‘lovchi bo‘lmasa — vergul, tire yoki ikki nuqta.',
+        ],
+      },
+      {
+        title: 'Vergul',
+        rule: 'Qismlar bir paytda yoki ketma-ket voqealarni ifodalasa, shuningdek bog‘lovchi (biroq, chunki, agar) yoki vosita (-sa, -u/-yu) bilan bog‘lansa, vergul qo‘yiladi.',
+        ruleLabel: 'Qoida',
+        examples: ['Kuz keldi, yig‘im-terim boshlandi.', 'Siz yashirdingiz, ammo men yashirmayman.', 'Kim izlansa, albatta, maqsadiga erishadi.'],
+      },
+      {
+        title: 'Tire',
+        rule: 'Qismlar orasida o‘xshatish, zidlash, sabab, shart, natija munosabati bo‘lsa, tire qo‘yiladi.',
+        ruleLabel: 'Qoida',
+        examples: ['Hamal keldi — amal keldi.', 'Davlat tinch — sen tinch.', 'Soni ko‘p — salmog‘i yo‘q.'],
+      },
+      {
+        title: 'Ikki nuqta',
+        rule: 'Ikkinchi qism birinchisini izohlasa, sababini ochsa, ikki nuqta qo‘yiladi.',
+        ruleLabel: 'Qoida',
+        examples: ['Bizning qarorimiz shu: hasharda barchamiz qatnashamiz.', 'Urilmoq ham foyda: katta tajriba hosil qilasiz.', 'Sodiqjon to‘xtadi: orqasidan kimdir kelayotgan edi.'],
+      },
+      {
+        title: 'Teatr haqida hikmatlar',
+        table: {
+          head: ['Hikmat', 'Belgi'],
+          rows: [
+            ['Teatr hayotga ta’sir ko‘rsatishi uchun turmushdan kuchliroq bo‘lishi kerak: teatr fidoyilikni talab qiladi. (F. Kafka)', 'ikki nuqta — izoh'],
+            ['Aktyor tomoshabinlar qatori teatrni tark etmaydi — sahnadagi hayot uning xayolida davom etadi. (M. Uyg‘ur)', 'tire — sabab/izoh'],
+          ],
+        },
+        note: 'Behbudiy teatrni «ibratxona» deb atagan: unda ko‘zlilar ko‘rib, quloqlilar eshitib ta’sirlanadi.',
+      },
+    ],
+    pairs: [
+      ['Kuz keldi, ishlar boshlandi', 'vergul: ketma-ketlik'],
+      ['Hamal keldi — amal keldi', 'tire: natija'],
+      ['Qarorimiz shu: ...', 'ikki nuqta: izoh'],
+      ['... va ...', 'belgi qo‘yilmaydi'],
+      ['chunki, ammo', 'vergul bilan'],
+      ['Davlat tinch — sen tinch', 'tire: shart'],
+    ],
+    quiz: [
+      { q: '«Va» bilan bog‘langan qo‘shma gapda qanday belgi?', options: ['qo‘yilmaydi', 'vergul', 'tire', 'ikki nuqta'], answer: 0 },
+      { q: 'Ikkinchi qism birinchisini izohlasa qaysi belgi?', options: ['ikki nuqta', 'vergul', 'nuqta', 'so‘roq'], answer: 0 },
+      { q: '«Hamal keldi — amal keldi» gapida tire nima bildiradi?', options: ['natija, shart', 'izoh', 'sanash', 'undalma'], answer: 0 },
+      { q: '«Siz yashirdingiz, ammo men yashirmayman» — nega vergul?', options: ['«ammo» bog‘lovchisi bor', 'izoh bor', 'zidlash yo‘q', 'sanash'], answer: 0 },
+      { q: '«Urilmoq ham foyda ... tajriba hosil qilasiz» — qaysi belgi?', options: ['ikki nuqta', 'vergul', 'tire', 'qavs'], answer: 0 },
+      { q: '«Davlat tinch ... sen tinch» — qaysi belgi?', options: ['tire', 'ikki nuqta', 'vergul', 'nuqta'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Tire', 'Ikki nuqta'],
+      items: [
+        { text: 'Hamal keldi … amal keldi', cat: 0 }, { text: 'Qarorimiz shu … hasharga chiqamiz', cat: 1 },
+        { text: 'Davlat tinch … sen tinch', cat: 0 }, { text: 'Urilmoq ham foyda … tajriba olasiz', cat: 1 },
+        { text: 'Soni ko‘p … salmog‘i yo‘q', cat: 0 }, { text: 'Falsafam shu … iltimosga kuning qolmasin', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Qo‘shma gapda qachon tinish belgisi qo‘yilmaydi?', a: 'Qismlar «va», «hamda» bilan bog‘lansa.' },
+      { q: 'Tire qanday munosabatda qo‘yiladi?', a: 'O‘xshatish, zidlash, sabab, shart, natija.' },
+      { q: 'Ikki nuqta qachon qo‘yiladi?', a: 'Ikkinchi qism birinchisini izohlasa yoki sababini ochsa.' },
+      { q: 'Tomosha madaniyati qoidasini qo‘shma gap bilan yozing.', a: 'Masalan: Tomoshaga kechikmang, chunki bu boshqalarga noqulaylik tug‘diradi.' },
+    ],
+    letters: [
+      { w: 'ti…e', opts: ['r', 'rr'], a: 'r' },
+      { w: 'ver…ul', opts: ['g', 'k'], a: 'g' },
+      { w: 'fidoy…lik', opts: ['i', '—'], a: 'i' },
+      { w: 'sal…oq', opts: ['m', 'mm'], a: 'm' },
+      { w: 'a…isha', opts: ['f', 'v'], a: 'f' },
+      { w: 'tomoshabi…', opts: ['n', 'nn'], a: 'n' },
+      { w: 'mujassa…', opts: ['m', 'mm'], a: 'm' },
+      { w: 'saodatma…d', opts: ['n', 'nn'], a: 'n' },
+      { w: 'yig‘im-ter…m', opts: ['i', 'e'], a: 'i' },
+      { w: 'blo…er', opts: ['g', 'k'], a: 'g' },
+    ],
+    spell: [
+      { opts: ['fidoyilik', 'fidoilik'], a: 0 },
+      { opts: ['afisha', 'avisha'], a: 0 },
+      { opts: ['mujassam', 'mujasam'], a: 0 },
+      { opts: ['saodatmand', 'saodatmant'], a: 0 },
+      { opts: ['yig‘im-terim', 'yig‘im terim'], a: 0 },
+      { opts: ['bloger', 'blogger'], a: 0 },
+      { opts: ['tomoshabin', 'tamoshabin'], a: 0 },
+      { opts: ['salmoq', 'salmok'], a: 0 },
+    ],
+    odd: [
+      { items: ['vergul', 'tire', 'ikki nuqta', 'qavs'], answer: 3, why: 'Qavs qo‘shma gap qismlari orasida qo‘yilmaydi.' },
+      { items: ['chunki', 'ammo', 'agar', 'va'], answer: 3, why: '«Va» bilan vergul qo‘yilmaydi.' },
+      { items: ['o‘xshatish', 'zidlash', 'natija', 'izoh'], answer: 3, why: 'Izohda ikki nuqta; qolganlarida tire.' },
+    ],
+  },
+
+  /* ===================== 55 ===================== */
+  {
+    id: 'ot9-55',
+    source: 'VII bo‘lim. San’at • 7-dars • 147–150-betlar',
+    title: '«Ming pari va bir surat»: Ginnes kitobiga kirgan rassom',
+    short: 'Lekim Ibrohimov ijodi; san’at atamalari, sifatlarning ma’no guruhlari',
+    lesson: [
+      {
+        title: 'Matn mazmuni',
+        text: 'Talant Bek (Oyina.uz) maqolasi rassom Lekim Ibrohimov ijodi haqida.',
+        list: [
+          'Uning asarlari vaqtni ushlab qolgan, zamon haqida kelajakka rang orqali gapiradi.',
+          '«Ming pari va bir surat» ko‘rgazmasi «Ming bir kecha» va Afrosiyob devoriy suratlarini eslatadi.',
+          'Samarqand miniatyurasi ilhomini tarbiyalagan, Toshkent ulg‘aytirgan, Florensiyada dunyoga tanilgan.',
+          'Florensiya biyennalesida oltin medal olgan birinchi o‘zbek rassomi.',
+          'Balandligi 8 m, uzunligi 66 m (528 kv. m) megapolotnosi Ginnes rekordlar kitobiga kiritilgan.',
+        ],
+      },
+      {
+        title: 'Asosiy fikr',
+        rule: 'Chin ijodkor uchun chegara yo‘q, ammo millat ruhi bor. Lekim Ibrohimov Sharq rassomchiligiga yangi nafas olib kirdi va san’atning bozordan ustunligini ko‘rsatdi.',
+        ruleLabel: 'G‘oya',
+      },
+      {
+        title: 'Atamalar izohi',
+        table: {
+          head: ['Atama', 'Izohi'],
+          rows: [
+            ['syurrealizm, kubizm, modernizm', 'tasviriy san’at oqimlari'],
+            ['«Avesto»', 'zardushtiylikning muqaddas kitobi'],
+            ['boshkent', 'poytaxt'],
+            ['polotno, megapolotno', 'yirik hajmli rangtasvir asari'],
+            ['Afrosiyob', 'Samarqand yaqinidagi qadimiy xarobalar'],
+            ['Pegas', 'qanotli oq ot'],
+            ['biyennale', 'har ikki yilda o‘tkaziladigan xalqaro ko‘rgazma'],
+          ],
+        },
+      },
+      {
+        title: 'Sifatlar va ma’no guruhlari',
+        table: {
+          head: ['Birikma', 'Guruh'],
+          rows: [
+            ['eng qisqa (vaqt)', 'hajm-o‘lchov'],
+            ['go‘zal («Devon»)', 'xususiyat'],
+            ['qadimiy (madaniyat)', 'xususiyat (vaqt)'],
+            ['oq (ot)', 'rang-tus'],
+            ['ilohiy (farishtalar)', 'xususiyat'],
+          ],
+        },
+      },
+      {
+        title: 'Muhokama',
+        list: [
+          '«Sportda baland sakrab Ginnesga kirish mumkin, san’atda-chi?!» — muallif nima demoqchi?',
+          'Matndan milliy iftixor ifodalangan gaplarni toping.',
+          'Ijodkorlarimizdan kimning asarini Ginnesga tavsiya qilardingiz?',
+        ],
+      },
+    ],
+    pairs: [
+      ['Lekim Ibrohimov', '«Ming pari va bir surat»'],
+      ['biyennale', 'ikki yillik xalqaro ko‘rgazma'],
+      ['boshkent', 'poytaxt'],
+      ['Pegas', 'qanotli ot'],
+      ['Afrosiyob', 'qadimiy xarobalar'],
+      ['megapolotno', 'yirik rangtasvir asari'],
+      ['528 kv. m', 'Ginnes rekordi'],
+    ],
+    quiz: [
+      { q: 'Lekim Ibrohimov qaysi shaharda oltin medal oldi?', options: ['Florensiya', 'Parij', 'London', 'Moskva'], answer: 0 },
+      { q: 'Megapolotnoning uzunligi?', options: ['66 metr', '8 metr', '528 metr', '100 metr'], answer: 0 },
+      { q: '«Biyennale» nima?', options: ['har ikki yilda o‘tadigan ko‘rgazma', 'yillik festival', 'muzey', 'rasm turi'], answer: 0 },
+      { q: '«Avesto» qaysi dinning kitobi?', options: ['zardushtiylik', 'buddizm', 'xristianlik', 'islom'], answer: 0 },
+      { q: 'Rassom ilhomini qaysi shahar miniatyurasi tarbiyalagan?', options: ['Samarqand', 'Buxoro', 'Xiva', 'Qo‘qon'], answer: 0 },
+      { q: 'Maqola muallifi?', options: ['Talant Bek', 'Nigora Orzimurodova', 'Xayriddin Sulton', 'Orif Tolib'], answer: 0 },
+    ],
+    sort: {
+      categories: ['San’at oqimi', 'Joy nomi'],
+      items: [
+        { text: 'syurrealizm', cat: 0 }, { text: 'Florensiya', cat: 1 },
+        { text: 'kubizm', cat: 0 }, { text: 'Afrosiyob', cat: 1 },
+        { text: 'realizm', cat: 0 }, { text: 'Samarqand', cat: 1 },
+        { text: 'modernizm', cat: 0 },
+      ],
+    },
+    qa: [
+      { q: 'Nega rassom Ginnes kitobiga kirdi?', a: '528 kv. metrli (8×66 m) megapolotnosi kattaligi uchun.' },
+      { q: '«Sharq — rassomlar uchun do‘kon» fikrini izohlang.', a: 'G‘arb rassomlari Sharq madaniyati va obrazlaridan ilhom olgan.' },
+      { q: 'Matn qaysi uslubda?', a: 'Publitsistik (badiiy-publitsistik).' },
+      { q: 'Muallif san’at va bozor haqida nima deydi?', a: 'Haqiqiy san’at bozordan ustun turadi.' },
+    ],
+    letters: [
+      { w: 'biyen…ale', opts: ['n', 'nn'], a: 'nn' },
+      { w: 'syurrea…izm', opts: ['l', 'll'], a: 'l' },
+      { w: 'ku…izm', opts: ['b', 'p'], a: 'b' },
+      { w: 'polot…o', opts: ['n', 'nn'], a: 'n' },
+      { w: 'miniat…ura', opts: ['y', 'i'], a: 'y' },
+      { w: 'Floren…iya', opts: ['ts', 's'], a: 'ts' },
+      { w: 'mujassamla…htirmoq', opts: ['s', 'sh'], a: 'sh' },
+      { w: 'kim…shdi', opts: ['o', 'a'], a: 'o' },
+      { w: 'ifti…or', opts: ['x', 'h'], a: 'x' },
+      { w: 'ilho…', opts: ['m', 'mm'], a: 'm' },
+    ],
+    spell: [
+      { opts: ['biyennale', 'biennale'], a: 0 },
+      { opts: ['syurrealizm', 'surrealizm'], a: 0 },
+      { opts: ['miniatyura', 'miniatura'], a: 0 },
+      { opts: ['Florensiya', 'Florentsiya'], a: 0 },
+      { opts: ['iftixor', 'iftihor'], a: 0 },
+      { opts: ['kimoshdi', 'kimashdi'], a: 0 },
+      { opts: ['zardushtiylik', 'zardushtilik'], a: 0 },
+      { opts: ['rangtasvir', 'rang tasvir'], a: 0 },
+    ],
+    odd: [
+      { items: ['syurrealizm', 'kubizm', 'modernizm', 'Afrosiyob'], answer: 3, why: 'Afrosiyob — joy nomi.' },
+      { items: ['Samarqand', 'Toshkent', 'Florensiya', 'Ginnes'], answer: 3, why: 'Ginnes — rekordlar kitobi.' },
+      { items: ['pari', 'farishta', 'malak', 'polotno'], answer: 3, why: 'Polotno — rasm matosi.' },
+    ],
+  },
+
+  /* ===================== 56 ===================== */
+  {
+    id: 'ot9-56',
+    source: 'VII bo‘lim. San’at • 7-dars • 150–153-betlar',
+    title: 'Tadbir rejasi va tushuntirish xati',
+    short: 'Vaqt kesimidagi tadbir rejasi; tushuntirish xati va arizaning farqi',
+    lesson: [
+      {
+        title: 'Tadbir rejasi',
+        rule: 'Tadbir rejasi — tadbirning tuzilishi va mazmunini ifodalovchi hujjat. Unda amalga oshiriladigan ishlar vaqt kesimida ko‘rsatiladi.',
+        ruleLabel: 'Ta’rif',
+        table: {
+          head: ['Vaqt', '«Ona tilim — faxrim» musobaqasi'],
+          rows: [
+            ['9:00–9:05', 'Kirish: maqsad va qoidalar'],
+            ['9:05–9:10', '1-shart: Tanishtiruv (nom, shior)'],
+            ['9:10–9:20', '2-shart: «So‘z ko‘rki — maqol»'],
+            ['9:20–9:30', '3-shart: «So‘z ichida so‘z»'],
+            ['9:30–9:45', '4-shart: «Adabiyot bilimdonlari»'],
+            ['9:45–10:15', '5-shart: Sahna ko‘rinishi'],
+            ['10:15–10:25', 'Natijalarni hisoblash'],
+            ['10:25–10:30', 'Taqdirlash marosimi'],
+          ],
+        },
+      },
+      {
+        title: 'Tadbir boshlovchisiga kerak xislatlar',
+        list: ['ravon va ta’sirli nutq', 'vaqtni his qilish', 'kutilmagan vaziyatda topqirlik', 'tomoshabin bilan muloqot qila olish', 'yoqimli tashqi ko‘rinish va madaniyat'],
+      },
+      {
+        title: 'Tushuntirish xati',
+        rule: 'Tushuntirish xati — biror voqea, xatti-harakat yoki holat sababini izohlash uchun yoziladigan rasmiy hujjat. U o‘tgan voqea haqida yoziladi.',
+        ruleLabel: 'Ta’rif',
+        table: {
+          head: ['Qism', 'Namuna'],
+          rows: [
+            ['Kimga (o‘ng burchakda)', 'Olmazor tumani 46-maktab direktori M. Olimovga'],
+            ['Kimdan', '9-«D» sinf o‘quvchisi S. Shamsiddinovadan'],
+            ['Sarlavha (o‘rtada)', 'TUSHUNTIRISH XATI'],
+            ['Mazmun (rasmiy uslub)', 'Avtobus yo‘lda buzilgani sababli 5-may kuni 1–2-soat darslarga yetib kela olmadim.'],
+            ['Imzo va sana', '(imzo) S. Shamsiddinova, 2025-yil 5-may'],
+          ],
+        },
+      },
+      {
+        title: 'Ariza va tushuntirish xati',
+        table: {
+          head: ['Ariza', 'Tushuntirish xati'],
+          rows: [
+            ['iltimos, talab, murojaat', 'voqea sababini izohlash'],
+            ['kelgusi vaziyat uchun', 'o‘tgan voqea uchun'],
+            ['ta’til, o‘qish, ishga kirish', 'kechikish, dars qoldirish'],
+          ],
+        },
+      },
+      {
+        title: 'Topshiriq',
+        text: 'Tishingiz og‘rib shifokorga borganingiz uchun darsga kelolmadingiz. Direktor nomiga tushuntirish xati yozing.',
+      },
+    ],
+    pairs: [
+      ['tadbir rejasi', 'ishlar vaqt kesimida'],
+      ['tushuntirish xati', 'o‘tgan voqea sababi'],
+      ['ariza', 'kelgusi uchun iltimos'],
+      ['hay’at', 'baholovchilar guruhi'],
+      ['shior', 'jamoa chaqirig‘i'],
+      ['boshlovchi', 'tadbirni olib boruvchi'],
+    ],
+    quiz: [
+      { q: 'Tushuntirish xati nima uchun yoziladi?', options: ['o‘tgan voqea sababini izohlash', 'ta’til so‘rash', 'ishga kirish', 'tabriklash'], answer: 0 },
+      { q: 'Ariza qaysi vaziyat uchun?', options: ['kelgusi vaziyat, iltimos', 'o‘tgan voqea', 'kechikish', 'jazo'], answer: 0 },
+      { q: 'Tushuntirish xatining sarlavhasi qayerda?', options: ['o‘rtada', 'pastda', 'chap burchakda', 'yozilmaydi'], answer: 0 },
+      { q: 'Musobaqada eng uzun shart qaysi?', options: ['sahna ko‘rinishi', 'tanishtiruv', 'maqol', 'taqdirlash'], answer: 0 },
+      { q: 'Tadbir rejasida ishlar qanday ko‘rsatiladi?', options: ['vaqt kesimida', 'alifbo tartibida', 'tasodifiy', 'rasm bilan'], answer: 0 },
+      { q: 'Tushuntirish xati qaysi uslubda?', options: ['rasmiy', 'badiiy', 'so‘zlashuv', 'ilmiy'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Ariza', 'Tushuntirish xati'],
+      items: [
+        { text: 'ta’til so‘rash', cat: 0 }, { text: 'darsga kechikish', cat: 1 },
+        { text: 'to‘garakka qabul qilish', cat: 0 }, { text: 'dars qoldirish sababi', cat: 1 },
+        { text: 'ma’lumotnoma olish', cat: 0 }, { text: 'xatti-harakatni izohlash', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Tadbir rejasi nima uchun kerak?', a: 'Tadbir tartibli, vaqtida, puxta o‘tishi uchun.' },
+      { q: 'Ariza va tushuntirish xatining farqi?', a: 'Ariza — kelgusi uchun iltimos; tushuntirish xati — o‘tgan voqea sababini izohlash.' },
+      { q: 'Tushuntirish xatining yuqori o‘ng burchagiga nima yoziladi?', a: 'Kimga va kimdan.' },
+      { q: '«Bahor» ko‘rgazmasi uchun tadbir rejasining 3 bandini ayting.', a: 'Masalan: ochilish so‘zi, asarlar taqdimoti, g‘oliblarni taqdirlash.' },
+    ],
+    sequences: [
+      { title: 'Tushuntirish xati qismlarini tartiblang', items: ['Kimga', 'Kimdan', 'Tushuntirish xati (sarlavha)', 'Sabab bayoni', 'Imzo va sana'] },
+    ],
+    letters: [
+      { w: 'tushun…irish', opts: ['t', 'd'], a: 't' },
+      { w: 'tad…ir', opts: ['b', 'p'], a: 'b' },
+      { w: 'ssen…riy', opts: ['a', 'o'], a: 'a' },
+      { w: 'hay’a…', opts: ['t', 'd'], a: 't' },
+      { w: 'taqdi…lash', opts: ['r', 'rr'], a: 'r' },
+      { w: 'sho…r', opts: ['i', 'y'], a: 'i' },
+      { w: 'mashg‘ulo…', opts: ['t', 'd'], a: 't' },
+      { w: 'ser…ifikat', opts: ['t', 'd'], a: 't' },
+      { w: 'mus…baqa', opts: ['o', 'a'], a: 'o' },
+      { w: 'boshlov…hi', opts: ['c', 's'], a: 'c' },
+    ],
+    spell: [
+      { opts: ['tushuntirish xati', 'tushuntirish xat'], a: 0 },
+      { opts: ['ssenariy', 'senariy'], a: 0 },
+      { opts: ['sertifikat', 'sertefikat'], a: 0 },
+      { opts: ['hay’at', 'hayat'], a: 0 },
+      { opts: ['musobaqa', 'musoboqa'], a: 0 },
+      { opts: ['taqdirlash', 'taqdirlosh'], a: 0 },
+      { opts: ['mashg‘ulot', 'mashgulot'], a: 0 },
+      { opts: ['shior', 'shiyor'], a: 0 },
+    ],
+    odd: [
+      { items: ['ariza', 'tushuntirish xati', 'taklif xati', 'she’r'], answer: 3, why: 'Qolganlari rasmiy hujjatlar.' },
+      { items: ['kimga', 'kimdan', 'imzo', 'naqarot'], answer: 3, why: 'Naqarot hujjat qismi emas.' },
+      { items: ['kirish', 'shartlar', 'taqdirlash', 'tavtologiya'], answer: 3, why: 'Qolganlari tadbir rejasi qismlari.' },
+    ],
+  },
+
+  /* ===================== 57 ===================== */
+  {
+    id: 'ot9-57',
+    source: 'VIII bo‘lim. Sport va sog‘lik • 1-dars • 155–159-betlar',
+    title: 'Tog‘ay Murod. «Yulduzlar mangu yonadi»dan: bolalar kurashi',
+    short: 'Bo‘ri polvon adolati, or-nomus uchun kurash, sheva so‘zlari',
+    lesson: [
+      {
+        title: 'Parcha mazmuni',
+        text: 'To‘yda kurash boshlanadi. Bo‘ri polvon davraga «halol olishamiz, tarafkashlik va g‘irromlikka yo‘l qo‘ymayman» deb e’lon qiladi va avval kichkina bolalarni — rais o‘g‘li Shukur va Ermatni olishtiradi.',
+        list: [
+          'Shukur yiqitmoqchi bo‘ladi, lekin ikkovi baravar yiqiladi — «it yiqilish», boshqatdan olishadi.',
+          'Shukur «yiqitdim» deb o‘tiradi; Bo‘ri polvon: «Otangiz idoraga rais, davraga men raisman!» deydi.',
+          'Ikkinchi bellashuvda Ermat Shukurni yiqitadi.',
+          'Shukurning or-nomusi uchun akasi Xolyor davraga chiqadi; kurash kattalashib, o‘smirlarga, keyin kattalarga yetadi.',
+          'Mehmon polvonlar kelganda qishloqning barcha polvonlari bir taraf bo‘ladi.',
+        ],
+        note: 'Asar matnini darslikning 155–157-betlaridan o‘qing.',
+      },
+      {
+        title: 'G‘oya',
+        rule: 'Or-nomus uchun kurash bolalikdan boshlanadi. Vatan kindik qoni tomgan yerdan boshlanadi: mehmon polvonlar oldida qishloq ahli bir tan bo‘ladi. Davrada mansabga emas, adolatga qaraladi.',
+        ruleLabel: 'Asosiy fikr',
+      },
+      {
+        title: 'Qahramonlar',
+        table: {
+          head: ['Qahramon', 'Xususiyati'],
+          rows: [
+            ['Bo‘ri polvon', 'adolatli, halol, bir so‘zli, hazilkash'],
+            ['Shukur', 'rais o‘g‘li, otasiga ishonadi, arazchi'],
+            ['Ermat', 'oriyatli, dadil, haqini talab qiladi'],
+            ['Xolyor', 'Shukurning akasi, ukasining ori uchun chiqadi'],
+          ],
+        },
+      },
+      {
+        title: 'Sheva va adabiy shakl',
+        table: {
+          head: ['Shevada', 'Adabiy tilda'],
+          rows: [
+            ['chappa tarafdan', 'teskari tomondan'],
+            ['ikkoviyam', 'ikkovi ham'],
+            ['shuytib-shuytib', 'shunday qilib'],
+            ['o‘ngirlarini', 'etaklarini'],
+            ['qabatiga', 'yoniga'],
+            ['yanagi to‘yda', 'keyingi to‘yda'],
+            ['hamsoyamiz', 'qo‘shnimiz'],
+          ],
+        },
+      },
+      {
+        title: 'So‘zlar izohi',
+        table: {
+          head: ['So‘z', 'Izohi'],
+          rows: [
+            ['do‘rjiroq', 'yirikroq, qo‘lga ilinguliq'],
+            ['bakovul', 'to‘yda sovrin taqsimlovchi'],
+            ['zot', 'sovrin (to‘n, pul)'],
+            ['chil', 'kurash usuli, oyoq bilan chalish'],
+            ['it yiqilish', 'ikki polvon baravar yiqilishi'],
+            ['yotibotar', 'orqaga yotib, raqibni oshirib otish usuli'],
+            ['emikdosh', 'bir onani emgan, aka-uka'],
+          ],
+        },
+      },
+    ],
+    pairs: [
+      ['Bo‘ri polvon', 'adolatli hakam'],
+      ['it yiqilish', 'baravar yiqilish'],
+      ['yotibotar', 'kurash usuli'],
+      ['bakovul', 'sovrin taqsimlovchi'],
+      ['zot', 'sovrin'],
+      ['hamsoya', 'qo‘shni'],
+      ['qabatiga', 'yoniga'],
+      ['Xolyor', 'Shukurning akasi'],
+    ],
+    quiz: [
+      { q: 'Parcha muallifi?', options: ['Tog‘ay Murod', 'Abdulla Qahhor', 'Xayriddin Sulton', 'Said Ahmad'], answer: 0 },
+      { q: 'Kim adolatli, bir so‘zli kishi sifatida tasvirlangan?', options: ['Bo‘ri polvon', 'rais', 'Xolyor', 'Shukur'], answer: 0 },
+      { q: 'Ikki polvon baravar yiqilsa, qanday yiqilish?', options: ['it yiqilish', 'yotibotar', 'chappa', 'yonbosh'], answer: 0 },
+      { q: 'Ermat Shukurni qanday yiqitdi?', options: ['Shukur o‘z usuliga o‘zi yiqildi', 'yelka qilib', 'chil bilan', 'Bo‘ri polvon usuli bilan'], answer: 0 },
+      { q: 'Ermat polvonga xos sifat?', options: ['oriyatli', 'kekkaygan', 'bo‘shang', 'qo‘rqoq'], answer: 0 },
+      { q: 'Xolyor nega davraga chiqdi?', options: ['ukasining ori uchun', 'sovrin uchun', 'otasi buyurdi', 'zerikkani uchun'], answer: 0 },
+      { q: '«Hamsoya» so‘zining adabiy shakli?', options: ['qo‘shni', 'qarindosh', 'do‘st', 'aka'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Sheva shakli', 'Adabiy shakl'],
+      items: [
+        { text: 'shuytib', cat: 0 }, { text: 'shunday qilib', cat: 1 },
+        { text: 'ikkoviyam', cat: 0 }, { text: 'ikkovi ham', cat: 1 },
+        { text: 'yanagi', cat: 0 }, { text: 'keyingi', cat: 1 },
+        { text: 'hamsoya', cat: 0 }, { text: 'qo‘shni', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Bo‘ri polvonning «Davraga men raisman!» degani nimani anglatadi?', a: 'Kurashda mansab emas, adolat hukm suradi.' },
+      { q: 'Nega yiqilganning o‘rniga do‘sti yoki qarindoshi chiqadi?', a: 'Or-nomus, birodarlik tuyg‘usi.' },
+      { q: '«Vatan kindik qon tommish yerdan boshlanadi» fikrini izohlang.', a: 'Vatan tuyg‘usi tug‘ilgan joydan, qishloqdan boshlanadi.' },
+      { q: 'Olchin, tog‘chi, qovchin kabi so‘zlar nimani bildiradi?', a: 'Urug‘-aymoq nomlarini.' },
+    ],
+    sequences: [
+      {
+        title: 'Voqealarni tartiblang',
+        items: [
+          'Bo‘ri polvon halol kurash haqida e’lon qiladi',
+          'Shukur va Ermat davrani teskari aylanadi',
+          'Ikkovi baravar yiqiladi',
+          'Ermat Shukurni yiqitadi',
+          'Xolyor ukasining ori uchun chiqadi',
+          'Qishloq polvonlari mehmonlarga qarshi birlashadi',
+        ],
+      },
+    ],
+    letters: [
+      { w: 'pol…on', opts: ['v', 'f'], a: 'v' },
+      { w: 'g‘irro…', opts: ['m', 'mm'], a: 'm' },
+      { w: 'tarafka…h', opts: ['s', 'ch'], a: 's' },
+      { w: 'bako…ul', opts: ['v', 'f'], a: 'v' },
+      { w: 'do‘rji…oq', opts: ['r', 'rr'], a: 'r' },
+      { w: 'yotibo…ar', opts: ['t', 'd'], a: 't' },
+      { w: 'emi…dosh', opts: ['k', 'q'], a: 'k' },
+      { w: 'hamso…a', opts: ['y', 'i'], a: 'y' },
+      { w: 'oriya…li', opts: ['t', 'd'], a: 't' },
+      { w: 'qa…atiga', opts: ['b', 'p'], a: 'b' },
+    ],
+    spell: [
+      { opts: ['g‘irromlik', 'g‘iromlik'], a: 0 },
+      { opts: ['tarafkashlik', 'tarafkachlik'], a: 0 },
+      { opts: ['bakovul', 'bakoul'], a: 0 },
+      { opts: ['emikdosh', 'emigdosh'], a: 0 },
+      { opts: ['hamsoya', 'xamsoya'], a: 0 },
+      { opts: ['oriyatli', 'oriatli'], a: 0 },
+      { opts: ['yotibotar', 'yotibatar'], a: 0 },
+      { opts: ['polvon', 'palvon'], a: 0 },
+    ],
+    odd: [
+      { items: ['chil', 'yotibotar', 'yonbosh', 'davra'], answer: 3, why: 'Davra — kurash joyi; qolganlari usullar.' },
+      { items: ['olchin', 'tog‘chi', 'qovchin', 'bakovul'], answer: 3, why: 'Bakovul — vazifa; qolganlari urug‘ nomlari.' },
+      { items: ['Shukur', 'Ermat', 'Xolyor', 'Rustam'], answer: 3, why: 'Rustam — «Bayroq» hikoyasidan.' },
+    ],
+  },
+
+  /* ===================== 58 ===================== */
+  {
+    id: 'ot9-58',
+    source: 'VIII bo‘lim. Sport va sog‘lik • 2-dars • 159–161-betlar',
+    title: 'Nutqning yosh va jinsga xosligi',
+    short: 'Ayollar, erkaklar, bolalar, o‘spirinlar, o‘rta yoshlilar, keksalar nutqi',
+    lesson: [
+      {
+        title: 'Kim aytdi?',
+        table: {
+          head: ['Gap', 'Kimning nutqi'],
+          rows: [
+            ['Voy, bolaginam-a! Pul yuborib nima qilarkan!', 'keksa ayol'],
+            ['E, bo‘ldi-ye, charchab qoldinglar!', 'erkak, o‘rta yosh'],
+            ['Bobokalonlaringizga munosib bo‘ling, bo‘tam!', 'keksa kishi'],
+            ['Voy, tasadduq-ey!', 'ayol'],
+          ],
+        },
+      },
+      {
+        title: 'Gender xususiyati',
+        rule: 'Til birliklari yosh va jinsga xoslanishi bilan ham farqlanadi.',
+        ruleLabel: 'Qoida',
+        table: {
+          head: ['Nutq', 'Xususiyati', 'Faol birliklar'],
+          rows: [
+            ['Ayollar nutqi', 'muloyimlik, hissiyot, mehrli murojaat, tasalli', 'voy, voy o‘lay, tavba, aylanay, o‘rgilay, asalim, sadag‘ang ketay'],
+            ['Erkaklar nutqi', 'sodda, aniq, lo‘nda; hukm va buyruq ohangi', 'hoy, xo‘sh, ey, barakalla, ha mayli, bas qil, qara-ya'],
+          ],
+        },
+      },
+      {
+        title: 'Yoshga ko‘ra',
+        table: {
+          head: ['Yosh', 'Xususiyati', 'Misollar'],
+          rows: [
+            ['Bolalar', 'sodda, takroriy, tasavvurga asoslangan', 'ashsha, nanna, ninni, jish, hap-hap'],
+            ['O‘spirinlar', 'zamonaviy, hissiyotli, norasmiy', 'dugon, repetitor, karyera, moda, ketvorgan'],
+            ['O‘rta yoshlilar', 'hayotiy tajriba, mas’uliyat', 'bola-chaga, bozor-o‘char, gap-gashtak, ulfat'],
+            ['Keksalar', 'pand-nasihat, hikmatli', 'baraka top, bo‘tam, obbo, bizning zamonimizda, nevara'],
+          ],
+        },
+      },
+      {
+        title: 'Badiiy asarda ahamiyati',
+        text: 'Yozuvchi qahramonning yoshi va jinsini uning nutqi orqali ko‘rsatadi. «Yulduzlar mangu yonadi»da bolalar «Shukuy» deb chuchuk gapiradi, Bo‘ri polvon esa «Aylanayin polvonimdan» deb erkalaydi.',
+      },
+    ],
+    pairs: [
+      ['aylanay, o‘rgilay', 'ayollar nutqi'],
+      ['bas qil, qara-ya', 'erkaklar nutqi'],
+      ['ashsha, ninni', 'bolalar nutqi'],
+      ['repetitor, karyera', 'o‘spirinlar nutqi'],
+      ['bola-chaga, bozor-o‘char', 'o‘rta yoshlilar nutqi'],
+      ['baraka top, bo‘tam', 'keksalar nutqi'],
+    ],
+    quiz: [
+      { q: '«Voy, aylanay» qaysi nutqqa xos?', options: ['ayollar', 'erkaklar', 'bolalar', 'o‘spirinlar'], answer: 0 },
+      { q: '«Bas qil» qaysi nutqqa xos?', options: ['erkaklar', 'ayollar', 'bolalar', 'keksalar'], answer: 0 },
+      { q: '«Ashsha», «ninni» kimning nutqi?', options: ['bolalar', 'o‘spirinlar', 'keksalar', 'erkaklar'], answer: 0 },
+      { q: '«Baraka top, bo‘tam» kimning nutqi?', options: ['keksalar', 'bolalar', 'o‘spirinlar', 'o‘rta yoshlilar'], answer: 0 },
+      { q: 'O‘spirinlar nutqi qanday?', options: ['zamonaviy, hissiyotli, norasmiy', 'pand-nasihatli', 'sodda, takroriy', 'rasmiy'], answer: 0 },
+      { q: 'Erkaklar nutqida nima yetakchi?', options: ['hukm va buyruq ohangi', 'tasalli', 'erkalash', 'takror'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Ayollar nutqi', 'Erkaklar nutqi'],
+      items: [
+        { text: 'voy o‘lay', cat: 0 }, { text: 'hoy', cat: 1 },
+        { text: 'aylanay', cat: 0 }, { text: 'bas qil', cat: 1 },
+        { text: 'asalim', cat: 0 }, { text: 'xo‘sh', cat: 1 },
+        { text: 'tasadduq', cat: 0 }, { text: 'qara-ya', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Ayollar va erkaklar nutqining farqi?', a: 'Ayollarda muloyimlik, hissiyot; erkaklarda lo‘ndalik, buyruq ohangi.' },
+      { q: 'Keksalar nutqiga xos 3 birlik ayting.', a: 'Baraka top, bo‘tam, bizning zamonimizda.' },
+      { q: 'Yozuvchi nega qahramon nutqini yoshiga moslaydi?', a: 'Qahramonni jonli, ishonarli ko‘rsatish uchun.' },
+      { q: '«Ma, qalpog‘ingni ol, bunaqasi maktabda to‘lib yotibdi!» kimning nutqi?', a: 'Bolaning (o‘smir) nutqi.' },
+    ],
+    letters: [
+      { w: 'tasaddu…', opts: ['q', 'k'], a: 'q' },
+      { w: 'sadag‘a…g', opts: ['n', 'nn'], a: 'n' },
+      { w: 'repeti…or', opts: ['t', 'd'], a: 't' },
+      { w: 'kar…era', opts: ['y', 'i'], a: 'y' },
+      { w: 'du…on', opts: ['g', 'k'], a: 'g' },
+      { w: 'ulfa…', opts: ['t', 'd'], a: 't' },
+      { w: 'gap-gash…ak', opts: ['t', 'd'], a: 't' },
+      { w: 'bo‘ta…', opts: ['m', 'mm'], a: 'm' },
+      { w: 'bobokalo…', opts: ['n', 'm'], a: 'n' },
+      { w: 'ge…der', opts: ['n', 'nn'], a: 'n' },
+    ],
+    spell: [
+      { opts: ['tasadduq', 'tasaduq'], a: 0 },
+      { opts: ['repetitor', 'repetiter'], a: 0 },
+      { opts: ['karyera', 'kariera'], a: 0 },
+      { opts: ['gap-gashtak', 'gap gashtak'], a: 0 },
+      { opts: ['bobokalon', 'bobokalom'], a: 0 },
+      { opts: ['bola-chaga', 'bolachaga'], a: 0 },
+      { opts: ['bozor-o‘char', 'bozor o‘char'], a: 0 },
+      { opts: ['gender', 'gendir'], a: 0 },
+    ],
+    odd: [
+      { items: ['ashsha', 'nanna', 'ninni', 'karyera'], answer: 3, why: 'Karyera — o‘spirinlar nutqi; qolganlari bolalarniki.' },
+      { items: ['baraka top', 'bo‘tam', 'obbo', 'ketvorgan'], answer: 3, why: 'Ketvorgan — o‘spirinlar nutqi.' },
+      { items: ['voy', 'aylanay', 'o‘rgilay', 'bas qil'], answer: 3, why: 'Bas qil — erkaklar nutqi.' },
+    ],
+  },
+
+  /* ===================== 59 ===================== */
+  {
+    id: 'ot9-59',
+    source: 'VIII bo‘lim. Sport va sog‘lik • 3–4-darslar • 162–166-betlar',
+    title: 'Kurash va tonggi sport: og‘zaki nutq, jadval va imlo',
+    short: 'Kurash sinonimlari, chempionlar jadvali, erta tongda sportning foydasi, og‘zaki nutq mezoni',
+    lesson: [
+      {
+        title: '«Kurash» so‘zining sinonimlari',
+        examples: ['olishuv', 'bellashuv', 'jang (ko‘chma ma’noda)'],
+        note: 'Milliy kurash insonda vatanparvarlik, oriyatlilik, do‘st-birodarlik, qo‘rqmaslik sifatlarini shakllantiradi.',
+      },
+      {
+        title: 'O‘zbek kurashi bo‘yicha jahon chempionlari (1999–2019)',
+        table: {
+          head: ['Yil', 'Chempion mamlakat'],
+          rows: [
+            ['1999, 2005, 2011', 'O‘zbekiston'],
+            ['2000, 2013, 2017', 'Turkiya'],
+            ['2001', 'Vengriya'],
+            ['2002', 'Armaniston'],
+            ['2007', 'Mo‘g‘uliston'],
+            ['2009', 'Ukraina'],
+            ['2015', 'Eron'],
+            ['2019', 'Koreya Respublikasi'],
+          ],
+        },
+        note: 'Jadval asosida matn tuzing: O‘zbekiston va Turkiya uch martadan chempion bo‘lgan; kurash dunyoning turli qit’alarida ommalashgan.',
+      },
+      {
+        title: 'Og‘zaki nutqni baholash mezoni',
+        table: {
+          head: ['Mezon', '3 ball'],
+          rows: [
+            ['Mazmuniy tugallik', 'mavzu to‘liq ochilgan'],
+            ['Asoslanganlik', 'faktlar va hayotiy misollar bor'],
+            ['To‘g‘rilik', 'orfoepik me’yor kam buzilgan'],
+            ['Ravonlik', 'ravonlik kam buzilgan'],
+            ['Ifodaviylik', 'tana tili va badiiy tasvir vositalaridan unumli foydalanilgan'],
+          ],
+        },
+        note: 'Mavzudan chetga chiqilsa — 0 ball.',
+      },
+      {
+        title: 'Erta tongda sportning foydasi (audiomatn)',
+        list: [
+          'Kun davomida tetiklik va yaxshi kayfiyat beradi.',
+          'Stressni kamaytiradi.',
+          'Uyqu sifatini yaxshilaydi (kechki kuchli mashq esa uyquga xalal beradi).',
+          'Shirinliklarga qaramlikni kamaytiradi.',
+          'Diqqatni jamlashni (konsentratsiya) oshiradi.',
+          'Muntazam mashq qilganlar charchoqni kamroq his qiladi.',
+          'Kun tartibini intizomga soladi.',
+        ],
+        note: 'Audiomatnni o‘qituvchingiz eshittiradi. Fakt va fikrni farqlang: «Mashg‘ulot zavqli» — fikr; «Mutaxassislar tongda mashq qilishni tavsiya etadi» — fakt.',
+      },
+      {
+        title: 'Imlo',
+        table: {
+          head: ['To‘g‘ri', 'Noto‘g‘ri'],
+          rows: [
+            ['muhim', 'muhum'],
+            ['adrenalin', 'adrinalen'],
+            ['energiya', 'enirgeya'],
+            ['universitet', 'universetet'],
+            ['stress', 'stres'],
+            ['statistik', 'statestik'],
+            ['konsentratsiya', 'konsintratsiya'],
+          ],
+        },
+      },
+    ],
+    pairs: [
+      ['kurash', 'olishuv, bellashuv'],
+      ['O‘zbekiston', '1999, 2005, 2011 chempioni'],
+      ['Turkiya', '2000, 2013, 2017 chempioni'],
+      ['konsentratsiya', 'diqqatni jamlash'],
+      ['adrenalin', 'hayajon gormoni'],
+      ['orfoepik me’yor', 'to‘g‘ri talaffuz qoidasi'],
+      ['tana tili', 'noverbal muloqot'],
+    ],
+    quiz: [
+      { q: 'O‘zbek kurashi bo‘yicha birinchi jahon chempionatida kim g‘olib bo‘lgan (1999)?', options: ['O‘zbekiston', 'Turkiya', 'Eron', 'Vengriya'], answer: 0 },
+      { q: '2019-yilda kim chempion bo‘lgan?', options: ['Koreya Respublikasi', 'O‘zbekiston', 'Turkiya', 'Ukraina'], answer: 0 },
+      { q: 'Qaysi biri to‘g‘ri yozilgan?', options: ['konsentratsiya', 'konsintratsiya', 'kansentratsiya', 'konsentrasiya'], answer: 0 },
+      { q: 'Qaysi biri to‘g‘ri yozilgan?', options: ['muhim', 'muhum', 'muxim', 'muhem'], answer: 0 },
+      { q: 'Kechki kuchli mashq nimaga salbiy ta’sir qiladi?', options: ['uyquga', 'ishtahaga', 'xotiraga', 'ko‘rishga'], answer: 0 },
+      { q: '«Kurash» so‘zining sinonimi?', options: ['bellashuv', 'dam olish', 'sayr', 'mashq'], answer: 0 },
+      { q: 'Og‘zaki nutq mavzudan chetga chiqsa necha ball?', options: ['0', '1', '2', '3'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Fakt', 'Fikr'],
+      items: [
+        { text: 'Mutaxassislar tongda mashq qilishni tavsiya etadi', cat: 0 }, { text: 'Tongda mashq qilish zavqli', cat: 1 },
+        { text: 'O‘zbekiston 3 marta chempion bo‘lgan', cat: 0 }, { text: 'Och qoringa mashq yoqimsiz', cat: 1 },
+        { text: 'Muntazam sportchilar charchoqni kamroq his qiladi (statistika)', cat: 0 }, { text: 'Kurash eng go‘zal sport', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Milliy kurash qanday sifatlarni shakllantiradi?', a: 'Vatanparvarlik, oriyatlilik, birodarlik, qo‘rqmaslik, chidamlilik.' },
+      { q: 'Erta tongda sportning 3 foydasini ayting.', a: 'Tetiklik, stressning kamayishi, yaxshi uyqu.' },
+      { q: 'Sport insonlarni birlashtiradimi yoki ayiradimi?', a: 'Fikringizni misol bilan asoslang.' },
+      { q: 'Og‘zaki nutq qaysi mezonlar bilan baholanadi?', a: 'Tugallik, asoslanganlik, to‘g‘rilik, ravonlik, ifodaviylik.' },
+    ],
+    letters: [
+      { w: 'mu…im', opts: ['h', 'x'], a: 'h' },
+      { w: 'adren…lin', opts: ['a', 'i'], a: 'a' },
+      { w: 'en…rgiya', opts: ['e', 'i'], a: 'e' },
+      { w: 'univers…tet', opts: ['i', 'e'], a: 'i' },
+      { w: 'stre…', opts: ['ss', 's'], a: 'ss' },
+      { w: 'stat…stik', opts: ['i', 'e'], a: 'i' },
+      { w: 'kons…ntratsiya', opts: ['e', 'i'], a: 'e' },
+      { w: 'bellashu…', opts: ['v', 'f'], a: 'v' },
+      { w: 'orfoe…ik', opts: ['p', 'b'], a: 'p' },
+      { w: 'chempio…at', opts: ['n', 'nn'], a: 'n' },
+    ],
+    spell: [
+      { opts: ['muhim', 'muhum'], a: 0 },
+      { opts: ['adrenalin', 'adrinalen'], a: 0 },
+      { opts: ['energiya', 'enirgeya'], a: 0 },
+      { opts: ['universitet', 'universetet'], a: 0 },
+      { opts: ['stress', 'stres'], a: 0 },
+      { opts: ['statistik', 'statestik'], a: 0 },
+      { opts: ['konsentratsiya', 'konsintratsiya'], a: 0 },
+      { opts: ['chempionat', 'chempianat'], a: 0 },
+      { opts: ['orfoepik', 'orfaepik'], a: 0 },
+    ],
+    odd: [
+      { items: ['kurash', 'olishuv', 'bellashuv', 'sulh'], answer: 3, why: 'Sulh — yarashish.' },
+      { items: ['O‘zbekiston', 'Turkiya', 'Eron', 'Fransiya'], answer: 3, why: 'Fransiya jadvalda chempion emas.' },
+      { items: ['tetiklik', 'yaxshi uyqu', 'stress kamayishi', 'charchoq ortishi'], answer: 3, why: 'Charchoq ortishi foyda emas.' },
+    ],
+  },
+
+  /* ===================== 60 ===================== */
+  {
+    id: 'ot9-60',
+    source: 'VIII bo‘lim. Sport va sog‘lik • 5-dars • 166–168-betlar',
+    title: 'Ko‘makchilarning ma’nodoshligi',
+    short: 'Ko‘makchi va kelishik qo‘shimchalari o‘rtasidagi nozik ma’no farqlari',
+    lesson: [
+      {
+        title: 'Ko‘makchi nima?',
+        rule: 'Ko‘makchilar nutqda grammatik birliklar (kelishik qo‘shimchalari) bilan ma’nodoshlik hosil qiladi, lekin ular orasida nozik ma’no farqi bo‘ladi.',
+        ruleLabel: 'Qoida',
+      },
+      {
+        title: 'Ma’nodosh qatorlar',
+        table: {
+          head: ['Ma’nodoshlar', 'Misol', 'Ma’no'],
+          rows: [
+            ['bilan, orqali, -da, -dan', 'telefon orqali / telefonda gaplashmoq', 'vosita'],
+            ['haqida, to‘g‘risida, -ni, -dan', 'ko‘rganlari haqida / ko‘rganlarini / ko‘rganlaridan gapirmoq', 'umumiy / aniq / qisman mavzu'],
+            ['tomon, qarab, -ga, bo‘ylab', 'daryo tomon / daryoga ketmoq', 'umumiy / aniq yo‘nalish'],
+            ['uchun, sababli, -ga, deb', 'u uchun olmoq / uni deb olmoq', 'atalganlik / sabab'],
+            ['uchun, maqsadida, -gani, -ga', 'o‘qish uchun / o‘qigani / o‘qishga bormoq', 'maqsad'],
+            ['qarashli, tegishli, -ning', 'boyga qarashli do‘kon / boyning do‘koni', 'qarashlilik'],
+            ['kabi, -dek, singari', 'akasi kabi / akasiday mard', 'o‘xshashlik'],
+            ['ko‘ra, binoan, qarab', 'qonunga ko‘ra / binoan', 'asoslanganlik'],
+            ['qadar, -gacha', 'uyga qadar / uygacha', 'chegara'],
+          ],
+        },
+      },
+      {
+        title: 'Farqni tushuntiring',
+        table: {
+          head: ['1-gap', '2-gap', 'Farq'],
+          rows: [
+            ['Eshitganlari to‘g‘risida gapirdi.', 'Eshitganlaridan gapirdi.', 'umumiy mavzu / bir qismi'],
+            ['Sizni deb keldim.', 'Siz uchun keldim.', 'sabab / atalganlik (maqsad)'],
+            ['Mashinada borasan.', 'Mashina bilan borasan.', 'ikkalasi vosita, «mashinada» so‘zlashuvga yaqin'],
+            ['Maktab tomon ketdi.', 'Maktabga ketdi.', 'umumiy yo‘nalish / aniq manzil'],
+          ],
+        },
+      },
+      {
+        title: 'Mos ko‘makchini tanlang',
+        list: [
+          'Jismoniy mashqlar tanani uyg‘otadi va miya faoliyatini yaxshilaydi.',
+          'Och qoringa mashq har kim uchun ham to‘g‘ri kelavermaydi.',
+          'Yuqorida aytilganidek, mashg‘ulot qon aylanishini yaxshilaydi.',
+          'Sport sog‘liq uchun foydali.',
+          'Och qoringa mashq ovqatdan keyingisiga qaraganda samaraliroq.',
+        ],
+      },
+    ],
+    pairs: [
+      ['orqali', '-da (vosita)'],
+      ['haqida', 'to‘g‘risida'],
+      ['tomon', 'qarab'],
+      ['uchun', 'maqsadida'],
+      ['kabi', '-dek, singari'],
+      ['ko‘ra', 'binoan'],
+      ['qadar', '-gacha'],
+      ['qarashli', 'tegishli'],
+    ],
+    quiz: [
+      { q: '«Haqida» ko‘makchisining ma’nodoshi?', options: ['to‘g‘risida', 'uchun', 'bilan', 'kabi'], answer: 0 },
+      { q: '«Qadar» ko‘makchisiga mos qo‘shimcha?', options: ['-gacha', '-dan', '-ni', '-ning'], answer: 0 },
+      { q: '«Akasi kabi mard» — qanday ma’no?', options: ['o‘xshashlik', 'sabab', 'vosita', 'chegara'], answer: 0 },
+      { q: '«Qonunga binoan» — qanday ma’no?', options: ['asoslanganlik', 'yo‘nalish', 'maqsad', 'o‘xshashlik'], answer: 0 },
+      { q: '«Maktab tomon ketdi» va «Maktabga ketdi» farqi?', options: ['umumiy va aniq yo‘nalish', 'farqi yo‘q', 'vaqt farqi', 'sabab farqi'], answer: 0 },
+      { q: '«Sizni deb keldim» — qanday ma’no?', options: ['sabab', 'vosita', 'chegara', 'o‘xshashlik'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Ko‘makchi', 'Kelishik qo‘shimchasi'],
+      items: [
+        { text: 'orqali', cat: 0 }, { text: '-da', cat: 1 },
+        { text: 'haqida', cat: 0 }, { text: '-ni', cat: 1 },
+        { text: 'tomon', cat: 0 }, { text: '-ga', cat: 1 },
+        { text: 'qadar', cat: 0 }, { text: '-ning', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Ko‘makchi va kelishik qo‘shimchasi o‘rtasida qanday munosabat bor?', a: 'Ma’nodoshlik, lekin nozik ma’no farqi bilan.' },
+      { q: '«Ko‘rganlarini gapirdi» va «ko‘rganlaridan gapirdi» farqi?', a: 'Birinchisi aniq, to‘liq mavzu; ikkinchisi mavzuning bir qismi.' },
+      { q: 'Maqsad ma’nosidagi ma’nodoshlarni ayting.', a: 'Uchun, maqsadida, -gani, -ga: o‘qish uchun, o‘qigani, o‘qishga.' },
+      { q: '«Siz uchun keldim» va «Sizni deb keldim» farqi?', a: 'Uchun — atalganlik (siz tomonga), deb — sabab.' },
+    ],
+    letters: [
+      { w: 'ko‘ma…chi', opts: ['k', 'q'], a: 'k' },
+      { w: 'orqa…i', opts: ['l', 'll'], a: 'l' },
+      { w: 'to‘g‘ri…ida', opts: ['s', 'z'], a: 's' },
+      { w: 'bino…n', opts: ['a', 'o'], a: 'a' },
+      { w: 'qarash…i', opts: ['l', 'll'], a: 'l' },
+      { w: 'tegish…i', opts: ['l', 'll'], a: 'l' },
+      { w: 'sin…ari', opts: ['g', 'k'], a: 'g' },
+      { w: 'yan…lig‘', opts: ['g', 'k'], a: 'g' },
+      { w: 'qa…ar', opts: ['d', 't'], a: 'd' },
+      { w: 'maqsa…ida', opts: ['d', 't'], a: 'd' },
+    ],
+    spell: [
+      { opts: ['to‘g‘risida', 'to‘g‘risda'], a: 0 },
+      { opts: ['binoan', 'binoon'], a: 0 },
+      { opts: ['qarashli', 'qarashlik'], a: 0 },
+      { opts: ['singari', 'sinkari'], a: 0 },
+      { opts: ['yanglig‘', 'yangliq'], a: 0 },
+      { opts: ['maqsadida', 'maqsatida'], a: 0 },
+      { opts: ['ko‘makchi', 'ko‘makji'], a: 0 },
+      { opts: ['qaraganda', 'qaraganida'], a: 0 },
+    ],
+    odd: [
+      { items: ['haqida', 'to‘g‘risida', 'xususida', 'tomon'], answer: 3, why: 'Tomon — yo‘nalish; qolganlari mavzu.' },
+      { items: ['kabi', 'singari', 'yanglig‘', 'uchun'], answer: 3, why: 'Uchun — maqsad; qolganlari o‘xshashlik.' },
+      { items: ['ko‘ra', 'binoan', 'qarab', 'bilan'], answer: 3, why: 'Bilan — vosita; qolganlari asoslanganlik.' },
+    ],
+  },
+];
+
 const CONTENT = {
   adabiyot: { 8: [...ADABIYOT_8, ...ADABIYOT_8_P2, ...ADABIYOT_8_P3, ...ADABIYOT_8_P4, ...ADABIYOT_8_P5] },
-  'ona-tili': { 8: [...ONA_TILI_8, ...ONA_TILI_8_PART2, ...ONA_TILI_8_PART3, ...ONA_TILI_8_PART4, ...ONA_TILI_8_PART5, ...ONA_TILI_8_PART6, ...ONA_TILI_8_PART7, ...ONA_TILI_8_PART8], 9: [...ONA_TILI_9, ...ONA_TILI_9_P2, ...ONA_TILI_9_P3, ...ONA_TILI_9_P4, ...ONA_TILI_9_P5] },
+  'ona-tili': { 8: [...ONA_TILI_8, ...ONA_TILI_8_PART2, ...ONA_TILI_8_PART3, ...ONA_TILI_8_PART4, ...ONA_TILI_8_PART5, ...ONA_TILI_8_PART6, ...ONA_TILI_8_PART7, ...ONA_TILI_8_PART8], 9: [...ONA_TILI_9, ...ONA_TILI_9_P2, ...ONA_TILI_9_P3, ...ONA_TILI_9_P4, ...ONA_TILI_9_P5, ...ONA_TILI_9_P6] },
 };
 
 /* --- Har bir fan uchun umumiy takrorlash savollari (to‘g‘ri javob — 0-variant, o‘yinda aralashtiriladi) --- */
