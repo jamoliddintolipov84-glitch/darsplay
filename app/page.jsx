@@ -19,6 +19,7 @@ import {
   ThumbsUp, ThumbsDown, Puzzle, Heart, Crown, Rocket, Flag, Dices, SpellCheck,
   Volume2, VolumeX, History, Medal, CalendarDays, Star, ListPlus, NotebookPen, CircleHelp,
   ListOrdered, Shapes, Scale, Palette, Type, SpellCheck2, Projector, PhoneOff, Presentation, MousePointerClick,
+  Highlighter, Wand2, MoveUpRight, Square, Circle, Eraser, Undo2, Redo2, FilePlus2, Download,
 } from 'lucide-react';
 
 /* ============================================================
@@ -26118,11 +26119,11 @@ function Modal({ children, onClose, wide = false }) {
   );
 }
 
-function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp }) {
+function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onBoard }) {
   const sound = useSoundOn();
   return (
     <header className="sticky top-0 z-40 border-b border-blue-100 bg-white/90 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3 md:px-8">
+      <div className="mx-auto flex max-w-7xl items-center gap-2 px-3 py-3 sm:gap-4 md:px-8">
         <button onClick={onHome} aria-label="Bosh sahifa">
           <Logo size={44} textClass="text-2xl" />
         </button>
@@ -26135,6 +26136,15 @@ function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp }) {
           ))}
         </nav>
         <div className="ml-auto flex items-center gap-2">
+          {onBoard && (
+            <button
+              onClick={onBoard}
+              title="Doska"
+              className="inline-flex items-center gap-2 rounded-xl bg-blue-600 p-2.5 text-white shadow-md shadow-blue-600/20 transition hover:bg-blue-700 active:scale-95"
+            >
+              <PenLine size={24} /> <span className="hidden text-base font-bold lg:inline">Doska</span>
+            </button>
+          )}
           {onHelp && (
             <button
               onClick={onHelp}
@@ -26147,14 +26157,14 @@ function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp }) {
           <button
             onClick={() => setSoundOn(!sound)}
             title={sound ? 'Ovozni o‘chirish' : 'Ovozni yoqish'}
-            className={`rounded-xl border-2 p-2.5 transition hover:bg-blue-50 ${sound ? 'border-blue-100 text-blue-800' : 'border-rose-200 text-rose-600'}`}
+            className={`hidden rounded-xl border-2 p-2.5 transition hover:bg-blue-50 sm:block ${sound ? 'border-blue-100 text-blue-800' : 'border-rose-200 text-rose-600'}`}
           >
             {sound ? <Volume2 size={24} /> : <VolumeX size={24} />}
           </button>
           <button
             onClick={toggleFs}
             title={isFs ? 'To‘liq ekrandan chiqish' : 'To‘liq ekran'}
-            className="rounded-xl border-2 border-blue-100 p-2.5 text-blue-800 transition hover:bg-blue-50"
+            className="hidden rounded-xl border-2 border-blue-100 p-2.5 text-blue-800 transition hover:bg-blue-50 sm:block"
           >
             {isFs ? <Minimize size={24} /> : <Maximize size={24} />}
           </button>
@@ -27478,6 +27488,512 @@ function WelcomeModal({ name, onGuide, onClose }) {
   );
 }
 
+/* ============================================================
+   DOSKA — interaktiv doska / slayd ustiga chizish
+   ============================================================ */
+const BOARD_KEY = 'darsplay_board_v1';
+const BOARD_BGS = [
+  { id: 'white', name: 'Oq', dark: false, css: { background: '#ffffff' } },
+  { id: 'grid', name: 'Katak', dark: false, css: { backgroundColor: '#ffffff', backgroundImage: 'linear-gradient(#dbeafe 1px, transparent 1px), linear-gradient(90deg, #dbeafe 1px, transparent 1px)', backgroundSize: '40px 40px' } },
+  { id: 'lines', name: 'Chiziqli', dark: false, css: { backgroundColor: '#fffdf5', backgroundImage: 'linear-gradient(#bfdbfe 1px, transparent 1px)', backgroundSize: '100% 48px' } },
+  { id: 'chalk', name: 'Yashil doska', dark: true, css: { backgroundColor: '#1f4d3a', backgroundImage: 'radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px)', backgroundSize: '6px 6px' } },
+  { id: 'black', name: 'Qora', dark: true, css: { background: '#0f172a' } },
+];
+const BOARD_COLORS_LIGHT = ['#0f172a', '#2563eb', '#dc2626', '#16a34a', '#f59e0b', '#9333ea', '#ec4899', '#0891b2'];
+const BOARD_COLORS_DARK = ['#ffffff', '#93c5fd', '#fca5a5', '#86efac', '#fde047', '#d8b4fe', '#f9a8d4', '#67e8f9'];
+const BOARD_SIZES = [
+  { id: 's', name: 'Ingichka', pen: 3, er: 24, font: 28 },
+  { id: 'm', name: 'O‘rta', pen: 6, er: 48, font: 40 },
+  { id: 'l', name: 'Qalin', pen: 12, er: 90, font: 64 },
+];
+const BOARD_TOOLS = [
+  { id: 'pen', name: 'Qalam', icon: Pencil, key: 'p' },
+  { id: 'hl', name: 'Marker', icon: Highlighter, key: 'm' },
+  { id: 'laser', name: 'Lazer ko‘rsatkich', icon: Wand2, key: 'k' },
+  { id: 'line', name: 'To‘g‘ri chiziq', icon: Minus, key: 'l' },
+  { id: 'arrow', name: 'Strelka', icon: MoveUpRight, key: 'a' },
+  { id: 'rect', name: 'To‘rtburchak', icon: Square, key: 'r' },
+  { id: 'ellipse', name: 'Doira', icon: Circle, key: 'o' },
+  { id: 'text', name: 'Matn', icon: Type, key: 't' },
+  { id: 'eraser', name: 'O‘chirg‘ich', icon: Eraser, key: 'e' },
+];
+
+function boardDraw(ctx, o) {
+  ctx.save();
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
+  ctx.strokeStyle = o.color;
+  ctx.fillStyle = o.color;
+  ctx.lineWidth = o.w;
+  if (o.t === 'pen' || o.t === 'hl' || o.t === 'eraser') {
+    if (o.t === 'eraser') { ctx.globalCompositeOperation = 'destination-out'; ctx.strokeStyle = '#000'; ctx.fillStyle = '#000'; }
+    if (o.t === 'hl') ctx.globalAlpha = 0.35;
+    const p = o.pts;
+    if (p.length < 3) {
+      ctx.beginPath(); ctx.arc(p[0], p[1], o.w / 2, 0, Math.PI * 2); ctx.fill();
+    } else {
+      ctx.beginPath();
+      ctx.moveTo(p[0], p[1]);
+      for (let k = 2; k < p.length - 2; k += 2) {
+        const mx = (p[k] + p[k + 2]) / 2;
+        const my = (p[k + 1] + p[k + 3]) / 2;
+        ctx.quadraticCurveTo(p[k], p[k + 1], mx, my);
+      }
+      ctx.lineTo(p[p.length - 2], p[p.length - 1]);
+      ctx.stroke();
+    }
+  } else if (o.t === 'line' || o.t === 'arrow') {
+    ctx.beginPath(); ctx.moveTo(o.x1, o.y1); ctx.lineTo(o.x2, o.y2); ctx.stroke();
+    if (o.t === 'arrow') {
+      const ang = Math.atan2(o.y2 - o.y1, o.x2 - o.x1);
+      const len = Math.max(18, o.w * 4);
+      ctx.beginPath();
+      ctx.moveTo(o.x2, o.y2);
+      ctx.lineTo(o.x2 - len * Math.cos(ang - 0.45), o.y2 - len * Math.sin(ang - 0.45));
+      ctx.lineTo(o.x2 - len * Math.cos(ang + 0.45), o.y2 - len * Math.sin(ang + 0.45));
+      ctx.closePath(); ctx.fill();
+    }
+  } else if (o.t === 'rect') {
+    ctx.strokeRect(Math.min(o.x1, o.x2), Math.min(o.y1, o.y2), Math.abs(o.x2 - o.x1), Math.abs(o.y2 - o.y1));
+  } else if (o.t === 'ellipse') {
+    ctx.beginPath();
+    ctx.ellipse((o.x1 + o.x2) / 2, (o.y1 + o.y2) / 2, Math.abs(o.x2 - o.x1) / 2, Math.abs(o.y2 - o.y1) / 2, 0, 0, Math.PI * 2);
+    ctx.stroke();
+  } else if (o.t === 'text') {
+    ctx.font = `700 ${o.size}px "Plus Jakarta Sans", system-ui, sans-serif`;
+    ctx.textBaseline = 'top';
+    String(o.text).split('\n').forEach((ln, k) => ctx.fillText(ln, o.x, o.y + k * o.size * 1.2));
+  }
+  ctx.restore();
+}
+
+function loadBoard() {
+  try {
+    const d = JSON.parse(localStorage.getItem(BOARD_KEY) || 'null');
+    if (d && Array.isArray(d.pages) && d.pages.length) return d;
+  } catch { /* bo‘sh */ }
+  return null;
+}
+
+/*
+  mode="board"   — to‘liq doska (fon bilan, sahifalar, saqlanadi)
+  mode="overlay" — joriy ekran ustiga shaffof chizish (initial/onChange orqali)
+*/
+function Whiteboard({ mode = 'board', onClose, initial, onChange, onPrev, onNext, label, slideKey }) {
+  const overlay = mode === 'overlay';
+  const wrapRef = useRef(null);
+  const canvasRef = useRef(null);
+  const laserRef = useRef(null);
+  const cacheRef = useRef(null);
+  const pagesRef = useRef(null);
+  const draftRef = useRef(null);
+  const laserPts = useRef([]);
+  const sizeRef = useRef({ w: 0, h: 0, dpr: 1 });
+  const [, setTick] = useState(0);
+  const rerender = () => setTick((x) => x + 1);
+
+  if (pagesRef.current === null) {
+    if (overlay) {
+      pagesRef.current = [{ items: initial || [], past: [], future: [] }];
+    } else {
+      const saved = typeof window !== 'undefined' ? loadBoard() : null;
+      pagesRef.current = saved ? saved.pages.map((items) => ({ items, past: [], future: [] })) : [{ items: [], past: [], future: [] }];
+    }
+  }
+  const [page, setPage] = useState(0);
+  const [bg, setBg] = useState(() => (overlay ? null : (typeof window !== 'undefined' && loadBoard()?.bg) || 'grid'));
+  const dark = !overlay && !!BOARD_BGS.find((b) => b.id === bg)?.dark;
+  const colors = dark ? BOARD_COLORS_DARK : BOARD_COLORS_LIGHT;
+  const [tool, setTool] = useState('pen');
+  const [colorIdx, setColorIdx] = useState(overlay ? 2 : 0);
+  const [sizeId, setSizeId] = useState('m');
+  const [textDraft, setTextDraft] = useState(null);
+  const [menu, setMenu] = useState(null); // 'bg' | 'clear'
+  const color = colors[colorIdx];
+  const size = BOARD_SIZES.find((s) => s.id === sizeId);
+  const cur = pagesRef.current[Math.min(page, pagesRef.current.length - 1)];
+
+  /* ---- chizish ---- */
+  const rebuildCache = useCallback(() => {
+    const { w, h, dpr } = sizeRef.current;
+    if (!w) return;
+    if (!cacheRef.current) cacheRef.current = document.createElement('canvas');
+    const c = cacheRef.current;
+    c.width = w * dpr; c.height = h * dpr;
+    const ctx = c.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+    pagesRef.current[Math.min(page, pagesRef.current.length - 1)].items.forEach((o) => boardDraw(ctx, o));
+  }, [page]);
+
+  const paint = useCallback(() => {
+    const cv = canvasRef.current;
+    if (!cv) return;
+    const { w, h, dpr } = sizeRef.current;
+    const ctx = cv.getContext('2d');
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, cv.width, cv.height);
+    if (cacheRef.current) ctx.drawImage(cacheRef.current, 0, 0);
+    if (draftRef.current) {
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      boardDraw(ctx, draftRef.current);
+    }
+  }, []);
+
+  const resize = useCallback(() => {
+    const el = wrapRef.current;
+    if (!el) return;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const w = el.clientWidth;
+    const h = el.clientHeight;
+    sizeRef.current = { w, h, dpr };
+    [canvasRef.current, laserRef.current].forEach((cv) => {
+      if (!cv) return;
+      cv.width = w * dpr; cv.height = h * dpr;
+      cv.style.width = `${w}px`; cv.style.height = `${h}px`;
+    });
+    rebuildCache();
+    paint();
+  }, [rebuildCache, paint]);
+
+  useEffect(() => {
+    resize();
+    window.addEventListener('resize', resize);
+    return () => window.removeEventListener('resize', resize);
+  }, [resize]);
+
+  useEffect(() => { rebuildCache(); paint(); }, [page, rebuildCache, paint]);
+
+  // overlay: slayd almashganda o‘sha slayd chizmalarini ko‘rsatish
+  const firstSlide = useRef(true);
+  useEffect(() => {
+    if (!overlay) return;
+    if (firstSlide.current) { firstSlide.current = false; return; }
+    draftRef.current = null;
+    setTextDraft(null);
+    pagesRef.current = [{ items: initial || [], past: [], future: [] }];
+    rebuildCache(); paint(); rerender();
+  }, [slideKey]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // body skrollini to‘xtatish
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = prev; };
+  }, []);
+
+  /* ---- saqlash ---- */
+  const persist = useCallback(() => {
+    if (overlay) { onChange?.(pagesRef.current[0].items); return; }
+    try {
+      localStorage.setItem(BOARD_KEY, JSON.stringify({ bg, pages: pagesRef.current.map((p) => p.items) }));
+    } catch { /* joy tugagan bo‘lishi mumkin */ }
+  }, [overlay, onChange, bg]);
+  useEffect(() => { persist(); }, [bg]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const commit = (o) => {
+    cur.past.push(cur.items);
+    if (cur.past.length > 100) cur.past.shift();
+    cur.items = [...cur.items, o];
+    cur.future = [];
+    rebuildCache(); paint(); persist(); rerender();
+  };
+  const undo = () => {
+    if (!cur.past.length) return;
+    cur.future.push(cur.items); cur.items = cur.past.pop();
+    rebuildCache(); paint(); persist(); rerender();
+  };
+  const redo = () => {
+    if (!cur.future.length) return;
+    cur.past.push(cur.items); cur.items = cur.future.pop();
+    rebuildCache(); paint(); persist(); rerender();
+  };
+  const clearPage = () => {
+    if (!cur.items.length) return;
+    cur.past.push(cur.items); cur.items = []; cur.future = [];
+    rebuildCache(); paint(); persist(); setMenu(null);
+  };
+
+  /* ---- sahifalar ---- */
+  const addPage = () => {
+    pagesRef.current.splice(page + 1, 0, { items: [], past: [], future: [] });
+    setPage(page + 1); persist();
+  };
+  const delPage = () => {
+    if (pagesRef.current.length === 1) { clearPage(); return; }
+    pagesRef.current.splice(page, 1);
+    setPage(Math.max(0, page - 1)); persist(); setMenu(null);
+  };
+
+  /* ---- lazer ---- */
+  useEffect(() => {
+    let raf;
+    const loop = () => {
+      const cv = laserRef.current;
+      if (cv) {
+        const { dpr } = sizeRef.current;
+        const ctx = cv.getContext('2d');
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.clearRect(0, 0, cv.width, cv.height);
+        const now = performance.now();
+        laserPts.current = laserPts.current.filter((p) => now - p.t < 700);
+        const pts = laserPts.current;
+        if (pts.length) {
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+          ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+          for (let k = 1; k < pts.length; k++) {
+            if (pts[k].brk) continue;
+            const a = 1 - (now - pts[k].t) / 700;
+            ctx.strokeStyle = `rgba(239,68,68,${a})`;
+            ctx.shadowColor = 'rgba(239,68,68,.9)'; ctx.shadowBlur = 16;
+            ctx.lineWidth = 8 * a + 2;
+            ctx.beginPath(); ctx.moveTo(pts[k - 1].x, pts[k - 1].y); ctx.lineTo(pts[k].x, pts[k].y); ctx.stroke();
+          }
+          const l = pts[pts.length - 1];
+          ctx.fillStyle = '#ef4444'; ctx.shadowBlur = 24;
+          ctx.beginPath(); ctx.arc(l.x, l.y, 9, 0, Math.PI * 2); ctx.fill();
+        }
+      }
+      raf = requestAnimationFrame(loop);
+    };
+    raf = requestAnimationFrame(loop);
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
+  /* ---- ko‘rsatkich hodisalari ---- */
+  const pos = (e) => {
+    const r = canvasRef.current.getBoundingClientRect();
+    return [Math.round((e.clientX - r.left) * 10) / 10, Math.round((e.clientY - r.top) * 10) / 10];
+  };
+  const down = (e) => {
+    if (e.button !== undefined && e.button > 0 && e.pointerType === 'mouse') return;
+    setMenu(null);
+    const [x, y] = pos(e);
+    if (tool === 'text') {
+      e.preventDefault();
+      if (textDraft?.value?.trim()) commitText();
+      setTextDraft({ x, y, value: '' });
+      return;
+    }
+    e.currentTarget.setPointerCapture?.(e.pointerId);
+    if (tool === 'laser') { laserPts.current.push({ x, y, t: performance.now(), brk: true }); draftRef.current = { t: 'laser' }; return; }
+    if (tool === 'pen' || tool === 'hl' || tool === 'eraser') {
+      draftRef.current = { t: tool, color, w: tool === 'eraser' ? size.er : tool === 'hl' ? size.pen * 4 : size.pen, pts: [x, y] };
+    } else {
+      draftRef.current = { t: tool, color, w: size.pen, x1: x, y1: y, x2: x, y2: y };
+    }
+    paint();
+  };
+  const move = (e) => {
+    const d = draftRef.current;
+    const [x, y] = pos(e);
+    if (tool === 'laser' && (d || e.pointerType === 'mouse')) {
+      const lp = laserPts.current[laserPts.current.length - 1];
+      laserPts.current.push({ x, y, t: performance.now(), brk: !lp || Math.hypot(lp.x - x, lp.y - y) > 120 });
+      return;
+    }
+    if (!d) return;
+    if (d.pts) {
+      const n = d.pts.length;
+      if (Math.abs(d.pts[n - 2] - x) + Math.abs(d.pts[n - 1] - y) < 1.5) return;
+      d.pts.push(x, y);
+    } else { d.x2 = x; d.y2 = y; }
+    paint();
+  };
+  const up = () => {
+    const d = draftRef.current;
+    draftRef.current = null;
+    if (!d || d.t === 'laser') return;
+    if (!d.pts && Math.hypot(d.x2 - d.x1, d.y2 - d.y1) < 4) { paint(); return; }
+    commit(d);
+  };
+  const commitText = () => {
+    const td = textDraft;
+    setTextDraft(null);
+    if (td && td.value.trim()) commit({ t: 'text', x: td.x, y: td.y, text: td.value, color, size: size.font });
+  };
+
+  /* ---- klaviatura ---- */
+  const keyRef = useRef(null);
+  keyRef.current = (e) => {
+    if (textDraft) return;
+    const k = e.key.toLowerCase();
+    if ((e.ctrlKey || e.metaKey) && k === 'z') { e.preventDefault(); e.shiftKey ? redo() : undo(); return; }
+    if ((e.ctrlKey || e.metaKey) && k === 'y') { e.preventDefault(); redo(); return; }
+    if (e.key === 'Escape') { e.stopImmediatePropagation(); if (menu) setMenu(null); else onClose(); return; }
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    const t = BOARD_TOOLS.find((x) => x.key === k);
+    if (t) setTool(t.id);
+    if (t || e.key === 'Escape') e.stopImmediatePropagation();
+  };
+  useEffect(() => {
+    const h = (e) => keyRef.current(e);
+    window.addEventListener('keydown', h, true);
+    return () => window.removeEventListener('keydown', h, true);
+  }, []);
+
+  /* ---- PNG yuklab olish ---- */
+  const download = () => {
+    const { w, h, dpr } = sizeRef.current;
+    const out = document.createElement('canvas');
+    out.width = w * dpr; out.height = h * dpr;
+    const ctx = out.getContext('2d');
+    const b = BOARD_BGS.find((x) => x.id === bg) || BOARD_BGS[0];
+    ctx.fillStyle = b.id === 'chalk' ? '#1f4d3a' : b.id === 'black' ? '#0f172a' : b.id === 'lines' ? '#fffdf5' : '#ffffff';
+    ctx.fillRect(0, 0, out.width, out.height);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    if (b.id === 'grid' || b.id === 'lines') {
+      ctx.strokeStyle = b.id === 'grid' ? '#dbeafe' : '#bfdbfe'; ctx.lineWidth = 1;
+      const step = b.id === 'grid' ? 40 : 48;
+      for (let y = step - 0.5; y < h; y += step) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke(); }
+      if (b.id === 'grid') for (let x = step - 0.5; x < w; x += step) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke(); }
+    }
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    if (cacheRef.current) ctx.drawImage(cacheRef.current, 0, 0);
+    const a = document.createElement('a');
+    a.download = `doska-${page + 1}.png`;
+    a.href = out.toDataURL('image/png');
+    a.click();
+  };
+
+  const cursor = tool === 'text' ? 'text' : tool === 'laser' ? 'none' : 'crosshair';
+  const bgCss = overlay ? { background: 'transparent' } : (BOARD_BGS.find((b) => b.id === bg) || BOARD_BGS[0]).css;
+  const barCls = 'pointer-events-auto rounded-3xl bg-white/95 p-2 shadow-2xl shadow-slate-900/20 ring-1 ring-slate-200 backdrop-blur';
+  const btn = (active) => `flex h-14 w-14 items-center justify-center rounded-2xl transition active:scale-90 ${active ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30' : 'text-slate-700 hover:bg-blue-50'}`;
+  const pageCount = pagesRef.current.length;
+
+  return (
+    <div className="fixed inset-0 z-[70] select-none" style={overlay ? { background: 'rgba(15,23,42,.04)' } : undefined}>
+      <div ref={wrapRef} className="absolute inset-0" style={bgCss}>
+        <canvas
+          ref={canvasRef}
+          className="absolute inset-0"
+          style={{ touchAction: 'none', cursor }}
+          onPointerDown={down}
+          onPointerMove={move}
+          onPointerUp={up}
+          onPointerCancel={up}
+          onPointerLeave={(e) => { if (e.pointerType === 'mouse' && !draftRef.current) laserPts.current.push({ x: -99, y: -99, t: performance.now(), brk: true }); }}
+        />
+        <canvas ref={laserRef} className="pointer-events-none absolute inset-0" />
+        {textDraft && (
+          <textarea
+            autoFocus
+            value={textDraft.value}
+            onChange={(e) => setTextDraft({ ...textDraft, value: e.target.value })}
+            onBlur={commitText}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); commitText(); }
+              if (e.key === 'Escape') setTextDraft(null);
+            }}
+            placeholder="Matn yozing…"
+            rows={Math.max(1, textDraft.value.split('\n').length)}
+            className="absolute resize-none rounded-lg border-2 border-dashed border-blue-400 bg-white/60 px-1 outline-none"
+            style={{ left: textDraft.x - 6, top: textDraft.y - 4, color, font: `700 ${size.font}px "Plus Jakarta Sans", system-ui, sans-serif`, lineHeight: 1.2, minWidth: 220 }}
+          />
+        )}
+      </div>
+
+      {/* Asboblar — chapda */}
+      <div className="pointer-events-none absolute left-3 top-1/2 flex -translate-y-1/2 flex-col gap-2">
+        <div className={`${barCls} flex flex-col gap-1`}>
+          {BOARD_TOOLS.map((t) => (
+            <button key={t.id} title={`${t.name} (${t.key.toUpperCase()})`} aria-label={t.name} onClick={() => { setTool(t.id); setMenu(null); }} className={btn(tool === t.id)}>
+              <t.icon size={28} />
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Rang va qalinlik — pastda */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-3 flex justify-center px-3">
+        <div className={`${barCls} flex flex-wrap items-center justify-center gap-2`}>
+          {colors.map((c, k) => (
+            <button
+              key={c}
+              aria-label={`Rang ${k + 1}`}
+              onClick={() => { setColorIdx(k); if (tool === 'eraser' || tool === 'laser') setTool('pen'); }}
+              className={`h-12 w-12 rounded-full ring-offset-2 transition active:scale-90 ${colorIdx === k ? 'ring-4 ring-blue-500' : 'ring-1 ring-slate-300'}`}
+              style={{ background: c }}
+            />
+          ))}
+          <span className="mx-1 h-10 w-px bg-slate-200" />
+          {BOARD_SIZES.map((s) => (
+            <button key={s.id} title={s.name} aria-label={s.name} onClick={() => setSizeId(s.id)} className={btn(sizeId === s.id)}>
+              <span className="rounded-full" style={{ width: s.pen * 2 + 4, height: s.pen * 2 + 4, background: sizeId === s.id ? '#fff' : '#334155' }} />
+            </button>
+          ))}
+          <span className="mx-1 h-10 w-px bg-slate-200" />
+          <button title="Bekor qilish (Ctrl+Z)" aria-label="Bekor qilish" onClick={undo} disabled={!cur.past.length} className={`${btn(false)} disabled:opacity-30`}><Undo2 size={28} /></button>
+          <button title="Qaytarish (Ctrl+Y)" aria-label="Qaytarish" onClick={redo} disabled={!cur.future.length} className={`${btn(false)} disabled:opacity-30`}><Redo2 size={28} /></button>
+          <div className="relative">
+            <button title="Tozalash" aria-label="Tozalash" onClick={() => setMenu(menu === 'clear' ? null : 'clear')} className={`${btn(false)} text-rose-600 hover:bg-rose-50`}><Trash2 size={28} /></button>
+            {menu === 'clear' && (
+              <div className="absolute bottom-16 right-0 w-64 rounded-2xl bg-white p-3 shadow-2xl ring-1 ring-slate-200">
+                <button onClick={clearPage} className="w-full rounded-xl bg-rose-600 px-4 py-3 text-lg font-extrabold text-white hover:bg-rose-700">Sahifani tozalash</button>
+                {!overlay && pageCount > 1 && (
+                  <button onClick={delPage} className="mt-2 w-full rounded-xl border-2 border-rose-200 px-4 py-3 text-lg font-bold text-rose-700 hover:bg-rose-50">Sahifani o‘chirish</button>
+                )}
+                <p className="mt-2 text-center text-sm text-slate-500">Xato bossangiz — «Bekor qilish» qaytaradi</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Yuqori o‘ng — sahifa, fon, saqlash, yopish */}
+      <div className="pointer-events-none absolute right-3 top-3 flex max-w-[calc(100%-1.5rem)] flex-wrap items-start justify-end gap-2">
+        {overlay ? (
+          <div className={`${barCls} flex items-center gap-1`}>
+            {onPrev && <button title="Oldingi slayd (←)" aria-label="Oldingi slayd" onClick={onPrev} className={btn(false)}><ChevronLeft size={30} /></button>}
+            {label && <span className="px-2 text-lg font-extrabold text-blue-900 tabular-nums">{label}</span>}
+            {onNext && <button title="Keyingi slayd (→)" aria-label="Keyingi slayd" onClick={onNext} className={btn(false)}><ChevronRight size={30} /></button>}
+          </div>
+        ) : (
+          <>
+            <div className={`${barCls} flex items-center gap-1`}>
+              <button aria-label="Oldingi sahifa" onClick={() => setPage(Math.max(0, page - 1))} disabled={page === 0} className={`${btn(false)} disabled:opacity-30`}><ChevronLeft size={30} /></button>
+              <span className="px-1 text-xl font-extrabold text-blue-900 tabular-nums">{page + 1}/{pageCount}</span>
+              <button aria-label="Keyingi sahifa" onClick={() => setPage(Math.min(pageCount - 1, page + 1))} disabled={page >= pageCount - 1} className={`${btn(false)} disabled:opacity-30`}><ChevronRight size={30} /></button>
+              <button title="Yangi sahifa" aria-label="Yangi sahifa" onClick={addPage} className={btn(false)}><FilePlus2 size={28} /></button>
+            </div>
+            <div className="relative">
+              <div className={`${barCls} flex items-center gap-1`}>
+                <button title="Fon" aria-label="Fon" onClick={() => setMenu(menu === 'bg' ? null : 'bg')} className={btn(menu === 'bg')}><Palette size={28} /></button>
+                <button title="Rasm sifatida yuklab olish" aria-label="Yuklab olish" onClick={download} className={btn(false)}><Download size={28} /></button>
+              </div>
+              {menu === 'bg' && (
+                <div className="pointer-events-auto absolute right-0 top-20 grid w-72 grid-cols-2 gap-2 rounded-3xl bg-white p-3 shadow-2xl ring-1 ring-slate-200">
+                  {BOARD_BGS.map((b) => (
+                    <button key={b.id} onClick={() => { setBg(b.id); setColorIdx(0); setMenu(null); }} className={`overflow-hidden rounded-2xl text-left ring-2 transition ${bg === b.id ? 'ring-blue-500' : 'ring-slate-200 hover:ring-blue-300'}`}>
+                      <span className="block h-14" style={b.css} />
+                      <span className="block px-3 py-1.5 text-base font-bold text-slate-700">{b.name}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          </>
+        )}
+        <button
+          onClick={onClose}
+          className="pointer-events-auto inline-flex h-[4.5rem] items-center gap-2 rounded-3xl bg-slate-900 px-5 text-lg font-extrabold text-white shadow-2xl transition hover:bg-slate-800 active:scale-95"
+        >
+          <X size={26} /> {overlay ? 'Tugatish' : 'Yopish'}
+        </button>
+      </div>
+
+      {!overlay && !cur.items.length && !textDraft && (
+        <div className={`pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-2 ${dark ? 'text-white/30' : 'text-slate-300'}`}>
+          <PenLine size={64} />
+          <p className="px-24 text-center text-2xl font-extrabold md:text-3xl">Doska tayyor — yozishni boshlang</p>
+          <p className="hidden text-lg font-semibold md:block">Qalam (P) • Marker (M) • Lazer (K) • Matn (T) • O‘chirg‘ich (E)</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
 const RECENT_KEY = 'darsplay_recent_v1';
 function loadRecent() {
   try { return JSON.parse(localStorage.getItem(RECENT_KEY) || '[]'); } catch { return []; }
@@ -27514,7 +28030,7 @@ function readyBooks() {
   return out;
 }
 
-function HomeScreen({ teacher, onStart, schoolClasses = [], onClassResults, onRating, onQuick, onResume, onGuide }) {
+function HomeScreen({ teacher, onStart, schoolClasses = [], onClassResults, onRating, onQuick, onResume, onGuide, onBoard }) {
   const now = new Date();
   const h = now.getHours();
   const greet = h < 11 ? 'Xayrli tong' : h < 17 ? 'Xayrli kun' : 'Xayrli kech';
@@ -27540,6 +28056,7 @@ function HomeScreen({ teacher, onStart, schoolClasses = [], onClassResults, onRa
               <button onClick={onStart} className="dp-glow inline-flex items-center gap-3 rounded-2xl bg-amber-400 px-8 py-4 text-2xl font-black text-amber-950 shadow-xl transition hover:bg-amber-300 active:scale-95">
                 <Play size={30} className="fill-amber-950" /> Darsni boshlash
               </button>
+              <button onClick={onBoard} className="inline-flex items-center gap-2 rounded-2xl bg-white px-6 py-4 text-xl font-black text-blue-800 shadow-xl transition hover:bg-blue-50 active:scale-95"><PenLine size={26} /> Doska</button>
               <button onClick={onGuide} className="inline-flex items-center gap-2 rounded-2xl bg-white/10 px-5 py-4 text-lg font-extrabold text-white ring-2 ring-white/25 hover:bg-white/20"><CircleHelp size={22} /> Qo‘llanma</button>
             </div>
           </div>
@@ -28554,6 +29071,8 @@ function LessonScreen({ topic, onBack, onGames }) {
   const s = slides[i];
   const last = i === slides.length - 1;
   const topRef = useRef(null);
+  const [draw, setDraw] = useState(false);
+  const notes = useRef({});
 
   useEffect(() => {
     const onKey = (e) => {
@@ -28576,11 +29095,14 @@ function LessonScreen({ topic, onBack, onGames }) {
         title={topic.title}
         subtitle={topic.source ? `Dars tushuntirish • ${topic.source}` : 'Dars tushuntirish'}
         onBack={onBack}
-        right={
+        right={<div className="flex flex-wrap gap-2">
+          <button onClick={() => setDraw(true)} className="inline-flex items-center gap-2 rounded-2xl bg-blue-600 px-5 py-3 text-lg font-extrabold text-white shadow-md shadow-blue-600/20 hover:bg-blue-700">
+            <PenLine size={22} /> Chizish
+          </button>
           <button onClick={onGames} className="rounded-2xl border-2 border-blue-200 px-5 py-3 text-lg font-bold text-blue-900 hover:bg-blue-50">
             O‘yinlarga o‘tish
           </button>
-        }
+        </div>}
       />
       <div ref={topRef} className="grid gap-6 lg:grid-cols-[280px_1fr]">
         <aside className="hidden h-fit rounded-3xl border-2 border-blue-100 bg-white p-3 lg:block">
@@ -28635,6 +29157,18 @@ function LessonScreen({ topic, onBack, onGames }) {
           </div>
         </div>
       </div>
+      {draw && (
+        <Whiteboard
+          mode="overlay"
+          slideKey={i}
+          initial={notes.current[i]}
+          onChange={(items) => { notes.current[i] = items; }}
+          onPrev={i > 0 ? () => setI((x) => Math.max(x - 1, 0)) : null}
+          onNext={i < slides.length - 1 ? () => setI((x) => Math.min(x + 1, slides.length - 1)) : null}
+          label={`${i + 1} / ${slides.length}`}
+          onClose={() => setDraw(false)}
+        />
+      )}
     </div>
   );
 }
@@ -31131,6 +31665,7 @@ export default function DarsPlayApp() {
   const resetTo = useCallback((list) => setHistory(list), []);
 
   const [db, setDb] = useState(seedDb);
+  const [boardOpen, setBoardOpen] = useState(false);
   const [session, setSession] = useState(null); // { role: 'teacher', id } | { role: 'admin' }
   const [subjectId, setSubjectId] = useState(null);
   const [grade, setGrade] = useState(null);
@@ -31639,7 +32174,9 @@ export default function DarsPlayApp() {
         isFs={isFs}
         toggleFs={toggleFs}
         onHelp={teacher || isAdmin ? () => { markGuideSeen(); if (step !== 'guide') go('guide'); } : null}
+        onBoard={teacher || isAdmin ? () => setBoardOpen(true) : null}
       />}
+      {boardOpen && <Whiteboard onClose={() => setBoardOpen(false)} />}
 
       <main className="pb-16">
         {FLOW.includes(safeStep) && (
@@ -31682,6 +32219,7 @@ export default function DarsPlayApp() {
             onQuick={quickOpen}
             onResume={resumeRecent}
             onGuide={() => { markGuideSeen(); go('guide'); }}
+            onBoard={() => setBoardOpen(true)}
           />
         )}
 
