@@ -18,7 +18,7 @@ import {
   Minus, Loader2, UserCheck, KeyRound, ShieldCheck, Copy, EyeOff, Search, UserPlus, Pencil, Building2, LogIn, RefreshCw, Settings, ChevronDown, LayoutGrid, CameraOff, Trash2, Save, Ruler, Bomb, Gift, Repeat, Zap,
   ThumbsUp, ThumbsDown, Puzzle, Heart, Crown, Rocket, Flag, Dices, SpellCheck,
   Volume2, VolumeX, History, Medal, CalendarDays, Star, ListPlus, NotebookPen, CircleHelp,
-  ListOrdered, Shapes, Scale, Palette, Type, SpellCheck2,
+  ListOrdered, Shapes, Scale, Palette, Type, SpellCheck2, Projector, PhoneOff, Presentation, MousePointerClick,
 } from 'lucide-react';
 
 /* ============================================================
@@ -26048,7 +26048,7 @@ function Logo({ size = 44, showText = true, textClass = 'text-2xl' }) {
         <path d="M18 47 Q32 58 46 47" fill="none" stroke="#FFFFFF" strokeWidth="4.5" strokeLinecap="round" />
       </svg>
       {showText && (
-        <span className={`${textClass} font-extrabold tracking-tight leading-none`}>
+        <span className={`${textClass} whitespace-nowrap font-extrabold tracking-tight leading-none`}>
           <span className="text-blue-900">Dars</span> <span className="text-blue-600">play</span>
           <span className="ml-2 inline-block -translate-y-1 rounded-full bg-amber-400 px-2 py-0.5 align-middle text-[0.45em] font-extrabold uppercase tracking-wider text-amber-950">Beta</span>
         </span>
@@ -26342,13 +26342,201 @@ function Field({ label, children, error }) {
 }
 
 /* ---------- Kirish ekrani ---------- */
-function LoginScreen({ onLogin }) {
+/* ---------- Bosh sahifa (kirishdan oldin) ---------- */
+const DEMO_TOPIC = {
+  id: 'demo',
+  title: 'Demo',
+  letters: [
+    { w: 'kutub…ona', opts: ['x', 'h'], a: 'x' },
+    { w: 'ta…qiqot', opts: ['d', 't'], a: 'd' },
+    { w: 'mu…im', opts: ['h', 'x'], a: 'h' },
+    { w: 'belboq…a', opts: ['q', 'g', 'k'], a: 'q' },
+    { w: 'bar…', opts: ['g', 'k'], a: 'g' },
+    { w: 'tari…', opts: ['x', 'h'], a: 'x' },
+  ],
+  spell: [
+    { opts: ['mutaxassis', 'mutaxasis'], a: 0 },
+    { opts: ['Tinch okean', 'Tinch okeani'], a: 0 },
+    { opts: ['ishlatiladi', 'ishlatilinadi'], a: 0 },
+    { opts: ['stress', 'stres'], a: 0 },
+    { opts: ['ko‘kka', 'ko‘kga'], a: 0 },
+    { opts: ['taassurot', 'tasurot'], a: 0 },
+  ],
+};
+const DEMO_NAMES = ['Aziza', 'Bekzod', 'Dilnoza', 'Jasur', 'Madina', 'Otabek', 'Sevara', 'Temur', 'Umida', 'Shohruh'];
+
+function useCountUp(target, ms = 1400) {
+  const [v, setV] = useState(0);
+  useEffect(() => {
+    let raf; const t0 = performance.now();
+    const step = (t) => {
+      const k = Math.min(1, (t - t0) / ms);
+      setV(Math.round(target * (1 - Math.pow(1 - k, 3))));
+      if (k < 1) raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
+  }, [target, ms]);
+  return v;
+}
+
+function scrollToId(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function StatBox({ value, suffix = '', label, icon: I }) {
+  const v = useCountUp(value);
+  return (
+    <div className="rounded-3xl bg-white/10 p-5 text-center ring-1 ring-white/15 backdrop-blur">
+      <I size={30} className="mx-auto text-amber-300" />
+      <div className="mt-2 text-4xl md:text-5xl font-black text-white tabular-nums">{v}{suffix}</div>
+      <div className="mt-1 text-base font-semibold text-blue-100">{label}</div>
+    </div>
+  );
+}
+
+function HeroMockup() {
+  return (
+    <div className="relative mx-auto w-full max-w-xl">
+      <div className="absolute -inset-6 rounded-[3rem] bg-gradient-to-tr from-amber-300/40 via-sky-300/30 to-fuchsia-300/30 blur-2xl" />
+      <div className="relative rounded-[2rem] bg-slate-900 p-3 shadow-2xl ring-1 ring-white/20">
+        <div className="mb-2 flex items-center gap-1.5 px-2">
+          <span className="h-3 w-3 rounded-full bg-rose-400" /><span className="h-3 w-3 rounded-full bg-amber-400" /><span className="h-3 w-3 rounded-full bg-emerald-400" />
+          <span className="ml-3 text-xs font-semibold text-slate-400">Proyektor • 9-A sinf • Ona tili</span>
+        </div>
+        <div className="rounded-[1.4rem] bg-white p-4">
+          <div className="grid grid-cols-2 gap-2">
+            <div className="flex items-center justify-between rounded-xl bg-blue-50 px-3 py-2 ring-2 ring-blue-500">
+              <span className="text-sm font-extrabold text-blue-700">1-jamoa</span><span className="text-xl font-black text-blue-900">45</span>
+            </div>
+            <div className="flex items-center justify-between rounded-xl bg-rose-50 px-3 py-2">
+              <span className="text-sm font-extrabold text-rose-600">2-jamoa</span><span className="text-xl font-black text-rose-700">40</span>
+            </div>
+          </div>
+          <div className="mt-3 rounded-2xl bg-gradient-to-br from-violet-600 to-indigo-700 p-5 text-center text-white">
+            <div className="text-xs font-bold text-violet-100">Nuqtalar o‘rniga qaysi harf?</div>
+            <div className="mt-2 text-4xl font-black tracking-wide">kutub<span className="mx-1 inline-block rounded-xl bg-amber-300 px-2 text-indigo-900">x</span>ona</div>
+          </div>
+          <div className="mt-3 grid grid-cols-2 gap-2">
+            <div className="rounded-2xl border-4 border-emerald-400 bg-emerald-50 py-3 text-center text-3xl font-black text-emerald-700">x</div>
+            <div className="rounded-2xl border-4 border-slate-200 py-3 text-center text-3xl font-black text-slate-300">h</div>
+          </div>
+        </div>
+      </div>
+      <div className="dp-float absolute -top-6 left-6 hidden rounded-2xl bg-white px-4 py-3 shadow-xl sm:block">
+        <div className="flex items-center gap-2 text-base font-extrabold text-emerald-600"><CheckCircle2 size={22} /> +15 ball</div>
+      </div>
+      <div className="dp-float2 absolute -bottom-7 right-4 hidden rounded-2xl bg-white px-4 py-3 shadow-xl sm:block">
+        <div className="flex items-center gap-2 text-base font-extrabold text-blue-900"><Disc3 size={22} className="text-amber-500" /> Baraban: Madina!</div>
+      </div>
+      <div className="dp-float2 absolute -top-5 right-8 hidden rounded-2xl bg-amber-400 px-4 py-2 shadow-xl sm:block">
+        <div className="flex items-center gap-2 text-sm font-black text-amber-950"><Trophy size={18} /> Sinf reytingi</div>
+      </div>
+    </div>
+  );
+}
+
+function SectionHead({ kicker, title, sub, light }) {
+  return (
+    <div className="mx-auto max-w-3xl text-center">
+      <span className={`inline-block rounded-full px-4 py-1.5 text-sm font-extrabold uppercase tracking-wider ${light ? 'bg-white/15 text-amber-200' : 'bg-blue-100 text-blue-700'}`}>{kicker}</span>
+      <h2 className={`mt-4 text-3xl md:text-5xl font-black leading-tight ${light ? 'text-white' : 'text-blue-950'}`}>{title}</h2>
+      {sub && <p className={`mt-4 text-lg md:text-xl ${light ? 'text-blue-100' : 'text-slate-600'}`}>{sub}</p>}
+    </div>
+  );
+}
+
+function DemoArena() {
+  const [mode, setMode] = useState('letters');
+  const [scores, setScores] = useState([0, 0]);
+  const [turn, setTurn] = useState(0);
+  const [round, setRound] = useState(0);
+  const [done, setDone] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const reset = (m = mode) => { setMode(m); setScores([0, 0]); setTurn(0); setDone(false); setRound((r) => r + 1); };
+  const props = {
+    topic: DEMO_TOPIC,
+    award: (pts) => { playSound('correct'); setScores((s) => s.map((v, i) => (i === turn ? v + pts : v))); },
+    nextTurn: () => setTurn((t) => (t + 1) % 2),
+    onFinish: () => { playSound('win'); setDone(true); },
+    teamName: turn === 0 ? 'Lochinlar' : 'Burgutlar',
+  };
+  const tabs = [
+    ['letters', 'Qaysi harf?', Type],
+    ['spell', 'Imlo bellashuvi', SpellCheck2],
+    ['wheel', 'Baraban', Disc3],
+  ];
+  const win = scores[0] === scores[1] ? null : scores[0] > scores[1] ? 'Lochinlar' : 'Burgutlar';
+  return (
+    <div className="rounded-[2rem] bg-white p-4 shadow-2xl shadow-blue-900/10 ring-1 ring-blue-100 md:p-8">
+      <div className="flex flex-wrap items-center justify-center gap-2">
+        {tabs.map(([id, name, I]) => (
+          <button key={id} onClick={() => reset(id)} className={`inline-flex items-center gap-2 rounded-2xl px-5 py-3 text-lg font-extrabold transition ${mode === id ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30' : 'bg-blue-50 text-blue-900 hover:bg-blue-100'}`}>
+            <I size={22} /> {name}
+          </button>
+        ))}
+      </div>
+      {mode !== 'wheel' && (
+        <div className="mx-auto mt-6 grid max-w-4xl grid-cols-2 gap-3">
+          {['Lochinlar', 'Burgutlar'].map((n, i) => (
+            <div key={n} className={`flex items-center justify-between rounded-2xl px-5 py-3 transition ${i === 0 ? 'bg-blue-50' : 'bg-rose-50'} ${turn === i && !done ? (i === 0 ? 'ring-4 ring-blue-500' : 'ring-4 ring-rose-400') : ''}`}>
+              <span className={`text-lg font-extrabold ${i === 0 ? 'text-blue-700' : 'text-rose-600'}`}>{n}</span>
+              <span className={`text-3xl font-black tabular-nums ${i === 0 ? 'text-blue-900' : 'text-rose-700'}`}>{scores[i]}</span>
+            </div>
+          ))}
+        </div>
+      )}
+      <div className="mt-6">
+        {!mounted && <div className="flex h-64 items-center justify-center"><Loader2 size={40} className="animate-spin text-blue-500" /></div>}
+        {mounted && mode === 'wheel' && <div className="mx-auto max-w-xl"><WheelPicker key={round} students={DEMO_NAMES} /></div>}
+        {mounted && mode !== 'wheel' && !done && mode === 'letters' && <LetterGame key={round} {...props} />}
+        {mounted && mode !== 'wheel' && !done && mode === 'spell' && <SpellGame key={round} {...props} />}
+        {mode !== 'wheel' && done && (
+          <div className="dp-pop mx-auto max-w-xl rounded-3xl bg-gradient-to-br from-amber-300 to-amber-400 p-8 text-center">
+            <Trophy size={56} className="mx-auto text-amber-900" />
+            <div className="mt-3 text-3xl font-black text-amber-950">{win ? `${win} g‘alaba qozondi!` : 'Durang!'}</div>
+            <p className="mt-2 text-lg font-semibold text-amber-900">Darsda esa 2–4 jamoa, 17 xil o‘yin va 200 dan ortiq mavzu kutmoqda.</p>
+            <div className="mt-5 flex flex-wrap justify-center gap-3">
+              <button onClick={() => reset()} className="inline-flex items-center gap-2 rounded-2xl bg-white px-6 py-3 text-lg font-extrabold text-amber-900"><RotateCcw size={20} /> Qayta o‘ynash</button>
+              <button onClick={() => scrollToId('kirish')} className="inline-flex items-center gap-2 rounded-2xl bg-blue-700 px-6 py-3 text-lg font-extrabold text-white"><LogIn size={20} /> Tizimga kirish</button>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+const LANDING_FAQ = [
+  ['O‘quvchilarga telefon kerakmi?', 'Yo‘q. Hamma narsa o‘qituvchi kompyuteri va proyektor (yoki interaktiv doska) orqali ishlaydi. O‘quvchilar jamoa bo‘lib doskaga chiqib javob beradi.'],
+  ['Qaysi fan va sinflar tayyor?', '8-sinf Ona tili va Adabiyot, 9-sinf Ona tili — darslik asosida to‘liq. Boshqa fanlar uchun namunaviy mavzular bor, o‘qituvchi o‘z savollarini ham qo‘sha oladi.'],
+  ['Login va parolni qayerdan olaman?', 'Hisobni maktabingiz yoki Dars play administratori yaratib beradi. Ommaviy ro‘yxatdan o‘tish yopiq — bu o‘quvchilar ma’lumotlarini himoya qiladi.'],
+  ['Internet bo‘lmasa ishlaydimi?', 'Sahifa bir marta ochilgach, darslar va o‘yinlar brauzerda ishlaydi. Natijalarni saqlash va reyting uchun internet kerak.'],
+  ['O‘quvchini qanday tanlayman?', 'To‘rt usul bor: baraban (doira), kamera orqali tasodifiy tanlash, ro‘yxatdan tanlash va avtomatik ravishda jamoalarga bo‘lish.'],
+  ['O‘zim savol qo‘sha olamanmi?', 'Ha. «O‘z to‘plamim» bo‘limida juftliklar, test, savol-javoblarni kiritasiz — ular barcha o‘yinlarda ishlaydi.'],
+];
+
+function FaqItem({ q, a }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className={`rounded-2xl border-2 bg-white transition ${open ? 'border-blue-400 shadow-lg shadow-blue-900/5' : 'border-blue-100'}`}>
+      <button onClick={() => setOpen((o) => !o)} className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left">
+        <span className="text-lg md:text-xl font-extrabold text-blue-950">{q}</span>
+        <ChevronDown size={26} className={`shrink-0 text-blue-600 transition ${open ? 'rotate-180' : ''}`} />
+      </button>
+      {open && <p className="dp-pop px-6 pb-6 text-lg text-slate-600">{a}</p>}
+    </div>
+  );
+}
+
+function LoginCard({ onLogin }) {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const [show, setShow] = useState(false);
   const [error, setError] = useState('');
   const [shakeKey, setShakeKey] = useState(0);
-
   const [busy, setBusy] = useState(false);
   const attempt = async (l, p) => {
     if (busy) return;
@@ -26358,92 +26546,276 @@ function LoginScreen({ onLogin }) {
     setBusy(false);
     if (err) { setError(err); setShakeKey((k) => k + 1); } else setError('');
   };
-
-  const submit = (e) => {
-    e.preventDefault();
-    attempt(login, password);
-  };
-
+  const submit = (e) => { e.preventDefault(); attempt(login, password); };
   const noAuto = { autoCapitalize: 'none', autoCorrect: 'off', spellCheck: false };
+  return (
+    <form onSubmit={submit} noValidate className="rounded-[2rem] bg-white p-8 shadow-2xl shadow-blue-900/20 md:p-10">
+      <div className="flex items-center gap-3">
+        <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-600 text-white"><LogIn size={26} /></span>
+        <div>
+          <h3 className="text-3xl font-extrabold text-blue-950">Tizimga kirish</h3>
+          <p className="text-base text-slate-500">O‘qituvchi yoki administrator</p>
+        </div>
+      </div>
+      <div className="mt-6 space-y-5">
+        <Field label="Login">
+          <input className={inputCls} value={login} onChange={(e) => { setLogin(e.target.value); setError(''); }} autoComplete="username" placeholder="masalan: karimova.d" {...noAuto} />
+        </Field>
+        <Field label="Parol">
+          <div className="relative">
+            <input className={`${inputCls} pr-16`} type={show ? 'text' : 'password'} value={password} onChange={(e) => { setPassword(e.target.value); setError(''); }} autoComplete="current-password" placeholder="••••••••" {...noAuto} />
+            <button type="button" onClick={() => setShow((v) => !v)} className="absolute right-3 top-1/2 -translate-y-1/2 rounded-xl p-2 text-slate-500 hover:bg-slate-100" aria-label="Parolni ko‘rsatish">
+              {show ? <EyeOff size={24} /> : <Eye size={24} />}
+            </button>
+          </div>
+        </Field>
+        {error && <p key={shakeKey} className="dp-shake rounded-2xl bg-rose-50 px-4 py-3 text-lg font-semibold text-rose-700">{error}</p>}
+        <button type="submit" className="inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-blue-600 px-8 py-4 text-xl md:text-2xl font-extrabold text-white shadow-lg shadow-blue-600/30 transition hover:bg-blue-700 active:scale-95">
+          {busy ? <Loader2 size={28} className="animate-spin" /> : <>Kirish <LogIn size={28} /></>}
+        </button>
+      </div>
+      {!REMOTE && <div className="mt-6 rounded-2xl bg-blue-50 p-4 text-blue-900">
+        <div className="flex items-start gap-3"><KeyRound size={22} className="mt-0.5 shrink-0" /><p className="text-base">Sinov uchun tayyor hisoblar — bir bosishda kiring:</p></div>
+        <div className="mt-3 grid gap-2 sm:grid-cols-2">
+          <button type="button" onClick={() => attempt('demo', 'demo123')} className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-blue-200 bg-white px-4 py-3 text-base font-bold text-blue-900 hover:border-blue-500"><User size={20} /> Demo o‘qituvchi</button>
+          <button type="button" onClick={() => attempt('admin', 'admin123')} className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-blue-200 bg-white px-4 py-3 text-base font-bold text-blue-900 hover:border-blue-500"><ShieldCheck size={20} /> Bosh administrator</button>
+        </div>
+        <p className="mt-2 text-sm text-blue-800">Qo‘lda: demo / demo123 yoki admin / admin123. Bu demo rejim — ma’lumotlar shu brauzerda saqlanadi.</p>
+      </div>}
+      {REMOTE && <p className="mt-6 flex items-start gap-2 rounded-2xl bg-blue-50 p-4 text-base text-blue-900"><KeyRound size={20} className="mt-0.5 shrink-0" /> Login va parolni maktabingiz yoki Dars play administratori beradi.</p>}
+    </form>
+  );
+}
+
+function LoginScreen({ onLogin }) {
+  const topicCount = useMemo(() => Object.values(CONTENT).reduce((a, g) => a + Object.values(g).reduce((b, arr) => b + arr.length, 0), 0), []);
+  const games = GAMES.filter((g) => !g.disabled);
+  const [menu, setMenu] = useState(false);
+  const nav = [['imkoniyatlar', 'Imkoniyatlar'], ['demo', 'Sinab ko‘ring'], ['oyinlar', 'O‘yinlar'], ['qanday', 'Qanday ishlaydi'], ['fanlar', 'Fanlar'], ['savollar', 'Savollar']];
+  const go = (id) => { setMenu(false); scrollToId(id); };
+
+  const features = [
+    { icon: Presentation, title: 'Darslik asosida tushuntirish', text: 'Har mavzu — qoida, jadval, misol va topshiriqli slaydlar. Proyektorda katta shriftda.', color: 'from-blue-500 to-blue-700', wide: true },
+    { icon: LayoutGrid, title: `${games.length} xil o‘yin`, text: 'Test, Millioner, Portlash, Poyga, imlo va fikrlash o‘yinlari.', color: 'from-violet-500 to-indigo-700' },
+    { icon: Users, title: '2–4 jamoa yoki yakka', text: 'Jamoalar navbatma-navbat javob beradi, ball avtomatik hisoblanadi.', color: 'from-rose-500 to-pink-600' },
+    { icon: Disc3, title: 'Baraban, kamera, ro‘yxat', text: 'O‘quvchini adolatli tanlash va bir bosishda guruhlarga bo‘lish.', color: 'from-amber-400 to-orange-500' },
+    { icon: Trophy, title: 'Reyting', text: 'Sinf, maktab va umumiy reyting — o‘quvchilar o‘sishini ko‘rasiz.', color: 'from-emerald-500 to-teal-600' },
+    { icon: ListPlus, title: 'O‘z savollaringiz', text: 'O‘z to‘plamingizni yarating — barcha o‘yinlarda ishlaydi.', color: 'from-sky-500 to-cyan-600' },
+    { icon: History, title: 'Natijalar tarixi', text: 'Har o‘yin natijasi sinf bo‘yicha saqlanadi: kim qachon qancha ball oldi — bir qarashda ko‘rinadi.', color: 'from-fuchsia-500 to-purple-700', wide: true },
+  ];
+  const steps = [
+    { icon: BookOpen, t: 'Fan, sinf va mavzu', d: 'Bir necha bosishda kerakli darsni oching.' },
+    { icon: Presentation, t: 'Mavzuni tushuntiring', d: 'Tayyor slaydlar bilan qoida va misollar.' },
+    { icon: Dices, t: 'O‘yinni tanlang', d: 'Har mavzuga mos o‘yinlar avtomatik tavsiya qilinadi.' },
+    { icon: Trophy, t: 'Jamoalar bellashadi', d: 'Ball, g‘olib va reyting — darsdan so‘ng saqlanadi.' },
+  ];
+  const classroom = [
+    [PhoneOff, 'Telefon kerak emas', 'Faqat o‘qituvchi kompyuteri va proyektor'],
+    [Projector, 'Proyektor uchun dizayn', 'Katta shrift, yorqin tugmalar, uzoqdan ko‘rinadi'],
+    [Maximize, 'To‘liq ekran rejimi', 'Bir tugma bilan butun sinfga'],
+    [Volume2, 'Ovoz effektlari', 'To‘g‘ri javob, portlash, g‘alaba ovozlari'],
+    [Timer, 'Taymerlar', 'Har savolga vaqt — dars sur’ati saqlanadi'],
+    [ShieldCheck, 'Xavfsiz', 'Har o‘qituvchi faqat o‘z maktabini ko‘radi'],
+  ];
 
   return (
-    <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-10 md:grid-cols-2 md:px-8 md:py-16">
-      <div>
-        <Logo size={88} textClass="text-5xl md:text-6xl" />
-        <h1 className="mt-8 text-4xl md:text-5xl font-extrabold leading-tight text-blue-950">Darsni o‘yinga aylantiring!</h1>
-        <p className="mt-4 text-xl text-slate-600">
-          5–11-sinflar uchun interaktiv darslar va o‘yinlar. Login va parolni Dars play administratori beradi.
-        </p>
-        <div className="mt-8 grid grid-cols-3 gap-3">
-          {[
-            { icon: LayoutGrid, t: '17 xil o‘yin' },
-            { icon: Users, t: 'Tayyor sinf ro‘yxatlari' },
-            { icon: UserCheck, t: '4 tanlash usuli' },
-          ].map(({ icon: I, t }) => (
-            <div key={t} className="rounded-2xl border-2 border-blue-100 bg-white p-4 text-center">
-              <I className="mx-auto text-blue-600" size={32} />
-              <div className="mt-2 font-bold text-blue-950">{t}</div>
+    <div className="-mb-16 overflow-x-hidden">
+      {/* Navigatsiya */}
+      <div className="sticky top-0 z-50 border-b border-blue-100/60 bg-white/85 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center gap-2 px-3 py-3 sm:gap-4 sm:px-4 md:px-8">
+          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Yuqoriga" className="shrink-0"><Logo size={44} textClass="text-2xl" /></button>
+          <nav className="ml-6 hidden flex-1 items-center gap-1 xl:flex">
+            {nav.map(([id, t]) => (
+              <button key={id} onClick={() => go(id)} className="whitespace-nowrap rounded-xl px-3 py-2 text-base font-bold text-slate-600 transition hover:bg-blue-50 hover:text-blue-800">{t}</button>
+            ))}
+          </nav>
+          <div className="ml-auto flex items-center gap-2">
+            <button onClick={() => go('demo')} className="hidden items-center gap-2 whitespace-nowrap rounded-2xl border-2 border-blue-200 px-4 py-2.5 text-base font-extrabold text-blue-800 hover:border-blue-500 sm:inline-flex"><Play size={18} /> Sinab ko‘rish</button>
+            <button onClick={() => go('kirish')} className="inline-flex items-center gap-2 whitespace-nowrap rounded-2xl bg-blue-600 px-3 py-2.5 text-base font-extrabold text-white shadow-lg shadow-blue-600/30 hover:bg-blue-700 sm:px-5" aria-label="Kirish"><LogIn size={18} /> <span className="hidden sm:inline">Kirish</span></button>
+            <button onClick={() => setMenu((m) => !m)} className="rounded-xl p-2 text-blue-900 xl:hidden" aria-label="Menyu"><List size={26} /></button>
+          </div>
+        </div>
+        {menu && (
+          <div className="dp-pop border-t border-blue-100 bg-white px-4 py-3 xl:hidden">
+            {nav.map(([id, t]) => <button key={id} onClick={() => go(id)} className="block w-full rounded-xl px-3 py-3 text-left text-lg font-bold text-blue-900 hover:bg-blue-50">{t}</button>)}
+          </div>
+        )}
+      </div>
+
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-blue-950 via-blue-800 to-indigo-700">
+        <div className="dp-grid pointer-events-none absolute inset-0 opacity-30" />
+        <div className="pointer-events-none absolute -left-24 -top-24 h-80 w-80 rounded-full bg-sky-400/30 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-32 right-0 h-96 w-96 rounded-full bg-fuchsia-500/25 blur-3xl" />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 pb-20 pt-14 md:px-8 lg:grid-cols-2 lg:pb-28 lg:pt-20">
+          <div>
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-base font-bold text-amber-200 ring-1 ring-white/20"><Sparkles size={18} /> O‘zbekiston maktablari uchun • 5–11-sinflar</span>
+            <h1 className="mt-6 text-4xl font-black leading-[1.08] text-white sm:text-5xl lg:text-7xl">
+              Darsni <span className="relative inline-block"><span className="relative z-10 text-amber-300">o‘yinga</span><svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" preserveAspectRatio="none"><path d="M2 9 Q100 -2 198 9" stroke="#FBBF24" strokeWidth="5" fill="none" strokeLinecap="round" /></svg></span> aylantiring!
+            </h1>
+            <p className="mt-6 max-w-xl text-xl text-blue-100 md:text-2xl">Darslik asosidagi tushuntirish, {games.length} xil o‘yin, jamoalar va reyting — barchasi proyektor orqali, telefonsiz.</p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <button onClick={() => go('demo')} className="dp-glow inline-flex items-center gap-3 rounded-2xl bg-amber-400 px-7 py-4 text-xl font-black text-amber-950 shadow-xl transition hover:bg-amber-300 active:scale-95"><Play size={24} /> Hoziroq sinab ko‘ring</button>
+              <button onClick={() => go('kirish')} className="inline-flex items-center gap-3 rounded-2xl bg-white/10 px-7 py-4 text-xl font-extrabold text-white ring-2 ring-white/30 transition hover:bg-white/20"><LogIn size={24} /> Kirish</button>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-base font-semibold text-blue-100">
+              {['Ro‘yxatdan o‘tmasdan demo', 'O‘zbek tilida', 'Bepul sinov rejimi'].map((t) => (
+                <span key={t} className="inline-flex items-center gap-2"><CheckCircle2 size={20} className="text-emerald-300" /> {t}</span>
+              ))}
+            </div>
+          </div>
+          <HeroMockup />
+        </div>
+        <div className="relative mx-auto -mt-6 grid max-w-6xl grid-cols-2 gap-3 px-4 pb-14 md:grid-cols-4 md:px-8">
+          <StatBox value={topicCount} suffix="+" label="tayyor mavzu" icon={BookOpen} />
+          <StatBox value={games.length} label="xil o‘yin" icon={Dices} />
+          <StatBox value={SUBJECTS.length} label="fan" icon={GraduationCap} />
+          <StatBox value={4} label="o‘quvchi tanlash usuli" icon={UserCheck} />
+        </div>
+      </section>
+
+      {/* Imkoniyatlar */}
+      <section id="imkoniyatlar" className="scroll-mt-20 px-4 py-20 md:px-8 md:py-28">
+        <SectionHead kicker="Imkoniyatlar" title="Bir darsga kerak bo‘lgan hamma narsa — bir joyda" sub="Tushuntirishdan tortib o‘yin va baholashgacha. O‘qituvchi tayyorgarlikka vaqt sarflamaydi." />
+        <div className="mx-auto mt-14 grid max-w-6xl gap-5 md:grid-cols-3">
+          {features.map((f) => (
+            <div key={f.title} className={`group relative overflow-hidden rounded-[2rem] border-2 border-blue-100 bg-white p-7 transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-900/10 ${f.wide ? 'md:col-span-2' : ''}`}>
+              <div className={`absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gradient-to-br ${f.color} opacity-10 transition group-hover:scale-125 group-hover:opacity-20`} />
+              <span className={`inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${f.color} text-white shadow-lg`}><f.icon size={32} /></span>
+              <h3 className="mt-5 text-2xl font-extrabold text-blue-950">{f.title}</h3>
+              <p className="mt-2 text-lg text-slate-600">{f.text}</p>
             </div>
           ))}
         </div>
-      </div>
+      </section>
 
-      <form onSubmit={submit} noValidate className="rounded-3xl border-2 border-blue-100 bg-white p-8 shadow-xl shadow-blue-900/5 md:p-10">
-        <h2 className="text-3xl font-extrabold text-blue-950">Tizimga kirish</h2>
-        <p className="mt-2 text-lg text-slate-500">O‘qituvchi yoki administrator login va parolini kiriting</p>
+      {/* Demo */}
+      <section id="demo" className="scroll-mt-20 bg-gradient-to-b from-blue-50 to-white px-4 py-20 md:px-8 md:py-28">
+        <SectionHead kicker="Jonli demo" title="Kirmasdan turib o‘ynab ko‘ring" sub="Ikki jamoa: «Lochinlar» va «Burgutlar». Javob bering, ball to‘plang yoki barabanni aylantiring — darsda xuddi shunday ishlaydi." />
+        <div className="mx-auto mt-12 max-w-5xl"><DemoArena /></div>
+      </section>
 
-        <div className="mt-6 space-y-5">
-          <Field label="Login">
-            <input
-              className={inputCls}
-              value={login}
-              onChange={(e) => { setLogin(e.target.value); setError(''); }}
-              autoComplete="username"
-              placeholder="masalan: karimova.d"
-              {...noAuto}
-            />
-          </Field>
-          <Field label="Parol">
-            <div className="relative">
-              <input
-                className={`${inputCls} pr-16`}
-                type={show ? 'text' : 'password'}
-                value={password}
-                onChange={(e) => { setPassword(e.target.value); setError(''); }}
-                autoComplete="current-password"
-                placeholder="••••••••"
-                {...noAuto}
-              />
-              <button type="button" onClick={() => setShow((v) => !v)} className="absolute right-3 top-1/2 -translate-y-1/2 rounded-xl p-2 text-slate-500 hover:bg-slate-100" aria-label="Parolni ko‘rsatish">
-                {show ? <EyeOff size={24} /> : <Eye size={24} />}
-              </button>
+      {/* O‘yinlar */}
+      <section id="oyinlar" className="scroll-mt-20 px-4 py-20 md:px-8 md:py-28">
+        <SectionHead kicker={`${games.length} ta o‘yin`} title="Har bir mavzuga mos o‘yinlar" sub="Bilim, so‘z, jamoaviy, fikrlash va imlo o‘yinlari. Har darsda boshqacha to‘plam tavsiya qilinadi — dars zerikarli bo‘lmaydi." />
+        <div className="mx-auto mt-14 grid max-w-6xl grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          {games.map((g, i) => (
+            <div key={g.id} className="group relative rounded-3xl border-2 border-slate-100 bg-white p-5 transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl" style={{ animationDelay: `${i * 40}ms` }}>
+              {(g.hot || g.fresh) && <span className={`absolute right-3 top-3 rounded-full px-2 py-0.5 text-xs font-black uppercase ${g.hot ? 'bg-rose-100 text-rose-600' : 'bg-amber-100 text-amber-700'}`}>{g.hot ? 'Sevimli' : 'Yangi'}</span>}
+              <span className={`inline-flex h-14 w-14 items-center justify-center rounded-2xl ${g.color} text-white shadow-md transition group-hover:rotate-6 group-hover:scale-110`}><g.icon size={28} /></span>
+              <div className="mt-4 text-xl font-extrabold text-blue-950">{g.name}</div>
+              <div className="mt-1 text-base text-slate-500">{g.desc}</div>
             </div>
-          </Field>
-          {error && <p key={shakeKey} className="dp-shake rounded-2xl bg-rose-50 px-4 py-3 text-lg font-semibold text-rose-700">{error}</p>}
-          <button
-            type="submit"
-            className="inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-blue-600 px-8 py-4 text-xl md:text-2xl font-extrabold text-white shadow-lg shadow-blue-600/30 transition hover:bg-blue-700 active:scale-95"
-          >
-            {busy ? <Loader2 size={28} className="animate-spin" /> : <>Kirish <LogIn size={28} /></>}
-          </button>
+          ))}
         </div>
+      </section>
 
-        {!REMOTE && <div className="mt-6 rounded-2xl bg-blue-50 p-4 text-blue-900">
-          <div className="flex items-start gap-3">
-            <KeyRound size={22} className="mt-0.5 shrink-0" />
-            <p className="text-base">Sinov uchun tayyor hisoblar — bir bosishda kiring:</p>
+      {/* Qanday ishlaydi */}
+      <section id="qanday" className="scroll-mt-20 relative overflow-hidden bg-blue-950 px-4 py-20 md:px-8 md:py-28">
+        <div className="dp-grid pointer-events-none absolute inset-0 opacity-20" />
+        <div className="relative">
+          <SectionHead light kicker="Qanday ishlaydi" title="4 qadamda qiziqarli dars" sub="Darsga tayyorlanish — 1 daqiqa. Qolgan vaqt — o‘quvchilar bilan." />
+          <div className="mx-auto mt-14 grid max-w-6xl gap-5 md:grid-cols-4">
+            {steps.map((s, i) => (
+              <div key={s.t} className="relative rounded-[2rem] bg-white/5 p-7 ring-1 ring-white/10">
+                <div className="flex items-center justify-between">
+                  <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-400 text-amber-950"><s.icon size={28} /></span>
+                  <span className="text-6xl font-black text-white/10">{i + 1}</span>
+                </div>
+                <h3 className="mt-5 text-2xl font-extrabold text-white">{s.t}</h3>
+                <p className="mt-2 text-lg text-blue-200">{s.d}</p>
+                {i < steps.length - 1 && <ChevronRight size={32} className="absolute -right-6 top-1/2 hidden -translate-y-1/2 text-amber-300 md:block" />}
+              </div>
+            ))}
           </div>
-          <div className="mt-3 grid gap-2 sm:grid-cols-2">
-            <button type="button" onClick={() => attempt('demo', 'demo123')} className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-blue-200 bg-white px-4 py-3 text-base font-bold text-blue-900 hover:border-blue-500">
-              <User size={20} /> Demo o‘qituvchi
-            </button>
-            <button type="button" onClick={() => attempt('admin', 'admin123')} className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-blue-200 bg-white px-4 py-3 text-base font-bold text-blue-900 hover:border-blue-500">
-              <ShieldCheck size={20} /> Bosh administrator
-            </button>
+        </div>
+      </section>
+
+      {/* Sinf xonasi uchun */}
+      <section className="px-4 py-20 md:px-8 md:py-28">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
+          <div>
+            <span className="inline-block rounded-full bg-emerald-100 px-4 py-1.5 text-sm font-extrabold uppercase tracking-wider text-emerald-700">Sinf xonasi uchun</span>
+            <h2 className="mt-4 text-3xl md:text-5xl font-black leading-tight text-blue-950">Dars paytida telefon shart emas</h2>
+            <p className="mt-4 text-xl text-slate-600">Dars play o‘qituvchi kompyuteri va proyektor yoki interaktiv doska uchun yaratilgan. O‘quvchilar jamoa bo‘lib doskaga chiqadi, butun sinf ishtirok etadi.</p>
+            <button onClick={() => go('demo')} className="mt-8 inline-flex items-center gap-2 rounded-2xl bg-blue-600 px-6 py-4 text-lg font-extrabold text-white shadow-lg shadow-blue-600/30 hover:bg-blue-700"><MousePointerClick size={22} /> Demoni ochish</button>
           </div>
-          <p className="mt-2 text-sm text-blue-800">Qo‘lda: demo / demo123 yoki admin / admin123. Bu demo rejim — ma’lumotlar shu brauzerda saqlanadi.</p>
-        </div>}
-      </form>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {classroom.map(([I, t, d]) => (
+              <div key={t} className="flex items-start gap-4 rounded-3xl border-2 border-blue-100 bg-white p-5">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-blue-50 text-blue-700"><I size={26} /></span>
+                <div><div className="text-lg font-extrabold text-blue-950">{t}</div><div className="text-base text-slate-500">{d}</div></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Fanlar */}
+      <section id="fanlar" className="scroll-mt-20 bg-gradient-to-b from-white to-blue-50 px-4 py-20 md:px-8 md:py-28">
+        <SectionHead kicker="Fanlar va sinflar" title={`${SUBJECTS.length} ta fan, 5–11-sinflar`} sub="Yashil belgi — darslik asosida to‘liq tayyorlangan sinflar. Qolganlarida namunaviy mavzular va o‘z savollaringiz." />
+        <div className="mx-auto mt-14 grid max-w-6xl grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          {SUBJECTS.map((s) => {
+            const ready = Object.entries(CONTENT[s.id] || {});
+            return (
+              <div key={s.id} className={`rounded-3xl border-2 bg-white p-5 ${ready.length ? 'border-emerald-200 shadow-lg shadow-emerald-900/5' : 'border-slate-100'}`}>
+                <div className="flex items-center gap-3">
+                  <span className={`flex h-12 w-12 items-center justify-center rounded-2xl ${s.color} text-white`}><s.icon size={24} /></span>
+                  <span className="text-xl font-extrabold text-blue-950">{s.name}</span>
+                </div>
+                <div className="mt-4 flex flex-wrap gap-1.5">
+                  {ready.length ? ready.map(([g, arr]) => (
+                    <span key={g} className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-3 py-1 text-sm font-extrabold text-emerald-700"><Check size={14} /> {g}-sinf • {arr.length}</span>
+                  )) : <span className="rounded-full bg-slate-100 px-3 py-1 text-sm font-bold text-slate-500">Namunaviy mavzular</span>}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Savollar */}
+      <section id="savollar" className="scroll-mt-20 px-4 py-20 md:px-8 md:py-28">
+        <SectionHead kicker="Savol-javob" title="Ko‘p beriladigan savollar" />
+        <div className="mx-auto mt-12 max-w-3xl space-y-3">
+          {LANDING_FAQ.map(([q, a]) => <FaqItem key={q} q={q} a={a} />)}
+        </div>
+      </section>
+
+      {/* Kirish */}
+      <section id="kirish" className="scroll-mt-20 relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 px-4 py-20 md:px-8 md:py-28">
+        <div className="dp-grid pointer-events-none absolute inset-0 opacity-20" />
+        <div className="pointer-events-none absolute right-10 top-10 h-72 w-72 rounded-full bg-amber-300/20 blur-3xl" />
+        <div className="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
+          <div className="text-white">
+            <h2 className="text-4xl md:text-6xl font-black leading-tight">Bugungi darsni boshqacha o‘tkazing</h2>
+            <p className="mt-5 text-xl text-blue-100">Kiring, fan va sinfni tanlang — bir daqiqada sinf o‘yinga tayyor.</p>
+            <ul className="mt-8 space-y-3 text-lg font-semibold">
+              {['Darslik asosidagi tayyor mavzular', `${games.length} xil o‘yin va 2–4 jamoa`, 'Baraban, kamera va ro‘yxat orqali tanlash', 'Sinf va maktab reytingi'].map((t) => (
+                <li key={t} className="flex items-center gap-3"><span className="flex h-8 w-8 items-center justify-center rounded-full bg-amber-400 text-amber-950"><Check size={18} /></span>{t}</li>
+              ))}
+            </ul>
+          </div>
+          <LoginCard onLogin={onLogin} />
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-slate-950 px-4 py-12 text-slate-400 md:px-8">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 md:flex-row">
+          <div className="flex items-center gap-3">
+            <Logo size={40} showText={false} />
+            <div>
+              <div className="text-xl font-extrabold text-white">Dars play</div>
+              <div className="text-sm">O‘zbekiston maktablari uchun interaktiv darslar • 5–11-sinflar</div>
+            </div>
+          </div>
+          <div className="flex flex-wrap justify-center gap-4 text-base font-semibold">
+            {nav.map(([id, t]) => <button key={id} onClick={() => go(id)} className="hover:text-white">{t}</button>)}
+          </div>
+        </div>
+        <div className="mx-auto mt-8 max-w-6xl border-t border-white/10 pt-6 text-center text-sm">© {new Date().getFullYear()} Dars play. Darslik materiallari O‘zbekiston Respublikasi umumiy o‘rta ta’lim darsliklari asosida tayyorlangan.</div>
+      </footer>
     </div>
   );
 }
@@ -31095,10 +31467,17 @@ export default function DarsPlayApp() {
         @keyframes dpBoom { 0% { transform: scale(.2) rotate(-20deg); opacity: 0; } 60% { transform: scale(1.25) rotate(8deg); opacity: 1; } 100% { transform: scale(1) rotate(0); } }
         .dp-boom { animation: dpBoom .6s cubic-bezier(.2,.9,.3,1.3); }
         @keyframes dpFall { 0% { transform: translateY(0) rotate(0); opacity: 1; } 100% { transform: translateY(110vh) rotate(760deg); opacity: .85; } }
+        @keyframes dpFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+        .dp-float { animation: dpFloat 4s ease-in-out infinite; }
+        .dp-float2 { animation: dpFloat 5s ease-in-out infinite .8s; }
+        @keyframes dpGlow { 0%,100% { box-shadow: 0 0 0 0 rgba(251,191,36,.55); } 50% { box-shadow: 0 0 0 14px rgba(251,191,36,0); } }
+        .dp-glow { animation: dpGlow 2.4s ease-out infinite; }
+        .dp-grid { background-image: linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px); background-size: 44px 44px; mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%); }
+        html { scroll-behavior: smooth; }
         .dp-confetti { animation-name: dpFall; animation-timing-function: linear; animation-fill-mode: forwards; }
       `}</style>
 
-      <Header
+      {safeStep !== 'login' && <Header
         teacher={teacher || (isAdmin ? { name: 'Bosh administrator', school: 'Barcha maktablar' } : null)}
         crumbs={crumbs}
         onHome={goHome}
@@ -31106,7 +31485,7 @@ export default function DarsPlayApp() {
         isFs={isFs}
         toggleFs={toggleFs}
         onHelp={teacher || isAdmin ? () => { markGuideSeen(); if (step !== 'guide') go('guide'); } : null}
-      />
+      />}
 
       <main className="pb-16">
         {dataError && (
@@ -31288,11 +31667,11 @@ export default function DarsPlayApp() {
         />
       )}
 
-      <footer className="border-t border-blue-100 bg-white py-5 text-center text-base text-slate-500">
+      {safeStep !== 'login' && <footer className="border-t border-blue-100 bg-white py-5 text-center text-base text-slate-500">
         <span className="inline-flex items-center gap-2"><School size={18} /> Dars play — O‘zbekiston maktablari uchun interaktiv darslar</span>
         <span className="mx-3">•</span>
         <span className="inline-flex items-center gap-2"><GraduationCap size={18} /> 5–11-sinflar</span>
-      </footer>
+      </footer>}
     </div>
   );
 }
