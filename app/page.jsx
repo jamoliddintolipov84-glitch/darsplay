@@ -20,6 +20,7 @@ import {
   Volume2, VolumeX, History, Medal, CalendarDays, Star, ListPlus, NotebookPen, CircleHelp,
   ListOrdered, Shapes, Scale, Palette, Type, SpellCheck2, Projector, PhoneOff, Presentation, MousePointerClick,
   Highlighter, Wand2, MoveUpRight, Square, Circle, Eraser, Undo2, Redo2, FilePlus2, Download,
+  Quote, Mail,
 } from 'lucide-react';
 
 /* ============================================================
@@ -25642,8 +25643,1405 @@ const ONA_TILI_9_P8 = [
   },
 ];
 
+const ADABIYOT_9 = [
+  /* ===================== 1. Adabiyot nadur? ===================== */
+  {
+    id: 'ad9-adabiyot-nadur',
+    source: 'I chorak • 1-dars • 4–5-betlar',
+    title: 'Adabiyot nadur? (Cho‘lpon)',
+    short: 'Cho‘lponning 1914-yilgi maqolasi: adabiyot — ruhning buloq suvi',
+    theme: { emoji: '🖋️', grad: 'from-stone-800 via-amber-800 to-amber-500', border: 'border-amber-200', tag: 'Maqola • 1914-yil' },
+    lesson: [
+      {
+        title: 'Bir savol bilan boshlaymiz',
+        emoji: '🤔',
+        text: 'Telefon, internet, kino bor zamonda odamga kitob, she’r, hikoya nega kerak? Bundan 110 yil oldin 17 yoshli bir yigit xuddi shu savolga javob izlab maqola yozgan edi.',
+        reveal: [
+          { q: 'Odam qachon she’r yoki qo‘shiq izlaydi?', a: 'Quvonganda ham, qayg‘urganda ham — tuyg‘usini oddiy so‘z bilan ayta olmay qolganda.' },
+          { q: 'Alla nima uchun bolani tez uxlatadi?', a: 'Cho‘lponning fikricha, bola undan lazzat — go‘zal ohang va mehrni his qiladi. Bu ham adabiyot!' },
+        ],
+      },
+      {
+        title: 'Muallif: Abdulhamid Sulaymon o‘g‘li Cho‘lpon',
+        emoji: '✒️',
+        facts: [
+          { n: '1897', l: 'Andijonda tug‘ilgan' },
+          { n: '1914', l: '«Adabiyot nadur?» maqolasi' },
+          { n: '17', l: 'yoshida yozgan' },
+          { n: '«Sadoi Turkiston»', l: 'maqola chiqqan gazeta' },
+        ],
+        note: 'Cho‘lpon — «tong yulduzi» degani. Shoir xalqni uyg‘onishga, ma’rifatga chorlagan.',
+      },
+      {
+        title: 'Adabiyot — ko‘ngil tarixi',
+        emoji: '❤️',
+        quote: { text: 'Adabiyot har bir millatning hisli ko‘ngul tarixining eng qorong‘u xonalarida... yetishgan bir guldir', by: 'Cho‘lpon, 1914' },
+        text: 'Cho‘lpon adabiyotni odam ko‘nglining eng ichki, hech kim ko‘rmaydigan burchaklarida o‘sadigan gulga o‘xshatadi. Har bir xalqning o‘z ohangi, o‘z dardi bo‘ladi — adabiyot ana shuni kuylaydi.',
+      },
+      {
+        title: 'Oddiy xabar va badiiy so‘z',
+        emoji: '✉️',
+        text: 'Cho‘lpon misol keltiradi: do‘sti vafot etgani haqidagi quruq xabar uni unchalik ta’sirlantirmaydi. Ammo xuddi shu qayg‘u she’r bilan yozilgan maktubni o‘qiganda ko‘zlari yoshlanadi.',
+        vs: {
+          q: 'Qaysi biri ko‘proq ta’sir qiladi?',
+          a: { t: '📰 Oddiy xabar', pts: ['Faktni aytadi: «falonchi vafot etdi»', 'Aniq, qisqa', 'Aqlga murojaat qiladi'] },
+          b: { t: '📜 Badiiy so‘z', pts: ['Tuyg‘uni uyg‘otadi', 'Obraz, ohang bor', 'Yurakka murojaat qiladi'] },
+        },
+      },
+      {
+        title: 'Adabiyot nimaga o‘xshaydi?',
+        emoji: '💧',
+        text: 'Maqolada adabiyot bir nechta go‘zal o‘xshatishlar orqali tushuntiriladi:',
+        cards: [
+          { e: '🌹', t: 'Gul', d: 'Ko‘ngilning qorong‘u xonalarida o‘sadi, har xil rang va tusda bo‘ladi.' },
+          { e: '💧', t: 'Ma’rifat suvi', d: 'Yurakdagi kir-chirlarni yuvadi, ruhni tozalaydi.' },
+          { e: '🪞', t: 'Oyna', d: 'Xiralashgan ko‘zgularimizni yorug‘ va ravshan qiladi.' },
+          { e: '🫁', t: 'Suv-havo', d: 'Tanaga suv-havo qanchalik zarur bo‘lsa, ruhga adabiyot shunchalik kerak.' },
+        ],
+      },
+      {
+        title: 'Eng mashhur xulosa',
+        emoji: '🔥',
+        rule: 'Adabiyot yashasa — millat yashar. Adabiyoti o‘lgan millat sekin-sekin his-tuyg‘udan, o‘y va fikrdan mahrum bo‘lib, inqirozga yuz tutadi.',
+        ruleLabel: 'Cho‘lponning xulosasi',
+        text: 'Maqola «adabiyot, adabiyot, adabiyot...» degan da’vat bilan tugaydi. Cho‘lpon «adabiyot kechalari» o‘tkazishga, adiblar yetishtirishga chaqiradi.',
+      },
+      {
+        title: 'Tarix va qahramonlik',
+        emoji: '⚔️',
+        text: 'Cho‘lponning fikricha, bobolarning jasorati haqidagi asarlarni o‘qigan odamning yuragida botirlik, fidokorlik uyg‘onadi. Qahramonona umid va g‘ayrat — tarixiy adabiyotning samarasi.',
+        list: [
+          'Alla — bolaga lazzat beradi',
+          'Marsiya — qayg‘uga sherik qiladi',
+          'Tarixiy asar — g‘ayrat va jasorat uyg‘otadi',
+        ],
+      },
+      {
+        title: 'Sinf bahsi',
+        emoji: '🗣️',
+        vs: {
+          q: '«Adabiyot yashasa — millat yashar». Bugun ham shundaymi?',
+          a: { t: '✅ Ha, haqiqat', pts: ['Til va qadriyat kitob orqali saqlanadi', 'Kitob o‘qigan odam chuqur o‘ylaydi'] },
+          b: { t: '🤨 Endi boshqacha', pts: ['Bugun kino, internet ham tarbiya beradi', 'Faqat kitob emas, ilm-fan ham muhim'] },
+        },
+        mission: { t: 'Yozma topshiriq', d: '«Men adabiyot taraqqiysi uchun shunday taklif berardim...» deb boshlanadigan 3–4 gap yozing.', sec: 180 },
+      },
+    ],
+    pairs: [
+      ['Cho‘lpon', 'Abdulhamid Sulaymon o‘g‘li'],
+      ['«Adabiyot nadur?»', '1914-yil'],
+      ['«Sadoi Turkiston»', 'maqola chiqqan gazeta'],
+      ['Adabiyot — gul', 'ko‘ngilning qorong‘u xonalarida o‘sadi'],
+      ['Ma’rifat suvi', 'yurak kirlarini yuvadi'],
+      ['Alla', 'bolaga lazzat berib uxlatadi'],
+      ['Inqiroz', 'tanazzul, yemirilish'],
+    ],
+    quiz: [
+      { q: '«Adabiyot nadur?» maqolasi qaysi yili yozilgan?', options: ['1914', '1922', '1905', '1937'], answer: 0 },
+      { q: 'Cho‘lponning fikricha, adabiyot yashasa...', options: ['millat yashar', 'boylik ko‘payar', 'urush to‘xtar', 'til o‘zgarar'], answer: 0 },
+      { q: 'Maqola qaysi gazetada e’lon qilingan?', options: ['«Sadoi Turkiston»', '«Turkiston viloyatining gazeti»', '«Oyina»', '«Xurshid»'], answer: 0 },
+      { q: 'Cho‘lpon adabiyotni ruh uchun nimaga qiyoslaydi?', options: ['toza ma’rifat suviga', 'qimmatbaho toshga', 'qal’a devoriga', 'keng dalaga'], answer: 0 },
+      { q: 'Nega oddiy xabar unchalik ta’sir qilmaydi?', options: ['unda tuyg‘u va obraz yo‘q', 'u juda uzun', 'uni hech kim o‘qimaydi', 'u yolg‘on'], answer: 0 },
+      { q: '«Cho‘lpon» taxallusining ma’nosi:', options: ['tong yulduzi', 'tog‘ cho‘qqisi', 'erkin qush', 'oq gul'], answer: 0 },
+      { q: 'Cho‘lpon «Adabiyot nadur?»ni necha yoshida yozgan?', options: ['17', '25', '30', '12'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Adabiyot beradi', 'Adabiyotsiz millatda bo‘ladi'],
+      items: [
+        { text: 'his-tuyg‘u', cat: 0 }, { text: 'inqiroz', cat: 1 },
+        { text: 'botirlik va g‘ayrat', cat: 0 }, { text: 'toshdek qattiq yurak', cat: 1 },
+        { text: 'ruhiy tozalik', cat: 0 }, { text: 'fikrdan mahrumlik', cat: 1 },
+        { text: 'qayg‘uga hamdardlik', cat: 0 }, { text: 'befarqlik', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Cho‘lpon nega adabiyotni «ko‘ngil tarixi» deydi?', a: 'Chunki adabiyot odam ichki dunyosining eng yashirin kechinmalarini — quvonch va qayg‘usini ifodalaydi.' },
+      { q: 'Do‘stining o‘limi haqidagi oddiy xabar bilan she’riy maktub farqi nimada edi?', a: 'Oddiy xabar ta’sir qilmagan, she’riy maktub esa qayg‘uga sherik qilgan.' },
+      { q: 'Cho‘lpon xalqni nimalarga chaqiradi?', a: 'Adabiyot o‘qishga, adiblar yetishtirishga, adabiyot kechalari o‘tkazishga.' },
+      { q: 'Tarixiy asarlar odamda qanday tuyg‘u uyg‘otadi?', a: 'Botirlik, fidokorlik, qahramonona umid va g‘ayrat.' },
+      { q: 'Siz uchun adabiyot nima? Bir o‘xshatish toping.', a: 'Erkin javob: masalan, «adabiyot — yurak uchun quyosh».' },
+    ],
+    odd: [
+      { items: ['gul', 'ma’rifat suvi', 'oyna', 'qilich'], answer: 3, why: 'Cho‘lpon adabiyotni gul, suv, oynaga qiyoslaydi; qilichga emas.' },
+      { items: ['alla', 'marsiya', 'tarixiy doston', 'gazeta e’loni'], answer: 3, why: 'Gazeta e’loni oddiy xabar, qolganlari badiiy so‘z namunalari.' },
+      { items: ['his', 'fikr', 'o‘y', 'inqiroz'], answer: 3, why: 'Inqiroz — adabiyotsiz millatning holati, qolganlari adabiyot beradigan narsalar.' },
+    ],
+    debate: [
+      { claim: 'Adabiyot yashasa — millat yashar.', pro: 'Til, tarix va qadriyatlar asarlarda saqlanadi.', con: 'Millatni iqtisod va ilm ham yashatadi, faqat adabiyot emas.' },
+      { claim: 'Hozirgi yoshlarga kitobdan ko‘ra film foydaliroq.', pro: 'Film tez va ko‘rgazmali.', con: 'Kitob tasavvur va fikrlashni ko‘proq rivojlantiradi.' },
+    ],
+    creative: [
+      { task: '«Adabiyot — bu ...» deb o‘z o‘xshatishingizni toping va nega shunday deganingizni bir gapda tushuntiring.', time: 60 },
+      { task: 'Bir oddiy xabarni («Bugun qor yog‘di») badiiy jumlaga aylantiring.', time: 90 },
+      { task: 'Maktabingizda «adabiyot kechasi» uchun 3 ta g‘oya ayting.', time: 90 },
+    ],
+  },
+
+  /* ===================== 2. Alpomish — 1 ===================== */
+  {
+    id: 'ad9-alpomish-1',
+    source: 'I chorak • 2-dars • 6–14-betlar',
+    title: '«Alpomish» (1): farzand orzusi va el ayriliqi',
+    short: 'Doston tarixi, Boybo‘ri va Boysari, zakot mojarosi, Qo‘ng‘irot elining ko‘chishi',
+    theme: { emoji: '🏹', grad: 'from-amber-500 via-orange-600 to-red-700', border: 'border-orange-200', tag: 'Qahramonlik dostoni • 1-qism' },
+    lesson: [
+      {
+        title: 'Har turkiyning o‘z Alpomishi bor',
+        emoji: '🌍',
+        text: 'Alpomish haqidagi doston faqat o‘zbeklarniki emas — ildizi bir xalqlarda uning o‘z variantlari bor.',
+        cards: [
+          { e: '🇺🇿', t: 'O‘zbek', d: '«Alpomish»' },
+          { e: '🏜️', t: 'Qoraqalpoq', d: '«Alpamis»' },
+          { e: '🐎', t: 'Qozoq', d: '«Alpamis batir»' },
+          { e: '🏔️', t: 'Oltoy', d: '«Alip-Manash»' },
+          { e: '🕌', t: 'Qozon tatarlari', d: '«Alpamsha»' },
+          { e: '🌾', t: 'Boshqird', d: '«Alpamisha va Barsin hiluu»' },
+        ],
+      },
+      {
+        title: 'Doston bizgacha qanday yetib keldi?',
+        emoji: '📜',
+        steps: [
+          { e: '🎙️', t: '1922-yil', d: 'G‘ozi Olim Yunusov Fozil Yo‘ldosh o‘g‘li va Hamroqul baxshidan dostonni birinchi bo‘lib yozib oladi.' },
+          { e: '✍️', t: '1928-yil', d: 'Mahmud Zarifov Fozil Yo‘ldosh o‘g‘lidan eng mukammal variantni yozib oladi.' },
+          { e: '🎉', t: '1999-yil', d: 'Dostonning 1000 yilligi nishonlanadi; T. Mirzayev besh baxshi variantini nashr ettiradi.' },
+          { e: '🌐', t: 'Dunyoga', d: 'Rus tiliga akademik tarjima; Bonn universiteti professori Karl Rayxel nemis tilida nashr qiladi.' },
+        ],
+      },
+      {
+        title: 'Nega «milliy qadriyatlar qomusi»?',
+        emoji: '📚',
+        rule: '«Alpomish» — xalq og‘zaki ijodining betakror namunasi. Unda ming yillik urf-odatlar, marosimlar, ijtimoiy munosabatlar saqlangan. Shuning uchun uni milliy qadriyatlar qomusi deb atashadi.',
+        ruleLabel: 'Asosiy fikr',
+        quote: { text: 'Uni uyqudan uyg‘ota oladi faqat bolalar', by: 'Xurshid Davron, «Alpomishning qaytishi»' },
+        reveal: [{ q: 'Nega uxlab yotgan botirni faqat bolalar uyg‘otadi?', a: 'Ramziy ma’no: dostonni yangi avlod o‘qib, qadrlasagina qahramonlik ruhi qayta tiriladi.' }],
+      },
+      {
+        title: 'Qo‘ng‘irot elining shajarasi',
+        emoji: '🌳',
+        text: 'O‘n olti urug‘ Qo‘ng‘irot elida Dobonbiy o‘tgan. Undan Alpinbiy, Alpinbiydan ikki o‘g‘il:',
+        cards: [
+          { e: '👑', t: 'Boybo‘ri', d: 'Katta aka — elning shohi. Keyin: o‘g‘li Hakimbek (Alpomish) va qizi Qaldirg‘ochoyim.' },
+          { e: '💰', t: 'Boysari', d: 'Kichik uka — elning boyi. Keyin: qizi Barchinoy (Oybarchin).' },
+        ],
+        note: 'Ikkalasi ham uzoq vaqt farzandsiz edi — doston shu dard bilan boshlanadi.',
+      },
+      {
+        title: 'Chupronto‘ydagi izza',
+        emoji: '😔',
+        text: 'Elda sunnat to‘yi (chupronto‘y) bo‘ladi. Biylarning otini hech kim ushlamaydi, ularga izzat ko‘rsatilmaydi. Bir boyvachcha esa: «To‘y o‘g‘illining o‘g‘lidan qaytadi, seniki nimangdan qaytadi? O‘lsang, molingga har merosxo‘r chiqadi», deb ularni haqorat qiladi.',
+        steps: [
+          { e: '😢', t: 'Izza', d: 'Aka-uka sakson tillani to‘yga tashlab, ranjib chiqib ketadi.' },
+          { e: '🕌', t: 'Shohimardon pir ravzasi', d: 'Farzand tilab qirq kun tunashadi.' },
+          { e: '👶', t: 'Mo‘jiza', d: 'Boybo‘riga egiz — o‘g‘il va qiz, Boysariga bir qiz beriladi.' },
+          { e: '🎊', t: 'Qirq kunlik to‘y', d: 'Qalandar qiyofasidagi pir bolalarga ism qo‘yadi va Hakimbekni Barchinga beshikkerti qiladi.' },
+        ],
+      },
+      {
+        title: 'Yetti yoshli alp',
+        emoji: '🏹',
+        facts: [
+          { n: '7', l: 'yoshda Hakimbek yoyni tortadi' },
+          { n: '14', l: 'botmon bronzadan yoy' },
+          { n: '90', l: 'alpning biri bo‘lib «Alpomish» nomini oladi' },
+        ],
+        text: 'Bobosidan qolgan ulkan yoyning o‘qi Asqartog‘ cho‘qqilarini yulib o‘tadi. Shu kundan Hakimbek Alpomish deb ataladi.',
+        reveal: [{ q: 'Alpomishning fikricha, kim saxiy, kim baxil?', a: 'Mehmonni izzatlagan, mozordan o‘tganda duo qilgan, zakot bergan — saxiy; aksincha qilgan — baxil.' }],
+      },
+      {
+        title: 'Zakot mojarosi',
+        emoji: '⚡',
+        text: 'Boybo‘ri ukasi «baxil bo‘lib qolmasin» deb, undan ramziy zakot — bir echki uloq so‘rab o‘n to‘rt mahram yuboradi. Boysari buni haqorat deb biladi.',
+        chat: [
+          { who: 'Mahramlar', e: '🧔', text: 'Biz akangdan kelgan zakotchimiz, molingni zakot qilamiz.' },
+          { who: 'Boysari', e: '😠', side: 'r', text: 'Molimiz shu paytgacha zakot bo‘lmagan! Ushla bularni!' },
+          { who: 'Boysari', e: '😤', side: 'r', text: 'O‘z akamga zakot berguncha, qalmoqqa borib juzya berib yuraman...' },
+        ],
+      },
+      {
+        title: 'Kim haq?',
+        emoji: '⚖️',
+        vs: {
+          q: 'Zakot janjalida kim haqroq?',
+          a: { t: '👑 Boybo‘ri', pts: ['Ukasini gunohdan saqlamoqchi edi', 'Faqat ramziy uloq so‘radi'] },
+          b: { t: '💰 Boysari', pts: ['Akasi u bilan maslahatlashmadi', 'Mahramlar orqali so‘rash — izza'] },
+        },
+        note: 'Yartiboy oqsoqol — majlisda poygakda o‘tiradigan, izzat ko‘rmagan odam — ko‘chishni maslahat beradi va hamma unga ergashadi.',
+      },
+      {
+        title: 'O‘n ming uyli elning ko‘chishi',
+        emoji: '🐪',
+        text: 'Boysari o‘n ming uyli Qo‘ng‘irot bilan Boysundan qalmoq yurtiga ko‘chadi. Barchin sepini oltmish norga ortib, «o‘ynab o‘sgan elim» deb yig‘lab ketadi. Olti oyda to‘qson tog‘dan oshib, Chilbir cho‘liga yetishadi.',
+        mission: { t: 'Guruh ishi', who: '3 guruh', d: '1-guruh: aka ukasini to‘xtata olarmidi? 2-guruh: nega Sharqda ismni elning ulug‘i qo‘yadi? 3-guruh: aka-ukaning farzand tarbiyasini bugungi ta’lim bilan solishtiring.', sec: 300 },
+      },
+    ],
+    pairs: [
+      ['Boybo‘ri', 'Qo‘ng‘irot elining shohi'],
+      ['Boysari', 'Qo‘ng‘irot elining boyi'],
+      ['Hakimbek', 'Alpomishning asl ismi'],
+      ['Barchinoy', 'Boysarining qizi'],
+      ['Qaldirg‘ochoyim', 'Alpomishning egiz singlisi'],
+      ['Chupronto‘y', 'sunnat to‘yi'],
+      ['Beshikkerti', 'bolaligidan unashtirib qo‘yish'],
+      ['Fozil Yo‘ldosh o‘g‘li', 'eng mukammal variant ijrochisi'],
+    ],
+    quiz: [
+      { q: 'Dostonning eng mukammal varianti kimdan yozib olingan?', options: ['Fozil Yo‘ldosh o‘g‘li', 'Ergash Jumanbulbul o‘g‘li', 'Po‘lkan shoir', 'Islom shoir'], answer: 0 },
+      { q: '«Alpomish»ning 1000 yilligi qaysi yili nishonlangan?', options: ['1999', '1991', '2001', '1928'], answer: 0 },
+      { q: 'Biylar farzand tilab qayerga borishadi?', options: ['Shohimardon pir ravzasiga', 'Makkaga', 'Buxoroga', 'Asqartog‘ga'], answer: 0 },
+      { q: 'Hakimbek necha yoshida bobosining yoyini tortadi?', options: ['7', '14', '10', '16'], answer: 0 },
+      { q: 'Boybo‘ri ukasidan zakotga nima so‘raydi?', options: ['bir echki uloq', 'yuz tuya', 'oltin', 'Barchinni'], answer: 0 },
+      { q: 'Ko‘chishni maslahat bergan oqsoqol kim?', options: ['Yartiboy', 'Qultoy', 'Ko‘kaldosh', 'Toychixon'], answer: 0 },
+      { q: 'Boysari qaysi yurtga ko‘chadi?', options: ['qalmoq yurtiga', 'Hindistonga', 'Xorazmga', 'Rumga'], answer: 0 },
+      { q: 'Hakimbekni Barchinga kim unashtiradi?', options: ['Shohimardon pir', 'Boybo‘ri', 'Yartiboy', 'Qaldirg‘och'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Boybo‘ri oilasi', 'Boysari oilasi'],
+      items: [
+        { text: 'Hakimbek', cat: 0 }, { text: 'Barchinoy', cat: 1 },
+        { text: 'Qaldirg‘ochoyim', cat: 0 }, { text: 'Kelganboy', cat: 1 },
+        { text: 'Boysunda qoladi', cat: 0 }, { text: 'qalmoqqa ko‘chadi', cat: 1 },
+        { text: 'egiz farzand', cat: 0 }, { text: 'yolg‘iz qiz', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'Doston voqealarini tartiblang',
+        items: [
+          'Chupronto‘yda biylar izza bo‘ladi',
+          'Shohimardon pir ravzasida qirq kun tunashadi',
+          'Farzandlar tug‘ilib, qirq kunlik to‘y beriladi',
+          'Hakimbek yetti yoshida yoy tortib Alpomish nomini oladi',
+          'Boybo‘ri ukasidan zakot so‘raydi',
+          'Boysari o‘n ming uy bilan qalmoqqa ko‘chadi',
+        ],
+      },
+    ],
+    qa: [
+      { q: 'Doston nega «milliy qadriyatlar qomusi» deyiladi?', a: 'Unda ming yillik urf-odat, marosim va ijtimoiy munosabatlar saqlangan.' },
+      { q: 'Chupronto‘yda biylarga nima deyildi?', a: 'Farzandsizligi yuziga solinib: «O‘lsang, molingga har merosxo‘r chiqadi», deyildi.' },
+      { q: 'Alpomish ismi qanday paydo bo‘ldi?', a: 'Yetti yoshida 14 botmonlik yoyni tortib, to‘qson alpning biri bo‘lgani uchun.' },
+      { q: 'Boysari nega ko‘chib ketdi?', a: 'Akasining zakot so‘rashini haqorat deb bildi.' },
+      { q: 'Qo‘ng‘irot eli muhim ishlarda nima qiladi?', a: 'Kengashadi — maslahat bilan qaror qiladi.' },
+    ],
+    odd: [
+      { items: ['Boybo‘ri', 'Boysari', 'Alpinbiy', 'Ko‘kaldosh'], answer: 3, why: 'Ko‘kaldosh — qalmoq alpi; qolganlari Qo‘ng‘irot biylari.' },
+      { items: ['«Alpamis»', '«Alip-Manash»', '«Alpamsha»', '«Go‘ro‘g‘li»'], answer: 3, why: '«Go‘ro‘g‘li» — boshqa doston; qolganlari Alpomish variantlari.' },
+      { items: ['chupronto‘y', 'beshikkerti', 'ism qo‘yish', 'olimpiada'], answer: 3, why: 'Olimpiada dostondagi udum emas.' },
+    ],
+    debate: [
+      { claim: 'Boysari ko‘chib ketib to‘g‘ri qildi.', pro: 'Akasi uni xalq oldida kamsitdi.', con: 'Bir uloq uchun elni, vatanni tashlab ketish noto‘g‘ri edi.' },
+      { claim: 'Ism qo‘yishni oilaning ulug‘iga topshirish yaxshi udum.', pro: 'Ulug‘ning duosi va tajribasi bor.', con: 'Ota-ona o‘zi xohlagan ismni tanlash huquqiga ega.' },
+    ],
+    creative: [
+      { task: 'Boysari ko‘chishdan oldin akasiga maktub yozganda nima der edi? 3 gapda ayting.', time: 90 },
+      { task: 'Yartiboy oqsoqol nega majlisda poygakda o‘tirardi? Uning ichki ovozini bir gapda ayting.', time: 60 },
+    ],
+  },
+
+  /* ===================== 3. Alpomish — 2 ===================== */
+  {
+    id: 'ad9-alpomish-2',
+    source: 'I chorak • 3-dars • 15–23-betlar',
+    title: '«Alpomish» (2): Barchinning sinovi va Alpomishning otlanishi',
+    short: 'To‘qson alp, olti oylik muhlat, Barchinning xati, Boychiborning tanlanishi',
+    theme: { emoji: '🌹', grad: 'from-rose-500 via-pink-600 to-fuchsia-700', border: 'border-rose-200', tag: 'Doston • 2-qism' },
+    lesson: [
+      {
+        title: 'Yetti yil o‘tdi...',
+        emoji: '⏳',
+        text: 'Qo‘ng‘irotlar qalmoqqa ko‘chganiga yetti yil bo‘ldi. Barchin bo‘y yetgan go‘zal va kuchli qiz. Surxayil kampirdan uning ta’rifini eshitgan to‘qson qalmoq alpi unga og‘iz soladi.',
+        cards: [
+          { e: '👵', t: 'Surxayil kampir', d: 'Yetti alp o‘g‘lining onasi, makkor va ta’sirli.' },
+          { e: '🦁', t: 'Ko‘kaldosh', d: 'To‘qson alpning eng zo‘ri, boshida tilla jig‘a.' },
+          { e: '🤝', t: 'Qorajon', d: 'Surxayilning kenja o‘g‘li — keyin Alpomishning do‘sti bo‘ladi.' },
+        ],
+      },
+      {
+        title: '«Yo birimizga, yo barimizga!»',
+        emoji: '😨',
+        text: 'Alplar Boysarining uyini o‘rab, qizni talab qiladi. Boysari ertangi choshgohgacha muhlat so‘raydi va elidan maslahat so‘raydi. Yartiboy oqsoqol esa «qizingni ber, alplarni kuyov qilamiz» deydi.',
+        chat: [
+          { who: 'Yartiboy', e: '🧓', text: 'Bu alplarni kuyov qilib olamiz, bu elda erkin bo‘lamiz.' },
+          { who: 'Boysari', e: '😢', side: 'r', text: 'Mening qizim — sening singling, nomardlar! Suyagimni yongan o‘tga solasan.' },
+          { who: 'Barchin', e: '🌹', side: 'r', text: 'Ko‘p yig‘lama, otajon. Qarindoshlar so‘ziga quloq solma — alplarga meni o‘zimni qo‘yaber.' },
+        ],
+      },
+      {
+        title: 'Barchinning javobi',
+        emoji: '🛡️',
+        poem: {
+          lines: [
+            'Meni olmoqqa haddingmi bor, qalmoqlar,',
+            'Mening to‘ram, bilsang, Boysunning xoni,',
+            'Oti Hakimbekdir, elda davroni...',
+            'Xabar yetsa, alp Alpomish kelmaymi?!',
+          ],
+          author: '«Alpomish» dostonidan (Fozil Yo‘ldosh o‘g‘li varianti)',
+        },
+        text: 'Ko‘kaman alp o‘tovga bostirib kirib, qizni sochidan tortganda, Barchin uni ko‘tarib yerga uradi! Keyin aql bilan ish tutib, eng zo‘r alp Ko‘kaldoshdan olti oy muhlat so‘raydi.',
+      },
+      {
+        title: 'Barchin qanday qiz?',
+        emoji: '💎',
+        text: 'Darslikdagi «Baholang!» topshirig‘i: har bir holatdan Barchinning qaysi fazilati ko‘rinadi?',
+        reveal: [
+          { q: 'Otasi yig‘laganda o‘zi javob berishga chiqadi', a: 'Mehribon, jasur, otasining dardini o‘ziga oladigan qiz.' },
+          { q: '«Meni olmoqqa haddingmi bor?» deydi', a: 'G‘ururli, vafodor — yuragi Alpomishniki.' },
+          { q: 'Alplarning eng zo‘ri Ko‘kaldosh ekanini jig‘asidan biladi', a: 'Ziyrak va kuzatuvchan.' },
+          { q: 'Olti oy muhlat so‘raydi', a: 'Dono, sabrli — kuch bilan emas, aql bilan yutadi.' },
+        ],
+      },
+      {
+        title: 'Barchinning xati',
+        emoji: '✉️',
+        doc: { title: 'Arza', text: 'Oltoychilik yo‘lga keldim. Qalmoqning eliga keldim. Zo‘r yovning qo‘lida qoldim. Olti oy muhlat oldim. Mendan umidi bo‘lsa, Alpomish kelsin, bo‘lmasa, javobimni bersin.', from: 'Barchinoy' },
+        text: 'Xatni o‘n yigit to‘qson kun yo‘l yurib Boybo‘riga yetkazadi. Ammo Boybo‘ri xatni hech kimga ko‘rsatmay sandiqqa yashirib qo‘yadi!',
+      },
+      {
+        title: 'Bir xat — uch xil munosabat',
+        emoji: '🔍',
+        cards: [
+          { e: '👑', t: 'Boybo‘ri', d: 'Xatni sandiqqa yashiradi. O‘g‘lini yovning yurtiga yuborishdan qo‘rqadi.' },
+          { e: '🕊️', t: 'Qaldirg‘ochoyim', d: 'Xatni topib akasiga beradi, uni «narmoda» deb uyaltirib, g‘ayratini qo‘zg‘aydi.' },
+          { e: '😐', t: 'Alpomish (avval)', d: '«Bir xotin deb sandirab o‘lamizmi?» deb xatni tizzasi ostiga bosadi.' },
+        ],
+        vs: {
+          q: 'Kimning ishini ko‘proq yoqlaysiz?',
+          a: { t: '👑 Ota ehtiyotkorligi', pts: ['Yagona o‘g‘lini xavfdan saqlaydi'] },
+          b: { t: '🕊️ Singil jasorati', pts: ['Or-nomus va va’dani birinchi qo‘yadi'] },
+        },
+      },
+      {
+        title: 'Qultoy sinovi',
+        emoji: '🐴',
+        text: 'Boybo‘ri yilqichi Qultoyga «o‘g‘limni qo‘rqitib qaytar» deb buyuradi. Qultoy Alpomishni tayoq bilan quvlaydi. Singlisi yana uyaltirgach, Alpomish qaytib kelib Qultoyni ko‘tarib otadi!',
+        steps: [
+          { e: '1', t: 'Birinchi qo‘riq', d: 'Qo‘riq chipor (ola) otning bo‘yniga tushadi — Alpomishga yoqmaydi.' },
+          { e: '2', t: 'Ikkinchi qo‘riq', d: 'Yana o‘sha otga tushadi.' },
+          { e: '3', t: 'Uchinchi qo‘riq', d: '«Taqdirdagi shu ekan» — Boychibor tanlanadi.' },
+        ],
+        note: 'Qaldirg‘och: «Buni mingan odam ko‘p yerlarni ko‘radi, maqsadini Haqdan topadi». Xalq nazarida ot — botirning qanoti.',
+      },
+      {
+        title: 'Yo‘lga otlanish',
+        emoji: '🛤️',
+        text: 'Qaldirg‘och akasini kiyintiradi, bobosidan qolgan parli yoyni egarga ortadi va duo qilib kuzatadi: «Sog‘ borib, salomat kelgin, bek og‘a».',
+        mission: { t: 'Rolli o‘qish', who: '3 o‘quvchi', d: 'Barchin, Ko‘kaldosh va Boysari rollarida «qiz talab qilish» sahnasini o‘z so‘zlaringiz bilan sahnalashtiring.', sec: 240 },
+      },
+    ],
+    pairs: [
+      ['Ko‘kaldosh', 'to‘qson alpning eng zo‘ri'],
+      ['Surxayil', 'yetti alpning onasi'],
+      ['Qultoy', 'Boybo‘rining yilqichisi'],
+      ['Boychibor', 'Alpomishning tulpori'],
+      ['Narmoda', 'qo‘rqoq, nomard (haqorat so‘zi)'],
+      ['Olti oy', 'Barchin olgan muhlat'],
+      ['Ko‘kaman', 'Barchin yerga urgan alp'],
+    ],
+    quiz: [
+      { q: 'Barchin alplardan qancha muhlat oladi?', options: ['olti oy', 'bir yil', 'qirq kun', 'uch kun'], answer: 0 },
+      { q: 'Boybo‘ri Barchinning xatini nima qiladi?', options: ['sandiqqa yashiradi', 'o‘g‘liga beradi', 'yoqib yuboradi', 'qaytarib yuboradi'], answer: 0 },
+      { q: 'Xatni Alpomishga kim yetkazadi?', options: ['Qaldirg‘ochoyim', 'Qultoy', 'Boybo‘ri', 'Yartiboy'], answer: 0 },
+      { q: 'Qultoy Alpomishga nima qiladi?', options: ['tayoq bilan quvlaydi', 'ot sovg‘a qiladi', 'yo‘l ko‘rsatadi', 'xat beradi'], answer: 0 },
+      { q: 'Qo‘riq necha marta Boychiborning bo‘yniga tushadi?', options: ['uch marta', 'bir marta', 'ikki marta', 'yetti marta'], answer: 0 },
+      { q: 'Barchin alplarning eng zo‘rini nimadan taniydi?', options: ['tilla jig‘asidan', 'qilichidan', 'ovozidan', 'bo‘yidan'], answer: 0 },
+      { q: 'Qaldirg‘ochoyim akasini qanday so‘z bilan uyaltiradi?', options: ['narmoda', 'baxil', 'dangasa', 'g‘arib'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Barchin', 'Qalmoq alplari'],
+      items: [
+        { text: 'vafodor', cat: 0 }, { text: 'zo‘ravon', cat: 1 },
+        { text: 'olti oy muhlat so‘radi', cat: 0 }, { text: '«yo birimizga, yo barimizga»', cat: 1 },
+        { text: 'ziyrak', cat: 0 }, { text: 'maqtanchoq', cat: 1 },
+        { text: 'otasini yupatdi', cat: 0 }, { text: 'qizni sochidan tortdi', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'Voqealar zanjiri',
+        items: [
+          'To‘qson alp Barchinni talab qiladi',
+          'Barchin Ko‘kamanni yerga uradi',
+          'Ko‘kaldoshdan olti oy muhlat oladi',
+          'O‘n yigit xatni Boybo‘riga yetkazadi',
+          'Qaldirg‘och xatni sandiqdan topadi',
+          'Qultoy Alpomishni quvlaydi',
+          'Boychibor tanlanadi va Alpomish yo‘lga chiqadi',
+        ],
+      },
+    ],
+    qa: [
+      { q: 'Boysari nega oilaviy masalani el bilan maslahatlashdi?', a: 'Qadimda muhim ishni kengash bilan hal qilish udum bo‘lgan; u yolg‘iz qolishdan ham xavotirda edi.' },
+      { q: 'Barchin nega o‘tov ichidan javob beradi?', a: 'Iffat va hayo yuzasidan, begona erkaklarga yuzini ko‘rsatmaydi.' },
+      { q: 'Boybo‘ri nega xatni yashirdi?', a: 'O‘g‘lini zo‘r yovning yurtiga yuborishdan qo‘rqdi.' },
+      { q: 'Alpomishni yo‘lga kim undadi?', a: 'Singlisi Qaldirg‘ochoyim — uni uyaltirib, g‘ayratini qo‘zg‘adi.' },
+      { q: 'Boychibor qanday tanlandi?', a: 'Qo‘riq uch marta shu chipor otning bo‘yniga tushdi.' },
+    ],
+    odd: [
+      { items: ['Ko‘kaldosh', 'Ko‘kaman', 'Qorajon', 'Qultoy'], answer: 3, why: 'Qultoy — Qo‘ng‘irot yilqichisi; qolganlari qalmoq alplari.' },
+      { items: ['jasorat', 'vafo', 'ziyraklik', 'xiyonat'], answer: 3, why: 'Xiyonat Barchinga xos emas.' },
+      { items: ['xat', 'muhlat', 'qo‘riq', 'telefon'], answer: 3, why: 'Dostonda telefon yo‘q — xat bilan xabar yuboriladi.' },
+    ],
+    debate: [
+      { claim: 'Boysari qizining gapiga kirib, uni alplar bilan yolg‘iz qoldirishi to‘g‘ri edi.', pro: 'Barchin aqlli va kuchli, o‘ziga ishonardi.', con: 'Ota qizini xavfga qo‘ymasligi kerak edi.' },
+      { claim: 'Qaldirg‘ochoyim akasini «narmoda» deb haqorat qilib to‘g‘ri qildi.', pro: 'Akasining g‘ayratini uyg‘otish uchun kerak edi.', con: 'Yaqin odamni so‘z bilan ranjitish yaxshi emas.' },
+    ],
+    creative: [
+      { task: 'Barchinning xatini bugungi tilda SMS qilib yozing (2–3 gap).', time: 60 },
+      { task: 'Boychibor gapira olsa, uchinchi qo‘riq tushganda nima der edi?', time: 60 },
+    ],
+  },
+
+
+  /* ===================== 4. Alpomish — 3 ===================== */
+  {
+    id: 'ad9-alpomish-3',
+    source: 'I chorak • 4-dars • 23–28-betlar',
+    title: '«Alpomish» (3): tushlar, do‘stlik va to‘rt shart',
+    short: 'Uch tush, Qorajon bilan do‘stlik, Barchinning to‘rt sharti, Ko‘sa sinchi va Boychibor',
+    theme: { emoji: '🌠', grad: 'from-sky-600 via-indigo-600 to-violet-700', border: 'border-indigo-200', tag: 'Doston • 3-qism' },
+    lesson: [
+      {
+        title: 'Bir kecha — uch tush',
+        emoji: '💭',
+        text: 'Saharda uch kishi bir vaqtda tush ko‘radi. Dostonda tush — taqdirni oldindan bildiruvchi sirli eshik.',
+        cards: [
+          { e: '🏹', t: 'Alpomish', d: 'Cho‘ponlar qo‘shxonasida uxlab, tushida payg‘ambar va pirlarni ko‘radi: «Senga taqdir qildi Barchin zulfakdor».' },
+          { e: '🌹', t: 'Barchin', d: 'Qiblada oy tug‘ib, atrofini to‘rt yulduz o‘raganini ko‘radi.' },
+          { e: '🤝', t: 'Qorajon', d: 'Tushida Alpomish bilan do‘st bo‘ladi va iymon keltiradi.' },
+        ],
+      },
+      {
+        title: 'Tush ta’biri',
+        emoji: '🔮',
+        text: 'Barchin tushini kanizi Suqsuroyga aytadi. Kaniz uni shunday ta’bir qiladi:',
+        reveal: [
+          { q: '🌙 Qiblada tug‘ilgan oy', a: 'Rasul payg‘ambar — homiylik nishonasi.' },
+          { q: '⭐ Oy atrofidagi to‘rt yulduz', a: 'To‘rt choriyor — payg‘ambarimizdan keyingi to‘rt xalifa.' },
+          { q: '🐉 Yer yuzini tutgan ajdarho', a: 'Barcha avliyolar ruhi yordamga keladi.' },
+        ],
+      },
+      {
+        title: 'Notanish do‘st',
+        emoji: '🤝',
+        text: 'Qalmoq alplari Qorajonni «tentak bo‘lib qopti» deb masxara qiladi. Qorajon esa Murodtepada yotgan notanish yigitni ko‘rib, uni darhol taniydi.',
+        chat: [
+          { who: 'Qorajon', e: '🧔', text: 'Qorajon deydilar mening otimni. Xabar ber, bekvachcha, qayga borasan?' },
+          { who: 'Alpomish', e: '🏹', side: 'r', text: 'Asli Boysun deydi mening yurtimni, laqabim — Alpomish, otim — Hakim.' },
+          { who: 'Qorajon', e: '😵', text: '(quchoqlashganda yetti qovurg‘asi sinib) Rostingni ayt, bu ko‘rishganingmi yo urushganingmi?!' },
+        ],
+        note: 'Doston hazili: Alpomishning «ko‘rishishi»ga ham dosh berib bo‘lmaydi — u holda urushi qanday ekan?',
+      },
+      {
+        title: 'Barchin nega darrov ergashmadi?',
+        emoji: '⚖️',
+        text: 'Qorajon sovchi bo‘lib boradi. Ammo Barchin: «Alpomish kepti deb, uning etagidan ushlab keta beraymi? Alplar ham olti oy umid bilan kutdi» deydi.',
+        vs: {
+          q: 'Barchin to‘g‘ri qildimi?',
+          a: { t: '✅ Ha, adolatli', pts: ['Va’dasiga sodiq — hammaga teng imkon berdi', 'Alpomishni sinab ko‘rmoqchi'] },
+          b: { t: '❌ Yo‘q, xavfli', pts: ['Alpomish yutqazishi mumkin edi', 'Yuragi tanlab bo‘lgan-ku'] },
+        },
+      },
+      {
+        title: 'To‘rt shart',
+        emoji: '🏆',
+        cards: [
+          { e: '🐎', t: '1. Poyga', d: 'Qirq kunlik yo‘ldagi Boboxon tog‘idan poyga — oti o‘zgan yigitga tegaman.' },
+          { e: '🏹', t: '2. Yoy tortish', d: 'Yoyi sinmay qolgan yoyandoz polvonga.' },
+          { e: '🎯', t: '3. Merganlik', d: 'Ming qadamdan tanga pulni urgan merganga.' },
+          { e: '🤼', t: '4. Kurash', d: 'To‘qson alpni yiqqan nor bilakli polvonga.' },
+        ],
+        mission: { t: 'Guruh ishi', who: '4 guruh', d: 'Har guruh bitta shartni olsin: bu shart hayotda nimani sinaydi? Alp va otning qaysi xususiyati tekshiriladi?', sec: 240 },
+      },
+      {
+        title: 'Ko‘sa sinchi',
+        emoji: '📏',
+        text: 'Ko‘kaldosh sinchisiga Boychiborni ko‘rsatadi. Sinchi o‘lchab ko‘rib hayron qoladi:',
+        facts: [
+          { n: '96', l: 'qarich: sag‘risidan qulog‘igacha' },
+          { n: '63', l: 'qarich: ayil tortuvi' },
+          { n: '4,5', l: 'gaz qanoti qo‘ltig‘ida yashiringan!' },
+        ],
+        note: 'Sinchi haqiqatni aytgani uchun Ko‘kaldosh uning ko‘zini o‘ydiradi. Zolim haqiqatdan qo‘rqadi.',
+      },
+      {
+        title: 'Sinchi nega yolg‘on gapirmadi?',
+        emoji: '👁️',
+        reveal: [
+          { q: 'Ko‘sa sinchi xo‘jayinga yoqadigan gap aytsa bo‘lardi-ku?', a: 'U kasbiga, haqiqatga sodiq qoldi. Balki xo‘jayinlarini xavfdan ogohlantirmoqchi ham bo‘lgan.' },
+          { q: 'Qorajon Boychiborni necha tillaga «sotib oladi»?', a: 'Sakson tillaga — Alpomishning o‘rniga poygaga chiqish uchun.' },
+        ],
+        text: 'Qorajon qirq kunlik yo‘lga, Boboxon tog‘iga otlanadi: «Qirq besh kunda kelmasam, ham otingni, ham do‘stingni o‘ldi de».',
+      },
+    ],
+    pairs: [
+      ['Qorajon', 'qalmoq alpi, Alpomishning do‘sti'],
+      ['Suqsuroy', 'Barchinning kanizi'],
+      ['To‘rt choriyor', 'to‘rt xalifa'],
+      ['Ko‘sa sinchi', 'Boychiborni o‘lchagan usta'],
+      ['Boboxon tog‘i', 'poyga boshlanadigan joy'],
+      ['Murodtepa', 'Alpomish va Qorajon uchrashgan joy'],
+      ['Ko‘kdo‘nan', 'Ko‘kaldoshning oti'],
+    ],
+    quiz: [
+      { q: 'Bir kechada necha kishi tush ko‘radi?', options: ['uch', 'ikki', 'to‘rt', 'yetti'], answer: 0 },
+      { q: 'Barchin tushida nimani ko‘radi?', options: ['oy va to‘rt yulduzni', 'quyosh va bulutni', 'ot va qilichni', 'daryo va ko‘prikni'], answer: 0 },
+      { q: 'Qorajon Barchinga kim bo‘lib boradi?', options: ['sovchi va xabarchi', 'kuyov', 'qorovul', 'sinchi'], answer: 0 },
+      { q: 'Barchin necha shart qo‘yadi?', options: ['to‘rt', 'uch', 'yetti', 'bitta'], answer: 0 },
+      { q: 'Poyga qayerdan boshlanadi?', options: ['Boboxon tog‘idan', 'Asqartog‘dan', 'Boysundan', 'Ko‘kqamish ko‘lidan'], answer: 0 },
+      { q: 'Sinchi Boychiborning qo‘ltig‘ida nimani ko‘radi?', options: ['qanotni', 'jarohatni', 'tamg‘ani', 'oltinni'], answer: 0 },
+      { q: 'Ko‘kaldosh sinchini qanday jazolaydi?', options: ['ko‘zini o‘ydiradi', 'haydab yuboradi', 'zindonga tashlaydi', 'kechiradi'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Barchinning shartlari', 'Shartlarda yo‘q'],
+      items: [
+        { text: 'poyga', cat: 0 }, { text: 'shaxmat', cat: 1 },
+        { text: 'yoy tortish', cat: 0 }, { text: 'qo‘shiq aytish', cat: 1 },
+        { text: 'tanga urish', cat: 0 }, { text: 'suzish', cat: 1 },
+        { text: 'kurash', cat: 0 }, { text: 'boylik ko‘rsatish', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'Voqealarni tartiblang',
+        items: [
+          'Uch kishi bir kechada tush ko‘radi',
+          'Suqsuroy Barchinning tushini ta’bir qiladi',
+          'Qorajon Murodtepada Alpomish bilan do‘st bo‘ladi',
+          'Qorajon sovchi bo‘lib Barchinga boradi',
+          'Barchin to‘rt shart qo‘yadi',
+          'Ko‘sa sinchi Boychiborni o‘lchaydi',
+          'Qorajon Boychiborni minib Boboxonga jo‘naydi',
+        ],
+      },
+    ],
+    qa: [
+      { q: 'Dostonda tush qanday vazifa bajaradi?', a: 'Taqdirni oldindan bildiradi, qahramonlarni bir-biriga bog‘laydi.' },
+      { q: 'Qorajon notanish Alpomish bilan qanday do‘st bo‘ldi?', a: 'Tushida unga ko‘rsatildi, ko‘rganda tanib, do‘stlik tutindi.' },
+      { q: 'Barchin nega shart qo‘ydi?', a: 'Va’dasiga sodiq qolib, alplarga ham teng imkon berdi va Alpomishni sinamoqchi bo‘ldi.' },
+      { q: 'Sinchi haqiqatni aytib nimadan qo‘rqmadi?', a: 'Xo‘jayinning g‘azabidan — u kasbiga va haqiqatga sodiq qoldi.' },
+    ],
+    odd: [
+      { items: ['oy', 'to‘rt yulduz', 'ajdarho', 'kamalak'], answer: 3, why: 'Kamalak Barchinning tushida yo‘q.' },
+      { items: ['Ko‘kaldosh', 'Ko‘kaman', 'Qorajon', 'Suqsuroy'], answer: 3, why: 'Suqsuroy — Barchinning kanizi, qolganlari alplar.' },
+    ],
+    debate: [
+      { claim: 'Qorajon tushiga ishonib notanish odam bilan do‘st tutinib, tavakkal qildi.', pro: 'Tanimagan odamga ishonish xavfli.', con: 'Yurak sezgisi va adolat tuyg‘usi uni to‘g‘ri yo‘lga boshladi.' },
+    ],
+    creative: [
+      { task: 'Barchinning to‘rt sharti o‘rniga bugungi kunda siz qanday 3 shart qo‘yardingiz? (bilim, odob, kasb...)', time: 90 },
+      { task: 'Ko‘sa sinchining Boychibor haqidagi «tavsifnomasi»ni 3 gapda yozing.', time: 90 },
+    ],
+  },
+
+  /* ===================== 5. Alpomish — 4 + xayrlashuv ===================== */
+  {
+    id: 'ad9-alpomish-4',
+    source: 'I chorak • 5-dars • 29–38-betlar',
+    title: '«Alpomish» (4) va «Alpomish va Barchinoy xayrlashuvi»',
+    short: 'Nomardlik va g‘alaba, to‘y udumlari, ota duosi; Usmon Azim she’rida Vatan so‘zi',
+    theme: { emoji: '🐎', grad: 'from-emerald-500 via-teal-600 to-cyan-700', border: 'border-emerald-200', tag: 'Doston • 4-qism + she’r' },
+    lesson: [
+      {
+        title: 'Boboxon tog‘idagi nomardlik',
+        emoji: '⛓️',
+        steps: [
+          { e: '⛓️', t: 'Qalmoqlar hiylasi', d: 'Ko‘kaldosh boshliq alplar Qorajonni tog‘da bog‘lab, Boychibor tuyog‘iga qulmix qoqadi.' },
+          { e: '🙏', t: 'Qorajonning nolasi', d: 'Payg‘ambarlar va pirlarni yordamga chaqiradi.' },
+          { e: '✨', t: 'Pir yordami', d: 'Rajabxo‘ja piri kelib bog‘ichlarni yechadi — Qorajon kim yechganini ham bilmay qoladi.' },
+          { e: '💨', t: 'Quvlash', d: 'Peshinda Boychibor poygachilarni quvib yetadi, otlarni birin-ketin ortda qoldiradi.' },
+        ],
+      },
+      {
+        title: '«Qurruyo-qur, hayt-a, to‘ramning oti!»',
+        emoji: '📣',
+        poem: {
+          lines: [
+            'Qurruyo-qur, hayt-a, to‘ramning oti,',
+            'Oq to‘shim — yayloving, sochim shibirtki...',
+            'To o‘lguncha sayising bo‘p yurayin.',
+          ],
+          author: 'Barchinning Boychiborga xitobi',
+        },
+        text: 'Barchinning ovozi Boychiborning qulog‘iga yetadi — ot suvliqni tishlab, Ko‘kdo‘nandan o‘zib ketadi va baxmal o‘tovni yetti marta aylanib to‘xtaydi!',
+      },
+      {
+        title: 'Barchin va jonivor',
+        emoji: '💗',
+        text: 'Boychibor tuyog‘idagi mixlar azobidan yiqiladi. Barchin «Mening uchun hayvon azob ko‘ribdi» deb, ro‘molini tuyoqqa yozib, qulmixlarni tishi bilan sug‘urib oladi.',
+        reveal: [{ q: 'Bu lavha Barchinning qaysi fazilatini ko‘rsatadi?', a: 'Mehr-shafqat, jonivorga ham rahm, minnatdorlik — qahramon qiz faqat jasur emas, mehribon ham.' }],
+      },
+      {
+        title: 'Yoy, miltiq va kurash',
+        emoji: '🎯',
+        facts: [
+          { n: '🐎', l: 'Poyga — Boychibor o‘zdi' },
+          { n: '🏹', l: 'Yoy — Ko‘kaldoshniki sindi, Alpomishniki butun' },
+          { n: '🎯', l: 'Miltiq — ming qadamdan tanga urildi' },
+          { n: '🤼', l: 'Kurash — Alpomish Ko‘kaldoshni yengdi' },
+        ],
+        text: 'Kurashda avval Qorajon to‘qson alpni birma-bir yengadi. Faqat Ko‘kaldosh qolganda, «kun namozgar» bo‘lib kurash ertaga qoldiriladi. Ertasi Alpomish Ko‘kaldosh bilan olishib, uni yengadi.',
+      },
+      {
+        title: 'To‘y udumlari — milliy xazina',
+        emoji: '💍',
+        cards: [
+          { e: '🎀', t: 'Chimildiq', d: 'Kelin-kuyov uchun tutiladigan parda.' },
+          { e: '🐕', t: '«It irillar»', d: 'Kuyov yo‘lini to‘sib, sovg‘a so‘raladi.' },
+          { e: '💇‍♀️', t: '«Chach siypatar»', d: 'Kuyovga kelinning sochini siypatish udumi.' },
+          { e: '🍲', t: '«Kuyov tovoq»', d: 'Yangalar tovoqqa tanga-tilla soladi.' },
+          { e: '🐐', t: '«Kuyov uloq»', d: 'Yigitlar kuyovdan uloq so‘raydi.' },
+          { e: '🤲', t: 'Ota duosi', d: 'Boysari qizini duo qilib kuzatadi.' },
+        ],
+        mission: { t: 'Savol', d: 'Bu udumlardan qaysilari sizning mahallangizda bor? Qanday nom bilan ataladi?', sec: 120 },
+      },
+      {
+        title: 'Ota duosi',
+        emoji: '🤲',
+        quote: { text: 'Yaxshilik ko‘r, yomonlikni ko‘rmagin... Yolg‘izman deb, bolam, yig‘lab yurmagin', by: 'Boysarining duosidan' },
+        text: 'Boysari g‘ururi tufayli elga qaytmaydi va qalmoq yurtida yolg‘iz qoladi. O‘n ming uyli Qo‘ng‘irot Barchin bilan Boysunga qaytadi, Qorajon ham do‘sti bilan ketadi.',
+      },
+      {
+        title: 'She’riy davom: xayrlashuv',
+        emoji: '🌙',
+        text: 'Xalq shoiri Usmon Azim dostondagi bir lahzani — Alpomish yana safarga ketayotgan, Barchin esa farzand kutayotgan paytni — she’riy suhbatga aylantirgan. She’rni rollarga bo‘linib o‘qing (37–38-betlar).',
+        cards: [
+          { e: '🌹', t: 'Barchin so‘raydi', d: 'Olti oy o‘tib qaytmasang, bolangga nima deyman? U ilk bor qaysi so‘zni eshitsin? Allaga nimani qo‘shay?' },
+          { e: '🏹', t: 'Alpomish javob beradi', d: 'Bolamga ilk bor «Vatan» de. Otasi Alpomish, eli Qo‘ng‘irot, tuprog‘i Boysun ekanini aytgin.' },
+        ],
+      },
+      {
+        title: 'Eng muhim so‘z — Vatan',
+        emoji: '🇺🇿',
+        quote: { text: 'Bolamga «Vatan», de ilk bora', by: 'Usmon Azim' },
+        steps: [
+          { e: '🇺🇿', t: 'Vatanni tanit', d: 'Bolaning ilk so‘zi — «Vatan».' },
+          { e: '🛡️', t: 'Otasini va elini tanit', d: 'Otasi Alpomish, eli Qo‘ng‘irot, tuprog‘i Boysun.' },
+          { e: '💎', t: 'Boylikka aldanmasin', d: 'Boylikdan ham balandda el-yurt turadi.' },
+          { e: '🦁', t: 'Sher bo‘lsin', d: 'Yurtiga suyanchiq bo‘lsin, nomini baxshilar kuylasin.' },
+        ],
+      },
+      {
+        title: 'Yor yoki ona?',
+        emoji: '💞',
+        vs: {
+          q: 'Barchin bu she’rda kim sifatida gapiradi?',
+          a: { t: '💑 Yor', pts: ['Ayriliqdan qo‘rqadi', 'Hijronda yig‘lashini aytadi'] },
+          b: { t: '🤱 Bo‘lajak ona', pts: ['Bolasiga nima deyishni so‘raydi', 'Alla va beshik haqida o‘ylaydi'] },
+        },
+        mission: { t: 'Uyga vazifa', d: 'Ikki ustunli jadval: «Meni o‘ylantirdi...» va «Meni ta’sirlantirdi...». Xayrlashuvdan kamida 2 tadan fikr yozing.' },
+      },
+    ],
+    pairs: [
+      ['Qulmix', 'Boychibor tuyog‘iga qoqilgan mix'],
+      ['Rajabxo‘ja piri', 'Qorajonni bog‘ichdan xalos qilgan'],
+      ['Chimildiq', 'kelin-kuyov pardasi'],
+      ['«Kuyov uloq»', 'yigitlar kuyovdan uloq so‘raydi'],
+      ['Usmon Azim', '«Alpomish va Barchinoy xayrlashuvi»'],
+      ['«Vatan»', 'bolaning ilk so‘zi bo‘lsin'],
+      ['Boysari', 'qalmoq yurtida yolg‘iz qoldi'],
+    ],
+    quiz: [
+      { q: 'Qalmoqlar Boychiborga qanday nomardlik qiladi?', options: ['tuyog‘iga mix qoqadi', 'ovqatiga zahar soladi', 'o‘g‘irlab ketadi', 'yo‘ldan adashtiradi'], answer: 0 },
+      { q: 'Qorajonning bog‘ichlarini kim yechadi?', options: ['Rajabxo‘ja piri', 'Alpomish', 'Barchin', 'Ko‘kaldosh'], answer: 0 },
+      { q: 'Boychibor marrada o‘tovni necha marta aylanadi?', options: ['yetti', 'uch', 'bir', 'qirq'], answer: 0 },
+      { q: 'Mixlarni Barchin qanday sug‘uradi?', options: ['tishi bilan', 'qilich bilan', 'Qorajon yordamida', 'sinchi bilan'], answer: 0 },
+      { q: 'Yoy tortishda kimning yoyi sinadi?', options: ['Ko‘kaldoshning', 'Alpomishning', 'Qorajonning', 'Boysarining'], answer: 0 },
+      { q: 'Alpomish bolasining ilk so‘zi qanday bo‘lishini istaydi?', options: ['Vatan', 'ona', 'ota', 'non'], answer: 0 },
+      { q: 'Boysari to‘ydan keyin nima qiladi?', options: ['qalmoq yurtida qoladi', 'Boysunga qaytadi', 'Makkaga ketadi', 'Ko‘kaldosh bilan jang qiladi'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Mardlik', 'Nomardlik'],
+      items: [
+        { text: 'Qorajonning do‘stlikka sodiqligi', cat: 0 }, { text: 'tuyoqqa mix qoqish', cat: 1 },
+        { text: 'Barchinning mixni sug‘urishi', cat: 0 }, { text: 'Qorajonni tog‘da bog‘lash', cat: 1 },
+        { text: 'halol kurash', cat: 0 }, { text: 'sinchining ko‘zini o‘yish', cat: 1 },
+        { text: '«Rabbim!» deb yoy tortish', cat: 0 }, { text: 'qo‘rqitib qizni olish', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'G‘alaba yo‘li',
+        items: [
+          'Qalmoqlar Qorajonni bog‘lab, otga mix qoqadi',
+          'Pir Qorajonni bog‘ichdan xalos qiladi',
+          'Barchinning ovozi bilan Boychibor o‘zib keladi',
+          'Barchin mixlarni sug‘urib oladi',
+          'Alpomish yoy va miltiqda g‘olib bo‘ladi',
+          'Alpomish Ko‘kaldoshni kurashda yengadi',
+          'To‘y bo‘ladi, Boysari qizini duo qilib kuzatadi',
+        ],
+      },
+    ],
+    qa: [
+      { q: '«Kun namozgar... Kurashga javob bo‘libdi» misrasidan nimani bilamiz?', a: 'Musobaqaning qat’iy tartibi bo‘lgan: kech kirsa, kurash to‘xtatilgan.' },
+      { q: 'Boysari nega Boysunga qaytmadi?', a: 'G‘ururi yo‘l qo‘ymadi, el ta’na qiladi deb qo‘rqdi.' },
+      { q: 'Dostondagi to‘y udumlaridan uchtasini ayting.', a: 'Chimildiq, «it irillar», «chach siypatar», «kuyov tovoq», «kuyov uloq».' },
+      { q: '«Boylikka bo‘lma xaridor» tilagini qanday tushunasiz?', a: 'Inson boylikni el-yurt manfaatidan ustun qo‘ymasligi kerak.' },
+      { q: 'Alpomish farzandi qanday inson bo‘lishini istaydi?', a: 'Sher yurakli, yurtiga suyanchiq va xizmatkor.' },
+    ],
+    odd: [
+      { items: ['chimildiq', 'kuyov tovoq', 'it irillar', 'beshikkerti'], answer: 3, why: 'Beshikkerti — to‘y emas, bolalikdagi unashtirish.' },
+      { items: ['Vatan', 'Boysun', 'Qo‘ng‘irot', 'Kashal'], answer: 3, why: 'Kashal — qalmoq yurti; qolganlarini Alpomish farzandiga tanitmoqchi.' },
+      { items: ['Alpomish', 'Qorajon', 'Barchin', 'Ko‘kaldosh'], answer: 3, why: 'Ko‘kaldosh — salbiy obraz.' },
+    ],
+    debate: [
+      { claim: 'Qorajon o‘z qavmiga xiyonat qildi.', pro: 'U akalariga qarshi chiqdi.', con: 'U adolat va haqiqat tarafini oldi — bu xiyonat emas, mardlik.' },
+      { claim: 'Bolaning ilk so‘zi «Vatan» bo‘lishi kerak.', pro: 'Vatan tuyg‘usi beshikdan singadi.', con: 'Birinchi so‘z tabiiy ravishda «ona» bo‘ladi, Vatan esa tarbiya bilan keladi.' },
+    ],
+    creative: [
+      { task: 'Poyga sharhlovchisi bo‘ling: Boychibor marraga yetib kelayotgan lahzani 20 soniyada jonli sharhlang!', time: 60 },
+      { task: 'Alpomishga javob xati yozing — Barchin nomidan 3 gap.', time: 90 },
+    ],
+  },
+
+  /* ===================== 6. Baxshiyona ===================== */
+  {
+    id: 'ad9-baxshiyona',
+    source: 'I chorak • 6-dars • 39–41-betlar',
+    title: 'Usmon Azim. «Baxshiyona» turkumidan',
+    short: '«Maysaga ezmayman, deb aytdim...» va «Ustozim deganing...»: shogird va ustoz suhbati',
+    theme: { emoji: '🎶', grad: 'from-teal-600 via-cyan-600 to-sky-600', border: 'border-cyan-200', tag: 'She’riyat • Xalqona ohang' },
+    lesson: [
+      {
+        title: 'Boysunlik shoir',
+        emoji: '🏔️',
+        facts: [
+          { n: '1950', l: '13-avgust, Boysun tumani, G‘aza qishlog‘ida tug‘ilgan' },
+          { n: '2000', l: '«O‘zbekiston xalq shoiri» unvoni' },
+          { n: '10+', l: 'she’riy to‘plam: «Baxshiyona», «Ko‘zgu», «Yurak»...' },
+        ],
+        text: 'Usmon Azim — shoir, dramaturg, ssenariynavis. «Alpomish» dostoni asosidagi film ssenariysini ham u yozgan. Alpomishning yurti Boysunda tug‘ilgani bejiz emas — uning she’rlarida baxshilar ohangi yangraydi.',
+      },
+      {
+        title: '«Baxshiyona» — nimasi o‘ziga xos?',
+        emoji: '🪘',
+        cards: [
+          { e: '🧙‍♂️', t: 'Elbek baxshi', d: 'Dono ustoz, dunyoning achchiq-chuchugini ko‘rgan.' },
+          { e: '🧑‍🎤', t: 'Elomon', d: 'Yosh shogird, dunyoga «aytadiganini aytib» qaytgan.' },
+          { e: '📖', t: 'Shakl', d: 'Nasriy qismda doston kabi ichki qofiyalar, she’riy qismda xalqona qo‘shiq ohangi.' },
+        ],
+        text: 'Elbek baxshi shogirdiga do‘mbirasini berib: «Dunyoga aytadiganingni aytgin, ko‘ksingni tog‘ qilib, eson-omon qaytgin», deb safarga jo‘natadi.',
+      },
+      {
+        title: 'Elomon dunyoga nima dedi?',
+        emoji: '🌍',
+        text: 'Qaytgan shogird har bir narsaga bergan va’dasini sanaydi (she’r matni — 40-betda):',
+        cards: [
+          { e: '🌱', t: 'Maysaga', d: 'Ezmayman' },
+          { e: '🌳', t: 'Daraxtga', d: 'Kesmayman' },
+          { e: '🟫', t: 'Tuproqqa', d: 'Sen uchun o‘lsam, og‘riqni sezmayman' },
+          { e: '🕊️', t: 'Qushlarga', d: 'Otmayman' },
+          { e: '💛', t: 'Yoriga', d: 'Sotmayman — sodiq qolaman' },
+          { e: '🔥', t: 'Haqiqatga', d: 'Haqni aytsam, o‘tda kuymayman, suvda botmayman' },
+        ],
+        reveal: [{ q: 'Nega Elomon aynan maysa, daraxt, qushga murojaat qiladi?', a: 'Bu — tabiatga, hayotga mehr va mas’uliyat qasamyodi. Haqiqiy shoir avvalo yer yuzidagi tiriklikni asraydi.' }],
+      },
+      {
+        title: 'Vatan — hamma narsaga arziydi',
+        emoji: '🇺🇿',
+        text: 'Elomon tog‘ cho‘qqisiga chiqib, ko‘z oldida O‘zbekistonni ko‘radi va yig‘lab duo qiladi. U Vatanga ko‘z yoshi ham, quvonch ham, butun boshi ham arziydi, deydi.',
+        quote: { text: 'Otamdan meros qolgansan, Bolamdan qarzim — sen', by: 'Usmon Azim, «Baxshiyona»' },
+        reveal: [{ q: 'Bu ikki misra ajdod va avlodni qanday bog‘laydi?', a: 'Vatan otadan meros bo‘lib keladi va uni avlodga obod holda yetkazish — qarz. Biz zanjirning o‘rtasidagi halqamiz.' }],
+      },
+      {
+        title: 'Ustozning nasihati',
+        emoji: '🧙‍♂️',
+        text: 'Elbek baxshi shogirdini dunyoning adolatsizliklaridan ogoh qiladi. Har bandda «chidagin, bolam» deb takrorlaydi — bu radifga o‘xshash takror she’rning yuragi.',
+        steps: [
+          { e: '🎭', t: 'Ishongan odaming soxta chiqsa', d: 'Ustozing she’rfurush, sevganing xoin, hukmdoring elfurush chiqsa...' },
+          { e: '🌫️', t: 'Yolg‘on haqiqat o‘rnini olsa', d: 'Yomonlar va aldamchi zamonlar marhamat topsa...' },
+          { e: '🪨', t: 'Toshlar «odamman» desa', d: 'Qalbsizlar insonlik da’vo qilsa...' },
+          { e: '🎵', t: 'Chida — lekin kuylashdan to‘xtama!', d: 'Dardlaring qo‘shiqqa aylansin, qilichning tig‘ida bo‘lsa ham kuyla.' },
+        ],
+      },
+      {
+        title: '«She’rfurush» kim?',
+        emoji: '💸',
+        vs: {
+          q: 'Chidash va kuylash — bir-biriga zid emasmi?',
+          a: { t: '🤐 Chidash', pts: ['Sabr bilan og‘irlikka dosh berish', 'Achchiqqa berilib, o‘zini yo‘qotmaslik'] },
+          b: { t: '🎤 Kuylash', pts: ['Haqiqatni aytishdan to‘xtamaslik', 'Dardni so‘zga — qo‘shiqqa aylantirish'] },
+        },
+        note: 'She’rfurush — so‘zini, iste’dodini manfaat uchun sotadigan, haqiqatni emas, xo‘jayinga yoqadigan gapni yozadigan odam.',
+      },
+      {
+        title: 'Safar qayerda bo‘lgan?',
+        emoji: '🧭',
+        reveal: [
+          { q: 'Elbek baxshi qo‘shiqni aytib quyoshga tik qaraydi — ko‘zi yoshlanmaydi. Nega?', a: 'U ko‘p narsani ko‘rgan, dardi qotib, irodaga aylangan. Bu — kuchli ruh ramzi.' },
+        ],
+        mission: { t: 'Ijodiy yozma ish', d: 'Elomon qayerlarga borgan, kimlarni ko‘rgan deb o‘ylaysiz? Uning safarini 5–6 gapda tasvirlang.', sec: 300 },
+      },
+    ],
+    pairs: [
+      ['Elbek baxshi', 'dono ustoz'],
+      ['Elomon', 'yosh shogird'],
+      ['Usmon Azim', '1950-yil, Boysun'],
+      ['She’rfurush', 'so‘zini manfaatga sotuvchi'],
+      ['«Chidagin, bolam»', 'nasihatdagi takror'],
+      ['Do‘mbira', 'baxshining cholg‘usi'],
+      ['2000-yil', '«Xalq shoiri» unvoni'],
+    ],
+    quiz: [
+      { q: 'Usmon Azim qayerda tug‘ilgan?', options: ['Boysunda', 'Andijonda', 'Toshkentda', 'Xivada'], answer: 0 },
+      { q: 'Elbek baxshi shogirdiga nimani topshirib yuboradi?', options: ['do‘mbirasini', 'qilichini', 'kitobini', 'otini'], answer: 0 },
+      { q: 'Elomon maysaga nima deydi?', options: ['ezmayman', 'kesmayman', 'otmayman', 'sotmayman'], answer: 0 },
+      { q: 'Elomonning fikricha, Vatan bolasidan nima?', options: ['qarzi', 'sovg‘asi', 'merosi', 'tilagi'], answer: 0 },
+      { q: 'Elbek baxshi nasihatida qaysi so‘zni takrorlaydi?', options: ['chidagin', 'yugurgin', 'unutgin', 'kechirgin'], answer: 0 },
+      { q: 'Ustoz shogirdga qilichning tig‘ida ham nima qil deydi?', options: ['kuyla', 'jim tur', 'qoch', 'yig‘la'], answer: 0 },
+      { q: 'Usmon Azim qachon xalq shoiri bo‘lgan?', options: ['2000-yil', '1991-yil', '1975-yil', '2010-yil'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Elomonning va’dalari', 'Elbekning ogohlantirishlari'],
+      items: [
+        { text: 'maysani ezmaslik', cat: 0 }, { text: 'ustoz she’rfurush chiqsa', cat: 1 },
+        { text: 'qushni otmaslik', cat: 0 }, { text: 'yolg‘on marhamat topsa', cat: 1 },
+        { text: 'yorni sotmaslik', cat: 0 }, { text: 'podshoh elfurush chiqsa', cat: 1 },
+        { text: 'daraxtni kesmaslik', cat: 0 }, { text: 'toshlar «odamman» desa', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Elbek baxshi shogirdini nega safarga yubordi?', a: 'Dunyoni ko‘rib, o‘z so‘zini topishi, shoir bo‘lib yetilishi uchun.' },
+      { q: 'Elomon qanday yigit?', a: 'Vatanparvar, tabiatga mehrli, sodiq, haqgo‘y.' },
+      { q: '«She’rfurush» deganda kim nazarda tutiladi?', a: 'So‘zini manfaat uchun sotadigan, haqiqatni yozmaydigan ijodkor.' },
+      { q: 'Nega ustoz «chida, lekin kuyla» deydi?', a: 'Adolatsizlikka dosh berish kerak, lekin haqiqatni aytishdan to‘xtamaslik shart.' },
+    ],
+    odd: [
+      { items: ['maysa', 'daraxt', 'qush', 'qilich'], answer: 3, why: 'Elomon qilichga emas, tiriklikka murojaat qiladi.' },
+      { items: ['«Baxshiyona»', '«Ko‘zgu»', '«Yurak»', '«Alpomish» dostoni'], answer: 3, why: '«Alpomish» xalq dostoni; qolganlari Usmon Azim to‘plamlari.' },
+    ],
+    debate: [
+      { claim: 'Haqiqatni aytgan odam hech qachon kuymaydi.', pro: 'Haqiqat oxir-oqibat g‘olib bo‘ladi.', con: 'Tarixda haqiqat uchun azob chekkanlar ko‘p bo‘lgan.' },
+      { claim: 'Yaxshi shogird ustozidan o‘zib ketishi kerak.', pro: 'Ustozning eng katta quvonchi shu.', con: 'Avval ustozning tajribasini to‘liq o‘zlashtirish lozim.' },
+    ],
+    creative: [
+      { task: 'O‘zingiz «... deb aytdim» qolipida 2 misra to‘qing: «Kitobga ... deb aytdim».', time: 90 },
+      { task: 'Ustozingizga bir jumlalik minnatdorlik so‘zi ayting.', time: 60 },
+    ],
+  },
+
+  /* ===================== 7. Karvon ko‘rdim ===================== */
+  {
+    id: 'ad9-karvon',
+    source: 'I chorak • 7-dars • 42–43-betlar',
+    title: 'Usmon Azim. «Karvon ko‘rdim...»',
+    short: 'Kelin karvoni, Oytumanning bevafoligi va oshiqning ulug‘ qalbi',
+    theme: { emoji: '🐫', grad: 'from-orange-500 via-amber-500 to-yellow-400', border: 'border-amber-200', tag: 'Lirik she’r • Muhabbat' },
+    lesson: [
+      {
+        title: 'Yo‘ldagi uchrashuv',
+        emoji: '🐫',
+        text: 'Elbek baxshi bir kambag‘alning to‘yini qizitib qaytayotib, dabdabali karvonga duch keladi: tuyalar atlas-kimxob yopilgan, osmonga mushak otilgan, yigitlar shovqin qiladi.',
+        chat: [
+          { who: 'Elbek baxshi', e: '🧙‍♂️', text: 'Ho‘v karvonboshi, yo‘l bo‘lsin?' },
+          { who: 'Karvonboshi', e: '😤', side: 'r', text: 'Yo‘ldan qoch! Kelin olib ketyapmiz.' },
+        ],
+        reveal: [{ q: 'Elbek baxshi kelinni qanday taniydi?', a: 'Yig‘i tovushidan! Bu — Oytuman, uning sevgilisi. Yurakdagi muhabbat ovozni ham taniydi.' }],
+      },
+      {
+        title: 'Ikki dunyo',
+        emoji: '⚖️',
+        cards: [
+          { e: '💰', t: 'Karvon dunyosi', d: 'Boylik, dabdaba, «ostonasi tillo yurt», mol-dunyoning izmi.' },
+          { e: '🎵', t: 'Baxshi dunyosi', d: 'Kambag‘allik, qo‘shiq, yurak — «yurak degan sarbon».' },
+        ],
+        text: 'Oytuman va’dasini unutib, boylik tomon ketmoqda. Oshiq esa kambag‘alligini la’natlaydi, lekin qasos emas, qo‘shiq tanlaydi.',
+      },
+      {
+        title: 'Naqarot — she’rning yuragi',
+        emoji: '🔁',
+        quote: { text: 'Peshonangning yozdig‘idan ayrilma, yor', by: 'Usmon Azim, «Karvon ko‘rdim...»' },
+        text: 'Har band oxirida takrorlanadigan qism — naqarot. «Yozdig‘i» — peshonaga yozilgan taqdir. Oshiq yorini qarg‘amaydi: «taqdiringdan ayrilma, baxtli bo‘l», deydi.',
+        reveal: [{ q: 'Naqarot nimani kuchaytiradi?', a: 'Oshiqning kechirimli, mard qalbini va qo‘shiq ohangini — she’r xalq qo‘shig‘iga aylanadi.' }],
+      },
+      {
+        title: 'Ramzlarni yeching',
+        emoji: '🗝️',
+        reveal: [
+          { q: '🐫 Bo‘zlab borayotgan tuyalar', a: 'Hatto jonivorlar ham bu nohaq ayriliqqa yig‘lamoqda — oshiq dardi tabiatga ko‘chgan.' },
+          { q: '❄️ Nortuyada «muzlab borayotgan» yor', a: 'Oytuman baxtsiz: tashqi dabdaba ichidagi sovuqlikni yashirolmaydi.' },
+          { q: '🌺 Qizg‘aldoqzor yo‘l', a: 'Qizil rang — yurak qoni, qurbon bo‘lgan muhabbat; ayni paytda bahor va go‘zallik.' },
+          { q: '🏰 Buzilgan qal’a', a: 'Oshiqning yuragi — ishonch qal’asi vayron bo‘ldi.' },
+        ],
+      },
+      {
+        title: 'Mard oshiqning so‘zlari',
+        emoji: '🦁',
+        steps: [
+          { e: '💔', t: 'Armon bilan qolaman', d: 'Mard odam armon bilan qoladi, lekin xo‘rlanmaydi.' },
+          { e: '🎶', t: 'Qo‘shiq yig‘ishtiradi', d: 'Parchalansam — meni qo‘shiq yig‘adi; sen esa qo‘shiqsiz qolib, to‘zib ketding.' },
+          { e: '😊', t: 'Kulib ket', d: 'Yig‘lama, g‘amga o‘zim xaridorman, o‘zim bozor.' },
+          { e: '🏔️', t: 'Tuprog‘ingni unutma', d: 'O‘zga yurtda menga emas, o‘z tuprog‘ingga intizor bo‘l.' },
+          { e: '🌍', t: 'Yarim yurak ham yetadi', d: 'Yuragim yarim bo‘lsa ham, kuylasam olam to‘ladi.' },
+        ],
+      },
+      {
+        title: 'Kim kuchliroq?',
+        emoji: '🤔',
+        vs: {
+          q: 'Bu hikoyada kim yutdi?',
+          a: { t: '💰 Karvon (boylik)', pts: ['Kelinni olib ketdi', 'Kuch va dabdaba bor'] },
+          b: { t: '🎵 Baxshi (yurak)', pts: ['Qalbini, qo‘shig‘ini saqladi', 'Olam uning qo‘shig‘iga to‘ladi'] },
+        },
+      },
+      {
+        title: 'Qo‘shiq bo‘lib yangragan she’r',
+        emoji: '🎧',
+        text: 'Bu she’rni O‘zbekiston xalq artisti Sherali Jo‘rayev qo‘shiq qilib kuylagan. Qo‘shiqni tinglang va kuy she’r mazmuniga qanchalik mos ekanini baholang.',
+        mission: { t: 'Tinglash topshirig‘i', d: 'Qo‘shiqni tinglab, 3 so‘z bilan kayfiyatingizni yozing. Kuy she’rning qaysi tuyg‘usini eng kuchli yetkazdi?', sec: 180 },
+      },
+    ],
+    pairs: [
+      ['Oytuman', 'Elbek baxshining sevgilisi'],
+      ['Naqarot', 'har bandda takrorlanadigan qism'],
+      ['Yozdig‘i', 'peshonaga yozilgan taqdir'],
+      ['Bo‘za', 'qadimiy ichimlik'],
+      ['Shotir', 'tuya yetaklovchi xizmatkor'],
+      ['Qizg‘aldoqzor', 'karvon yo‘li ramzi'],
+      ['Sherali Jo‘rayev', 'she’rni qo‘shiq qilib kuylagan'],
+    ],
+    quiz: [
+      { q: 'Elbek baxshi karvonda kimni taniydi?', options: ['Oytumanni', 'Barchinni', 'Elomonni', 'Shirinni'], answer: 0 },
+      { q: 'U yorini nimadan taniydi?', options: ['yig‘i tovushidan', 'kiyimidan', 'tuyasidan', 'qo‘shig‘idan'], answer: 0 },
+      { q: '«Yozdig‘i» so‘zining ma’nosi:', options: ['peshonaga yozilgan taqdir', 'yozuv daftari', 'yoz fasli', 'xat'], answer: 0 },
+      { q: 'Oshiq yoriga qayerga intizor bo‘lishni tilaydi?', options: ['o‘z tuprog‘iga', 'o‘ziga', 'boylikka', 'karvonga'], answer: 0 },
+      { q: '«Karvon, armon, sarbon» so‘zlari she’rda nima vazifasida?', options: ['qofiya', 'radif', 'naqarot', 'sarlavha'], answer: 0 },
+      { q: 'Karvon yo‘li qanday tasvirlanadi?', options: ['qizg‘aldoqzor', 'qorli', 'tikanli', 'cho‘l'], answer: 0 },
+      { q: 'She’rni qaysi xonanda kuylagan?', options: ['Sherali Jo‘rayev', 'Yulduz Usmonova', 'Ortiqxo‘ja Imomxo‘jayev', 'Munojot Yo‘lchiyeva'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Karvon dunyosi', 'Oshiq dunyosi'],
+      items: [
+        { text: 'tillo ostona', cat: 0 }, { text: 'qo‘shiq', cat: 1 },
+        { text: 'atlas-kimxob', cat: 0 }, { text: 'yurak degan sarbon', cat: 1 },
+        { text: 'mushak va shovqin', cat: 0 }, { text: 'armon', cat: 1 },
+        { text: 'mol-dunyo izmi', cat: 0 }, { text: 'kechirimlilik', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Tuyalarning bo‘zlashi bilan oshiq kuyi o‘rtasida qanday bog‘liqlik bor?', a: 'Oshiq dardi tabiatga ko‘chgan — jonivorlar ham ayriliqqa yig‘laydi.' },
+      { q: 'Oytumanning afsusda ekanini qaysi tasvir bildiradi?', a: 'Nortuyada «muzlab borishi», yig‘i tovushi.' },
+      { q: 'Nega oshiq yoriga «menga emas, tuprog‘ingga intizor bo‘l» deydi?', a: 'U xudbin emas — yori o‘zga yurtda ildizini unutmasligini istaydi.' },
+      { q: '«G‘amga o‘zim xaridorman, o‘zim bozor» misrasini izohlang.', a: 'Butun g‘amni o‘zim ko‘taraman, sen faqat kulib ket — mard oshiqning fidoyiligi.' },
+    ],
+    odd: [
+      { items: ['karvon', 'armon', 'sarbon', 'bilan'], answer: 3, why: '«Bilan» — radif, qolganlari qofiyadosh so‘zlar.' },
+      { items: ['tuya', 'atlas', 'mushak', 'do‘mbira'], answer: 3, why: 'Do‘mbira — baxshi dunyosiga tegishli, qolganlari karvon dabdabasi.' },
+    ],
+    debate: [
+      { claim: 'Oytumanni ayblash mumkin emas — u taqdirga bo‘ysundi.', pro: 'Qadimda qizning ixtiyori ko‘pincha o‘zida bo‘lmagan.', con: 'U va’dasini unutib, boylikni tanladi.' },
+      { claim: 'Muhabbatda kechirimli bo‘lish — kuchlilik belgisi.', pro: 'Elbek baxshi qasos emas, qo‘shiq tanladi.', con: 'Xiyonatni kechiraverish uni oqlash bo‘lib qoladi.' },
+    ],
+    creative: [
+      { task: 'Oytuman karvon ichida nima o‘ylayotgan edi? Uning ichki ovozini 3 gapda yozing.', time: 90 },
+      { task: 'She’r uchun klip ssenariysini o‘ylang: 3 ta kadrni tasvirlab bering.', time: 120 },
+    ],
+  },
+
+  /* ===================== 8. Tong titraydi ===================== */
+  {
+    id: 'ad9-tong-titraydi',
+    source: 'I chorak • 8-dars • 43–44-betlar',
+    title: 'Usmon Azim. «Tong titraydi kech kuzakning quchog‘ida»',
+    short: 'Ijod azobi va zavqi: she’riyatning pichog‘i, dengizdagi yulduzlar, halqasimon kompozitsiya',
+    theme: { emoji: '🌅', grad: 'from-fuchsia-600 via-rose-500 to-orange-400', border: 'border-rose-200', tag: 'Falsafiy lirika • Ijod haqida' },
+    lesson: [
+      {
+        title: 'She’r qanday tug‘iladi?',
+        emoji: '✍️',
+        text: 'Bu she’r — ijod jarayonining o‘zi haqida. Shoir she’r yozish payti qalbida nimalar kechishini tasvirlaydi: azob, hayrat, parvoz va baxt.',
+        reveal: [
+          { q: '«Kech kuzak» qaysi payt?', a: 'Kuzning oxiri, qishga yaqin sovuq payt — tabiat so‘nayotgan, ammo shoir ichida tong otmoqda.' },
+          { q: 'Nega tong «titraydi»?', a: 'Sovuqdan ham, hayajondan ham. Tong — yangi she’rning tug‘ilishi, titroq — shoirning ruhiy holati.' },
+        ],
+      },
+      {
+        title: 'Obrazlar xaritasi',
+        emoji: '🗺️',
+        cards: [
+          { e: '🔪', t: 'She’riyatning pichog‘i', d: 'Ijod — qalbni tilib o‘tadigan og‘riqli, lekin muqaddas jarayon.' },
+          { e: '🌌', t: 'Zamin — tilsim, osmon — tilsim', d: 'Olam sirli, shoir uning sirini so‘z bilan ochmoqchi.' },
+          { e: '🌊', t: 'Dengizdagi yulduzlar', d: 'Osmondagi yulduzni hamma ko‘radi; shoir yangi, hech kim ko‘rmagan go‘zallikni izlaydi.' },
+          { e: '🕊️', t: 'Xayol qanoti', d: 'Shoir dengizlarni ko‘tarib uchadi — tasavvur chegarasizligi.' },
+        ],
+      },
+      {
+        title: 'Ijodning to‘rt bosqichi',
+        emoji: '🪜',
+        steps: [
+          { e: '😣', t: 'Qiynalish', d: '1–2-band: tong, kech kuzak, qalb she’riyat pichog‘ida; xayol qanotida uchish.' },
+          { e: '😲', t: 'Hayrat', d: '3-band: osmon sirlari shoirni hayratga soladi — «ona zamin, uchay, qo‘yib yubor!»' },
+          { e: '💖', t: 'Ilhom', d: '4-band: ko‘z oldida bir yurak paydo bo‘ladi — Laylimi, Shirinmi yoki hali tug‘iladigan malakmi?' },
+          { e: '🏆', t: 'Sharaf', d: '5-band: she’r yoziladi — qiynoqqa sharaf! Butun jahon she’r bo‘lajak.' },
+        ],
+      },
+      {
+        title: 'Halqa — boshi va oxiri',
+        emoji: '⭕',
+        text: 'Birinchi va beshinchi bandlarda bir xil misralar o‘rin almashib qaytadi. Bu — halqasimon (aylana) kompozitsiya.',
+        vs: {
+          q: 'Takror nimani anglatadi?',
+          a: { t: '🔄 Abadiy aylana', pts: ['Ijod tugamaydi: har tong yangi she’r', 'Azob va zavq doim qaytadi'] },
+          b: { t: '📈 O‘sish', pts: ['Boshida azob, oxirida sharaf', 'Bir xil so‘zlar endi boshqa ma’no oladi'] },
+        },
+      },
+      {
+        title: 'Shoirning xulosasi',
+        emoji: '💡',
+        quote: { text: 'Bu dunyoni sirga ko‘mib yashash kerak', by: 'Usmon Azim' },
+        text: 'Shoir oromni «bekor» deb biladi. Uning fikricha, dunyoga sirli, hayratli nigoh bilan qarab yashash kerak — shundagina butun jahon she’rga aylanadi.',
+        reveal: [{ q: '«She’r — beshafqat» deb, keyin «Qiynoq, senga sharaf» deyish zid emasmi?', a: 'Yo‘q: ijod og‘riq beradi, ammo aynan shu og‘riq go‘zallikni tug‘diradi. Shoir azobni sevadi.' }],
+      },
+      {
+        title: 'Siz ham ijodkorsiz',
+        emoji: '🎨',
+        text: 'She’r, hikoya, rasm yoki qo‘shiq yaratganmisiz? O‘sha paytdagi holatingiz shoirnikiga o‘xshaganmi?',
+        mission: { t: '2 daqiqalik ijod', d: 'Derazadan qarang va ko‘rgan narsangizni 2 ta obrazli misrada tasvirlang. Ijod «qiynog‘i»ni his qiling!', sec: 120 },
+      },
+    ],
+    pairs: [
+      ['Kech kuzak', 'kuzning oxiri'],
+      ['Gulgun shafaq', 'qizil tong nuri'],
+      ['Yakto', 'yagona, tengsiz'],
+      ['Tilsim', 'sirli, sehrli narsa'],
+      ['Halqasimon kompozitsiya', 'boshidagi misralar oxirida qaytadi'],
+      ['Dengizdagi yulduzlar', 'yangi go‘zallik izlash'],
+      ['She’riyat pichog‘i', 'ijod og‘rig‘i'],
+    ],
+    quiz: [
+      { q: 'She’r nima haqida?', options: ['ijod jarayoni haqida', 'urush haqida', 'Vatan haqida', 'tabiat fasllari haqida'], answer: 0 },
+      { q: '«Gulgun» so‘zining ma’nosi:', options: ['gulrang, qizg‘ish', 'gulzor', 'kulgili', 'quyuq'], answer: 0 },
+      { q: 'Shoir «qalbim ... pichog‘ida» deydi. Nimaning?', options: ['she’riyatning', 'dushmanning', 'zamonning', 'sevgining'], answer: 0 },
+      { q: 'Shoir qanday yulduzlarni quchgisi keladi?', options: ['dengizdagi', 'osmondagi', 'tushdagi', 'ko‘zdagi'], answer: 0 },
+      { q: 'Birinchi va beshinchi bandning o‘xshashligi nima deyiladi?', options: ['halqasimon kompozitsiya', 'radif', 'naqarot', 'tazod'], answer: 0 },
+      { q: 'Shoirning fikricha, dunyoni qanday yashash kerak?', options: ['sirga ko‘mib', 'tez va oson', 'orom bilan', 'yolg‘iz'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Azob belgilari', 'Zavq belgilari'],
+      items: [
+        { text: 'she’riyat pichog‘i', cat: 0 }, { text: 'xayol qanoti', cat: 1 },
+        { text: '«men qiynaldim»', cat: 0 }, { text: 'gulgun shafaq', cat: 1 },
+        { text: 'she’r — beshafqat', cat: 0 }, { text: 'qiynoqqa sharaf', cat: 1 },
+        { text: 'titragan tong', cat: 0 }, { text: 'jahon she’r bo‘lajak', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'She’rdagi kechinmalar tartibi',
+        items: [
+          'Kech kuzakda tong titraydi, qalb she’riyat pichog‘ida',
+          'Shoir xayol qanotida dengizlarni ko‘tarib uchadi',
+          'Osmon sirlari uni hayratga soladi',
+          'Ko‘z oldida yakto yurak paydo bo‘ladi',
+          'She’r yoziladi — qiynoqqa sharaf',
+        ],
+      },
+    ],
+    qa: [
+      { q: 'Nega shoir ona zaminga «qo‘yib yubor» deb iltijo qiladi?', a: 'Osmon sirlarini bilish uchun uchgisi keladi — ijodiy parvoz istagi.' },
+      { q: '4-banddagi Layli va Shirin kimlar?', a: 'Mashhur doston qahramonlari — muhabbat ramzi; shoir ilhom manbasini izlaydi.' },
+      { q: '«Hali butun ro‘yi jahon she’r bo‘lajak» misrasi nima demoqchi?', a: 'Dunyodagi har narsa she’rga mavzu bo‘la oladi, ijod cheksiz.' },
+    ],
+    odd: [
+      { items: ['tong', 'shafaq', 'yulduz', 'tush payti'], answer: 3, why: 'She’rda tushlik payt emas, tong tasvirlangan.' },
+      { items: ['Layli', 'Shirin', 'malak', 'Barchin'], answer: 3, why: 'Barchin bu she’rda tilga olinmaydi.' },
+    ],
+    debate: [
+      { claim: 'Haqiqiy ijod faqat azob orqali tug‘iladi.', pro: 'Usmon Azim ham qiynoqqa sharaf aytadi.', con: 'Quvonch va zavqdan ham go‘zal asarlar yaratiladi.' },
+    ],
+    creative: [
+      { task: '«Tong titraydi...» o‘rniga «Kech kuladi...» deb boshlanadigan 2 misra to‘qing.', time: 90 },
+      { task: 'Ijod jarayonini bitta rasm-belgi bilan doskada chizib tushuntiring.', time: 120 },
+    ],
+  },
+
+  /* ===================== 9. She’riy nutq ===================== */
+  {
+    id: 'ad9-sheriy-nutq',
+    source: 'I chorak • 9-dars • 45–46-betlar',
+    title: 'Nazariy ma’lumot: she’riy nutq va uning vositalari',
+    short: 'Ritm, bo‘g‘in, turoq va rukn, misra, band, pauza, qofiya va radif',
+    theme: { emoji: '🎼', grad: 'from-blue-700 via-sky-600 to-cyan-500', border: 'border-sky-200', tag: 'Adabiyot nazariyasi' },
+    lesson: [
+      {
+        title: 'Ritm — hamma joyda!',
+        emoji: '🥁',
+        text: 'Ritm — tabiiy hodisalarning ma’lum vaqtda takrorlanib turishi. Atrofingizga quloq soling:',
+        cards: [
+          { e: '💧', t: 'Tomchi', d: 'Tarnovdan tomayotgan tomchilar' },
+          { e: '❤️', t: 'Yurak', d: 'Yurak urishi, nafas olish' },
+          { e: '🍂', t: 'Fasllar', d: 'Kun va tun, fasllar almashinuvi' },
+          { e: '🚶', t: 'Qadam', d: 'Bir maromdagi yurish' },
+        ],
+        rule: 'Ritm — she’riy nutqning bosh alomati. U so‘zga sehr, ta’kid va ko‘tarinkilik beradi.',
+        ruleLabel: 'Asosiy fikr',
+      },
+      {
+        title: 'Nasriy va she’riy nutq',
+        emoji: '📝',
+        vs: {
+          q: 'Farqini toping',
+          a: { t: '📄 Nasriy (sochma)', pts: ['Kundalik nutqqa yaqin', 'Qat’iy o‘lchov yo‘q', 'Hikoya, roman, qissa'] },
+          b: { t: '🎵 She’riy (tizma)', pts: ['Muayyan vazn va ritm', 'Musiqiy jarang, ohang', 'She’r, g‘azal, doston'] },
+        },
+      },
+      {
+        title: 'Ritmik bo‘laklar — kichikdan kattaga',
+        emoji: '🧱',
+        steps: [
+          { e: '🔹', t: 'Bo‘g‘in (hijo)', d: 'Bir havo zarbi bilan aytiladigan tovush(lar). Eng kichik ritmik birlik.' },
+          { e: '🔷', t: 'Turoq / rukn', d: 'Bo‘g‘inlar guruhi. Turoq — barmoqda (so‘zni bo‘lmaydi), rukn — aruzda (so‘zni bo‘lishi mumkin).' },
+          { e: '📏', t: 'Misra', d: 'She’rning alohida satrga joylashgan bo‘lagi; oxirida pauza bo‘ladi.' },
+          { e: '🧩', t: 'Band', d: 'Misralar guruhi. Ko‘pincha 4 misrali; mumtoz bandli she’rlar — musammat.' },
+        ],
+      },
+      {
+        title: 'Barmoq va aruz',
+        emoji: '⚖️',
+        table: {
+          head: ['', 'Barmoq tizimi', 'Aruz tizimi'],
+          rows: [
+            ['Asosiy mezon', 'Bo‘g‘inlar soni va satrlarda tengligi', 'Bo‘g‘inning sifati: qisqa, cho‘ziq, o‘ta cho‘ziq'],
+            ['Bo‘lak', 'Turoq', 'Rukn'],
+            ['So‘zni bo‘ladimi?', 'Yo‘q, turoq tugal so‘z bilan tugaydi', 'Ha, so‘zning bir qismini olishi mumkin'],
+            ['Qayerda?', 'Xalq qo‘shiqlari, zamonaviy she’r', 'Mumtoz she’riyat (Navoiy, Bobur)'],
+          ],
+        },
+      },
+      {
+        title: 'Ritmik vositalar',
+        emoji: '🎚️',
+        cards: [
+          { e: '⏸️', t: 'Pauza', d: 'Turoqlar orasida kichik, misra va bandlar orasida katta pauza. Pauzasiz she’r yo‘q!' },
+          { e: '🔔', t: 'Qofiya', d: 'Misra oxiridagi ohangdosh so‘zlar.' },
+          { e: '🔁', t: 'Radif', d: 'Qofiyadan keyin takrorlanadigan so‘z yoki so‘zlar.' },
+        ],
+      },
+      {
+        title: 'Amaliyot: «Karvon ko‘rdim...»',
+        emoji: '🔬',
+        text: 'Turoqlar tartibi: 4 + 4 + 4. Har bir turoq pauza bilan ajratiladi:',
+        poem: {
+          lines: [
+            'Oytuman yor / ketib borar / karvon bilan,',
+            'Og‘rinma, dil, / mard qoladi / armon bilan.',
+          ],
+          author: 'Usmon Azim',
+        },
+        reveal: [
+          { q: 'Qofiyadosh so‘zlarni toping', a: 'karvon — armon — sarbon' },
+          { q: 'Radif qaysi?', a: '«bilan» — qofiyadan keyin takrorlanadi.' },
+          { q: 'Bir misrada nechta bo‘g‘in?', a: '12 ta (4+4+4).' },
+        ],
+      },
+      {
+        title: 'Qarsak bilan sanaymiz!',
+        emoji: '👏',
+        text: 'Sinf bilan birga: har bo‘g‘inga bir qarsak, har pauzada to‘xtash. Ritmni tanangiz bilan his qiling!',
+        mission: { t: 'Jamoaviy mashq', who: '2 jamoa', d: 'Har jamoa Usmon Azimning bir she’ridan 2 misra tanlab, qarsak bilan bo‘g‘inlarini sanasin va turoqlarga ajratsin. Qaysi jamoa to‘g‘ri va tez?', sec: 180 },
+      },
+    ],
+    pairs: [
+      ['Bo‘g‘in', 'eng kichik ritmik birlik'],
+      ['Turoq', 'barmoqdagi bo‘g‘inlar guruhi'],
+      ['Rukn', 'aruzdagi ritmik bo‘lak'],
+      ['Misra', 'she’rning bir satri'],
+      ['Band', 'misralar guruhi'],
+      ['Qofiya', 'misra oxiridagi ohangdosh so‘zlar'],
+      ['Radif', 'qofiyadan keyin takrorlanuvchi so‘z'],
+      ['Musammat', 'mumtoz bandli she’r'],
+    ],
+    quiz: [
+      { q: 'She’riy nutqning bosh alomati nima?', options: ['ritm', 'qofiya', 'sarlavha', 'uzunlik'], answer: 0 },
+      { q: 'Eng kichik ritmik birlik:', options: ['bo‘g‘in', 'misra', 'band', 'turoq'], answer: 0 },
+      { q: 'Barmoq tizimida asosiy mezon:', options: ['bo‘g‘inlar soni', 'bo‘g‘in sifati', 'so‘z ma’nosi', 'qofiya turi'], answer: 0 },
+      { q: 'Aruz tizimidagi ritmik bo‘lak:', options: ['rukn', 'turoq', 'naqarot', 'pauza'], answer: 0 },
+      { q: '«Karvon bilan, armon bilan» — «bilan» nima?', options: ['radif', 'qofiya', 'turoq', 'bo‘g‘in'], answer: 0 },
+      { q: 'Zamonaviy she’riyatda eng ko‘p tarqalgan band:', options: ['to‘rt misrali', 'ikki misrali', 'o‘n misrali', 'bir misrali'], answer: 0 },
+      { q: 'Qaysi biri so‘zni ikkiga bo‘lishi mumkin?', options: ['rukn', 'turoq', 'misra', 'band'], answer: 0 },
+      { q: 'Turoqlar orasidagi to‘xtam qanday pauza?', options: ['kichik pauza', 'katta pauza', 'uzun pauza', 'pauza yo‘q'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Ritmik bo‘laklar', 'Ritmik vositalar'],
+      items: [
+        { text: 'bo‘g‘in', cat: 0 }, { text: 'qofiya', cat: 1 },
+        { text: 'turoq', cat: 0 }, { text: 'radif', cat: 1 },
+        { text: 'misra', cat: 0 }, { text: 'pauza', cat: 1 },
+        { text: 'band', cat: 0 }, { text: 'rukn', cat: 0 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'Kichikdan kattaga tartiblang',
+        items: ['bo‘g‘in', 'turoq', 'misra', 'band', 'she’r'],
+      },
+    ],
+    qa: [
+      { q: 'Ritm nima?', a: 'Hodisa va jarayonlarning muayyan vaqt davomida takrorlanib turishi.' },
+      { q: 'Turoq va ruknning farqi nimada?', a: 'Turoq barmoqqa xos, tugal so‘z bilan tugaydi; rukn aruzga xos, so‘zni bo‘lishi mumkin.' },
+      { q: 'Zinapoya shaklidagi har bir so‘zni misra deyish mumkinmi?', a: 'Yo‘q, ularda zarb bor, lekin misra pauzasi yo‘q.' },
+      { q: 'Qofiya qanday vazifa bajaradi?', a: 'Misrani ta’kidlaydi, she’rning ohangdorligi va ta’sirchanligini oshiradi.' },
+    ],
+    odd: [
+      { items: ['bo‘g‘in', 'turoq', 'misra', 'qofiya'], answer: 3, why: 'Qofiya — ritmik vosita, qolganlari ritmik bo‘laklar.' },
+      { items: ['pauza', 'qofiya', 'radif', 'band'], answer: 3, why: 'Band — ritmik bo‘lak, qolganlari ritmik vositalar.' },
+      { items: ['g‘azal', 'she’r', 'doston', 'hikoya'], answer: 3, why: 'Hikoya — nasriy asar.' },
+    ],
+    debate: [
+      { claim: 'Qofiyasiz she’r — she’r emas.', pro: 'Qofiya she’rni musiqiy qiladi.', con: 'Erkin she’rda qofiya bo‘lmasa ham ritm va obraz bor.' },
+    ],
+    creative: [
+      { task: 'Ismingizni bo‘g‘inlarga bo‘lib qarsak bilan ayting, so‘ng unga qofiyadosh 2 so‘z toping.', time: 60 },
+      { task: '4+4+4 tartibida bitta misra to‘qing (12 bo‘g‘in).', time: 120 },
+    ],
+  },
+
+  /* ===================== 10. 1-BSB: Taassurot yozish ===================== */
+  {
+    id: 'ad9-bsb-taassurot',
+    source: 'I chorak • 10-dars • 1-BSB (50 ball)',
+    title: '1-BSB. Taassurot yozish',
+    short: 'Taassurot nima, qanday tuziladi, baholash mezoni va 1–9-darslar bo‘yicha takrorlash',
+    theme: { emoji: '📝', grad: 'from-slate-800 via-blue-800 to-indigo-600', border: 'border-indigo-200', tag: 'Bo‘lim bo‘yicha summativ baholash' },
+    lesson: [
+      {
+        title: 'Bugun siz — muallif!',
+        emoji: '🎯',
+        text: 'Bu darsda «Milliy xotira va inson qismati» bo‘limida o‘qigan asarlaringizdan biri haqida taassurot yozasiz. Taassurot — sizning shaxsiy nigohingiz, his-tuyg‘ularingiz va fikringiz.',
+        facts: [
+          { n: '50', l: 'ball — maksimal baho' },
+          { n: '1', l: 'asar tanlanadi' },
+          { n: '150+', l: 'so‘z (tavsiya)' },
+        ],
+      },
+      {
+        title: 'Taassurot nima va nima emas?',
+        emoji: '🔍',
+        vs: {
+          q: 'Farqlang',
+          a: { t: '✅ Taassurot', pts: ['«Meni ... hayratga soldi»', 'Shaxsiy his va fikr', 'Matndan dalil bilan', 'O‘z hayotingiz bilan bog‘lash'] },
+          b: { t: '❌ Taassurot emas', pts: ['Asarni qayta hikoya qilish', 'Darslikdan ko‘chirish', 'Faktlar ro‘yxati', '«Asar menga yoqdi» — va tamom'] },
+        },
+      },
+      {
+        title: 'Tuzilma: uch qavatli uy',
+        emoji: '🏠',
+        steps: [
+          { e: '🚪', t: 'Kirish (2–3 gap)', d: 'Qaysi asar? Uni o‘qib birinchi qanday tuyg‘u paydo bo‘ldi?' },
+          { e: '🛋️', t: 'Asosiy qism (5–8 gap)', d: 'Eng ta’sirli lavha yoki qahramon; nega ta’sir qildi? Matndan 1–2 misol/misra keltiring.' },
+          { e: '🌅', t: 'Xulosa (2–3 gap)', d: 'Asar sizga nima o‘rgatdi? Hayotingizda nimani o‘zgartirdi?' },
+        ],
+      },
+      {
+        title: 'Mavzu tanlang',
+        emoji: '🎡',
+        text: 'Quyidagilardan birini tanlang yoki ustoz baraban orqali taqsimlasin:',
+        cards: [
+          { e: '🌹', t: 'Barchin — mening nazarimda', d: 'Qahramon qizning qaysi fazilati sizni hayratga soldi?' },
+          { e: '🤝', t: 'Qorajon: do‘stlik nima?', d: 'Dushmanlikdan do‘stlikka o‘tgan alp haqida.' },
+          { e: '🇺🇿', t: '«Bolamga “Vatan”, de ilk bora»', d: 'Xayrlashuv she’ri uyg‘otgan tuyg‘ular.' },
+          { e: '🐫', t: '«Karvon ko‘rdim...»: mard oshiq', d: 'Muhabbat va kechirimlilik haqida.' },
+          { e: '🎶', t: 'Elbek baxshining nasihati', d: '«Chida, lekin kuyla» — bu bugun ham kerakmi?' },
+          { e: '🖋️', t: '«Adabiyot yashasa — millat yashar»', d: 'Cho‘lpon fikri va mening hayotim.' },
+        ],
+      },
+      {
+        title: 'Yaxshi boshlanmalar',
+        emoji: '✨',
+        reveal: [
+          { q: 'Savol bilan boshlash', a: '«Inson uchun eng aziz so‘z qaysi? “Alpomish va Barchinoy xayrlashuvi”ni o‘qigach, men bu savolga javob topdim...»' },
+          { q: 'Lavha bilan boshlash', a: '«Barchin qulmixlarni tishi bilan sug‘urib olgan lahza ko‘z oldimdan ketmaydi...»' },
+          { q: 'Iqtibos bilan boshlash', a: '«“Adabiyot yashasa — millat yashar”. Cho‘lponning bu so‘zlari...»' },
+          { q: 'Shaxsiy tajriba bilan', a: '«Men ham bir marta do‘stimni himoya qilishga majbur bo‘lganman. Qorajonni o‘qiganda shuni esladim...»' },
+        ],
+      },
+      {
+        title: 'Baholash mezoni (50 ball)',
+        emoji: '📊',
+        text: 'Taxminiy mezon — ustoz o‘z ehtiyojiga ko‘ra o‘zgartirishi mumkin:',
+        table: {
+          head: ['Mezon', 'Ball'],
+          rows: [
+            ['Mavzuga moslik va shaxsiy munosabat', '10'],
+            ['Asar matnini bilish, dalil va misollar', '10'],
+            ['Tuzilma: kirish — asosiy qism — xulosa', '10'],
+            ['Fikrning teranligi, mustaqilligi', '10'],
+            ['Imlo, tinish belgilari, nutq madaniyati', '10'],
+          ],
+        },
+      },
+      {
+        title: 'Tez-tez uchraydigan xatolar',
+        emoji: '⚠️',
+        cards: [
+          { e: '📚', t: 'Qayta hikoya', d: 'Butun voqeani aytib berish — taassurot emas.' },
+          { e: '🌀', t: 'Umumiy gaplar', d: '«Juda zo‘r asar, hamma o‘qisin» — dalilsiz.' },
+          { e: '✂️', t: 'Ko‘chirish', d: 'Darslikdagi savollar javobini so‘zma-so‘z yozish.' },
+          { e: '🔚', t: 'Xulosasizlik', d: 'Fikr birdan uzilib qoladi.' },
+        ],
+        mission: { t: 'Yozish vaqti', d: 'Rejangizni tuzing (2 daqiqa), so‘ng taassurotingizni yozing. Oxirida mezon bo‘yicha o‘zingizni tekshiring!', sec: 1500 },
+      },
+    ],
+    pairs: [
+      ['Cho‘lpon', '«Adabiyot nadur?»'],
+      ['Barchin', 'to‘rt shart qo‘ygan qiz'],
+      ['Qorajon', 'qalmoqdan chiqqan do‘st'],
+      ['Elbek baxshi', '«Chidagin, bolam»'],
+      ['Oytuman', 'karvonda ketgan yor'],
+      ['Usmon Azim', '«Tong titraydi...»'],
+      ['Radif', 'qofiyadan keyingi takror'],
+      ['Taassurot', 'shaxsiy his va fikr'],
+    ],
+    quiz: [
+      { q: '«Adabiyot yashasa — millat yashar» kimning fikri?', options: ['Cho‘lpon', 'Usmon Azim', 'Navoiy', 'Fozil Yo‘ldosh o‘g‘li'], answer: 0 },
+      { q: 'Alpomishning asl ismi:', options: ['Hakimbek', 'Qorajon', 'Boybo‘ri', 'Ko‘kaldosh'], answer: 0 },
+      { q: 'Barchin necha shart qo‘ygan?', options: ['to‘rt', 'uch', 'olti', 'yetti'], answer: 0 },
+      { q: 'Boychibor tuyog‘iga mix kim qoqtirgan?', options: ['qalmoq alplari', 'Qorajon', 'Qultoy', 'Boysari'], answer: 0 },
+      { q: 'Elomon kimning shogirdi?', options: ['Elbek baxshi', 'Ochil buva', 'Qultoy', 'Cho‘lpon'], answer: 0 },
+      { q: '«Karvon ko‘rdim...»dagi yorning ismi:', options: ['Oytuman', 'Barchin', 'Shirin', 'Qaldirg‘och'], answer: 0 },
+      { q: 'Barmoq tizimida asosiy mezon:', options: ['bo‘g‘inlar soni', 'bo‘g‘in sifati', 'qofiya', 'radif'], answer: 0 },
+      { q: 'Taassurotda nima bo‘lishi shart emas?', options: ['butun voqeani qayta hikoya qilish', 'shaxsiy fikr', 'matndan dalil', 'xulosa'], answer: 0 },
+    ],
+    sort: {
+      categories: ['«Alpomish» dostoni', 'Usmon Azim she’rlari'],
+      items: [
+        { text: 'Boychibor', cat: 0 }, { text: 'Elomon', cat: 1 },
+        { text: 'Ko‘kaldosh', cat: 0 }, { text: 'Oytuman', cat: 1 },
+        { text: 'Yartiboy', cat: 0 }, { text: 'she’riyat pichog‘i', cat: 1 },
+        { text: 'qulmix', cat: 0 }, { text: 'dengizdagi yulduzlar', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'Bo‘limdagi darslar tartibi',
+        items: ['«Adabiyot nadur?»', '«Alpomish» dostoni', '«Alpomish va Barchinoy xayrlashuvi»', '«Baxshiyona»', '«Karvon ko‘rdim...»', '«Tong titraydi...»', 'She’riy nutq'],
+      },
+    ],
+    qa: [
+      { q: 'Taassurot qanday qismlardan iborat?', a: 'Kirish, asosiy qism va xulosa.' },
+      { q: 'Taassurotda matndan dalil nega kerak?', a: 'Fikringiz asosli va ishonarli bo‘lishi uchun.' },
+      { q: 'Bo‘limdagi qaysi qahramon sizga eng yaqin? Nega?', a: 'Erkin javob — bitta dalil bilan.' },
+      { q: '«Alpomish» nega milliy qadriyatlar qomusi?', a: 'Unda ming yillik urf-odat, marosim va qadriyatlar saqlangan.' },
+      { q: 'Usmon Azimning qaysi she’ri ijod haqida?', a: '«Tong titraydi kech kuzakning quchog‘ida».' },
+    ],
+    odd: [
+      { items: ['kirish', 'asosiy qism', 'xulosa', 'mundarija'], answer: 3, why: 'Mundarija taassurot tuzilmasiga kirmaydi.' },
+      { items: ['Barchin', 'Qorajon', 'Qaldirg‘och', 'Oytuman'], answer: 3, why: 'Oytuman — «Karvon ko‘rdim...» qahramoni, qolganlari dostondan.' },
+    ],
+    debate: [
+      { claim: 'Taassurotda «menga yoqmadi» deb yozish mumkin.', pro: 'Taassurot — shaxsiy fikr, u halol bo‘lishi kerak.', con: 'Mumkin, lekin faqat asosli dalil bilan.' },
+    ],
+    creative: [
+      { task: 'Taassurotingiz uchun jozibali sarlavha o‘ylab toping va sinfga ayting.', time: 60 },
+      { task: 'Bo‘limdagi asarlardan birini 3 ta emoji bilan ifodalang, sinf topsin!', time: 90 },
+    ],
+  },
+];
+
 const CONTENT = {
-  adabiyot: { 8: [...ADABIYOT_8, ...ADABIYOT_8_P2, ...ADABIYOT_8_P3, ...ADABIYOT_8_P4, ...ADABIYOT_8_P5] },
+  adabiyot: { 8: [...ADABIYOT_8, ...ADABIYOT_8_P2, ...ADABIYOT_8_P3, ...ADABIYOT_8_P4, ...ADABIYOT_8_P5], 9: [...ADABIYOT_9] },
   'ona-tili': { 8: [...ONA_TILI_8, ...ONA_TILI_8_PART2, ...ONA_TILI_8_PART3, ...ONA_TILI_8_PART4, ...ONA_TILI_8_PART5, ...ONA_TILI_8_PART6, ...ONA_TILI_8_PART7, ...ONA_TILI_8_PART8], 9: [...ONA_TILI_9, ...ONA_TILI_9_P2, ...ONA_TILI_9_P3, ...ONA_TILI_9_P4, ...ONA_TILI_9_P5, ...ONA_TILI_9_P6, ...ONA_TILI_9_P7, ...ONA_TILI_9_P8] },
 };
 
@@ -28263,9 +29661,16 @@ function TopicCard({ t, i, onPick, onEditSet, onDeleteSet }) {
   return (
     <div className="flex flex-col rounded-3xl border-2 border-blue-100 bg-white p-6 transition hover:border-blue-400 hover:shadow-lg">
       <div className="flex items-start gap-4">
-        <div className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl text-2xl font-extrabold text-white ${t.custom ? 'bg-violet-600' : 'bg-blue-900'}`}>
-          {t.custom ? <NotebookPen size={28} /> : i + 1}
-        </div>
+        {t.theme && !t.custom ? (
+          <div className={`relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br text-3xl shadow-md ${t.theme.grad}`}>
+            {t.theme.emoji}
+            <span className="absolute -bottom-1.5 -right-1.5 flex h-6 min-w-6 items-center justify-center rounded-full bg-blue-900 px-1 text-xs font-black text-white ring-2 ring-white">{i + 1}</span>
+          </div>
+        ) : (
+          <div className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl text-2xl font-extrabold text-white ${t.custom ? 'bg-violet-600' : 'bg-blue-900'}`}>
+            {t.custom ? <NotebookPen size={28} /> : i + 1}
+          </div>
+        )}
         <div className="min-w-0">
           <h3 className="text-2xl font-extrabold text-blue-950">{t.title}</h3>
           {t.source && <span className="mt-2 inline-flex items-center gap-1 rounded-full bg-blue-50 px-3 py-1 text-sm font-bold text-blue-700"><BookOpen size={14} /> {t.source}</span>}
@@ -28987,6 +30392,193 @@ function AdminRatingTab({ loadGlobal }) {
   );
 }
 
+/* ---------- Slayd uchun qo‘shimcha kreativ elementlar ---------- */
+const X_TONES = [
+  { bg: 'bg-amber-50', ring: 'ring-amber-200', text: 'text-amber-900', chip: 'bg-amber-500' },
+  { bg: 'bg-rose-50', ring: 'ring-rose-200', text: 'text-rose-900', chip: 'bg-rose-500' },
+  { bg: 'bg-emerald-50', ring: 'ring-emerald-200', text: 'text-emerald-900', chip: 'bg-emerald-500' },
+  { bg: 'bg-sky-50', ring: 'ring-sky-200', text: 'text-sky-900', chip: 'bg-sky-500' },
+  { bg: 'bg-violet-50', ring: 'ring-violet-200', text: 'text-violet-900', chip: 'bg-violet-500' },
+  { bg: 'bg-orange-50', ring: 'ring-orange-200', text: 'text-orange-900', chip: 'bg-orange-500' },
+];
+
+function XReveal({ q, a, k }) {
+  const [open, setOpen] = useState(false);
+  const tone = X_TONES[k % X_TONES.length];
+  return (
+    <button
+      onClick={() => setOpen((v) => !v)}
+      className={`group relative min-h-[150px] w-full rounded-3xl p-5 text-left ring-2 transition active:scale-[.98] ${open ? `${tone.bg} ${tone.ring}` : 'bg-slate-900 ring-slate-900 hover:-translate-y-0.5 hover:shadow-xl'}`}
+    >
+      <span className={`absolute right-4 top-4 rounded-full px-3 py-1 text-xs font-extrabold uppercase tracking-wide ${open ? 'bg-white text-slate-500' : 'bg-white/15 text-white/80'}`}>
+        {open ? 'Javob' : 'Bosing'}
+      </span>
+      <span className={`block pr-16 text-xl md:text-2xl font-extrabold leading-snug ${open ? 'text-slate-500 text-lg md:text-xl' : 'text-white'}`}>{q}</span>
+      {open && <span className={`mt-3 block text-xl md:text-2xl font-bold leading-relaxed ${tone.text}`}>{a}</span>}
+      {!open && <span className="mt-4 inline-flex items-center gap-2 text-base font-bold text-amber-300"><Sparkles size={18} /> javobni ochish</span>}
+    </button>
+  );
+}
+
+function XVote({ vs }) {
+  const [votes, setVotes] = useState([0, 0]);
+  const total = votes[0] + votes[1];
+  const side = (k, d) => (
+    <div className={`flex flex-col rounded-3xl p-5 ring-2 ${k === 0 ? 'bg-sky-50 ring-sky-200' : 'bg-rose-50 ring-rose-200'}`}>
+      <div className={`text-2xl font-black ${k === 0 ? 'text-sky-900' : 'text-rose-900'}`}>{d.t}</div>
+      <ul className="mt-3 flex-1 space-y-2">
+        {(d.pts || []).map((p) => (
+          <li key={p} className="flex gap-2 text-lg md:text-xl leading-relaxed text-slate-700"><span className={k === 0 ? 'text-sky-500' : 'text-rose-500'}>●</span>{p}</li>
+        ))}
+      </ul>
+      <div className="mt-4 flex items-center gap-3">
+        <button onClick={() => setVotes((v) => v.map((x, j) => (j === k ? x + 1 : x)))} className={`inline-flex items-center gap-2 rounded-2xl px-5 py-3 text-lg font-extrabold text-white shadow active:scale-95 ${k === 0 ? 'bg-sky-600 hover:bg-sky-700' : 'bg-rose-600 hover:bg-rose-700'}`}>
+          <ThumbsUp size={22} /> Qo‘l ko‘tardi
+        </button>
+        <span className={`text-4xl font-black tabular-nums ${k === 0 ? 'text-sky-700' : 'text-rose-700'}`}>{votes[k]}</span>
+      </div>
+    </div>
+  );
+  return (
+    <div className="mt-6">
+      {vs.q && <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-1.5 text-base font-extrabold text-white"><Scale size={18} /> {vs.q}</div>}
+      <div className="grid gap-4 md:grid-cols-2">{side(0, vs.a)}{side(1, vs.b)}</div>
+      {total > 0 && (
+        <div className="mt-3 flex h-4 overflow-hidden rounded-full bg-slate-100">
+          <div className="bg-sky-500 transition-all" style={{ width: `${(votes[0] / total) * 100}%` }} />
+          <div className="bg-rose-500 transition-all" style={{ width: `${(votes[1] / total) * 100}%` }} />
+        </div>
+      )}
+    </div>
+  );
+}
+
+function XMission({ m }) {
+  const [left, setLeft] = useState(null);
+  useEffect(() => {
+    if (left === null || left <= 0) return undefined;
+    const t = setTimeout(() => setLeft((x) => x - 1), 1000);
+    return () => clearTimeout(t);
+  }, [left]);
+  const mm = left === null ? null : `${Math.floor(left / 60)}:${String(left % 60).padStart(2, '0')}`;
+  return (
+    <div className="mt-6 overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 to-indigo-900 p-6 text-white shadow-xl">
+      <div className="flex flex-wrap items-center gap-3">
+        <span className="inline-flex items-center gap-2 rounded-full bg-amber-400 px-4 py-1 text-base font-black text-amber-950"><Target size={18} /> {m.t || 'Topshiriq'}</span>
+        {m.who && <span className="rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-white/80">{m.who}</span>}
+      </div>
+      <p className="mt-3 text-xl md:text-2xl font-semibold leading-relaxed">{m.d}</p>
+      {m.sec && (
+        <div className="mt-4 flex items-center gap-4">
+          <button onClick={() => setLeft(m.sec)} className="inline-flex items-center gap-2 rounded-2xl bg-white px-5 py-3 text-lg font-extrabold text-indigo-900 active:scale-95"><Timer size={22} /> {left === null ? `${Math.round(m.sec / 60 * 10) / 10} daqiqa — boshlash` : 'Qayta boshlash'}</button>
+          {mm && <span className={`text-4xl font-black tabular-nums ${left === 0 ? 'text-rose-300' : 'text-amber-300'}`}>{left === 0 ? 'Vaqt tugadi!' : mm}</span>}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function SlideExtras({ s }) {
+  return (
+    <>
+      {s.quote && (
+        <figure className="relative mt-6 overflow-hidden rounded-3xl bg-gradient-to-br from-stone-50 to-amber-50 p-6 md:p-8 ring-2 ring-amber-100">
+          <Quote size={80} className="absolute -right-2 -top-2 text-amber-200" />
+          <blockquote className="relative text-2xl md:text-3xl font-bold leading-snug text-stone-800">«{s.quote.text}»</blockquote>
+          {s.quote.by && <figcaption className="relative mt-3 text-lg font-extrabold text-amber-700">— {s.quote.by}</figcaption>}
+        </figure>
+      )}
+
+      {s.facts?.length > 0 && (
+        <div className={`mt-6 grid gap-3 ${s.facts.length >= 4 ? 'grid-cols-2 lg:grid-cols-4' : 'grid-cols-2 md:grid-cols-3'}`}>
+          {s.facts.map((f, k) => {
+            const tone = X_TONES[k % X_TONES.length];
+            return (
+              <div key={k} className={`rounded-3xl p-5 text-center ring-2 ${tone.bg} ${tone.ring}`}>
+                <div className={`text-4xl md:text-5xl font-black tabular-nums ${tone.text}`}>{f.n}</div>
+                <div className="mt-1 text-base md:text-lg font-semibold leading-snug text-slate-600">{f.l}</div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {s.cards?.length > 0 && (
+        <div className={`mt-6 grid gap-4 ${s.cards.length === 2 ? 'md:grid-cols-2' : s.cards.length === 4 ? 'sm:grid-cols-2' : 'sm:grid-cols-2 lg:grid-cols-3'}`}>
+          {s.cards.map((c, k) => {
+            const tone = X_TONES[k % X_TONES.length];
+            return (
+              <div key={k} className={`rounded-3xl p-5 ring-2 transition hover:-translate-y-0.5 hover:shadow-lg ${tone.bg} ${tone.ring}`}>
+                <div className="flex items-center gap-3">
+                  {c.e && <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white text-3xl shadow-sm">{c.e}</span>}
+                  <span className={`text-xl md:text-2xl font-black leading-tight ${tone.text}`}>{c.t}</span>
+                </div>
+                {c.d && <p className="mt-3 text-lg md:text-xl leading-relaxed text-slate-700">{c.d}</p>}
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {s.steps?.length > 0 && (
+        <ol className="relative mt-6 space-y-4 pl-2">
+          <span className="absolute bottom-6 left-[1.6rem] top-6 w-1 rounded-full bg-gradient-to-b from-amber-300 via-rose-300 to-violet-300" />
+          {s.steps.map((st, k) => {
+            const tone = X_TONES[k % X_TONES.length];
+            return (
+              <li key={k} className="relative flex gap-4">
+                <span className={`relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-xl font-black text-white shadow-lg ${tone.chip}`}>{st.e || k + 1}</span>
+                <div className={`flex-1 rounded-2xl p-4 ring-2 ${tone.bg} ${tone.ring}`}>
+                  <div className={`text-xl md:text-2xl font-extrabold ${tone.text}`}>{st.t}</div>
+                  {st.d && <p className="mt-1 text-lg md:text-xl leading-relaxed text-slate-700">{st.d}</p>}
+                </div>
+              </li>
+            );
+          })}
+        </ol>
+      )}
+
+      {s.chat?.length > 0 && (
+        <div className="mt-6 space-y-3 rounded-3xl bg-slate-50 p-4 md:p-6 ring-2 ring-slate-100">
+          {s.chat.map((m, k) => {
+            const right = m.side === 'r';
+            return (
+              <div key={k} className={`flex items-end gap-3 ${right ? 'flex-row-reverse' : ''}`}>
+                <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-2xl shadow ${right ? 'bg-rose-100' : 'bg-sky-100'}`}>{m.e || (right ? '🙂' : '🙂')}</span>
+                <div className={`max-w-[80%] rounded-3xl px-5 py-3 shadow-sm ${right ? 'rounded-br-md bg-rose-600 text-white' : 'rounded-bl-md bg-white text-slate-800 ring-1 ring-slate-200'}`}>
+                  <div className={`text-sm font-extrabold uppercase tracking-wide ${right ? 'text-rose-100' : 'text-sky-600'}`}>{m.who}</div>
+                  <div className="text-lg md:text-xl leading-relaxed">{m.text}</div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {s.doc && (
+        <div className="relative mt-6 rotate-[-0.6deg] rounded-2xl bg-[#fdf6e3] p-6 md:p-8 shadow-xl ring-1 ring-amber-200" style={{ backgroundImage: 'repeating-linear-gradient(transparent, transparent 38px, rgba(180,140,60,.15) 39px)' }}>
+          <div className="mb-2 flex items-center gap-2 text-base font-black uppercase tracking-widest text-amber-800"><Mail size={20} /> {s.doc.title}</div>
+          <p className="font-serif text-2xl md:text-3xl italic leading-[39px] text-stone-800">{s.doc.text}</p>
+          {s.doc.from && <p className="mt-3 text-right text-lg font-bold text-amber-800">— {s.doc.from}</p>}
+        </div>
+      )}
+
+      {s.vs && <XVote vs={s.vs} />}
+
+      {s.reveal?.length > 0 && (
+        <div className="mt-6">
+          <div className="mb-3 inline-flex items-center gap-2 text-base font-extrabold uppercase tracking-wide text-slate-400"><Eye size={18} /> Avval o‘ylang, keyin oching</div>
+          <div className={`grid gap-4 ${s.reveal.length > 1 ? 'md:grid-cols-2' : ''}`}>
+            {s.reveal.map((r, k) => <XReveal key={k} k={k} q={r.q} a={r.a} />)}
+          </div>
+        </div>
+      )}
+
+      {s.mission && <XMission m={s.mission} />}
+    </>
+  );
+}
+
 function SlideBody({ s }) {
   return (
     <>
@@ -29054,6 +30646,8 @@ function SlideBody({ s }) {
           </div>
         </div>
       )}
+
+      <SlideExtras s={s} />
 
       {s.note && (
         <div className="mt-6 flex gap-3 rounded-2xl border-2 border-amber-200 bg-amber-50 p-5 text-lg md:text-xl leading-relaxed text-amber-900">
@@ -29128,7 +30722,23 @@ function LessonScreen({ topic, onBack, onGames }) {
               <button key={k} onClick={() => setI(k)} className={`h-3 flex-1 rounded-full transition ${k <= i ? 'bg-blue-600' : 'bg-blue-100'}`} aria-label={`${k + 1}-slayd`} />
             ))}
           </div>
-          <div key={i} className="dp-pop min-h-[460px] rounded-[2rem] border-2 border-blue-100 bg-white p-6 md:p-10 shadow-xl shadow-blue-900/5">
+          {topic.theme ? (
+            <div key={i} className={`dp-pop min-h-[460px] overflow-hidden rounded-[2rem] border-2 bg-white shadow-xl shadow-blue-900/5 ${topic.theme.border || 'border-blue-100'}`}>
+              <div className={`relative flex items-center gap-4 overflow-hidden bg-gradient-to-r px-6 py-4 text-white md:px-10 ${topic.theme.grad}`}>
+                <span className="pointer-events-none absolute -right-4 -top-6 select-none text-[8rem] leading-none opacity-20">{s.emoji || topic.theme.emoji}</span>
+                <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white/20 text-4xl shadow-inner ring-1 ring-white/30">{s.emoji || topic.theme.emoji}</span>
+                <div className="relative min-w-0">
+                  <div className="truncate text-sm font-extrabold uppercase tracking-widest text-white/80">{topic.theme.tag}</div>
+                  <div className="text-lg font-bold">{i + 1}-slayd / {slides.length}</div>
+                </div>
+              </div>
+              <div className="p-6 md:p-10">
+                <h2 className="text-3xl md:text-4xl font-extrabold text-blue-950">{s.title}</h2>
+                <SlideBody s={s} />
+              </div>
+            </div>
+          ) : (
+            <div key={i} className="dp-pop min-h-[460px] rounded-[2rem] border-2 border-blue-100 bg-white p-6 md:p-10 shadow-xl shadow-blue-900/5">
             <div className="flex items-center gap-3 text-blue-600">
               <Lightbulb size={28} />
               <span className="text-lg font-bold">{i + 1} / {slides.length}</span>
@@ -29136,6 +30746,7 @@ function LessonScreen({ topic, onBack, onGames }) {
             <h2 className="mt-3 text-3xl md:text-4xl font-extrabold text-blue-950">{s.title}</h2>
             <SlideBody s={s} />
           </div>
+          )}
           <div className="sticky bottom-3 z-10 mt-6 flex items-center justify-between gap-4 rounded-3xl bg-white/90 p-3 shadow-xl shadow-blue-900/10 ring-1 ring-blue-100 backdrop-blur">
             <button
               onClick={() => setI((x) => Math.max(x - 1, 0))}
