@@ -18,7 +18,7 @@ import {
   Minus, Loader2, UserCheck, KeyRound, ShieldCheck, Copy, EyeOff, Search, UserPlus, Pencil, Building2, LogIn, RefreshCw, Settings, ChevronDown, LayoutGrid, CameraOff, Trash2, Save, Ruler, Bomb, Gift, Repeat, Zap,
   ThumbsUp, ThumbsDown, Puzzle, Heart, Crown, Rocket, Flag, Dices, SpellCheck,
   Volume2, VolumeX, History, Medal, CalendarDays, Star, ListPlus, NotebookPen, CircleHelp,
-  ListOrdered, Shapes, Scale, Palette,
+  ListOrdered, Shapes, Scale, Palette, Type, SpellCheck2,
 } from 'lucide-react';
 
 /* ============================================================
@@ -16031,9 +16031,1402 @@ const ADABIYOT_8_P5 = [
   },
 ];
 
+/* --- 9-sinf Ona tili (2025-yil darsligi): I bo‘lim 1–8-darslar, II bo‘lim 1–2-darslar (7–36-betlar) --- */
+const ONA_TILI_9 = [
+  /* ===================== 1 ===================== */
+  {
+    id: 'ot9-1',
+    source: 'I bo‘lim. Ona yurt • 1-dars • 7–9-betlar',
+    title: '«O‘lkamizning asl farzandlari». Sinonimlar',
+    short: 'Jadidlar haqidagi matn, so‘zning matndagi ma’nosi va sinonim tanlash',
+    lesson: [
+      {
+        title: 'Mutolaadan oldin',
+        list: [
+          'Vatan deganda ko‘z oldingizda kim yoki nimalar gavdalanadi? Uchtasini ayting.',
+          '«Ona yurt» mavzusida rasm chizsangiz, qaysi ranglardan foydalanardingiz?',
+          'Insonni yurti mashhur qiladimi yoki yurtini inson?',
+        ],
+      },
+      {
+        title: 'Matn mazmuni: jadidlar',
+        text: 'XX asr boshlarida yurtimizda millat yukini yelkasiga olgan ziyolilar maydonga chiqdi. Ular yangicha hayot, yangicha dunyoqarash va ma’rifatli xalqni ko‘rishni istadi.',
+        list: [
+          'Jadidlarning ko‘pi badavlat oilalar farzandlari edi, lekin boyligini millat ma’rifatiga sarfladi.',
+          'Bepul ta’lim beradigan yangi usul maktablari ochildi, kutubxonalar barpo etildi, darsliklar yozildi.',
+          'Yuzlab yoshlar Germaniya, Turkiya, Rossiya dorilfununlariga o‘qishga yuborildi.',
+          'Teatrlar, gazeta va jurnallar orqali xalq dunyoqarashini o‘zgartirishga harakat qilindi.',
+          'Mustamlakachilik tuzumi ularni «qatag‘on mashinasi»da nobud qildi.',
+        ],
+        note: 'Yurtning asl farzandlari: Munavvarqori Abdurashidxonov, Cho‘lpon, Abdurauf Fitrat, Abdulla Qodiriy, Mahmudxo‘ja Behbudiy, Abdulla Avloniy, Elbek, Botu va boshqalar.',
+      },
+      {
+        title: 'Asosiy fikr',
+        rule: 'Millatning bilimsizlik botqog‘idan qutulishining yagona yo‘li — ma’rifat bayrog‘ini mahkam tutish. Jadidlar taraqqiyotning kaliti ilm va ma’rifat ekanini anglagan.',
+        ruleLabel: 'Matn g‘oyasi',
+      },
+      {
+        title: 'Sinonimlar',
+        rule: 'Sinonimlar — shakli har xil, ma’nosi bir xil yoki yaqin bo‘lgan so‘zlar. Bir nechta sinonimdan tuzilgan qator sinonimik qator deyiladi.',
+        ruleLabel: 'Qoida',
+        text: 'Sinonimlar ma’no nozikligi, uslubi yoki qo‘llanish doirasi bilan farqlanadi. Masalan: yuz — bet — chehra — aft. «Chehra» badiiy, «aft» salbiy bo‘yoqli.',
+        note: 'Matndagi so‘zga sinonim tanlashda uning aynan shu gapdagi ma’nosiga qarash kerak. Bir so‘z turli gapda turli sinonimga ega bo‘lishi mumkin.',
+      },
+      {
+        title: 'Matndagi so‘zlar va sinonimlari',
+        table: {
+          head: ['So‘z (matnda)', 'Sinonimi'],
+          rows: [
+            ['istamoq', 'xohlamoq'],
+            ['yelkasiga olmoq', 'zimmasiga olmoq, ko‘tarmoq'],
+            ['taraqqiy etmoq', 'rivojlanmoq, o‘smoq'],
+            ['ommaviy', 'umumiy'],
+            ['dorilfunun', 'universitet'],
+            ['undamoq', 'da’vat qilmoq'],
+            ['nobud qilmoq', 'yo‘q qilmoq'],
+            ['astoydil', 'sidqidildan'],
+            ['asl', 'chinakam'],
+          ],
+        },
+      },
+      {
+        title: 'Javobga savol tuzish',
+        text: 'Matn asosida chiqarilgan hukmga savol tuzganda so‘roq so‘zi gapning qaysi qismiga qaratilganini aniqlang.',
+        table: {
+          head: ['Javob', 'Savol'],
+          rows: [
+            ['XX asr boshlarida ma’rifatli ziyolilar avlodi maydonga chiqdi.', 'XX asr boshlarida o‘lkamizda qanday avlod maydonga chiqdi?'],
+            ['Jadidlar boyligini xalq ma’rifati uchun sarflagan.', 'Jadidlar boyligini nima uchun sarflagan?'],
+            ['Jadidlar xalqning asl holini ko‘rsatish uchun teatr ochgan.', 'Jadidlar nima maqsadda teatrlar ochgan?'],
+          ],
+        },
+      },
+      {
+        title: 'Topshiriqlar',
+        list: [
+          'Jadidlar tilidan bugungi yoshlarga maktub yozing: «Vatanni sevish unga xizmat qilishdir» hikmatidan foydalaning.',
+          'Matn asosida davlat mustaqilligi qanchalik muhim ekani haqida xulosa yozing.',
+          'Xato yozilgan so‘zlarni tuzating: turmish, aksaryat, hohlamoq, kutibxona, zexnli, tiatr, faolyat.',
+        ],
+      },
+    ],
+    pairs: [
+      ['istamoq', 'xohlamoq'],
+      ['dorilfunun', 'universitet'],
+      ['undamoq', 'da’vat qilmoq'],
+      ['astoydil', 'sidqidildan'],
+      ['nobud qilmoq', 'yo‘q qilmoq'],
+      ['taraqqiy etmoq', 'rivojlanmoq'],
+      ['ommaviy', 'umumiy'],
+      ['asl', 'chinakam'],
+    ],
+    quiz: [
+      { q: 'Jadidlar qachon maydonga chiqqan?', options: ['XX asr boshlarida', 'XV asrda', 'XVIII asrda', '1991-yilda'], answer: 0 },
+      { q: 'Jadidlar taraqqiyotning kaliti deb nimani bilgan?', options: ['ilm va ma’rifat', 'boylik', 'qurol', 'savdo'], answer: 0 },
+      { q: '«Dorilfunun» so‘zining sinonimi?', options: ['universitet', 'maktab', 'kutubxona', 'teatr'], answer: 0 },
+      { q: 'Sinonimlar qanday so‘zlar?', options: ['ma’nosi bir xil yoki yaqin', 'ma’nosi zid', 'talaffuzi bir xil', 'o‘zagi bir xil'], answer: 0 },
+      { q: '«Astoydil» so‘zining sinonimi?', options: ['sidqidildan', 'birdan', 'asta-sekin', 'yuzaki'], answer: 0 },
+      { q: 'Jadidlar yoshlarni qaysi mamlakatlarga o‘qishga yuborgan?', options: ['Germaniya, Turkiya, Rossiya', 'Xitoy, Hindiston', 'AQSH, Angliya', 'Eron, Misr'], answer: 0 },
+      { q: 'Qaysi biri to‘g‘ri yozilgan?', options: ['kutubxona', 'kutibxona', 'kutubhona', 'kitubxona'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Jadidlar qilgan ish', 'Mustamlakachilar qilgan ish'],
+      items: [
+        { text: 'yangi usul maktablari', cat: 0 }, { text: 'qatag‘on', cat: 1 },
+        { text: 'kutubxonalar', cat: 0 }, { text: 'ma’rifatni bo‘g‘ish', cat: 1 },
+        { text: 'gazeta-jurnallar', cat: 0 }, { text: 'jadidlarni nobud qilish', cat: 1 },
+        { text: 'teatrlar', cat: 0 }, { text: 'erkni cheklash', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Sinonimik qator nima?', a: 'Ma’nodosh so‘zlardan tuzilgan qator: yuz — bet — chehra — aft.' },
+      { q: 'Jadidlarning asl maqsadi nima edi?', a: 'O‘lkaning rivojlangan yurtlar qatoridan joy olishi, xalqning ma’rifatli bo‘lishi.' },
+      { q: 'Nega jadidlar maqsadiga to‘liq erisha olmadi?', a: 'Mustamlakachilik tuzumi ularni qatag‘on qildi.' },
+      { q: 'Matndagi so‘zga sinonim tanlashda nimaga e’tibor beriladi?', a: 'So‘zning aynan shu gapdagi ma’nosiga.' },
+      { q: 'Jadidlardan beshtasini ayting.', a: 'Behbudiy, Munavvarqori, Fitrat, Cho‘lpon, Abdulla Qodiriy (yana Avloniy, Elbek, Botu).' },
+    ],
+    letters: [
+      { w: '…ohlamoq', opts: ['x', 'h'], a: 'x' },
+      { w: 'xo…lamoq', opts: ['x', 'h'], a: 'h' },
+      { w: 'ze…nli', opts: ['x', 'h'], a: 'h' },
+      { w: '…alq', opts: ['x', 'h'], a: 'x' },
+      { w: 'ma’rifat…', opts: ['', '—'], a: '' },
+      { w: 'ta…dir', opts: ['q', 'k'], a: 'q' },
+      { w: 'tari…', opts: ['x', 'h'], a: 'x' },
+      { w: '…izmat', opts: ['x', 'h'], a: 'x' },
+      { w: 'mu…im', opts: ['x', 'h'], a: 'h' },
+      { w: 'kutub…ona', opts: ['x', 'h'], a: 'x' },
+    ].filter((x) => x.a !== ''),
+    spell: [
+      { opts: ['turmush', 'turmish'], a: 0 },
+      { opts: ['aksariyat', 'aksaryat'], a: 0 },
+      { opts: ['xohlamoq', 'hohlamoq'], a: 0 },
+      { opts: ['kutubxona', 'kutibxona'], a: 0 },
+      { opts: ['zehnli', 'zexnli'], a: 0 },
+      { opts: ['Germaniya', 'Germanya'], a: 0 },
+      { opts: ['Turkiya', 'Turkeya'], a: 0 },
+      { opts: ['Rossiya', 'Rassiya'], a: 0 },
+      { opts: ['teatr', 'tiatr'], a: 0 },
+      { opts: ['tuzum', 'tuzim'], a: 0 },
+      { opts: ['sa’y-harakat', 'sa’yi harakat'], a: 0 },
+      { opts: ['faoliyat', 'faolyat'], a: 0 },
+    ],
+    odd: [
+      { items: ['istamoq', 'xohlamoq', 'tilamoq', 'qochmoq'], answer: 3, why: 'Qolganlari sinonimlar.' },
+      { items: ['Behbudiy', 'Fitrat', 'Cho‘lpon', 'Navoiy'], answer: 3, why: 'Navoiy — XV asr shoiri; qolganlari jadidlar.' },
+      { items: ['maktab', 'kutubxona', 'teatr', 'qatag‘on'], answer: 3, why: 'Qatag‘on — mustamlakachilar ishi; qolganlarini jadidlar ochgan.' },
+    ],
+  },
+
+  /* ===================== 2 ===================== */
+  {
+    id: 'ot9-2',
+    source: 'I bo‘lim. Ona yurt • 2-dars • 9–10-betlar',
+    title: 'Undosh tovushlarning talaffuzi va imlosi',
+    short: 'Jarangli-jarangsiz undoshlar, ikkilanadigan va qo‘sh undoshlar imlosi',
+    lesson: [
+      {
+        title: 'Talaffuz va imlo farqi',
+        rule: 'So‘z tarkibida kelgan ayrim undosh tovushlar talaffuzi va imlosi bir-biridan farq qiladi. Bunday so‘zlar talaffuziga qarab emas, asliga muvofiq yoziladi.',
+        ruleLabel: 'Asosiy qoida',
+        note: 'Shubha tug‘ilganda so‘zga unli bilan boshlanuvchi qo‘shimcha qo‘shib tekshiring: barg → bargi (g eshitiladi), kitob → kitobi (b eshitiladi).',
+      },
+      {
+        title: '1-qoida: jarangli undosh jarangsizlashadi',
+        text: 'So‘z oxirida va ba’zan so‘z o‘rtasida kelgan jarangli undosh jarangsiz talaffuz qilinsa ham, asliga muvofiq jarangli yoziladi.',
+        table: {
+          head: ['Tovushlar', 'Talaffuzi', 'Yozilishi', 'Yana misollar'],
+          rows: [
+            ['B → P', 'iptido', 'ibtido', 'mubtalo, zarb etmoq, oftob'],
+            ['V → F', 'aftobus', 'avtobus', 'avtomobil, avtomat, avtor'],
+            ['D → T', 'estalik', 'esdalik', 'band, tadqiqot, limonad'],
+            ['Z → S', 'risq', 'rizq', 'iztirob, tuzsiz, izquvar'],
+            ['G → K', 'bark', 'barg', 'pedagog, tug‘gan, okrug'],
+          ],
+        },
+      },
+      {
+        title: '2-qoida: ikkilantirib aytiladigan undosh',
+        text: 'So‘z tarkibida ayrim undoshlar ikkilantirib talaffuz qilinsa ham, asliga muvofiq bitta yoziladi.',
+        examples: ['ovora (ovvora emas)', 'maza (mazza emas)', 'melodrama', 'tanovul'],
+      },
+      {
+        title: '3-qoida: qo‘sh undosh bitta aytiladi',
+        text: 'So‘z tarkibida yonma-yon kelgan ayrim undoshlar bitta talaffuz qilinsa ham, asliga muvofiq ikkita yoziladi.',
+        examples: ['muassasa', 'ssenariy', 'grammatika', 'kilovatt', 'stress', 'kommunal', 'mutaxassis', 'muvaffaq'],
+        note: 'Ruscha-baynalmilal so‘zlarda qo‘sh harf ko‘p uchraydi: klass, metall, kommunal. Ammo: diler, drama, tajovuz — bitta harf bilan.',
+      },
+      {
+        title: 'Tushirib qoldirilgan harfni topamiz',
+        table: {
+          head: ['Topshiriq', 'To‘g‘ri yozilishi'],
+          rows: [
+            ['Fransu…lar', 'fransuzlar'],
+            ['aja…tovur', 'ajabtovur'],
+            ['shogir…lar', 'shogirdlar'],
+            ['mansa…parast', 'mansabparast'],
+            ['nadoma…', 'nadomat'],
+            ['ijo…korlik', 'ijodkorlik'],
+            ['iska…topar', 'iskabtopar'],
+            ['ba…xulq', 'badxulq'],
+            ['qas…dan', 'qasddan'],
+            ['bunyo…kor', 'bunyodkor'],
+            ['ta…qiqot', 'tadqiqot'],
+            ['ta…simot', 'taqsimot'],
+          ],
+        },
+      },
+      {
+        title: 'Imlo lug‘atidan foydalaning',
+        list: [
+          'Shubhali so‘zni yozishdan oldin imlo lug‘atidan tekshiring.',
+          'So‘zning asl shaklini toping: mansabparast ← mansab + parast.',
+          'Qo‘shimcha qo‘shib tekshiring: tadqiqot → tadqiq; shogird → shogirdi.',
+        ],
+      },
+    ],
+    pairs: [
+      ['iptido (aytiladi)', 'ibtido (yoziladi)'],
+      ['aftobus (aytiladi)', 'avtobus (yoziladi)'],
+      ['estalik (aytiladi)', 'esdalik (yoziladi)'],
+      ['risq (aytiladi)', 'rizq (yoziladi)'],
+      ['bark (aytiladi)', 'barg (yoziladi)'],
+      ['ovvora (aytiladi)', 'ovora (yoziladi)'],
+      ['muasasa (aytiladi)', 'muassasa (yoziladi)'],
+      ['grammatika', 'qo‘sh m bilan yoziladi'],
+    ],
+    quiz: [
+      { q: '«Barg» so‘zi qanday talaffuz qilinadi, lekin qanday yoziladi?', options: ['bark deb aytiladi, barg yoziladi', 'barg deb aytiladi, bark yoziladi', 'ikkalasi ham bark', 'ikkalasi ham barg'], answer: 0 },
+      { q: 'Qaysi so‘z to‘g‘ri yozilgan?', options: ['tadqiqot', 'tatqiqot', 'tadkikot', 'tatkiqot'], answer: 0 },
+      { q: 'Qaysi so‘z qo‘sh harf bilan yoziladi?', options: ['muassasa', 'ovora', 'maza', 'tanovul'], answer: 0 },
+      { q: 'Qaysi so‘z ikkilantirib aytilsa ham bitta yoziladi?', options: ['ovora', 'kilovatt', 'ssenariy', 'grammatika'], answer: 0 },
+      { q: '«Avtobus»da qaysi tovush jarangsizlashadi?', options: ['v → f', 'b → p', 'd → t', 'z → s'], answer: 0 },
+      { q: 'To‘g‘ri yozilganini toping.', options: ['mutaxassis', 'mutaxasis', 'mutahassis', 'mutaxasiss'], answer: 0 },
+      { q: 'To‘g‘ri yozilganini toping.', options: ['drama', 'dramma', 'dirama', 'dramaa'], answer: 0 },
+      { q: '«Iztirob» qanday yoziladi?', options: ['z bilan', 's bilan', 'zz bilan', 'ss bilan'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Bitta harf bilan yoziladi', 'Qo‘sh harf bilan yoziladi'],
+      items: [
+        { text: 'ovora', cat: 0 }, { text: 'muassasa', cat: 1 },
+        { text: 'maza', cat: 0 }, { text: 'grammatika', cat: 1 },
+        { text: 'tajovuz', cat: 0 }, { text: 'kilovatt', cat: 1 },
+        { text: 'diler', cat: 0 }, { text: 'ssenariy', cat: 1 },
+        { text: 'drama', cat: 0 }, { text: 'kommunal', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Jarangli undosh jarangsiz aytilsa qanday yoziladi?', a: 'Asliga muvofiq jarangli yoziladi: barg, rizq, avtobus.' },
+      { q: 'Shubhali so‘zni qanday tekshirish mumkin?', a: 'Unli bilan boshlanadigan qo‘shimcha qo‘shib yoki imlo lug‘atidan.' },
+      { q: '«Ovora» va «muassasa» imlosidagi farqni tushuntiring.', a: '«Ovora» ikkilantirib aytilsa ham bitta v bilan, «muassasa» bitta aytilsa ham qo‘sh s bilan yoziladi.' },
+      { q: '«Mansabparast» so‘zida qaysi harf tushib qolishi mumkin?', a: 'b — mansab + parast, p ta’sirida b jarangsiz aytiladi.' },
+      { q: 'B → P o‘zgarishiga 3 ta misol ayting.', a: 'ibtido, mubtalo, oftob (yana: zarb etmoq).' },
+    ],
+    letters: [
+      { w: 'ta…qiqot', opts: ['d', 't'], a: 'd' },
+      { w: 'ba…xulq', opts: ['d', 't'], a: 'd' },
+      { w: 'shogir…lar', opts: ['d', 't'], a: 'd' },
+      { w: 'mansa…parast', opts: ['b', 'p'], a: 'b' },
+      { w: 'aja…tovur', opts: ['b', 'p'], a: 'b' },
+      { w: 'iska…topar', opts: ['b', 'p'], a: 'b' },
+      { w: 'nadoma…', opts: ['d', 't'], a: 't' },
+      { w: 'ta…simot', opts: ['q', 'k'], a: 'q' },
+      { w: 'fransu…lar', opts: ['z', 's'], a: 'z' },
+      { w: 'i…tirob', opts: ['z', 's'], a: 'z' },
+      { w: 'ri…q', opts: ['z', 's'], a: 'z' },
+      { w: 'bar…', opts: ['g', 'k'], a: 'g' },
+      { w: 'peda…og', opts: ['g', 'k'], a: 'g' },
+      { w: 'a…tobus', opts: ['v', 'f'], a: 'v' },
+      { w: 'i…tido', opts: ['b', 'p'], a: 'b' },
+      { w: 'es…alik', opts: ['d', 't'], a: 'd' },
+      { w: 'bunyo…kor', opts: ['d', 't'], a: 'd' },
+    ],
+    spell: [
+      { opts: ['tajovuz', 'tajovvuz'], a: 0 },
+      { opts: ['mutaxassis', 'mutaxasis'], a: 0 },
+      { opts: ['muvaffaq', 'muvafaq'], a: 0 },
+      { opts: ['stress', 'stres'], a: 0 },
+      { opts: ['diler', 'diller'], a: 0 },
+      { opts: ['drama', 'dramma'], a: 0 },
+      { opts: ['to‘rttalasi', 'to‘rtalasi'], a: 0 },
+      { opts: ['metall', 'metal'], a: 0 },
+      { opts: ['kommunal', 'komunal'], a: 0 },
+      { opts: ['muassasa', 'muasasa'], a: 0 },
+      { opts: ['ssenariy', 'senariy'], a: 0 },
+      { opts: ['kilovatt', 'kilovat'], a: 0 },
+      { opts: ['ovora', 'ovvora'], a: 0 },
+      { opts: ['grammatika', 'gramatika'], a: 0 },
+    ],
+    odd: [
+      { items: ['barg', 'rizq', 'avtobus', 'muassasa'], answer: 3, why: 'Muassasa — qo‘sh undosh qoidasiga; qolganlari jarangli undosh qoidasiga misol.' },
+      { items: ['ovora', 'maza', 'tanovul', 'grammatika'], answer: 3, why: 'Grammatika qo‘sh harf bilan yoziladi; qolganlari bitta.' },
+      { items: ['ssenariy', 'kilovatt', 'stress', 'drama'], answer: 3, why: 'Drama bitta m bilan; qolganlarida qo‘sh harf.' },
+    ],
+  },
+
+  /* ===================== 3 ===================== */
+  {
+    id: 'ot9-3',
+    source: 'I bo‘lim. Ona yurt • 3-dars • 11–13-betlar',
+    title: 'Izohlar matni: munosabat va hissiyot ifodasi',
+    short: 'Ijtimoiy tarmoq izohlaridan ma’lumot olish, muhokama essesi',
+    lesson: [
+      {
+        title: 'Vaziyat',
+        text: 'Telegram kanalida xabar: O‘zbekiston o‘smirlar terma jamoasi 9 kishi bo‘lib o‘ynab, Osiyo chempioni bo‘ldi. Xabar ostida muxlislar izohlar yozgan.',
+        list: [
+          'Qoyil, yigitlar! — g‘urur va tan berish.',
+          'O‘zbegimning bukilmas irodasini ko‘rsatdingiz — faxr.',
+          'Murabbiy va yigitlarga rahmat — tashakkur.',
+          'Yerda sher, samoda burgutlar — madh, obrazli ifoda.',
+          'Futbolni bepul ko‘rish uchun falon ilovadan foydalaning — reklama.',
+        ],
+      },
+      {
+        title: 'Izohlarni qanday tahlil qilamiz?',
+        rule: 'Matndan ma’lumot olishda uch narsaga qarang: muallif nima demoqchi (mazmun), qanday hissiyot bilan yozgan (munosabat) va qanday maqsadda yozgan (tabrik, tashakkur, reklama).',
+        ruleLabel: 'Usul',
+        table: {
+          head: ['Belgi', 'Nimani bildiradi'],
+          rows: [
+            ['Undov belgisi, katta harflar', 'Kuchli hissiyot, hayajon'],
+            ['Cho‘zib yozish (Chempiooon)', 'Og‘zaki nutq ohangi, xursandchilik'],
+            ['«Rahmat», «ofarin»', 'Tashakkur, minnatdorlik'],
+            ['Xizmat, ilova, maktab nomi', 'Reklama maqsadi'],
+            ['«Siz», «farzandlarimiz» kabi murojaat', 'Yoshi kattaroq muallif ehtimoli'],
+          ],
+        },
+      },
+      {
+        title: 'Ijtimoiy tarmoqda yozish odobi',
+        list: [
+          'Hissiyotni ifodalang, lekin boshqalarni kamsitmang.',
+          'Rasmiy matnda so‘zni cho‘zib yozish va faqat katta harflar ishlatish o‘rinsiz.',
+          'Faxr izohi ostida reklama yozish — odobsizlik.',
+          'Imlo va tinish belgilariga e’tibor bering.',
+        ],
+      },
+      {
+        title: 'Muhokama essesi',
+        text: 'Mavzu: «Ba’zilar sportni yoshlarda vatanparvarlik ruhini shakllantiruvchi eng ta’sirchan vosita deb biladi, boshqalar bunga qo‘shilmaydi».',
+        table: {
+          head: ['Qism', 'Mazmuni'],
+          rows: [
+            ['Kirish', 'Mavzuni tanishtirish, muammoni qo‘yish'],
+            ['Birinchi qarash', 'Sport tarafdorlarining dalillari va misol'],
+            ['Ikkinchi qarash', 'Qarshi fikr: yana qanday vositalar bor (ilm, san’at, mehnat)'],
+            ['Xulosa', 'O‘z pozitsiyangiz va asosingiz'],
+          ],
+        },
+      },
+      {
+        title: 'Topishmoq',
+        text: 'Meni hammangiz eshitgansiz, lekin ko‘rmagansiz. Siz gapirmaguncha men gapirmayman. Men nimaman?',
+        note: 'Javob: aks-sado.',
+      },
+      {
+        title: 'Topshiriqlar',
+        list: [
+          'Sizningcha, yurtning bugungi asl farzandlari kimlar? Bir xatboshida yozing.',
+          'Iqbol Mirzoning «Aytgil, do‘stim» she’rini o‘qing (darslik, 13-bet): «Vatan uchun nima qildik?» savoliga javob bering.',
+          'Shohsupadagi sportchi qalbidan qanday hislar kechadi? 3–4 gap yozing.',
+        ],
+      },
+    ],
+    pairs: [
+      ['Qoyil, yigitlar!', 'g‘urur va tan berish'],
+      ['Rahmat murabbiyga', 'tashakkur'],
+      ['Bepul ilovadan foydalaning', 'reklama'],
+      ['Yerda sher, samoda burgut', 'madh, obrazli ifoda'],
+      ['Undov belgisi', 'kuchli hissiyot'],
+      ['Aks-sado', 'topishmoq javobi'],
+      ['Esse', 'fikrni dalillab yozilgan matn'],
+    ],
+    quiz: [
+      { q: 'Terma jamoa necha kishi bo‘lib o‘ynab chempion bo‘ldi?', options: ['9', '11', '10', '7'], answer: 0 },
+      { q: '«Qoyil, yigitlar!» izohida qaysi hissiyot yetakchi?', options: ['g‘urur va tan berish', 'g‘azab', 'qo‘rquv', 'befarqlik'], answer: 0 },
+      { q: 'Qaysi izoh reklama maqsadida yozilgan?', options: ['ilovadan bepul ko‘rishni taklif qilgan', 'rahmat aytgan', 'faxrlangan', 'tabriklagan'], answer: 0 },
+      { q: '«Yerda sher, samoda burgut» qanday ifoda?', options: ['obrazli, madh', 'reklama', 'rasmiy', 'ilmiy'], answer: 0 },
+      { q: 'Muhokama essesining oxirgi qismi?', options: ['xulosa', 'kirish', 'dalil', 'sarlavha'], answer: 0 },
+      { q: 'Topishmoq javobi: eshitiladi, ko‘rinmaydi, siz gapirsangiz gapiradi.', options: ['aks-sado', 'shamol', 'radio', 'telefon'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Faxr va tashakkur izohi', 'Reklama izohi'],
+      items: [
+        { text: 'Qoyil, yigitlar!', cat: 0 }, { text: 'Bepul ilovani yuklang', cat: 1 },
+        { text: 'Murabbiyga rahmat', cat: 0 }, { text: 'Maktabimizda farzandingizni kutamiz', cat: 1 },
+        { text: 'Biz sizlar bilan faxrlanamiz', cat: 0 }, { text: 'Chegirma bilan to‘p sotiladi', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Izoh muallifining maqsadini qanday aniqlash mumkin?', a: 'Mazmuni, hissiyoti va so‘zlariga qarab: tabrik, tashakkur yoki reklama.' },
+      { q: 'Qaysi belgilar kuchli hissiyotni bildiradi?', a: 'Undov belgisi, katta harflar, cho‘zib yozish.' },
+      { q: 'Faxr izohi ostida reklama yozish nega odobsizlik?', a: 'Umumiy quvonchdan shaxsiy manfaat uchun foydalanish.' },
+      { q: 'Muhokama essesining tuzilishi?', a: 'Kirish, birinchi qarash, ikkinchi qarash, xulosa.' },
+    ],
+    letters: [
+      { w: '…ursand', opts: ['x', 'h'], a: 'x' },
+      { w: '…ayajon', opts: ['x', 'h'], a: 'h' },
+      { w: 'ta…sin', opts: ['x', 'h'], a: 'h' },
+      { w: 'iro…', opts: ['d', 't'], a: 'd' },
+      { w: 'mura…biy', opts: ['b', 'bb'], a: 'bb' },
+      { w: 'chempi…n', opts: ['o', 'a'], a: 'o' },
+      { w: 'o…iyat', opts: ['r', 'rr'], a: 'r' },
+      { w: '…issiyot', opts: ['x', 'h'], a: 'h' },
+      { w: 'fa…r', opts: ['x', 'h'], a: 'x' },
+      { w: 'ta…sir', opts: ['’', '‘'], a: '’' },
+    ],
+    spell: [
+      { opts: ['murabbiy', 'murabiy'], a: 0 },
+      { opts: ['g‘urur', 'g‘ urur'], a: 0 },
+      { opts: ['matonat', 'matonnat'], a: 0 },
+      { opts: ['chempion', 'champion'], a: 0 },
+      { opts: ['iroda', 'irota'], a: 0 },
+      { opts: ['vatanparvarlik', 'vatanparvarilik'], a: 0 },
+      { opts: ['olimpiada', 'olimpiyada'], a: 0 },
+      { opts: ['musobaqa', 'musoboqa'], a: 0 },
+      { opts: ['ta’sirchan', 'tasirchan'], a: 0 },
+    ],
+    odd: [
+      { items: ['g‘urur', 'faxr', 'iftixor', 'reklama'], answer: 3, why: 'Qolganlari bir ma’noli his-tuyg‘u so‘zlari.' },
+      { items: ['kirish', 'dalil', 'xulosa', 'naqarot'], answer: 3, why: 'Naqarot she’r atamasi; qolganlari esse qismlari.' },
+      { items: ['tabrik', 'tashakkur', 'faxr', 'chegirma'], answer: 3, why: 'Chegirma reklamaga oid.' },
+    ],
+  },
+
+  /* ===================== 4 ===================== */
+  {
+    id: 'ot9-4',
+    source: 'I bo‘lim. Ona yurt • 4-dars • 14–16-betlar',
+    title: '«Bayroq» hikoyasi. So‘z birikmalarining to‘g‘ri tuzilishi',
+    short: 'Hikoya tahlili, so‘z izohi, sarlavha tanlash, qaratqich va tushum kelishigi',
+    lesson: [
+      {
+        title: 'Hikoya mazmuni',
+        text: 'Bolalar qo‘shni qishloq tengdoshlari bilan futbol o‘ynaydi va yutqazadi. G‘oliblar maktab hovlisidagi bayroqni «kubok» qilib yechib olmoqchi bo‘ladi. Yutqazgan bolalar bir zumda kuch-g‘ayratga to‘lib, bayroqni qaytarib oladi va joyiga bog‘laydi.',
+        rule: 'Yillar o‘tib harbiy ofitser bo‘lgan Rustam aytadi: o‘yinda kimdir yutadi, kimdir yutqazadi, ammo bayroq — Vatan, elning birdamligi ramzi; uni baland ko‘targan qo‘llarni yengib bo‘lmaydi.',
+        ruleLabel: 'Hikoya g‘oyasi',
+        note: 'Muallif — Bayram Ali Qo‘ldoshev. Hikoya matnini darslikning 14–15-betlaridan o‘qing.',
+      },
+      {
+        title: 'Ruhiy holat tasviri',
+        table: {
+          head: ['Lahza', 'Tasvir', 'Holat'],
+          rows: [
+            ['Mag‘lubiyatdan keyin', 'Dami chiqqan pufakday shalvirab qolishdi; osmon enkayib qolgandek', 'Tushkunlik, uyat'],
+            ['Bayroq yechilganda', 'Tok urganday sakrab turdik; sopqondan uchgan palaxmon toshiday otildik', 'G‘azab, g‘ayrat'],
+            ['Bayroq joyiga bog‘langach', 'Ich-ichimizdan zavq va g‘urur toshib kelardi', 'Faxr, birdamlik'],
+          ],
+        },
+      },
+      {
+        title: 'So‘zlar izohi',
+        table: {
+          head: ['So‘z', 'Izohi'],
+          rows: [
+            ['ofitser', 'harbiy unvonli komandir'],
+            ['birdamlik', 'jipslik, bir maqsad yo‘lida birlashish'],
+            ['sopqon', 'tosh otadigan rezinali qurol'],
+            ['palaxmon', 'tosh otish uchun ishlatiladigan qadimiy moslama'],
+            ['vazmin', 'og‘ir-bosiq, shoshilmaydigan'],
+            ['mavj', 'to‘lqin, tebranish'],
+          ],
+        },
+      },
+      {
+        title: 'So‘z birikmasining to‘g‘ri tuzilishi',
+        rule: 'Birikmada qaram so‘z hokim so‘zga to‘g‘ri qo‘shimcha bilan bog‘lanishi kerak. Ko‘p uchraydigan xato — qaratqich (-ning) o‘rniga tushum (-ni) qo‘shimchasini ishlatish.',
+        ruleLabel: 'Qoida',
+        table: {
+          head: ['Noto‘g‘ri', 'To‘g‘ri', 'Sabab'],
+          rows: [
+            ['millatni erki', 'millatning erki', 'egalik: kimning erki? → -ning'],
+            ['bayrog‘imizni mavjlanishiga', 'bayrog‘imizning mavjlanishiga', 'kimning mavjlanishi? → -ning'],
+            ['e’tiqodida putur yetmoq', 'e’tiqodiga putur yetmoq', 'nimaga putur yetadi? → -ga'],
+            ['hilpirab turishini ta’minlash', 'hilpirab turishini ta’minlash (to‘g‘ri)', 'nimani ta’minlash? → -ni'],
+          ],
+        },
+        note: 'To‘g‘ri birikmalar: sha’nini baland tutish, hayotini baxshida etmoq, yo‘qlikka mahkum bo‘lmoq, burchdor avlod.',
+      },
+      {
+        title: 'Sarlavha tanlash',
+        text: 'Sarlavha matnning asosiy g‘oyasini yoki eng muhim voqeasini ifodalashi kerak. Uni tanlashda matndagi kalit jumlalarga tayaning.',
+        examples: ['«Bayroq — Vatan»', '«Yengilmas qo‘llar»', '«Eng shirin xotira»', '«Birdamlik»'],
+      },
+      {
+        title: 'Muhokama',
+        list: [
+          'Raqib jamoa bayroqni nega olib ketmoqchi bo‘ldi?',
+          'Bayroq tushirilgach, bolalarning ruhiy holatida qanday o‘zgarish yuz berdi?',
+          'Rustamning o‘rnida bo‘lsangiz, qanday yo‘l tutardingiz?',
+          'Uyi yoki mashinasiga bayroq ilgan odamlar nega shunday qiladi? Matn tuzing.',
+        ],
+      },
+    ],
+    pairs: [
+      ['ofitser', 'harbiy komandir'],
+      ['birdamlik', 'jipslik'],
+      ['sopqon', 'tosh otadigan rezinali qurol'],
+      ['vazmin', 'og‘ir-bosiq'],
+      ['mavj', 'to‘lqin'],
+      ['millatni erki', 'millatning erki'],
+      ['e’tiqodida putur', 'e’tiqodiga putur'],
+    ],
+    quiz: [
+      { q: 'Bolalar kim bilan futbol o‘ynashdi?', options: ['qo‘shni qishloq tengdoshlari', 'sinfdoshlari', 'o‘qituvchilari', 'shahar jamoasi'], answer: 0 },
+      { q: 'G‘oliblar nimani olib ketmoqchi bo‘ldi?', options: ['bayroqni', 'to‘pni', 'kubokni', 'darvozani'], answer: 0 },
+      { q: 'Rustam keyinchalik kim bo‘ldi?', options: ['ofitser', 'futbolchi', 'o‘qituvchi', 'shifokor'], answer: 0 },
+      { q: 'To‘g‘ri birikmani toping.', options: ['millatning erki', 'millatni erki', 'millat erkini', 'millatga erki'], answer: 0 },
+      { q: 'To‘g‘ri birikmani toping.', options: ['e’tiqodiga putur yetmoq', 'e’tiqodida putur yetmoq', 'e’tiqodni putur yetmoq', 'e’tiqoddan putur yetmoq'], answer: 0 },
+      { q: '«Vazmin» so‘zining ma’nosi?', options: ['og‘ir-bosiq', 'shoshqaloq', 'baland', 'chaqqon'], answer: 0 },
+      { q: 'Hikoya g‘oyasiga ko‘ra bayroq nima?', options: ['Vatan, birdamlik ramzi', 'kubok', 'o‘yinchoq', 'mato'], answer: 0 },
+    ],
+    sort: {
+      categories: ['To‘g‘ri birikma', 'Noto‘g‘ri birikma'],
+      items: [
+        { text: 'sha’nini baland tutish', cat: 0 }, { text: 'millatni erki', cat: 1 },
+        { text: 'hayotini baxshida etmoq', cat: 0 }, { text: 'e’tiqodida putur yetmoq', cat: 1 },
+        { text: 'burchdor avlod', cat: 0 }, { text: 'bayrog‘imizni mavjlanishiga', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Bolalarning mag‘lubiyatdan keyingi holati qanday tasvirlangan?', a: 'Dami chiqqan pufakday shalvirab qolishdi, ko‘z yoshlarini yashirishdi.' },
+      { q: 'Bayroq yechilganda bolalar nega birdan kuchga to‘ldi?', a: 'Bayroq — Vatan; uning tahqirlanishi ularni birlashtirib, g‘ayrat berdi.' },
+      { q: '«Millatni erki» birikmasidagi xato nimada?', a: 'Qaratqich o‘rniga tushum qo‘shimchasi: to‘g‘ri — millatning erki.' },
+      { q: 'Sarlavha qanday tanlanadi?', a: 'Matnning asosiy g‘oyasi yoki muhim voqeasiga, kalit jumlalarga tayanib.' },
+    ],
+    sequences: [
+      {
+        title: 'Hikoya voqealarini tartiblang',
+        items: [
+          'Bolalar qo‘shni qishloq bilan o‘ynashga ahdlashadi',
+          'Eng chaqqon o‘yinchilar tog‘ga ketib qoladi',
+          'Bolalar o‘yinda yutqazadi',
+          'G‘oliblar bayroqni yechib olmoqchi bo‘ladi',
+          'Rustam bayroqni qaytarib, joyiga bog‘laydi',
+          'Yillar o‘tib sinfdoshlar bu voqeani eslaydi',
+        ],
+      },
+    ],
+    letters: [
+      { w: 'bayro…', opts: ['q', 'k'], a: 'q' },
+      { w: 'g‘alaba…', opts: ['', '—'], a: '' },
+      { w: '…amjihat', opts: ['x', 'h'], a: 'h' },
+      { w: 'ra…ib', opts: ['q', 'k'], a: 'q' },
+      { w: 'mag‘lu…iyat', opts: ['b', 'p'], a: 'b' },
+      { w: 'shi…dat', opts: ['d', 't'], a: 'd' },
+      { w: 'vujud…', opts: ['', '—'], a: '' },
+      { w: 'ji…slik', opts: ['p', 'b'], a: 'p' },
+      { w: 'sar…ash', opts: ['b', 'p'], a: 'b' },
+      { w: 'harbi…', opts: ['y', 'i'], a: 'y' },
+      { w: '…ayajon', opts: ['x', 'h'], a: 'h' },
+    ].filter((x) => x.a !== ''),
+    spell: [
+      { opts: ['millatning erki', 'millatni erki'], a: 0 },
+      { opts: ['e’tiqodiga putur yetmoq', 'e’tiqodida putur yetmoq'], a: 0 },
+      { opts: ['bayrog‘imizning mavjlanishi', 'bayrog‘imizni mavjlanishi'], a: 0 },
+      { opts: ['ofitser', 'afitser'], a: 0 },
+      { opts: ['palaxmon', 'palahmon'], a: 0 },
+      { opts: ['mag‘lubiyat', 'mag‘lubyat'], a: 0 },
+      { opts: ['sarosima', 'sarosema'], a: 0 },
+      { opts: ['shiddat', 'shidat'], a: 0 },
+    ],
+    odd: [
+      { items: ['ofitser', 'sardor', 'komandir', 'futbolchi'], answer: 3, why: 'Qolganlari boshqaruvchi, rahbar ma’nosida.' },
+      { items: ['sopqon', 'palaxmon', 'kamon', 'bayroq'], answer: 3, why: 'Qolganlari otuvchi qurollar.' },
+      { items: ['millatning erki', 'sha’nini tutish', 'burchdor avlod', 'millatni erki'], answer: 3, why: '«Millatni erki» noto‘g‘ri birikma.' },
+    ],
+  },
+
+  /* ===================== 5 ===================== */
+  {
+    id: 'ot9-5',
+    source: 'I bo‘lim. Ona yurt • 5-dars • 17–19-betlar',
+    title: 'Kuchaytiruv-ta’kid qo‘shimchalari',
+    short: '-gina, -roq, -lar, -da, -ku, -oq/-yoq va ularning ma’no nozikliklari',
+    lesson: [
+      {
+        title: 'Ma’no farqini sezamiz',
+        table: {
+          head: ['Oddiy gap', 'Qo‘shimchali gap'],
+          rows: [
+            ['Onam keldilar.', 'Onaginam keldilar.'],
+            ['Bu sening ishing!', 'Bu sening ishing-ku!'],
+            ['Bu xona sovuq ekan.', 'Bu xona sovuqroq ekan.'],
+          ],
+        },
+        note: 'Qo‘shimcha gapga yangi ma’no qo‘shmaydi, balki mavjud ma’noni kuchaytiradi, ta’kidlaydi yoki nozik his-tuyg‘u beradi.',
+      },
+      {
+        title: 'Qoida',
+        rule: 'So‘z tarkibida kelgan ayrim qo‘shimchalar kuchaytiruv-ta’kid ma’nosini yuklaydi. Ular so‘zga erkalash, kuchaytirish, ta’kidlash, hayrat kabi qo‘shimcha ma’no beradi.',
+        ruleLabel: 'Qoida',
+      },
+      {
+        title: 'Qo‘shimchalar va ma’nosi',
+        table: {
+          head: ['Qo‘shimcha', 'Misol', 'Qiyosiy ma’no'],
+          rows: [
+            ['-gina (-kina/-qina)', 'Bu bolakay do‘mboqqina.', 'Erkalash: o‘ziga yarashadigan do‘mboq'],
+            ['-roq', 'Tezroq yugur.', 'Daraja: yanada tez'],
+            ['-lar', 'Unsin ko‘z yoshlarini artdi.', 'Davomiylik: anchadan beri yig‘lagan'],
+            ['-da (yuklama)', 'Temurbek aqlli-da.', 'Ta’kid: hammaga oldindan ma’lum'],
+            ['-ku (yuklama)', 'Bu juda yaxshi-ku!', 'Hayrat: kutilganidan ham yaxshi'],
+            ['-oq/-yoq (yuklama)', 'U keliboq ketdi.', 'Qisqalik: juda qisqa fursatga'],
+          ],
+        },
+      },
+      {
+        title: 'Imlo qoidalari',
+        list: [
+          '-gina k, g bilan tugagan so‘zga -kina shaklida qo‘shiladi: kichikkina.',
+          'q, g‘ bilan tugagan so‘zga -qina shaklida qo‘shiladi: do‘mboqqina, tuproqqina, bog‘qina.',
+          'Boshqa hollarda -gina: ozgina, birgina, onaginam.',
+          '-da va -ku yuklamalari chiziqcha bilan yoziladi: aqlli-da, yaxshi-ku.',
+          '-oq/-yoq qo‘shib yoziladi: keliboq, ertayoq.',
+        ],
+        note: '-da yuklamasini -da (o‘rin-payt kelishigi) qo‘shimchasi bilan adashtirmang: uyda (qayerda?) — chiziqchasiz; bilasan-da — chiziqcha bilan.',
+      },
+      {
+        title: 'Bayroq so‘zining kelib chiqishi',
+        text: '«Bayroq» so‘zi «botruq» so‘zidan kelib chiqqan, «botirmoq» ma’nosini bildiradi. Qadimgi turkiylar tuproqqa botirilgan tirgovuchlar uchiga qabila ramzi sifatida mato osgan. Vaqt o‘tib «tuproqqa botirilgan yog‘och» davlat ramziga aylangan.',
+        note: 'Bayroqning sinonimlari: tug‘, alam, yalov.',
+      },
+      {
+        title: 'Mashq',
+        table: {
+          head: ['Gap', 'Qo‘shimcha', 'Natija'],
+          rows: [
+            ['U sekin xonaga kirib oldi.', '-gina', 'U sekingina xonaga kirib oldi (hech kimga sezdirmay).'],
+            ['Ular tunda yo‘lga chiqib ketishdi.', '-oq', 'Ular tundayoq yo‘lga chiqib ketishdi.'],
+            ['Do‘stim, siz bundan ranjimang.', '-da', 'Do‘stim, siz bundan ranjimang-da.'],
+          ],
+        },
+      },
+    ],
+    pairs: [
+      ['-gina', 'erkalash, kichraytirish'],
+      ['-roq', 'daraja, yanada'],
+      ['-da (yuklama)', 'ta’kid'],
+      ['-ku', 'hayrat, kutilmaganlik'],
+      ['-oq/-yoq', 'tezlik, qisqalik'],
+      ['botruq', 'bayroq so‘zining asli'],
+      ['tug‘, alam, yalov', 'bayroqning sinonimlari'],
+    ],
+    quiz: [
+      { q: '«Onaginam» so‘zidagi -gina qanday ma’no beradi?', options: ['erkalash', 'daraja', 'inkor', 'ko‘plik'], answer: 0 },
+      { q: '«Tezroq» so‘zidagi -roq qanday ma’no beradi?', options: ['yanada tez', 'kamroq tez', 'inkor', 'erkalash'], answer: 0 },
+      { q: 'Qaysi biri to‘g‘ri yozilgan?', options: ['yaxshi-ku', 'yaxshiku', 'yaxshi ku', 'yaxshi—ku'], answer: 0 },
+      { q: 'Qaysi biri to‘g‘ri yozilgan?', options: ['keliboq', 'kelib-oq', 'kelib oq', 'kelibok'], answer: 0 },
+      { q: '«do‘mboq» + -gina qanday yoziladi?', options: ['do‘mboqqina', 'do‘mboqgina', 'do‘mboqkina', 'do‘mboqina'], answer: 0 },
+      { q: '«kichik» + -gina qanday yoziladi?', options: ['kichikkina', 'kichikgina', 'kichikqina', 'kichkinagina'], answer: 0 },
+      { q: '«Bayroq» so‘zi qaysi so‘zdan kelib chiqqan?', options: ['botruq', 'bayram', 'baraka', 'bayt'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Chiziqcha bilan yoziladi', 'Qo‘shib yoziladi'],
+      items: [
+        { text: 'aqlli-da', cat: 0 }, { text: 'keliboq', cat: 1 },
+        { text: 'yaxshi-ku', cat: 0 }, { text: 'onaginam', cat: 1 },
+        { text: 'ranjimang-da', cat: 0 }, { text: 'tezroq', cat: 1 },
+        { text: 'ishing-ku', cat: 0 }, { text: 'ertayoq', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Kuchaytiruv-ta’kid qo‘shimchalari qanday vazifa bajaradi?', a: 'Mavjud ma’noni kuchaytiradi, ta’kidlaydi, erkalash yoki hayrat ma’nosini beradi.' },
+      { q: '-gina qachon -kina, qachon -qina bo‘ladi?', a: 'k, g dan keyin -kina; q, g‘ dan keyin -qina.' },
+      { q: '-da yuklamasi va -da kelishik qo‘shimchasining farqi?', a: 'Yuklama chiziqcha bilan, ta’kid beradi; kelishik qo‘shib yoziladi, joy-paytni bildiradi.' },
+      { q: '«U keliboq ketdi» gapining ma’nosi?', a: 'U juda qisqa fursatga kelib ketdi.' },
+    ],
+    letters: [
+      { w: 'kichik…ina', opts: ['g', 'k', 'q'], a: 'k' },
+      { w: 'do‘mboq…ina', opts: ['g', 'k', 'q'], a: 'q' },
+      { w: 'oz…ina', opts: ['g', 'k', 'q'], a: 'g' },
+      { w: 'bir…ina', opts: ['g', 'k', 'q'], a: 'g' },
+      { w: 'tuproq…ina', opts: ['g', 'k', 'q'], a: 'q' },
+      { w: 'bog‘…ina', opts: ['g', 'k', 'q'], a: 'q' },
+      { w: 'yaxshi…ku', opts: ['-', ''], a: '-' },
+      { w: 'kelib…oq', opts: ['-', ''], a: '' },
+      { w: 'aqlli…da', opts: ['-', ''], a: '-' },
+      { w: 'erta…yoq', opts: ['-', ''], a: '' },
+      { w: 'tez…roq', opts: ['-', ''], a: '' },
+    ].map((x) => (x.a === '' ? { ...x, opts: x.opts.map((o) => (o === '' ? 'qo‘shib' : o)), a: 'qo‘shib' } : x)),
+    spell: [
+      { opts: ['yaxshi-ku', 'yaxshiku'], a: 0 },
+      { opts: ['keliboq', 'kelib-oq'], a: 0 },
+      { opts: ['aqlli-da', 'aqllida'], a: 0 },
+      { opts: ['ertayoq', 'erta-yoq'], a: 0 },
+      { opts: ['do‘mboqqina', 'do‘mboqgina'], a: 0 },
+      { opts: ['kichikkina', 'kichikgina'], a: 0 },
+      { opts: ['onaginam', 'ona-ginam'], a: 0 },
+      { opts: ['tezroq', 'tez-roq'], a: 0 },
+      { opts: ['bog‘qina', 'bog‘gina'], a: 0 },
+    ],
+    odd: [
+      { items: ['-gina', '-roq', '-ku', '-ning'], answer: 3, why: '-ning — qaratqich kelishigi; qolganlari kuchaytiruv-ta’kid qo‘shimchalari.' },
+      { items: ['tug‘', 'alam', 'yalov', 'gerb'], answer: 3, why: 'Gerb — boshqa davlat ramzi; qolganlari bayroqning sinonimlari.' },
+      { items: ['aqlli-da', 'yaxshi-ku', 'ishing-ku', 'uyda'], answer: 3, why: '«Uyda»dagi -da — kelishik qo‘shimchasi, chiziqchasiz.' },
+    ],
+  },
+
+  /* ===================== 6 ===================== */
+  {
+    id: 'ot9-6',
+    source: 'I bo‘lim. Ona yurt • 6-dars • 19–24-betlar',
+    title: '«O‘zbekistonning tarixiy shaharlari». Fakt va fikr',
+    short: 'Matn turi, so‘z ma’nolari, fakt va fikrni farqlash, faktcheking',
+    lesson: [
+      {
+        title: 'Sarlavhadan mazmunni taxmin qilish',
+        text: 'Matnni o‘qishdan oldin sarlavhaga qarab uning turini taxmin qiling.',
+        table: {
+          head: ['Matn turi', 'Maqsadi'],
+          rows: [
+            ['Xabar', 'Yangilikni yetkazish'],
+            ['Reklama', 'Mahsulot yoki xizmatni targ‘ib qilish'],
+            ['Ko‘rsatma', 'Qanday ish qilishni tushuntirish'],
+            ['Tanishtirish', 'Biror narsa haqida ma’lumot berish'],
+            ['Tashviqot-targ‘ibot', 'G‘oyaga chorlash'],
+          ],
+        },
+        note: '«O‘zbekistonning tarixiy shaharlari» — tanishtirish mazmunidagi matn.',
+      },
+      {
+        title: 'Tarixiy shaharlar',
+        table: {
+          head: ['Shahar', 'Muhim faktlar'],
+          rows: [
+            ['Samarqand', 'Rim bilan tengdosh, 2750 yildan katta; Registon, Go‘ri Amir, Bibixonim, Ulug‘bek rasadxonasi'],
+            ['Xiva', 'Yoshi 2500 yildan oshgan; Dishan qal’a va Ichan qal’a; 2024-yilda islom olamining turistik poytaxti'],
+            ['Buxoro', '140 dan ortiq arxitektura yodgorligi; Ark, Labihovuz, Ismoil Somoniy maqbarasi, Poyi Kalon'],
+            ['Qo‘qon', 'Xudoyorxon saroyi — «Qo‘qon o‘rdasi»; XX asr boshida 67 ta madrasa'],
+          ],
+        },
+        note: '«Samarqand sayqali ro‘yi zamin ast» — Samarqand yer yuzining sayqali.',
+      },
+      {
+        title: 'So‘zlarning matndagi ma’nosi',
+        table: {
+          head: ['So‘z', 'Matndagi ma’nosi'],
+          rows: [
+            ['bisyor', 'ko‘p'],
+            ['nodir', 'kam uchraydigan, betakror'],
+            ['azim', 'juda katta, buyuk'],
+            ['muhtasham', 'savlatli, hashamatli'],
+            ['ekzotik', 'biror mamlakatga xos, boshqalarni qiziqtiradigan'],
+            ['rom etmoq', 'o‘ziga moyil qilmoq'],
+            ['muzey shahar', 'tarixiy obidalari ko‘p shahar'],
+          ],
+        },
+      },
+      {
+        title: 'Fakt va fikr',
+        rule: 'Fakt — isbotlangan, hamma tomonidan tan olingan hukm. Fikr — shaxsiy qarash, sub’ektiv mulohaza.',
+        ruleLabel: 'Qoida',
+        table: {
+          head: ['Jumla', 'Turi'],
+          rows: [
+            ['Xiva ikki qismdan: Dishan qal’a va Ichan qal’adan iborat.', 'Fakt'],
+            ['Samarqand — dunyodagi eng chiroyli shahar.', 'Fikr'],
+            ['Buxoro amirlikning poytaxti bo‘lgan.', 'Fakt'],
+            ['Qo‘qon Sharqning durdonasi hisoblanadi.', 'Fikr'],
+          ],
+        },
+      },
+      {
+        title: 'Faktcheking',
+        rule: 'Fakt tekshiruvi (faktcheking) — shubhali ma’lumotning ishonchliligini, hayotiy mantiqqa mosligini tekshirish. Bunda ensiklopediya, darslik, rasmiy manbalar bilan solishtiriladi.',
+        ruleLabel: 'Ta’rif',
+        list: [
+          'Ma’lumot manbasini aniqlang: kim, qachon aytgan?',
+          'Boshqa ishonchli manbalar bilan solishtiring.',
+          'Hayotiy mantiqqa mosligini tekshiring.',
+          'Xulosa chiqaring: ishonchli yoki ishonchsiz.',
+        ],
+        note: 'Diqqat! Har bir eshitilgan yoki o‘qilgan ma’lumotni tekshirish yolg‘on axborot qurboni bo‘lishdan asraydi.',
+      },
+    ],
+    pairs: [
+      ['bisyor', 'ko‘p'],
+      ['nodir', 'kam uchraydigan'],
+      ['azim', 'juda katta'],
+      ['muhtasham', 'hashamatli'],
+      ['Fakt', 'isbotlangan hukm'],
+      ['Fikr', 'shaxsiy qarash'],
+      ['Faktcheking', 'ma’lumotni tekshirish'],
+      ['Qo‘qon o‘rdasi', 'Xudoyorxon saroyi'],
+    ],
+    quiz: [
+      { q: 'Samarqand qaysi shahar bilan tengdosh?', options: ['Rim', 'Afina', 'Qohira', 'Parij'], answer: 0 },
+      { q: 'Xiva qaysi ikki qismdan iborat?', options: ['Dishan qal’a va Ichan qal’a', 'Ark va Registon', 'Shahriston va rabot', 'Eski va yangi shahar'], answer: 0 },
+      { q: 'Buxoroda nechadan ortiq arxitektura yodgorligi bor?', options: ['140', '40', '1000', '14'], answer: 0 },
+      { q: '«Qo‘qon o‘rdasi» deb nima ataladi?', options: ['Xudoyorxon saroyi', 'Registon', 'Ark', 'Bibixonim'], answer: 0 },
+      { q: '«Samarqand — dunyodagi eng chiroyli shahar» — bu...', options: ['fikr', 'fakt', 'reklama', 'ko‘rsatma'], answer: 0 },
+      { q: '«Bisyor» so‘zining ma’nosi?', options: ['ko‘p', 'kam', 'qadimiy', 'chiroyli'], answer: 0 },
+      { q: 'Xiva qachon islom olamining turistik poytaxti deb e’lon qilingan?', options: ['2024', '2020', '2017', '1991'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Fakt', 'Fikr'],
+      items: [
+        { text: 'Buxoro amirlik poytaxti bo‘lgan', cat: 0 }, { text: 'Samarqand eng chiroyli shahar', cat: 1 },
+        { text: 'Xivaning yoshi 2500 yildan oshgan', cat: 0 }, { text: 'Qo‘qon Sharqning durdonasi', cat: 1 },
+        { text: 'Ismoil Somoniy maqbarasi Buxoroda', cat: 0 }, { text: 'Tarixiy shaharlar hammani hayratga soladi', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Fakt va fikrning farqi?', a: 'Fakt isbotlangan va hamma tan olgan, fikr — shaxsiy qarash.' },
+      { q: 'Faktcheking qanday bosqichlardan iborat?', a: 'Manbani aniqlash, boshqa manbalar bilan solishtirish, mantiqqa mosligini tekshirish, xulosa.' },
+      { q: 'Buxoro nega muzey shahar deyiladi?', a: 'Unda 140 dan ortiq o‘rta asr arxitektura yodgorligi saqlangan.' },
+      { q: '«Poyi Kalon ansambli Samarqandda» degan ma’lumot ishonchlimi?', a: 'Yo‘q, Poyi Kalon Buxoroda joylashgan.' },
+    ],
+    letters: [
+      { w: 'Samar…and', opts: ['q', 'k'], a: 'q' },
+      { w: 'Xi…a', opts: ['v', 'f'], a: 'v' },
+      { w: 'Bu…oro', opts: ['x', 'h'], a: 'x' },
+      { w: 'ma…bara', opts: ['q', 'k'], a: 'q' },
+      { w: 'mad…asa', opts: ['r', 'rr'], a: 'r' },
+      { w: 'rasad…ona', opts: ['x', 'h'], a: 'x' },
+      { w: '…ashamat', opts: ['x', 'h'], a: 'h' },
+      { w: 'mu…tasham', opts: ['x', 'h'], a: 'h' },
+      { w: 'karvonsaro…', opts: ['y', 'i'], a: 'y' },
+      { w: 'yodgorli…', opts: ['k', 'q'], a: 'k' },
+    ],
+    spell: [
+      { opts: ['maqbara', 'maqbora'], a: 0 },
+      { opts: ['madrasa', 'madrassa'], a: 0 },
+      { opts: ['muhtasham', 'muxtasham'], a: 0 },
+      { opts: ['ansambl', 'ansambil'], a: 0 },
+      { opts: ['arxitektura', 'arhitektura'], a: 0 },
+      { opts: ['rasadxona', 'rasadhona'], a: 0 },
+      { opts: ['ziyoratgoh', 'ziyoratgox'], a: 0 },
+      { opts: ['karvonsaroy', 'karvonsaroi'], a: 0 },
+      { opts: ['YUNESKO', 'YUNESKA'], a: 0 },
+    ],
+    odd: [
+      { items: ['Registon', 'Go‘ri Amir', 'Bibixonim', 'Labihovuz'], answer: 3, why: 'Labihovuz Buxoroda; qolganlari Samarqandda.' },
+      { items: ['xabar', 'reklama', 'ko‘rsatma', 'sinonim'], answer: 3, why: 'Sinonim — so‘z turi; qolganlari matn turlari.' },
+      { items: ['bisyor', 'ko‘p', 'mo‘l', 'nodir'], answer: 3, why: 'Nodir — kam uchraydigan; qolganlari «ko‘p» ma’nosida.' },
+    ],
+  },
+
+  /* ===================== 7 ===================== */
+  {
+    id: 'ot9-7',
+    source: 'I bo‘lim. Ona yurt • 7-dars • 24–26-betlar',
+    title: 'Ochiq va yashirin ifodalangan mazmun',
+    short: 'Matndagi bevosita va bilvosita ma’no, FSMU texnologiyasi',
+    lesson: [
+      {
+        title: 'Fikr qanday ifodalanadi?',
+        rule: 'Fikr ochiq yoki yashirin ifodalanishi mumkin. Bu mazmunni tushunishga ta’sir qiladi, shuning uchun ochiq va yashirin mazmunni anglash va farqlash kerak.',
+        ruleLabel: 'Qoida',
+      },
+      {
+        title: 'Ochiq ifodalangan mazmun',
+        text: 'Gapda bevosita, aniq ifodalangan oshkora ma’no.',
+        note: 'Otabek Yusufbek hojining qarshiligiga qaramay, Kamoliddin bilan savdo ishlarini boshladi. Savol: Otabek kim? Ochiq javob: Kamoliddin bilan savdo boshlagan yigit.',
+      },
+      {
+        title: 'Yashirin ifodalangan mazmun',
+        text: 'Matnda ochiq aytilmagan, lekin o‘quvchi kontekstdan o‘zi chiqarib oladigan ma’no.',
+        note: 'Xuddi shu gapdan yashirin javob: Otabek — mustaqil fikrli, zamonaviy dunyoqarashli, qaysar yigit.',
+      },
+      {
+        title: 'Qiyoslang',
+        table: {
+          head: ['Xususiyat', 'Ochiq mazmun', 'Yashirin mazmun'],
+          rows: [
+            ['Ifodalanishi', 'To‘g‘ridan to‘g‘ri', 'Bilvosita'],
+            ['Tushunish', 'Darhol tushuniladi', 'Taxmin qilib fahmlanadi'],
+            ['Misol', 'Men maktabga bordim.', 'Maktabga ertaroq yetib bordim. (muhim sababi bor)'],
+            ['Izohga ehtiyoj', 'Yo‘q', 'Bor'],
+            ['Kontekst ahamiyati', 'Kam', 'Juda muhim'],
+          ],
+        },
+      },
+      {
+        title: 'Yashirin mazmunni izohlaymiz',
+        table: {
+          head: ['Gap', 'Yashirin mazmun'],
+          rows: [
+            ['Qarz olgan eding, mana, bahor ham keldi.', 'Qarzni qaytarish vaqti o‘tdi, qaytarmaysanmi?'],
+            ['Men ham bog‘ga ketdim.', 'Boshqalar ham bog‘ga ketgan.'],
+            ['Kampirning dodiga odam tez to‘plandi.', 'Qo‘ni-qo‘shnilar mehribon, hamjihat.'],
+            ['— Yana yutibsizlarmi? — Sizning ukangizman-da!', 'Men ham siz kabi kuchliman (maqtov va hazil).'],
+            ['Samarqandning yoshi 2750 yildan ortiqroq.', 'Samarqand juda qadimiy, boy tarixga ega.'],
+          ],
+        },
+      },
+      {
+        title: 'FSMU texnologiyasi',
+        table: {
+          head: ['Harf', 'Ma’nosi', 'Namuna'],
+          rows: [
+            ['F', 'Fikringizni bayon eting', 'Samarqand — ko‘plab tarixiy maskanlarni jo qilgan shahar.'],
+            ['S', 'Sabab ko‘rsating', 'Chunki unda tarixiy obidalar bisyor.'],
+            ['M', 'Misol keltiring', 'Afrosiyob qoldiqlari, Ulug‘bek rasadxonasi.'],
+            ['U', 'Umumlashtiring', 'Samarqand — tarixiy obidalarga boy afsonaviy shahar.'],
+          ],
+        },
+      },
+    ],
+    pairs: [
+      ['Ochiq mazmun', 'bevosita ifodalangan'],
+      ['Yashirin mazmun', 'kontekstdan chiqariladi'],
+      ['F', 'fikr'],
+      ['S', 'sabab'],
+      ['M', 'misol'],
+      ['U', 'umumlashtirish'],
+      ['Kontekst', 'gap atrofidagi vaziyat'],
+    ],
+    quiz: [
+      { q: 'Matnda aniq aytilgan ma’no qanday ataladi?', options: ['ochiq mazmun', 'yashirin mazmun', 'kontekst', 'fikr'], answer: 0 },
+      { q: 'Yashirin mazmunni anglashda nima muhim?', options: ['kontekst', 'imlo', 'harflar soni', 'sarlavha rangi'], answer: 0 },
+      { q: 'FSMUdagi «S» nimani bildiradi?', options: ['sabab', 'savol', 'sinonim', 'sarlavha'], answer: 0 },
+      { q: 'FSMUdagi «U» nimani bildiradi?', options: ['umumlashtirish', 'ustoz', 'undov', 'uslub'], answer: 0 },
+      { q: '«Qarz olgan eding, bahor ham keldi» gapining yashirin mazmuni?', options: ['qarzni qaytar', 'bahor chiroyli', 'qarz olma', 'bahorda qarz ber'], answer: 0 },
+      { q: 'Otabek haqida yashirin xulosa qaysi?', options: ['mustaqil fikrli, qaysar yigit', 'savdogar', 'Yusufbekning o‘g‘li', 'Kamoliddinning sherigi'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Ochiq mazmun', 'Yashirin mazmun'],
+      items: [
+        { text: 'Men maktabga bordim.', cat: 0 }, { text: 'Maktabga ertaroq yetib bordim.', cat: 1 },
+        { text: 'Otabek savdo boshladi.', cat: 0 }, { text: 'Otabek — qaysar yigit.', cat: 1 },
+        { text: 'Bahor keldi.', cat: 0 }, { text: 'Bahor ham keldi, qarzing-chi?', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Ochiq va yashirin mazmunning farqi?', a: 'Ochiq — bevosita aytilgan, yashirin — kontekstdan taxmin qilinadi.' },
+      { q: '«Kampirning dodiga odam tez to‘plandi» gapining yashirin mazmuni?', a: 'Mahalla ahli mehribon, hamjihat.' },
+      { q: 'FSMU qanday bosqichlardan iborat?', a: 'Fikr, sabab, misol, umumlashtirish.' },
+      { q: 'Nega yashirin mazmunni anglash muhim?', a: 'Muallifning asl niyatini, matn g‘oyasini to‘g‘ri tushunish uchun.' },
+    ],
+    sequences: [
+      { title: 'FSMU bosqichlarini tartiblang', items: ['Fikrni bayon etish', 'Sabab ko‘rsatish', 'Misol keltirish', 'Umumlashtirish'] },
+    ],
+    letters: [
+      { w: 'yashiri…', opts: ['n', 'ng'], a: 'n' },
+      { w: 'kon…ekst', opts: ['t', 'd'], a: 't' },
+      { w: 'bilvosi…a', opts: ['t', 'd'], a: 't' },
+      { w: 'ta…min', opts: ['x', 'h'], a: 'x' },
+      { w: '…ulosa', opts: ['x', 'h'], a: 'x' },
+      { w: 'fa…mlamoq', opts: ['x', 'h'], a: 'h' },
+      { w: 'iz…oh', opts: ['', '—'], a: '' },
+      { w: 'ma…mun', opts: ['z', 's'], a: 'z' },
+      { w: 'mu…okama', opts: ['x', 'h'], a: 'h' },
+      { w: 'bevosi…a', opts: ['t', 'd'], a: 't' },
+    ].filter((x) => x.a !== ''),
+    spell: [
+      { opts: ['bilvosita', 'bilvosida'], a: 0 },
+      { opts: ['kontekst', 'kontekist'], a: 0 },
+      { opts: ['taxmin', 'tahmin'], a: 0 },
+      { opts: ['fahmlamoq', 'faxmlamoq'], a: 0 },
+      { opts: ['mulohaza', 'muloxaza'], a: 0 },
+      { opts: ['umumlashtirmoq', 'umumlashtirmok'], a: 0 },
+      { opts: ['oshkora', 'oshqora'], a: 0 },
+      { opts: ['sub’ektiv', 'subektiv'], a: 0 },
+    ],
+    odd: [
+      { items: ['fikr', 'sabab', 'misol', 'sinonim'], answer: 3, why: 'Sinonim FSMU tarkibiga kirmaydi.' },
+      { items: ['bevosita', 'ochiq', 'oshkora', 'yashirin'], answer: 3, why: 'Qolganlari «ochiq» ma’nosida.' },
+      { items: ['taxmin', 'fahm', 'kontekst', 'reklama'], answer: 3, why: 'Reklama yashirin mazmunni anglash vositasi emas.' },
+    ],
+  },
+
+  /* ===================== 8 ===================== */
+  {
+    id: 'ot9-8',
+    source: 'I bo‘lim. Ona yurt • 8-dars • 27–28-betlar',
+    title: '«Sayohat taassurotlari». Taassurot matnini yozish',
+    short: 'Tasviriy matn, so‘z izohi va yozma ishni baholash mezonlari',
+    lesson: [
+      {
+        title: 'Matn mazmuni',
+        text: 'Muallif (Abbos Alimov) sinfdoshlari bilan «Zangi ota» majmuasiga ziyoratga borganini hikoya qiladi: masjid peshtoqlaridagi arabiy harflar, jimjimador naqshlar, shifobaxsh buloq, rang-barang baliqlar, suvenir do‘konlari.',
+        rule: 'Asosiy fikr: sayohat insonni tiniqtiradi, yuksaltiradi; buyuk ajdodlar merosini ko‘rib, inson o‘z millatidan g‘ururlanadi.',
+        ruleLabel: 'G‘oya',
+      },
+      {
+        title: 'Taassurot matnining tuzilishi',
+        table: {
+          head: ['Qism', 'Mazmuni', 'Matndan'],
+          rows: [
+            ['Kirish', 'Sayohat sababi, maqsadi', 'Ajdodlar qadamjosini ziyorat qilishni rejalashtirgandik'],
+            ['Tasvir', 'Ko‘rgan narsalar, detallar', 'Peshtoqlar, naqshlar, buloq, baliqlar'],
+            ['His-tuyg‘u', 'Ichki kechinmalar', 'Sirli harorat, lol qolasiz, ruhan tiniqasan'],
+            ['Xulosa', 'Umumiy taassurot, fikr', 'Vatanimni yaxshi ko‘raman'],
+          ],
+        },
+      },
+      {
+        title: 'So‘zlar izohi',
+        table: {
+          head: ['So‘z', 'Izohi', 'Misol'],
+          rows: [
+            ['tarovat', 'so‘lim, yoqimli holat', 'Ko‘klam tarovati insonni sarxush qiladi.'],
+            ['shukuh', 'salobat, ulug‘vorlik', 'Peshtoqlar imoratga shukuh berib turardi.'],
+            ['peshtoq', 'binoning old tomonidagi baland kirish qismi', 'Masjid peshtoqida yozuvlar bor.'],
+            ['jimjimador', 'nozik bezakli', 'Jimjimador naqshlar ko‘zni quvontiradi.'],
+            ['bahri dili ochilmoq', 'ko‘ngli yayramoq', 'Bog‘ni ko‘rib bahri dilim ochildi.'],
+            ['hayratomuz', 'hayratga soladigan', 'Hayratomuz o‘yinchoqlar sotilardi.'],
+          ],
+        },
+      },
+      {
+        title: 'Yozish rejasi',
+        list: [
+          'Sayohatga chiqishdan maqsadingiz nima edi?',
+          'Kimlar bilan bordingiz?',
+          'Qiziq voqea bo‘ldimi?',
+          'Yangi taomlar tatib ko‘rdingizmi?',
+          'U joyga borishni tavsiya qilasizmi va nega?',
+        ],
+      },
+      {
+        title: 'Baholash mezonlari (har biri 0–3 ball)',
+        table: {
+          head: ['Mezon', '3 ball'],
+          rows: [
+            ['Mavzuning ochilishi', 'To‘liq'],
+            ['Matn tuzilishi', 'Kirish, asosiy qism, xulosa aniq va izchil'],
+            ['Imlo va tinish belgilari', 'Xatosiz yoki juda kam'],
+            ['Nutq izchilligi', 'Fikrlar mantiqiy bog‘langan'],
+            ['So‘z boyligi', 'Boy, mazmunli'],
+          ],
+        },
+        note: '6–9 ta xato — 1 ball, 10 tadan ortiq — 0 ball. So‘zlashuv uslubida jo‘n yozilgan matn yuqori baholanmaydi.',
+      },
+    ],
+    pairs: [
+      ['tarovat', 'so‘lim holat'],
+      ['shukuh', 'salobat, ulug‘vorlik'],
+      ['peshtoq', 'binoning baland kirish qismi'],
+      ['jimjimador', 'nozik bezakli'],
+      ['hayratomuz', 'hayratga soladigan'],
+      ['bahri dili ochilmoq', 'ko‘ngli yayramoq'],
+      ['Zangi ota', 'ziyorat qilingan majmua'],
+    ],
+    quiz: [
+      { q: 'Muallif qayerga ziyoratga bordi?', options: ['Zangi ota majmuasiga', 'Registonga', 'Xivaga', 'Shohimardonga'], answer: 0 },
+      { q: '«Tarovat» so‘zining ma’nosi?', options: ['so‘lim, yoqimli holat', 'g‘amginlik', 'shovqin', 'qorong‘ulik'], answer: 0 },
+      { q: '«Peshtoq» nima?', options: ['binoning baland kirish qismi', 'hovuz', 'gumbaz', 'minora tepasi'], answer: 0 },
+      { q: 'Taassurot matni qanday qism bilan tugaydi?', options: ['xulosa', 'kirish', 'sarlavha', 'tasvir'], answer: 0 },
+      { q: 'Yozma ishda 10 tadan ortiq xato uchun necha ball?', options: ['0', '1', '2', '3'], answer: 0 },
+      { q: 'Hovuzda nimalar suzib yurardi?', options: ['rang-barang baliqlar', 'o‘rdaklar', 'qayiqlar', 'oqqushlar'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Tasvir (ko‘rilgan narsa)', 'His-tuyg‘u'],
+      items: [
+        { text: 'jimjimador naqshlar', cat: 0 }, { text: 'lol qolasiz', cat: 1 },
+        { text: 'shifobaxsh buloq', cat: 0 }, { text: 'ruhan tiniqasan', cat: 1 },
+        { text: 'suvenir do‘konlari', cat: 0 }, { text: 'faxr tuyg‘usi', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Taassurot matni qanday qismlardan iborat?', a: 'Kirish, tasvir, his-tuyg‘u, xulosa.' },
+      { q: 'Muallif sayohatdan qanday xulosaga keldi?', a: 'Buyuk ajdodlar davomchisi ekanidan g‘ururlandi, Vatanini yaxshi ko‘rishini angladi.' },
+      { q: 'Yozma ish qaysi mezonlar bilan baholanadi?', a: 'Mavzu ochilishi, tuzilish, imlo, izchillik, so‘z boyligi.' },
+      { q: '«Shukuh» so‘ziga gap tuzing.', a: 'Masalan: Qadimiy minora shaharga alohida shukuh bag‘ishlaydi.' },
+    ],
+    letters: [
+      { w: 'ziyorat…oh', opts: ['g', 'k'], a: 'g' },
+      { w: 'shifoba…sh', opts: ['x', 'h'], a: 'x' },
+      { w: 'ta…surot', opts: ['as', 'a’s'], a: 'a’s' },
+      { w: 'pesh…oq', opts: ['t', 'd'], a: 't' },
+      { w: 'shuku…', opts: ['x', 'h'], a: 'h' },
+      { w: 'tarova…', opts: ['t', 'd'], a: 't' },
+      { w: '…ayratomuz', opts: ['x', 'h'], a: 'h' },
+      { w: 'naq…', opts: ['sh', 'ch'], a: 'sh' },
+      { w: 'bu…oq', opts: ['l', 'll'], a: 'l' },
+      { w: 'suv…nir', opts: ['e', 'i'], a: 'e' },
+    ].map((x) => (x.w === 'ta…surot' ? { w: 'ta…surot', opts: ['a', 'a’'], a: 'a’' } : x)),
+    spell: [
+      { opts: ['taassurot', 'tasurot'], a: 0 },
+      { opts: ['shifobaxsh', 'shifobahsh'], a: 0 },
+      { opts: ['ziyoratgoh', 'ziyoratgox'], a: 0 },
+      { opts: ['jimjimador', 'jimjimodor'], a: 0 },
+      { opts: ['suvenir', 'suvinir'], a: 0 },
+      { opts: ['peshtoq', 'peshtok'], a: 0 },
+      { opts: ['hayratomuz', 'xayratomuz'], a: 0 },
+      { opts: ['tavsiya', 'tavsiyya'], a: 0 },
+      { opts: ['sayohat', 'sayoxat'], a: 0 },
+    ],
+    odd: [
+      { items: ['peshtoq', 'gumbaz', 'naqsh', 'baliq'], answer: 3, why: 'Qolganlari me’moriy bezak va qismlar.' },
+      { items: ['kirish', 'tasvir', 'xulosa', 'naqarot'], answer: 3, why: 'Naqarot taassurot matni qismi emas.' },
+      { items: ['tarovat', 'shukuh', 'jilo', 'shovqin'], answer: 3, why: 'Shovqin salbiy; qolganlari go‘zallik, ulug‘vorlik ma’nosida.' },
+    ],
+  },
+
+  /* ===================== 9 ===================== */
+  {
+    id: 'ot9-9',
+    source: 'II bo‘lim. Qadriyatlar • 1-dars • 30–33-betlar',
+    title: '«Hashar» hikoyasi. Milliy qadriyatlar',
+    short: 'Yodgor jarchi, hashar an’anasi, qahramon sifatlari va so‘z izohi',
+    lesson: [
+      {
+        title: 'Qadriyat nima?',
+        text: 'Avtobusda yoshlar kattalarga joy beradi — bu bizning qadriyat: kichiklar kattalarni hurmat qiladi, kattalar yoshlarga g‘amxo‘rlik ko‘rsatadi.',
+        rule: 'Qadriyat — jamiyatda hamma amal qiladigan, avloddan avlodga o‘tib kelayotgan qadrli odat va tushunchalar: hashar, mehmondo‘stlik, kattalarga hurmat, qo‘shnichilik.',
+        ruleLabel: 'Tushuncha',
+      },
+      {
+        title: 'Hikoya mazmuni',
+        text: 'Chorbog‘ qishlog‘ida Yodgor jarchini hamma ovozidan taniydi: to‘y, hashar, yo‘qolgan mol — hammasini eshak ustida qishloq bo‘ylab e’lon qiladi. Bolalar uning yordamchilari: u cho‘ntagini turshak, mayiz, yong‘oqqa to‘ldirib yuradi.',
+        list: [
+          'Fayzi chopag‘onning uloqchi oti yo‘qoladi. Yodgor tomog‘i og‘rib tursa ham ikki kun qidiradi.',
+          'Qorabo‘yin qishlog‘idagi tojik yigit: ot o‘zi biznikiga kelibdi, egasi olib ketsin, deydi.',
+          'Fayzi va’da qilgan qo‘zini keltiradi; o‘sha qo‘zidan endi o‘nta qo‘y bo‘lgan.',
+          'Oqsoqol Boboqul hashar haqida xabar beradi: hovuzni tozalash, nihol o‘tqazish.',
+          'Hasharda Yodgor chol yiqilgan tutga qarab, hayot ham birpaslik hashardek ekanini o‘ylaydi.',
+        ],
+        note: 'Muallif — Nasiba Abdullayeva. Hikoya matnini darslikning 30–32-betlaridan o‘qing.',
+      },
+      {
+        title: 'Qahramonlar',
+        table: {
+          head: ['Qahramon', 'Sifatlari'],
+          rows: [
+            ['Yodgor jarchi', 'Jussasi ixcham, chaqqon, mehribon; birovning dardiga befarq emas'],
+            ['Boboqul oqsoqol', 'Hazilkash, ishbilarmon, tashkilotchi'],
+            ['Tojik yigit', 'Novcha, qorachadan kelgan, halol'],
+            ['Kenja', 'Bobo-momosi qo‘lida o‘sgan nevara'],
+          ],
+        },
+      },
+      {
+        title: 'Hikoyadagi qadriyatlar',
+        list: [
+          'Hashar — el bilan birga savob ish qilish.',
+          'Kattalarning bolalarga shirinlik berishi.',
+          'Ko‘klamda sumalak pishirish.',
+          'Turmush o‘rtog‘ini farzandining ismi bilan chaqirish.',
+          'Halollik: topilgan otni egasiga qaytarish.',
+          'Va’daga vafo: Fayzining qo‘zini keltirishi.',
+        ],
+      },
+      {
+        title: 'So‘zlar izohi',
+        table: {
+          head: ['So‘z', 'Izohi'],
+          rows: [
+            ['jo‘ra', 'yoshi teng, yaqin o‘rtoq'],
+            ['jarchi', 'el orasida xabar e’lon qiluvchi kishi'],
+            ['chopag‘on', 'chavandoz, tez chopadigan'],
+            ['uloqchi ot', 'ko‘pkari (uloq) uchun tayyorlangan ot'],
+            ['suyunchi', 'xushxabar keltirganga beriladigan sovg‘a'],
+            ['to‘qim', 'egar ostiga solinadigan namat'],
+            ['tusmollamoq', 'taxmin qilmoq'],
+          ],
+        },
+      },
+      {
+        title: 'Muhokama',
+        list: [
+          'Hikoya aslida nima haqida? Bosh g‘oyasi qanday?',
+          'Nega Yodgor bobo betob bo‘lsa ham otni qidirdi? (otni nomus masalasi deb bildi)',
+          'Yodgor chol nega titrab ketdi? «Hayot — birpaslik hashar» fikrini izohlang.',
+          'Kattalardan yoshlik davridagi qadriyatlar haqida intervyu oling (kamida 5 ta savol).',
+        ],
+      },
+    ],
+    pairs: [
+      ['jo‘ra', 'yaqin o‘rtoq'],
+      ['jarchi', 'xabar e’lon qiluvchi'],
+      ['chopag‘on', 'chavandoz'],
+      ['suyunchi', 'xushxabar sovg‘asi'],
+      ['to‘qim', 'egar osti namati'],
+      ['tusmollamoq', 'taxmin qilmoq'],
+      ['Boboqul', 'tashkilotchi oqsoqol'],
+      ['Kenja', 'jarchining nevarasi'],
+    ],
+    quiz: [
+      { q: 'Hikoya voqealari qaysi faslda?', options: ['bahorda', 'kuzda', 'yozda', 'qishda'], answer: 0 },
+      { q: 'Yodgor bobo nega otni qidirdi?', options: ['otni nomus masalasi deb bildi', 'suyunchisi katta edi', 'qarindoshi edi', 'oqsoqol buyurdi'], answer: 0 },
+      { q: 'Jarchining yordamchilari kim edi?', options: ['yosh bolalar', 'cho‘ponlar', 'do‘sti', 'qo‘shnilar'], answer: 0 },
+      { q: 'Hasharni kim tashkil etadi?', options: ['Boboqul oqsoqol', 'Yodgor jarchi', 'Fayzi', 'Kenja'], answer: 0 },
+      { q: 'Otni kim topib qo‘ygan edi?', options: ['tojik yigit', 'Kenja', 'oqsoqol', 'Fayzi'], answer: 0 },
+      { q: '«Tusmollamoq» so‘zining ma’nosi?', options: ['taxmin qilmoq', 'tushuntirmoq', 'tusini o‘zgartirmoq', 'to‘xtamoq'], answer: 0 },
+      { q: 'Fayzi va’da qilgan qo‘zidan necha qo‘y bo‘ldi?', options: ['o‘nta', 'beshta', 'ikkita', 'yigirmata'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Hikoyadagi qadriyat', 'Hikoyada yo‘q'],
+      items: [
+        { text: 'hashar', cat: 0 }, { text: 'sport musobaqasi', cat: 1 },
+        { text: 'sumalak', cat: 0 }, { text: 'to‘y-hasham isrofi', cat: 1 },
+        { text: 'bolalarga shirinlik berish', cat: 0 }, { text: 'shahar bayrami', cat: 1 },
+        { text: 'halollik', cat: 0 }, { text: 'savdo yarmarkasi', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Qadriyat nima?', a: 'Jamiyatda hamma amal qiladigan, avloddan avlodga o‘tgan qadrli odat va tushunchalar.' },
+      { q: 'Hikoyaning bosh g‘oyasi nima?', a: 'Hashar, halollik, mehr kabi qadriyatlar elni birlashtiradi; hayot qisqa, ezgu ish qoladi.' },
+      { q: 'Tojik yigit qanday inson?', a: 'Halol: otni o‘zlashtirmay, egasiga qaytardi.' },
+      { q: '«Hayot — birpaslik mahalla hashariday» fikrini izohlang.', a: 'Qariganini kesib, yangisini ekishadi; avlodlar almashadi, umr tez o‘tadi.' },
+    ],
+    sequences: [
+      {
+        title: 'Hikoya voqealarini tartiblang',
+        items: [
+          'Fayzi chopag‘onning oti yo‘qoladi',
+          'Yodgor jarchi ikki kun otni qidiradi',
+          'Tojik yigit ot o‘zida ekanini aytadi',
+          'Fayzi va’da qilgan qo‘zini keltiradi',
+          'Oqsoqol hashar haqida xabar beradi',
+          'Mahallada hashar bo‘ladi',
+        ],
+      },
+    ],
+    letters: [
+      { w: '…ashar', opts: ['x', 'h'], a: 'h' },
+      { w: 'jo‘…a', opts: ['r', 'rr'], a: 'r' },
+      { w: 'oq…oqol', opts: ['s', 'z'], a: 's' },
+      { w: 'suyun…hi', opts: ['c', 's'], a: 'c' },
+      { w: 'tu…mollamoq', opts: ['s', 'z'], a: 's' },
+      { w: 'to‘…im', opts: ['q', 'k'], a: 'q' },
+      { w: 'ma’ra…a', opts: ['k', 'q'], a: 'k' },
+      { w: 'tan…o', opts: ['x', 'h'], a: 'h' },
+      { w: 'qishlo…', opts: ['q', 'k'], a: 'q' },
+      { w: 'na…l', opts: ['x', 'h'], a: 'h' },
+    ].map((x) => (x.w === 'na…l' ? { w: 'ni…ol', opts: ['x', 'h'], a: 'h' } : x)),
+    spell: [
+      { opts: ['ma’raka', 'maraka'], a: 0 },
+      { opts: ['oqsoqol', 'oqsaqol'], a: 0 },
+      { opts: ['suyunchi', 'suyinchi'], a: 0 },
+      { opts: ['kuyov', 'kiyov'], a: 0 },
+      { opts: ['tanho', 'tanxo'], a: 0 },
+      { opts: ['hashar', 'xashar'], a: 0 },
+      { opts: ['chopag‘on', 'chopog‘on'], a: 0 },
+      { opts: ['sumalak', 'sumalaq'], a: 0 },
+      { opts: ['qadriyat', 'qadryat'], a: 0 },
+    ],
+    odd: [
+      { items: ['hashar', 'sumalak', 'mehmondo‘stlik', 'isrofgarchilik'], answer: 3, why: 'Isrofgarchilik qadriyat emas.' },
+      { items: ['Yodgor', 'Boboqul', 'Fayzi', 'Rustam'], answer: 3, why: 'Rustam — «Bayroq» hikoyasidan.' },
+      { items: ['jo‘ra', 'oshna', 'o‘rtoq', 'raqib'], answer: 3, why: 'Qolganlari sinonimlar: do‘st ma’nosida.' },
+    ],
+  },
+
+  /* ===================== 10 ===================== */
+  {
+    id: 'ot9-10',
+    source: 'II bo‘lim. Qadriyatlar • 2-dars • 34–36-betlar',
+    title: 'So‘zlashuv va adabiy shakl. Sinonimik qatorlar',
+    short: 'Og‘zaki shakllarni adabiy tilga aylantirish, imlo va sinonimlar farqi',
+    lesson: [
+      {
+        title: 'So‘zlashuv shakli va adabiy shakl',
+        rule: 'Badiiy matnda qahramon nutqini jonli ko‘rsatish uchun so‘zlashuv shakllari ishlatiladi. Rasmiy va ilmiy matnda, insho va bayonda esa adabiy shakl qo‘llanadi.',
+        ruleLabel: 'Qoida',
+        table: {
+          head: ['So‘zlashuv shakli', 'Adabiy shakli'],
+          rows: [
+            ['ulim', 'o‘g‘lim'],
+            ['bo‘ma', 'bo‘lma'],
+            ['kepti', 'kelibdi'],
+            ['opchiq', 'olib chiq'],
+            ['qarayin', 'qaray'],
+            ['ketmon-petmon', 'ketmon va boshqa asboblar'],
+            ['erta (hashar)', 'ertaga'],
+          ],
+        },
+      },
+      {
+        title: 'Muallif so‘zlashuv shaklini nega ishlatgan?',
+        list: [
+          'Qahramonni jonli, hayotiy ko‘rsatish uchun.',
+          'Qishloq muhitini, sheva ohangini berish uchun.',
+          'Qahramonlar orasidagi samimiylikni ko‘rsatish uchun.',
+          'Jarchining e’loni («ko‘rgan bormi, hooo») — xalqona ohang.',
+        ],
+        note: 'Diqqat: o‘zingiz yozma ish yozganda so‘zlashuv shakllaridan foydalanmang.',
+      },
+      {
+        title: 'To‘g‘ri yozilishi',
+        table: {
+          head: ['To‘g‘ri', 'Noto‘g‘ri'],
+          rows: [
+            ['ma’raka', 'maraka'],
+            ['oqsoqol', 'oqsaqol'],
+            ['suyunchi', 'suyinchi'],
+            ['kuyov', 'kiyov'],
+            ['tanho', 'tanxo'],
+          ],
+        },
+      },
+      {
+        title: 'Sinonimik qator va ma’no farqi',
+        rule: 'Sinonimlar umumiy ma’nosi bilan bir xil bo‘lsa ham, ma’no nozikligi, kuchi va uslubi bilan farqlanadi. To‘g‘ri sinonimni tanlash nutqni aniq va boy qiladi.',
+        ruleLabel: 'Qoida',
+        table: {
+          head: ['So‘z', 'Izohi', 'Farqi'],
+          rows: [
+            ['aldamoq', 'yolg‘on gap bilan ishontirmoq', 'odatiy aldov'],
+            ['laqillatmoq', 'soddaroq kishini aldamoq', 'ishonuvchanni aldash'],
+            ['avramoq', 'ustalik bilan ishontirib, chuv tushirmoq', 'hiylakorlik, ustomonlik'],
+          ],
+        },
+        note: '«Ravshan» so‘zining sinonimlari: aniq, ochiq, yorug‘, tiniq.',
+      },
+      {
+        title: 'Hikoyadan sinonimlar',
+        table: {
+          head: ['So‘z', 'Sinonimi'],
+          rows: [
+            ['boqib o‘tirmoq', 'qarab turmoq'],
+            ['chopag‘on', 'chopqir, chavandoz'],
+            ['ildiz', 'tomir'],
+            ['momo', 'buvi'],
+            ['kallapo‘sh', 'do‘ppi'],
+            ['suyunchi', 'sevinchi'],
+            ['yo‘rttirmoq', 'lo‘killatmoq'],
+            ['oshna', 'o‘rtoq'],
+            ['tusmollamoq', 'gumon qilmoq'],
+            ['sahar', 'subhidam'],
+          ],
+        },
+      },
+      {
+        title: 'Fakt yoki fikr?',
+        table: {
+          head: ['Jumla', 'Turi'],
+          rows: [
+            ['Yodgorboy ota qishloqning jarchisi edi.', 'Fakt'],
+            ['Tojik yigit otni o‘g‘irlab ketmoqchi edi.', 'Fikr (matnga zid)'],
+            ['Mahalla ahli oqsoqolni ko‘p xushlamas edi.', 'Fikr (asossiz)'],
+            ['Fayzi uloqchi otini yo‘qotib qo‘yadi.', 'Fakt'],
+          ],
+        },
+      },
+    ],
+    pairs: [
+      ['ulim', 'o‘g‘lim'],
+      ['kepti', 'kelibdi'],
+      ['opchiq', 'olib chiq'],
+      ['bo‘ma', 'bo‘lma'],
+      ['momo', 'buvi'],
+      ['kallapo‘sh', 'do‘ppi'],
+      ['sahar', 'subhidam'],
+      ['avramoq', 'ustalik bilan aldamoq'],
+    ],
+    quiz: [
+      { q: '«Kepti» so‘zining adabiy shakli?', options: ['kelibdi', 'kelyapti', 'kelgan', 'keldi'], answer: 0 },
+      { q: '«Opchiq» so‘zining adabiy shakli?', options: ['olib chiq', 'ochib chiq', 'opa chiq', 'o‘tib chiq'], answer: 0 },
+      { q: 'Qaysi biri to‘g‘ri yozilgan?', options: ['oqsoqol', 'oqsaqol', 'oqsoqal', 'aqsoqol'], answer: 0 },
+      { q: '«Avramoq» qaysi sinonimdan farqi bilan ajraladi?', options: ['ustalik, hiylakorlik bilan aldash', 'oddiy aldash', 'sodda odamni aldash', 'hazil qilish'], answer: 0 },
+      { q: '«Sahar» so‘zining sinonimi?', options: ['subhidam', 'shom', 'peshin', 'kecha'], answer: 0 },
+      { q: '«Ravshan» so‘zining sinonimi emas:', options: ['xira', 'aniq', 'tiniq', 'yorug‘'], answer: 0 },
+      { q: 'Yozma ishda qaysi shakl ishlatiladi?', options: ['adabiy shakl', 'so‘zlashuv shakli', 'sheva', 'jargon'], answer: 0 },
+    ],
+    sort: {
+      categories: ['So‘zlashuv shakli', 'Adabiy shakl'],
+      items: [
+        { text: 'kepti', cat: 0 }, { text: 'kelibdi', cat: 1 },
+        { text: 'ulim', cat: 0 }, { text: 'o‘g‘lim', cat: 1 },
+        { text: 'opchiq', cat: 0 }, { text: 'olib chiq', cat: 1 },
+        { text: 'bo‘ma', cat: 0 }, { text: 'bo‘lma', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Muallif nega so‘zlashuv shakllarini ishlatgan?', a: 'Qahramonlarni jonli, qishloq muhitini hayotiy ko‘rsatish uchun.' },
+      { q: 'Aldamoq, laqillatmoq, avramoqning farqi?', a: 'Aldamoq — odatiy; laqillatmoq — soddani; avramoq — ustalik, hiyla bilan.' },
+      { q: '«Ravshan» so‘ziga 4 ta sinonim ayting.', a: 'Aniq, ochiq, yorug‘, tiniq.' },
+      { q: '«Tojik yigit otni o‘g‘irlab ketmoqchi edi» — fakt yoki fikr?', a: 'Fikr, matnga zid: yigit otni egasiga qaytardi.' },
+    ],
+    letters: [
+      { w: 'o‘…‘lim', opts: ['g', 'k'], a: 'g' },
+      { w: 'ma…raka', opts: ['’', ''], a: '’' },
+      { w: 'oqso…ol', opts: ['q', 'k'], a: 'q' },
+      { w: 'suyun…hi', opts: ['c', 's'], a: 'c' },
+      { w: 'k…yov', opts: ['u', 'i'], a: 'u' },
+      { w: 'tan…o', opts: ['x', 'h'], a: 'h' },
+      { w: 'sub…idam', opts: ['x', 'h'], a: 'h' },
+      { w: 'kallapo‘…h', opts: ['s', 'ch'], a: 's' },
+      { w: 'la…illatmoq', opts: ['q', 'k'], a: 'q' },
+      { w: 'ra…shan', opts: ['v', 'f'], a: 'v' },
+    ].map((x) => (x.w === 'ma…raka' ? { w: 'ma…raka', opts: ['’', '‘'], a: '’' } : x)),
+    spell: [
+      { opts: ['ma’raka', 'maraka'], a: 0 },
+      { opts: ['oqsoqol', 'oqsaqol'], a: 0 },
+      { opts: ['suyunchi', 'suyinchi'], a: 0 },
+      { opts: ['kuyov', 'kiyov'], a: 0 },
+      { opts: ['tanho', 'tanxo'], a: 0 },
+      { opts: ['subhidam', 'subxidam'], a: 0 },
+      { opts: ['laqillatmoq', 'laqqillatmoq'], a: 0 },
+      { opts: ['kallapo‘sh', 'kalapo‘sh'], a: 0 },
+      { opts: ['ishontirmoq', 'ishontirmok'], a: 0 },
+    ],
+    odd: [
+      { items: ['aldamoq', 'laqillatmoq', 'avramoq', 'ishontirmoq'], answer: 3, why: 'Ishontirmoq har doim aldash emas; qolganlari aldash ma’nosida.' },
+      { items: ['aniq', 'ochiq', 'tiniq', 'xira'], answer: 3, why: 'Xira — «ravshan»ga zid.' },
+      { items: ['kepti', 'opchiq', 'bo‘ma', 'kelibdi'], answer: 3, why: 'Kelibdi — adabiy shakl.' },
+    ],
+  },
+];
+
 const CONTENT = {
   adabiyot: { 8: [...ADABIYOT_8, ...ADABIYOT_8_P2, ...ADABIYOT_8_P3, ...ADABIYOT_8_P4, ...ADABIYOT_8_P5] },
-  'ona-tili': { 8: [...ONA_TILI_8, ...ONA_TILI_8_PART2, ...ONA_TILI_8_PART3, ...ONA_TILI_8_PART4, ...ONA_TILI_8_PART5, ...ONA_TILI_8_PART6, ...ONA_TILI_8_PART7, ...ONA_TILI_8_PART8] },
+  'ona-tili': { 8: [...ONA_TILI_8, ...ONA_TILI_8_PART2, ...ONA_TILI_8_PART3, ...ONA_TILI_8_PART4, ...ONA_TILI_8_PART5, ...ONA_TILI_8_PART6, ...ONA_TILI_8_PART7, ...ONA_TILI_8_PART8], 9: [...ONA_TILI_9] },
 };
 
 /* --- Har bir fan uchun umumiy takrorlash savollari (to‘g‘ri javob — 0-variant, o‘yinda aralashtiriladi) --- */
@@ -16223,6 +17616,8 @@ function gameAvailable(gameId, topic) {
   if (gameId === 'odd') return (topic.odd || []).length >= 2;
   if (gameId === 'debate') return (topic.debate || []).length > 0;
   if (gameId === 'creative') return (topic.creative || []).length > 0;
+  if (gameId === 'letters') return (topic.letters || []).length >= 3;
+  if (gameId === 'spell') return (topic.spell || []).length >= 3;
   return false;
 }
 
@@ -16241,6 +17636,8 @@ const GAMES = [
   { id: 'sequence', name: 'Voqealar zanjiri', desc: 'Voqealarni to‘g‘ri tartibda tiklang', icon: ListOrdered, color: 'bg-cyan-600', fresh: true },
   { id: 'odd', name: 'Ortiqchasini top', desc: 'To‘rttadan bittasi guruhga kirmaydi', icon: Shapes, color: 'bg-teal-700', fresh: true },
   { id: 'debate', name: 'Bahs maydoni', desc: 'Ikki tomon dalil keltiradi, o‘qituvchi baholaydi', icon: Scale, color: 'bg-amber-600', fresh: true },
+  { id: 'letters', name: 'Qaysi harf?', desc: 'x yoki h? q yoki k? Tushgan harfni toping', icon: Type, color: 'bg-violet-700', fresh: true },
+  { id: 'spell', name: 'Imlo bellashuvi', desc: 'Ikki yozilishdan to‘g‘risini 10 soniyada tanlang', icon: SpellCheck2, color: 'bg-emerald-700', fresh: true },
   { id: 'creative', name: 'Ijodiy topshiriq', desc: 'Yopiq karta, taymer va yulduzli baho', icon: Palette, color: 'bg-fuchsia-700', fresh: true },
 ];
 
@@ -16252,6 +17649,7 @@ const GAME_GROUPS = [
   { ids: ['match', 'anagram', 'memory', 'hangman', 'sort'], take: 2 },
   { ids: ['boom', 'race'], take: 1 },
   { ids: ['sequence', 'odd', 'debate', 'creative'], take: 2 },
+  { ids: ['letters', 'spell'], take: 2 },
 ];
 const THINK_GAMES = ['sequence', 'odd', 'debate', 'creative'];
 function featuredGames(topic, index) {
@@ -16761,7 +18159,7 @@ function LoginScreen({ onLogin }) {
         </p>
         <div className="mt-8 grid grid-cols-3 gap-3">
           {[
-            { icon: LayoutGrid, t: '15 xil o‘yin' },
+            { icon: LayoutGrid, t: '17 xil o‘yin' },
             { icon: Users, t: 'Tayyor sinf ro‘yxatlari' },
             { icon: UserCheck, t: '4 tanlash usuli' },
           ].map(({ icon: I, t }) => (
@@ -17353,7 +18751,7 @@ const GUIDE_STEPS = [
     text: 'Har bir darsga 5 ta o‘yin taklif qilinadi va ular darsdan darsga almashib turadi. Qolganlari «Boshqa o‘yinlar»da.',
     tips: [
       '«Tasodifiy o‘yin» tugmasi o‘yinni o‘zi tanlab beradi.',
-      'Jami 15 ta o‘yin: Test, Rostmi?, Millioner, Savol-javob, Moslashtirish, Harflar, Xotira, Yashirin so‘z, Joyda, Portlash, Poyga hamda fikrlash o‘yinlari — Voqealar zanjiri, Ortiqchasini top, Bahs maydoni, Ijodiy topshiriq (adabiyot darslarida).',
+      'Jami 17 ta o‘yin: Test, Rostmi?, Millioner, Savol-javob, Moslashtirish, Harflar, Xotira, Yashirin so‘z, Joyda, Portlash, Poyga hamda fikrlash o‘yinlari — Voqealar zanjiri, Ortiqchasini top, Bahs maydoni, Ijodiy topshiriq (adabiyot darslarida), imlo o‘yinlari — Qaysi harf?, Imlo bellashuvi (9-sinf ona tili).',
     ],
   },
   {
@@ -17474,7 +18872,7 @@ function WelcomeModal({ name, onGuide, onClose }) {
           Dars play — darslik mavzularini tushuntirish va sinf bilan o‘yin o‘ynash uchun. Qisqa qo‘llanma bilan 2 daqiqada tanishib chiqing.
         </p>
         <div className="mt-6 grid gap-3 text-left sm:grid-cols-3">
-          {[[BookOpen, 'Tushuntirish', 'darslik asosida slaydlar'], [LayoutGrid, '15 ta o‘yin', '2–4 jamoa bilan'], [Trophy, 'Reyting', 'sinf va maktab bo‘yicha']].map(([I, t, d]) => (
+          {[[BookOpen, 'Tushuntirish', 'darslik asosida slaydlar'], [LayoutGrid, '17 ta o‘yin', '2–4 jamoa bilan'], [Trophy, 'Reyting', 'sinf va maktab bo‘yicha']].map(([I, t, d]) => (
             <div key={t} className="rounded-2xl bg-blue-50 p-4">
               <I size={28} className="text-blue-700" />
               <div className="mt-2 text-lg font-extrabold text-blue-950">{t}</div>
@@ -17533,7 +18931,7 @@ function HomeScreen({ teacher, onStart, schoolClasses = [], onClassResults, onRa
       <div className="mt-8 grid gap-4 md:grid-cols-3">
         {[
           { icon: BookOpen, t: 'Dars tushuntirish', d: 'Har bir mavzu darslik asosida slaydlar bilan' },
-          { icon: LayoutGrid, t: 'Interaktiv o‘yinlar', d: '15 ta o‘yin, o‘z savollaringiz bilan ham' },
+          { icon: LayoutGrid, t: 'Interaktiv o‘yinlar', d: '17 ta o‘yin, o‘z savollaringiz bilan ham' },
           { icon: UserCheck, t: 'O‘quvchi tanlash', d: 'Kamera, ro‘yxat, doira va avtomatik guruhlash' },
         ].map(({ icon: I, t, d }) => (
           <div key={t} className="rounded-3xl border-2 border-blue-100 bg-white p-6">
@@ -20579,6 +21977,141 @@ function OddGame({ topic, award, nextTurn, onFinish, teamName }) {
   );
 }
 
+/* 16) Qaysi harf? — tushirib qoldirilgan harfni topish (x/h, q/k, b/p ...) */
+const LETTER_LIMIT = 15;
+function fillWord(w, a) {
+  const v = a === 'qo‘shib' ? '' : a;
+  return w.replace('…', v);
+}
+function LetterGame({ topic, award, nextTurn, onFinish, teamName }) {
+  const cards = useMemo(() => shuffle(topic.letters || []).slice(0, 10).map((c) => ({ ...c, opts: shuffle(c.opts) })), [topic]);
+  const [idx, setIdx] = useState(0);
+  const [picked, setPicked] = useState(null); // variant | 'time'
+  const card = cards[idx];
+  const time = useCountdown(LETTER_LIMIT, picked === null, idx, () => { setPicked('time'); playSound('wrong'); });
+  if (!card) return null;
+  const choose = (o) => {
+    if (picked !== null) return;
+    setPicked(o);
+    if (o === card.a) award(10 + (time >= 10 ? 5 : 0));
+  };
+  const next = () => {
+    nextTurn();
+    if (idx + 1 >= cards.length) onFinish();
+    else { setIdx(idx + 1); setPicked(null); }
+  };
+  const ok = picked === card.a;
+  const [left, right] = card.w.split('…');
+  const shown = picked === null ? null : card.a === 'qo‘shib' ? '' : card.a;
+  return (
+    <div className="mx-auto max-w-4xl">
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+        <span className="text-xl font-bold text-blue-600">{idx + 1} / {cards.length} • Javob beradi: {teamName}</span>
+        <TimerPill time={time} limit={LETTER_LIMIT} />
+      </div>
+      <div className="rounded-[2rem] bg-gradient-to-br from-violet-600 to-indigo-700 p-6 text-center text-white shadow-xl">
+        <div className="text-xl font-bold text-violet-100">Nuqtalar o‘rniga qaysi harf yoziladi?</div>
+        <div className="mt-4 select-none break-all text-5xl md:text-7xl font-black tracking-wide">
+          {left}
+          <span className={`mx-1 inline-block min-w-[1.2em] rounded-2xl px-2 ${picked === null ? 'bg-white/20 text-white/80' : ok ? 'bg-emerald-400 text-white' : 'bg-amber-300 text-indigo-900'}`}>
+            {picked === null ? '?' : shown || '·'}
+          </span>
+          {right}
+        </div>
+      </div>
+      <div className={`mt-6 grid gap-4 ${card.opts.length === 3 ? 'grid-cols-3' : 'grid-cols-2'}`}>
+        {card.opts.map((o) => {
+          let cls = 'border-violet-200 bg-white text-indigo-900 hover:border-violet-500 hover:bg-violet-50';
+          if (picked !== null) {
+            if (o === card.a) cls = 'border-emerald-400 bg-emerald-50 text-emerald-700';
+            else if (o === picked) cls = 'border-rose-400 bg-rose-50 text-rose-600';
+            else cls = 'border-slate-200 bg-white text-slate-300';
+          }
+          return (
+            <button key={o} onClick={() => choose(o)} disabled={picked !== null} className={`min-h-[120px] rounded-3xl border-4 text-5xl md:text-6xl font-black transition active:scale-95 ${cls}`}>
+              {o === 'qo‘shib' ? <span className="text-3xl">qo‘shib</span> : o}
+            </button>
+          );
+        })}
+      </div>
+      {picked !== null && (
+        <div className="dp-pop mt-6 flex flex-wrap items-center justify-between gap-4 rounded-3xl bg-slate-50 p-5">
+          <div className="min-w-0 flex-1">
+            <FeedbackBadge ok={ok} text={picked === 'time' ? 'Vaqt tugadi!' : ok ? 'To‘g‘ri!' : 'Noto‘g‘ri'} />
+            <p className="mt-3 text-2xl font-bold text-slate-700">To‘g‘ri yozilishi: <span className="text-emerald-700">{fillWord(card.w, card.a)}</span></p>
+          </div>
+          <PrimaryButton onClick={next} icon={ArrowRight}>{idx + 1 >= cards.length ? 'Natijalar' : 'Keyingi'}</PrimaryButton>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* 17) Imlo bellashuvi — ikki yozilishdan to‘g‘risini topish */
+const SPELL_LIMIT = 10;
+function SpellGame({ topic, award, nextTurn, onFinish, teamName }) {
+  const cards = useMemo(
+    () => shuffle(topic.spell || []).slice(0, 10).map((c) => {
+      const right = c.opts[c.a];
+      return { right, opts: shuffle(c.opts) };
+    }),
+    [topic],
+  );
+  const [idx, setIdx] = useState(0);
+  const [picked, setPicked] = useState(null);
+  const [streak, setStreak] = useState(0);
+  const card = cards[idx];
+  const time = useCountdown(SPELL_LIMIT, picked === null, idx, () => { setPicked('time'); setStreak(0); playSound('wrong'); });
+  if (!card) return null;
+  const choose = (o) => {
+    if (picked !== null) return;
+    setPicked(o);
+    if (o === card.right) { award(10 + (streak >= 2 ? 5 : 0)); setStreak((s) => s + 1); } else setStreak(0);
+  };
+  const next = () => {
+    nextTurn();
+    if (idx + 1 >= cards.length) onFinish();
+    else { setIdx(idx + 1); setPicked(null); }
+  };
+  const ok = picked === card.right;
+  return (
+    <div className="mx-auto max-w-4xl">
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+        <span className="text-xl font-bold text-blue-600">{idx + 1} / {cards.length} • Javob beradi: {teamName}</span>
+        <div className="flex items-center gap-3">
+          {streak >= 2 && <span className="rounded-full bg-orange-100 px-4 py-2 text-lg font-extrabold text-orange-600"><Zap size={20} className="mr-1 inline" />{streak} ketma-ket</span>}
+          <TimerPill time={time} limit={SPELL_LIMIT} />
+        </div>
+      </div>
+      <div className="rounded-[2rem] bg-gradient-to-br from-emerald-600 to-teal-700 p-6 text-center text-white shadow-xl">
+        <div className="text-2xl md:text-3xl font-extrabold">Qaysi biri to‘g‘ri yozilgan?</div>
+        <p className="mt-1 text-lg text-emerald-100">10 soniya ichida tanlang. 3 ta ketma-ket to‘g‘ri javob — bonus!</p>
+      </div>
+      <div className={`mt-6 grid gap-4 ${card.opts.length > 2 ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1 sm:grid-cols-2'}`}>
+        {card.opts.map((o) => {
+          let cls = 'border-emerald-200 bg-white text-blue-950 hover:border-emerald-500 hover:bg-emerald-50';
+          if (picked !== null) {
+            if (o === card.right) cls = 'border-emerald-400 bg-emerald-50 text-emerald-700';
+            else if (o === picked) cls = 'border-rose-400 bg-rose-50 text-rose-600 line-through';
+            else cls = 'border-slate-200 bg-white text-slate-300 line-through';
+          }
+          return (
+            <button key={o} onClick={() => choose(o)} disabled={picked !== null} className={`min-h-[130px] break-words rounded-3xl border-4 p-5 text-3xl md:text-5xl font-black transition active:scale-95 ${cls}`}>
+              {o}
+            </button>
+          );
+        })}
+      </div>
+      {picked !== null && (
+        <div className="dp-pop mt-6 flex flex-wrap items-center justify-between gap-4 rounded-3xl bg-slate-50 p-5">
+          <FeedbackBadge ok={ok} text={picked === 'time' ? `Vaqt tugadi! To‘g‘risi: ${card.right}` : ok ? 'To‘g‘ri!' : `Noto‘g‘ri. To‘g‘risi: ${card.right}`} />
+          <PrimaryButton onClick={next} icon={ArrowRight}>{idx + 1 >= cards.length ? 'Natijalar' : 'Keyingi'}</PrimaryButton>
+        </div>
+      )}
+    </div>
+  );
+}
+
 /* 14) Bahs maydoni — tanqidiy fikrlash, ikki tomon dalillari */
 const DEBATE_TIME = 60;
 function DebateGame({ topic, nextTurn, onFinish, teams, turn, updateTeams }) {
@@ -20839,6 +22372,8 @@ function PlayScreen({ game, topic, teams, turn, award, nextTurn, adjust, gameKey
         {game.id === 'sequence' && <SequenceGame key={gameKey} {...props} teamName={teams[turn]?.name} />}
         {game.id === 'odd' && <OddGame key={gameKey} {...props} teamName={teams[turn]?.name} />}
         {game.id === 'debate' && <DebateGame key={gameKey} {...props} teams={teams} turn={turn} updateTeams={updateTeams} />}
+        {game.id === 'letters' && <LetterGame key={gameKey} {...props} teamName={teams[turn]?.name} />}
+        {game.id === 'spell' && <SpellGame key={gameKey} {...props} teamName={teams[turn]?.name} />}
         {game.id === 'creative' && <CreativeGame key={gameKey} {...props} teamName={teams[turn]?.name} />}
       </div>
     </div>
