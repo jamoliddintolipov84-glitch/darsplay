@@ -25790,7 +25790,7 @@ const ADABIYOT_9 = [
         emoji: '🌍',
         text: 'Alpomish haqidagi doston faqat o‘zbeklarniki emas — ildizi bir xalqlarda uning o‘z variantlari bor.',
         cards: [
-          { e: '🇺🇿', t: 'O‘zbek', d: '«Alpomish»' },
+          { e: '🏡', t: 'O‘zbek', d: '«Alpomish»' },
           { e: '🏜️', t: 'Qoraqalpoq', d: '«Alpamis»' },
           { e: '🐎', t: 'Qozoq', d: '«Alpamis batir»' },
           { e: '🏔️', t: 'Oltoy', d: '«Alip-Manash»' },
@@ -26313,10 +26313,10 @@ const ADABIYOT_9 = [
       },
       {
         title: 'Eng muhim so‘z — Vatan',
-        emoji: '🇺🇿',
+        emoji: '🏡',
         quote: { text: 'Bolamga «Vatan», de ilk bora', by: 'Usmon Azim' },
         steps: [
-          { e: '🇺🇿', t: 'Vatanni tanit', d: 'Bolaning ilk so‘zi — «Vatan».' },
+          { e: '🏡', t: 'Vatanni tanit', d: 'Bolaning ilk so‘zi — «Vatan».' },
           { e: '🛡️', t: 'Otasini va elini tanit', d: 'Otasi Alpomish, eli Qo‘ng‘irot, tuprog‘i Boysun.' },
           { e: '💎', t: 'Boylikka aldanmasin', d: 'Boylikdan ham balandda el-yurt turadi.' },
           { e: '🦁', t: 'Sher bo‘lsin', d: 'Yurtiga suyanchiq bo‘lsin, nomini baxshilar kuylasin.' },
@@ -26440,7 +26440,7 @@ const ADABIYOT_9 = [
       },
       {
         title: 'Vatan — hamma narsaga arziydi',
-        emoji: '🇺🇿',
+        emoji: '🏡',
         text: 'Elomon tog‘ cho‘qqisiga chiqib, ko‘z oldida O‘zbekistonni ko‘radi va yig‘lab duo qiladi. U Vatanga ko‘z yoshi ham, quvonch ham, butun boshi ham arziydi, deydi.',
         quote: { text: 'Otamdan meros qolgansan, Bolamdan qarzim — sen', by: 'Usmon Azim, «Baxshiyona»' },
         reveal: [{ q: 'Bu ikki misra ajdod va avlodni qanday bog‘laydi?', a: 'Vatan otadan meros bo‘lib keladi va uni avlodga obod holda yetkazish — qarz. Biz zanjirning o‘rtasidagi halqamiz.' }],
@@ -26941,7 +26941,7 @@ const ADABIYOT_9 = [
         cards: [
           { e: '🌹', t: 'Barchin — mening nazarimda', d: 'Qahramon qizning qaysi fazilati sizni hayratga soldi?' },
           { e: '🤝', t: 'Qorajon: do‘stlik nima?', d: 'Dushmanlikdan do‘stlikka o‘tgan alp haqida.' },
-          { e: '🇺🇿', t: '«Bolamga “Vatan”, de ilk bora»', d: 'Xayrlashuv she’ri uyg‘otgan tuyg‘ular.' },
+          { e: '🏡', t: '«Bolamga “Vatan”, de ilk bora»', d: 'Xayrlashuv she’ri uyg‘otgan tuyg‘ular.' },
           { e: '🐫', t: '«Karvon ko‘rdim...»: mard oshiq', d: 'Muhabbat va kechirimlilik haqida.' },
           { e: '🎶', t: 'Elbek baxshining nasihati', d: '«Chida, lekin kuyla» — bu bugun ham kerakmi?' },
           { e: '🖋️', t: '«Adabiyot yashasa — millat yashar»', d: 'Cho‘lpon fikri va mening hayotim.' },
@@ -28343,8 +28343,1236 @@ const ADABIYOT_9_P2 = [
   },
 ];
 
+const ADABIYOT_9_P3 = [
+  /* ===================== 21. Oybek — urush va ishq ===================== */
+  {
+    id: 'ad9-oybek-yigi-yor',
+    source: 'II chorak • 21-dars • 72–74-betlar',
+    title: 'Oybek. «Yig‘i kelmaydi sira», «Yor keldi...» she’rlari',
+    short: 'Front lirikasi (1944) va keksalikdagi ishqiy kechinma (1963): ikki xil yurak holati',
+    theme: { emoji: '🕊️', grad: 'from-zinc-800 via-slate-600 to-rose-500', border: 'border-rose-200', tag: 'Harbiy va ishqiy lirika' },
+    lesson: [
+      {
+        title: 'Ikki she’r — ikki dunyo',
+        emoji: '🔀',
+        vs: {
+          q: 'Taqqoslang',
+          a: { t: '🎖️ «Yig‘i kelmaydi sira» (1944)', pts: ['Urush, kuygan uylar, qish quyuni', 'G‘azab, qotgan so‘z', 'Yuragida yig‘lagan Vatan'] },
+          b: { t: '🌙 «Yor keldi...» (1963)', pts: ['Yorning tashrifi, bahor', 'Quvonch, keyin hijron', 'Vafo — haqiqatdek ezgu'] },
+        },
+      },
+      {
+        title: 'Frontdan bir sahifa',
+        emoji: '🎖️',
+        text: 'Oybek 1942-yil dekabridan 1943-yil martigacha frontda bo‘lgan. «Yig‘i kelmaydi sira...» — ana shu kunlarning badiiy in’ikosi.',
+        poem: {
+          lines: ['Yig‘i kelmaydi sira...', 'G‘azabdan qaqragan ko‘z.', 'Bu yo‘llarning yaxidek', 'Labimda qotibdi so‘z.'],
+          author: 'Oybek, 1944',
+        },
+        reveal: [{ q: 'Nega shoirga yig‘i kelmaydi? Diydasi qattiqmi?', a: 'Yo‘q: dard shunchalik katta ki, ko‘z yoshi qurib, g‘azabga aylangan. Bu — «erkak yig‘lamaydi» emas, ko‘rgan dahshatlardan karaxt bo‘lgan qalb holati.' }],
+      },
+      {
+        title: 'Urush manzarasi',
+        emoji: '🔥',
+        cards: [
+          { e: '🏚️', t: 'Kuygan uylar', d: 'Bombalar vayron qilgan qishloqlar — uylarda endi faqat uvlar (boyqushlar) ovozi.' },
+          { e: '🍞', t: 'G‘ishtdek non', d: 'Xaltadagi qotgan non — qorni och bo‘lsa ham, uni eslamaydi.' },
+          { e: '❄️', t: 'Qish quyuni', d: 'Qoshu kipriklarni qirov bosgan — sovuq va tinimsiz bo‘ron.' },
+          { e: '❤️', t: 'Yuragimda Vatanim', d: 'Ko‘z yig‘lamaydi, ammo yurakda Vatan yig‘laydi.' },
+        ],
+        reveal: [{ q: '«Tanho kezaman. Yig‘lar yuragimda Vatanim» — qanday hasrat bor?', a: 'Yolg‘izlik, sog‘inch va Vatan taqdiri uchun qayg‘u. Askar butun xalq dardini o‘z yuragida ko‘tarib yuribdi.' }],
+      },
+      {
+        title: '«Yor keldi...» (1963)',
+        emoji: '🌙',
+        text: 'Yor kelganda atrofga hola — oy va quyosh atrofidagi nurli gardish — yoyiladi. Oshiq uni hujrasiga taklif qiladi, yor esa «yoz fasli supa so‘lim» deb supada o‘tiradi.',
+        reveal: [
+          { q: 'Hujraga kirmay, supada o‘tirishida qanday o‘zbekona fazilat bor?', a: 'Hayo, odob, iffat — ochiq joyda, hamma ko‘zi oldida suhbatlashish.' },
+          { q: 'Shoir yorni nega gulga emas, bulbulga o‘xshatadi?', a: 'Mumtoz an’anada yor — gul, oshiq — bulbul. Oybek an’anani buzib, yorni «donishmand, so‘zga boy bulbul» deydi: u go‘zalligi bilan emas, aqli va so‘zi bilan ham maftun qiladi.' },
+        ],
+      },
+      {
+        title: 'Noan’anaviy portret',
+        emoji: '🖼️',
+        cards: [
+          { e: '👁️', t: 'Ko‘zlar — nur', d: 'Yorug‘lik va hayot manbai.' },
+          { e: '✒️', t: 'Qosh — qalam', d: 'Ingichka, nafis chiziq — ijod ramzi ham.' },
+          { e: '🌑', t: 'Soch — bo‘yra, naq tun', d: 'Qalin va qop-qora — tun kabi sirli.' },
+          { e: '💎', t: 'Mantiqda olmosday', d: 'Fikri o‘tkir, uslubi keskin — aqlli yor.' },
+          { e: '📕', t: 'Pushkin jildi', d: 'Yor kitobxon: javondan Pushkinni olib ketadi.' },
+        ],
+      },
+      {
+        title: 'Hijron va vafo',
+        emoji: '💔',
+        quote: { text: 'Haqiqat singari ezgudir vafo', by: 'Oybek, «Yor keldi...»' },
+        text: 'Yor «Xayr» deb zumda yo‘q bo‘ladi. Oshiq ortidan yuguradi, ammo faqat yellar quchog‘i qarshilaydi. U yig‘lamaydi — «ko‘z yoshi qalbdan oqadi».',
+        reveal: [{ q: '«Ufqlarda rang ko‘p, qonlar undan ko‘p» — shoir nima demoqchi?', a: 'Shafaqning qizil ranglari ham yurak qonidan kam: hijron azobi tabiat ranglaridan ham ko‘proq «qon» to‘kadi.' }],
+        mission: { t: 'Yod olish', d: 'Oybekning o‘rganilgan she’rlaridan birini ifodali yod oling. Sinfda kim eng ta’sirli o‘qiydi — ovoz beramiz!' },
+      },
+    ],
+    pairs: [
+      ['«Yig‘i kelmaydi sira»', '1944-yil, front lirikasi'],
+      ['«Yor keldi...»', '1963-yil, ishqiy lirika'],
+      ['Hola', 'oy va quyosh atrofidagi gardish'],
+      ['Hujra', 'ham dars, ham yashash xonasi'],
+      ['G‘ishtdek non', 'qotib qolgan non'],
+      ['Uvlar', 'kuygan uylardagi boyqushlar'],
+      ['Pushkin jildi', 'yor javondan olgan kitob'],
+    ],
+    quiz: [
+      { q: '«Yig‘i kelmaydi sira» qaysi yili yozilgan?', options: ['1944', '1928', '1936', '1963'], answer: 0 },
+      { q: 'Shoirning so‘zi labida nimadek qotgan?', options: ['yo‘llarning yaxidek', 'tosh kabi', 'muz kabi', 'temir kabi'], answer: 0 },
+      { q: 'Shoir yuragida nima yig‘laydi?', options: ['Vatani', 'onasi', 'yori', 'do‘sti'], answer: 0 },
+      { q: '«Hola» so‘zining ma’nosi:', options: ['oy va quyosh atrofidagi gardish', 'bulut', 'shamol', 'yulduz'], answer: 0 },
+      { q: 'Yor qayerda o‘tirishni ma’qul ko‘radi?', options: ['supada', 'hujrada', 'bog‘da', 'ko‘chada'], answer: 0 },
+      { q: 'Oybek yorni nimaga o‘xshatadi?', options: ['donishmand bulbulga', 'gulga', 'oyga', 'sarvga'], answer: 0 },
+      { q: 'Yor javondan kimning kitobini oladi?', options: ['Pushkin', 'Navoiy', 'Lermontov', 'Cho‘lpon'], answer: 0 },
+    ],
+    sort: {
+      categories: ['«Yig‘i kelmaydi sira»', '«Yor keldi...»'],
+      items: [
+        { text: 'kuygan uylar', cat: 0 }, { text: 'hola', cat: 1 },
+        { text: 'g‘ishtdek non', cat: 0 }, { text: 'supa', cat: 1 },
+        { text: 'qish quyuni', cat: 0 }, { text: 'Pushkin jildi', cat: 1 },
+        { text: 'g‘azabdan qaqragan ko‘z', cat: 0 }, { text: 'bo‘sh kulba', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: '«Yig‘i kelmaydi sira»da qaysi davr tasvirlangan?', a: 'Ikkinchi jahon urushi yillari.' },
+      { q: '«Kuygan uylar» birikmasini izohlang.', a: 'Urushda yonib, vayron bo‘lgan, egasiz qolgan uylar.' },
+      { q: '«Haqiqat singari ezgudir vafo» misrasini tushuntiring.', a: 'Vafo haqiqat kabi muqaddas, abadiy qadriyat.' },
+      { q: 'Ikki she’rning umumiy jihati nima?', a: 'Ikkalasida ham yurak dardi ko‘z yoshi bilan emas, ichki kechinma bilan beriladi.' },
+    ],
+    odd: [
+      { items: ['kuygan uylar', 'qish quyuni', 'g‘ishtdek non', 'hola'], answer: 3, why: 'Hola — «Yor keldi...»dan.' },
+      { items: ['ko‘zlar — nur', 'qosh — qalam', 'soch — tun', 'yor — gul'], answer: 3, why: 'Oybek yorni gulga emas, bulbulga o‘xshatadi.' },
+    ],
+    debate: [
+      { claim: 'Erkak kishi yig‘lamasligi kerak.', pro: 'Bu mardlik belgisi deb qaraladi.', con: 'Yig‘lash — inson tabiati; Oybek ham ko‘z yoshi «qalbdan oqadi» deydi.' },
+    ],
+    creative: [
+      { task: 'Front askarining onasiga yozgan 3 gapli maktubini yozing.', time: 120 },
+      { task: 'Yoringizni (yoki onangizni) noan’anaviy 3 ta o‘xshatish bilan tasvirlang.', time: 90 },
+    ],
+  },
+
+  /* ===================== 22. Mirzo Ulug‘bek — ilm homiysi ===================== */
+  {
+    id: 'ad9-ulugbek-kirish',
+    source: 'II chorak • 22-dars • 75–76-betlar',
+    title: 'Odil Yoqubov. Mirzo Ulug‘bek — ilm-fan homiysi. Siyosiy vaziyat',
+    short: 'Adib hayoti, Ulug‘bek rasadxonasi va «Ziji Ko‘ragoniy», Shohruxdan keyingi taxt kurashi',
+    theme: { emoji: '🔭', grad: 'from-indigo-900 via-blue-800 to-cyan-600', border: 'border-cyan-200', tag: 'Tarixiy roman • Kirish' },
+    lesson: [
+      {
+        title: 'Odil Yoqubov',
+        emoji: '✍️',
+        facts: [
+          { n: '1926', l: 'Chimkent viloyati, Qarnoq qishlog‘ida tug‘ilgan' },
+          { n: '1951', l: 'ilk asari — «Tengdoshlar» qissasi' },
+          { n: '~90', l: 'tilga tarjima qilingan asarlari' },
+          { n: '2009', l: 'vafot etgan' },
+        ],
+        text: 'Urushdan qaytgach, universitetni tugatgan. «Muqaddas», «Ikki muhabbat» qissalari, «Ulug‘bek xazinasi», «Ko‘hna dunyo» romanlari, «Muzaffar Temur» pyesasi muallifi.',
+        quote: { text: 'Sening «Muqaddas»ing avvalroq chiqqanida sen mendan ham mashhur bo‘lib ketarding', by: 'Chingiz Aytmatov' },
+      },
+      {
+        title: 'Mirzo Ulug‘bek (1394–1449)',
+        emoji: '👑',
+        cards: [
+          { e: '👑', t: 'Hukmdor', d: 'Qariyb 40 yil Movarounnahrni boshqargan, Amir Temurning nabirasi.' },
+          { e: '🔭', t: 'Astronom', d: 'Yulduzlar jadvalini tuzgan, falakiyot ilmining buyuk namoyandasi.' },
+          { e: '📐', t: 'Matematik', d: 'Riyoziyot ilmiga katta hissa qo‘shgan.' },
+          { e: '🏫', t: 'Ma’rifatparvar', d: 'Buxoro, Samarqand, G‘ijduvonda madrasalar qurdirgan.' },
+        ],
+      },
+      {
+        title: 'Ilm xazinasi raqamlarda',
+        emoji: '📚',
+        facts: [
+          { n: '15 000+', l: 'noyob kitob — Ulug‘bek kutubxonasida' },
+          { n: '3', l: 'shaharda madrasa: Buxoro, Samarqand, G‘ijduvon' },
+          { n: '1', l: 'Ko‘hak tepaligidagi rasadxona — islom olamidagi eng yirik ilmiy markazlardan' },
+        ],
+        rule: '«Ziji jadidi Ko‘ragoniy» — Ulug‘bekning shogirdlari bilan tuzgan yangi astronomik jadvali. Uni Ali Qushchi Turkiyaga olib borib, keng tarqatgan.',
+        ruleLabel: 'Asosiy asar',
+      },
+      {
+        title: 'Taxt uchun kurash',
+        emoji: '⚔️',
+        steps: [
+          { e: '🕯️', t: '1447-yil', d: 'Sulton Shohrux vafot etadi. Rasmiy voris tayinlanmagan.' },
+          { e: '👑', t: 'Ulug‘bek — to‘ng‘ich o‘g‘il', d: 'An’anaga ko‘ra taxt unga o‘tishi kerak edi.' },
+          { e: '🌀', t: 'Alouddavla', d: 'Taxtni Ulug‘bekning jiyani egallaydi, kurash boshlanadi.' },
+          { e: '👵', t: 'Gavharshodbegim', d: 'Ulug‘bekning onasi mirzolar nizosida muhim rol o‘ynaydi.' },
+          { e: '🗡️', t: 'Abdullatif', d: 'Ulug‘bekning o‘g‘li, mol-dunyoga o‘ch shahzoda otasiga qarshi bosh ko‘taradi.' },
+        ],
+      },
+      {
+        title: 'Roman qayerdan boshlanadi?',
+        emoji: '📖',
+        text: '«Ulug‘bek xazinasi» aynan shu vaziyatdan — Abdullatif otasiga qarshi qo‘shin tortgan kunlardan boshlanadi. Roman 60 ga yaqin tilga tarjima qilingan va davlat mukofotiga sazovor bo‘lgan.',
+        reveal: [
+          { q: 'Roman nomidagi «xazina» deganda nima nazarda tutilgan bo‘lishi mumkin?', a: 'O‘qib bilasiz! Ishora: oltin-javohirmi yoki boshqa narsa?..' },
+          { q: 'Ota va o‘g‘il nega taxt talashadi?', a: 'Hokimiyat ehtirosi, mutaassiblik, atrofdagi fitnachilar — buni romanda ko‘ramiz.' },
+        ],
+      },
+      {
+        title: 'Hukmdor yoki olim?',
+        emoji: '⚖️',
+        vs: {
+          q: 'Ulug‘bek kim sifatida ko‘proq qadrli?',
+          a: { t: '👑 Hukmdor', pts: ['40 yil tinchlik va obodlik', 'Madrasalar, shaharlar'] },
+          b: { t: '🔭 Olim', pts: ['Asarlari asrlar osha yashaydi', 'Jahon ilmiga hissa qo‘shgan'] },
+        },
+        mission: { t: 'Tadqiqot', d: 'Ulug‘bek rasadxonasi haqida 3 ta qiziq faktni toping va keyingi darsda aytib bering.' },
+      },
+    ],
+    pairs: [
+      ['Odil Yoqubov', '«Ulug‘bek xazinasi» muallifi'],
+      ['Mirzo Ulug‘bek', '1394–1449'],
+      ['«Ziji Ko‘ragoniy»', 'yangi astronomik jadval'],
+      ['Ali Qushchi', 'Ulug‘bekning shogirdi'],
+      ['Abdullatif', 'otasiga qarshi chiqqan shahzoda'],
+      ['Gavharshodbegim', 'Ulug‘bekning onasi'],
+      ['Ko‘hak tepaligi', 'rasadxona qurilgan joy'],
+      ['«Muqaddas»', 'Odil Yoqubov qissasi'],
+    ],
+    quiz: [
+      { q: 'Mirzo Ulug‘bek kimning nabirasi?', options: ['Amir Temurning', 'Boburning', 'Shayboniyxonning', 'Husayn Boyqaroning'], answer: 0 },
+      { q: 'Ulug‘bek kutubxonasida qancha kitob bo‘lgan?', options: ['15 000 dan ortiq', '1000', '500', '100 000'], answer: 0 },
+      { q: '«Ziji Ko‘ragoniy»ni Turkiyaga kim olib borgan?', options: ['Ali Qushchi', 'Qozizoda Rumiy', 'Abdullatif', 'Jomiy'], answer: 0 },
+      { q: 'Sulton Shohrux qachon vafot etgan?', options: ['1447', '1449', '1405', '1394'], answer: 0 },
+      { q: 'Otasiga qarshi bosh ko‘targan shahzoda:', options: ['Abdullatif', 'Abdulaziz', 'Alouddavla', 'Abusaid'], answer: 0 },
+      { q: 'Odil Yoqubovning ilk asari:', options: ['«Tengdoshlar»', '«Muqaddas»', '«Ko‘hna dunyo»', '«Ikki muhabbat»'], answer: 0 },
+      { q: 'Rasadxona qayerda qurilgan?', options: ['Ko‘hak tepaligida', 'Registonda', 'Shohizindada', 'Bibixonimda'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Ulug‘bek — hukmdor', 'Ulug‘bek — olim'],
+      items: [
+        { text: '40 yil saltanat', cat: 0 }, { text: '«Ziji Ko‘ragoniy»', cat: 1 },
+        { text: 'qo‘shin tortish', cat: 0 }, { text: 'rasadxona', cat: 1 },
+        { text: 'mashvarat o‘tkazish', cat: 0 }, { text: 'yulduzlarni kuzatish', cat: 1 },
+        { text: 'toj-u taxt', cat: 0 }, { text: 'madrasada dars berish', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'Tarixiy voqealar',
+        items: ['1394 — Ulug‘bek tug‘ildi', 'Samarqandda rasadxona qurildi', '1447 — Shohrux vafot etdi', 'Alouddavla taxtni egalladi', 'Abdullatif otasiga qarshi chiqdi', '1449 — Ulug‘bek halok bo‘ldi'],
+      },
+    ],
+    qa: [
+      { q: 'Nega Ulug‘bekni ilm-fan homiysi deyishadi?', a: 'Madrasalar, rasadxona qurdirgan, olimlarni qo‘llagan, noyob kitoblar yig‘gan.' },
+      { q: 'Shohrux vafotidan keyin nega nizo boshlandi?', a: 'Rasmiy voris tayinlanmagan, o‘g‘illarining ko‘pi vafot etgan, mirzolar taxt talashdi.' },
+      { q: 'Quyi sinflarda Odil Yoqubovning qaysi asarini o‘qigansiz?', a: 'Erkin javob.' },
+    ],
+    odd: [
+      { items: ['Buxoro', 'Samarqand', 'G‘ijduvon', 'Hirot'], answer: 3, why: 'Ulug‘bek madrasalari Buxoro, Samarqand, G‘ijduvonda.' },
+      { items: ['Abdullatif', 'Alouddavla', 'Abdulaziz', 'Ali Qushchi'], answer: 3, why: 'Ali Qushchi — olim, qolganlari temuriy shahzodalar.' },
+    ],
+    debate: [
+      { claim: 'Olim hukmdor bo‘lmasligi kerak.', pro: 'Siyosat ilmga xalal beradi.', con: 'Ulug‘bek davri ilm uchun oltin davr bo‘ldi.' },
+    ],
+    creative: [
+      { task: 'Ulug‘bekka zamonamizdan bir savol bering — u nima deb javob berardi?', time: 90 },
+    ],
+  },
+
+  /* ===================== 23. Ulug‘bek xazinasi — 1 ===================== */
+  {
+    id: 'ad9-ulugbek-1',
+    source: 'II chorak • 23-dars • 77–84-betlar',
+    title: 'Odil Yoqubov. «Ulug‘bek xazinasi» (1-qism)',
+    short: 'Tungi rasadxona, Ko‘ksaroydagi mashvarat va ustoz-shogird suhbati',
+    theme: { emoji: '🌌', grad: 'from-slate-950 via-indigo-900 to-violet-700', border: 'border-violet-200', tag: 'Roman • 1-qism' },
+    lesson: [
+      {
+        title: 'Yarim tunda rasadxona',
+        emoji: '🌌',
+        text: 'Ali Qushchi odatdagidek yulduzlarni kuzatib o‘tirgan. Birdan sipohlarning og‘ir qadamlari eshitiladi: «Shahriyor Mirzo Ulug‘bek amr etmishlarkim, Ko‘ksaroyda darhol hozir bo‘lg‘aysiz!»',
+        reveal: [
+          { q: 'Rasadxonaning sokin, qorong‘i manzarasi qanday kayfiyat uyg‘otadi?', a: 'Xavotir, sirli kutish — bu keyingi voqealar uchun «xabarchi»: osoyishta ilm dunyosiga xavf kirib kelmoqda.' },
+          { q: 'Mushtariy va Zuhro yulduzlari yaqinlashishidan Ulug‘bek nimaga umid bog‘lagan?', a: 'Amir Temur tug‘ilgan yildagidek holat — balki omad, g‘alaba, yangi boshlanishga umid.' },
+        ],
+      },
+      {
+        title: 'Shahar bo‘ylab tungi yo‘l',
+        emoji: '🐎',
+        steps: [
+          { e: '🌙', t: 'Shohizinda', d: 'Firuza gumbazlar yulduzlar nurida ko‘kish jilo taratadi.' },
+          { e: '🔥', t: 'Posbonlar gulxani', d: 'Shahar xavf ostida — hamma joyda qo‘riqchilar.' },
+          { e: '⚔️', t: 'Registon', d: 'Maydon lashkarga to‘la; qalandarlar zikri tahdid kabi yangraydi.' },
+          { e: '🏰', t: 'Ko‘ksaroy', d: 'Amir Temur qurdirgan muazzam saroy.' },
+        ],
+        note: 'Yozuvchi yo‘ldagi har bir detalni tasvirlab, kitobxonni katta fojiaga tayyorlaydi.',
+      },
+      {
+        title: 'Ali Qushchining savollari',
+        emoji: '❓',
+        quote: { text: 'Nechun koinot sirlarini ochgan alloma taxt va saltanatning bevafoligini idrok etolmadi?', by: 'Ali Qushchining o‘ylari' },
+        reveal: [{ q: 'Siz Ali Qushchining savoliga qanday javob berardingiz?', a: 'Erkin javob. Masalan: Ulug‘bek ham temuriy shahzoda edi — bobolar merosi va mas’uliyat uni taxtdan voz kechishga qo‘ymadi.' }],
+      },
+      {
+        title: 'Mashvaratdan chiqqanlar',
+        emoji: '😠',
+        cards: [
+          { e: '🛡️', t: 'Dorug‘a Mironshoh', d: 'Ali Qushchiga yer ostidan qaraydi, salomlashmaydi.' },
+          { e: '🗡️', t: 'Amir Sulton Jondor', d: 'Kumush kamarli, egri qilichli — tund chehrali.' },
+          { e: '📿', t: 'Shayxulislom Burhoniddin', d: 'Yolg‘iz u Ali Qushchi bilan ko‘rishadi.' },
+        ],
+        mission: { t: 'Taxmin qiling', d: 'Mashvaratda nimalar bo‘lgan bo‘lishi mumkin? Chiqib ketayotganlarning kayfiyatiga qarab, 4–5 qatorli dialog yozing.', sec: 240 },
+      },
+      {
+        title: 'Ustozning tushi',
+        emoji: '💭',
+        chat: [
+          { who: 'Mirzo Ulug‘bek', e: '👑', text: 'Tushimda ustod Qozizoda Rumiy meni koyidilar: bevafo saltanatni deb ilm-fandan yuz o‘girding, dedilar...' },
+          { who: 'Ali Qushchi', e: '🔭', side: 'r', text: 'Afv etsinlar, men ham bir soniya oldin xuddi shu fikrni ko‘nglimdan kechirgan edim...' },
+        ],
+      },
+      {
+        title: 'Shoh va olimning dardi',
+        emoji: '💔',
+        text: 'Ulug‘bek saltanatdan ayrilishdan emas, madrasa-yu rasadxonasi, kutubxonasi va asarlari poymol bo‘lishidan qo‘rqadi. Yana bir qo‘rquvi: kelgusi avlod «olim bo‘la turib, farzandi bilan taxt talashibdi» demasmikan?',
+        quote: { text: 'Kelgusi avlod tarixga qarab hukm yuritadur. Tarixni esa ilm ahli bitadur', by: 'Ali Qushchi' },
+      },
+      {
+        title: 'Buyuk topshiriq',
+        emoji: '📜',
+        text: 'Ulug‘bek shogirdiga eng aziz boyligini — rasadxona, kutubxona, risola va kitoblarini johil mutaassiblardan asrashni topshiradi. «Ko‘p xatarli yumush bu!» Ali Qushchi ikkilanmaydi: «Ustodning farmoni shogird uchun amri vojibdur».',
+        facts: [
+          { n: '20+', l: 'ilmiy asar yozgan Ali Qushchi' },
+          { n: '1474', l: '17-dekabrda vafot etgan' },
+        ],
+        note: 'Ali Qushchi keyin Istanbuldagi Ayo Sofiya madrasasida bosh mudarris bo‘lgan. Laqabi — ovchi otasi va qarchig‘ay boqqani uchun.',
+      },
+    ],
+    pairs: [
+      ['Ali Qushchi', 'Ulug‘bekning shogirdi, astronom'],
+      ['Qozizoda Rumiy', 'Ulug‘bekning ustozi'],
+      ['Ko‘ksaroy', 'Amir Temur qurdirgan saroy'],
+      ['Mushtariy', 'Yupiter'],
+      ['Zuhro', 'Venera'],
+      ['Usturlab', 'astronomik asbob'],
+      ['Mashvarat', 'harbiy kengash'],
+      ['Dorug‘a', 'shahar hokimi, bosh mirshab'],
+    ],
+    quiz: [
+      { q: 'Roman qayerdan boshlanadi?', options: ['tungi rasadxonadan', 'jang maydonidan', 'madrasadan', 'bozordan'], answer: 0 },
+      { q: 'Ulug‘bek Ali Qushchini qayerga chaqiradi?', options: ['Ko‘ksaroyga', 'rasadxonaga', 'madrasaga', 'Shohizindaga'], answer: 0 },
+      { q: 'Ulug‘bek tushida kimni ko‘radi?', options: ['ustodi Qozizoda Rumiyni', 'Amir Temurni', 'Abdullatifni', 'onasini'], answer: 0 },
+      { q: 'Ulug‘bek eng ko‘p nimadan qo‘rqadi?', options: ['ilm xazinasi poymol bo‘lishidan', 'taxtdan ayrilishdan', 'o‘limdan', 'kambag‘allikdan'], answer: 0 },
+      { q: '«Mushtariy» qaysi sayyoraning nomi?', options: ['Yupiter', 'Venera', 'Mars', 'Saturn'], answer: 0 },
+      { q: 'Ali Qushchi keyin qaysi madrasada bosh mudarris bo‘lgan?', options: ['Ayo Sofiya', 'Ko‘kaldosh', 'Sherdor', 'Mir Arab'], answer: 0 },
+      { q: 'Mashvaratdan chiqqanlardan kim Ali Qushchi bilan ko‘rishadi?', options: ['shayxulislom Burhoniddin', 'Mironshoh', 'Sulton Jondor', 'hech kim'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Ilm dunyosi', 'Saltanat dunyosi'],
+      items: [
+        { text: 'rasadxona', cat: 0 }, { text: 'mashvarat', cat: 1 },
+        { text: 'usturlab', cat: 0 }, { text: 'lashkar', cat: 1 },
+        { text: 'kutubxona', cat: 0 }, { text: 'qilich va xanjar', cat: 1 },
+        { text: 'risola', cat: 0 }, { text: 'farmoni humoyun', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'Birinchi qism voqealari',
+        items: [
+          'Ali Qushchi tunda rasadxonada yulduzlarni kuzatadi',
+          'Sipohlar uni Ko‘ksaroyga chaqiradi',
+          'Shahar bo‘ylab tungi yo‘l',
+          'Mashvaratdan amirlar tund chiqib ketadi',
+          'Ulug‘bek tushini aytib beradi',
+          'Ulug‘bek ilm xazinasini shogirdiga topshiradi',
+        ],
+      },
+    ],
+    qa: [
+      { q: 'Nega Ulug‘bek «fozillar aqli shohlar hayotining razolatini idrok etishdan ojiz» deydi?', a: 'Olimlar pok niyatli; saroydagi xiyonat, fitnani tushunishga ularning tabiati yo‘l qo‘ymaydi.' },
+      { q: 'Ulug‘bek nega xazinasini xavf ostida deb biladi?', a: 'Abdullatif mutaassib, ilm ahliga dushman; ulamolar orasida ham johillar bor.' },
+      { q: 'Ali Qushchining javobi uning qanday fazilatini ko‘rsatadi?', a: 'Sadoqat, jasorat, ustozga hurmat.' },
+    ],
+    odd: [
+      { items: ['usturlab', 'sudsi faxri', 'rasadxona', 'xanjar'], answer: 3, why: 'Xanjar — qurol, qolganlari ilm vositalari.' },
+      { items: ['Mironshoh', 'Sulton Jondor', 'Burhoniddin', 'Qozizoda Rumiy'], answer: 3, why: 'Qozizoda Rumiy — ustoz olim, mashvaratda qatnashmagan.' },
+    ],
+    debate: [
+      { claim: 'Ulug‘bek taxtdan voz kechib, faqat ilm bilan shug‘ullanishi kerak edi.', pro: 'Shunda fojia bo‘lmasdi, ilm yanada rivojlanardi.', con: 'Taxtdan voz kechgan hukmdorni ham dushmanlar tinch qo‘ymasdi.' },
+    ],
+    creative: [
+      { task: 'Ali Qushchining kundaligiga o‘sha tun haqida 3 gap yozing.', time: 120 },
+    ],
+  },
+
+  /* ===================== 24. Ulug‘bek xazinasi — 2 ===================== */
+  {
+    id: 'ad9-ulugbek-2',
+    source: 'II chorak • 24-dars • 85–90-betlar',
+    title: 'Odil Yoqubov. «Ulug‘bek xazinasi» (2-qism)',
+    short: 'Yerto‘ladagi xazina, ustoz-shogird vidolashuvi, yopiq darvoza va xiyonat',
+    theme: { emoji: '💎', grad: 'from-amber-900 via-amber-600 to-yellow-400', border: 'border-amber-200', tag: 'Roman • 2-qism' },
+    lesson: [
+      {
+        title: 'Yashirin eshik',
+        emoji: '🚪',
+        steps: [
+          { e: '🕯️', t: 'Salomxona', d: 'Nimqorong‘i xona, Amir Temur taxti. Ulug‘bek tilovat qiladi.' },
+          { e: '🧱', t: 'Parda ortidagi eshik', d: 'Mis tasmali kichik eshik, po‘lat qoplangan.' },
+          { e: '🕳️', t: 'Quduq', d: 'Sirpanchiq devor, tik pillapoyalar.' },
+          { e: '🔒', t: 'Qora marmar xona', d: 'To‘rt burchakda zanjirlangan to‘rtta po‘lat sandiq.' },
+        ],
+      },
+      {
+        title: 'Sandiq ochildi!',
+        emoji: '💎',
+        text: 'Qopqoq ochilishi bilan xona charaqlab ketadi: olmos, la’l, yoqut, inju, zabarjad... Tagida esa piyoladek-piyoladek quyma oltinlar.',
+        quote: { text: 'Aslini surishtirsang, fuqaroning mulkidur bu', by: 'Mirzo Ulug‘bek' },
+        reveal: [{ q: 'Nega bu xazina xazinabonga emas, yashirin saqlangan?', a: 'Taxt kurashi, xiyonatlar davrida eng ishonchli joy — hech kim bilmaydigan joy. Xazina urush va johillar qo‘liga tushmasligi kerak edi.' }],
+      },
+      {
+        title: '«Bularni ne qilamen?»',
+        emoji: '🙅',
+        chat: [
+          { who: 'Ulug‘bek', e: '👑', text: 'Undan bir xalta olg‘il.' },
+          { who: 'Ali Qushchi', e: '🔭', side: 'r', text: 'Bularni ne qilamen, vallomat?' },
+          { who: 'Ulug‘bek', e: '👑', text: 'Senga boylik kerak emas, bilamen. Ammo bularni men aytgan yaxshi tilak yo‘lida ishlatursen!' },
+        ],
+        reveal: [{ q: 'Ali Qushchining savoli uning qanday fazilatini ko‘rsatadi?', a: 'Beg‘arazlik, boylikka ko‘ngil qo‘ymaslik, haqiqiy olim tabiati.' }],
+      },
+      {
+        title: 'Haqiqiy xazina',
+        emoji: '📚',
+        rule: 'Men o‘zimning chin boyligim deb toj-u taxtni emas, ilm-ma’rifat yo‘lida qilgan xizmatlarimni, bitgan asarlarim, to‘plagan ilm xazinamni bilurmen.',
+        ruleLabel: 'Mirzo Ulug‘bek vasiyati',
+        text: 'Ulug‘bek kitoblarni tog‘larga olib chiqib yashirishni, 15 tacha po‘lat sandiq yasatishni buyuradi. Ustoz va shogird ko‘z yoshlari bilan quchoqlashib vidolashadi: «Men sendan abadulabad rozimen... o‘g‘lim».',
+      },
+      {
+        title: 'Yomon xabarlar',
+        emoji: '📨',
+        cards: [
+          { e: '🐘', t: '1-chopar', d: 'Abdullatifning qo‘shinida fillar bor, amir Iskandar chekinmoqda.' },
+          { e: '🏃', t: '2-chopar', d: 'Amir Sulton Jondor qochib ketgan! Lashkar qopqonga tushmoqda.' },
+          { e: '🚪', t: '3-xabar', d: 'Samarqand darvozalari yopilgan — salohdorlar ochishmayapti!' },
+        ],
+      },
+      {
+        title: 'Yopiq darvoza oldida',
+        emoji: '🏰',
+        chat: [
+          { who: 'Mirzo Ulug‘bek', e: '👑', text: 'Och darvozani! Sohibi toj Mirzo Ulug‘bek Ko‘ragoniy!' },
+          { who: 'Minora', e: '🗼', side: 'r', text: 'Dorug‘a Mironshoh farmon qilmishlar, darvoza ochilmaydur!' },
+          { who: 'Amir Sulton Jondor', e: '🐍', side: 'r', text: 'O‘z boshingga ehtiyot bo‘lg‘il, Muhammad Tarag‘ay!' },
+        ],
+        reveal: [{ q: 'Bu lavha qanday haqiqatni ochadi?', a: 'Hokimiyat bevafo: kecha ta’zim qilganlar bugun darvozani yopadi. Xiyonat va riyokorlik hamma yoqda.' }],
+      },
+      {
+        title: 'Bir lahzalik qaror',
+        emoji: '⚖️',
+        text: 'Ulug‘bek bir daqiqagina ikkilanadi, so‘ng otining boshini orqaga buradi: u Abdullatifga bosh egishga, yaxshilik bo‘lsa ham, yomonlik bo‘lsa ham o‘z zurriyotidan ko‘rishga ahd qiladi.',
+        vs: {
+          q: 'Ulug‘bek to‘g‘ri qaror qildimi?',
+          a: { t: '🤝 Ha', pts: ['Yana qon to‘kilmasin dedi', 'O‘g‘liga ota sifatida ishondi'] },
+          b: { t: '⚔️ Yo‘q', pts: ['Kurashib, ilm ahlini himoya qilishi kerak edi', 'Abdullatifning mutaassibligini bilardi'] },
+        },
+        mission: { t: 'Lug‘at tadqiqi', d: 'Ikki ustunli lug‘at tuzing: matndan ma’nosi tushunilgan va tushunish qiyin bo‘lgan so‘zlar (vallomat, ulufa, mujda, farsax...).', sec: 300 },
+      },
+    ],
+    pairs: [
+      ['Vallomat', 'valine’mat, ne’mat beruvchi'],
+      ['Ulufa', 'boylik, meros'],
+      ['Mujda', 'xabar'],
+      ['Farsax', 'bir soatlik yo‘l masofasi'],
+      ['Xandaq', 'qal’a atrofidagi chuqurlik'],
+      ['Mal’un', 'la’nati'],
+      ['Sulton Jondor', 'lashkarni tashlab qochgan amir'],
+      ['Mironshoh', 'darvozani yopgan dorug‘a'],
+    ],
+    quiz: [
+      { q: 'Xazina qayerda yashirilgan?', options: ['salomxona ostidagi yerto‘lada', 'rasadxonada', 'madrasada', 'tog‘da'], answer: 0 },
+      { q: 'Javohirlar kimdan qolgan?', options: ['Amir Temurdan', 'Shohruxdan', 'Abdullatifdan', 'xalqdan sotib olingan'], answer: 0 },
+      { q: 'Ulug‘bek o‘zining chin boyligi deb nimani biladi?', options: ['ilm xazinasini', 'oltinlarni', 'taxtni', 'qo‘shinni'], answer: 0 },
+      { q: 'Abdullatif qo‘shinida qanday hayvonlar bor edi?', options: ['fillar', 'tuyalar', 'itlar', 'sherlar'], answer: 0 },
+      { q: 'Darvozani yopishni kim buyurgan?', options: ['dorug‘a Mironshoh', 'Abdullatif', 'Burhoniddin', 'Ali Qushchi'], answer: 0 },
+      { q: 'Darvoza tepasidan Ulug‘bekka tahdid qilgan kim?', options: ['amir Sulton Jondor', 'Iskandar barlos', 'Bobo Husayn', 'Abdulaziz'], answer: 0 },
+      { q: 'Ulug‘bek oxirida qanday qarorga keladi?', options: ['Abdullatifga bosh egishga', 'jang qilishga', 'Hirotga qochishga', 'shaharni qamal qilishga'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Sadoqat', 'Xiyonat'],
+      items: [
+        { text: 'Ali Qushchi', cat: 0 }, { text: 'Sulton Jondor', cat: 1 },
+        { text: 'Bobo Husayn', cat: 0 }, { text: 'Mironshoh', cat: 1 },
+        { text: 'Iskandar barlos', cat: 0 }, { text: 'yopiq darvoza', cat: 1 },
+        { text: 'Idris tarxon', cat: 0 }, { text: 'lashkarni tashlab qochish', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'Ikkinchi qism voqealari',
+        items: [
+          'Ulug‘bek salomxonada tilovat qiladi',
+          'Yashirin yerto‘lada xazina sandig‘i ochiladi',
+          'Ali Qushchiga bir xalta javohir beriladi',
+          'Ustoz va shogird vidolashadi',
+          'Choparlar yomon xabarlar keltiradi',
+          'Samarqand darvozalari yopiq',
+          'Ulug‘bek o‘g‘liga bosh egishga ahd qiladi',
+        ],
+      },
+    ],
+    qa: [
+      { q: 'Ulug‘bek nega xazinani ochishdan oldin tilovat qildi?', a: 'Ota-bobolar ruhini yod etib, muqaddas ishga duo bilan kirishdi.' },
+      { q: 'Farzanddan yolchimagan Ulug‘bekning ota sifatidagi qiyofasi qanday?', a: 'Mehribon, kechirimli, ammo iztirobli; o‘g‘liga oxirigacha umid bog‘laydi.' },
+      { q: 'Nega Sulton Jondor xiyonat qildi?', a: 'Hokimiyat o‘zgarishini sezib, yangi hukmdorga yaqinlashish uchun.' },
+    ],
+    odd: [
+      { items: ['olmos', 'la’l', 'yoqut', 'usturlab'], answer: 3, why: 'Usturlab — asbob, qolganlari qimmatbaho toshlar.' },
+    ],
+    debate: [
+      { claim: 'Xazina sirini o‘g‘liga aytsa, Ulug‘bek omon qolardi.', pro: 'Abdullatif oltin istardi.', con: 'Mutaassib hukmdor baribir ilm ahlini quvg‘in qilardi.' },
+    ],
+    creative: [
+      { task: 'Ali Qushchi bir xalta javohirni qanday «yaxshi tilak» yo‘lida ishlatishi mumkin? 3 g‘oya ayting.', time: 90 },
+    ],
+  },
+
+  /* ===================== 25. Ulug‘bek xazinasi — 3 ===================== */
+  {
+    id: 'ad9-ulugbek-3',
+    source: 'II chorak • 25-dars • 91–96-betlar',
+    title: 'Odil Yoqubov. «Ulug‘bek xazinasi» (3-qism). Tadqiq qiling!',
+    short: 'Patirdagi maktub, ota va o‘g‘il yuzma-yuz: «Fozil-u fuzalo — bashariyat yo‘lidagi mash’al»',
+    theme: { emoji: '🕯️', grad: 'from-stone-900 via-red-900 to-orange-600', border: 'border-orange-200', tag: 'Roman • 3-qism' },
+    lesson: [
+      {
+        title: 'Saroydagi tutqun',
+        emoji: '🔒',
+        text: 'Ikki kun. Ko‘ksaroy chekkasidagi sovuq xona, shiftda bir hovuch nur. Ulug‘bek ovqatdan shubhalanib, hanuz tuz totmagan. Abdullatifga ikki maktub yozdi — javob yo‘q.',
+        reveal: [{ q: 'Ulug‘bek o‘g‘liga nima demoqchi edi?', a: 'Taxtdan ixtiyoriy voz kechishini va faqat qolgan umrini ilmga bag‘ishlashga ruxsat so‘rashni; insof va adolatga chaqirishni.' }],
+      },
+      {
+        title: 'Patir ichidagi sir',
+        emoji: '🫓',
+        doc: { title: 'Imzosiz maktub', text: 'Masjidi jomeda xutba o‘qilib, siz toj-u taxtdan judo qilindingiz. Sizni hajga yubormoqchi. Sayid Abbos xun dovlamoqda — hayotingiz qil ustida. Qochmoqni ma’qul topsangiz, bakovulga ishora qiling...' },
+        vs: {
+          q: 'Ulug‘bek qochishi kerakmidi?',
+          a: { t: '🏃 Ha', pts: ['Hayoti xavf ostida', 'Ilmni davom ettirish uchun tirik qolish kerak'] },
+          b: { t: '🧍 Yo‘q', pts: ['Bu tuzoq bo‘lishi mumkin', 'Qochish shoh izzatiga noloyiq'] },
+        },
+      },
+      {
+        title: 'Ota va o‘g‘il yuzma-yuz',
+        emoji: '⚔️',
+        chat: [
+          { who: 'Ulug‘bek', e: '👑', text: 'Taxtimning valiahdi sen eding. Ko‘zim tirigida bu taxt senga nasib bo‘libdi, men bunga rozimen...' },
+          { who: 'Abdullatif', e: '🦅', side: 'r', text: 'Men bu taxtni sizning ixtiyoringiz bilan emas, Haq taoloning inoyati va o‘z kuch-qudratim ila qo‘lga kiritdim!' },
+          { who: 'Ulug‘bek', e: '👑', text: 'Otangga yolg‘iz rasadxonani in’om etsang, bas! Bir burda non, bir qumg‘on suv yetar...' },
+          { who: 'Abdullatif', e: '🦅', side: 'r', text: 'Tag‘in rasadxona! Kofir-u dahriylar makoni rasadxonaga o‘t qo‘yamen, o‘t!' },
+        ],
+      },
+      {
+        title: 'Kimning dalili kuchli?',
+        emoji: '⚖️',
+        vs: {
+          q: 'Dalillarni solishtiring',
+          a: { t: '👑 Ulug‘bek', pts: ['El va tuproq abadiy, fotihlar o‘tkinchi', 'Olimlar — bashariyat yo‘lidagi mash’al', 'Mash’alni o‘chirgan shoh zulmatda qoladi'] },
+          b: { t: '🦅 Abdullatif', pts: ['Tarnob jangidagi xizmatim unutildi', 'Bobom tillalarini tortib oldingiz', 'Ulamolar fatvosi — Xudo muhri'] },
+        },
+      },
+      {
+        title: 'Eng muhim so‘z',
+        emoji: '🔥',
+        quote: { text: 'Fozil-u fuzalo qorong‘ida adashib yurgan bashariyatning yo‘lidagi yorug‘ mash’aldur!', by: 'Mirzo Ulug‘bek' },
+        reveal: [{ q: 'Ulug‘bek qatl yoki surgun uchun emas, ilm ahliga yetadigan ziyon uchun qayg‘uradi. Bu uning shaxsiga qanday baho beradi?', a: 'U o‘z jonidan ko‘ra ilm va xalq taqdirini ustun qo‘yadi — haqiqiy alloma va ma’rifatparvar.' }],
+      },
+      {
+        title: 'Tasvir vositalari ovi',
+        emoji: '🔎',
+        text: 'Tadqiq qiling! Matndan badiiy tasvir vositalarini toping:',
+        table: {
+          head: ['Vosita', 'Misol'],
+          rows: [
+            ['O‘xshatish', 'mehr izg‘irin tekkan shamday so‘nib...'],
+            ['Sifatlash', 'ganchdan yasalgan niqobday sovuq yuz'],
+            ['Qiyoslash', '«Burgut! Qora burgut!»'],
+            ['Ibora', '«Ot tepkisini ot ko‘taradur»'],
+            ['Kinoya', '«Balli sizday padarga»'],
+          ],
+        },
+        mission: { t: 'Jadvalni davom ettiring', d: 'Matndan har bir vosita uchun yana bittadan misol toping.', sec: 300 },
+      },
+      {
+        title: 'Nega hech kim qarshi chiqmadi?',
+        emoji: '🤐',
+        reveal: [
+          { q: 'Xutbada Sayid Abbos qasos talab qilganda nega ulamolar va xalq jim qoldi?', a: 'Qo‘rquv, yangi hukmdorga xushomad, mutaassiblarning ta’siri. Faqat qoziyulquzzot Xoja Miskin qarshi chiqdi.' },
+          { q: 'Ulug‘bek nega bot-bot Amir Temurni eslaydi?', a: 'Taxt hatto jahongirga ham vafo qilmagan; temuriylar g‘ururi va bobosining merosi bilan o‘zini solishtiradi.' },
+        ],
+      },
+    ],
+    pairs: [
+      ['Bakovul', 'ovqat olib kelgan xizmatkor'],
+      ['Sayid Abbos', 'xun dovlagan kimsa'],
+      ['Xoja Miskin', 'soxta dovni rad etgan qozi'],
+      ['Xutba', 'juma namozidagi rasmiy nutq'],
+      ['Xun dovlamoq', 'qasos talab qilish'],
+      ['Juvonbaxt', 'baxti ochiq'],
+      ['«Qora burgut»', 'Ulug‘bekning Abdullatifga ichki ta’rifi'],
+    ],
+    quiz: [
+      { q: 'Maktub nimaning ichiga yashirilgan edi?', options: ['patirning', 'kosaning', 'kitobning', 'choynakning'], answer: 0 },
+      { q: 'Maktub Ulug‘bekka nimani maslahat beradi?', options: ['qochishni', 'jang qilishni', 'taxtga qaytishni', 'ro‘za tutishni'], answer: 0 },
+      { q: 'Abdullatif otasini qayerga yubormoqchi?', options: ['hajga', 'Hirotga', 'zindonga', 'Turkiyaga'], answer: 0 },
+      { q: 'Ulug‘bek o‘g‘lidan nima so‘raydi?', options: ['rasadxonani', 'oltinni', 'qo‘shinni', 'Samarqandni'], answer: 0 },
+      { q: 'Abdullatif rasadxonaga nima qilmoqchi?', options: ['o‘t qo‘ymoqchi', 'kengaytirmoqchi', 'o‘zi olim bo‘lmoqchi', 'muzeyga aylantirmoqchi'], answer: 0 },
+      { q: 'Ulug‘bek fozillarni nimaga qiyoslaydi?', options: ['yo‘ldagi yorug‘ mash’alga', 'qal’a devoriga', 'daryoga', 'qilichga'], answer: 0 },
+      { q: 'Soxta dovni kim rad etdi?', options: ['Xoja Miskin', 'Burhoniddin', 'Abdullatif', 'Sulton Jondor'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Ulug‘bek', 'Abdullatif'],
+      items: [
+        { text: 'ilm — mash’al', cat: 0 }, { text: 'rasadxonaga o‘t qo‘yaman', cat: 1 },
+        { text: 'el va tuproq abadiy', cat: 0 }, { text: 'kuch-qudratim ila oldim', cat: 1 },
+        { text: 'otalik nasihati', cat: 0 }, { text: 'tillalar qayda?', cat: 1 },
+        { text: 'rasadxonani so‘rash', cat: 0 }, { text: 'ulamolar fatvosi', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'Uchinchi qism voqealari',
+        items: [
+          'Ulug‘bek ikki kun tutqunlikda',
+          'Patir ichidan imzosiz maktub chiqadi',
+          'Ulug‘bek Abdullatif huzuriga olib boriladi',
+          'Ota o‘g‘liga taxtga roziligini aytadi',
+          'Abdullatif rasadxonaga o‘t qo‘yishni aytadi',
+          'Abdullatif yashirin tillalar haqida so‘raydi',
+        ],
+      },
+    ],
+    qa: [
+      { q: 'Ulug‘bek va Abdullatifdan qaysi birining dalillari ishonarli? Nega?', a: 'Erkin javob — matndan dalil keltiring.' },
+      { q: 'Abdullatif nega Ali Qushchini so‘raydi?', a: 'Xazina va kitoblar Ali Qushchida deb gumon qiladi.' },
+      { q: 'Bunday vaziyatda odamga joni aziz emasmi?', a: 'Aziz, lekin Ulug‘bek uchun ilm va el taqdiri undan ham aziz.' },
+    ],
+    odd: [
+      { items: ['patir', 'osh', 'choy', 'usturlab'], answer: 3, why: 'Usturlab — asbob, qolganlari bakovul olib kelgan taomlar.' },
+    ],
+    debate: [
+      { claim: 'Abdullatif ham o‘z nazarida haq edi.', pro: 'U o‘zini kamsitilgan, unutilgan deb bilardi.', con: 'Hech qanday ranj otaga qarshi qilich ko‘tarishni oqlamaydi.' },
+    ],
+    creative: [
+      { task: 'Ulug‘bek o‘g‘liga yozgan, ammo javobsiz qolgan maktubini 4 gapda tiklang.', time: 120 },
+    ],
+  },
+
+  /* ===================== 26. Ulug‘bek xazinasi — 4 ===================== */
+  {
+    id: 'ad9-ulugbek-4',
+    source: 'II chorak • 26-dars • 97–102-betlar',
+    title: 'Odil Yoqubov. «Ulug‘bek xazinasi» (4-qism)',
+    short: 'Kitoblar «Ajdar g‘or»da, Samarqand bilan vidolashuv va yulduzlar ostidagi fojia',
+    theme: { emoji: '⭐', grad: 'from-blue-950 via-indigo-800 to-amber-500', border: 'border-indigo-200', tag: 'Roman • 4-qism' },
+    lesson: [
+      {
+        title: 'Xazinani qutqaruvchilar',
+        emoji: '🛡️',
+        cards: [
+          { e: '🔭', t: 'Ali Qushchi', d: 'Ustozning sodiq shogirdi — tashabbuskor.' },
+          { e: '⚔️', t: 'Qalandar Qarnoqiy', d: 'Yassidan haqiqat izlab kelgan shoir, arslonyurak jangchi.' },
+          { e: '⚒️', t: 'Usta Temur Samarqandiy', d: 'Qilichi akasining qatlida ishlatilgach, qilichsozlikni tashlagan usta.' },
+          { e: '🧑‍🎓', t: 'Miram Chalabiy', d: 'Yosh tolibi ilm, Ali Qushchining hamrohi.' },
+        ],
+      },
+      {
+        title: 'Qirq qop kitob',
+        emoji: '📦',
+        facts: [
+          { n: '1/10', l: 'kutubxonaning faqat o‘ndan biri tanlab olindi' },
+          { n: '40+', l: 'qop kitob' },
+          { n: '16', l: 'po‘lat sandiq' },
+          { n: '4', l: 'nortuya — kitob og‘irligidan arang qo‘zg‘aldi' },
+        ],
+        text: 'Kitoblar quduq va qorong‘i lahim orqali jarlikka tashiladi, sandiqlarga joylanib, ustiga quruq pichan bosiladi. Ular faqat kechasi yo‘l yuradi — hamma yoqda ayg‘oqchi.',
+      },
+      {
+        title: '«Ajdar g‘or» siri',
+        emoji: '🐉',
+        text: 'G‘or tubidagi tuynukdan pastga tushilsa, xitoy chinnisidek silliq oq marmardan bo‘lgan katta g‘or. Uni Movarounnahrda faqat uch kishi biladi: Ulug‘bek, Ali Qushchi va endi Miram Chalabiy.',
+        reveal: [{ q: 'Nega kitoblarni aynan g‘orga yashirishdi?', a: 'Johil mutaassiblar va urush olovidan uzoq; tog‘ning qa’rida asrlar osha saqlanishi mumkin edi.' }],
+      },
+      {
+        title: 'Samarqand bilan vidolashuv',
+        emoji: '🕌',
+        text: 'Ulug‘bek hajga jo‘natilmoqda. Registonda madrasasiga kirib, shogirdlari bilan xayrlashmoqchi bo‘ladi, ammo suvoriy: «Chuh deng! To‘xtamoqqa ijozat yo‘q!» Shoh birinchi marta o‘zini chindan ojiz banda deb his qiladi.',
+        quote: { text: 'Ali Qushchiday shogirdlari bor ekan, uning asarlari izsiz yo‘qolmaydi', by: 'Ulug‘bekning o‘ylari' },
+      },
+      {
+        title: 'So‘nggi tun',
+        emoji: '⭐',
+        steps: [
+          { e: '🏚️', t: 'Karvonsaroy', d: 'Ulug‘bek gulxan yoqib, namozga tayyorlanadi.' },
+          { e: '🐍', t: 'Sayid Abbos', d: 'Eshik sharaqlab ochiladi — qotil kirib keladi.' },
+          { e: '✨', t: 'Yulduzlar', d: 'Osmonga qarab, momosi Saroymulkxonimning so‘zini eslaydi: «Yulduzlar — Xudoning farishtalaridur!»' },
+          { e: '🕊️', t: '«Alvido, Ali!»', d: 'So‘nggi o‘yi — shogirdi va ilm taqdiri.' },
+        ],
+        note: 'Ulug‘bek 1449-yilda fojiali halok bo‘ladi. Ammo uning ilmi, «Ziji Ko‘ragoniy» va shogirdlari orqali yashab qoldi.',
+      },
+      {
+        title: 'Yulduzlar va olim',
+        emoji: '🔭',
+        reveal: [
+          { q: 'O‘limi oldidan momosining yulduzlar haqidagi so‘zlarini eslashi nimani anglatadi?', a: 'Butun umri yulduzlar bilan o‘tgan olimning hayot doirasi yopiladi: bolalikdagi mehr va ilm ishqi bir nuqtada tutashadi.' },
+          { q: 'Ali Qushchi ustozini o‘zi kuzatganida nima bo‘lardi?', a: 'Erkin javob: balki himoya qilardi, balki o‘zi ham halok bo‘lib, kitoblar yo‘qolardi...' },
+        ],
+      },
+      {
+        title: 'Ilm xazinasi — bugun',
+        emoji: '🏛️',
+        vs: {
+          q: 'Haqiqiy xazina qaysi?',
+          a: { t: '💎 Amir Temur javohirlari', pts: ['Bir kunlik boylik', 'Talashib, o‘ldirishga sabab bo‘ldi'] },
+          b: { t: '📚 Ulug‘bek kitoblari', pts: ['Asrlar osha bashariyatga xizmat qiladi', 'Ulug‘bek nomini abadiy qildi'] },
+        },
+        mission: { t: 'Ijodiy ish', d: 'Romanning birinchi qismidan olgan taassurotingiz asosida rasm, she’r, esse yoki qo‘shiq tayyorlang. Tavsiya: «Samarqandga borsam men agar» qo‘shig‘ini tinglang.' },
+      },
+    ],
+    pairs: [
+      ['Qalandar Qarnoqiy', 'Yassilik shoir va jangchi'],
+      ['Temur Samarqandiy', 'qilichsozlikni tashlagan usta'],
+      ['Miram Chalabiy', 'Ali Qushchining yosh hamrohi'],
+      ['«Ajdar g‘or»', 'kitoblar yashirilgan joy'],
+      ['Sayid Abbos', 'Ulug‘bekning qotili'],
+      ['Saroymulkxonim', 'Ulug‘bekning momosi'],
+      ['16 sandiq', 'kitoblar joylangan'],
+    ],
+    quiz: [
+      { q: 'Kitoblar qayerga yashirildi?', options: ['«Ajdar g‘or»ga', 'masjidga', 'Hirotga', 'quduqqa'], answer: 0 },
+      { q: 'Kitoblar nechta sandiqqa joylandi?', options: ['16', '4', '40', '100'], answer: 0 },
+      { q: 'Kitoblarni nima tashidi?', options: ['nortuyalar', 'aravalar', 'otlar', 'kemalar'], answer: 0 },
+      { q: 'G‘orni Movarounnahrda necha kishi biladi?', options: ['uch', 'bir', 'o‘n', 'hamma'], answer: 0 },
+      { q: 'Ulug‘bekni qayerga jo‘natishadi?', options: ['hajga', 'zindonga', 'Turkiyaga', 'Buxoroga'], answer: 0 },
+      { q: 'O‘limi oldidan Ulug‘bek kimni eslaydi?', options: ['momosi Saroymulkxonimni', 'Abdullatifni', 'Amir Temurni', 'Qozizoda Rumiyni'], answer: 0 },
+      { q: 'Momosi yulduzlarni nima degan edi?', options: ['Xudoning farishtalari', 'shohlar ko‘zi', 'oltin tangalar', 'bobolar ruhi'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Xazinani asraganlar', 'Ulug‘bekka qarshilar'],
+      items: [
+        { text: 'Ali Qushchi', cat: 0 }, { text: 'Sayid Abbos', cat: 1 },
+        { text: 'Qalandar Qarnoqiy', cat: 0 }, { text: 'Abdullatif', cat: 1 },
+        { text: 'Temur Samarqandiy', cat: 0 }, { text: 'Sulton Jondor', cat: 1 },
+        { text: 'Miram Chalabiy', cat: 0 }, { text: 'Mironshoh', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'To‘rtinchi qism voqealari',
+        items: [
+          'Kitoblar qoplarga solinib, lahim orqali tashiladi',
+          '16 sandiq to‘rt tuyaga ortiladi',
+          'Kitoblar «Ajdar g‘or»ga yashiriladi',
+          'Ulug‘bek hajga jo‘natiladi',
+          'Registonda to‘xtashga ruxsat berilmaydi',
+          'Karvonsaroyda Sayid Abbos hujum qiladi',
+          'Ulug‘bek yulduzlarga qarab vidolashadi',
+        ],
+      },
+    ],
+    qa: [
+      { q: 'To‘rt qahramonning kitoblarni asrashdagi harakatlariga munosabatingiz?', a: 'Fidoyilik va jasorat — o‘z hayotlarini xavf ostiga qo‘yib, bashariyat boyligini saqlashdi.' },
+      { q: 'Ulug‘bek xazina joyini aytsa, taqdiri o‘zgarardimi?', a: 'Erkin javob: balki vaqtincha; lekin mutaassib hokim baribir ilm ahliga dushman edi.' },
+      { q: 'Vatandan judo bo‘lish insonga qanday ta’sir qiladi?', a: 'Eng og‘ir iztirob — Ulug‘bek ham buni «musofirlik» deb og‘ir qabul qiladi.' },
+    ],
+    odd: [
+      { items: ['Ali Qushchi', 'Qalandar', 'Miram Chalabiy', 'Sayid Abbos'], answer: 3, why: 'Sayid Abbos — qotil, qolganlari xazinani asraganlar.' },
+    ],
+    debate: [
+      { claim: 'Kitob — eng qimmat xazina.', pro: 'Ulug‘bek ham shunday hisoblagan.', con: 'Bugun bilim internetda; kitobning o‘zi emas, undagi bilim muhim.' },
+    ],
+    creative: [
+      { task: 'Agar siz Ajdar g‘orda 1 ta kitob qoldirsangiz, qaysi kitobni va nega qoldirardingiz?', time: 90 },
+    ],
+  },
+
+  /* ===================== 27. 2-BSB Insho ===================== */
+  {
+    id: 'ad9-bsb-insho',
+    source: 'II chorak • 27-dars • 2-BSB (50 ball)',
+    title: '2-BSB. Insho yozish',
+    short: 'Insho turlari, reja, tezis-dalil-xulosa, mavzular va baholash mezoni',
+    theme: { emoji: '🖊️', grad: 'from-emerald-900 via-teal-700 to-sky-500', border: 'border-teal-200', tag: 'Bo‘lim bo‘yicha summativ baholash' },
+    lesson: [
+      {
+        title: 'Taassurotdan inshoga',
+        emoji: '📈',
+        vs: {
+          q: 'Farqi nimada?',
+          a: { t: '📝 Taassurot (1-BSB)', pts: ['His-tuyg‘u birinchi o‘rinda', 'Erkin tuzilma', '«Meni hayratga soldi...»'] },
+          b: { t: '🖊️ Insho (2-BSB)', pts: ['Fikr va dalil birinchi o‘rinda', 'Aniq reja va tuzilma', '«Men shunday hisoblayman, chunki...»'] },
+        },
+      },
+      {
+        title: 'Insho turlari',
+        emoji: '🗂️',
+        cards: [
+          { e: '🔍', t: 'Tahliliy', d: 'Asar, obraz yoki g‘oyani tahlil qilish: «Ulug‘bek — olim va hukmdor».' },
+          { e: '⚖️', t: 'Munozarali', d: 'Fikrni himoya qilish: «Hokimiyat ilmdan ustunmi?»' },
+          { e: '🎨', t: 'Ijodiy', d: 'Erkin mavzu, obrazli bayon: «Mening Na’matagim».' },
+        ],
+      },
+      {
+        title: 'Inshoning skeleti',
+        emoji: '🦴',
+        steps: [
+          { e: '🚪', t: 'Kirish', d: 'Mavzuga olib kiruvchi fikr + asosiy tezis (bir gapda).' },
+          { e: '1️⃣', t: '1-dalil', d: 'Fikr → asardan misol → izoh.' },
+          { e: '2️⃣', t: '2-dalil', d: 'Yana bir tomon → misol → izoh.' },
+          { e: '3️⃣', t: '3-dalil yoki qarshi fikr', d: 'Qarshi fikrni ko‘rsatib, uni rad eting.' },
+          { e: '🏁', t: 'Xulosa', d: 'Tezisni yangi so‘zlar bilan takrorlang + bugungi hayot bilan bog‘lang.' },
+        ],
+      },
+      {
+        title: 'Mavzular',
+        emoji: '🎡',
+        text: 'Birini tanlang yoki baraban yordamida taqsimlang:',
+        cards: [
+          { e: '🔭', t: '«Ulug‘bekning haqiqiy xazinasi»', d: 'Oltinmi yoki ilmmi?' },
+          { e: '🌸', t: '«Na’matak — bardosh ramzi»', d: 'Oybek she’ri va hayot.' },
+          { e: '⛏️', t: '«Eng dahshatli yirtqich — qo‘rquv»', d: 'Akbarali qissasi asosida.' },
+          { e: '🌳', t: '«Ildiz va avlod»', d: '«Chinor» va Ochil buva.' },
+          { e: '🤝', t: '«Ustoz va shogird»', d: 'Ulug‘bek — Ali Qushchi, Elbek — Elomon.' },
+          { e: '💌', t: '«Sadoqat — haqiqat singari ezgu»', d: 'Oybek va Zarifa.' },
+        ],
+      },
+      {
+        title: 'Bog‘lovchi iboralar banki',
+        emoji: '🔗',
+        table: {
+          head: ['Vazifa', 'Iboralar'],
+          rows: [
+            ['Fikr boshlash', 'Menimcha... / Shuni ta’kidlash joizki...'],
+            ['Dalil keltirish', 'Bunga misol sifatida... / Asarda aytilishicha...'],
+            ['Qarama-qarshi fikr', 'Biroq... / Boshqa tomondan qaraganda...'],
+            ['Xulosa', 'Xulosa qilib aytganda... / Demak...'],
+          ],
+        },
+      },
+      {
+        title: 'Baholash mezoni (50 ball)',
+        emoji: '📊',
+        text: 'Taxminiy mezon — ustoz o‘zgartirishi mumkin:',
+        table: {
+          head: ['Mezon', 'Ball'],
+          rows: [
+            ['Mavzuning ochilishi va tezisning aniqligi', '10'],
+            ['Dalillar: asar matnidan misollar', '10'],
+            ['Tuzilma va mantiqiy izchillik', '10'],
+            ['Nutq boyligi va uslub', '10'],
+            ['Imlo va tinish belgilari', '10'],
+          ],
+        },
+        mission: { t: 'Yozish vaqti', d: 'Avval 3 daqiqada reja tuzing, so‘ng inshoni yozing. Oxirgi 3 daqiqa — tekshirish!', sec: 1800 },
+      },
+    ],
+    pairs: [
+      ['Tezis', 'asosiy fikr'],
+      ['Dalil', 'fikrni isbotlovchi misol'],
+      ['Xulosa', 'yakuniy fikr'],
+      ['Munozarali insho', 'fikrni himoya qilish'],
+      ['Tahliliy insho', 'asar yoki obrazni tahlil'],
+      ['Ijodiy insho', 'erkin, obrazli bayon'],
+    ],
+    quiz: [
+      { q: 'Inshoda asosiy fikr nima deyiladi?', options: ['tezis', 'epigraf', 'reja', 'sarlavha'], answer: 0 },
+      { q: 'Dalil qanday tuziladi?', options: ['fikr → misol → izoh', 'faqat misol', 'faqat fikr', 'savol → javob'], answer: 0 },
+      { q: 'Xulosada nima qilinadi?', options: ['tezis yangi so‘zlar bilan takrorlanadi', 'yangi mavzu boshlanadi', 'asar qayta hikoya qilinadi', 'savol beriladi'], answer: 0 },
+      { q: '«Biroq», «boshqa tomondan» — qanday ibora?', options: ['qarama-qarshi fikr', 'xulosa', 'kirish', 'dalil'], answer: 0 },
+      { q: 'Taassurotdan farqli, inshoda birinchi o‘rinda nima turadi?', options: ['fikr va dalil', 'his-tuyg‘u', 'qofiya', 'rasm'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Kirishga mos', 'Xulosaga mos'],
+      items: [
+        { text: 'Bugun men ... haqida fikr yuritmoqchiman', cat: 0 }, { text: 'Xulosa qilib aytganda...', cat: 1 },
+        { text: 'Inson uchun eng aziz narsa nima?', cat: 0 }, { text: 'Demak, ...', cat: 1 },
+        { text: 'Shuni ta’kidlash joizki...', cat: 0 }, { text: 'Asar menga ... ni o‘rgatdi', cat: 1 },
+      ],
+    },
+    sequences: [
+      { title: 'Insho tuzilmasi', items: ['Kirish va tezis', '1-dalil', '2-dalil', 'Qarshi fikr va uni rad etish', 'Xulosa'] },
+    ],
+    qa: [
+      { q: 'Yaxshi tezis qanday bo‘ladi?', a: 'Aniq, qisqa, bahsga loyiq va asar bilan bog‘liq.' },
+      { q: 'Nega qarshi fikrni ham keltirish kerak?', a: 'Bu fikrni yanada ishonarli qiladi — siz boshqa tomonni ham ko‘rganingizni ko‘rsatadi.' },
+      { q: 'Inshoda asardan qancha misol keltirish kerak?', a: 'Har bir dalil uchun kamida bitta.' },
+    ],
+    odd: [
+      { items: ['kirish', 'dalil', 'xulosa', 'qofiya'], answer: 3, why: 'Qofiya inshoga emas, she’rga xos.' },
+    ],
+    debate: [
+      { claim: 'Inshoni rejasiz yozish ham mumkin.', pro: 'Ilhom kelsa, reja shart emas.', con: 'Rejasiz insho tarqoq bo‘ladi, mantiq yo‘qoladi.' },
+    ],
+    creative: [
+      { task: 'Tanlagan mavzungiz uchun bir gapli kuchli tezis yozing va sinfga o‘qing.', time: 90 },
+    ],
+  },
+
+  /* ===================== 28. Besh ganj, Egiz el, Salom ===================== */
+  {
+    id: 'ad9-yelkadosh-1',
+    source: 'II chorak • 28-dars • 103–105-betlar',
+    title: 'Yelkadosh tog‘lar: Nodir Jonuzoq va Boydulla Sarno‘g‘ayev',
+    short: '«Besh ganj», «Egiz el» va qirg‘iz shoirining «Salom» she’ri: qardosh xalqlar do‘stligi',
+    theme: { emoji: '🏔️', grad: 'from-sky-700 via-teal-500 to-emerald-400', border: 'border-teal-200', tag: 'Qardosh xalqlar adabiyoti' },
+    lesson: [
+      {
+        title: 'Yelkadosh tog‘lar',
+        emoji: '🗺️',
+        text: 'Markaziy Osiyoda o‘zbek, qirg‘iz, tojik, qozoq, turkman, qoraqalpoq xalqlari asrlar davomida ahil-inoq yashab keladi. Ularning adabiyoti ham tog‘lar kabi yelkama-yelka turadi.',
+        cards: [
+          { e: '🏡', t: 'O‘zbek', d: 'Navoiy' },
+          { e: '🦅', t: 'Qirg‘iz', d: '«Manas»' },
+          { e: '🐎', t: 'Qozoq', d: 'Abay' },
+          { e: '🐫', t: 'Turkman', d: 'Maxtumquli' },
+          { e: '⛰️', t: 'Tojik', d: 'Jomiy' },
+          { e: '🏜️', t: 'Qoraqalpoq', d: 'Berdaq, Ajiniyoz' },
+        ],
+      },
+      {
+        title: '«Besh ganj» — besh xazina',
+        emoji: '💎',
+        text: 'Nodir Jonuzoq besh xalqni Navoiyning besh dostoni — «Xamsa»dek bir halqaga tizilgan besh ganj (xazina)ga o‘xshatadi. Har band oxirida xalqlar nomi yangi tartibda takrorlanadi.',
+        quote: { text: 'Musht bo‘lib tugilgan yondosh besh barmoq', by: 'Nodir Jonuzoq, «Besh ganj»' },
+        reveal: [{ q: 'Nega xalqlar nomi har bandda boshqa tartibda keladi?', a: 'Hech biri birinchi yoki oxirgi emas — hamma teng! Bu tenglik va hurmat ramzi.' }],
+      },
+      {
+        title: 'Umumiy qadriyatlar',
+        emoji: '🔗',
+        table: {
+          head: ['Belgi', 'Ma’nosi'],
+          rows: [
+            ['Go‘ro‘g‘li', 'barcha turkiy xalqlarning umumiy dostoni'],
+            ['Yassaviy', 'Haq sari yo‘l ko‘rsatgan mutafakkir'],
+            ['Abay o‘lanlari', 'qozoq shoirining qo‘shiqlari'],
+            ['Jomiy', 'Navoiyning ustozi, tojik-fors shoiri'],
+            ['Manas', 'qirg‘izlarning buyuk dostoni'],
+          ],
+        },
+      },
+      {
+        title: 'Etnografik so‘zlar',
+        emoji: '🧶',
+        reveal: [
+          { q: 'Kigiz', a: 'Jundan bosib tayyorlanadigan to‘shama — ko‘chmanchi hayotning ramzi.' },
+          { q: 'O‘zan', a: 'Turkman baxshilari; qo‘shiq-doston ijrochisi.' },
+          { q: 'Qimiz', a: 'Biya sutidan tayyorlanadigan ichimlik.' },
+          { q: 'Shirdoq', a: 'Naqshli kigiz gilam (qirg‘iz, qozoqlarda).' },
+        ],
+      },
+      {
+        title: '«Egiz el»',
+        emoji: '👯',
+        text: 'Shoir Qoratovni yerga ko‘kdan tushgan ulkan qo‘bizga o‘xshatadi. Berdaq va Ajiniyoz nazm cho‘qqisida o‘tov qurgan. O‘zbek va qoraqalpoq — egiz xalqlar.',
+        reveal: [{ q: '«Egiz el» tushunchasini izohlang', a: 'Bir onadan tug‘ilgandek yaqin: tili, urf-odati, tarixi va taqdiri bir-biriga chambarchas.' }],
+      },
+      {
+        title: 'Qirg‘izdan «Salom»',
+        emoji: '👋',
+        text: 'Qirg‘iziston xalq shoiri Boydulla Sarno‘g‘ayev (1932–2004) o‘zbek xalqiga, Toshkent, Samarqand, Sirdaryo, Mir Alisher diyoriga salom yo‘llaydi va o‘zbekni O‘sh, Arslonbob, Talasga mehmonga chorlaydi.',
+        cards: [
+          { e: '🚪', t: 'Toshkent', d: '«Qadim Sharqning darvozasi»' },
+          { e: '🌊', t: 'Sirdaryo', d: 'Paxta ekib, Norindan suv ichadi' },
+          { e: '🕌', t: 'Samarqand', d: '«Bobokalon» shahar' },
+          { e: '✂️', t: '«Qaychiquda elatmiz»', d: 'Quda-anda bo‘lgan, qarindosh xalqmiz' },
+        ],
+        mission: { t: 'Jadval', who: '6 guruh', d: 'Har guruh bir xalqni olsin: she’rlardan shu xalqqa oid kalit so‘zlarni toping.', sec: 240 },
+      },
+    ],
+    pairs: [
+      ['Nodir Jonuzoq', '«Besh ganj», «Egiz el»'],
+      ['Boydulla Sarno‘g‘ayev', '«Salom» she’ri'],
+      ['Besh ganj', 'besh xazina — besh xalq'],
+      ['Kigiz', 'jundan bosilgan to‘shama'],
+      ['Qimiz', 'biya sutidan ichimlik'],
+      ['Berdaq, Ajiniyoz', 'qoraqalpoq shoirlari'],
+      ['«Manas»', 'qirg‘iz dostoni'],
+      ['Abay', 'qozoq shoiri'],
+    ],
+    quiz: [
+      { q: '«Besh ganj» she’rida besh xalq nimaga o‘xshatiladi?', options: ['Navoiyning besh dostoniga', 'besh daryoga', 'besh tog‘ga', 'besh yulduzga'], answer: 0 },
+      { q: '«Egiz el» qaysi xalqqa bag‘ishlangan?', options: ['qoraqalpoq', 'qozoq', 'tojik', 'turkman'], answer: 0 },
+      { q: 'Sarno‘g‘ayev Toshkentni nima deb ataydi?', options: ['Qadim Sharqning darvozasi', 'Oltin vodiy', 'Bobokalon', 'Gulshan'], answer: 0 },
+      { q: 'Boydulla Sarno‘g‘ayev qaysi xalq shoiri?', options: ['qirg‘iz', 'qozoq', 'turkman', 'tojik'], answer: 0 },
+      { q: '«Qimiz» nima?', options: ['biya sutidan ichimlik', 'gilam', 'cholg‘u', 'kiyim'], answer: 0 },
+      { q: 'Qoratov nimaga o‘xshatiladi?', options: ['ulkan qo‘bizga', 'o‘tovga', 'tuyaga', 'qal’aga'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Shaxslar', 'Etnografik so‘zlar'],
+      items: [
+        { text: 'Go‘ro‘g‘li', cat: 0 }, { text: 'kigiz', cat: 1 },
+        { text: 'Abay', cat: 0 }, { text: 'qimiz', cat: 1 },
+        { text: 'Jomiy', cat: 0 }, { text: 'shirdoq', cat: 1 },
+        { text: 'Maxtumquli', cat: 0 }, { text: 'o‘zan', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Shoir xalqlarni bir tan-u bir jon deb tasvirlashi bugun nega muhim?', a: 'Millatlararo do‘stlik, tinchlik va hamkorlik uchun.' },
+      { q: '«Qadim Sharqning darvozasi» nega Toshkent?', a: 'Buyuk ipak yo‘lidagi muhim shahar, savdo va madaniyat chorrahasi.' },
+      { q: 'Go‘ro‘g‘li, Abay, Yassaviy, Jomiy, Navoiy orqali shoir qanday g‘oyani ilgari suradi?', a: 'Xalqlarimizning adabiy, ma’naviy merosi umumiy.' },
+    ],
+    odd: [
+      { items: ['o‘zbek', 'qirg‘iz', 'qozoq', 'yapon'], answer: 3, why: 'Yapon xalqi «yelkadosh tog‘lar» qatoriga kirmaydi.' },
+      { items: ['Toshkent', 'Samarqand', 'O‘sh', 'Parij'], answer: 3, why: 'Parij she’rda tilga olinmagan.' },
+    ],
+    debate: [
+      { claim: 'Qo‘shni xalqlar adabiyotini o‘rganish shart.', pro: 'Bu do‘stlik va o‘zaro tushunish asosi.', con: 'Avval o‘z adabiyotimizni chuqur bilishimiz kerak.' },
+    ],
+    creative: [
+      { task: 'Qo‘shni xalqqa 2 misralik «salom» yozing.', time: 90 },
+    ],
+  },
+
+  /* ===================== 29. Qiz quvdi, Ko‘ring ===================== */
+  {
+    id: 'ad9-yelkadosh-2',
+    source: 'II chorak • 29-dars • 106–109-betlar',
+    title: 'O‘ljas Sulaymon. «Qiz quvdi». Maxtumquli. «Ko‘ring»',
+    short: 'Qozoq shoirining o‘yin-she’ri va turkman mutafakkirining mard va nomard haqidagi o‘gitlari',
+    theme: { emoji: '🏇', grad: 'from-orange-600 via-red-500 to-emerald-600', border: 'border-orange-200', tag: 'Qozoq va turkman adabiyoti' },
+    lesson: [
+      {
+        title: '«Qiz quvdi» — qanday o‘yin?',
+        emoji: '🏇',
+        text: '«Qiz quvdi» — qozoq, qirg‘iz, qoraqalpoqlarga xos milliy o‘yin. Asosan Navro‘z sayillarida o‘tkazilgan. Yigit otda ketayotgan qizga yetib olishi kerak; qiz esa uni qamchi bilan savalashga harakat qiladi. Bu o‘yin yor tanlashga ham o‘tadi.',
+        facts: [
+          { n: '1936', l: 'O‘ljas Sulaymon tug‘ilgan yil' },
+          { n: '«Az i Ya»', l: 'mashhur asari' },
+          { n: 'Shavkat Rahmon', l: 'she’rni o‘zbekchaga tarjima qilgan' },
+        ],
+      },
+      {
+        title: 'Qizning ovozi',
+        emoji: '💬',
+        text: 'She’r qiz tilidan aytiladi. U yigitni chaqiradi: oshiq bo‘lsang, otni ayamay quvib yet! Ammo yigit yana ortda qoldi...',
+        reveal: [
+          { q: 'Qiz otining yag‘ridan qon sizishi nimaning ifodasi?', a: 'Qiz otni qattiq qamchilagan — u g‘alaba uchun emas, yigit yetib olsin deb kutib, alam bilan chopgan bo‘lishi ham mumkin. Bahslashing!' },
+          { q: 'Qiz g‘olib bo‘lsa ham nega yuzlari «ol» (qizil) bo‘ldi?', a: 'Uyalganidan va yigitga achinganidan — u aslida yutqazishni istagan edi.' },
+          { q: 'Qiz kimlardan gina qiladi?', a: '«Yomonlar»dan — dovyurak yigitga yaxshi ot emas, eshak berib qo‘yganlardan. Yigitning aybi emas!' },
+        ],
+      },
+      {
+        title: 'Barchin va Qiz quvdi',
+        emoji: '🔗',
+        vs: {
+          q: 'Taqqoslang',
+          a: { t: '🌹 Barchin (Alpomish)', pts: ['Boychiborga yig‘lab o‘tinadi', 'Yori g‘alaba qozonishini istaydi', 'G‘alaba keldi'] },
+          b: { t: '🏇 Qiz quvdi qizi', pts: ['Yigitni chaqirib, dalda beradi', 'Yori yetib olishini istaydi', 'Yigit ortda qoldi'] },
+        },
+      },
+      {
+        title: 'Maxtumquli Firog‘iy (1733–1783)',
+        emoji: '📜',
+        cards: [
+          { e: '🏫', t: 'Ta’lim', d: 'Xivadagi Sherg‘ozi va Buxorodagi Ko‘kaldosh madrasalarida o‘qigan.' },
+          { e: '✍️', t: 'Taxallus', d: 'Firog‘iy taxallusi bilan ham ijod qilgan.' },
+          { e: '🎬', t: 'Film', d: '«Maxtumquli Firog‘iy» — o‘zbek va turkman kinochilari hamkorligi.' },
+        ],
+      },
+      {
+        title: '«Ko‘ring»: kimni qanday sinash kerak?',
+        emoji: '👀',
+        poem: {
+          lines: [
+            'Har yigitning aslin bilay desangiz,',
+            'Ma’rakada o‘tirib-turishin ko‘ring.',
+            'Birov bilan oshno bo‘lay desangiz,',
+            'Avval o‘z so‘zida turishin ko‘ring.',
+          ],
+          author: 'Maxtumquli (Jumaniyoz Sharipov tarjimasi)',
+        },
+        reveal: [{ q: 'Bu bandda aytilgan mardlik xislati bugun ham dolzarbmi?', a: 'Ha: odamni gapi emas, xulqi va so‘zida turishi ko‘rsatadi — do‘st tanlashning abadiy qoidasi.' }],
+      },
+      {
+        title: 'Mard va nomard',
+        emoji: '⚖️',
+        vs: {
+          q: 'Maxtumquli tasviri',
+          a: { t: '🦁 Mard yigit', pts: ['So‘zida turadi', 'Mehmondo‘st — chor atrofdan mehmon keladi', 'Ko‘ngli doim yoz, ginasi oz', 'Ishi tushsa — Xudodan ko‘radi'] },
+          b: { t: '🦊 Nomard', pts: ['O‘limdan qochadi', 'Uyiga kelsa zahrini sochadi', 'Mehmondan qochadi', 'Har kuni urush'] },
+        },
+      },
+      {
+        title: 'Ijtimoiy adolat',
+        emoji: '🏛️',
+        cards: [
+          { e: '💰', t: 'Zakotsiz boy', d: 'Tangri undan bezor — siz ham undan qoching.' },
+          { e: '🌾', t: 'Zolim savdogar', d: 'G‘allani arzon olib, qimmat sotadi.' },
+          { e: '🪙', t: 'Sudxo‘r', d: 'Halol tillani harom foydaga beradi.' },
+          { e: '🧺', t: 'Iflos boyvachcha', d: 'Bir pul tushsa, ko‘ksini ochib kezadi.' },
+        ],
+        mission: { t: 'Yozma ish', d: 'Birinchi banddagi mardlik xislati bugun ham dolzarbmi? 6–7 gapda yozing. Tavsiya: «Ko‘ring» qo‘shig‘ini tinglang (Komiljon Otaniyozov, Ruxsora Otajonova).', sec: 360 },
+      },
+    ],
+    pairs: [
+      ['O‘ljas Sulaymon', 'qozoq shoiri, «Qiz quvdi»'],
+      ['Maxtumquli', 'turkman mutafakkiri, «Ko‘ring»'],
+      ['Firog‘iy', 'Maxtumqulining taxallusi'],
+      ['Qiz quvdi', 'Navro‘zdagi otliq o‘yin'],
+      ['Shavkat Rahmon', '«Qiz quvdi» tarjimoni'],
+      ['Jumaniyoz Sharipov', '«Ko‘ring» tarjimoni'],
+      ['Sudxo‘r', 'foizga qarz beruvchi'],
+    ],
+    quiz: [
+      { q: '«Qiz quvdi» o‘yini qachon o‘tkazilgan?', options: ['Navro‘z sayillarida', 'qishda', 'to‘ylarda faqat', 'Ramazonda'], answer: 0 },
+      { q: 'She’rda yigitga nima berilgan?', options: ['eshak', 'tulpor', 'tuya', 'arava'], answer: 0 },
+      { q: 'Maxtumquli qaysi madrasalarda o‘qigan?', options: ['Sherg‘ozi va Ko‘kaldosh', 'Ulug‘bek va Sherdor', 'Mir Arab va Tillakori', 'Ayo Sofiya'], answer: 0 },
+      { q: 'Maxtumqulining fikricha, do‘st tanlashda nimaga qarash kerak?', options: ['o‘z so‘zida turishiga', 'boyligiga', 'kiyimiga', 'bo‘yiga'], answer: 0 },
+      { q: 'Nomard mehmonga qanday munosabatda?', options: ['mehmondan qochadi', 'mehmon kutadi', 'sovg‘a beradi', 'kuzatadi'], answer: 0 },
+      { q: 'Kimdan Tangri bezor?', options: ['zakotsiz boydan', 'kambag‘aldan', 'mehmondan', 'yo‘lovchidan'], answer: 0 },
+      { q: 'Maxtumquli yashagan davr:', options: ['1733–1783', '1441–1501', '1905–1968', '1936'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Mard yigit', 'Nomard'],
+      items: [
+        { text: 'so‘zida turadi', cat: 0 }, { text: 'o‘limdan qochadi', cat: 1 },
+        { text: 'mehmondo‘st', cat: 0 }, { text: 'mehmondan qochadi', cat: 1 },
+        { text: 'ko‘ngli doim yoz', cat: 0 }, { text: 'uyida zahrini sochadi', cat: 1 },
+        { text: 'ginasi oz', cat: 0 }, { text: 'har kuni urush', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: '«Qadrdon qardoshdan uzoqda turib, qadrsiz yot bilan qarindosh bo‘lib» misralarini sharhlang.', a: 'Yaqinlarini qadrlamay, begonalarga ergashgan odam baxt topmaydi.' },
+      { q: 'Maxtumquli ijtimoiy adolatga qanday yondashgan?', a: 'Zakotsiz boy, zolim savdogar, sudxo‘rni qoralaydi; halollikni ulug‘laydi.' },
+      { q: 'Qiz yigitga «Seni sevaman» demasa, muhabbatini nima ko‘rsatardi?', a: 'Uni chaqirishi, kutishi, dalda berishi, yuzining qizarishi.' },
+    ],
+    odd: [
+      { items: ['zakotsiz boy', 'sudxo‘r', 'zolim savdogar', 'mehmondo‘st'], answer: 3, why: 'Mehmondo‘stlik — mard yigit xislati.' },
+    ],
+    debate: [
+      { claim: 'Odamni birinchi taassurot bilan baholash mumkin.', pro: 'Ma’rakadagi xulqi ko‘p narsani aytadi.', con: 'Maxtumquli: «Avval so‘zida turishini ko‘ring» — vaqt kerak.' },
+    ],
+    creative: [
+      { task: '«... desangiz, ... ko‘ring» qolipida o‘z o‘gitingizni 2 misrada yozing.', time: 120 },
+    ],
+  },
+
+  /* ===================== 30. Loyiq Sherali, Kengesboy Karimov ===================== */
+  {
+    id: 'ad9-yelkadosh-3',
+    source: 'II chorak • 30-dars • 109–113-betlar',
+    title: 'Loyiq Sherali. «Ey tilsiz daraxt», «Ertani o‘ylab». Kengesboy Karimov. «Yoshlik so‘qmog‘i»',
+    short: 'Tojik shoirining falsafiy she’rlari va qoraqalpoq shoirining yoshlik sog‘inchi',
+    theme: { emoji: '🌲', grad: 'from-green-900 via-emerald-700 to-amber-400', border: 'border-emerald-200', tag: 'Tojik va qoraqalpoq adabiyoti' },
+    lesson: [
+      {
+        title: 'Loyiq Sherali (1941–2000)',
+        emoji: '✍️',
+        facts: [
+          { n: '20+', l: 'she’riy to‘plam' },
+          { n: '50+', l: 'tilga tarjima qilingan' },
+          { n: '⛰️', l: 'Tojikiston xalq shoiri' },
+        ],
+        text: '«Yo‘lovchi», «Ko‘ngil koshonasi», «Quyosh yomg‘iri», «Shohnoma»dan ilhom», «Men va daryo» to‘plamlari muallifi. Uning ijodi tojik adabiyotini dunyoga tanitdi.',
+      },
+      {
+        title: '«Ey tilsiz daraxt»',
+        emoji: '🌳',
+        text: 'Daraxtning o‘zidan bolta sopi yasaladi — va o‘sha bolta uning ildizini kesadi. Tanasidan dor yog‘ochi, tobut yasaladi. Shoir so‘raydi: tiling bo‘lsa, so‘yla! Barglaring — tiling emasmi?',
+        quote: { text: 'Ayt, tiling emasmi axir barglaring?', by: 'Loyiq Sherali (Odil Ikrom tarjimasi)' },
+      },
+      {
+        title: 'Ramzlarni yeching',
+        emoji: '🗝️',
+        reveal: [
+          { q: '🪓 «O‘zingdan chiqarib bolta sopini, ildizing kesishar»', a: 'Eng katta zarar ko‘pincha o‘zingdan chiqqan, o‘zing tarbiyalagan odamdan keladi. Xalq maqoli: «Boltaning sopi o‘zidan».' },
+          { q: '🌳 Tilsiz daraxt kim?', a: 'Jabrini aytolmaydigan mazlum inson, xalq yoki tabiat.' },
+          { q: '🍃 Barglar — til', a: 'Daraxt baribir «gapiradi»: shitirlashi, gullashi — uning tili. Har kim o‘z yo‘li bilan haqiqatni aytadi.' },
+          { q: '🛏️ Daraxtdan beshik ham yasaladi', a: 'Darslik eslatmasi: daraxt nafaqat o‘lim (dor, tobut), balki hayot (beshik) ramzi ham!' },
+        ],
+      },
+      {
+        title: '«Ertani o‘ylab»',
+        emoji: '🌅',
+        text: 'Otalar avlodlar qalbi or-nomusga to‘lsin deb dor ostiga ham jim bordi, onalar jigar qonini ichdi. Ular hamma azobni «ertani o‘ylab» ko‘tardi.',
+        vs: {
+          q: 'She’rdagi kontrast',
+          a: { t: '⬛ Qaro', pts: ['onalarning ko‘rgan kunlari', 'dushman o‘qi', 'dor'] },
+          b: { t: '⬜ Oq', pts: ['go‘daklarning ichgan suti', 'or-nomus', 'kelajak'] },
+        },
+        reveal: [{ q: '«Go‘daklarning ichgan suti oq edi» — ramziy ma’nosi?', a: 'Ota-onalar qanchalik qora kunlarni ko‘rmasin, farzandlariga pok, halol hayot va toza tarbiya berdi.' }],
+      },
+      {
+        title: 'Kengesboy Karimov (1948)',
+        emoji: '🌊',
+        cards: [
+          { e: '🏅', t: 'Unvonlar', d: 'Qoraqalpog‘iston xalq shoiri, O‘zbekiston xalq yozuvchisi.' },
+          { e: '📚', t: 'To‘plamlar', d: '«Oraliqlar», «Vaqt minorasi», «Oroldan keldim», «Ko‘ngil mulki».' },
+          { e: '📖', t: 'Roman', d: '«Og‘abiy» — Orolbo‘yi xalqi yo‘lboshchisi haqida dilogiya.' },
+        ],
+      },
+      {
+        title: '«Yoshlik so‘qmog‘i»',
+        emoji: '🛤️',
+        text: 'Shoir bir kuni ko‘zguga qarab, oqargan sochlarini ko‘radi va yoshlik so‘qmog‘ini eslaydi: ilk muhabbat, uyqusiz tunlar, maktublar, ilk she’rlar, to‘ng‘ich qo‘shiqlar...',
+        steps: [
+          { e: '🪞', t: 'Ko‘zgu', d: 'Sochini tarab, o‘ylanib qoladi.' },
+          { e: '🌹', t: 'Ilk muhabbat', d: 'Qizil guldek nozanin qiz.' },
+          { e: '✉️', t: 'Maktublar', d: 'Ilk she’rlar, to‘ng‘ich qo‘shiqlar.' },
+          { e: '🏰', t: 'Orzular qal’asi', d: 'Yoshlik orzuga ergashib ketdi.' },
+          { e: '👦', t: '«Qora bola»', d: 'Taniysanmi? — bu shoirning o‘zi, yoshlikdagi qiyofasi.' },
+        ],
+        reveal: [{ q: 'She’rdagi ustuvor tuyg‘u qaysi?', a: 'Sog‘inch va armon — ammo iliq, mehrli sog‘inch.' }],
+        mission: { t: 'Tanlov topshiriq', d: '1) Xurshid Rasulovning «Yoshlik bizni tashlab ketadi» qo‘shig‘ini tinglab, karaoke tarzida ayting yoki 2) qo‘shiq bilan she’rni qiyoslab taassurot yozing. Bo‘limdagi she’rlardan birini yod oling!', sec: 300 },
+      },
+    ],
+    pairs: [
+      ['Loyiq Sherali', 'tojik shoiri'],
+      ['Kengesboy Karimov', 'qoraqalpoq shoiri'],
+      ['«Ey tilsiz daraxt»', 'bolta sopi va ildiz'],
+      ['«Ertani o‘ylab»', 'otalar va onalar fidoyiligi'],
+      ['«Yoshlik so‘qmog‘i»', 'yoshlik sog‘inchi'],
+      ['Odil Ikrom', 'Loyiq Sherali tarjimoni'],
+      ['«Og‘abiy»', 'Kengesboy Karimov romani'],
+    ],
+    quiz: [
+      { q: 'Loyiq Sherali qaysi xalq shoiri?', options: ['tojik', 'qirg‘iz', 'turkman', 'qozoq'], answer: 0 },
+      { q: 'Daraxtning ildizini nima kesadi?', options: ['o‘zidan chiqqan bolta sopi', 'shamol', 'suv', 'olov'], answer: 0 },
+      { q: 'Shoir daraxtning tili deb nimani aytadi?', options: ['barglarini', 'ildizini', 'shoxlarini', 'mevasini'], answer: 0 },
+      { q: '«Ertani o‘ylab»da go‘daklarning suti qanday?', options: ['oq', 'qaro', 'achchiq', 'issiq'], answer: 0 },
+      { q: 'Kengesboy Karimovning romani:', options: ['«Og‘abiy»', '«Chinor»', '«Qutlug‘ qon»', '«Manas»'], answer: 0 },
+      { q: '«Yoshlik so‘qmog‘i»da shoir nimaga qarab o‘ylanadi?', options: ['ko‘zguga', 'daraxtga', 'daryoga', 'osmonga'], answer: 0 },
+      { q: 'She’r oxiridagi «qora bola» kim?', options: ['shoirning yoshlikdagi o‘zi', 'qo‘shni bola', 'o‘g‘li', 'do‘sti'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Loyiq Sherali', 'Kengesboy Karimov'],
+      items: [
+        { text: 'tilsiz daraxt', cat: 0 }, { text: 'yoshlik so‘qmog‘i', cat: 1 },
+        { text: 'bolta sopi', cat: 0 }, { text: 'ilk maktublar', cat: 1 },
+        { text: 'otalar dor ostida', cat: 0 }, { text: 'qora bola', cat: 1 },
+        { text: '«Shohnoma»dan ilhom', cat: 0 }, { text: '«Oroldan keldim»', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: '«Nechuk savdo? Nechuk kemtik dunyo bu?» savolining falsafiy ma’nosi?', a: 'Dunyo nohaq: yaxshilik qilganga yomonlik qaytadi — shoir bu adolatsizlikdan hayratda.' },
+      { q: '«Or-nomus» va «oriyat» avlodlar uchun nega muhim?', a: 'Bu ota-bobolardan qolgan eng qimmat meros, insonni inson qiladigan qadriyat.' },
+      { q: '«Ko‘ngilda ochilgan oltin eshiklar» qaysi tuyg‘ular uchun?', a: 'Muhabbat, ilhom, orzu — yoshlikning eng yorqin tuyg‘ulari.' },
+    ],
+    odd: [
+      { items: ['dor', 'tobut', 'bolta', 'kitob'], answer: 3, why: 'Kitob «Ey tilsiz daraxt»da tilga olinmaydi (garchi u ham daraxtdan yasaladi!).' },
+    ],
+    debate: [
+      { claim: 'Yoshlik — hayotning eng baxtli davri.', pro: 'Orzular, muhabbat, kuch — hammasi yoshlikda.', con: 'Har bir yoshning o‘z baxti bor; Ochil buva 93 yoshda ham hayotga oshiq.' },
+    ],
+    creative: [
+      { task: 'O‘zingizning «bolalik so‘qmog‘ingiz»dan bir xotirani 3 gapda yozing.', time: 120 },
+      { task: 'Daraxt tilidan 2 gapli «arznoma» yozing.', time: 90 },
+    ],
+  },
+];
+
 const CONTENT = {
-  adabiyot: { 8: [...ADABIYOT_8, ...ADABIYOT_8_P2, ...ADABIYOT_8_P3, ...ADABIYOT_8_P4, ...ADABIYOT_8_P5], 9: [...ADABIYOT_9, ...ADABIYOT_9_P2] },
+  adabiyot: { 8: [...ADABIYOT_8, ...ADABIYOT_8_P2, ...ADABIYOT_8_P3, ...ADABIYOT_8_P4, ...ADABIYOT_8_P5], 9: [...ADABIYOT_9, ...ADABIYOT_9_P2, ...ADABIYOT_9_P3] },
   'ona-tili': { 8: [...ONA_TILI_8, ...ONA_TILI_8_PART2, ...ONA_TILI_8_PART3, ...ONA_TILI_8_PART4, ...ONA_TILI_8_PART5, ...ONA_TILI_8_PART6, ...ONA_TILI_8_PART7, ...ONA_TILI_8_PART8], 9: [...ONA_TILI_9, ...ONA_TILI_9_P2, ...ONA_TILI_9_P3, ...ONA_TILI_9_P4, ...ONA_TILI_9_P5, ...ONA_TILI_9_P6, ...ONA_TILI_9_P7, ...ONA_TILI_9_P8] },
 };
 
