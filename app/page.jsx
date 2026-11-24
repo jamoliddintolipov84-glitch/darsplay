@@ -42,6 +42,29 @@ const SUBJECTS = [
   { id: 'informatika', name: 'Informatika', icon: Monitor, color: 'bg-slate-700' },
 ];
 
+/**
+ * Fan paketlari — o‘qituvchi bitta paketni sotib oladi va faqat shu paketdagi fanlardan foydalanadi.
+ * «Ona tili va adabiyot» — bitta paket (ikki fan birga). Qolgan fanlar — har biri alohida paket.
+ * Admin o‘qituvchi hisobida paket id sini saqlaydi (profiles.subject ustuni).
+ */
+const PACKAGES = [
+  { id: 'ona-tili-adabiyot', name: 'Ona tili va adabiyot', subjects: ['ona-tili', 'adabiyot'] },
+  ...SUBJECTS.filter((s) => s.id !== 'ona-tili' && s.id !== 'adabiyot').map((s) => ({ id: s.id, name: s.name, subjects: [s.id] })),
+];
+const DEFAULT_PACKAGE = 'ona-tili-adabiyot';
+
+/** Bazadagi qiymatdan paketni topadi. Eski yozuvlar ('ona-tili' yoki 'adabiyot') avtomatik juft paketga o‘tadi. */
+function packageOf(value) {
+  if (!value) return null;
+  if (value === 'ona-tili' || value === 'adabiyot') return PACKAGES[0];
+  return PACKAGES.find((p) => p.id === value) || null;
+}
+
+/** O‘qituvchiga ruxsat berilgan fan id lari. Paket biriktirilmagan bo‘lsa — bo‘sh ro‘yxat. */
+function allowedSubjectIds(teacher) {
+  return packageOf(teacher?.subject)?.subjects || [];
+}
+
 const GRADES = [5, 6, 7, 8, 9, 10, 11];
 
 const REGIONS = [
@@ -34241,7 +34264,7 @@ function suggestLogin(name = '') {
 function seedDb() {
   const teacher = {
     id: 't_demo', login: 'demo', password: 'demo123', name: 'Karimova Dilfuza',
-    school: '45-maktab', region: 'Toshkent shahri', subject: 'ona-tili', createdAt: 0,
+    school: '45-maktab', region: 'Toshkent shahri', subject: DEFAULT_PACKAGE, createdAt: 0,
   };
   return {
     version: 1,
@@ -34878,7 +34901,7 @@ function CredentialsCard({ name, login, password, onClose }) {
 }
 
 function TeachersTab({ db, api }) {
-  const empty = { name: '', school: '', region: '', subject: 'ona-tili', login: '', password: genPassword() };
+  const empty = { name: '', school: '', region: '', subject: DEFAULT_PACKAGE, login: '', password: genPassword() };
   const [form, setForm] = useState(empty);
   const [loginTouched, setLoginTouched] = useState(false);
   const [editingId, setEditingId] = useState(null);
@@ -34955,7 +34978,7 @@ function TeachersTab({ db, api }) {
     setLoginTouched(true);
     setErrors({});
     setCreated(null);
-    setForm({ name: t.name, school: t.school, region: t.region || '', subject: t.subject || 'ona-tili', login: t.login, password: t.password || '' });
+    setForm({ name: t.name, school: t.school, region: t.region || '', subject: packageOf(t.subject)?.id || '', login: t.login, password: t.password || '' });
     if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -35001,9 +35024,10 @@ function TeachersTab({ db, api }) {
               {REGIONS.map((r) => <option key={r} value={r}>{r}</option>)}
             </select>
           </Field>
-          <Field label="Fan">
+          <Field label="Fan (sotib olingan paket)">
             <select className={inputCls} value={form.subject} onChange={(e) => set('subject', e.target.value)}>
-              {SUBJECTS.map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}
+              <option value="">— Fan biriktirilmagan (kirish yopiq) —</option>
+              {PACKAGES.map((p) => <option key={p.id} value={p.id}>{p.name}</option>)}
             </select>
           </Field>
         </div>
@@ -35063,7 +35087,7 @@ function TeachersTab({ db, api }) {
                 <div className="min-w-0 flex-1">
                   <div className="text-xl font-extrabold text-blue-950">{t.name}</div>
                   <div className="text-base text-slate-500">
-                    {t.school}{t.region ? ` • ${t.region}` : ''} • {SUBJECTS.find((s) => s.id === t.subject)?.name || '—'} • {classCount} ta sinf kiritgan
+                    {t.school}{t.region ? ` • ${t.region}` : ''} • {packageOf(t.subject)?.name || 'Fan biriktirilmagan'} • {classCount} ta sinf kiritgan
                   </div>
                   <div className="mt-2 flex flex-wrap gap-2 text-base">
                     <span className="rounded-xl bg-blue-50 px-3 py-1 font-bold text-blue-800">Login: {t.login}</span>
@@ -36031,20 +36055,21 @@ const HOME_TIPS = [
   ['Imlo o‘yinlari', '9-sinf ona tilida «Qaysi harf?» va «Imlo bellashuvi» bor — dars boshida 5 daqiqalik isinish uchun ideal.'],
 ];
 
-function readyBooks() {
+function readyBooks(allowed) {
   const out = [];
-  SUBJECTS.forEach((s) => Object.entries(CONTENT[s.id] || {}).forEach(([g, arr]) => out.push({ s, g: Number(g), n: arr.length })));
+  SUBJECTS.filter((s) => !allowed || allowed.includes(s.id)).forEach((s) => Object.entries(CONTENT[s.id] || {}).forEach(([g, arr]) => out.push({ s, g: Number(g), n: arr.length })));
   return out;
 }
 
-function HomeScreen({ teacher, onStart, schoolClasses = [], onClassResults, onRating, onQuick, onResume, onGuide, onBoard }) {
+function HomeScreen({ teacher, allowed = [], onStart, schoolClasses = [], onClassResults, onRating, onQuick, onResume, onGuide, onBoard }) {
   const now = new Date();
   const h = now.getHours();
   const greet = h < 11 ? 'Xayrli tong' : h < 17 ? 'Xayrli kun' : 'Xayrli kech';
   const dateStr = `${now.getDate()}-${UZ_MONTHS[now.getMonth()]}, ${UZ_DAYS[now.getDay()]}`;
-  const [recent] = useState(() => loadRecent().filter((r) => schoolClasses.some((c) => c.id === r.classId)).slice(0, 4));
+  const [recent] = useState(() => loadRecent().filter((r) => allowed.includes(r.subjectId) && schoolClasses.some((c) => c.id === r.classId)).slice(0, 4));
+  const pkg = packageOf(teacher?.subject);
   const tip = HOME_TIPS[now.getDate() % HOME_TIPS.length];
-  const books = readyBooks();
+  const books = readyBooks(allowed);
   const classes = [...schoolClasses].sort((a, b) => a.grade - b.grade || a.letter.localeCompare(b.letter));
   const totalStudents = schoolClasses.reduce((a, c) => a + c.students.length, 0);
 
@@ -36059,8 +36084,13 @@ function HomeScreen({ teacher, onStart, schoolClasses = [], onClassResults, onRa
             <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-base font-bold text-blue-100 ring-1 ring-white/20"><CalendarDays size={18} /> {dateStr}</span>
             <h1 className="mt-4 text-4xl md:text-6xl font-black leading-tight">{greet},<br /><span className="text-amber-300">{teacher?.name || 'Ustoz'}</span>!</h1>
             <p className="mt-3 text-xl text-blue-100">{teacher?.school} • Bugungi darsni o‘yinga aylantiramiz.</p>
+            {pkg ? (
+              <span className="mt-3 inline-flex items-center gap-2 rounded-full bg-amber-400/20 px-4 py-1.5 text-base font-extrabold text-amber-200 ring-1 ring-amber-300/40"><BookOpen size={18} /> Fan: {pkg.name}</span>
+            ) : (
+              <p className="mt-4 rounded-2xl bg-rose-500/20 px-4 py-3 text-lg font-bold text-rose-100 ring-1 ring-rose-300/40">Hisobingizga hali fan biriktirilmagan. Dars play administratoriga murojaat qiling.</p>
+            )}
             <div className="mt-7 flex flex-wrap gap-3">
-              <button onClick={onStart} className="dp-glow inline-flex items-center gap-3 rounded-2xl bg-amber-400 px-8 py-4 text-2xl font-black text-amber-950 shadow-xl transition hover:bg-amber-300 active:scale-95">
+              <button onClick={onStart} disabled={!allowed.length} className="dp-glow disabled:pointer-events-none disabled:opacity-40 inline-flex items-center gap-3 rounded-2xl bg-amber-400 px-8 py-4 text-2xl font-black text-amber-950 shadow-xl transition hover:bg-amber-300 active:scale-95">
                 <Play size={30} className="fill-amber-950" /> Darsni boshlash
               </button>
               <button onClick={onBoard} className="inline-flex items-center gap-2 rounded-2xl bg-white px-6 py-4 text-xl font-black text-blue-800 shadow-xl transition hover:bg-blue-50 active:scale-95"><PenLine size={26} /> Doska</button>
@@ -36117,9 +36147,9 @@ function HomeScreen({ teacher, onStart, schoolClasses = [], onClassResults, onRa
                   <span className="mt-1 inline-flex items-center gap-1 rounded-full bg-emerald-50 px-3 py-0.5 text-sm font-bold text-emerald-700"><Check size={14} /> {n} ta mavzu</span>
                 </button>
               ))}
-              <button onClick={onStart} className="flex flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-blue-200 p-5 text-blue-700 transition hover:border-blue-500 hover:bg-blue-50">
+              <button onClick={onStart} disabled={!allowed.length} className="disabled:hidden flex flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-blue-200 p-5 text-blue-700 transition hover:border-blue-500 hover:bg-blue-50">
                 <LayoutGrid size={28} />
-                <span className="text-lg font-extrabold">Barcha fanlar</span>
+                <span className="text-lg font-extrabold">{allowed.length > 1 ? 'Fanlarim' : 'Boshqa sinflar'}</span>
               </button>
             </div>
           </section>
@@ -36191,9 +36221,10 @@ function StepBar({ items, current, onJump }) {
    5. TANLOV BOSQICHLARI: FAN → SINF → MAVZU → DARS
    ============================================================ */
 
-function SubjectScreen({ onPick, onBack, onQuick }) {
-  const ready = SUBJECTS.filter((s) => CONTENT[s.id]);
-  const rest = SUBJECTS.filter((s) => !CONTENT[s.id]);
+function SubjectScreen({ onPick, onBack, onQuick, allowed = [] }) {
+  const mine = SUBJECTS.filter((s) => allowed.includes(s.id));
+  const ready = mine.filter((s) => CONTENT[s.id]);
+  const rest = mine.filter((s) => !CONTENT[s.id]);
   return (
     <div className="mx-auto max-w-7xl px-4 py-6 md:px-8">
       <PageTitle title="Fanni tanlang" subtitle="Tayyor darsliklar yuqorida — sinf raqamini bossangiz, to‘g‘ri o‘tasiz" onBack={onBack} />
@@ -36222,7 +36253,7 @@ function SubjectScreen({ onPick, onBack, onQuick }) {
           );
         })}
       </div>
-      <h3 className="mb-3 mt-10 text-xl font-extrabold text-slate-500">Boshqa fanlar — namunaviy mavzular va o‘z savollaringiz</h3>
+      {rest.length > 0 && <h3 className="mb-3 mt-10 text-xl font-extrabold text-slate-500">Namunaviy mavzular va o‘z savollaringiz</h3>}
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
         {rest.map((s) => (
           <button key={s.id} onClick={() => onPick(s.id)} className="flex items-center gap-3 rounded-2xl border-2 border-blue-100 bg-white p-4 text-left transition hover:-translate-y-0.5 hover:border-blue-400 hover:shadow-lg active:scale-95">
@@ -36231,6 +36262,10 @@ function SubjectScreen({ onPick, onBack, onQuick }) {
           </button>
         ))}
       </div>
+      {!mine.length && (
+        <p className="rounded-3xl border-2 border-rose-200 bg-rose-50 p-6 text-xl font-bold text-rose-800">Hisobingizga hali fan biriktirilmagan. Dars play administratoriga murojaat qiling.</p>
+      )}
+      <p className="mt-8 text-base font-semibold text-slate-400">Boshqa fanlarni ulash uchun Dars play administratoriga murojaat qiling.</p>
     </div>
   );
 }
@@ -39926,7 +39961,7 @@ export default function DarsPlayApp() {
             const profile = await remoteProfile(s.user.id);
             profileRef.current = profile;
             setDb(await remoteLoadData(profile));
-            if (profile.subject) setSubjectId(profile.subject);
+            setSubjectId(packageOf(profile.subject)?.subjects[0] || null);
             setSession(profile.role === 'admin' ? { role: 'admin', id: profile.id } : { role: 'teacher', id: profile.id });
             setHistory([profile.role === 'admin' ? 'admin' : 'home']);
           } else {
@@ -39971,6 +40006,10 @@ export default function DarsPlayApp() {
 
   const teacher = session?.role === 'teacher' ? db.teachers.find((t) => t.id === session.id) || null : null;
   const isAdmin = session?.role === 'admin';
+  const allowed = useMemo(() => allowedSubjectIds(teacher), [teacher]);
+  // Paketda bitta fan bo‘lsa, fan tanlash ekrani o‘tkazib yuboriladi
+  const flowStart = allowed.length === 1 ? ['home'] : ['home', 'subject'];
+  const startLesson = () => { if (allowed.length === 1) { setSubjectId(allowed[0]); resetTo(['home', 'grade']); } else resetTo(['home', 'subject']); };
   const schoolClasses = useMemo(
     () => (teacher ? db.classes.filter((c) => normSchool(c.school) === normSchool(teacher.school)) : []),
     [db.classes, teacher]
@@ -40113,7 +40152,7 @@ export default function DarsPlayApp() {
         const profile = await remoteProfile(data.user.id);
         profileRef.current = profile;
         setDb(await remoteLoadData(profile));
-        if (profile.subject) setSubjectId(profile.subject);
+        setSubjectId(packageOf(profile.subject)?.subjects[0] || null);
         startSession({ role: profile.role === 'admin' ? 'admin' : 'teacher', id: profile.id }, profile.role === 'admin' ? 'admin' : 'home');
         return null;
       } catch (e) {
@@ -40123,7 +40162,7 @@ export default function DarsPlayApp() {
     }
     const t = db.teachers.find((x) => x.login.trim().toLowerCase() === login);
     if (t && t.password.trim() === password) {
-      if (t.subject) setSubjectId(t.subject);
+      setSubjectId(packageOf(t.subject)?.subjects[0] || null);
       startSession({ role: 'teacher', id: t.id }, 'home');
       return null;
     }
@@ -40352,13 +40391,14 @@ export default function DarsPlayApp() {
   const teacherSteps = ['home', 'subject', 'grade', 'class', 'topic', 'lesson', 'game', 'picker', 'play', 'custom', 'results'];
   const needsTopic = ['lesson', 'game', 'picker', 'play'].includes(step);
   const needsClass = ['topic', 'lesson', 'game', 'picker', 'play', 'custom'].includes(step);
-  const quickOpen = (sid, g) => { setSubjectId(sid); setGrade(g); resetTo(['home', 'subject', 'grade', 'class']); };
-  const resumeRecent = (r) => { setSubjectId(r.subjectId); setGrade(r.grade); setClassId(r.classId); setTopicId(r.topicId); setGroups(null); resetTo(['home', 'subject', 'grade', 'class', 'topic', 'lesson']); };
+  const quickOpen = (sid, g) => { if (!allowed.includes(sid)) return; setSubjectId(sid); setGrade(g); resetTo([...flowStart, 'grade', 'class']); };
+  const resumeRecent = (r) => { if (!allowed.includes(r.subjectId)) return; setSubjectId(r.subjectId); setGrade(r.grade); setClassId(r.classId); setTopicId(r.topicId); setGroups(null); resetTo([...flowStart, 'grade', 'class', 'topic', 'lesson']); };
   const FLOW = ['subject', 'grade', 'class', 'topic'];
   const jumpTo = (key) => setHistory((h) => { const i = h.lastIndexOf(key); return i >= 0 ? h.slice(0, i + 1) : h; });
   let safeStep = step;
   if (booting) safeStep = 'boot';
   else if (teacherSteps.includes(step) && !teacher) safeStep = 'login';
+  else if (!['home', 'subject', 'results'].includes(step) && teacherSteps.includes(step) && !allowed.includes(subjectId)) safeStep = 'home';
   else if (step === 'admin' && !isAdmin) safeStep = 'login';
   else if (step === 'guide' && !teacher && !isAdmin) safeStep = 'login';
   else if (needsClass && !selectedClass) safeStep = grade ? 'class' : 'home';
@@ -40433,7 +40473,8 @@ export default function DarsPlayApp() {
           <HomeScreen
             teacher={teacher}
             schoolClasses={schoolClasses}
-            onStart={() => go('subject')}
+            allowed={allowed}
+            onStart={startLesson}
             onClassResults={(c) => { setClassId(c.id); setGrade(c.grade); setRatingScope('class'); go('results'); }}
             onRating={(scope) => { setRatingScope(scope); go('results'); }}
             onQuick={quickOpen}
@@ -40444,7 +40485,7 @@ export default function DarsPlayApp() {
         )}
 
         {safeStep === 'guide' && (
-          <GuideScreen onBack={back} onStart={teacher ? () => resetTo(['home', 'subject']) : null} />
+          <GuideScreen onBack={back} onStart={teacher && allowed.length ? startLesson : null} />
         )}
 
         {showWelcome && safeStep === 'home' && (
@@ -40477,7 +40518,7 @@ export default function DarsPlayApp() {
         )}
 
         {safeStep === 'subject' && (
-          <SubjectScreen onBack={back} onPick={(id) => { setSubjectId(id); go('grade'); }} onQuick={quickOpen} />
+          <SubjectScreen allowed={allowed} onBack={back} onPick={(id) => { if (allowed.includes(id)) { setSubjectId(id); go('grade'); } }} onQuick={quickOpen} />
         )}
 
         {safeStep === 'grade' && (
