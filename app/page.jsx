@@ -32847,8 +32847,810 @@ const ADABIYOT_9_P6 = [
   },
 ];
 
+const ADABIYOT_9_P7 = [
+  /* ===================== 61. Temir xotin — 1-sahna ===================== */
+  {
+    id: 'ad9-temir-1',
+    source: 'IV chorak • 61-dars • 213–220-betlar',
+    title: 'Sharof Boshbekov. «Temir xotin» dramasi (Birinchi sahna)',
+    short: 'Jiddiy komediya: dramaturg, drama atamalari, bog‘langan Qo‘chqor va ketib qolgan Qumri',
+    theme: { emoji: '🤖', grad: 'from-zinc-800 via-stone-600 to-orange-400', border: 'border-orange-200', tag: 'Drama • Jiddiy komediya' },
+    lesson: [
+      {
+        title: 'Aktyordan dramaturgga',
+        emoji: '🎭',
+        facts: [
+          { n: '1951', l: '4-yanvar, Samarqand, Bulung‘ur' },
+          { n: '10 yil', l: 'Muqimiy teatrida aktyor' },
+          { n: '20+', l: 'tilga tarjima qilingan «Temir xotin»' },
+          { n: '2022', l: '26-yanvarda vafot etgan' },
+        ],
+        text: 'U aktyorlar boshqalar yozib bergan gaplarni gapirishini anglab, o‘zi ular uchun gap yoza boshlagan — shu tariqa dramaturg bo‘lgan. «Tikansiz tipratikanlar», «Tentak farishtalar», «Eshik qoqqan kim?», «Eski shahar gavroshlari» — uning asarlari. «Masxaraboz» filmi — ilk rejissyorlik ishi.',
+      },
+      {
+        title: '«Temir xotin» tarixi',
+        emoji: '📜',
+        steps: [
+          { e: '✍️', t: '1989', d: 'Besh pardali «jiddiy komediya» yozildi, ilk bor Samarqand teatrida sahnalashtirildi.' },
+          { e: '🎬', t: '1990', d: 'Asar asosida badiiy film suratga olindi.' },
+          { e: '🌍', t: 'Xorijda', d: '20 dan ortiq tilga tarjima qilindi, chet el teatrlarida qo‘yildi.' },
+          { e: '🎞️', t: '2023', d: 'Qozoq kinoijodkorlari «Yap-yangi Alomatxon» kover-versiyasini suratga oldi.' },
+        ],
+        quote: { text: 'Haqiqat achchiq, hazil-mutoyiba shirin', by: 'Sharof Boshbekov' },
+        reveal: [{ q: 'Muallif asar g‘oyasini qayerdan olgan?', a: 'Bolalikdagi achchiq xotiralardan: paxta tashvishi hayot-mamot masalasidan muhim bo‘lgan, ayollar daladan chiqmagan davr.' }],
+      },
+      {
+        title: 'Drama lug‘ati',
+        emoji: '📚',
+        cards: [
+          { e: '🎪', t: 'Parda', d: 'Voqea bosqichi; asarlar odatda 3–5 pardali.' },
+          { e: '🎬', t: 'Sahna', d: 'Parda ichidagi kichik bo‘lim; personaj kirishi yoki muhit o‘zgarishi bilan farqlanadi.' },
+          { e: '💬', t: 'Dialog va monolog', d: 'Voqealar shu orqali rivojlanadi; monolog — ovoz chiqarib o‘ylash.' },
+          { e: '📝', t: 'Remarka', d: 'Qavs ichidagi muallif izohi; sahnada harakat bilan ijro etiladi.' },
+        ],
+      },
+      {
+        title: 'Ishtirok etuvchilar',
+        emoji: '👥',
+        cards: [
+          { e: '🚜', t: 'Qo‘chqor', d: 'Traktorchi, oila boshlig‘i.' },
+          { e: '🤖', t: '«Alomat»', d: 'Robot.' },
+          { e: '🔬', t: 'Olimjon', d: 'Yosh olim.' },
+          { e: '👩', t: 'Qumri', d: 'Qo‘chqorning xotini.' },
+          { e: '🧕', t: 'Sharofat, Saltanat', d: 'Qo‘shni ayollar.' },
+          { e: '📿', t: 'Suvon', d: 'Mulla.' },
+        ],
+      },
+      {
+        title: 'Ekspozitsiya: hovli',
+        emoji: '🏚️',
+        text: 'Kamtarona hovlida har bir buyumda nimadir yetishmaydi: romlar yarim bo‘yalgan, karavotning bir oyog‘i o‘rnida g‘isht, choynak jo‘mragiga tunuka kiygizilgan. Qo‘chqor ayvon ustuniga arqon bilan bog‘lab qo‘yilgan.',
+        reveal: [
+          { q: '«Har bir buyumda nimadir yetishmasligi» nimani bildiradi?', a: 'Oilaning qashshoqligini va butun hayotning «chala»ligini — ezgu narsalar yetishmasligini.' },
+          { q: 'Qumri nega yoshidan ancha katta ko‘rinadi?', a: 'Og‘ir mehnat, ro‘zg‘or tashvishi va erining sho‘xliklari uni erta qaritgan.' },
+          { q: 'Nega Qo‘chqorni bog‘lab qo‘yishgan?', a: 'Kechqurun ichib, janjal ko‘targani uchun qishloq ahli tinchitib qo‘ygan.' },
+        ],
+      },
+      {
+        title: 'Rollarni o‘qiymiz',
+        emoji: '🎤',
+        steps: [
+          { e: '🤫', t: 'Ichingizda o‘qing', d: 'Rolingizdagi so‘zlarni bir sidra ko‘zdan kechiring.' },
+          { e: '🙅', t: 'Remarkani o‘qimang', d: 'Uni harakat bilan ko‘rsating.' },
+          { e: '🎭', t: 'Obrazga kiring', d: 'Yosh, ovoz, nutq va xatti-harakatga moslashing.' },
+        ],
+        mission: { t: 'Rolli o‘qish', d: 'Baraban orqali Qo‘chqor, Qumri, Turobjon, Sharofat va Olimjon rollarini taqsimlang. Sinf ijroni baholaydi va tavsiya beradi.', sec: 900 },
+      },
+    ],
+    pairs: [
+      ['Sharof Boshbekov', 'dramaturg'],
+      ['Qo‘chqor', 'traktorchi'],
+      ['Qumri', 'Qo‘chqorning xotini'],
+      ['Olimjon', 'yosh olim'],
+      ['Remarka', 'qavs ichidagi izoh'],
+      ['Parda', 'voqea bosqichi'],
+      ['Ekspozitsiya', 'boshlang‘ich ma’lumot'],
+    ],
+    quiz: [
+      { q: '«Temir xotin» qachon yozilgan?', options: ['1989', '1950', '2001', '1975'], answer: 0 },
+      { q: 'Muallif asar janrini qanday belgilagan?', options: ['jiddiy komediya', 'tragediya', 'doston', 'roman'], answer: 0 },
+      { q: 'Drama boshida Qo‘chqor qanday holatda?', options: ['ustunga bog‘langan', 'traktorda', 'dalada', 'shaharda'], answer: 0 },
+      { q: 'Qumri qayerga ketadi?', options: ['onasinikiga', 'shaharga', 'dalaga', 'qo‘shninikiga'], answer: 0 },
+      { q: 'Remarka matnda qanday beriladi?', options: ['qavs ichida', 'qo‘shtirnoqda', 'katta harflarda', 'izohda'], answer: 0 },
+      { q: 'Sharof Boshbekov avval kim bo‘lib ishlagan?', options: ['aktyor', 'shifokor', 'o‘qituvchi', 'muhandis'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Drama atamasi', 'Personaj'],
+      items: [
+        { text: 'remarka', cat: 0 }, { text: 'Qumri', cat: 1 },
+        { text: 'parda', cat: 0 }, { text: 'Olimjon', cat: 1 },
+        { text: 'monolog', cat: 0 }, { text: 'Turobjon', cat: 1 },
+        { text: 'sahna', cat: 0 }, { text: 'Sharofat', cat: 1 },
+      ],
+    },
+    sequences: [{ title: '1-sahna boshlanishi', items: ['Qo‘chqor ustunga bog‘langan holda uyg‘onadi', 'Qumri kechagi voqeani aytib beradi', 'Qumri bolalarini olib onasinikiga ketadi', 'Qo‘chqor qo‘shni Bozortoyni chaqiradi', 'Olimjon quti bilan keladi va uni yechadi'] }],
+    qa: [
+      { q: 'Qo‘chqorning «progress» haqidagi javobi nega kuldiradi?', a: 'Tezakni solyarka bilan yoqishni taraqqiyot deb biladi — kulgi ortida qishloq qashshoqligining achchiq haqiqati bor.' },
+      { q: 'Qo‘chqorning o‘g‘li bilan suhbatida otaga xos qanday xislat bor?', a: 'Bolasi oldida xijolat chekadi, hazil bilan holatini yashirishga urinadi — farzandiga mehri bor.' },
+    ],
+    odd: [{ items: ['parda', 'sahna', 'remarka', 'radif'], answer: 3, why: 'Radif — she’r atamasi.' }],
+    debate: [{ claim: 'Qumri ketib to‘g‘ri qildi.', pro: 'O‘n olti yillik sabrning chegarasi bor.', con: 'Oilani tashlab ketish muammoni hal qilmaydi.' }],
+    creative: [{ task: 'Qo‘chqorni bog‘lagan qishloq ahli suhbatini 4 replika va remarkalar bilan yozing.', time: 300 }],
+  },
+
+  /* ===================== 62. 1-sahna davomi ===================== */
+  {
+    id: 'ad9-temir-2',
+    source: 'IV chorak • 62-dars • 221–229-betlar',
+    title: '«Temir xotin» dramasi (Birinchi sahna davomi)',
+    short: 'Olimjonning robot-ayoli, «Alomat-1»ning mikrosxemalari va Qo‘chqorning «nikoh» rejasi',
+    theme: { emoji: '🔌', grad: 'from-cyan-800 via-sky-500 to-fuchsia-400', border: 'border-cyan-200', tag: 'Drama • Tugun' },
+    lesson: [
+      {
+        title: 'Olimjonning orzusi',
+        emoji: '💡',
+        text: 'Olimjon yetti yil davomida paxta teradigan elektron robot ustida ishlagan. Robot ayol qiyofasida: ko‘radi, eshitadi, gapiradi; mikrosxemaga qarab hazilkash yoki nozik bo‘ladi.',
+        reveal: [
+          { q: 'Nega robot aynan ayol shaklida?', a: 'Olimjon xotin-qizlarni og‘ir qo‘l mehnatidan xalos qilishni va dalada kulgu jaranglab turishini orzu qiladi.' },
+          { q: 'Robotning «afzalliklari» qanday?', a: 'Oylik so‘ramaydi, charchamaydi, issiq-sovuq demaydi, buyruqni so‘zsiz bajaradi.' },
+        ],
+      },
+      {
+        title: '«Biz ham ishlayveramiz»',
+        emoji: '🌾',
+        text: 'Olimjon robot buyruq bilan har qanday ishini tashlab dalaga chiqishini maqtaydi. Qo‘chqor esa xotirjam javob beradi: odamlar ham shunday — bolalar o‘qishni, onalar emizikli bolasini tashlab dalaga chiqadi.',
+        reveal: [
+          { q: 'Bu suhbat zamirida qanday haqiqat bor?', a: 'O‘sha davrda odamlarning o‘zi ham «robotga» aylantirilgan edi: haqsiz, so‘zsiz, cheksiz mehnat.' },
+          { q: 'Qo‘chqorning «Haa...» deyishi nimani anglatadi?', a: 'Olimjon «Siz odamsiz!» deganida u odam bilan robot o‘rtasidagi farq aslida qanchalik kichikligini achchiq his qiladi.' },
+        ],
+      },
+      {
+        title: '«Alomat-1»',
+        emoji: '🤖',
+        text: 'Qutidan qo‘g‘irchoqdek go‘zal qiz chiqadi. Qo‘chqorning «Alomat!» degan hayrat so‘zi robotga nom bo‘ladi.',
+        cards: [
+          { e: '📞', t: 'Kotiba sxemasi', d: 'G‘iybatli telefon suhbati.' },
+          { e: '📊', t: 'Ma’ruza sxemasi', d: 'Suv resurslari haqida rasmiy gaplar.' },
+          { e: '🎵', t: 'Qo‘shiq sxemasi', d: 'Radiodan yozilgan ashula.' },
+          { e: '😡', t: 'Janjal sxemasi', d: 'Qarg‘ish va so‘kish.' },
+          { e: '🙂', t: 'Odob sxemasi', d: '«Assalomu alaykum» — va savollar.' },
+        ],
+      },
+      {
+        title: 'Hech kim eshitmaydi',
+        emoji: '🗣️',
+        text: 'Qo‘chqor Alomatga butun dardini to‘kib soladi. So‘ng ma’lum bo‘ladiki, robot o‘chib qolgan ekan.',
+        quote: { text: 'Butun o‘zbekning dardini dasturxon qilib o‘tiribman!', by: 'Sharof Boshbekov' },
+        reveal: [{ q: 'Bu lahza nega ham kulgili, ham achchiq?', a: 'Oddiy odamning dardini hech kim tinglamaydi — tinglagani ham «temir» chiqadi. Kulgi ortida yolg‘izlik bor.' }],
+      },
+      {
+        title: 'Qo‘chqorning «rejasi»',
+        emoji: '💍',
+        steps: [
+          { e: '🥺', t: 'Iltimos', d: 'Olimjondan Alomatni uyda qoldirishni so‘raydi.' },
+          { e: '💬', t: 'Haqiqiy istak', d: 'Uy ishi emas — «yaxshi borib keling» degan bir og‘iz iliq so‘z.' },
+          { e: '📿', t: 'Nikoh', d: 'Qishloq gap-so‘zidan qo‘rqib, mulla chaqirmoqchi.' },
+          { e: '😤', t: 'Olimjon', d: '«Bu mashina-ku!» deb jahl bilan chiqib ketadi.' },
+        ],
+        reveal: [{ q: 'Qo‘chqor aslida nimaga muhtoj?', a: 'Iliq so‘zga, e’tiborga — u «yaxshi gapning gadosi». Ammo uni Qumridan emas, temirdan izlaydi.' }],
+      },
+      {
+        title: 'Baxt jadvali',
+        emoji: '⚖️',
+        table: {
+          head: ['Qo‘chqor uchun «baxt»', 'Men uchun «baxt»', 'Izoh'],
+          rows: [
+            ['«Hurmat taxtasi»dagi surat', '…', '…'],
+            ['ikki marta Toshkentga borish', '…', '…'],
+            ['gap qaytarmaydigan xotin', '…', '…'],
+          ],
+        },
+        mission: { t: 'Taqqoslang', d: 'Jadvalni to‘ldiring va Qo‘chqor bilan sizning «baxt»ingiz farqini izohlang.', sec: 420 },
+      },
+    ],
+    pairs: [
+      ['Alomat', 'robot ayol'],
+      ['Mikrosxema', 'robot xarakterini belgilovchi plastinka'],
+      ['Progress', 'taraqqiyot'],
+      ['Yetti yil', 'Olimjonning robot ustidagi mehnati'],
+      ['Turmush darajasi', 'hayot sifati'],
+      ['Tugun', 'voqealar boshlanadigan nuqta'],
+    ],
+    quiz: [
+      { q: 'Olimjon necha yil robot ustida ishlagan?', options: ['yetti', 'ikki', 'o‘n', 'bir'], answer: 0 },
+      { q: 'Robotga nomni kim beradi?', options: ['Qo‘chqor', 'Olimjon', 'Qumri', 'Suvon'], answer: 0 },
+      { q: 'Robot nima uchun yaratilgan?', options: ['paxta terish uchun', 'uy ishlari uchun', 'o‘qitish uchun', 'qo‘shiq aytish uchun'], answer: 0 },
+      { q: 'Qo‘chqor nega Olimjon gaplarini to‘liq aytolmaydi?', options: ['atamalarni bilmaydi', 'kar', 'qo‘rqadi', 'charchagan'], answer: 0 },
+      { q: 'Qo‘chqor Alomatdan aslida nima kutadi?', options: ['iliq so‘z', 'pul', 'paxta terish', 'traktor haydash'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Turmush darajasi yuqori', 'Turmush darajasi past'],
+      items: [
+        { text: 'bolalar o‘qishda', cat: 0 }, { text: 'tezak yoqiladi', cat: 1 },
+        { text: 'mehnatga munosib haq', cat: 0 }, { text: 'ayollar daladan chiqmaydi', cat: 1 },
+        { text: 'dam olish va bayram', cat: 0 }, { text: 'singan buyumlar', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Qo‘chqor nega ilmiy atamalarni yarim aytadi?', a: 'Muallif qishloq odami va ziyoli orasidagi jarlikni, ilm hayotdan uzilib qolganini kulgili tarzda ko‘rsatadi.' },
+      { q: 'Qo‘chqor va Alomat dialogi Qo‘chqorning qaysi xususiyatlarini ochadi?', a: 'Birinchidan, maqtanchoqlik; ikkinchidan, yolg‘izlik va mehrga tashnalik; uchinchidan, soddalik.' },
+    ],
+    odd: [{ items: ['mikrosxema', 'blok', 'plastik', 'ketmon'], answer: 3, why: 'Ketmon — robot qismi emas.' }],
+    debate: [{ claim: 'Olimjon odamlarga yaxshilik qilmoqchi.', pro: 'Ayollarni og‘ir mehnatdan qutqarmoqchi.', con: 'U ham «so‘zsiz bajaruvchi» qul yaratyapti — muammoning ildizini ko‘rmaydi.' }],
+    creative: [{ task: 'Alomat uchun yangi mikrosxema o‘ylab toping: u nima deydi? 2 replika yozing.', time: 120 }],
+  },
+
+  /* ===================== 63. 2-sahna ===================== */
+  {
+    id: 'ad9-temir-3',
+    source: 'IV chorak • 63-dars • 229–232-betlar',
+    title: '«Temir xotin» dramasi (Ikkinchi sahna)',
+    short: 'Mulla Suvon, kulgili «nikoh», raqsga tushgan robot va xavfli qizil mikrosxema',
+    theme: { emoji: '💃', grad: 'from-purple-900 via-fuchsia-600 to-yellow-300', border: 'border-fuchsia-200', tag: 'Drama • Kulgi va xavotir' },
+    lesson: [
+      {
+        title: 'Dasturxon atrofida',
+        emoji: '🫖',
+        text: 'Bir necha soat o‘tib, Qo‘chqor mulla Suvonni chaqirib, kamtarona dasturxon yozgan. Alomat milliy libosda chiqib, odob bilan salom beradi.',
+        reveal: [{ q: 'Suvonning «xotinni yangilash niyatida ekansiz-da» gapi nimani ko‘rsatadi?', a: 'Ayolga buyumdek qarash — Qo‘chqorning o‘zi ham bundan ranjiydi: «xotin mashina pokrishkasimi?»' }],
+      },
+      {
+        title: '«Nikoh» sahnasi',
+        emoji: '📿',
+        steps: [
+          { e: '❓', t: 'Ota ismi', d: 'Qo‘chqor dovdirab, oxiri «Olimjon» deydi.' },
+          { e: '🙊', t: 'Uch savol', d: 'Alomat bir nuqtaga tikilib jim o‘tiradi.' },
+          { e: '🔧', t: 'Sxema almashtirish', d: 'Qo‘chqor duch kelgan mikrosxemani o‘rnatadi.' },
+          { e: '📢', t: 'Ma’ruza', d: 'Robot paxta haqida tantanavor nutq so‘zlaydi.' },
+          { e: '💃', t: 'Raqs', d: 'Alomat raqsga tushib, hammani uchirib yuboradi; Suvon qochadi.' },
+        ],
+        reveal: [{ q: 'Bu sahna nega kulgili, ammo achinarli?', a: 'Inson temirga «uylanmoqchi» — bu Qo‘chqorning ma’naviy yolg‘izligi va chorasizligining cho‘qqisi.' }],
+      },
+      {
+        title: 'Kim javobgar?',
+        emoji: '⚖️',
+        text: 'Olimjon jahl bilan qaytib, Alomatni arang o‘chiradi: robot odam o‘ldirib qo‘yishi mumkin edi!',
+        reveal: [{ q: 'Olimjon nega «men qamalaman» deydi?', a: 'Traktor odam bossa, traktor emas, haydovchi javob beradi — robot uchun ham uni yaratgan va boshqargan inson javobgar.' }],
+      },
+      {
+        title: 'Qizil mikrosxema — UES',
+        emoji: '🔴',
+        text: 'Universal elektron sxema robotga o‘ylash va har narsaning mohiyatini anglash qobiliyatini beradi. Olimjon undan qo‘rqadi.',
+        quote: { text: 'Robot robotligini qilishi kerak', by: 'Sharof Boshbekov' },
+        vs: {
+          q: 'Robot o‘ylasa nima bo‘ladi?',
+          a: { t: '😨 Olimjon qo‘rquvi', pts: ['Robotlar o‘z ahvolidan norozi bo‘ladi', 'Boshqarib bo‘lmay qoladi'] },
+          b: { t: '🤔 Yashirin ma’no', pts: ['Odamlar ham o‘ylasa — ko‘zi ochiladi', 'Shuning uchun ularni «o‘ylatmaslik»ka harakat qilishgan'] },
+        },
+      },
+      {
+        title: 'Robot va inson',
+        emoji: '🪞',
+        reveal: [
+          { q: '«Kallasi ishlamasin, qo‘l-oyog‘i ishlasin» — bu kimlar haqida?', a: 'Majoziy ma’noda — o‘z fikriga ega bo‘lmasligi talab qilingan mehnatkash xalq haqida.' },
+          { q: 'Bugungi kunda bu savol qanday yangraydi?', a: 'Sun’iy intellekt davrida texnologiya va inson irodasi, erkinligi munosabati yana dolzarb.' },
+        ],
+        mission: { t: 'Munozara', d: '«Texnologiyalar davrida inson o‘zligini qanday asraydi?» — har jamoa 2 ta dalil tayyorlasin.', sec: 420 },
+      },
+    ],
+    pairs: [
+      ['Suvon', 'mulla'],
+      ['UES', 'universal elektron sxema'],
+      ['Eksperiment', 'tajriba, sinov'],
+      ['Mexanik javob', 'o‘ylamay, avtomat javob'],
+      ['Tanmahramlik', 'nikoh, turmush'],
+      ['Komissiya', 'sinovni tekshiruvchilar'],
+    ],
+    quiz: [
+      { q: 'Qo‘chqor nikohga kimni chaqiradi?', options: ['mulla Suvonni', 'Olimjonni', 'Bozortoyni', 'Muhiddin akani'], answer: 0 },
+      { q: 'Qo‘chqor Alomatning otasini kim deb aytadi?', options: ['Olimjon', 'Bozortoy', 'Safar', 'Abdusattor'], answer: 0 },
+      { q: 'Nikoh paytida Alomat nima qiladi?', options: ['jim o‘tiradi', '«roziman» deydi', 'yig‘laydi', 'qochadi'], answer: 0 },
+      { q: 'Qizil mikrosxema robotga nima beradi?', options: ['o‘ylash qobiliyatini', 'kuch', 'ovoz', 'tezlik'], answer: 0 },
+      { q: 'Terim qachon boshlanadi?', options: ['ertaga', 'bir oydan keyin', 'bahorda', 'kecha'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Kulgili', 'Jiddiy'],
+      items: [
+        { text: 'otasining ismini «Olimjon» deyish', cat: 0 }, { text: 'robot odam o‘ldirishi mumkin', cat: 1 },
+        { text: 'mulla qochib ketadi', cat: 0 }, { text: 'robot o‘ylasa boshqarib bo‘lmaydi', cat: 1 },
+        { text: 'robot paxta ma’ruzasini o‘qiydi', cat: 0 }, { text: 'kallasi ishlamasin', cat: 1 },
+      ],
+    },
+    sequences: [{ title: '2-sahna voqealari', items: ['Suvon dasturxonga keladi', 'Alomat odob bilan salom beradi', 'Nikoh savollariga robot jim', 'Noto‘g‘ri sxemalar: ma’ruza, qo‘shiq, raqs', 'Olimjon robotni o‘chiradi', 'Qizil UES haqida suhbat'] }],
+    qa: [
+      { q: 'Olimjonning qo‘rquvini muallif qo‘rquvi deyish mumkinmi?', a: 'Muallif aksincha, odamlarning «o‘ylamaslik»ka majburlanganini tanqid qiladi; Olimjon qo‘rquvi — tizimning qo‘rquvi.' },
+      { q: '«Ko‘pga kelgan to‘y» iborasi Qo‘chqor haqida nima deydi?', a: 'U hamma kabi yashashga ko‘nikkan, o‘z taqdiri uchun kurashmaydi.' },
+    ],
+    odd: [{ items: ['Suvon', 'Alomat', 'Olimjon', 'Bill'], answer: 3, why: 'Bill — Jek London hikoyasidan.' }],
+    debate: [{ claim: 'Fikrlaydigan robot yaratish kerak.', pro: 'Aqlli mashina insonga ko‘proq yordam beradi.', con: 'Nazoratdan chiqishi va inson erkiga xavf solishi mumkin.' }],
+    creative: [{ task: 'Mulla Suvon uyiga borib bu voqeani qanday hikoya qiladi? 3 gap yozing.', time: 120 }],
+  },
+
+  /* ===================== 64. 4-sahna ===================== */
+  {
+    id: 'ad9-temir-4',
+    source: 'IV chorak • 64-dars • 233–236-betlar',
+    title: '«Temir xotin» dramasi (To‘rtinchi sahna)',
+    short: 'Muzdek qo‘llar, kvars ko‘zlar, gipnoz va «toshga aylangan yaralar»',
+    theme: { emoji: '💧', grad: 'from-slate-900 via-blue-800 to-zinc-400', border: 'border-blue-200', tag: 'Drama • Kulminatsiya' },
+    lesson: [
+      {
+        title: 'Qaynoq suvdagi qo‘llar',
+        emoji: '🫗',
+        text: 'Ikki kun o‘tgan. Qo‘chqor Alomatning muzdek qo‘llarini qaynoq suvga botiradi, so‘ng ehtiyotkorlik bilan qizil mikrosxemani o‘rnatadi. Endi robot o‘ylay oladi.',
+        reveal: [
+          { q: 'Nega Qo‘chqor robotning qo‘lini isitadi?', a: 'Unga odam iliqligi yetishmaydi; temirdan Qumrining mehrini qidiradi.' },
+          { q: 'Qumrining qo‘llari qanday edi?', a: 'Qadoq bosgan, ko‘sak tilgan, yorilgan — lekin «nimasidir bor edi»: mehr, hayot.' },
+        ],
+      },
+      {
+        title: 'Qumri va Alomat',
+        emoji: '⚖️',
+        vs: {
+          q: 'Qo‘chqor nimani anglaydi?',
+          a: { t: '👩 Qumri', pts: ['Qadoq qo‘llar, ammo iliq', 'Jim o‘tirib ham tushunishardi', 'Uni ovozidan tanirdi'] },
+          b: { t: '🤖 Alomat', pts: ['Muzdek qo‘l, kvars ko‘z', 'Quvonchga sherik bo‘lmaydi', 'Yig‘lay olmaydi'] },
+        },
+        reveal: [{ q: 'Qo‘chqor Alomatni kimga o‘xshatadi?', a: 'Na dardga, na quvonchga sherik bo‘lmaydigan rahbarlarga.' }],
+      },
+      {
+        title: 'Gipnoz',
+        emoji: '🌀',
+        text: 'Qo‘chqor hech qachon yig‘lamaganini aytadi. Alomat uni «gipnoz» qiladi — lekin aytgan gaplarining hammasi haqiqat: tinimsiz mehnat, qadrsizlik, poygakdagi o‘rin, umr o‘tib ketayotgani.',
+        quote: { text: 'Yaralar toshga aylangan — og‘riq sezmaydi', by: 'Sharof Boshbekov' },
+        reveal: [
+          { q: 'Muallif nega og‘riqlarni «toshga aylangan yara» deydi?', a: 'Inson azobga shunchalik ko‘nikkanki, endi uni sezmaydi, norozilikdan ham qo‘rqadi.' },
+          { q: 'Nega haqiqatni aynan robot aytadi?', a: 'Odamlar aytishga jur’at qilolmaydi; o‘ylash qobiliyatini olgan «temir» hammadan ko‘ra ko‘proq inson bo‘lib chiqadi.' },
+        ],
+      },
+      {
+        title: 'Yig‘i va qo‘shiq',
+        emoji: '😢',
+        steps: [
+          { e: '😭', t: 'Qo‘chqor yig‘laydi', d: 'Qizil sxemani olib, ko‘chaga otib yuboradi.' },
+          { e: '🗣️', t: '«Bozortoy!»', d: 'Do‘stini chaqiradi — u yana bozorga ketgan.' },
+          { e: '🎵', t: '«Davron suraylik»', d: 'Robot shodiyona qo‘shiqni to‘xtovsiz aytadi.' },
+          { e: '🌫️', t: 'Parda', d: 'Qo‘chqorning yig‘isi qo‘shiq bilan qo‘shilib ketadi.' },
+        ],
+        reveal: [{ q: 'Yig‘i va shodiyona qo‘shiqning qo‘shilishi nimani bildiradi?', a: 'Rasmiy «baxtli hayot» shiorlari va xalqning haqiqiy dardi o‘rtasidagi ziddiyatni — bu asarning eng achchiq kinoyasi.' }],
+      },
+      {
+        title: 'Konflikt turlari',
+        emoji: '🧩',
+        table: {
+          head: ['Konflikt', 'Asardan misol'],
+          rows: [
+            ['Ichki (qahramonning o‘zi bilan)', 'Qo‘chqor norozilikni sezadi, lekin tan olmaydi'],
+            ['Tashqi (inson — inson)', 'Qo‘chqor va Qumri, Qo‘chqor va Olimjon'],
+            ['Tashqi (inson — tizim)', 'paxta majburiyati, qadrsizlik'],
+            ['Kulminatsiya', '…o‘zingiz aniqlang va asoslang'],
+          ],
+        },
+        mission: { t: 'Kulminatsiya', d: 'Asardagi qaysi nuqta kulminatsiya? Jamoangiz bilan dalil keltiring.', sec: 300 },
+      },
+    ],
+    pairs: [
+      ['Kvars', 'Alomat ko‘zlari yasalgan modda'],
+      ['Gipnoz', 'Alomatning usuli'],
+      ['Bozortoy', 'hech ko‘rinmaydigan qo‘shni do‘st'],
+      ['Kulminatsiya', 'eng keskin nuqta'],
+      ['Ichki konflikt', 'qahramonning o‘zi bilan kurashi'],
+      ['Poygak', 'davraning eng quyi o‘rni'],
+    ],
+    quiz: [
+      { q: 'Qo‘chqor Alomatning qo‘llarini nimaga botiradi?', options: ['qaynoq suvga', 'muzga', 'loyga', 'sutga'], answer: 0 },
+      { q: 'Alomatning ko‘zlari nimadan yasalgan?', options: ['kvarsdan', 'shishadan', 'temirdan', 'plastikdan'], answer: 0 },
+      { q: 'Alomat Qo‘chqorni qanday yig‘latadi?', options: ['gipnoz bilan', 'urib', 'qo‘rqitib', 'qo‘shiq aytib'], answer: 0 },
+      { q: 'Qo‘chqor qizil mikrosxemani nima qiladi?', options: ['ko‘chaga otadi', 'yashiradi', 'Olimjonga beradi', 'buzadi'], answer: 0 },
+      { q: 'Sahna qanday tugaydi?', options: ['yig‘i qo‘shiq bilan qo‘shiladi', 'to‘y bilan', 'Qumri qaytadi', 'robot ketadi'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Qumri', 'Alomat'],
+      items: [
+        { text: 'qadoq bosgan iliq qo‘llar', cat: 0 }, { text: 'muzdek qo‘llar', cat: 1 },
+        { text: 'jim o‘tirib ham tushunish', cat: 0 }, { text: 'kvars ko‘zlar', cat: 1 },
+        { text: 'traktor ovozidan tanish', cat: 0 }, { text: 'yig‘lay olmaslik', cat: 1 },
+      ],
+    },
+    sequences: [{ title: '4-sahna voqealari', items: ['Qo‘llarni qaynoq suvga botiradi', 'Qizil sxemani o‘rnatadi', 'Qumrini sog‘inib eslaydi', 'Alomat gipnoz qiladi', 'Qo‘chqor yig‘lab yuboradi', 'Robot «Davron suraylik»ni aytadi'] }],
+    qa: [
+      { q: 'Qo‘chqorning yig‘lashi sizda hamdardlik uyg‘otdimi?', a: 'Erkin javob — u kulgili ko‘ringan qahramon ichidagi chuqur dardni ochadi.' },
+      { q: 'Nega Bozortoy sahnada hech ko‘rinmaydi?', a: 'Qo‘chqorning yolg‘izligini ta’kidlash uchun: «eng yaqin do‘st» ham kerak paytda yo‘q.' },
+    ],
+    odd: [{ items: ['gipnoz', 'kvars', 'mikrosxema', 'qadoq qo‘l'], answer: 3, why: 'Qadoq qo‘l — Qumriga xos, qolganlari robotga.' }],
+    debate: [{ claim: 'Haqiqiy «temir xotin» — Qumri.', pro: 'U uyni ham, dalani ham ko‘tardi, hammasiga chidadi.', con: 'Yo‘q — temir bo‘lib qolgan butun bir xalq, uning ichidagi «toshga aylangan yaralar».' }],
+    creative: [{ task: 'Qo‘chqor Qumriga qanday maktub yozardi? 3–4 gap.', time: 180 }],
+  },
+
+  /* ===================== 65. Imtihon olamiz ===================== */
+  {
+    id: 'ad9-temir-imtihon',
+    source: 'IV chorak • 65-dars • 237–238-betlar',
+    title: '«Temir xotin» bo‘yicha topshiriq. «Imtihon olamiz»',
+    short: '12 ta bilet: tasodifiy tanlov, 2 daqiqa tayyorgarlik va hakamlar hay’ati',
+    theme: { emoji: '🎫', grad: 'from-amber-700 via-yellow-500 to-lime-300', border: 'border-yellow-200', tag: 'Og‘zaki imtihon • Bahs' },
+    lesson: [
+      {
+        title: 'Imtihon qoidalari',
+        emoji: '📋',
+        steps: [
+          { e: '🎡', t: 'Bilet tanlash', d: 'Baraban orqali yashirin, tasodifiy tanlov.' },
+          { e: '⏱️', t: '2 daqiqa', d: 'Tayyorlanish vaqti.' },
+          { e: '🎤', t: 'Javob', d: 'Hammaning oldida, dalil bilan.' },
+          { e: '➕', t: 'Qo‘shimcha', d: 'Sinfdoshlar boshqa biletlarga ham qo‘shimcha javob bera oladi.' },
+        ],
+        note: 'Ustoz hakamlar hay’atiga eng faol bir o‘quvchini va bir hamkasbini taklif qilishi mumkin.',
+      },
+      {
+        title: '1–4-biletlar',
+        emoji: '🎫',
+        reveal: [
+          { q: '1-bilet', a: '«Nikoh» sahnasi Qo‘chqorning qanday xarakterini ochadi? Vaziyat kulgilimi yoki...?' },
+          { q: '2-bilet', a: 'Texnologiyalar davrida inson o‘zligini, irodasini, qadriyatlarini qanday himoya qiladi? Olimjon qo‘rquvi — muallif qo‘rquvimi?' },
+          { q: '3-bilet', a: 'Bozortoy doim bozorga ketgan bo‘ladi, muallif ularni hech uchrashtirmaydi. Nega?' },
+          { q: '4-bilet', a: 'Qo‘chqor Alomatni Qumriga solishtirganda uning ruhiyati qanday? Sizda qanday fikr uyg‘ondi?' },
+        ],
+      },
+      {
+        title: '5–8-biletlar',
+        emoji: '🎫',
+        reveal: [
+          { q: '5-bilet', a: 'Qo‘chqorning yig‘lashi hamdardlik uyg‘otdimi? Nega og‘riqlar «toshga aylangan yara» deyiladi?' },
+          { q: '6-bilet', a: '«Davron suraylik» ashulasi nega dramatik vaziyatlarga bot-bot kiritiladi?' },
+          { q: '7-bilet', a: 'Qaysi nuqta kulminatsiya? Dalil keltiring.' },
+          { q: '8-bilet', a: 'Ichki va tashqi konflikt qayerlarda? Qaysi biri yorqinroq?' },
+        ],
+      },
+      {
+        title: '9–12-biletlar',
+        emoji: '🎫',
+        reveal: [
+          { q: '9-bilet', a: 'Bir oila hayoti orqali butun xalq turmushi ko‘rsatilganmi? Aslida «temir xotin» kim?' },
+          { q: '10-bilet', a: 'Nega syujetga ziyoli va qishloq odami dunyoqarashi asos qilingan? Olimjon va Qo‘chqorni qiyoslang.' },
+          { q: '11-bilet', a: 'Nega gapga chechan qilib ziyoli emas, oddiy traktorchi tasvirlangan?' },
+          { q: '12-bilet', a: 'Asarning nimasi «jiddiy», nimasi «komedik»? Ular qarama-qarshi emasmi?' },
+        ],
+      },
+      {
+        title: 'Hakamlar varaqasi',
+        emoji: '📊',
+        text: 'Taxminiy mezon — ustoz o‘zgartirishi mumkin:',
+        table: {
+          head: ['Mezon', 'Ball'],
+          rows: [
+            ['Savolni to‘g‘ri tushunish', '2'],
+            ['Matndan dalil', '3'],
+            ['Mustaqil fikr', '3'],
+            ['Nutq madaniyati', '2'],
+          ],
+        },
+        mission: { t: 'Imtihon!', d: 'Navbat bilan bilet tanlang, 2 daqiqa tayyorlaning va javob bering. Hakamlar ball qo‘yadi.', sec: 120 },
+      },
+    ],
+    pairs: [
+      ['Kulminatsiya', 'eng keskin nuqta'],
+      ['Konflikt', 'ziddiyat'],
+      ['Jiddiy komediya', 'muallif belgilagan janr'],
+      ['Empatiya', 'hamdardlik'],
+      ['Bozortoy', 'sahnada ko‘rinmaydigan do‘st'],
+      ['Hakamlar hay’ati', 'baholovchilar'],
+    ],
+    quiz: [
+      { q: 'Bozortoy doim qayerga ketgan bo‘ladi?', options: ['bozorga', 'dalaga', 'shaharga', 'to‘yga'], answer: 0 },
+      { q: 'Qaysi ashula asarda bot-bot takrorlanadi?', options: ['«Davron suraylik»', '«Onaginam»', '«Go‘zal Turkiston»', '«Bormayman dedi»'], answer: 0 },
+      { q: 'Asarda gapga chechan qahramon:', options: ['Qo‘chqor', 'Olimjon', 'Suvon', 'Turobjon'], answer: 0 },
+      { q: '«Jiddiy komediya»da nima uyg‘unlashgan?', options: ['kulgi va fojia', 'she’r va nasr', 'tarix va fantastika', 'qo‘shiq va raqs'], answer: 0 },
+      { q: 'Imtihonda tayyorlanish vaqti:', options: ['2 daqiqa', '10 daqiqa', '30 soniya', '1 soat'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Komediya unsuri', 'Jiddiy unsur'],
+      items: [
+        { text: 'yarim aytilgan atamalar', cat: 0 }, { text: 'toshga aylangan yaralar', cat: 1 },
+        { text: 'robot raqsi', cat: 0 }, { text: 'paxta majburiyati', cat: 1 },
+        { text: 'nikoh sahnasi', cat: 0 }, { text: 'Qo‘chqorning yig‘isi', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Aslida «temir xotin» kim?', a: 'Turli talqin: og‘ir mehnatga chidagan Qumri va o‘zbek ayollari, temirdek ko‘nikib qolgan butun xalq yoki tizimning o‘zi.' },
+      { q: 'Nega traktorchi gapga chechan?', a: 'Xalq donoligi va haqiqat oddiy odam tilida; ilm esa hayotdan uzilgan.' },
+    ],
+    odd: [{ items: ['Qo‘chqor', 'Qumri', 'Alomat', 'Jonatan'], answer: 3, why: 'Jonatan — Richard Bax qissasidan.' }],
+    debate: [{ claim: '«Temir xotin» bugun ham dolzarb.', pro: 'Texnologiya, mehnat va inson qadri masalalari hamon bor.', con: 'Asar aniq bir davrni — paxta yakkahokimligini tasvirlaydi.' }],
+    creative: [{ task: 'O‘zingiz 13-bilet uchun savol tuzing.', time: 120 }],
+  },
+
+  /* ===================== 66. Sahna ishi ===================== */
+  {
+    id: 'ad9-temir-sahna',
+    source: 'IV chorak • 66-dars • 238-bet',
+    title: '«Temir xotin» bo‘yicha ijodiy ish: sahna ishi',
+    short: 'Ssenariy, dekoratsiya, rekvizit, effektlar va 10 ballik mezon — sinf teatri',
+    theme: { emoji: '🎬', grad: 'from-red-800 via-rose-600 to-amber-300', border: 'border-red-200', tag: 'Sahna ishi • Teatr' },
+    lesson: [
+      {
+        title: 'Bugun — premyera!',
+        emoji: '🎟️',
+        text: 'Sinf uch guruhga bo‘linadi. Har biri o‘z vazifasini bajaradi. Tayyor sahna ko‘rinishlari sinfda yoki maktab faollar zalida namoyish etilishi mumkin.',
+        cards: [
+          { e: '✍️', t: '1-guruh: Ssenaristlar', d: 'Gipnoz sahnasi asosida bugungi dolzarb ijtimoiy muammo haqida sahna ssenariysi yozib, ijro etadi.' },
+          { e: '🎭', t: '2-guruh: Aktyorlar', d: 'To‘rt epizoddan ikkitasini tanlab sahnalashtiradi.' },
+          { e: '⚖️', t: '3-guruh: Hakamlar', d: 'Ustoz bilan 10 ballik mezon tuzib, baholaydi.' },
+        ],
+      },
+      {
+        title: '2-guruh: epizodlar',
+        emoji: '🎭',
+        cards: [
+          { e: '👩', t: 'Qo‘chqor va Qumri', d: 'Bog‘langan er va ketayotgan xotin.' },
+          { e: '🔬', t: 'Qo‘chqor va Olimjon', d: '«Nima-gres?» suhbati.' },
+          { e: '🤖', t: 'Qo‘chqor va Alomat', d: 'Tanishuv yoki gipnoz.' },
+          { e: '📿', t: 'Qo‘chqor va Suvon', d: 'Kulgili «nikoh».' },
+        ],
+      },
+      {
+        title: 'Sahna lug‘ati',
+        emoji: '🧰',
+        reveal: [
+          { q: '🏚️ Dekoratsiya', a: 'Tomoshabinga vizual ta’sir uchun badiiy va texnik elementlar majmui: hovli, ayvon, karavot.' },
+          { q: '🫖 Rekvizit', a: 'Sahna uchun zarur buyumlar: jo‘mragiga tunuka kiygizilgan choynak, arqon, quti, mikrosxemalar (karton plastinkalar).' },
+          { q: '🔊 Maxsus effektlar', a: 'Shovqin, mashina ovozi, kuy va qo‘shiq, robot ovozi.' },
+          { q: '🖼️ Orqa fon', a: 'Qishloq hovlisi yoki paxta dalasi rasmi.' },
+        ],
+        note: 'Rekvizitlarni uydagi oddiy buyumlardan yasang. Musiqa va ovoz effektlari uchun maktab kompyuteri yoki kolonkasidan foydalaning.',
+      },
+      {
+        title: 'Robotni o‘ynash sirlari',
+        emoji: '🤖',
+        steps: [
+          { e: '🧍', t: 'Qotib turish', d: 'O‘chganda butunlay harakatsiz.' },
+          { e: '👁️', t: 'Nigoh', d: 'Bir nuqtaga tikilgan, kam pirpiratish.' },
+          { e: '🔊', t: 'Ovoz', d: 'Har mikrosxemada boshqa ohang: rasmiy, nozik, jahldor.' },
+          { e: '🦾', t: 'Harakat', d: 'Keskin, mexanik, burchakli.' },
+        ],
+      },
+      {
+        title: '10 ballik mezon (namuna)',
+        emoji: '📊',
+        text: 'Taxminiy namuna — 3-guruh ustoz bilan o‘zgartirishi mumkin:',
+        table: {
+          head: ['Mezon', 'Ball'],
+          rows: [
+            ['Ssenariy va asarga sodiqlik', '2'],
+            ['Aktyorlik ijrosi va obrazga kirish', '3'],
+            ['Dekoratsiya va rekvizitlar', '2'],
+            ['Ovoz va maxsus effektlar', '1'],
+            ['Jamoaviy ish va vaqtga rioya', '2'],
+          ],
+        },
+        mission: { t: 'Repetitsiya', d: 'Guruhlar 15 daqiqa tayyorlanadi, so‘ng navbat bilan sahnaga chiqadi.', sec: 900 },
+      },
+    ],
+    pairs: [
+      ['Dekoratsiya', 'sahna bezagi'],
+      ['Rekvizit', 'sahna buyumi'],
+      ['Ssenariy', 'sahna matni va rejasi'],
+      ['Repetitsiya', 'mashq'],
+      ['Premyera', 'birinchi namoyish'],
+      ['Effekt', 'ovoz yoki yorug‘lik ta’siri'],
+    ],
+    quiz: [
+      { q: 'Rekvizit nima?', options: ['sahna buyumi', 'aktyor', 'ssenariy', 'tomoshabin'], answer: 0 },
+      { q: '3-guruh vazifasi:', options: ['baholash mezonini tuzish', 'ijro etish', 'ssenariy yozish', 'dekoratsiya chizish'], answer: 0 },
+      { q: '1-guruh qaysi sahna asosida ishlaydi?', options: ['gipnoz sahnasi', 'nikoh sahnasi', 'birinchi sahna', 'yakun'], answer: 0 },
+      { q: 'Mezon necha ballik?', options: ['10', '50', '100', '5'], answer: 0 },
+      { q: 'Robot o‘chganda aktyor nima qiladi?', options: ['qotib turadi', 'raqs tushadi', 'gapiradi', 'chiqib ketadi'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Rekvizit', 'Effekt'],
+      items: [
+        { text: 'arqon', cat: 0 }, { text: 'mashina ovozi', cat: 1 },
+        { text: 'quti', cat: 0 }, { text: 'qo‘shiq', cat: 1 },
+        { text: 'choynak', cat: 0 }, { text: 'robot ovozi', cat: 1 },
+      ],
+    },
+    sequences: [{ title: 'Sahna ishi bosqichlari', items: ['Guruhlarga bo‘linish', 'Epizod tanlash', 'Rollar va rekvizit', 'Repetitsiya', 'Namoyish', 'Baholash'] }],
+    qa: [
+      { q: 'Sahnalashtirish asarni tushunishga qanday yordam beradi?', a: 'Qahramon ruhiyatini ichdan his qilish, remarkalar ma’nosini harakatda ko‘rish imkonini beradi.' },
+      { q: 'Gipnoz sahnasidagi qaysi muammolar bugun ham dolzarb?', a: 'Inson qadri, mehnatga munosib haq, loqaydlik, o‘z fikrini aytolmaslik.' },
+    ],
+    odd: [{ items: ['dekoratsiya', 'rekvizit', 'effekt', 'radif'], answer: 3, why: 'Radif — she’r atamasi.' }],
+    debate: [{ claim: 'Komediyani o‘ynash dramadan qiyinroq.', pro: 'Kuldirish uchun aniq vaqt va mahorat kerak.', con: 'Dramada chuqur his-tuyg‘uni ko‘rsatish qiyinroq.' }],
+    creative: [{ task: 'Sahna ko‘rinishingiz uchun afisha sarlavhasi va bir jumlali e’lon yozing.', time: 120 }],
+  },
+
+  /* ===================== 67. 4-CHSB ===================== */
+  {
+    id: 'ad9-chsb-4',
+    source: 'IV chorak • 67-dars • 4-CHSB (40 ball)',
+    title: '4-CHSB. IV chorak bo‘yicha summativ baholash',
+    short: 'Shavkat Rahmon, Richard Bax, Halima Xudoyberdiyeva va «Temir xotin» bo‘yicha yozma ish',
+    theme: { emoji: '🏁', grad: 'from-slate-900 via-rose-800 to-sky-500', border: 'border-sky-200', tag: 'Chorak summativ baholash' },
+    lesson: [
+      {
+        title: 'IV chorak xaritasi',
+        emoji: '🗺️',
+        steps: [
+          { e: '🌗', t: 'Shavkat Rahmon', d: '«Tungi manzara», «Tong ochar ko‘zlarin...», «Jangda o‘lgan emas...»' },
+          { e: '🕊️', t: 'Richard Bax', d: '«Oqchorloq Jonatan Livingston»' },
+          { e: '🌸', t: 'Halima Xudoyberdiyeva', d: '«Shunchaki», «Dorilomon kunlar keldi...», «Yo‘ldadirman»' },
+          { e: '🔬', t: '4-BSB', d: 'Asar tahlili.' },
+          { e: '🤖', t: 'Sharof Boshbekov', d: '«Temir xotin» jiddiy komediyasi.' },
+        ],
+      },
+      {
+        title: 'Tez takrorlash',
+        emoji: '⚡',
+        reveal: [
+          { q: 'Shavkat Rahmon qaysi ispan shoirini asliyatdan tarjima qilgan?', a: 'Federiko Garsia Lorkani.' },
+          { q: '«Jangda o‘lgan emas...» g‘oyasi?', a: 'Bahodirlarni jang emas, xiyonat yiqitgan.' },
+          { q: 'Jonatanning ustozi?', a: 'Chiang (yo‘l ko‘rsatuvchisi — Salliven).' },
+          { q: '«Shunchaki» so‘zi necha marta takrorlanadi?', a: '11 marta.' },
+          { q: '«Temir xotin» janri?', a: 'Jiddiy komediya (1989).' },
+          { q: 'Qizil mikrosxema nima beradi?', a: 'O‘ylash, mohiyatni anglash qobiliyati.' },
+        ],
+      },
+      {
+        title: 'Qahramonlar galereyasi',
+        emoji: '🖼️',
+        cards: [
+          { e: '⛓️', t: 'Zindondagi bahodir', d: '«Tungi manzara» lirik qahramoni.' },
+          { e: '🕊️', t: 'Jonatan', d: 'Parvozga oshiq, to‘dadan quvilgan ustoz.' },
+          { e: '🐣', t: 'Fletcher', d: 'Jonatanning shogirdi.' },
+          { e: '✉️', t: '«Yo‘ldadirman» qahramoni', d: 'Xatini yozolmagan oshiq.' },
+          { e: '🚜', t: 'Qo‘chqor', d: 'Toshga aylangan yaralari bor traktorchi.' },
+          { e: '🤖', t: 'Alomat', d: 'Haqiqatni aytgan robot.' },
+        ],
+      },
+      {
+        title: 'Ish tuzilmasi (taxminiy)',
+        emoji: '🧾',
+        text: 'Ustoz o‘z topshiriqlariga ko‘ra o‘zgartirishi mumkin:',
+        table: {
+          head: ['Qism', 'Topshiriq', 'Ball'],
+          rows: [
+            ['1', 'Test: 10 ta savol', '10'],
+            ['2', 'Moslashtirish: asar — muallif — qahramon', '5'],
+            ['3', 'Ramz va badiiy vositani aniqlash', '10'],
+            ['4', 'Qisqa javob: 3 ta savolga 2–3 gapdan', '9'],
+            ['5', 'Ijodiy: «Jonatan va Qo‘chqor — erkinlik haqida» (5–6 gap)', '6'],
+          ],
+        },
+        mission: { t: 'Yozma ish', d: 'Ish varaqasini oling. Diqqat bilan o‘qing, vaqtni taqsimlang, oxirida tekshiring. Omad!', sec: 1800 },
+      },
+    ],
+    pairs: [
+      ['Shavkat Rahmon', '«Tungi manzara»'],
+      ['Richard Bax', '«Oqchorloq Jonatan Livingston»'],
+      ['Halima Xudoyberdiyeva', '«Shunchaki»'],
+      ['Sharof Boshbekov', '«Temir xotin»'],
+      ['Chiang', 'Jonatanning ustozi'],
+      ['Olimjon', 'robot yaratgan olim'],
+      ['Mulla Suvon', 'nikoh o‘qimoqchi bo‘lgan'],
+      ['Voznesenskiy', '«Yo‘ldadirman» epigrafi'],
+    ],
+    quiz: [
+      { q: 'Shavkat Rahmon qayerda tug‘ilgan?', options: ['O‘shda', 'Andijonda', 'Toshkentda', 'Buxoroda'], answer: 0 },
+      { q: '«Jangda o‘lgan emas...»ga ko‘ra bahodirlarni nima halok qilgan?', options: ['xiyonat', 'ajdar', 'devlar', 'jang'], answer: 0 },
+      { q: 'To‘da Jonatanni qanday jazolaydi?', options: ['quvg‘in qiladi', 'maqtaydi', 'rahbar qiladi', 'kechiradi'], answer: 0 },
+      { q: 'Meynardni nima uchirdi?', options: ['«Sen ozodsan» so‘zi', 'dori', 'shamol', 'ovqat'], answer: 0 },
+      { q: '«Dorilomon kunlar keldi...» kimga murojaat?', options: ['onaga', 'yorga', 'do‘stga', 'Vatanga'], answer: 0 },
+      { q: '«Yo‘ldadirman»da qahramon nimani yozolmagan?', options: ['xatni', 'she’rni', 'kitobni', 'kundalikni'], answer: 0 },
+      { q: '«Temir xotin» qachon yozilgan?', options: ['1989', '1950', '2001', '1975'], answer: 0 },
+      { q: 'Robotga nom kim beradi?', options: ['Qo‘chqor', 'Olimjon', 'Qumri', 'Suvon'], answer: 0 },
+      { q: 'Alomatning ko‘zlari nimadan yasalgan?', options: ['kvarsdan', 'shishadan', 'temirdan', 'plastikdan'], answer: 0 },
+      { q: 'Remarka matnda qanday beriladi?', options: ['qavs ichida', 'qo‘shtirnoqda', 'katta harflarda', 'izohda'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Lirik asar', 'Epik yoki dramatik asar'],
+      items: [
+        { text: '«Tungi manzara»', cat: 0 }, { text: '«Oqchorloq Jonatan Livingston»', cat: 1 },
+        { text: '«Shunchaki»', cat: 0 }, { text: '«Temir xotin»', cat: 1 },
+        { text: '«Yo‘ldadirman»', cat: 0 }, { text: '«Hayotga muhabbat»', cat: 1 },
+      ],
+    },
+    sequences: [
+      { title: 'IV chorak darslari tartibi', items: ['Shavkat Rahmon', 'Richard Bax', 'Halima Xudoyberdiyeva', '4-BSB. Asar tahlili', '«Temir xotin»', 'Sahna ishi'] },
+    ],
+    qa: [
+      { q: 'Jonatan va Qo‘chqor erkinlikka qanday munosabatda?', a: 'Jonatan erkinlik uchun to‘dani tark etadi; Qo‘chqor ko‘nikkan, norozilikdan qo‘rqadi — ammo ichida dard bor.' },
+      { q: '«Shunchaki» she’rining asosiy g‘oyasi?', a: 'Hayotni, sevgini, ijodni yarim-yorti emas, butun qalb bilan yashash.' },
+      { q: '«Temir xotin»ning «jiddiy» tomoni nimada?', a: 'Kulgi ortida xalqning qadrsizligi va og‘ir mehnati haqidagi achchiq haqiqat bor.' },
+    ],
+    odd: [
+      { items: ['Qo‘chqor', 'Qumri', 'Olimjon', 'Fletcher'], answer: 3, why: 'Fletcher — Bax qissasidan, qolganlari «Temir xotin»dan.' },
+    ],
+    debate: [
+      { claim: 'IV chorakning eng ta’sirli asari — «Temir xotin».', pro: 'Kulgi va yig‘i bir sahnada.', con: 'Jonatanning parvozi ham, Halima opa she’rlari ham qalbni larzaga soldi.' },
+    ],
+    creative: [
+      { task: 'IV chorakdagi bir qahramonga 1 jumlali «mukofot yorlig‘i» yozing.', time: 60 },
+    ],
+  },
+
+  /* ===================== 68. CHSB tahlili — yil yakuni ===================== */
+  {
+    id: 'ad9-chsb-4-tahlil',
+    source: 'IV chorak • 68-dars • CHSB tahlili',
+    title: 'CHSB tahlili va yil yakuni: 9-sinf adabiyot sayohatimiz',
+    short: 'Xatolar ustida ishlash, yil davomidagi asarlar xaritasi va yozgi mutolaa rejasi',
+    theme: { emoji: '🎓', grad: 'from-indigo-900 via-purple-600 to-amber-300', border: 'border-purple-200', tag: 'Tahlil • Yil yakuni' },
+    lesson: [
+      {
+        title: 'Natijalar — kompas',
+        emoji: '🧭',
+        text: 'Baho — manzil emas, kompas. U qayerda turganingizni va qaysi tomonga yurishingiz kerakligini ko‘rsatadi.',
+        table: {
+          head: ['Qism', 'Sinf o‘rtachasi', 'Eng ko‘p xato'],
+          rows: [['Test', '…', '…'], ['Moslashtirish', '…', '…'], ['Ramz va vosita', '…', '…'], ['Qisqa javob', '…', '…'], ['Ijodiy', '…', '…']],
+        },
+        note: 'Jadvalni ustoz sinf natijalari asosida to‘ldiradi.',
+      },
+      {
+        title: 'Tipik xatolar',
+        emoji: '⚠️',
+        cards: [
+          { e: '🔀', t: 'Mualliflarni chalkashtirish', d: '«Tungi manzara» — Shavkat Rahmon, «Shunchaki» — Halima Xudoyberdiyeva.' },
+          { e: '🐦', t: 'Qahramonlarni adashtirish', d: 'Chiang — ustoz, Salliven — yo‘l ko‘rsatuvchi, Fletcher — shogird.' },
+          { e: '🎭', t: 'Drama atamalari', d: 'Parda, sahna, remarka, kulminatsiya — har biri boshqa.' },
+          { e: '📚', t: 'Dalilsiz javob', d: 'Fikr + asardan misol + izoh formulasini unutmang.' },
+        ],
+        mission: { t: 'Xatolar daftari', d: 'Xatoni toping → sababini aniqlang → to‘g‘risini yozing → qoida chiqaring.', sec: 600 },
+      },
+      {
+        title: 'Yil xaritasi',
+        emoji: '🗺️',
+        steps: [
+          { e: '🍂', t: 'I chorak', d: 'Usmon Azim, «Adabiyot nadur?», «Alpomish», Asqad Muxtor.' },
+          { e: '❄️', t: 'II chorak', d: 'Oybek, «Ulug‘bek xazinasi», qardosh xalqlar adabiyoti.' },
+          { e: '🌱', t: 'III chorak', d: 'Navoiy, Bobur, Jek London, Cho‘lpon.' },
+          { e: '☀️', t: 'IV chorak', d: 'Shavkat Rahmon, Richard Bax, Halima Xudoyberdiyeva, «Temir xotin».' },
+        ],
+      },
+      {
+        title: 'Yil «Oskar»i',
+        emoji: '🏆',
+        reveal: [
+          { q: '🦸 Eng mard qahramon', a: 'Ovoz bering: Alpomish? Farhod? «Hayotga muhabbat» yo‘lovchisi?' },
+          { q: '🤝 Eng sodiq do‘st', a: 'Shopur? Ali Qushchi? Salliven?' },
+          { q: '📜 Eng ta’sirli she’r', a: 'Cho‘lpon? Bobur? Halima Xudoyberdiyeva?' },
+          { q: '😂😢 Eng kuldirgan va yig‘latgan asar', a: '«Temir xotin»mi yoki boshqasi?' },
+        ],
+        mission: { t: 'Ovoz berish', d: 'Har bir nominatsiya bo‘yicha qo‘l ko‘tarib ovoz bering va g‘olibni bir jumlada asoslang.', sec: 420 },
+      },
+      {
+        title: 'Yozgi mutolaa',
+        emoji: '📖',
+        text: 'Yoz — kitob fasli! O‘zingizga yozgi o‘qish rejasini tuzing.',
+        vs: {
+          q: 'O‘zingizni baholang',
+          a: { t: '💪 Bu yil erishdim', pts: ['Qaysi asar meni o‘zgartirdi?', 'Qaysi ko‘nikmam o‘sdi?'] },
+          b: { t: '🎯 Yozda qilaman', pts: ['Qaysi 3 kitobni o‘qiyman?', 'Qaysi asarni to‘liq o‘qib chiqaman?'] },
+        },
+        mission: { t: 'Yozgi reja', d: '«Yozda men ... ta kitob o‘qiyman: 1) ... 2) ... 3) ...» deb yozing.', sec: 180 },
+      },
+    ],
+    pairs: [
+      ['Kulminatsiya', 'eng keskin nuqta'],
+      ['Remarka', 'muallif izohi'],
+      ['Chiang', 'ustoz'],
+      ['Fletcher', 'shogird'],
+      ['Ramz', 'yashirin ma’noli obraz'],
+      ['Epigraf', 'asar boshidagi ko‘chirma'],
+      ['Alpomish', 'I chorak qahramoni'],
+    ],
+    quiz: [
+      { q: '«Tungi manzara» muallifi:', options: ['Shavkat Rahmon', 'Halima Xudoyberdiyeva', 'Cho‘lpon', 'Oybek'], answer: 0 },
+      { q: 'Jonatanning shogirdi:', options: ['Fletcher', 'Chiang', 'Salliven', 'Martin'], answer: 0 },
+      { q: '«Ulug‘bek xazinasi» qaysi chorakda o‘rganildi?', options: ['II', 'I', 'III', 'IV'], answer: 0 },
+      { q: 'Kulminatsiya — bu:', options: ['eng keskin nuqta', 'boshlanish', 'tanishtiruv', 'muallif izohi'], answer: 0 },
+      { q: 'Dalil formulasi:', options: ['fikr + misol + izoh', 'faqat misol', 'faqat fikr', 'savol + savol'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Mumtoz va xalq adabiyoti', 'Yangi va jahon adabiyoti'],
+      items: [
+        { text: '«Alpomish»', cat: 0 }, { text: '«Temir xotin»', cat: 1 },
+        { text: '«Farhod va Shirin»', cat: 0 }, { text: '«Oqchorloq Jonatan Livingston»', cat: 1 },
+        { text: '«Boburnoma»', cat: 0 }, { text: '«Hayotga muhabbat»', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Bu yil o‘qigan asarlardan qaysi biri sizni o‘zgartirdi?', a: 'Erkin javob — asoslab bering.' },
+      { q: 'Adabiyot hayotda nimaga kerak?', a: 'Insonni tushunish, his qilish, fikrlash va o‘zlikni anglashga o‘rgatadi.' },
+    ],
+    odd: [
+      { items: ['parda', 'remarka', 'kulminatsiya', 'radif'], answer: 3, why: 'Radif — she’r atamasi, qolganlari drama atamalari.' },
+    ],
+    debate: [
+      { claim: 'Kitob o‘qish — eng yaxshi yozgi mashg‘ulot.', pro: 'Tasavvur, nutq va fikrni boyitadi.', con: 'Yozda sport va sayohat ham kerak — muvozanat muhim.' },
+    ],
+    creative: [
+      { task: 'Kelgusi yil 9-sinfga keladigan o‘quvchiga adabiyot haqida bir jumlali maslahat yozing.', time: 60 },
+    ],
+  },
+];
+
 const CONTENT = {
-  adabiyot: { 8: [...ADABIYOT_8, ...ADABIYOT_8_P2, ...ADABIYOT_8_P3, ...ADABIYOT_8_P4, ...ADABIYOT_8_P5], 9: [...ADABIYOT_9, ...ADABIYOT_9_P2, ...ADABIYOT_9_P3, ...ADABIYOT_9_P4, ...ADABIYOT_9_P5, ...ADABIYOT_9_P6] },
+  adabiyot: { 8: [...ADABIYOT_8, ...ADABIYOT_8_P2, ...ADABIYOT_8_P3, ...ADABIYOT_8_P4, ...ADABIYOT_8_P5], 9: [...ADABIYOT_9, ...ADABIYOT_9_P2, ...ADABIYOT_9_P3, ...ADABIYOT_9_P4, ...ADABIYOT_9_P5, ...ADABIYOT_9_P6, ...ADABIYOT_9_P7] },
   'ona-tili': { 8: [...ONA_TILI_8, ...ONA_TILI_8_PART2, ...ONA_TILI_8_PART3, ...ONA_TILI_8_PART4, ...ONA_TILI_8_PART5, ...ONA_TILI_8_PART6, ...ONA_TILI_8_PART7, ...ONA_TILI_8_PART8], 9: [...ONA_TILI_9, ...ONA_TILI_9_P2, ...ONA_TILI_9_P3, ...ONA_TILI_9_P4, ...ONA_TILI_9_P5, ...ONA_TILI_9_P6, ...ONA_TILI_9_P7, ...ONA_TILI_9_P8] },
 };
 
