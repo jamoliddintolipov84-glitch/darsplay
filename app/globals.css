@@ -126,3 +126,12 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .dp-spin-slow, .dp-wiggle, .dp-float, .dp-float2 { animation: none !important; }
 }
+
+/* Shohsupa (reyting) */
+@keyframes dpRise { from { transform: translateY(60px) scaleY(.6); opacity: 0; } to { transform: none; opacity: 1; } }
+.dp-rise { animation: dpRise .7s cubic-bezier(.2,.9,.3,1.15) both; transform-origin: bottom; }
+@keyframes dpDrop { 0% { transform: translateY(-40px) scale(.6); opacity: 0; } 70% { transform: translateY(4px) scale(1.06); opacity: 1; } 100% { transform: none; } }
+.dp-drop { animation: dpDrop .6s ease-out both; }
+@keyframes dpShine { 0% { transform: translateX(-120%) skewX(-20deg); } 60%,100% { transform: translateX(260%) skewX(-20deg); } }
+.dp-shine::after { content: ''; position: absolute; inset: 0; width: 40%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent); animation: dpShine 3.2s ease-in-out infinite 1.4s; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .dp-rise, .dp-drop { animation: none !important; } .dp-shine::after { display: none; } }

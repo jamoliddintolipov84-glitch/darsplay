@@ -34916,10 +34916,10 @@ function LoginScreen({ onLogin }) {
 /* ---------- Admin paneli ---------- */
 function StatCard({ icon: I, label, value }) {
   return (
-    <div className="flex items-center gap-4 rounded-3xl border-2 border-blue-100 bg-white p-5">
-      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-100 text-blue-700"><I size={28} /></div>
+    <div className="dp-sticker-soft flex items-center gap-4 rounded-3xl bg-white p-5">
+      <div className="flex h-14 w-14 -rotate-3 items-center justify-center rounded-2xl border-2 border-ink bg-amber-300 text-ink"><I size={28} /></div>
       <div>
-        <div className="text-3xl font-extrabold text-blue-950">{value}</div>
+        <div className="text-3xl font-black text-ink tabular-nums">{value}</div>
         <div className="text-base font-semibold text-slate-500">{label}</div>
       </div>
     </div>
@@ -36812,18 +36812,83 @@ const fmtDate = (ms) => {
 const PERIODS = [['all', 'Hammasi', null], ['month', '30 kun', 30], ['week', '7 kun', 7]];
 const periodDays = (p) => (PERIODS.find((x) => x[0] === p) || PERIODS[0])[2];
 const teamPoints = (r) => (r.teams || []).reduce((a, t) => a + (Number(t.score) || 0), 0);
-const MEDAL = ['bg-amber-400 text-amber-950', 'bg-slate-300 text-slate-800', 'bg-orange-300 text-orange-950'];
+const MEDAL = ['border-2 border-ink bg-amber-400 text-ink', 'border-2 border-ink bg-slate-300 text-ink', 'border-2 border-ink bg-[#E9A06B] text-ink'];
+
+/* ---------- Shohsupa: yuqori 3 o‘rin ---------- */
+const PODIUM = [
+  { place: 1, block: 'bg-amber-400', avatar: 'bg-amber-300', h: 'h-44 md:h-56', title: 'Oltin', delay: 900, shadow: 'shadow-[0_8px_0_#14213D]' },
+  { place: 2, block: 'bg-slate-300', avatar: 'bg-slate-200', h: 'h-32 md:h-44', title: 'Kumush', delay: 450, shadow: 'shadow-[0_8px_0_#14213D]' },
+  { place: 3, block: 'bg-[#E9A06B]', avatar: 'bg-[#F6C9A6]', h: 'h-28 md:h-32', title: 'Bronza', delay: 0, shadow: 'shadow-[0_8px_0_#14213D]' },
+];
+
+function Podium({ items, unit = 'ball', title, icon: TitleIcon = Trophy }) {
+  const top = items.slice(0, 3);
+  if (!top.length) return null;
+  // Ko‘rinish tartibi: 2 — 1 — 3
+  const order = [1, 0, 2].filter((i) => top[i]);
+  return (
+    <section className="dp-sticker relative mb-8 overflow-hidden rounded-[2rem] bg-blue-800 px-4 pt-6 text-white md:px-10 md:pt-8">
+      <div className="dp-girih pointer-events-none absolute inset-0" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-blue-950/70 via-transparent to-firuza-700/30" />
+      <div className="pointer-events-none absolute left-1/2 top-0 h-full w-[38rem] max-w-full -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(255,212,92,.35),transparent_65%)]" />
+      <Doodle kind="sparkle" size={38} color="#FFD45C" className="dp-float absolute left-[12%] top-10 hidden md:block" />
+      <Doodle kind="burst" size={46} color="#6BDDD3" className="dp-float2 absolute right-[10%] top-8 hidden md:block" />
+      <Doodle kind="sparkle" size={26} color="#FFFFFF" className="dp-float2 absolute right-[24%] top-28 hidden md:block" />
+      {title && (
+        <h3 className="relative flex items-center justify-center gap-2 text-center text-2xl md:text-3xl font-black">
+          <TitleIcon size={30} className="text-amber-300" /> <span className="[text-shadow:3px_3px_0_#14213D]">{title}</span>
+        </h3>
+      )}
+      <div className="relative mx-auto mt-4 grid max-w-4xl items-end gap-3 md:gap-5" style={{ gridTemplateColumns: `repeat(${order.length}, minmax(0, 1fr))` }}>
+        {order.map((i) => {
+          const it = top[i];
+          const p = PODIUM[i];
+          return (
+            <div key={it.id} className="flex min-w-0 flex-col items-center">
+              {/* Ishtirokchi */}
+              <div className="dp-drop relative flex w-full flex-col items-center text-center" style={{ animationDelay: `${p.delay + 450}ms` }}>
+                {i === 0 && <Crown size={46} className="dp-wiggle -mb-2 fill-amber-300 text-ink" strokeWidth={2} />}
+                <div className={`relative flex items-center justify-center rounded-full border-[3px] border-ink ${p.avatar} font-black text-ink shadow-[4px_4px_0_#14213D] ${i === 0 ? 'h-24 w-24 text-3xl md:h-28 md:w-28 md:text-4xl' : 'h-16 w-16 text-xl md:h-20 md:w-20 md:text-2xl'}`}>
+                  {it.badge || initials(it.name)}
+                  <span className={`absolute -bottom-2 -right-2 flex h-9 w-9 items-center justify-center rounded-full border-2 border-ink ${p.block} text-base font-black text-ink`}>{p.place}</span>
+                </div>
+                <div className={`mt-3 line-clamp-2 w-full px-1 font-black leading-tight md:line-clamp-none md:truncate ${i === 0 ? 'text-2xl md:text-3xl text-amber-300 [text-shadow:2px_2px_0_#14213D]' : 'text-lg md:text-2xl'}`} title={it.name}>{it.name}</div>
+                {it.sub && <div className="hidden w-full truncate px-1 text-sm md:block md:text-base font-semibold text-blue-100">{it.sub}</div>}
+                <div className={`mt-2 inline-flex items-baseline gap-1 rounded-lg border-2 border-ink bg-paper px-3 py-0.5 font-black text-ink ${i === 0 ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl'}`}>
+                  <span className="tabular-nums">{it.value}</span><span className="dp-hand text-lg md:text-xl text-slate-600">{unit}</span>
+                </div>
+              </div>
+              {/* Pog‘ona */}
+              <div
+                className={`dp-rise relative mt-4 w-full overflow-hidden rounded-t-2xl border-[3px] border-b-0 border-ink ${p.block} ${p.h} ${i === 0 ? 'dp-shine' : ''}`}
+                style={{ animationDelay: `${p.delay}ms` }}
+              >
+                <div className="dp-girih-ink pointer-events-none absolute inset-0 opacity-90" />
+                <div className="absolute inset-x-0 top-0 h-3 border-b-2 border-ink/40 bg-white/40" />
+                <div className="relative flex h-full flex-col items-center justify-center text-ink">
+                  <span className={`font-black leading-none [text-shadow:3px_3px_0_rgba(255,255,255,.6)] ${i === 0 ? 'text-7xl md:text-8xl' : 'text-5xl md:text-6xl'}`}>{p.place}</span>
+                  <span className="dp-hand text-xl md:text-2xl">{p.title}</span>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="dp-atlas relative -mx-4 md:-mx-10" aria-hidden="true" />
+    </section>
+  );
+}
 
 function RankBadge({ k, active = true }) {
   return (
-    <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-lg font-extrabold ${k < 3 && active ? MEDAL[k] : 'text-slate-400'}`}>{k + 1}</span>
+    <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-lg font-black ${k < 3 && active ? MEDAL[k] : 'border-2 border-ink/20 bg-paper text-slate-500'}`}>{k + 1}</span>
   );
 }
 
 function EmptyBox({ text }) {
   return (
-    <div className="rounded-3xl border-2 border-dashed border-blue-200 bg-white p-10 text-center">
-      <Trophy size={56} className="mx-auto text-blue-200" />
+    <div className="rounded-3xl border-[3px] border-dashed border-ink/30 bg-white p-10 text-center">
+      <Trophy size={56} className="mx-auto text-amber-400" />
       <p className="mt-3 text-xl text-slate-500">{text}</p>
     </div>
   );
@@ -36862,9 +36927,9 @@ function ClassRatingPanel({ cls, period, loadResults }) {
         <StatCard icon={Star} label="Jami to‘plangan ball" value={totalPts} />
         <StatCard icon={Users} label="Sinfdagi o‘quvchilar" value={(cls.students || []).length} />
       </div>
-      <div className="mb-5 inline-flex rounded-2xl bg-blue-50 p-1">
+      <div className="mb-6 inline-flex gap-2">
         {[['rating', 'O‘quvchilar reytingi', Medal], ['history', 'O‘yinlar tarixi', History]].map(([id, label, I]) => (
-          <button key={id} onClick={() => setTab(id)} className={`inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-lg font-bold transition ${tab === id ? 'bg-white text-blue-900 shadow' : 'text-blue-700'}`}>
+          <button key={id} onClick={() => setTab(id)} className={`dp-btn inline-flex items-center gap-2 rounded-2xl px-5 py-2.5 text-lg font-black ${tab === id ? 'bg-amber-400 text-ink' : 'bg-white text-ink hover:bg-amber-50'}`}>
             <I size={22} /> {label}
           </button>
         ))}
@@ -36873,30 +36938,33 @@ function ClassRatingPanel({ cls, period, loadResults }) {
       {tab === 'rating' && (list.length === 0 ? (
         <EmptyBox text="Hali natija yo‘q. O‘yin oxirigacha o‘ynalganda natijalar shu yerda avtomatik saqlanadi." />
       ) : (
-        <div className="overflow-hidden rounded-3xl border-2 border-blue-100 bg-white">
+        <>
+        <Podium title={`${classLabel(cls)} sinf yulduzlari`} items={rating.filter((x) => x.total > 0).map((x) => ({ id: x.name, name: x.name, sub: `${x.wins} g‘alaba • ${x.games} o‘yin`, value: x.total }))} />
+        <div className="dp-sticker-soft overflow-hidden rounded-3xl bg-white">
           {rating.every((x) => x.total === 0) && (
             <div className="flex items-start gap-3 border-b border-amber-100 bg-amber-50 px-4 py-3 text-lg text-amber-900">
               <Lightbulb size={22} className="mt-1 shrink-0" />
               O‘yinlar saqlangan, lekin ballar hali o‘quvchilarga bog‘lanmagan. O‘yin oldidan «Ro‘yxat» orqali jamoalarga avtomatik bo‘ling yoki o‘yin paytida «O‘quvchi tanlash» tugmasidan foydalaning.
             </div>
           )}
-          <div className="grid grid-cols-[3rem_1fr_repeat(4,5rem)] items-center gap-2 bg-blue-50 px-4 py-3 text-sm font-extrabold uppercase tracking-wide text-blue-800 md:grid-cols-[4rem_1fr_repeat(4,7rem)] md:text-base">
-            <span>#</span><span>O‘quvchi</span><span className="text-right">Ball</span><span className="text-right">Jamoa</span><span className="text-right">Shaxsiy</span><span className="text-right">G‘alaba</span>
+          <div className="grid grid-cols-[2.5rem_1fr_4.5rem] items-center gap-2 border-b-2 border-ink bg-amber-100 px-4 py-3 text-sm font-black uppercase tracking-wide text-ink md:grid-cols-[4rem_1fr_repeat(4,7rem)] md:text-base">
+            <span>#</span><span>O‘quvchi</span><span className="text-right">Ball</span><span className="hidden text-right md:block">Jamoa</span><span className="hidden text-right md:block">Shaxsiy</span><span className="hidden text-right md:block">G‘alaba</span>
           </div>
           {rating.map((s, k) => (
-            <div key={s.name} className={`grid grid-cols-[3rem_1fr_repeat(4,5rem)] items-center gap-2 border-t border-blue-50 px-4 py-3 md:grid-cols-[4rem_1fr_repeat(4,7rem)] ${k < 3 && s.total > 0 ? 'bg-amber-50/40' : ''}`}>
+            <div key={s.name} className={`grid grid-cols-[2.5rem_1fr_4.5rem] items-center gap-2 border-t border-dashed border-ink/15 px-4 py-3 md:grid-cols-[4rem_1fr_repeat(4,7rem)] ${k < 3 && s.total > 0 ? 'bg-amber-50' : k % 2 ? 'bg-paper/60' : ''}`}>
               <RankBadge k={k} active={s.total > 0} />
-              <span className="truncate text-xl font-bold text-blue-950">{s.name}</span>
-              <span className="text-right text-2xl font-extrabold text-blue-900 tabular-nums">{s.total}</span>
-              <span className="text-right text-lg text-slate-600 tabular-nums">{s.team}</span>
-              <span className="text-right text-lg text-slate-600 tabular-nums">{s.solo}</span>
-              <span className="text-right text-lg text-slate-600 tabular-nums">{s.wins}</span>
+              <span className="truncate text-xl font-bold text-ink">{s.name}</span>
+              <span className="text-right text-2xl font-black text-blue-700 tabular-nums">{s.total}</span>
+              <span className="hidden text-right text-lg text-slate-600 tabular-nums md:block">{s.team}</span>
+              <span className="hidden text-right text-lg text-slate-600 tabular-nums md:block">{s.solo}</span>
+              <span className="hidden text-right text-lg text-slate-600 tabular-nums md:block">{s.wins}</span>
             </div>
           ))}
           <p className="border-t border-blue-50 px-4 py-3 text-base text-slate-500">
             <b>Jamoa</b> — o‘quvchi a’zo bo‘lgan jamoaning bali; <b>Shaxsiy</b> — «O‘quvchi tanlash» orqali chiqib, o‘zi topgan ball.
           </p>
         </div>
+        </>
       ))}
 
       {tab === 'history' && (list.length === 0 ? (
@@ -36908,16 +36976,16 @@ function ClassRatingPanel({ cls, period, loadResults }) {
             const top = sorted[0];
             const tie = sorted.length > 1 && sorted[1].score === top?.score;
             return (
-              <div key={r.id} className="rounded-3xl border-2 border-blue-100 bg-white p-5">
+              <div key={r.id} className="dp-sticker-soft rounded-3xl bg-white p-5">
                 <div className="flex flex-wrap items-center gap-3">
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3 py-1 text-base font-bold text-blue-800"><CalendarDays size={16} /> {fmtDate(r.playedAt)}</span>
-                  <span className="text-xl font-extrabold text-blue-950">{r.gameName}</span>
+                  <span className="text-xl font-black text-ink">{r.gameName}</span>
                   <span className="text-lg text-slate-500">• {r.topicTitle}</span>
                   <span className="ml-auto text-base text-slate-400">{r.teacherName}</span>
                 </div>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {sorted.map((t, k) => (
-                    <span key={k} className={`inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-lg font-bold ${k === 0 && !tie && sorted.length > 1 ? 'bg-amber-100 text-amber-900' : 'bg-slate-100 text-slate-700'}`}>
+                    <span key={k} className={`inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-lg font-bold ${k === 0 && !tie && sorted.length > 1 ? 'border-2 border-ink bg-amber-300 text-ink' : 'bg-slate-100 text-slate-700'}`}>
                       {k === 0 && !tie && sorted.length > 1 && <Crown size={18} />} {t.name}: <span className="tabular-nums">{t.score}</span>
                     </span>
                   ))}
@@ -36964,32 +37032,36 @@ function SchoolRatingPanel({ school, schoolClasses, period, loadSchoolResults })
         <StatCard icon={Star} label="Jami to‘plangan ball" value={totalPts} />
       </div>
       {totalGames === 0 ? <EmptyBox text="Maktabda bu davrda hali o‘yin o‘ynalmagan" /> : (
+        <>
+        <Podium title="Maktabning eng kuchli sinflari" icon={School} items={byClass.filter((e) => e.points > 0).map((e) => ({ id: e.cls.id, name: `${classLabel(e.cls)} sinf`, badge: classLabel(e.cls), sub: `${e.games} o‘yin • ${e.cls.students.length} o‘quvchi`, value: e.points }))} />
+        {topStudents.length > 0 && <Podium title="Maktab yulduzlari" icon={Medal} items={topStudents.map((s) => ({ id: `${s.label}-${s.name}`, name: s.name, sub: `${s.label} sinf`, value: s.total }))} />}
         <div className="grid gap-6 lg:grid-cols-2">
-          <div className="overflow-hidden rounded-3xl border-2 border-blue-100 bg-white">
-            <h3 className="flex items-center gap-2 bg-blue-50 px-5 py-3 text-xl font-extrabold text-blue-900"><School size={22} /> Sinflar reytingi</h3>
+          <div className="dp-sticker-soft overflow-hidden rounded-3xl bg-white">
+            <h3 className="flex items-center gap-2 border-b-2 border-ink bg-amber-100 px-5 py-3 text-xl font-black text-ink"><School size={22} /> Sinflar reytingi</h3>
             {byClass.map((e, k) => (
-              <div key={e.cls.id} className={`flex items-center gap-3 border-t border-blue-50 px-5 py-3 ${k < 3 && e.points > 0 ? 'bg-amber-50/40' : ''}`}>
+              <div key={e.cls.id} className={`flex items-center gap-3 border-t border-dashed border-ink/15 px-5 py-3 ${k < 3 && e.points > 0 ? 'bg-amber-50' : ''}`}>
                 <RankBadge k={k} active={e.points > 0} />
-                <span className="flex-1 text-xl font-extrabold text-blue-950">{classLabel(e.cls)} <span className="text-base font-semibold text-slate-400">• {e.cls.students.length} o‘quvchi</span></span>
+                <span className="flex-1 text-xl font-black text-ink">{classLabel(e.cls)} <span className="text-base font-semibold text-slate-400">• {e.cls.students.length} o‘quvchi</span></span>
                 <span className="text-base text-slate-500">{e.games} o‘yin</span>
-                <span className="w-20 text-right text-2xl font-extrabold text-blue-900 tabular-nums">{e.points}</span>
+                <span className="w-20 text-right text-2xl font-black text-blue-700 tabular-nums">{e.points}</span>
               </div>
             ))}
           </div>
-          <div className="overflow-hidden rounded-3xl border-2 border-blue-100 bg-white">
-            <h3 className="flex items-center gap-2 bg-blue-50 px-5 py-3 text-xl font-extrabold text-blue-900"><Medal size={22} /> Maktabning eng faol o‘quvchilari</h3>
+          <div className="dp-sticker-soft overflow-hidden rounded-3xl bg-white">
+            <h3 className="flex items-center gap-2 border-b-2 border-ink bg-firuza-100 px-5 py-3 text-xl font-black text-ink"><Medal size={22} /> Maktabning eng faol o‘quvchilari</h3>
             {topStudents.length === 0 ? (
               <p className="px-5 py-6 text-lg text-slate-500">Ballar hali o‘quvchilarga bog‘lanmagan. Jamoalarga bo‘lib yoki «O‘quvchi tanlash» bilan o‘ynang.</p>
             ) : topStudents.map((s, k) => (
-              <div key={`${s.label}-${s.name}`} className="flex items-center gap-3 border-t border-blue-50 px-5 py-3">
+              <div key={`${s.label}-${s.name}`} className={`flex items-center gap-3 border-t border-dashed border-ink/15 px-5 py-3 ${k < 3 ? 'bg-amber-50' : ''}`}>
                 <RankBadge k={k} />
-                <span className="min-w-0 flex-1 truncate text-xl font-bold text-blue-950">{s.name}</span>
-                <span className="rounded-full bg-blue-50 px-3 py-0.5 text-base font-bold text-blue-800">{s.label}</span>
-                <span className="w-16 text-right text-2xl font-extrabold text-blue-900 tabular-nums">{s.total}</span>
+                <span className="min-w-0 flex-1 truncate text-xl font-bold text-ink">{s.name}</span>
+                <span className="rounded-md border-2 border-ink/70 bg-firuza-50 px-2 py-0.5 text-base font-extrabold text-ink">{s.label}</span>
+                <span className="w-16 text-right text-2xl font-black text-blue-700 tabular-nums">{s.total}</span>
               </div>
             ))}
           </div>
         </div>
+        </>
       )}
     </>
   );
@@ -37008,44 +37080,47 @@ function GlobalRatingPanel({ mySchool, period, loadGlobal }) {
     <>
       <div className="mb-5 flex flex-wrap items-center gap-3">
         <p className="flex-1 text-lg text-slate-500">Barcha maktablar bo‘yicha jamlangan natijalar. O‘quvchilarning ismlari bu yerda ko‘rsatilmaydi.</p>
-        <div className="inline-flex rounded-2xl bg-slate-100 p-1">
+        <div className="inline-flex rounded-2xl border-2 border-ink bg-white p-1">
           {[['points', 'Jami ball'], ['avg', 'O‘rtacha ball']].map(([id, label]) => (
-            <button key={id} onClick={() => setSortBy(id)} className={`rounded-xl px-4 py-2 text-base font-bold ${sortBy === id ? 'bg-white text-slate-900 shadow' : 'text-slate-500'}`}>{label}</button>
+            <button key={id} onClick={() => setSortBy(id)} className={`rounded-xl px-4 py-2 text-base font-black ${sortBy === id ? 'bg-firuza-500 text-white' : 'text-ink hover:bg-firuza-50'}`}>{label}</button>
           ))}
         </div>
       </div>
       {schools.length === 0 ? <EmptyBox text="Bu davrda hali hech qaysi maktabda o‘yin o‘ynalmagan" /> : (
+        <>
+        <Podium title="Eng faol maktablar" icon={Building2} unit={sortBy === 'avg' ? 'o‘rtacha' : 'ball'} items={schools.filter((s) => (sortBy === 'avg' ? s.avg : s.points) > 0).map((s) => ({ id: s.school, name: s.school, badge: (s.school.match(/\d+/) || [initials(s.school)])[0], sub: `${s.games} o‘yin • ${s.classes} sinf${normSchool(s.school) === mine ? ' • sizning maktab' : ''}`, value: sortBy === 'avg' ? s.avg : s.points }))} />
         <div className="grid gap-6 lg:grid-cols-[3fr_2fr]">
-          <div className="overflow-hidden rounded-3xl border-2 border-blue-100 bg-white">
-            <h3 className="flex items-center gap-2 bg-blue-50 px-5 py-3 text-xl font-extrabold text-blue-900"><Building2 size={22} /> Maktablar reytingi</h3>
+          <div className="dp-sticker-soft overflow-hidden rounded-3xl bg-white">
+            <h3 className="flex items-center gap-2 border-b-2 border-ink bg-amber-100 px-5 py-3 text-xl font-black text-ink"><Building2 size={22} /> Maktablar reytingi</h3>
             {schools.map((s, k) => {
               const isMine = normSchool(s.school) === mine;
               return (
-                <div key={s.school} className={`flex items-center gap-3 border-t border-blue-50 px-5 py-3 ${isMine ? 'bg-blue-50 ring-2 ring-inset ring-blue-300' : k < 3 ? 'bg-amber-50/40' : ''}`}>
+                <div key={s.school} className={`flex items-center gap-3 border-t border-dashed border-ink/15 px-5 py-3 ${isMine ? 'bg-firuza-50 ring-2 ring-inset ring-firuza-500' : k < 3 ? 'bg-amber-50' : ''}`}>
                   <RankBadge k={k} />
                   <div className="min-w-0 flex-1">
-                    <div className="truncate text-xl font-extrabold text-blue-950">{s.school}{isMine && <span className="ml-2 rounded-full bg-blue-600 px-2 py-0.5 text-sm text-white">Sizning maktab</span>}</div>
+                    <div className="truncate text-xl font-black text-ink">{s.school}{isMine && <span className="ml-2 rounded-md border-2 border-ink bg-firuza-500 px-2 py-0.5 text-sm text-white">Sizning maktab</span>}</div>
                     <div className="text-base text-slate-500">{s.games} o‘yin • {s.classes} sinf • {s.teachers} o‘qituvchi • o‘rtacha {s.avg}</div>
                   </div>
-                  <span className="text-2xl font-extrabold text-blue-900 tabular-nums">{sortBy === 'avg' ? s.avg : s.points}</span>
+                  <span className="text-2xl font-black text-blue-700 tabular-nums">{sortBy === 'avg' ? s.avg : s.points}</span>
                 </div>
               );
             })}
           </div>
-          <div className="overflow-hidden rounded-3xl border-2 border-blue-100 bg-white">
-            <h3 className="flex items-center gap-2 bg-blue-50 px-5 py-3 text-xl font-extrabold text-blue-900"><School size={22} /> Eng faol sinflar</h3>
+          <div className="dp-sticker-soft overflow-hidden rounded-3xl bg-white">
+            <h3 className="flex items-center gap-2 border-b-2 border-ink bg-firuza-100 px-5 py-3 text-xl font-black text-ink"><School size={22} /> Eng faol sinflar</h3>
             {data.classes.slice(0, 20).map((c, k) => (
-              <div key={`${c.school}-${c.grade}-${c.letter}`} className="flex items-center gap-3 border-t border-blue-50 px-5 py-3">
+              <div key={`${c.school}-${c.grade}-${c.letter}`} className={`flex items-center gap-3 border-t border-dashed border-ink/15 px-5 py-3 ${k < 3 ? 'bg-amber-50' : ''}`}>
                 <RankBadge k={k} />
                 <div className="min-w-0 flex-1">
-                  <div className="text-xl font-extrabold text-blue-950">{c.grade}-{c.letter}</div>
+                  <div className="text-xl font-black text-ink">{c.grade}-{c.letter}</div>
                   <div className="truncate text-base text-slate-500">{c.school} • {c.games} o‘yin</div>
                 </div>
-                <span className="text-2xl font-extrabold text-blue-900 tabular-nums">{c.points}</span>
+                <span className="text-2xl font-black text-blue-700 tabular-nums">{c.points}</span>
               </div>
             ))}
           </div>
         </div>
+        </>
       )}
     </>
   );
@@ -37065,14 +37140,14 @@ function RatingScreen({ cls, school, schoolClasses, initialScope, loadResults, l
       <div className="mb-6 flex flex-wrap items-center gap-3">
         <div className="inline-flex flex-wrap gap-2">
           {scopes.map(([id, label, I]) => (
-            <button key={id} onClick={() => setScope(id)} className={`inline-flex items-center gap-2 rounded-2xl px-5 py-3 text-lg font-bold transition ${scope === id ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30' : 'border-2 border-blue-100 bg-white text-blue-900 hover:bg-blue-50'}`}>
+            <button key={id} onClick={() => setScope(id)} className={`dp-btn inline-flex items-center gap-2 rounded-2xl px-5 py-3 text-lg font-black ${scope === id ? 'bg-blue-600 text-white' : 'bg-white text-ink hover:bg-amber-50'}`}>
               <I size={22} /> {label}
             </button>
           ))}
         </div>
-        <div className="ml-auto inline-flex rounded-2xl bg-slate-100 p-1">
+        <div className="ml-auto inline-flex rounded-2xl border-2 border-ink bg-white p-1">
           {PERIODS.map(([id, label]) => (
-            <button key={id} onClick={() => setPeriod(id)} className={`rounded-xl px-4 py-2 text-base font-bold ${period === id ? 'bg-white text-slate-900 shadow' : 'text-slate-500'}`}>{label}</button>
+            <button key={id} onClick={() => setPeriod(id)} className={`rounded-xl px-4 py-2 text-base font-black ${period === id ? 'bg-amber-400 text-ink' : 'text-ink/70 hover:bg-amber-50'}`}>{label}</button>
           ))}
         </div>
       </div>
@@ -37087,9 +37162,9 @@ function AdminRatingTab({ loadGlobal }) {
   const [period, setPeriod] = useState('all');
   return (
     <div>
-      <div className="mb-5 inline-flex rounded-2xl bg-slate-100 p-1">
+      <div className="mb-5 inline-flex rounded-2xl border-2 border-ink bg-white p-1">
         {PERIODS.map(([id, label]) => (
-          <button key={id} onClick={() => setPeriod(id)} className={`rounded-xl px-4 py-2 text-base font-bold ${period === id ? 'bg-white text-slate-900 shadow' : 'text-slate-500'}`}>{label}</button>
+          <button key={id} onClick={() => setPeriod(id)} className={`rounded-xl px-4 py-2 text-base font-black ${period === id ? 'bg-amber-400 text-ink' : 'text-ink/70 hover:bg-amber-50'}`}>{label}</button>
         ))}
       </div>
       <GlobalRatingPanel mySchool="" period={period} loadGlobal={loadGlobal} />
