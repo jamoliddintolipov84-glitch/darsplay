@@ -29571,8 +29571,1233 @@ const ADABIYOT_9_P3 = [
   },
 ];
 
+const ADABIYOT_9_P4 = [
+  /* ===================== 31. 2-CHSB ===================== */
+  {
+    id: 'ad9-chsb-2',
+    source: 'II chorak • 31-dars • 2-CHSB (40 ball)',
+    title: '2-CHSB. II chorak bo‘yicha summativ baholash',
+    short: 'Oybek, «Ulug‘bek xazinasi», qardosh xalqlar adabiyoti bo‘yicha takrorlash va yozma ish',
+    theme: { emoji: '🏁', grad: 'from-slate-900 via-violet-800 to-fuchsia-600', border: 'border-fuchsia-200', tag: 'Chorak summativ baholash' },
+    lesson: [
+      {
+        title: 'II chorak xaritasi',
+        emoji: '🗺️',
+        steps: [
+          { e: '💌', t: 'Oybek', d: '«Uzoqdan turib...», «Na’matak», «Yig‘i kelmaydi sira», «Yor keldi...»' },
+          { e: '🔭', t: 'Odil Yoqubov. «Ulug‘bek xazinasi»', d: 'Ulug‘bek, Ali Qushchi, Abdullatif, kitoblar xazinasi.' },
+          { e: '🖊️', t: '2-BSB. Insho', d: 'Tezis, dalil, xulosa.' },
+          { e: '🏔️', t: 'Yelkadosh tog‘lar', d: 'Nodir Jonuzoq, Sarno‘g‘ayev, O‘ljas Sulaymon, Maxtumquli, Loyiq Sherali, Kengesboy Karimov.' },
+        ],
+      },
+      {
+        title: 'Tez takrorlash',
+        emoji: '⚡',
+        reveal: [
+          { q: '«Na’matak» qayerda va qachon yozilgan?', a: 'Chimyonda, 1936-yilda.' },
+          { q: 'Ulug‘bek o‘zining chin boyligi deb nimani bilgan?', a: 'Ilm xazinasini — asarlari, kutubxonasi, rasadxonasini.' },
+          { q: 'Kitoblar qayerga yashirildi?', a: '«Ajdar g‘or»ga, 16 sandiqda.' },
+          { q: '«Ko‘ring» she’rining muallifi?', a: 'Turkman mutafakkiri Maxtumquli.' },
+          { q: '«Besh ganj»da besh xalq nimaga o‘xshatiladi?', a: 'Navoiyning besh dostoniga.' },
+          { q: '«Ko‘zlari cho‘lpondek» — qaysi san’at?', a: 'Tashbeh (o‘xshatish).' },
+        ],
+      },
+      {
+        title: 'Qahramonlar galereyasi',
+        emoji: '🖼️',
+        cards: [
+          { e: '👑', t: 'Mirzo Ulug‘bek', d: 'Olim va hukmdor; ilmni taxtdan ustun qo‘ydi.' },
+          { e: '🔭', t: 'Ali Qushchi', d: 'Sodiq shogird; ilm xazinasini asradi.' },
+          { e: '🦅', t: 'Abdullatif', d: 'Mutaassib shahzoda; otasiga qarshi chiqdi.' },
+          { e: '🐍', t: 'Sayid Abbos', d: 'Xun dovlagan qotil.' },
+          { e: '🌸', t: 'Na’matak', d: 'Qoya labida gullagan bardosh ramzi.' },
+          { e: '🏇', t: 'Qiz quvdi qizi', d: 'Yigitga dalda bergan oshiq qiz.' },
+        ],
+      },
+      {
+        title: 'Ish tuzilmasi (taxminiy)',
+        emoji: '🧾',
+        text: 'Ustoz o‘z topshiriqlariga ko‘ra o‘zgartirishi mumkin:',
+        table: {
+          head: ['Qism', 'Topshiriq', 'Ball'],
+          rows: [
+            ['1', 'Test: 10 ta savol', '10'],
+            ['2', 'Moslashtirish: asar — muallif — xalq', '5'],
+            ['3', 'She’rdan badiiy san’at topish (tashbeh, kontrast, takror)', '10'],
+            ['4', 'Qisqa javob: 3 ta savolga 2–3 gapdan', '9'],
+            ['5', 'Ijodiy: «Ulug‘bek va Ali Qushchi»ga munosabat (5–6 gap)', '6'],
+          ],
+        },
+        mission: { t: 'Yozma ish', d: 'Ish varaqasini oling. Diqqat bilan o‘qing, vaqtni taqsimlang, oxirida tekshiring. Omad!', sec: 1800 },
+      },
+    ],
+    pairs: [
+      ['Oybek', '«Na’matak»'],
+      ['Odil Yoqubov', '«Ulug‘bek xazinasi»'],
+      ['Maxtumquli', '«Ko‘ring»'],
+      ['O‘ljas Sulaymon', '«Qiz quvdi»'],
+      ['Loyiq Sherali', '«Ey tilsiz daraxt»'],
+      ['Kengesboy Karimov', '«Yoshlik so‘qmog‘i»'],
+      ['Nodir Jonuzoq', '«Besh ganj»'],
+      ['Boydulla Sarno‘g‘ayev', '«Salom»'],
+    ],
+    quiz: [
+      { q: '«Uzoqdan turib...» kimga bag‘ishlangan?', options: ['Zarifa Saidnosirovaga', 'onasiga', 'Vatanga', 'Navoiyga'], answer: 0 },
+      { q: 'Na’matak qayerda o‘sgan?', options: ['qoya labida', 'bog‘da', 'cho‘lda', 'daryo bo‘yida'], answer: 0 },
+      { q: '«Yig‘i kelmaydi sira» qaysi lirikaga kiradi?', options: ['harbiy', 'tabiat', 'hajviy', 'falsafiy'], answer: 0 },
+      { q: 'Ulug‘bekning shogirdi:', options: ['Ali Qushchi', 'Sayid Abbos', 'Mironshoh', 'Abdullatif'], answer: 0 },
+      { q: 'Samarqand darvozasini kim yopdi?', options: ['dorug‘a Mironshoh', 'Ali Qushchi', 'Burhoniddin', 'Bobo Husayn'], answer: 0 },
+      { q: 'Patir ichidan nima chiqdi?', options: ['maktub', 'kalit', 'javohir', 'xanjar'], answer: 0 },
+      { q: '«Qiz quvdi» qaysi xalqqa xos o‘yin?', options: ['qozoq', 'yapon', 'arab', 'ingliz'], answer: 0 },
+      { q: 'Maxtumqulining taxallusi:', options: ['Firog‘iy', 'Foniy', 'Lutfiy', 'Nodira'], answer: 0 },
+      { q: '«O‘zingdan chiqarib bolta sopini...» qaysi she’rdan?', options: ['«Ey tilsiz daraxt»', '«Ertani o‘ylab»', '«Salom»', '«Egiz el»'], answer: 0 },
+      { q: 'Insho tuzilmasida asosiy fikr nima deyiladi?', options: ['tezis', 'epigraf', 'naqarot', 'radif'], answer: 0 },
+    ],
+    sort: {
+      categories: ['O‘zbek adabiyoti', 'Qardosh xalqlar adabiyoti'],
+      items: [
+        { text: 'Oybek', cat: 0 }, { text: 'Maxtumquli', cat: 1 },
+        { text: 'Odil Yoqubov', cat: 0 }, { text: 'O‘ljas Sulaymon', cat: 1 },
+        { text: 'Nodir Jonuzoq', cat: 0 }, { text: 'Loyiq Sherali', cat: 1 },
+        { text: '«Na’matak»', cat: 0 }, { text: '«Yoshlik so‘qmog‘i»', cat: 1 },
+      ],
+    },
+    sequences: [
+      { title: 'II chorak darslari tartibi', items: ['Oybek she’rlari', 'Mirzo Ulug‘bek — ilm homiysi', '«Ulug‘bek xazinasi» (1–4)', '2-BSB. Insho', 'Yelkadosh tog‘lar'] },
+    ],
+    qa: [
+      { q: 'Ulug‘bek va Abdullatifning asosiy ziddiyati nimada?', a: 'Ilm va ma’rifat — mutaassiblik va hokimiyat ehtirosi o‘rtasida.' },
+      { q: '«Na’matak»dagi kontrastni tushuntiring.', a: 'Nafis gul va vahshiy qoya — go‘zallik og‘ir sharoitda ham yashnaydi.' },
+      { q: 'Maxtumquli mard yigitni qanday tasvirlaydi?', a: 'So‘zida turadi, mehmondo‘st, ko‘ngli doim yoz.' },
+    ],
+    odd: [
+      { items: ['Ali Qushchi', 'Qalandar', 'Temur Samarqandiy', 'Elomon'], answer: 3, why: 'Elomon — «Baxshiyona»dan, qolganlari «Ulug‘bek xazinasi»dan.' },
+    ],
+    debate: [
+      { claim: 'II chorakning eng ta’sirli asari — «Ulug‘bek xazinasi».', pro: 'Tarix, fojia va ilm — hammasi bir asarda.', con: 'Lirik she’rlar ham qalbga kam ta’sir qilmadi.' },
+    ],
+    creative: [
+      { task: 'II chorakdagi bir qahramonga 1 jumlali «mukofot yorlig‘i» yozing.', time: 60 },
+    ],
+  },
+
+  /* ===================== 32. CHSB tahlili ===================== */
+  {
+    id: 'ad9-chsb-2-tahlil',
+    source: 'II chorak • 32-dars • CHSB tahlili',
+    title: 'CHSB tahlili: II chorak xatolari ustida ishlash',
+    short: 'Tipik xatolar, badiiy san’atlarni farqlash mashqi, shaxsiy rivojlanish rejasi',
+    theme: { emoji: '🧭', grad: 'from-cyan-800 via-teal-600 to-lime-400', border: 'border-teal-200', tag: 'Tahlil • O‘sish rejasi' },
+    lesson: [
+      {
+        title: 'Natijalar — kompas',
+        emoji: '🧭',
+        text: 'Baho — manzil emas, kompas. U qayerda turganingizni va qaysi tomonga yurishingiz kerakligini ko‘rsatadi.',
+        table: {
+          head: ['Qism', 'Sinf o‘rtachasi', 'Eng ko‘p xato'],
+          rows: [['Test', '…', '…'], ['Moslashtirish', '…', '…'], ['Badiiy san’at', '…', '…'], ['Qisqa javob', '…', '…'], ['Ijodiy', '…', '…']],
+        },
+        note: 'Jadvalni ustoz sinf natijalari asosida to‘ldiradi.',
+      },
+      {
+        title: 'Tipik xatolar',
+        emoji: '⚠️',
+        cards: [
+          { e: '🔀', t: 'Mualliflarni chalkashtirish', d: 'Loyiq Sherali — tojik, Kengesboy Karimov — qoraqalpoq, O‘ljas Sulaymon — qozoq!' },
+          { e: '🎭', t: 'Qahramonlarni adashtirish', d: 'Mironshoh (darvozani yopdi) va Sulton Jondor (lashkarni tashlab qochdi).' },
+          { e: '🎨', t: 'San’atlarni farqlamaslik', d: 'Tashbeh, mubolag‘a, tazod, takror — har biri boshqa narsa.' },
+          { e: '📚', t: 'Dalilsiz javob', d: 'Fikr + asardan misol + izoh formulasini unutmang.' },
+        ],
+      },
+      {
+        title: 'Badiiy san’atlar mashqi',
+        emoji: '🎨',
+        reveal: [
+          { q: '«Ko‘zlari cho‘lpondek nozli sevgilim»', a: 'Tashbeh — ko‘z yulduzga o‘xshatilgan.' },
+          { q: '«Ayriliq siynamga yong‘inlar soldi»', a: 'Mubolag‘a — hijron olovdek kuydiradi.' },
+          { q: '«Nafis» na’matak va «vahshiy» qoya', a: 'Tazod (kontrast).' },
+          { q: '«Nafis chayqaladi bir tup na’matak» — bir necha bor', a: 'Takror.' },
+          { q: '«Mehr izg‘irin tekkan shamday so‘nib»', a: 'O‘xshatish (tashbeh).' },
+        ],
+      },
+      {
+        title: 'Xatolarni tuzatish qadamlari',
+        emoji: '🛠️',
+        steps: [
+          { e: '1', t: 'Xatoni toping', d: 'Ish varaqangizdagi xatolarni belgilang.' },
+          { e: '2', t: 'Sababini aniqlang', d: 'Bilmadim / shoshildim / savolni tushunmadim.' },
+          { e: '3', t: 'To‘g‘risini yozing', d: 'Darslikdan topib, yoniga yozing.' },
+          { e: '4', t: 'Qoida chiqaring', d: '«Keyingi safar ... qilaman».' },
+        ],
+        mission: { t: 'Xatolar daftari', d: '4 qadamni ish varaqangiz bo‘yicha bajaring.', sec: 600 },
+      },
+      {
+        title: 'III chorakka tayyorgarlik',
+        emoji: '🚀',
+        text: 'Keyingi chorakda bizni Alisher Navoiy va Zahiriddin Muhammad Bobur kutmoqda — mumtoz adabiyot cho‘qqilari!',
+        vs: {
+          q: 'O‘zingizni baholang',
+          a: { t: '💪 Kuchli tomonim', pts: ['Qaysi mavzuni yaxshi tushundim?', 'Qaysi usul menga yordam berdi?'] },
+          b: { t: '🎯 Rivojlantiraman', pts: ['Qaysi mavzu qiyin bo‘ldi?', 'Kimdan yordam so‘rayman?'] },
+        },
+        mission: { t: 'Shaxsiy reja', d: '«III chorakda men ... ga erishaman. Buning uchun har hafta ... qilaman» deb yozing.', sec: 120 },
+      },
+    ],
+    pairs: [
+      ['Tashbeh', 'o‘xshatish'],
+      ['Mubolag‘a', 'bo‘rttirish'],
+      ['Tazod', 'qarama-qarshilik'],
+      ['Takror', 'so‘z yoki misraning qaytarilishi'],
+      ['Mironshoh', 'darvozani yopgan dorug‘a'],
+      ['Sulton Jondor', 'lashkarni tashlab qochgan amir'],
+      ['Loyiq Sherali', 'tojik shoiri'],
+    ],
+    quiz: [
+      { q: '«Ko‘zlari cho‘lpondek» — qaysi san’at?', options: ['tashbeh', 'tazod', 'takror', 'mubolag‘a'], answer: 0 },
+      { q: '«Nafis» va «vahshiy» — qaysi san’at?', options: ['tazod', 'tashbeh', 'radif', 'saj'], answer: 0 },
+      { q: 'Loyiq Sherali qaysi xalq shoiri?', options: ['tojik', 'qozoq', 'qoraqalpoq', 'turkman'], answer: 0 },
+      { q: 'Lashkarni tashlab qochgan amir:', options: ['Sulton Jondor', 'Iskandar barlos', 'Idris tarxon', 'Bobo Husayn'], answer: 0 },
+      { q: 'Dalil formulasi:', options: ['fikr + misol + izoh', 'faqat misol', 'faqat fikr', 'savol + savol'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Tashbeh', 'Mubolag‘a'],
+      items: [
+        { text: 'ko‘zlari cho‘lpondek', cat: 0 }, { text: 'siynamga yong‘inlar soldi', cat: 1 },
+        { text: 'daryolar singari ko‘nglim', cat: 0 }, { text: 'bir tola sochga bog‘langan daryo', cat: 1 },
+        { text: 'shamday so‘nib', cat: 0 }, { text: 'qonlar ufq ranglaridan ko‘p', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Siz qaysi qismda eng ko‘p xato qildingiz va nega?', a: 'Erkin javob.' },
+      { q: 'Mualliflarni chalkashtirmaslik uchun nima qilish kerak?', a: '«Muallif — asar — xalq» jadvalini tuzib, takrorlash.' },
+    ],
+    odd: [
+      { items: ['tashbeh', 'tazod', 'mubolag‘a', 'tezis'], answer: 3, why: 'Tezis — insho atamasi, qolganlari badiiy san’atlar.' },
+    ],
+    debate: [
+      { claim: 'Xatodan qo‘rqmaslik kerak.', pro: 'Xato — o‘rganish yo‘li.', con: 'Lekin bir xatoni takrorlamaslik kerak.' },
+    ],
+    creative: [
+      { task: 'O‘z xatongizdan bir hikmatli so‘z yasang: «Xato menga ... ni o‘rgatdi».', time: 60 },
+    ],
+  },
+
+  /* ===================== 33. Xamsanavislik ===================== */
+  {
+    id: 'ad9-xamsa',
+    source: 'III chorak • 33-dars • 114–116-betlar',
+    title: 'Alisher Navoiy. Xamsanavislik an’anasi',
+    short: 'Nizomiydan Navoiygacha: besh doston an’anasi, turkiy «Xamsa» va ishqning uch darajasi',
+    theme: { emoji: '📜', grad: 'from-emerald-900 via-teal-700 to-amber-400', border: 'border-amber-200', tag: 'Mumtoz adabiyot • Xamsa' },
+    lesson: [
+      {
+        title: '«Besh xazina» qanday paydo bo‘ldi?',
+        emoji: '💎',
+        steps: [
+          { e: '1️⃣', t: 'Nizomiy Ganjaviy (1141–1209)', d: 'Ozarbayjonlik shoir 1170–1204-yillarda besh doston yozdi — «Panj ganj» (Besh xazina) yoki «Xamsa».' },
+          { e: '2️⃣', t: 'Xusrav Dehlaviy (1253–1325)', d: 'Asli keshlik (shahrisabzlik) shoir Nizomiyga javob yozib, xamsanavislik an’anasini boshladi.' },
+          { e: '3️⃣', t: 'Abdurahmon Jomiy', d: 'Besh dostonga yana ikkitasini qo‘shib, «Haft avrang» (Yetti taxt) deb atadi.' },
+          { e: '⭐', t: 'Alisher Navoiy (1483–1485)', d: 'Turkiy tilda birinchi «Xamsa»ni yaratdi!' },
+        ],
+      },
+      {
+        title: 'An’ana qoidalari',
+        emoji: '📏',
+        text: 'Har bir yangi doston avvalgilarga mavzusi, obrazlari, she’riy o‘lchovi bilan mos kelishi, ayni paytda original, yangi asar bo‘lishi kerak edi.',
+        table: {
+          head: ['Doston', 'An’anaviy mavzu', 'Navoiyda'],
+          rows: [
+            ['1', 'Pand-nasihat, ta’limiy', '«Hayrat ul-abror»'],
+            ['2', 'Xusrav va Shirin muhabbati', '«Farhod va Shirin»'],
+            ['3', 'Layli va Majnun muhabbati', '«Layli va Majnun»'],
+            ['4', 'Shoh Bahrom haqida', '«Sab’ayi sayyor»'],
+            ['5', 'Shoh Iskandar haqida', '«Saddi Iskandariy»'],
+          ],
+        },
+      },
+      {
+        title: 'Navoiy jasorati',
+        emoji: '🦁',
+        poem: {
+          lines: [
+            'Emas oson bu maydon ichra turmoq,',
+            'Nizomiy panjasig‘a panja urmoq.',
+            'Kerak sher olida ham sheri jangi,',
+            'Agar sher o‘lmasa, bori palangi.',
+          ],
+          author: 'Alisher Navoiy, «Farhod va Shirin»',
+        },
+        reveal: [{ q: 'Navoiy bu misralarda nima demoqchi?', a: 'Nizomiy bilan bellashish — sher bilan olishishdek qiyin; buning uchun hech bo‘lmasa qoplondek kuchli bo‘lish kerak. Kamtarlik va jasorat birga.' }],
+      },
+      {
+        title: 'Navoiyning yangiligi',
+        emoji: '✨',
+        vs: {
+          q: 'Ikkinchi doston kimning nomi bilan?',
+          a: { t: '👑 Ustozlarda: Xusrav', pts: ['Bosh qahramon — shoh Xusrav Parvez', 'Farhod — ikkinchi darajali obraz'] },
+          b: { t: '⚒️ Navoiyda: Farhod', pts: ['Bosh qahramon — Farhod', 'Shahzodalarga o‘rnak, komil inson, oshiq'] },
+        },
+        note: 'Xusrav Parvez — tarixiy shaxs, 590-yilda taxtga o‘tirgan, 628-yilda o‘g‘li Sheruya buyrug‘i bilan o‘ldirilgan.',
+      },
+      {
+        title: 'Komil inson',
+        emoji: '🌟',
+        rule: 'Komil inson — nafsni yenggan, ezgu axloq va ilohiy bilimlar bilan yetuklikka erishgan, o‘zini va Haqni anglagan, jamiyatga foydasi tegadigan yuksak shaxs.',
+        ruleLabel: '«Xamsa»ning markaziy g‘oyasi',
+        facts: [
+          { n: '54', l: 'bob — «Farhod va Shirin»' },
+          { n: '1484', l: 'yilda yozib tugallangan' },
+          { n: '11', l: 'bob — muqaddima (kirish)' },
+        ],
+      },
+      {
+        title: 'Ishqning uch darajasi',
+        emoji: '💞',
+        text: 'Navoiy «Mahbub ul-qulub» asarida ishqni uch darajaga bo‘ladi:',
+        cards: [
+          { e: '💍', t: 'Avom ishqi', d: 'Yigit va qizning tabiiy, nikoh bilan yakunlanadigan muhabbati.' },
+          { e: '🕊️', t: 'Xoslar ishqi (majoziy)', d: 'Ko‘zi, niyati, ko‘ngli pok; visol emas, ishqning o‘zi maqsad; yor qiyofasida Alloh jamolini ko‘radi.' },
+          { e: '✨', t: 'Siddiqlar ishqi', d: 'Yetuk zotlarning Yaratganga beg‘araz muhabbati.' },
+        ],
+        mission: { t: 'Misollar to‘plami', d: 'Quyi sinflarda o‘qigan asarlardan har bir ishq darajasiga bittadan misol toping.', sec: 240 },
+      },
+    ],
+    pairs: [
+      ['Nizomiy Ganjaviy', 'birinchi «Xamsa» muallifi'],
+      ['Xusrav Dehlaviy', 'xamsanavislikni boshlagan'],
+      ['Abdurahmon Jomiy', '«Haft avrang»'],
+      ['«Hayrat ul-abror»', 'Navoiyning 1-dostoni'],
+      ['«Sab’ayi sayyor»', 'Bahrom haqidagi doston'],
+      ['«Saddi Iskandariy»', 'Iskandar haqidagi doston'],
+      ['«Panj ganj»', 'Besh xazina'],
+      ['«Mahbub ul-qulub»', 'ishqning uch darajasi'],
+    ],
+    quiz: [
+      { q: 'Birinchi «Xamsa»ni kim yozgan?', options: ['Nizomiy Ganjaviy', 'Navoiy', 'Jomiy', 'Firdavsiy'], answer: 0 },
+      { q: 'Navoiy «Xamsa»ni qachon yozgan?', options: ['1483–1485', '1170–1204', '1501–1504', '1441–1445'], answer: 0 },
+      { q: 'Turkiy tildagi birinchi «Xamsa» muallifi:', options: ['Alisher Navoiy', 'Bobur', 'Lutfiy', 'Atoiy'], answer: 0 },
+      { q: 'Jomiy dostonlarini qanday atagan?', options: ['«Haft avrang»', '«Panj ganj»', '«Xamsa»', '«Shohnoma»'], answer: 0 },
+      { q: '«Farhod va Shirin» necha bobdan iborat?', options: ['54', '12', '100', '5'], answer: 0 },
+      { q: 'Navoiy ikkinchi dostonda kimni bosh qahramon qildi?', options: ['Farhodni', 'Xusravni', 'Shopurni', 'Sheruyani'], answer: 0 },
+      { q: 'Xusrav va Shirin haqida badiiy adabiyotda birinchi kim yozgan?', options: ['Firdavsiy', 'Navoiy', 'Bobur', 'Jomiy'], answer: 0 },
+      { q: 'Xusrav Dehlaviy asli qayerlik?', options: ['Kesh (Shahrisabz)', 'Hirot', 'Ganja', 'Samarqand'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Navoiy «Xamsa»si', 'Boshqa asarlar'],
+      items: [
+        { text: '«Hayrat ul-abror»', cat: 0 }, { text: '«Haft avrang»', cat: 1 },
+        { text: '«Layli va Majnun»', cat: 0 }, { text: '«Shohnoma»', cat: 1 },
+        { text: '«Sab’ayi sayyor»', cat: 0 }, { text: '«Boburnoma»', cat: 1 },
+        { text: '«Saddi Iskandariy»', cat: 0 }, { text: '«Mahbub ul-qulub»', cat: 1 },
+      ],
+    },
+    sequences: [
+      { title: 'Navoiy «Xamsa»si tartibi', items: ['«Hayrat ul-abror»', '«Farhod va Shirin»', '«Layli va Majnun»', '«Sab’ayi sayyor»', '«Saddi Iskandariy»'] },
+      { title: 'Xamsanavislik tarixi', items: ['Nizomiy Ganjaviy', 'Xusrav Dehlaviy', 'Abdurahmon Jomiy', 'Alisher Navoiy'] },
+    ],
+    qa: [
+      { q: 'Navoiyning xamsachilikdagi katta yangiligi nima?', a: 'Turkiy tilda yozdi va ikkinchi dostonni Farhodga bag‘ishlab, majoziy ishq orqali haqiqiy ishqqa yetgan oshiq obrazini yaratdi.' },
+      { q: 'Komil inson kim?', a: 'Nafsni yenggan, axloq va ilmda yetuk, jamiyatga foydali shaxs.' },
+      { q: 'Xamsanavis shoir uchun eng qiyin talab nima?', a: 'An’anaga mos bo‘lgan holda yangi, original asar yaratish.' },
+    ],
+    odd: [
+      { items: ['Nizomiy', 'Dehlaviy', 'Jomiy', 'Bobur'], answer: 3, why: 'Bobur xamsanavis emas.' },
+      { items: ['avom ishqi', 'xoslar ishqi', 'siddiqlar ishqi', 'shohlar ishqi'], answer: 3, why: 'Navoiy tasnifida «shohlar ishqi» yo‘q.' },
+    ],
+    debate: [
+      { claim: 'An’anaga ergashish ijodkorni cheklaydi.', pro: 'Mavzu va o‘lchov oldindan belgilangan.', con: 'Navoiy an’ana ichida ham butunlay yangi asar yaratdi.' },
+    ],
+    creative: [
+      { task: 'Agar siz «Xamsa» yozsangiz, besh dostoningiz qanday mavzularda bo‘lardi?', time: 120 },
+    ],
+  },
+
+  /* ===================== 34. Farhod va Shirin — 1 ===================== */
+  {
+    id: 'ad9-farhod-1',
+    source: 'III chorak • 34-dars • 117–122-betlar',
+    title: 'Alisher Navoiy. «Farhod va Shirin» (1)',
+    short: 'Chin xoqonining qudrati va farzandsizlik iztirobi: «Farzand — inju, ota — sadaf»',
+    theme: { emoji: '🏯', grad: 'from-red-800 via-rose-600 to-amber-400', border: 'border-rose-200', tag: 'Doston • 12-bobdan parcha' },
+    lesson: [
+      {
+        title: 'Asl matn va nasriy bayon',
+        emoji: '📖',
+        text: 'Darslikda chap tomonda asl matn, o‘ng tomonda nasriy bayon berilgan. Bir o‘quvchi asl matnni, ikkinchisi nasriy bayonni ovoz chiqarib o‘qisin.',
+        mission: { t: 'Juftlik o‘qish', who: '2 o‘quvchi', d: 'Baraban yordamida ikki o‘quvchini tanlang: biri asl matnni, biri nasriy bayonni o‘qiydi.', sec: 300 },
+      },
+      {
+        title: 'Chin mamlakati',
+        emoji: '🏯',
+        poem: {
+          lines: [
+            'Ki, Chin mulkiki, rashki naqshi Chindur,',
+            'Savodi g‘ayrati xuldi barindur.',
+            'Shahe erdi muazzam xoni oning,',
+            'Dema xoni oning, xoqoni oning.',
+          ],
+          author: 'Alisher Navoiy, «Farhod va Shirin»',
+        },
+        text: 'Chin mamlakati shu qadar go‘zalki, hatto jannat bog‘lari ham unga hasad bilan boqadi. Uning shohini xon emas, xoqon deyish kerak.',
+      },
+      {
+        title: 'Xoqonning qudrati',
+        emoji: '👑',
+        cards: [
+          { e: '🌍', t: 'Mulki', d: 'Ikki olamcha keng, taxti yetti osmoncha yuksak.' },
+          { e: '⚔️', t: 'Qo‘shini', d: 'Yer yuzidagi qumdan, osmondagi yulduzlardan ko‘p.' },
+          { e: '💰', t: 'Xazinasi', d: 'Qorun xazinasidan yuz ming marta ortiq.' },
+          { e: '🤲', t: 'Saxovati', d: 'Dengizdan keng, kondan emas — imkondan ortiq!' },
+        ],
+        reveal: [{ q: '«Sipohi yer yuzida qum hisobi, Ne qum, gardun uza anjum hisobi» — qaysi san’at?', a: 'Mubolag‘a (ig‘roq): qo‘shin qumdan ham, yulduzlardan ham ko‘p.' }],
+      },
+      {
+        title: 'Hamma narsa bor... bittasidan tashqari',
+        emoji: '💔',
+        quote: { text: 'Murodi bog‘i yuz guldin barumand, Vale ul o‘zga gulga orzumand', by: 'Alisher Navoiy' },
+        text: 'Xoqonning orzular bog‘i yuz xil gul bilan to‘la, ammo u bir boshqa gulga — farzandga zor. Boshidagi tojda quyosh duri porlasa-da, unga boshqa bir dur kerak.',
+      },
+      {
+        title: 'Xoqonning o‘ylari',
+        emoji: '💭',
+        steps: [
+          { e: '⏳', t: 'Jahonning vafosi yo‘q', d: 'Amal qasri mustahkam emas, hayot o‘tkinchi.' },
+          { e: '⚖️', t: 'Shoh va gado teng', d: 'O‘lim oldida ko‘kka yetgan shoh ham, kigiz boshpanali gado ham teng.' },
+          { e: '🦪', t: 'Ota — sadaf, bola — inju', d: 'Sadafsiz dengiz — shunchaki achchiq suv.' },
+          { e: '🌲', t: 'Mevasiz sarv', d: 'Go‘zal, ammo naf yo‘q — o‘tin o‘rnida.' },
+        ],
+      },
+      {
+        title: 'Farzand nimalarga o‘xshatiladi?',
+        emoji: '🔍',
+        reveal: [
+          { q: '🦪 Sadaf va inju', a: 'Ota — sadaf, farzand — undagi qimmatbaho inju (marvarid).' },
+          { q: '🌳 Daraxt va meva', a: 'Mevasiz daraxt — o‘tin; farzand — hayot daraxtining mevasi.' },
+          { q: '🌧️ Bulut va yomg‘ir', a: 'Yomg‘ir yog‘dirmagan bulut — shunchaki tutun.' },
+          { q: '🔥 O‘t va cho‘g‘', a: 'Cho‘g‘ qolsa, olov qayta yonadi — farzand nasl olovini davom ettiradi.' },
+        ],
+      },
+      {
+        title: '«Alpomish» bilan qiyos',
+        emoji: '🔗',
+        vs: {
+          q: 'Farzandsizlik motivi',
+          a: { t: '🏹 «Alpomish»', pts: ['Boybo‘ri va Boysari farzandsiz', 'Chupronto‘yda izza bo‘lishadi', 'Pir ravzasida farzand tilashadi'] },
+          b: { t: '🏯 «Farhod va Shirin»', pts: ['Chin xoqoni farzandsiz', 'Begona taxtimni egallaydi deb qayg‘uradi', 'Xudodan o‘g‘il tilaydi'] },
+        },
+        mission: { t: 'Lug‘at', d: 'Nasriy bayon yordamida izohlang: anjum, xalaf, munaqqash, kadxudoliq, barumand, havodis, tajammul, muazzam, mukallal, varta.', sec: 300 },
+      },
+    ],
+    pairs: [
+      ['Anjum', 'yulduzlar'],
+      ['Xalaf', 'farzand, voris'],
+      ['Sadaf', 'injuni saqlovchi chig‘anoq — ota'],
+      ['Inju', 'marvarid — farzand'],
+      ['Barumand', 'mevali, bahramand'],
+      ['Havodis', 'hodisalar'],
+      ['Qorun', 'afsonaviy boy'],
+      ['Xoqon', 'xonlar xoni'],
+    ],
+    quiz: [
+      { q: 'Farhodning otasi qaysi mamlakat xoqoni?', options: ['Chin', 'Arman', 'Yunon', 'Madoyin'], answer: 0 },
+      { q: 'Xoqonning qo‘shini nimaga qiyoslanadi?', options: ['qum va yulduzlarga', 'daryoga', 'tog‘ga', 'o‘rmonga'], answer: 0 },
+      { q: 'Xoqonning yagona armoni:', options: ['farzand', 'boylik', 'yangi yer', 'shon-shuhrat'], answer: 0 },
+      { q: 'Dostonda ota nimaga o‘xshatiladi?', options: ['sadafga', 'injuga', 'daraxtga', 'bulutga'], answer: 0 },
+      { q: 'Mevasiz sarv kimga o‘xshatiladi?', options: ['farzandsiz kishiga', 'shohga', 'gadoga', 'dushmanga'], answer: 0 },
+      { q: 'Xoqonning xazinasi kimnikidan ortiq?', options: ['Qorunning', 'Iskandarning', 'Xusravning', 'Bahromning'], answer: 0 },
+      { q: '«Sipohi yer yuzida qum hisobi» — qaysi san’at?', options: ['mubolag‘a', 'tazod', 'tardi aks', 'iyhom'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Xoqonda bor', 'Xoqonda yo‘q'],
+      items: [
+        { text: 'keng mulk', cat: 0 }, { text: 'farzand', cat: 1 },
+        { text: 'son-sanoqsiz qo‘shin', cat: 0 }, { text: 'voris', cat: 1 },
+        { text: 'Qorundan ortiq xazina', cat: 0 }, { text: 'ko‘ngil xotirjamligi', cat: 1 },
+        { text: 'saxovat', cat: 0 }, { text: '«o‘zga gul»', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Chin saltanatining bunday mamlakatga aylanishiga qanday fazilatlar sabab bo‘lgan?', a: 'Xoqonning adolati, saxovati, qudrati va xalqining mehnati.' },
+      { q: 'Navoiy nega xoqonning saxovatini alohida ta’kidlaydi?', a: 'Saxovat — adolatli hukmdorning eng muhim fazilati.' },
+      { q: 'Xoqon nega o‘zini gavharsiz dengiz, cho‘g‘siz o‘tga qiyoslaydi?', a: 'Undan keyin davomchi qolmasa, butun mulki va shon-shuhrati izsiz yo‘qoladi.' },
+    ],
+    odd: [
+      { items: ['sadaf', 'inju', 'meva', 'qilich'], answer: 3, why: 'Qilich farzand ramzlari qatoriga kirmaydi.' },
+    ],
+    debate: [
+      { claim: 'Boylik farzanddan qimmat bo‘lolmaydi.', pro: 'Xoqon butun boyligini bir o‘g‘ilga almashishga tayyor.', con: 'Farzandsiz odam ham el uchun xizmat qilib, nom qoldirishi mumkin.' },
+    ],
+    creative: [
+      { task: 'Farzand uchun o‘z o‘xshatishingizni toping: «Farzand — ...dir, chunki...»', time: 60 },
+    ],
+  },
+
+  /* ===================== 35. Farhod va Shirin — 2 ===================== */
+  {
+    id: 'ad9-farhod-2',
+    source: 'III chorak • 35-dars • 122–130-betlar',
+    title: 'Alisher Navoiy. «Farhod va Shirin» (2)',
+    short: 'Farhod ismining siri, ilm va hunarlar, Yunon safari, oyinayi jahonnamo va Arman diyori',
+    theme: { emoji: '🪞', grad: 'from-indigo-800 via-violet-600 to-pink-400', border: 'border-violet-200', tag: 'Doston • nasriy bayon' },
+    lesson: [
+      {
+        title: 'Ismning ikki siri',
+        emoji: '🔤',
+        text: 'Mumtoz adabiyotda harflarga yashirilgan ma’noni topish san’ati muammo deyiladi. Farhod ismi ikki xil «muammo»dan iborat:',
+        vs: {
+          q: 'Kim qo‘ygan ism?',
+          a: { t: '👑 Otasi qo‘ygan', pts: ['Farr (shohlik nuri)', 'H — Himmat', 'I — Iqbol', 'D — Davlat'] },
+          b: { t: '❤️ Ishq qo‘ygan', pts: ['F — Firoq', 'R — Rashk', 'H — Hajr', 'O — Oh', 'D — Dard'] },
+        },
+      },
+      {
+        title: 'G‘ayrioddiy bola',
+        emoji: '👶',
+        facts: [
+          { n: '1', l: 'yoshida yura boshladi' },
+          { n: '3', l: 'yoshida ravon so‘zladi, 10 yoshlidek tutdi' },
+          { n: '3', l: 'oyda savodi chiqdi' },
+          { n: '10', l: 'yoshida 20 yashar yigit kuchiga ega bo‘ldi' },
+        ],
+        text: 'Bir yilda Qur’onni yod oldi; bir varaqni ikkinchi bor ochmasdi. Ilmdan keyin o‘q otish, nayza, qilichbozlik, qalqon bilan jangni egalladi.',
+      },
+      {
+        title: 'Poklik — Farhodning tabiati',
+        emoji: '🤍',
+        quote: { text: 'Tili pok-u, so‘zi pok-u, o‘zi pok', by: 'Alisher Navoiy' },
+        cards: [
+          { e: '❤️', t: 'Ko‘ngli pok', d: 'Hasad, kek yo‘q.' },
+          { e: '👁️', t: 'Ko‘zi pok', d: 'Harom nazar yo‘q.' },
+          { e: '👅', t: 'Tili pok', d: 'G‘iybat, yolg‘on yo‘q.' },
+          { e: '💬', t: 'So‘zi pok', d: 'Va’dasiga sodiq.' },
+        ],
+        note: 'Farhod podsholik bilan gadolikni farqlamas, hatto gadolikni yuqoriroq qo‘yardi.',
+      },
+      {
+        title: 'To‘rt qasr va uch usta',
+        emoji: '🏛️',
+        text: 'Xoqon o‘g‘lining g‘amini aritish uchun yilning to‘rt fasliga mos to‘rt qasr qurdiradi. Farhod qurilishda uch ustadan hunar o‘rganadi:',
+        cards: [
+          { e: '📐', t: 'Boniy', d: 'Me’mor' },
+          { e: '🎨', t: 'Moniy', d: 'Naqqosh' },
+          { e: '⚒️', t: 'Qoran', d: 'Toshtarosh' },
+        ],
+        reveal: [{ q: 'Nega Navoiy shahzodani hunar o‘rganadigan qilib tasvirlaydi?', a: 'Komil inson faqat ilm emas, mehnat va hunarni ham egallashi kerak — bu zamona shahzodalariga o‘rnak.' }],
+      },
+      {
+        title: 'Yunon safari',
+        emoji: '🗺️',
+        steps: [
+          { e: '🐉', t: 'Ajdaho', d: 'Birinchi ofat — nafs ramzi.' },
+          { e: '👹', t: 'Ahriman dev', d: 'Ikkinchi ofat.' },
+          { e: '🌀', t: 'Tilsim', d: 'Uchinchi, eng mushkul ofat.' },
+          { e: '🧙', t: 'Suqrot', d: 'G‘orda yashagan donishmand — ko‘zgu sirini ochadi.' },
+        ],
+        reveal: [{ q: 'Navoiy nega tilsim sirlarini aynan Yunoniston bilan bog‘lagan?', a: 'Yunoniston qadimdan falsafa va hikmat beshigi sanalgan — Suqrot, Aflotun, Arastu yurti.' }],
+      },
+      {
+        title: 'Oyinayi jahonnamo',
+        emoji: '🪞',
+        text: 'Farhod sehrli ko‘zguda tog‘ qazayotgan o‘ziga o‘xshash yigitni va otliq go‘zal qizni ko‘radi — va hushidan ketadi. Shu kundan oshiqlik davri boshlanadi.',
+        steps: [
+          { e: '⛵', t: 'Arman sari', d: 'Farhod ko‘zgudagi yurtni izlab yo‘lga chiqadi.' },
+          { e: '🤝', t: 'Shopur', d: 'Naqqosh do‘st topadi.' },
+          { e: '⛏️', t: 'Ariq', d: 'Shirin xalqi uchun tog‘ni kesib ariq qazadi.' },
+          { e: '🌊', t: '«Nahr ul-hayot»', d: 'Ariq — «Hayot daryosi», hovuz — «Najot dengizi» deb ataladi.' },
+        ],
+        mission: { t: 'Guruh ishi', who: '3 guruh', d: '1-guruh: otasi qo‘ygan ism ma’nosi; 2-guruh: ishq qo‘ygan ism ma’nosi; 3-guruh: «ko‘ngil, ko‘z, til, so‘z poklik»ka hayotdan misollar.', sec: 300 },
+      },
+    ],
+    pairs: [
+      ['Farr', 'shohlik nuri'],
+      ['Boniy', 'me’mor'],
+      ['Moniy', 'naqqosh'],
+      ['Qoran', 'toshtarosh'],
+      ['Suqrot', 'g‘ordagi donishmand'],
+      ['Shopur', 'Farhodning do‘sti, naqqosh'],
+      ['Nahr ul-hayot', 'Hayot daryosi — ariq'],
+      ['Muammo', 'ismni harflarga yashirish san’ati'],
+    ],
+    quiz: [
+      { q: 'Farhod ismidagi «h, i, d» otasi qo‘ygan ma’noda nimani bildiradi?', options: ['himmat, iqbol, davlat', 'hajr, ishq, dard', 'hayot, ilm, din', 'hunar, ilm, do‘st'], answer: 0 },
+      { q: 'Ishq qo‘ygan ismdagi «f» harfi:', options: ['firoq', 'farr', 'farzand', 'fido'], answer: 0 },
+      { q: 'Farhod necha yoshida Qur’onni yod oldi?', options: ['savodi chiqqanidan bir yil ichida', '20 yoshida', 'hech qachon', '15 yoshida'], answer: 0 },
+      { q: 'Toshtarosh usta:', options: ['Qoran', 'Moniy', 'Boniy', 'Shopur'], answer: 0 },
+      { q: 'Ko‘zgu sirini kim ochadi?', options: ['Suqrot', 'Xizr', 'Mulkoro', 'Shopur'], answer: 0 },
+      { q: 'Farhod ko‘zguda nimani ko‘radi?', options: ['tog‘ qazayotgan yigit va go‘zal qizni', 'Chin saroyini', 'jangni', 'dengizni'], answer: 0 },
+      { q: 'Ariq qanday nom oldi?', options: ['Nahr ul-hayot', 'Bahr un-najot', 'Jayhun', 'Ob-i hayot'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Otasi qo‘ygan ma’no', 'Ishq qo‘ygan ma’no'],
+      items: [
+        { text: 'farr — shohlik nuri', cat: 0 }, { text: 'firoq', cat: 1 },
+        { text: 'himmat', cat: 0 }, { text: 'rashk', cat: 1 },
+        { text: 'iqbol', cat: 0 }, { text: 'hajr', cat: 1 },
+        { text: 'davlat', cat: 0 }, { text: 'dard', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'Farhodning yo‘li',
+        items: [
+          'Farhod tug‘iladi, ism qo‘yiladi',
+          'Ilm va harbiy hunarlarni egallaydi',
+          'To‘rt qasr qurilishida hunar o‘rganadi',
+          'Yunonga borib ofatlarni yengadi',
+          'Suqrot ko‘zgu sirini ochadi',
+          'Ko‘zguda Shirinni ko‘rib, hushidan ketadi',
+          'Arman diyorida ariq qazadi',
+        ],
+      },
+    ],
+    qa: [
+      { q: 'Poklik nima? Ko‘ngil, ko‘z, til, so‘z pokligini qanday tushunasiz?', a: 'Niyat, nigoh, nutq va va’dada halollik.' },
+      { q: 'Nega Farhod hamma narsaga ega bo‘lsa ham g‘amgin edi?', a: 'Tug‘ma ishq dardi — uni dunyo boyligi ham, ilm ham qondira olmasdi.' },
+      { q: 'Farhod Shirin uchun nima qildi?', a: 'Tog‘ni kesib, Arman xalqiga suv chiqardi.' },
+    ],
+    odd: [
+      { items: ['ajdaho', 'Ahriman', 'tilsim', 'Shopur'], answer: 3, why: 'Shopur — do‘st, qolganlari ofatlar.' },
+    ],
+    debate: [
+      { claim: 'Shahzoda hunar o‘rganishi shart emas.', pro: 'Uning ishi — davlat boshqarish.', con: 'Navoiy fikricha, komil inson mehnatni ham bilishi kerak.' },
+    ],
+    creative: [
+      { task: 'O‘z ismingizning har harfiga bittadan fazilat toping (masalan, A — adolat).', time: 90 },
+    ],
+  },
+
+  /* ===================== 36. Farhod va Shirin — 3 ===================== */
+  {
+    id: 'ad9-farhod-3',
+    source: 'III chorak • 36-dars • 131–136-betlar',
+    title: 'Alisher Navoiy. «Farhod va Shirin» (3): Xusrav va Farhod munozarasi',
+    short: '«Dedi — dedi» savol-javobi: ishq va manfaat, shoh va oshiq to‘qnashuvi',
+    theme: { emoji: '⚔️', grad: 'from-zinc-900 via-red-800 to-amber-500', border: 'border-red-200', tag: 'Doston • Munozara' },
+    lesson: [
+      {
+        title: 'Zanjirband oshiq va shoh',
+        emoji: '⛓️',
+        text: 'Xusrav Shirinni olmoq uchun Armanga qo‘shin tortadi. Farhod otgan ikki tosh shohning dubulg‘asi uchini va bayrog‘idagi shakini uchirib yuboradi. Hiyla bilan behush qilingan Farhod zanjirband holda Xusrav huzuriga keltiriladi.',
+        reveal: [{ q: 'Dubulg‘a va bayroq uchining uchirilishi nimaning alomati?', a: 'Qadimda bu shohning yengilishi, toj va saltanatning qulashi alomati hisoblangan.' }],
+      },
+      {
+        title: 'Mashhur munozara',
+        emoji: '💬',
+        text: 'Rollarga bo‘linib o‘qing — bir o‘quvchi Xusrav, biri Farhod:',
+        chat: [
+          { who: 'Xusrav', e: '👑', text: 'Dedi: «Qaydinsen, ey majnuni gumroh?!»' },
+          { who: 'Farhod', e: '⚒️', side: 'r', text: 'Dedi: «Majnun vatandin qayda ogoh?»' },
+          { who: 'Xusrav', e: '👑', text: 'Dedi: «Nedur sanga olamda pesha?»' },
+          { who: 'Farhod', e: '⚒️', side: 'r', text: 'Dedi: «Ishq ichra majnunluq hamesha».' },
+          { who: 'Xusrav', e: '👑', text: 'Dedi: «Bu ishdin o‘lmas kasb ro‘zi!»' },
+          { who: 'Farhod', e: '⚒️', side: 'r', text: 'Dedi: «Kasb o‘lsa basdur ishq so‘zi».' },
+        ],
+      },
+      {
+        title: 'Shoh taklif qiladi, oshiq rad etadi',
+        emoji: '💰',
+        chat: [
+          { who: 'Xusrav', e: '👑', text: 'Dedi: «Ol ganj-u, qo‘y mehrin nihoniy!»' },
+          { who: 'Farhod', e: '⚒️', side: 'r', text: 'Dedi: «Tufroqqa bermon kimyoni!»' },
+          { who: 'Xusrav', e: '👑', text: 'Dedi: «Joningg‘a hijron kinakashdur».' },
+          { who: 'Farhod', e: '⚒️', side: 'r', text: 'Dedi: «Chun bor vasl ummidi xushdur».' },
+        ],
+        reveal: [{ q: '«Tufroqqa bermon kimyoni» — nima demoqchi?', a: 'Ishq — kimyo (eng qimmat narsa), xazina esa tuproq. Kimyoni tuproqqa almashtirmayman!' }],
+      },
+      {
+        title: 'Kim g‘olib?',
+        emoji: '🏆',
+        vs: {
+          q: 'Munozarada kim yutdi?',
+          a: { t: '👑 Xusrav', pts: ['Qo‘lida hokimiyat va qo‘shin', 'Farhod zanjirband'] },
+          b: { t: '⚒️ Farhod', pts: ['Har savolga dono javob', 'Xazinaga ham, tahdidga ham bo‘ysunmadi', 'Shoh oxiri so‘z topolmay qoldi'] },
+        },
+        note: 'Navoiy shoh va oshiqni qarama-qarshi qo‘yib, haqiqiy qudrat — ruhiy kuch ekanini ko‘rsatadi.',
+      },
+      {
+        title: 'Ishq falsafasi',
+        emoji: '💡',
+        cards: [
+          { e: '⚖️', t: 'Shoh va darvesh teng', d: 'Ishq yo‘lida shohlik ham, gadolik ham bir xil.' },
+          { e: '🔥', t: 'Ziyon — foyda', d: 'Ishq tufayli keladigan ziyon ishq ahliga foyda.' },
+          { e: '🌹', t: 'Azob va rohat', d: 'Ishqning azobi oshiq uchun eng oliy maqsad.' },
+        ],
+        reveal: [{ q: 'Xusrav nega Farhodni o‘ldirishga botina olmadi?', a: 'Uning jamoli va odobidan hayratlandi; xalq Farhodni sevardi; Farhodning shahzoda ekanini bilardi.' }],
+      },
+      {
+        title: 'Salosil qo‘rg‘oni',
+        emoji: '🏰',
+        text: 'Farhod Salosil qo‘rg‘oniga qamaladi. Uning dardini tinglagan qushlar, yovvoyi va xonaki hayvonlar ham faryod chekdi.',
+        reveal: [{ q: 'Hayvonlarning faryodi orqali muallif nima demoqchi?', a: 'Haqiqiy ishq va pok qalb butun tabiatni larzaga soladi — insonlar tushunmasa ham, jonzotlar his qiladi.' }],
+        mission: { t: 'Guruh muhokamasi', who: '4 guruh', d: '1) Kim g‘olib, kim mag‘lub? 2) Ishq va manfaat ziddiyati bugun qanday ko‘rinadi? 3) Xusrav nega Farhodni o‘ldirmadi? 4) Hayvonlar faryodining ma’nosi.', sec: 300 },
+      },
+    ],
+    pairs: [
+      ['Xusrav Parvez', 'Madoyin shohi, Farhodning raqibi'],
+      ['Pesha', 'kasb, hunar'],
+      ['Kimyo', 'qimmatbaho, mo‘jizaviy narsa — ishq'],
+      ['Ganj', 'xazina'],
+      ['Vasl', 'yorga yetishish'],
+      ['Hijron', 'ayriliq'],
+      ['Salosil', 'Farhod qamalgan qo‘rg‘on'],
+      ['Buzurg Ummid', 'Xusravning vaziri'],
+    ],
+    quiz: [
+      { q: 'Farhod otgan tosh nimani uchirib yubordi?', options: ['dubulg‘a uchini va bayroq shakini', 'Xusrav tojini', 'qal’a devorini', 'qilichni'], answer: 0 },
+      { q: 'Farhod o‘z kasbini nima deydi?', options: ['ishq ichra majnunlik', 'toshtaroshlik', 'shohlik', 'savdo'], answer: 0 },
+      { q: 'Xusrav Farhodga nima taklif qiladi?', options: ['xazina', 'taxt', 'qo‘shin', 'qasr'], answer: 0 },
+      { q: '«Tufroqqa bermon kimyoni» — kimyo nima?', options: ['ishq', 'oltin', 'tosh', 'dori'], answer: 0 },
+      { q: 'Farhod qayerga qamaladi?', options: ['Salosil qo‘rg‘oniga', 'Madoyinga', 'g‘orga', 'Chinga'], answer: 0 },
+      { q: 'Navoiy fikricha, ishq yo‘lida kim teng?', options: ['shoh va darvesh', 'ota va o‘g‘il', 'do‘st va dushman', 'yosh va qari'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Xusrav dunyosi', 'Farhod dunyosi'],
+      items: [
+        { text: 'ganj (xazina)', cat: 0 }, { text: 'ishq', cat: 1 },
+        { text: 'qo‘shin', cat: 0 }, { text: 'vasl umidi', cat: 1 },
+        { text: 'hiyla', cat: 0 }, { text: 'poklik', cat: 1 },
+        { text: 'tahdid', cat: 0 }, { text: 'sadoqat', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Munozarada ishq va manfaat o‘rtasidagi qanday ziddiyat ochilgan?', a: 'Xusrav hamma narsani pul va kuch bilan o‘lchaydi, Farhod uchun ishq hech narsaga almashtirib bo‘lmas qadriyat.' },
+      { q: 'Farhodning «Ishq yo‘lida shoh-u darvesh tengdir» degan so‘zlari Navoiyning qanday qarashini ifodalaydi?', a: 'Ruhiy qadriyat ijtimoiy mavqedan ustun; inson qadri qalbi bilan o‘lchanadi.' },
+    ],
+    odd: [
+      { items: ['Xusrav', 'Buzurg Ummid', 'Sheruya', 'Shopur'], answer: 3, why: 'Shopur — Farhodning do‘sti, qolganlari Xusrav tomonida.' },
+    ],
+    debate: [
+      { claim: 'Munozarada Farhod g‘olib.', pro: 'U ruhan bo‘ysunmadi, shohni so‘zsiz qoldirdi.', con: 'U baribir zanjirband qolgani uchun amalda Xusrav kuchli.' },
+    ],
+    creative: [
+      { task: 'Xusrav va Farhod munozarasini bugungi tilda 4 qatorli dialogga aylantiring.', time: 120 },
+    ],
+  },
+
+  /* ===================== 37. Farhod va Shirin — 4 ===================== */
+  {
+    id: 'ad9-farhod-4',
+    source: 'III chorak • 37-dars • 137–143-betlar',
+    title: 'Alisher Navoiy. «Farhod va Shirin» (4): maktublar va fojia',
+    short: 'Shirin va Farhod maktublari, makkora kampir hiylasi, «majoziy ishq haqiqiy ishq bilan almashdi»',
+    theme: { emoji: '✉️', grad: 'from-purple-900 via-fuchsia-700 to-rose-400', border: 'border-fuchsia-200', tag: 'Doston • Yakun' },
+    lesson: [
+      {
+        title: 'Shirinning maktubi',
+        emoji: '✉️',
+        poem: {
+          lines: [
+            '«Nedur ahvoling, ey zori g‘aribim,',
+            'Visolim davlatidin benasibim?',
+            'Chekardin g‘am tog‘in holing nechukdur,',
+            'Bu yukdin jismi chun noling nechukdur?»',
+          ],
+          author: 'Alisher Navoiy, «Farhod va Shirin»',
+        },
+        text: 'Shirin maktubni sodiq do‘st Shopur orqali yuboradi. Shopur Farhodni tog‘da, hayvonlar va qushlar qurshovida behush holda topadi.',
+      },
+      {
+        title: 'Farhodning javobi',
+        emoji: '📝',
+        poem: {
+          lines: [
+            '«Nigoro, mahvasho, iffatpanoho,',
+            'Jahon mahvashlarig‘a podshoho!',
+            'Yozarda nomani hushumdin ozdim,',
+            'Junundin hech bilmonkim, ne yozdim».',
+          ],
+          author: 'Alisher Navoiy, «Farhod va Shirin»',
+        },
+        reveal: [{ q: 'Navoiy nega oshiq-ma’shuq holatini maktub orqali beradi?', a: 'Maktub — eng samimiy, yurak so‘zi; unda ruhiy holat to‘g‘ridan-to‘g‘ri ochiladi.' }],
+      },
+      {
+        title: 'Makkora kampir',
+        emoji: '🐍',
+        steps: [
+          { e: '🤝', t: 'Xusrav va Buzurg Ummid hiylasi', d: 'Farhodni kuch bilan yengib bo‘lmasligini bilib, makkora kampirni yollashadi.' },
+          { e: '🧕', t: 'Soxta zohida', d: 'Kampir o‘zini dunyodan voz kechgan zohida qilib ko‘rsatadi.' },
+          { e: '💔', t: 'Yolg‘on xabar', d: 'U Shirin haqida mudhish yolg‘on xabar aytadi.' },
+          { e: '🕯️', t: 'Fojia', d: 'Yolg‘onga ishongan Farhod iztirobdan jon taslim qiladi.' },
+        ],
+        note: 'Farhodni qilich emas, yolg‘on yengdi. Navoiy hiyla va yolg‘onning eng dahshatli qurol ekanini ko‘rsatadi.',
+      },
+      {
+        title: 'Vafoning cho‘qqisi',
+        emoji: '🕊️',
+        text: 'Shopur va mulozimlar Farhod jasadini hurmat bilan Armanga keltirishadi. Shirin sevgilisi yonida jon beradi. Ularni bir qabrga qo‘yishadi. Keyin Xusrav o‘z o‘g‘li Sheruya qo‘lida halok bo‘ladi.',
+        cards: [
+          { e: '🤝', t: 'Shopur', d: 'Farhod qabriga mujovir (qo‘riqchi) bo‘lib qoladi.' },
+          { e: '⚔️', t: 'Bahrom', d: 'Farhodning do‘sti — Sheruyani haydab, Armanda adolat o‘rnatadi.' },
+          { e: '🌹', t: 'Shirin va Farhod', d: 'O‘limdan keyin birlashadi — majoziy ishq haqiqiy ishqqa aylanadi.' },
+        ],
+      },
+      {
+        title: 'Nega Shiringa salom yo‘q?',
+        emoji: '🌬️',
+        text: 'Farhod o‘limi oldidan sabo (shamol) orqali xoqonga, onasiga, Mulkoroga, Bahromga, Shopurga salom yo‘llaydi. Ammo Shiringa yo‘llamaydi!',
+        reveal: [
+          { q: 'Nega?', a: 'Shirin uning jonidan ham yaqin — unga «salom» yo‘llash shart emas, ular ruhan bir. Shuningdek, yolg‘on xabarga ko‘ra Shirin endi bu dunyoda yo‘q deb o‘ylagan.' },
+          { q: '«Majoziy ishq haqiqiy ishq bilan almashdi» — qanday tushunasiz?', a: 'Insonga bo‘lgan pok muhabbat oxir-oqibat Yaratganga bo‘lgan muhabbatga aylandi — Farhod komil oshiq darajasiga yetdi.' },
+        ],
+      },
+      {
+        title: '«Mehnatnoma»',
+        emoji: '⛏️',
+        vs: {
+          q: 'Navoiy dostonni nega «Mehnatnoma» deb ham ataydi?',
+          a: { t: '⛏️ Jismoniy mehnat', pts: ['Tog‘ni kesib ariq qazdi', 'Toshdan qasr qurdi'] },
+          b: { t: '💔 Ishq mashaqqati', pts: ['Hijron, zindon, iztirob', '«Mehnat» — mumtoz tilda azob ma’nosida ham'] },
+        },
+        mission: { t: 'Ijodiy ish', d: 'Farhod va Shirin taqdiriga hamdardlik ifodalovchi ijodiy ish: rasm, qo‘shiq yoki qisqa taqriz tayyorlang.' },
+      },
+    ],
+    pairs: [
+      ['Shopur', 'maktublarni yetkazgan do‘st'],
+      ['Makkora kampir', 'yolg‘on xabar keltirgan'],
+      ['Sabo', 'yengil shamol — xabarchi'],
+      ['Sheruya', 'Xusravni halok qilgan o‘g‘li'],
+      ['Bahrom', 'Farhodning Chinlik do‘sti'],
+      ['Mujovir', 'qabr qo‘riqchisi'],
+      ['Mehinbonu', 'Shirinning xolasi, Arman malikasi'],
+      ['«Mehnatnoma»', 'dostonning ikkinchi nomi'],
+    ],
+    quiz: [
+      { q: 'Maktublarni kim yetkazgan?', options: ['Shopur', 'Bahrom', 'Mulkoro', 'Buzurg Ummid'], answer: 0 },
+      { q: 'Farhodni nima yengdi?', options: ['yolg‘on xabar', 'qilich', 'kasallik', 'ochlik'], answer: 0 },
+      { q: 'Hiylani kim o‘ylab topdi?', options: ['Xusrav va Buzurg Ummid', 'Mehinbonu', 'Sheruya', 'Shopur'], answer: 0 },
+      { q: 'Farhod o‘limi oldidan kimga salom yo‘llamaydi?', options: ['Shiringa', 'onasiga', 'Shopurga', 'Bahromga'], answer: 0 },
+      { q: 'Xusrav kimning qo‘lida halok bo‘ladi?', options: ['o‘g‘li Sheruyaning', 'Farhodning', 'Bahromning', 'Shopurning'], answer: 0 },
+      { q: 'Farhod qabriga kim mujovir bo‘ladi?', options: ['Shopur va Bahrom', 'Mehinbonu', 'Xusrav', 'kampir'], answer: 0 },
+      { q: 'Dostonning ikkinchi nomi:', options: ['«Mehnatnoma»', '«Ishqnoma»', '«Shohnoma»', '«Boburnoma»'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Vafo va sadoqat', 'Hiyla va zulm'],
+      items: [
+        { text: 'Shopur', cat: 0 }, { text: 'makkora kampir', cat: 1 },
+        { text: 'Bahrom', cat: 0 }, { text: 'Xusrav', cat: 1 },
+        { text: 'Shirin', cat: 0 }, { text: 'Buzurg Ummid', cat: 1 },
+        { text: 'Farhod', cat: 0 }, { text: 'Sheruya', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'Dostonning yakuni',
+        items: [
+          'Shirin Farhodga maktub yozadi',
+          'Shopur Farhodni tog‘da topadi',
+          'Farhod javob maktubi yozadi',
+          'Xusrav makkora kampirni yuboradi',
+          'Yolg‘on xabardan Farhod jon beradi',
+          'Shirin Farhod yonida jon beradi',
+          'Bahrom Armanda adolat o‘rnatadi',
+        ],
+      },
+    ],
+    qa: [
+      { q: 'Farhod obrazida Navoiy qanday ideal shaxsni gavdalantirgan?', a: 'Komil inson: ilmli, hunarli, pok, adolatli, ishqda sodiq, xalqqa foydali.' },
+      { q: 'Xusrav va Farhodning qarama-qarshi qo‘yilishi qanday g‘oyani ochadi?', a: 'Zulm va nafs — halokatga, poklik va ishq — abadiyatga olib boradi.' },
+      { q: 'Navoiy hokimiyat va adolat haqida qanday g‘oyalarni ilgari suradi?', a: 'Hukmdor adolatli va saxiy bo‘lishi kerak; zolim shoh oxir-oqibat o‘z farzandi qo‘lida halok bo‘ladi.' },
+    ],
+    odd: [
+      { items: ['Shopur', 'Bahrom', 'Mulkoro', 'Sheruya'], answer: 3, why: 'Sheruya — Farhodning do‘sti emas.' },
+    ],
+    debate: [
+      { claim: 'Doston fojia bilan tugaydi.', pro: 'Bosh qahramonlar halok bo‘ladi.', con: 'Tasavvufiy nazarda bu — g‘alaba: oshiqlar ilohiy vaslga yetadi.' },
+    ],
+    creative: [
+      { task: 'Shopur nomidan Farhod qabri yoniga yozilgan 2 misralik bitik o‘ylab toping.', time: 120 },
+    ],
+  },
+
+  /* ===================== 38. Tasavvufiy timsollar ===================== */
+  {
+    id: 'ad9-farhod-timsollar',
+    source: 'III chorak • 38-dars • 143–145-betlar',
+    title: '«Farhod va Shirin» (mutolaadan so‘ng). Tasavvufiy timsollar',
+    short: 'Doston ramzlari: Farhod — solik, Shirin — Haq jamoli, ajdaho — nafs, ko‘zgu — ko‘ngil',
+    theme: { emoji: '🔮', grad: 'from-teal-900 via-indigo-700 to-purple-500', border: 'border-indigo-200', tag: 'Nazariy ma’lumot • Ramzlar' },
+    lesson: [
+      {
+        title: 'Doston — ramzlar xazinasi',
+        emoji: '🗝️',
+        text: '«Farhod va Shirin»ning bosh maqsadi — ilohiy ishq dardiga duchor bo‘lgan solik (tariqat yo‘liga kirgan oshiq)ning sarguzashtlarini tasvirlash. Har bir obraz va voqea ikkinchi, ramziy ma’noga ega.',
+        reveal: [{ q: 'Solik kim?', a: 'Haqqa yetishishni maqsad qilib, ma’naviy kamolot yo‘liga kirgan inson.' }],
+      },
+      {
+        title: 'Timsollar jadvali',
+        emoji: '📋',
+        table: {
+          head: ['Timsol', 'Ramziy ma’nosi'],
+          rows: [
+            ['Farhod', 'Haqqa yetishishni maqsad qilgan solik'],
+            ['Shirin', 'Haq jamolini o‘zida zohir qilgan timsol (mazhar)'],
+            ['Moniy, Boniy, Qoran', 'Dunyoviy ilmlarni o‘rgatgan ustozlar'],
+            ['Suhaylo', 'Murshidni topishga ko‘maklashgan birinchi pir'],
+            ['Xizr', 'Tariqatdagi ikkinchi pir'],
+            ['Suqrot', 'Piri murshid, komil inson'],
+            ['Ajdaho', 'Nafs'],
+            ['Dev', 'Saltanat (hokimiyatga muhabbat)'],
+            ['Sher', 'G‘azab'],
+            ['Temir paykar', 'Ro‘yo, yolg‘on dunyo'],
+            ['Jamshid jomi', 'Ko‘ngil kaliti'],
+            ['Oyinayi jahonnamo', 'Ko‘ngil'],
+            ['Xusrav, Sheruya, kampir', 'Nafsga qul bo‘lgan bandalar'],
+          ],
+        },
+        mission: { t: 'Daftarga', d: 'Jadvalni daftaringizga ko‘chiring.', sec: 300 },
+      },
+      {
+        title: 'Syujet ramzlari',
+        emoji: '🧭',
+        steps: [
+          { e: '😔', t: 'Tug‘ilishdan g‘amginlik', d: 'Ishq — Allohning xos bandalariga ato etilgan ne’mat.' },
+          { e: '🏛️', t: 'Qasrlar ham, hunar ham g‘amni aritmaydi', d: 'Ishq ehtiyojini dunyo boyligi va dunyoviy ilm qondira olmaydi.' },
+          { e: '🐉', t: 'Ajdaho, dev, sherni yengish', d: 'Solikda nafs, hokimiyat ishqi, g‘azab bo‘lmasligi kerak.' },
+          { e: '🪞', t: 'Ko‘zguda Shirinni ko‘rish', d: 'Ko‘ngil siri — Haq diydori ekanini anglash; jazba holati.' },
+          { e: '⛏️', t: 'Toshdan qasr, ariq', d: 'Solik diydor yo‘lida riyozat (mashaqqat) chekadi.' },
+          { e: '🕊️', t: 'Farhod va Shirin o‘limi', d: 'Haqqa oshiqlar ilohiy vaslga musharraf bo‘ladi.' },
+        ],
+      },
+      {
+        title: 'Ramzni toping!',
+        emoji: '🎯',
+        reveal: [
+          { q: '🐉 Ajdaho', a: 'Nafs' },
+          { q: '🪞 Oyinayi jahonnamo', a: 'Ko‘ngil' },
+          { q: '🧙 Suqrot', a: 'Piri murshid, komil inson' },
+          { q: '👹 Dev', a: 'Saltanat — hokimiyatga muhabbat' },
+          { q: '🦁 Sher', a: 'G‘azab' },
+          { q: '🍷 Jamshid jomi', a: 'Ko‘ngil kaliti' },
+        ],
+      },
+      {
+        title: 'Ustoz nega kerak?',
+        emoji: '🧑‍🏫',
+        text: 'Suhaylo, Xizr, Suqrot — Farhod yo‘lidagi ustozlar. Darslikka ko‘ra, ko‘ngilni anglash uchun ustoz zarur, uning huzuriga poklanib borish shart.',
+        vs: {
+          q: 'Bugun ham shundaymi?',
+          a: { t: '🧑‍🏫 Ustoz shart', pts: ['To‘g‘ri yo‘lni ko‘rsatadi', 'Xatolardan asraydi'] },
+          b: { t: '📱 O‘zim o‘rganaman', pts: ['Kitob va internet bor', 'Mustaqil fikrlash muhim'] },
+        },
+      },
+      {
+        title: 'Yakuniy muhokama',
+        emoji: '💬',
+        reveal: [
+          { q: 'Dostondagi ishq bugungi muhabbat tushunchasidan qanday farqlanadi?', a: 'Navoiyda ishq — ma’naviy kamolot yo‘li, fidoyilik va poklik; bugun ko‘pincha his-tuyg‘u yoki manfaat bilan bog‘lanadi.' },
+          { q: 'Doston ilm va ma’naviyatni qanday uyg‘unlashtiradi?', a: 'Farhod ilmli, hunarli, lekin ilm uning ishq ehtiyojini qondirmaydi — ilm ma’naviyat bilan birga bo‘lishi kerak.' },
+        ],
+        mission: { t: 'Taqriz', d: '«Farhod va Shirin» haqida 6–8 gapli qisqa taqriz yozing.', sec: 600 },
+      },
+    ],
+    pairs: [
+      ['Farhod', 'solik'],
+      ['Shirin', 'Haq jamoli mazhari'],
+      ['Ajdaho', 'nafs'],
+      ['Dev', 'saltanat'],
+      ['Sher', 'g‘azab'],
+      ['Temir paykar', 'yolg‘on dunyo'],
+      ['Oyinayi jahonnamo', 'ko‘ngil'],
+      ['Jamshid jomi', 'ko‘ngil kaliti'],
+    ],
+    quiz: [
+      { q: 'Dostonda ajdaho nimaning ramzi?', options: ['nafs', 'g‘azab', 'saltanat', 'ko‘ngil'], answer: 0 },
+      { q: 'Oyinayi jahonnamo nimaning ramzi?', options: ['ko‘ngil', 'nafs', 'dunyo', 'boylik'], answer: 0 },
+      { q: 'Suqrot qanday timsol?', options: ['piri murshid, komil inson', 'nafs', 'dushman', 'shoh'], answer: 0 },
+      { q: 'Sher nimaning ramzi?', options: ['g‘azab', 'ishq', 'kuch', 'shohlik'], answer: 0 },
+      { q: '«Solik» kim?', options: ['tariqat yo‘liga kirgan oshiq', 'shoh', 'savdogar', 'askar'], answer: 0 },
+      { q: 'Xusrav va Sheruya qanday timsol?', options: ['nafsga qul bo‘lgan bandalar', 'ustozlar', 'pirlar', 'oshiqlar'], answer: 0 },
+      { q: 'Dev nimani anglatadi?', options: ['saltanat — hokimiyat ishqi', 'ko‘ngil', 'ilm', 'do‘stlik'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Yo‘l ko‘rsatuvchilar', 'To‘siqlar'],
+      items: [
+        { text: 'Suqrot', cat: 0 }, { text: 'ajdaho', cat: 1 },
+        { text: 'Xizr', cat: 0 }, { text: 'dev', cat: 1 },
+        { text: 'Suhaylo', cat: 0 }, { text: 'sher', cat: 1 },
+        { text: 'Jamshid jomi', cat: 0 }, { text: 'temir paykar', cat: 1 },
+      ],
+    },
+    sequences: [
+      { title: 'Solikning yo‘li', items: ['Ishq dardi bilan tug‘ilish', 'Dunyoviy ilm va hunar', 'Ustoz izlash', 'Nafs, g‘azab, saltanatni yengish', 'Ko‘ngil sirini anglash', 'Riyozat — mashaqqat', 'Ilohiy vasl'] },
+    ],
+    qa: [
+      { q: 'Nega ishq ehtiyojini dunyo boyliklari qondira olmaydi?', a: 'Ishq ruhiy ehtiyoj; uni moddiy narsa to‘ldira olmaydi.' },
+      { q: 'Farhodning ajdaho, dev, sherni yengishi nimani anglatadi?', a: 'Komil inson nafs, hokimiyat ishqi va g‘azabni yengishi kerak.' },
+    ],
+    odd: [
+      { items: ['Suqrot', 'Xizr', 'Suhaylo', 'Xusrav'], answer: 3, why: 'Xusrav — nafs bandasi, qolganlari ustozlar.' },
+    ],
+    debate: [
+      { claim: 'Dostonni faqat sevgi qissasi deb o‘qish mumkin.', pro: 'Syujet — muhabbat hikoyasi.', con: 'Ramzlarni bilmasa, asarning chuqur ma’nosi ochilmaydi.' },
+    ],
+    creative: [
+      { task: 'Bugungi hayotda «ajdaho» (nafs) qanday ko‘rinishda bo‘lishi mumkin? 2 misol ayting.', time: 90 },
+    ],
+  },
+
+  /* ===================== 39. Bobur — Xatting aro uzoring ===================== */
+  {
+    id: 'ad9-bobur-1',
+    source: 'III chorak • 39-dars • 146–149-betlar',
+    title: 'Zahiriddin Muhammad Bobur. «Xatting aro uzoring...» g‘azali',
+    short: 'Bobur hayoti va merosi; musajja g‘azal, ichki qofiya, yor go‘zalligi tasviri',
+    theme: { emoji: '🌷', grad: 'from-emerald-700 via-green-500 to-rose-500', border: 'border-emerald-200', tag: 'Mumtoz lirika • G‘azal' },
+    lesson: [
+      {
+        title: 'Shoh, shoir, olim',
+        emoji: '👑',
+        steps: [
+          { e: '🏰', t: 'Amir Temur', d: '' },
+          { e: '👤', t: 'Mironshoh', d: '' },
+          { e: '👤', t: 'Sulton Muhammad mirzo', d: '' },
+          { e: '👤', t: 'Abusaid mirzo', d: '' },
+          { e: '👤', t: 'Umarshayx mirzo', d: '' },
+          { e: '⭐', t: 'Zahiriddin Muhammad Bobur', d: 'Amir Temurning beshinchi avlodi. Ismini Xoja Ubaydulloh Ahror valiy qo‘ygan.' },
+        ],
+      },
+      {
+        title: 'Hayot yo‘li',
+        emoji: '🗺️',
+        cards: [
+          { e: '🏔️', t: 'Andijon', d: 'Otasidan keyin hokim bo‘ldi.' },
+          { e: '🕌', t: 'Samarqand', d: 'Ikki bor egalladi, ikki bor qo‘ldan berdi.' },
+          { e: '⛰️', t: 'Kobul va G‘azna', d: 'Yangi davlat qurdi.' },
+          { e: '🐘', t: 'Hindiston', d: 'Boburiylar imperiyasiga asos soldi — 300 yildan ortiq hukmronlik.' },
+        ],
+      },
+      {
+        title: 'Boy meros',
+        emoji: '📚',
+        facts: [
+          { n: '400+', l: 'she’r — «Hind devoni»da' },
+          { n: '20', l: 'yoshida «Xatti Boburiy» yozuvini kashf etgan' },
+          { n: '6', l: 'jildli «Kulliyot» — 2024-yilda nashr' },
+          { n: '1494', l: '«Boburnoma» shu yildan boshlanadi' },
+        ],
+        text: '«Boburnoma» (memuar), «Mubayyin» (fiqh), «Aruz risolasi», «Volidiya» tarjimasi. Bobur — zullisonayn (ikki tilda ijod qilgan) shoir. G‘azallarida yor timsoli ko‘pincha Vatan sog‘inchi bilan hamohang.',
+      },
+      {
+        title: '«Xatting aro uzoring...»',
+        emoji: '🌷',
+        poem: {
+          lines: [
+            'Xatting aro uzoring sabza ichinda lola,',
+            'Ul chashmi purxumoring loladag‘i g‘azola.',
+            'Barcha parilar, ey jon, girdingda zor-u hayron,',
+            'Go‘yo erur namoyon oy tegrasida hola.',
+            'Mehr-u vafoni, ey yor, ko‘p ko‘rdi sendin ag‘yor,',
+            'Javr-u jafoni bisyor qilding manga havola.',
+          ],
+          author: 'Zahiriddin Muhammad Bobur',
+        },
+      },
+      {
+        title: 'Lug‘at va tasvir',
+        emoji: '🔍',
+        reveal: [
+          { q: '🌿 Xat — sabza (maysa), uzor (yuz) — lola', a: 'Yuzdagi mayin tuklar orasidagi chehra — maysa ichidagi lola: bahor manzarasidek tasvir.' },
+          { q: '🦌 Chashmi purxumor — g‘azola', a: 'Mast, xumorli ko‘zlar lolazordagi ohu (kiyik)ga o‘xshatilgan.' },
+          { q: '🌙 Parilar — hola', a: 'Yor atrofidagi parilar oy atrofidagi nurli gardishdek — yor oy, ular uning nuri.' },
+          { q: '💔 Oshiq — yor — ag‘yor', a: 'An’anaviy uchburchak: yor begonaga mehr, oshiqqa jafo ko‘rsatadi — bu oshiqni sinash.' },
+        ],
+      },
+      {
+        title: 'Musajja g‘azal',
+        emoji: '🎼',
+        rule: 'Musajja g‘azalda bayt teng to‘rt bo‘lakka bo‘linadi: 1-, 2-, 3-bo‘laklar o‘zaro qofiyalanadi (ichki qofiya — saj’), 4-bo‘lak esa matladagi asosiy qofiya bilan ohangdosh bo‘ladi.',
+        ruleLabel: 'Nazariya',
+        table: {
+          head: ['Bayt', 'Ichki qofiya', 'Asosiy qofiya'],
+          rows: [
+            ['1', 'uzoring — purxumoring', 'lola — g‘azola'],
+            ['2', 'ey jon — hayron — namoyon', 'hola'],
+            ['3', 'ey yor — ag‘yor — bisyor', 'havola'],
+            ['4', 'pariro‘ — uyqu — tegru', 'nola'],
+            ['5', '…', 'risola'],
+          ],
+        },
+        mission: { t: 'Tinglang va kuylang', d: 'Ozodbek Nazarbekov ijrosidagi «Lola» qo‘shig‘ini tinglang va 5-bayt ichki qofiyalarini toping. Karaoke tarzida kuylab ko‘ring!', sec: 240 },
+      },
+    ],
+    pairs: [
+      ['Xat', 'yuzdagi mayin tuk'],
+      ['Uzor', 'yuz, chehra'],
+      ['Sabza', 'maysa'],
+      ['Purxumor', 'mast, xumorli'],
+      ['G‘azola', 'ohu, kiyik'],
+      ['Hola', 'oy gardishi'],
+      ['Ag‘yor', 'begonalar, raqiblar'],
+      ['Zullisonayn', 'ikki tilda ijod qiluvchi'],
+    ],
+    quiz: [
+      { q: 'Bobur Amir Temurning nechanchi avlodi?', options: ['beshinchi', 'uchinchi', 'ikkinchi', 'yettinchi'], answer: 0 },
+      { q: 'Boburga ism qo‘ygan zot:', options: ['Xoja Ahror valiy', 'Umarshayx mirzo', 'Yunusxon', 'Navoiy'], answer: 0 },
+      { q: '«Xatti Boburiy» nima?', options: ['Bobur kashf etgan yozuv', 'g‘azal', 'devon', 'qal’a'], answer: 0 },
+      { q: '«Hind devoni»da nechta she’r bor?', options: ['400 dan ortiq', '100', '50', '1000'], answer: 0 },
+      { q: 'Yor yuzi nimaga o‘xshatiladi?', options: ['maysa ichidagi lolaga', 'quyoshga', 'atirgulga', 'yulduzga'], answer: 0 },
+      { q: 'G‘azalda ko‘z nimaga o‘xshatiladi?', options: ['g‘azola (ohu)ga', 'yulduzga', 'dengizga', 'olmosga'], answer: 0 },
+      { q: 'Bayt to‘rt bo‘lakka bo‘linib, ichki qofiyalangan g‘azal:', options: ['musajja', 'musammat', 'masnu', 'mustazod'], answer: 0 },
+      { q: 'Boburning qaysi devoni bizgacha yetib kelmagan?', options: ['«Kobul devoni»', '«Hind devoni»', '«Xazoyin ul-maoniy»', '«Badoe’ ul-bidoya»'], answer: 0 },
+    ],
+    sort: {
+      categories: ['O‘xshatilmish', 'O‘xshatish'],
+      items: [
+        { text: 'uzor (yuz)', cat: 0 }, { text: 'lola', cat: 1 },
+        { text: 'xat', cat: 0 }, { text: 'sabza', cat: 1 },
+        { text: 'chashmi purxumor', cat: 0 }, { text: 'g‘azola', cat: 1 },
+        { text: 'parilar davrasi', cat: 0 }, { text: 'hola', cat: 1 },
+      ],
+    },
+    sequences: [
+      { title: 'Boburning hayot yo‘li', items: ['Andijon hokimi', 'Samarqandni egallash', 'Kobul va G‘azna', 'Hindiston', 'Boburiylar imperiyasi'] },
+    ],
+    qa: [
+      { q: 'Bobur g‘azallarida yor timsoli nima bilan hamohang?', a: 'Vatan sog‘inchi va musofirlik iztirobi bilan.' },
+      { q: 'Maqtadagi «yuz» so‘zi orqali qanday san’at yuzaga kelgan?', a: 'Tajnis/iyhom: «yuz» — chehra va 100 soni; «yuz risola» — yuz (sahifa)dagi ko‘z yoshi xatlari.' },
+      { q: 'Yor nega ag‘yorga mehr, oshiqqa jafo ko‘rsatadi?', a: 'Mumtoz an’anada bu oshiq ishqining sinovi; oshiq jafoni ham lutf deb qabul qiladi.' },
+    ],
+    odd: [
+      { items: ['«Boburnoma»', '«Mubayyin»', '«Aruz risolasi»', '«Xamsa»'], answer: 3, why: '«Xamsa» — Navoiy asari.' },
+    ],
+    debate: [
+      { claim: 'Bobur avvalo shoir, keyin shoh.', pro: 'She’rlari va «Boburnoma» abadiy yashaydi.', con: 'U buyuk saltanat asoschisi sifatida tarixni o‘zgartirgan.' },
+    ],
+    creative: [
+      { task: 'Bahor tasviri orqali bir insonning go‘zalligini 2 misrada ifodalang.', time: 120 },
+    ],
+  },
+
+  /* ===================== 40. Bobur — Tishing dur ===================== */
+  {
+    id: 'ad9-bobur-2',
+    source: 'III chorak • 40-dars • 149–152-betlar',
+    title: 'Zahiriddin Muhammad Bobur. «Tishing dur...» g‘azali. Masnu. Tardi aks',
+    short: 'O‘ngdan ham, teskarisiga ham o‘qiladigan sehrli g‘azal: masnu she’r va tardi aks san’ati',
+    theme: { emoji: '🔄', grad: 'from-sky-700 via-indigo-600 to-rose-500', border: 'border-indigo-200', tag: 'Mumtoz lirika • Masnu' },
+    lesson: [
+      {
+        title: 'Sehrli g‘azal',
+        emoji: '🔄',
+        poem: {
+          lines: [
+            'Tishing dur, labing marjon, xading gul, xating rayhon,',
+            'Yuzung hur, soching anbar, so‘zung mul, menging meynon.',
+            'Meynon menging, so‘zing mul, anbar soching, yuzung hur,',
+            'Rayhon xating, xading gul, marjon labing, tishing dur.',
+          ],
+          author: 'Zahiriddin Muhammad Bobur',
+        },
+        reveal: [{ q: 'Ikkinchi bayt birinchisi bilan qanday bog‘liq?', a: 'Birinchi baytning so‘zlari teskari tartibda qaytadi! 1-misra 4-misrada, 2-misra 3-misrada teskari keladi.' }],
+      },
+      {
+        title: 'Yor portreti',
+        emoji: '🎨',
+        table: {
+          head: ['O‘xshatilmish', 'O‘xshatish', 'Ma’nosi'],
+          rows: [
+            ['Tish', 'dur', 'oppoq marvarid'],
+            ['Lab', 'marjon', 'qizil marjon'],
+            ['Xad (yuz)', 'gul', 'nafis, qizg‘ish'],
+            ['Xat', 'rayhon', 'yam-yashil, xushbo‘y'],
+            ['Yuz', 'hur', 'jannat go‘zali'],
+            ['Soch', 'anbar', 'xushbo‘y, qora'],
+            ['So‘z', 'mul (may)', 'mast qiluvchi'],
+            ['Meng (xol)', 'meynon (qora)', 'qora xol'],
+          ],
+        },
+        reveal: [{ q: 'Mumtoz adabiyotda yor so‘zi asalga qiyoslanadi. Bobur nega «mul»ga o‘xshatadi?', a: 'Yorning so‘zi oshiqni mast qiladi, hushidan ayiradi — asaldan ham kuchliroq ta’sir.' }],
+      },
+      {
+        title: 'Masnu she’r',
+        emoji: '💎',
+        rule: 'Masnu (arabcha — «bezakli, san’atli») — bir necha badiiy san’at mahorat bilan qo‘llangan she’r. Unda so‘zlar o‘rni almashtirilib, baytlar teskarisiga o‘qilib, yangi baytlar hosil bo‘ladi.',
+        ruleLabel: 'Nazariya',
+        facts: [
+          { n: '10+', l: 'masnu she’r Bobur lirikasida' },
+          { n: '2', l: 'yo‘nalishda o‘qiladi: o‘ngdan va teskari' },
+        ],
+      },
+      {
+        title: 'Tardi aks',
+        emoji: '↔️',
+        rule: 'Tardi aks (arabcha — «teskari qilib takrorlash») — ikki so‘z yoki birikmani avval bir tartibda, so‘ng o‘rnini almashtirib takrorlash san’ati.',
+        ruleLabel: 'Nazariya',
+        cards: [
+          { e: '➡️', t: 'Balodur manga hajring, davodur manga vasling', d: '' },
+          { e: '⬅️', t: 'Vasling manga davodur, hajring manga balodur', d: '' },
+        ],
+        reveal: [{ q: 'G‘azalda boshdan oxirigacha tardi aks qo‘llangan deyish mumkinmi?', a: 'Ha — har ikki baytdan ikkinchisi birinchisini teskari takrorlaydi; butun g‘azal tardi aks asosiga qurilgan.' }],
+      },
+      {
+        title: 'Tazod — oshiq holati',
+        emoji: '⚖️',
+        vs: {
+          q: 'Qarama-qarshi juftlar',
+          a: { t: '😢 Azob', pts: ['hajr — balo', 'itob — ofat'] },
+          b: { t: '😊 Shifo', pts: ['vasl — davo', 'hadis (so‘z) — darmon'] },
+        },
+        reveal: [{ q: '«Chu Bobur sanga quldur, nazar qil anga zinhor» va teskari varianti — qaysisida hukm qat’iyroq?', a: 'Teskari variantda «Zinhor anga nazar qil» bilan boshlanadi — iltijo kuchliroq, buyruqqa yaqin.' }],
+      },
+      {
+        title: 'Guruh ishi',
+        emoji: '👥',
+        cards: [
+          { e: '1️⃣', t: '1-guruh', d: 'Toq misralar bilan boshlanuvchi baytlarni yozing; qofiya tizimi va raviyni aniqlang.' },
+          { e: '2️⃣', t: '2-guruh', d: 'Juft misralar bilan boshlanuvchi baytlarni yozing; qofiya va raviyni aniqlang.' },
+          { e: '3️⃣', t: '3-guruh', d: 'Yorga berilgan barcha ta’riflarni o‘xshatilmish — o‘xshatish jadvaliga joylang.' },
+        ],
+        mission: { t: 'Doskada', d: 'Har guruh natijasini «Doska»da yozib ko‘rsatsin. G‘azalda ikkita matla va ikkita maqta bor deyish mumkinmi? Tinglang: Ozodbek Nazarbekov ijrosidagi qo‘shiq.', sec: 360 },
+      },
+    ],
+    pairs: [
+      ['Dur', 'marvarid — tish'],
+      ['Marjon', 'qizil tosh — lab'],
+      ['Anbar', 'xushbo‘y modda — soch'],
+      ['Mul', 'may — so‘z'],
+      ['Meng', 'xol'],
+      ['Meynon', 'qora'],
+      ['Tafoxur', 'faxrlanish'],
+      ['Itob', 'malomat, ta’na'],
+    ],
+    quiz: [
+      { q: 'G‘azalda tish nimaga o‘xshatiladi?', options: ['durga', 'marjonga', 'gulga', 'rayhonga'], answer: 0 },
+      { q: 'Lab nimaga o‘xshatiladi?', options: ['marjonga', 'durga', 'anbarga', 'mulga'], answer: 0 },
+      { q: '«Masnu» so‘zining ma’nosi:', options: ['bezakli, san’atli', 'teskari', 'qofiyali', 'qisqa'], answer: 0 },
+      { q: '«Tardi aks» nima?', options: ['so‘zlarni teskari tartibda takrorlash', 'ichki qofiya', 'bo‘rttirish', 'o‘xshatish'], answer: 0 },
+      { q: '«Balodur manga hajring, davodur manga vasling» — qaysi san’at?', options: ['tazod', 'tashbeh', 'talmeh', 'tajnis'], answer: 0 },
+      { q: 'Ko‘z va ko‘ngil g‘azalda kim deb ataladi?', options: ['tafoxur qiluvchilar', 'dushmanlar', 'qullar', 'do‘stlar'], answer: 0 },
+      { q: 'Bobur lirikasida nechtadan ortiq masnu she’r bor?', options: ['10', '2', '50', '100'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Hajr (ayriliq) olami', 'Vasl (visol) olami'],
+      items: [
+        { text: 'balo', cat: 0 }, { text: 'davo', cat: 1 },
+        { text: 'itob', cat: 0 }, { text: 'hadis (so‘z)', cat: 1 },
+        { text: 'ofat', cat: 0 }, { text: 'darmon', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Ko‘z va ko‘ngil nega faxrlanadi?', a: 'Ko‘ngil yor ko‘ziga shaydo, ko‘z yuziga hayron — ikkalasi ham shunday go‘zallikni ko‘rganidan faxrlanadi.' },
+      { q: 'Takror o‘xshatishlar g‘azal mazmuniga qanday ta’sir qiladi?', a: 'Yor go‘zalligi ikki marta, ikki tomondan ta’kidlanadi; she’r musiqiy va sehrli bo‘ladi.' },
+      { q: 'Masnu she’r yozish nega qiyin?', a: 'So‘zlar ham ma’noli, ham teskari tartibda grammatik to‘g‘ri bo‘lishi kerak.' },
+    ],
+    odd: [
+      { items: ['dur', 'marjon', 'anbar', 'qilich'], answer: 3, why: 'Qilich yor portretida yo‘q.' },
+      { items: ['masnu', 'tardi aks', 'tazod', 'roman'], answer: 3, why: 'Roman — janr, qolganlari badiiy san’atlar.' },
+    ],
+    debate: [
+      { claim: 'Masnu she’r — so‘z o‘yini, unda tuyg‘u kam.', pro: 'Shakl mazmundan ustun chiqadi.', con: 'Bobur shaklni ham, tuyg‘uni ham birlashtirgan.' },
+    ],
+    creative: [
+      { task: 'O‘zingiz tardi aks qiling: «Kitob — do‘stim, do‘stim — kitob» kabi bir misra tuzing.', time: 90 },
+      { task: 'Do‘stingizni 4 ta o‘xshatish bilan tasvirlang (ko‘zi — ..., so‘zi — ...).', time: 90 },
+    ],
+  },
+];
+
 const CONTENT = {
-  adabiyot: { 8: [...ADABIYOT_8, ...ADABIYOT_8_P2, ...ADABIYOT_8_P3, ...ADABIYOT_8_P4, ...ADABIYOT_8_P5], 9: [...ADABIYOT_9, ...ADABIYOT_9_P2, ...ADABIYOT_9_P3] },
+  adabiyot: { 8: [...ADABIYOT_8, ...ADABIYOT_8_P2, ...ADABIYOT_8_P3, ...ADABIYOT_8_P4, ...ADABIYOT_8_P5], 9: [...ADABIYOT_9, ...ADABIYOT_9_P2, ...ADABIYOT_9_P3, ...ADABIYOT_9_P4] },
   'ona-tili': { 8: [...ONA_TILI_8, ...ONA_TILI_8_PART2, ...ONA_TILI_8_PART3, ...ONA_TILI_8_PART4, ...ONA_TILI_8_PART5, ...ONA_TILI_8_PART6, ...ONA_TILI_8_PART7, ...ONA_TILI_8_PART8], 9: [...ONA_TILI_9, ...ONA_TILI_9_P2, ...ONA_TILI_9_P3, ...ONA_TILI_9_P4, ...ONA_TILI_9_P5, ...ONA_TILI_9_P6, ...ONA_TILI_9_P7, ...ONA_TILI_9_P8] },
 };
 
