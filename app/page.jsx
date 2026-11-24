@@ -22,6 +22,8 @@ import {
   Highlighter, Wand2, MoveUpRight, Square, Circle, Eraser, Undo2, Redo2, FilePlus2, Download,
   Quote, Mail,
 } from 'lucide-react';
+import { FizCalc, FizSim, FizLab, FizExperiment } from './fizika/lab';
+import { FIZIKA_9 } from './fizika/fizika9';
 
 /* ============================================================
    1. MOCK MA’LUMOTLAR
@@ -33673,6 +33675,7 @@ const ADABIYOT_9_P7 = [
 ];
 
 const CONTENT = {
+  fizika: { 9: [...FIZIKA_9] },
   adabiyot: { 8: [...ADABIYOT_8, ...ADABIYOT_8_P2, ...ADABIYOT_8_P3, ...ADABIYOT_8_P4, ...ADABIYOT_8_P5], 9: [...ADABIYOT_9, ...ADABIYOT_9_P2, ...ADABIYOT_9_P3, ...ADABIYOT_9_P4, ...ADABIYOT_9_P5, ...ADABIYOT_9_P6, ...ADABIYOT_9_P7] },
   'ona-tili': { 8: [...ONA_TILI_8, ...ONA_TILI_8_PART2, ...ONA_TILI_8_PART3, ...ONA_TILI_8_PART4, ...ONA_TILI_8_PART5, ...ONA_TILI_8_PART6, ...ONA_TILI_8_PART7, ...ONA_TILI_8_PART8], 9: [...ONA_TILI_9, ...ONA_TILI_9_P2, ...ONA_TILI_9_P3, ...ONA_TILI_9_P4, ...ONA_TILI_9_P5, ...ONA_TILI_9_P6, ...ONA_TILI_9_P7, ...ONA_TILI_9_P8] },
 };
@@ -33866,6 +33869,7 @@ function gameAvailable(gameId, topic) {
   if (gameId === 'creative') return (topic.creative || []).length > 0;
   if (gameId === 'letters') return (topic.letters || []).length >= 3;
   if (gameId === 'spell') return (topic.spell || []).length >= 3;
+  if (gameId === 'units') return (topic.units || []).length >= 3;
   return false;
 }
 
@@ -33886,6 +33890,7 @@ const GAMES = [
   { id: 'debate', name: 'Bahs maydoni', desc: 'Ikki tomon dalil keltiradi, o‘qituvchi baholaydi', icon: Scale, color: 'bg-amber-600', fresh: true },
   { id: 'letters', name: 'Qaysi harf?', desc: 'x yoki h? q yoki k? Tushgan harfni toping', icon: Type, color: 'bg-violet-700', fresh: true },
   { id: 'spell', name: 'Imlo bellashuvi', desc: 'Ikki yozilishdan to‘g‘risini 10 soniyada tanlang', icon: SpellCheck2, color: 'bg-emerald-700', fresh: true },
+  { id: 'units', name: 'Birlik o‘tkazish', desc: 'km/soat → m/s, °C → K: tez va to‘g‘ri o‘tkazing', icon: Repeat, color: 'bg-cyan-700', fresh: true },
   { id: 'creative', name: 'Ijodiy topshiriq', desc: 'Yopiq karta, taymer va yulduzli baho', icon: Palette, color: 'bg-fuchsia-700', fresh: true },
 ];
 
@@ -33898,6 +33903,7 @@ const GAME_GROUPS = [
   { ids: ['boom', 'race'], take: 1 },
   { ids: ['sequence', 'odd', 'debate', 'creative'], take: 2 },
   { ids: ['letters', 'spell'], take: 2 },
+  { ids: ['units'], take: 1 },
 ];
 const THINK_GAMES = ['sequence', 'odd', 'debate', 'creative'];
 function featuredGames(topic, index) {
@@ -37343,6 +37349,11 @@ function SlideExtras({ s }) {
         </div>
       )}
 
+      {s.sim && <FizSim sim={s.sim} />}
+      {s.calc && <FizCalc calc={s.calc} />}
+      {s.experiment && <FizExperiment ex={s.experiment} />}
+      {s.lab && <FizLab lab={s.lab} />}
+
       {s.vs && <XVote vs={s.vs} />}
 
       {s.reveal?.length > 0 && (
@@ -37447,9 +37458,12 @@ function LessonScreen({ topic, onBack, onGames }) {
   const topRef = useRef(null);
   const [draw, setDraw] = useState(false);
   const notes = useRef({});
+  const labIdx = slides.findIndex((sl) => sl.lab);
 
   useEffect(() => {
     const onKey = (e) => {
+      const tag = e.target?.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || e.target?.isContentEditable) return;
       if (e.key === 'ArrowRight') setI((x) => Math.min(x + 1, slides.length - 1));
       if (e.key === 'ArrowLeft') setI((x) => Math.max(x - 1, 0));
     };
@@ -37470,6 +37484,11 @@ function LessonScreen({ topic, onBack, onGames }) {
         subtitle={topic.source ? `Dars tushuntirish • ${topic.source}` : 'Dars tushuntirish'}
         onBack={onBack}
         right={<div className="flex flex-wrap gap-2">
+          {labIdx >= 0 && (
+            <button onClick={() => setI(labIdx)} className="dp-btn inline-flex items-center gap-2 rounded-2xl bg-ink px-5 py-3 text-lg font-black text-white hover:bg-blue-900">
+              <FlaskConical size={22} /> Laboratoriya
+            </button>
+          )}
           <button onClick={() => setDraw(true)} className="dp-btn inline-flex items-center gap-2 rounded-2xl bg-firuza-500 px-5 py-3 text-lg font-black text-white hover:bg-firuza-600">
             <PenLine size={22} /> Chizish
           </button>
@@ -38437,6 +38456,12 @@ function QuizGame({ topic, award, nextTurn, onFinish }) {
       )}
     </div>
   );
+}
+
+/* Birlik o‘tkazish (fizika) — Test dvigateli, topic.units savollari bilan */
+function UnitsGame(props) {
+  const t = useMemo(() => ({ ...props.topic, quiz: props.topic.units || [] }), [props.topic]);
+  return <QuizGame {...props} topic={t} />;
 }
 
 /* 4) Joyda */
@@ -40043,6 +40068,7 @@ function PlayScreen({ game, topic, teams, turn, award, nextTurn, adjust, gameKey
         {game.id === 'letters' && <LetterGame key={gameKey} {...props} teamName={teams[turn]?.name} />}
         {game.id === 'spell' && <SpellGame key={gameKey} {...props} teamName={teams[turn]?.name} />}
         {game.id === 'creative' && <CreativeGame key={gameKey} {...props} teamName={teams[turn]?.name} />}
+        {game.id === 'units' && <UnitsGame key={gameKey} {...props} />}
       </div>
     </div>
   );
