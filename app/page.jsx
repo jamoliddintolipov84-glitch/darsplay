@@ -31845,8 +31845,1010 @@ const ADABIYOT_9_P5 = [
   },
 ];
 
+const ADABIYOT_9_P6 = [
+  /* ===================== 51. 3-CHSB ===================== */
+  {
+    id: 'ad9-chsb-3',
+    source: 'III chorak • 51-dars • 3-CHSB (40 ball)',
+    title: '3-CHSB. III chorak bo‘yicha summativ baholash',
+    short: 'Navoiy, Bobur, Jek London va Cho‘lpon bo‘yicha takrorlash va yozma ish',
+    theme: { emoji: '🏁', grad: 'from-slate-900 via-emerald-800 to-amber-500', border: 'border-amber-200', tag: 'Chorak summativ baholash' },
+    lesson: [
+      {
+        title: 'III chorak xaritasi',
+        emoji: '🗺️',
+        steps: [
+          { e: '📜', t: 'Alisher Navoiy', d: 'Xamsanavislik, «Farhod va Shirin», tasavvufiy timsollar.' },
+          { e: '🧭', t: 'Zahiriddin Muhammad Bobur', d: '«Xatting aro uzoring...», «Tishing dur...», masnu, tardi aks, «Boburnoma».' },
+          { e: '🎙️', t: '3-BSB. Audiomatn', d: 'Ifodali o‘qish: intonatsiya, pauza, temp.' },
+          { e: '🐺', t: 'Jek London', d: '«Hayotga muhabbat» — inson va tabiat kurashi.' },
+          { e: '🌟', t: 'Cho‘lpon', d: '«Ko‘ngil», «Buzilgan o‘lkaga», «Uyqu».' },
+        ],
+      },
+      {
+        title: 'Tez takrorlash',
+        emoji: '⚡',
+        reveal: [
+          { q: 'Turkiy tilda birinchi «Xamsa»ni kim yaratgan?', a: 'Alisher Navoiy (1483–1485).' },
+          { q: 'Farhodni nima yengdi?', a: 'Xusrav va Buzurg Ummid o‘ylab topgan yolg‘on xabar.' },
+          { q: 'Dostonda ajdaho nimaning ramzi?', a: 'Nafs.' },
+          { q: '«Tardi aks» nima?', a: 'So‘zlarni teskari tartibda takrorlash san’ati.' },
+          { q: 'Yo‘lovchi Billning oltinini nima qildi?', a: 'Olmadi — insoniylikni saqladi.' },
+          { q: 'Cho‘lpon taxallusining ma’nosi?', a: '«Tong yulduzi».' },
+        ],
+      },
+      {
+        title: 'Qahramonlar galereyasi',
+        emoji: '🖼️',
+        cards: [
+          { e: '⛏️', t: 'Farhod', d: 'Komil inson: ilmli, hunarli, ishqda sodiq.' },
+          { e: '👑', t: 'Xusrav', d: 'Nafsga qul bo‘lgan zolim shoh.' },
+          { e: '🤝', t: 'Shopur', d: 'Sodiq do‘st, maktublarni yetkazgan.' },
+          { e: '🧍', t: 'Yo‘lovchi', d: 'Hayotga muhabbati o‘limdan kuchli.' },
+          { e: '🐍', t: 'Bill', d: 'Do‘stini tashlab, oltinni tashlamagan.' },
+          { e: '❤️', t: 'Ko‘ngil', d: 'Cho‘lpon savol bergan xalq ruhi.' },
+        ],
+      },
+      {
+        title: 'Ish tuzilmasi (taxminiy)',
+        emoji: '🧾',
+        text: 'Ustoz o‘z topshiriqlariga ko‘ra o‘zgartirishi mumkin:',
+        table: {
+          head: ['Qism', 'Topshiriq', 'Ball'],
+          rows: [
+            ['1', 'Test: 10 ta savol', '10'],
+            ['2', 'Moslashtirish: asar — muallif — qahramon', '5'],
+            ['3', 'Ramz va badiiy san’atni aniqlash (timsol, tardi aks, tazod)', '10'],
+            ['4', 'Qisqa javob: 3 ta savolga 2–3 gapdan', '9'],
+            ['5', 'Ijodiy: «Farhod va yo‘lovchi — ikki iroda» (5–6 gap)', '6'],
+          ],
+        },
+        mission: { t: 'Yozma ish', d: 'Ish varaqasini oling. Diqqat bilan o‘qing, vaqtni taqsimlang, oxirida tekshiring. Omad!', sec: 1800 },
+      },
+    ],
+    pairs: [
+      ['Alisher Navoiy', '«Farhod va Shirin»'],
+      ['Nizomiy Ganjaviy', 'birinchi «Xamsa»'],
+      ['Bobur', '«Boburnoma»'],
+      ['Akmal Nur', '«Armon» surati'],
+      ['Jek London', '«Hayotga muhabbat»'],
+      ['Cho‘lpon', '«Buzilgan o‘lkaga»'],
+      ['Shopur', 'sodiq do‘st'],
+      ['Bill', 'xiyonatkor hamroh'],
+    ],
+    quiz: [
+      { q: 'Farhod qayerga qamaladi?', options: ['Salosil qo‘rg‘oniga', 'Madoyinga', 'g‘orga', 'Chinga'], answer: 0 },
+      { q: 'Xusrav kimning qo‘lida halok bo‘ladi?', options: ['o‘g‘li Sheruyaning', 'Farhodning', 'Bahromning', 'Shopurning'], answer: 0 },
+      { q: 'Oyinayi jahonnamo nimaning ramzi?', options: ['ko‘ngil', 'nafs', 'boylik', 'dunyo'], answer: 0 },
+      { q: 'Bobur Amir Temurning nechanchi avlodi?', options: ['beshinchi', 'uchinchi', 'ikkinchi', 'yettinchi'], answer: 0 },
+      { q: 'G‘azalda tish nimaga o‘xshatiladi?', options: ['durga', 'marjonga', 'gulga', 'rayhonga'], answer: 0 },
+      { q: '«Armon» suratida Bobur qanday tasvirlangan?', options: ['taxtga teskari o‘tirgan', 'otda', 'jangda', 'kitob o‘qiyotgan'], answer: 0 },
+      { q: 'Yo‘lovchi necha dona gugurtni sanaydi?', options: ['67', '100', '12', '7'], answer: 0 },
+      { q: 'Yo‘lovchini kim qutqaradi?', options: ['kit ovchilari', 'Bill', 'hindular', 'askarlar'], answer: 0 },
+      { q: '«Ko‘ngil» she’rida «kishan» nimaning ramzi?', options: ['qullik, erksizlik', 'bezak', 'boylik', 'muhabbat'], answer: 0 },
+      { q: '«Uyqu» she’rida oshiq o‘zini qanday ataydi?', options: ['o‘ksuk', 'shoh', 'bahodir', 'darvesh'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Mumtoz adabiyot', 'Yangi davr adabiyoti'],
+      items: [
+        { text: '«Farhod va Shirin»', cat: 0 }, { text: '«Ko‘ngil»', cat: 1 },
+        { text: '«Tishing dur...»', cat: 0 }, { text: '«Hayotga muhabbat»', cat: 1 },
+        { text: '«Boburnoma»', cat: 0 }, { text: '«Buzilgan o‘lkaga»', cat: 1 },
+        { text: 'Xamsa', cat: 0 }, { text: '«Uyqu»', cat: 1 },
+      ],
+    },
+    sequences: [
+      { title: 'III chorak darslari tartibi', items: ['Xamsanavislik', '«Farhod va Shirin»', 'Bobur g‘azallari', '3-BSB. Audiomatn', '«Hayotga muhabbat»', 'Cho‘lpon she’rlari'] },
+    ],
+    qa: [
+      { q: 'Farhod va Xusrav ziddiyati qanday g‘oyani ochadi?', a: 'Zulm va nafs — halokatga, poklik va ishq — abadiyatga olib boradi.' },
+      { q: '«Hayotga muhabbat» nomini izohlang.', a: 'Qahramonni oltin ham, kuch ham emas, aynan yashash istagi qutqardi.' },
+      { q: '«Buzilgan o‘lkaga»da «nega?» takrori nima uchun?', a: 'Og‘riqni kuchaytiradi, xalqni o‘ylashga va uyg‘onishga chorlaydi.' },
+    ],
+    odd: [
+      { items: ['Farhod', 'Shopur', 'Bahrom', 'Bill'], answer: 3, why: 'Bill — Jek London hikoyasidan, qolganlari «Farhod va Shirin»dan.' },
+    ],
+    debate: [
+      { claim: 'III chorakning eng ta’sirli asari — «Farhod va Shirin».', pro: 'Ishq, hunar, adolat — hammasi bir dostonda.', con: '«Hayotga muhabbat» va Cho‘lpon she’rlari ham qalbni larzaga soldi.' },
+    ],
+    creative: [
+      { task: 'III chorakdagi bir qahramonga 1 jumlali «mukofot yorlig‘i» yozing.', time: 60 },
+    ],
+  },
+
+  /* ===================== 52. CHSB tahlili ===================== */
+  {
+    id: 'ad9-chsb-3-tahlil',
+    source: 'III chorak • 52-dars • CHSB tahlili',
+    title: 'CHSB tahlili: III chorak xatolari ustida ishlash',
+    short: 'Tipik xatolar, timsollarni farqlash mashqi va IV chorakka shaxsiy reja',
+    theme: { emoji: '🧭', grad: 'from-sky-800 via-indigo-600 to-pink-400', border: 'border-indigo-200', tag: 'Tahlil • O‘sish rejasi' },
+    lesson: [
+      {
+        title: 'Natijalar — kompas',
+        emoji: '🧭',
+        text: 'Baho — manzil emas, kompas. U qayerda turganingizni va qaysi tomonga yurishingiz kerakligini ko‘rsatadi.',
+        table: {
+          head: ['Qism', 'Sinf o‘rtachasi', 'Eng ko‘p xato'],
+          rows: [['Test', '…', '…'], ['Moslashtirish', '…', '…'], ['Ramz va san’at', '…', '…'], ['Qisqa javob', '…', '…'], ['Ijodiy', '…', '…']],
+        },
+        note: 'Jadvalni ustoz sinf natijalari asosida to‘ldiradi.',
+      },
+      {
+        title: 'Tipik xatolar',
+        emoji: '⚠️',
+        cards: [
+          { e: '🔀', t: 'Qahramonlarni chalkashtirish', d: 'Shopur — sodiq do‘st, Buzurg Ummid — hiylakor; Sheruya — Xusravning o‘g‘li.' },
+          { e: '🐉', t: 'Timsollarni adashtirish', d: 'Ajdaho — nafs, dev — saltanat ishqi, sher — g‘azab, oyina — ko‘ngil.' },
+          { e: '🎨', t: 'San’atlarni farqlamaslik', d: 'Masnu, tardi aks, tazod, musajja — har biri boshqa.' },
+          { e: '📚', t: 'Dalilsiz javob', d: 'Fikr + asardan misol + izoh formulasini unutmang.' },
+        ],
+      },
+      {
+        title: 'Timsollar mashqi',
+        emoji: '🗝️',
+        reveal: [
+          { q: '🐉 Ajdaho', a: 'Nafs.' },
+          { q: '👹 Dev', a: 'Saltanat — hokimiyatga muhabbat.' },
+          { q: '⛓️ Kishan («Ko‘ngil»)', a: 'Mustamlaka zulmi, erksizlik.' },
+          { q: '☁️ Quyuq bulut ko‘lanka', a: 'Yurt ustidagi zulm soyasi.' },
+          { q: '💰 Oltin («Hayotga muhabbat»)', a: 'Hayot oldida qadrsiz bo‘lib qolgan boylik.' },
+        ],
+      },
+      {
+        title: 'Xatolarni tuzatish qadamlari',
+        emoji: '🛠️',
+        steps: [
+          { e: '1', t: 'Xatoni toping', d: 'Ish varaqangizdagi xatolarni belgilang.' },
+          { e: '2', t: 'Sababini aniqlang', d: 'Bilmadim / shoshildim / savolni tushunmadim.' },
+          { e: '3', t: 'To‘g‘risini yozing', d: 'Darslikdan topib, yoniga yozing.' },
+          { e: '4', t: 'Qoida chiqaring', d: '«Keyingi safar ... qilaman».' },
+        ],
+        mission: { t: 'Xatolar daftari', d: '4 qadamni ish varaqangiz bo‘yicha bajaring.', sec: 600 },
+      },
+      {
+        title: 'IV chorakka tayyorgarlik',
+        emoji: '🚀',
+        text: 'Keyingi chorakda bizni Shavkat Rahmon, Richard Bax, Halima Xudoyberdiyeva va Sharof Boshbekovning «Temir xotin» dramasi kutmoqda!',
+        vs: {
+          q: 'O‘zingizni baholang',
+          a: { t: '💪 Kuchli tomonim', pts: ['Qaysi mavzuni yaxshi tushundim?', 'Qaysi usul menga yordam berdi?'] },
+          b: { t: '🎯 Rivojlantiraman', pts: ['Qaysi mavzu qiyin bo‘ldi?', 'Kimdan yordam so‘rayman?'] },
+        },
+        mission: { t: 'Shaxsiy reja', d: '«IV chorakda men ... ga erishaman. Buning uchun har hafta ... qilaman» deb yozing.', sec: 120 },
+      },
+    ],
+    pairs: [
+      ['Ajdaho', 'nafs'],
+      ['Dev', 'saltanat ishqi'],
+      ['Sher', 'g‘azab'],
+      ['Oyinayi jahonnamo', 'ko‘ngil'],
+      ['Buzurg Ummid', 'hiylakor vazir'],
+      ['Tardi aks', 'teskari takror'],
+      ['Masnu', 'bezakli, san’atli she’r'],
+    ],
+    quiz: [
+      { q: 'Sher nimaning ramzi?', options: ['g‘azab', 'ishq', 'kuch', 'shohlik'], answer: 0 },
+      { q: 'Maktublarni kim yetkazgan?', options: ['Shopur', 'Bahrom', 'Mulkoro', 'Buzurg Ummid'], answer: 0 },
+      { q: '«Masnu» ma’nosi:', options: ['bezakli, san’atli', 'teskari', 'qisqa', 'qofiyasiz'], answer: 0 },
+      { q: '«Balodur manga hajring, davodur manga vasling» — qaysi san’at?', options: ['tazod', 'tashbeh', 'talmeh', 'tajnis'], answer: 0 },
+      { q: 'Dalil formulasi:', options: ['fikr + misol + izoh', 'faqat misol', 'faqat fikr', 'savol + savol'], answer: 0 },
+    ],
+    sort: {
+      categories: ['«Farhod va Shirin» timsoli', 'Cho‘lpon ramzi'],
+      items: [
+        { text: 'ajdaho', cat: 0 }, { text: 'kishan', cat: 1 },
+        { text: 'dev', cat: 0 }, { text: 'qora ko‘lanka', cat: 1 },
+        { text: 'oyinayi jahonnamo', cat: 0 }, { text: 'yig‘layotgan buloq', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Siz qaysi qismda eng ko‘p xato qildingiz va nega?', a: 'Erkin javob.' },
+      { q: 'Timsollarni chalkashtirmaslik uchun nima qilish kerak?', a: '«Timsol — ma’no — asar» jadvalini tuzib, takrorlash.' },
+    ],
+    odd: [
+      { items: ['tazod', 'tardi aks', 'masnu', 'tezis'], answer: 3, why: 'Tezis — insho atamasi, qolganlari badiiy san’atlar.' },
+    ],
+    debate: [
+      { claim: 'Xatodan qo‘rqmaslik kerak.', pro: 'Xato — o‘rganish yo‘li.', con: 'Lekin bir xatoni takrorlamaslik kerak.' },
+    ],
+    creative: [
+      { task: 'O‘z xatongizdan bir hikmatli so‘z yasang: «Xato menga ... ni o‘rgatdi».', time: 60 },
+    ],
+  },
+
+  /* ===================== 53. Shavkat Rahmon — 2 she’r ===================== */
+  {
+    id: 'ad9-shrahmon-tun-tong',
+    source: 'IV chorak • 53-dars • 180–183-betlar',
+    title: 'Shavkat Rahmon. «Tungi manzara» va «Tong ochar ko‘zlarin...»',
+    short: 'Zindon va yorug‘ osmon: ikki she’r, ikki kayfiyat, ramz va majoz',
+    theme: { emoji: '🌗', grad: 'from-slate-950 via-indigo-800 to-yellow-300', border: 'border-yellow-200', tag: 'Zamonaviy she’riyat • Qiyos' },
+    lesson: [
+      {
+        title: 'Shoir haqida',
+        emoji: '🖋️',
+        facts: [
+          { n: '1950', l: '12-sentyabr, O‘sh shahri' },
+          { n: 'Shahrixon', l: 'ota-onasining yurti' },
+          { n: 'Lorka', l: 'ispan tilidan to‘g‘ridan-to‘g‘ri tarjima qilgan' },
+          { n: '1996', l: '2-oktyabrda vafot etgan' },
+        ],
+        cards: [
+          { e: '📚', t: 'To‘plamlari', d: '«Rangin lahzalar», «Yurak qirralari», «Uyg‘oq tog‘lar», «Abadiyat oralab».' },
+          { e: '🌍', t: 'Tarjimalari', d: 'Turk, rus, polyak, eston she’riyati; Lorka — «Eng qayg‘uli shodlik».' },
+        ],
+      },
+      {
+        title: 'O‘ylab ko‘ring!',
+        emoji: '🤔',
+        reveal: [
+          { q: 'Ramz nima?', a: 'Narsa yoki obraz orqali boshqa, chuqurroq tushunchani anglatish (kishan — qullik).' },
+          { q: 'Majoz (allegoriya) nima?', a: 'Butun voqea yoki tasvir orqali yashirin fikrni ifodalash.' },
+          { q: 'Shoir nega ochiq aytmay, ramz qo‘llaydi?', a: 'Ta’sirni kuchaytirish, o‘quvchini o‘ylatish; ba’zan davr senzurasidan himoyalanish.' },
+        ],
+      },
+      {
+        title: 'Ikki she’r — ikki dunyo',
+        emoji: '🌗',
+        text: 'Ikkala she’rni darslikdan (181–182-betlar) ovoz chiqarib, birin-ketin o‘qing.',
+        vs: {
+          q: 'Qaysi she’r kayfiyatingizga ko‘proq ta’sir qildi?',
+          a: { t: '🌑 «Tungi manzara»', pts: ['Jim o‘rmon, ingroqli tun', 'Chohga tashlangan bahodir', 'Tuynukdan tushgan xira nur'] },
+          b: { t: '🌅 «Tong ochar ko‘zlarin...»', pts: ['Sevinchdan yig‘lagan qiyoqlar', 'Mehmonga ketgan qo‘ng‘iz', 'Parvozdagi ninachi-parilar'] },
+        },
+      },
+      {
+        title: 'Zindondagi bahodir',
+        emoji: '⛓️',
+        text: '«Tungi manzara»dagi lirik qahramon — oti o‘lgan, qilichi singan, chuqur chohga tashlangan jangchi. U o‘zini kim tashlaganini, yorug‘ osmoni qayerda qolganini so‘raydi.',
+        reveal: [
+          { q: 'Qora zindon nimaning ramzi bo‘lishi mumkin?', a: 'Erksizlik, umidsizlik, xiyonat qurboniga aylanish — balki butun bir xalqning ahvoli.' },
+          { q: 'Tuynukni goh-goh yopib turadigan «kimdir» kim?', a: 'Zulm, yovuz kuch; umid nurini ham to‘sib, mazax qilayotgan dushman.' },
+          { q: 'G‘amgin qo‘shiq aytayotgan kim bo‘lishi mumkin?', a: 'Shu chohdagi boshqa mahbuslar, xalqning o‘zi yoki shoirning ichki ovozi.' },
+        ],
+      },
+      {
+        title: 'Chumoliga tanbeh',
+        emoji: '🐜',
+        text: '«Tong ochar ko‘zlarin...»da butun tabiat bayram qiladi. Faqat chumoli hamon ishdan bosh ko‘tarmaydi — shoir unga atrofga bir qarashni maslahat beradi.',
+        quote: { text: 'dunyoni qilma ko‘p masxara', by: 'Shavkat Rahmon' },
+        reveal: [{ q: 'Nega mehnatkash chumoli tanqid qilinadi?', a: 'Faqat mehnat bilan o‘ralashib, hayot go‘zalligini ko‘rmaslik ham kamchilik: tongni, maysalarni sezmagan odam dunyoni mensimagandek bo‘ladi.' }],
+      },
+      {
+        title: 'Uch guruh — uch topshiriq',
+        emoji: '🎲',
+        table: {
+          head: ['Badiiy vosita', '«Tungi manzara»', '«Tong ochar...»'],
+          rows: [
+            ['O‘xshatish (metafora)', '', 'shu’lalar — bolalar'],
+            ['Jonlantirish (tashxis)', 'shamol yig‘lamas', ''],
+            ['Ramz, majoz', 'qora zindon', ''],
+            ['Sifatlash (epitet)', '', 'mehnatkash chumoli'],
+            ['Ritorik savol', '', ''],
+          ],
+        },
+        mission: { t: 'Guruh ishi', d: '1-guruh: obrazlarni qiyoslab esse (150–200 so‘z). 2-guruh: tabiat tasviri haqida taqriz. 3-guruh: jadvalni to‘ldirish. Qur’a — baraban orqali.', sec: 900 },
+      },
+    ],
+    pairs: [
+      ['Shavkat Rahmon', 'O‘shda tug‘ilgan shoir'],
+      ['Lorka', 'ispan shoiri'],
+      ['Qiyoq', 'ingichka bargli o‘t'],
+      ['Sayhon', 'katta tekis maydon'],
+      ['Himoli', 'jalb etuvchi, chiroyli'],
+      ['Ramz', 'yashirin ma’noli obraz'],
+      ['Tashxis', 'jonlantirish'],
+    ],
+    quiz: [
+      { q: 'Shavkat Rahmon qayerda tug‘ilgan?', options: ['O‘sh shahrida', 'Toshkentda', 'Andijonda', 'Samarqandda'], answer: 0 },
+      { q: 'U qaysi ispan shoirini asliyatdan tarjima qilgan?', options: ['Lorka', 'Servantes', 'Neruda', 'Bayron'], answer: 0 },
+      { q: '«Tungi manzara»da lirik qahramon qayerda?', options: ['chuqur zindonda', 'bog‘da', 'tog‘ cho‘qqisida', 'kemada'], answer: 0 },
+      { q: '«Tong ochar ko‘zlarin...»da shoir kimga tanbeh beradi?', options: ['chumoliga', 'qurbaqaga', 'ariga', 'ninachiga'], answer: 0 },
+      { q: 'Ninachilar nimaga o‘xshatiladi?', options: ['parilarga', 'qushlarga', 'yulduzlarga', 'barglarga'], answer: 0 },
+      { q: '«Shu’lalar — bolalar» qaysi vosita?', options: ['o‘xshatish', 'ritorik savol', 'epitet', 'takror'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Qorong‘ilik va umidsizlik', 'Yorug‘lik va quvonch'],
+      items: [
+        { text: 'singan qilich', cat: 0 }, { text: 'jilmaygan chechaklar', cat: 1 },
+        { text: 'qora zindon', cat: 0 }, { text: 'o‘ynoqi shu’lalar', cat: 1 },
+        { text: 'xira nur', cat: 0 }, { text: 'bol so‘ragan arilar', cat: 1 },
+        { text: 'ingroqli tun', cat: 0 }, { text: 'parvozdagi ninachi', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Ikki she’rda tabiat tasvirlanishidan maqsad nima?', a: 'Tabiat orqali lirik qahramon ichki dunyosi ko‘rsatiladi: tun — iztirob, tong — uyg‘onish va quvonch.' },
+      { q: '«Ko‘z ochmoq» iborasining ma’nolari?', a: 'Uyg‘onmoq, tug‘ilmoq, haqiqatni anglamoq; she’rda tongning uyg‘onishi ma’nosida.' },
+    ],
+    odd: [{ items: ['qo‘ng‘iz', 'chigirtka', 'ninachi', 'qilich'], answer: 3, why: 'Qilich — «Tungi manzara»dan, qolganlari tong she’ridagi jonzotlar.' }],
+    debate: [{ claim: 'Har doim mehnat qilish — eng to‘g‘ri yo‘l.', pro: 'Mehnat — farovonlik asosi.', con: 'Shoir aytganidek, hayot go‘zalligini ko‘rishga ham vaqt kerak.' }],
+    creative: [{ task: 'Sinf derazasidan ko‘ringan manzarani jonlantirish bilan 2 misrada tasvirlang.', time: 120 }],
+  },
+
+  /* ===================== 54. Shavkat Rahmon — Jangda o‘lgan emas ===================== */
+  {
+    id: 'ad9-shrahmon-jang',
+    source: 'IV chorak • 54-dars • 184–185-betlar',
+    title: 'Shavkat Rahmon. «Jangda o‘lgan emas...»',
+    short: 'Bahodirlarni yengilmas qilgan ham, yiqitgan ham: xiyonat, qo‘rqoqlik va xalq xotirasi',
+    theme: { emoji: '🛡️', grad: 'from-red-950 via-rose-800 to-amber-400', border: 'border-rose-200', tag: 'She’r • Xiyonat va mardlik' },
+    lesson: [
+      {
+        title: 'O‘ylab ko‘ring!',
+        emoji: '🤔',
+        text: 'Qo‘rqoqlik faqat jur‘atsizlikmi yoki u boshqa shakllarda ham namoyon bo‘lishi mumkinmi?',
+        cards: [
+          { e: '😶', t: 'Sukut', d: 'Adolatsizlikni ko‘rib, jim turish.' },
+          { e: '🎭', t: 'Ikkiyuzlamachilik', d: 'Yuzingga do‘st, orqangdan dushman.' },
+          { e: '🗡️', t: 'Xiyonat', d: 'Ishonchni sotish — eng og‘ir qo‘rqoqlik.' },
+        ],
+      },
+      {
+        title: 'She’r g‘oyasi',
+        emoji: '💡',
+        text: 'She’rni darslikdan (184-bet) o‘qing. Shoir xalq afsonalariga murojaat qiladi: na ajdar, na yalmog‘iz, na devlar bahodirlarni yenga olgan. Ularni faqat xiyonat — uyqudagi zarba, zaharli ziyofat, orqadan sanchilgan xanjar yiqitgan.',
+        quote: { text: 'Jangda o‘lgan emas biror bahodir', by: 'Shavkat Rahmon' },
+      },
+      {
+        title: 'Afsonalar va tarix',
+        emoji: '📜',
+        reveal: [
+          { q: 'Qaysi dostonlarda bahodir xiyonat qurboni bo‘ladi?', a: '«Alpomish»da Ultontoz va Qorajonga qarshi hiylalar, «Farhod va Shirin»da yolg‘on xabar.' },
+          { q: 'Farhodga ham bu satrni qo‘llash mumkinmi?', a: 'Ha: Farhodni jangda hech kim yengolmadi, uni Xusrav va Buzurg Ummidning yolg‘on xabari halok qildi.' },
+          { q: 'Nega «shunday bo‘lib kelgan azal-u azal»?', a: 'Tarixda ko‘p qahramonlar ichki xiyonat tufayli halok bo‘lgan — shoir bu achchiq haqiqatni umumlashtiradi.' },
+        ],
+      },
+      {
+        title: 'Bolakay ko‘zidagi tirilish',
+        emoji: '👦',
+        text: 'Bahodir har gal yiqilganda, bolakayning qorachig‘ida qayta tirilganday bo‘ladi.',
+        reveal: [{ q: 'Shoir bu bilan nima demoqchi?', a: 'Qahramonlik g‘oyasi o‘lmaydi: afsona tinglagan har bola yangi bahodirga aylanadi. Xalq xotirasi — eng kuchli qal’a.' }],
+      },
+      {
+        title: 'Badiiy vositalar',
+        emoji: '🎨',
+        table: {
+          head: ['Ifoda', 'Vosita', 'Izoh'],
+          rows: [
+            ['toshday uxlaganda', 'o‘xshatish', 'chuqur uyqu — himoyasizlik'],
+            ['jafokash, ko‘hna Vatan', 'sifatlash (epitet)', 'Vatanning uzoq va og‘ir tarixi'],
+            ['xanjar, nomard tig‘i', 'ramz', 'xiyonat'],
+            ['qo‘rqoqlar o‘ldirgan bahodirlar', '…', 'o‘zingiz izohlang'],
+            ['devlar yengmagan', '…', 'o‘zingiz izohlang'],
+          ],
+        },
+      },
+      {
+        title: 'Bugungi bahodirlik',
+        emoji: '🦸',
+        cards: [
+          { e: '⚖️', t: 'Adolat uchun', d: 'Nohaqlikka qarshi ovoz ko‘tarish.' },
+          { e: '🌳', t: 'Tabiat uchun', d: 'Orolni, daraxtlarni asrash.' },
+          { e: '🤝', t: 'Do‘stlik uchun', d: 'Qiyin paytda do‘stni tashlamaslik.' },
+          { e: '📚', t: 'Ilm uchun', d: 'Bilim bilan Vatanga xizmat.' },
+        ],
+        mission: { t: 'Ijodiy ish', d: '3–4 kishilik guruhlarda «Bugungi bahodir» haqida qisqa hikoya yoki ssenariy rejasini tuzing va she’r g‘oyasi bilan bog‘lang.', sec: 900 },
+      },
+    ],
+    pairs: [
+      ['Asotir', 'afsona, mif'],
+      ['Yalmog‘iz', 'ertak maxluqi'],
+      ['Sinoat', 'sir, mo‘jiza'],
+      ['Nomard', 'qo‘rqoq, pastkash'],
+      ['Kurak', 'yelka suyagi, orqa'],
+      ['Jafokash', 'azob chekkan'],
+    ],
+    quiz: [
+      { q: 'She’rga ko‘ra bahodirlarni nima halok qilgan?', options: ['xiyonat', 'ajdar', 'devlar', 'jang'], answer: 0 },
+      { q: 'Xanjar qayerga sanchilgan?', options: ['orqadan, kurakka', 'yuzga', 'qalqonga', 'otga'], answer: 0 },
+      { q: 'Bahodir kimning ko‘zida qayta tiriladi?', options: ['bolakayning', 'onasining', 'dushmanning', 'shohning'], answer: 0 },
+      { q: '«Jafokash, ko‘hna Vatan» — qaysi vosita?', options: ['sifatlash (epitet)', 'ritorik savol', 'tardi aks', 'takror'], answer: 0 },
+      { q: '«Asotir» ma’nosi:', options: ['afsona', 'tarix kitobi', 'qo‘shiq', 'qurol'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Bahodirni yenga olmagan', 'Bahodirni yiqitgan'],
+      items: [
+        { text: 'yuz boshli ajdar', cat: 0 }, { text: 'zaharli ziyofat', cat: 1 },
+        { text: 'yalmog‘izlar', cat: 0 }, { text: 'orqadan xanjar', cat: 1 },
+        { text: 'devlar', cat: 0 }, { text: 'uyqudagi zarba', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Xiyonat nima, xoin kim?', a: 'Ishonchni oyoq osti qilish; o‘ziga ishongan kishiga yashirincha zarar yetkazuvchi.' },
+      { q: 'Xalq afsonalarida bahodirlarni ideal tasvirlashdan maqsad?', a: 'Yosh avlodga mardlik, sadoqat va Vatan mehrini singdirish.' },
+    ],
+    odd: [{ items: ['xanjar', 'nomard tig‘i', 'zahar', 'qalqon'], answer: 3, why: 'Qalqon — himoya; qolganlari xiyonat qurollari.' }],
+    debate: [{ claim: 'Bahodirlarning soddaligi — ularning ojizligi.', pro: 'Ular hammaga ishonib, hushyorlikni yo‘qotdi.', con: 'Sofdillik — fazilat; aybdor sodda emas, xoin.' }],
+    creative: [{ task: 'Bir jumlada yozing: «Bugun bahodir — bu ...».', time: 60 }],
+  },
+
+  /* ===================== 55. Oqchorloq Jonatan (1) ===================== */
+  {
+    id: 'ad9-bax-1',
+    source: 'IV chorak • 55-dars • 186–196-betlar',
+    title: 'Richard Bax. «Oqchorloq Jonatan Livingston» (1)',
+    short: 'To‘dadan ajralgan qush: parvoz ilmi, quvg‘in va yangi osmon',
+    theme: { emoji: '🕊️', grad: 'from-sky-600 via-cyan-400 to-amber-200', border: 'border-sky-200', tag: 'Jahon adabiyoti • Rivoyat-qissa' },
+    lesson: [
+      {
+        title: 'Uchuvchi yozuvchi',
+        emoji: '✈️',
+        facts: [
+          { n: '1936', l: '23-iyun, Illinoys (AQSh)' },
+          { n: 'Bax', l: 'I. S. Baxning uzoq avlodi' },
+          { n: 'F-84F', l: 'harbiy xizmatda boshqargan qiruvchi samolyot' },
+          { n: '60-yillar', l: 'qissa yozilgan davr' },
+        ],
+        text: 'Barcha asarlari u yoki bu tarzda parvoz mavzusiga bag‘ishlangan: «Biplan», «Hech narsa tasodifiy emas», «Illyuziyalar», «Tanho», «Parvoz».',
+        reveal: [{ q: 'Asar nomi kim sharafiga qo‘yilgan?', a: 'Saksondan ortiq havo poygasida g‘olib bo‘lgan sinovchi-uchuvchi Jon X. Livingston sharafiga.' }],
+      },
+      {
+        title: 'Janr jumbog‘i',
+        emoji: '🧩',
+        cards: [
+          { e: '📖', t: 'Hikoya', d: 'Shunday nom bilan e’lon qilingan.' },
+          { e: '🧚', t: 'Falsafiy ertak', d: 'Gapiradigan qushlar, chuqur fikr.' },
+          { e: '🦊', t: 'Masal', d: 'Qushlar orqali insonlar haqida.' },
+          { e: '📜', t: 'Rivoyat-qissa', d: 'O‘zbekcha tarjimadagi nomi.' },
+        ],
+      },
+      {
+        title: 'To‘da va Jonatan',
+        emoji: '🐦',
+        vs: {
+          q: 'Kim to‘g‘ri yashaydi?',
+          a: { t: '🐟 To‘da', pts: ['Parvoz — ovqat topish vositasi', 'Qayiqdan qirg‘oqqa, qirg‘oqdan qayiqqa', 'Hamma kabi bo‘lish xavfsiz'] },
+          b: { t: '🕊️ Jonatan', pts: ['Parvozning o‘zi — maqsad', 'Tezlik, mahorat, kashfiyot', 'Hayotning mohiyatini izlash'] },
+        },
+      },
+      {
+        title: 'Parvoz zinapoyalari',
+        emoji: '📈',
+        steps: [
+          { e: '🌊', t: 'Past uchish', d: 'Suv betiga tegib-tegmay sirg‘alish.' },
+          { e: '💥', t: 'Muvaffaqiyatsizlik', d: 'Okeanga qulab tushib, «imkoniyatim cheklangan» deydi.' },
+          { e: '🚀', t: 'Rekord', d: 'Qanotlarni yig‘ib, tik sho‘ng‘ib, misli ko‘rilmagan tezlikka erishadi.' },
+          { e: '⚖️', t: 'Kengash', d: 'To‘da uni «beandishalik» uchun quvg‘in qiladi.' },
+          { e: '✨', t: 'Yangi makon', d: 'Nurli ikki qush uni o‘zi kabi fikrlaydiganlar oldiga olib ketadi.' },
+        ],
+      },
+      {
+        title: 'Uch holat',
+        emoji: '🔍',
+        reveal: [
+          { q: '1. Ota-onasining dakkisidan keyin to‘daga qo‘shilishga urinadi.', a: 'Moslashish istagi — lekin qalb chaqirig‘i kuchliroq chiqadi.' },
+          { q: '2. Okeanga qulab, o‘zini «notavon» deb ataydi.', a: 'Umidsizlik lahzasi — har bir izlanuvchi boshidan o‘tkazadi.' },
+          { q: '3. Bergan va’dasini buzadi, ammo o‘zini aybdor sezmaydi.', a: 'Chunki va’da qo‘rquvdan berilgan edi; orzuga sodiqlik muhimroq.' },
+        ],
+      },
+      {
+        title: 'Umrning zavoli',
+        emoji: '⏳',
+        text: 'Muallif umrni qisqartiruvchi uch sababni sanaydi: xunobgarchilik, qo‘rquv va kin-adovat.',
+        table: {
+          head: ['Umr zavoli', 'Jonatan hayotidan misol', 'Yana nima qo‘shardingiz?'],
+          rows: [
+            ['Xunobgarchilik', '…', '…'],
+            ['Qo‘rquv', '…', '…'],
+            ['Kin-adovat', '…', '…'],
+          ],
+        },
+        mission: { t: 'Munozara', d: 'Uch holatni qiyoslab bahslashing, manzur fikrlarni daftarga yozib, oxirida ustozga o‘qib bering.', sec: 600 },
+      },
+    ],
+    pairs: [
+      ['Richard Bax', 'uchuvchi yozuvchi'],
+      ['Jonatan Livingston', 'parvozga oshiq oqchorloq'],
+      ['To‘da', 'faqat ovqat uchun uchadiganlar'],
+      ['Kengash', 'Jonatanni quvg‘in qilgan'],
+      ['Oqchorloq', 'chag‘alay, chayka'],
+      ['Rivoyat-qissa', 'asarning o‘zbekcha janr nomi'],
+    ],
+    quiz: [
+      { q: 'Richard Bax qayerda tug‘ilgan?', options: ['AQShda', 'Angliyada', 'Fransiyada', 'Germaniyada'], answer: 0 },
+      { q: 'To‘da uchun parvoz nima?', options: ['ovqat topish vositasi', 'san’at', 'maqsad', 'o‘yin'], answer: 0 },
+      { q: 'Jonatan nimani o‘rganadi?', options: ['parvoz sirlarini', 'baliq ovlashni', 'uya qurishni', 'suzishni'], answer: 0 },
+      { q: 'Kengash Jonatanni qanday jazolaydi?', options: ['quvg‘in qiladi', 'maqtaydi', 'rahbar qiladi', 'kechiradi'], answer: 0 },
+      { q: 'Asar nomi kim sharafiga qo‘yilgan?', options: ['uchuvchi Jon X. Livingston', 'yozuvchining otasi', 'kapitan', 'olim'], answer: 0 },
+    ],
+    sort: {
+      categories: ['To‘da qadriyati', 'Jonatan qadriyati'],
+      items: [
+        { text: 'luqma talashish', cat: 0 }, { text: 'tezlik rekordi', cat: 1 },
+        { text: 'hamma kabi bo‘lish', cat: 0 }, { text: 'erkin parvoz', cat: 1 },
+        { text: 'qoidaga ko‘r-ko‘rona bo‘ysunish', cat: 0 }, { text: 'hayot mohiyatini izlash', cat: 1 },
+      ],
+    },
+    sequences: [{ title: '1-qism voqealari', items: ['Jonatan yolg‘iz mashq qiladi', 'Ota-onasi dakki beradi', 'Okeanga qulab tushadi', 'Tezlik rekordini o‘rnatadi', 'Kengash uni quvg‘in qiladi', 'Nurli qushlar uni olib ketadi'] }],
+    qa: [
+      { q: 'R. Baxning hayot yo‘li qaysi adibni eslatadi?', a: 'Antuan de Sent-Ekzyuperi — u ham uchuvchi yozuvchi edi.' },
+      { q: 'Nega Jonatan ochlikka qaramay mashq qiladi?', a: 'Uning uchun bilim va mahorat ovqatdan ham muhimroq.' },
+    ],
+    odd: [{ items: ['oqchorloq', 'chag‘alay', 'chayka', 'burgut'], answer: 3, why: 'Qolganlari bir qushning nomlari.' }],
+    debate: [{ claim: 'Jonatan to‘dani tark etib to‘g‘ri qildi.', pro: 'Orzusiga sodiq qoldi.', con: 'Jamoadan ajralish — yolg‘izlik; balki to‘dani o‘zgartirish kerak edi.' }],
+    creative: [{ task: 'Sizning «parvozingiz» — eng katta orzuingizni bir jumlada yozing.', time: 60 }],
+  },
+
+  /* ===================== 56. Oqchorloq Jonatan (2) ===================== */
+  {
+    id: 'ad9-bax-2',
+    source: 'IV chorak • 56-dars • 197–205-betlar',
+    title: 'Richard Bax. «Oqchorloq Jonatan Livingston» (2)',
+    short: 'Ustoz Chiang, komillik siri, shogird Fletcher va to‘daga qaytish',
+    theme: { emoji: '☀️', grad: 'from-amber-500 via-orange-400 to-sky-500', border: 'border-amber-200', tag: 'Rivoyat-qissa • Komillik' },
+    lesson: [
+      {
+        title: 'Yangi olam, yangi ustoz',
+        emoji: '🧓',
+        cards: [
+          { e: '🦅', t: 'Salliven', d: 'Yo‘l ko‘rsatuvchi ustoz, so‘zsiz tushunadigan do‘st.' },
+          { e: '🌕', t: 'Ustoz Chiang', d: 'Mahorat cho‘qqisidagi oqsoqol.' },
+          { e: '🐣', t: 'Fletcher Lind', d: 'To‘dadan quvilgan yosh qush — Jonatanning shogirdi.' },
+          { e: '🪽', t: 'Meynard', d: 'Qanoti singan qush — «Sen ozodsan» so‘zi bilan uchadi.' },
+        ],
+      },
+      {
+        title: 'Komillik siri',
+        emoji: '✨',
+        text: 'Jonatan uzoq vaqt Chiangning saboqlarini tushunolmaydi. Bir kuni qirg‘oqda ko‘zlarini yumib, diqqatini bir nuqtaga jamlaganda chaqmoqdek anglab yetadi: hech qanday kuch uni cheklangan doirada ushlab turolmaydi.',
+        reveal: [
+          { q: 'Chiang qanday saboq beradi?', a: 'Haqiqiy erkinlik — tanadagi emas, ongdagi to‘siqlarni yengish; komillikka ichki ishonch bilan erishiladi.' },
+          { q: 'Sharq adabiyotidagi qaysi g‘oyaga o‘xshaydi?', a: 'Komil inson g‘oyasiga: Navoiyda Farhod ham ustoz (Suqrot) yordamida nafsni yengib, kamolga yetadi.' },
+        ],
+      },
+      {
+        title: 'Nega qaytadi?',
+        emoji: '🔁',
+        vs: {
+          q: 'Jonatan to‘daga qaytishi kerakmidi?',
+          a: { t: '🏡 Qaytish', pts: ['U murabbiy bo‘lish uchun yaralgan', 'Bilimga chanqoqlarga yo‘l ko‘rsatish burchi'] },
+          b: { t: '🌌 Qolish', pts: ['To‘da uni quvlagan va jazolagan', 'Yangi olamda o‘rganadigani ko‘p'] },
+        },
+        reveal: [{ q: 'Jonatan qaysi tanlovni qildi?', a: 'Qaytdi: qalbidagi mehr uni o‘zi kabi izlanayotgan qushlarga ilmini berishga undadi.' }],
+      },
+      {
+        title: 'Ustoz va shogird',
+        emoji: '🎓',
+        steps: [
+          { e: '🐣', t: 'Fletcher', d: 'Avval to‘dani kechirishga va bir kun unga qaytishga rozi bo‘ladi.' },
+          { e: '📚', t: 'Mashg‘ulot', d: 'Oddiy to‘g‘ri parvozdan boshlab mahorat sirlari.' },
+          { e: '🚫', t: 'To‘da qarori', d: 'Quvg‘undilarga e’tibor berish taqiqlanadi.' },
+          { e: '🪽', t: '«Sen ozodsan»', d: 'Qanoti singan Meynard ishonch so‘zi bilan osmonga ko‘tariladi.' },
+          { e: '🌅', t: 'Yangi ufqlar', d: 'Jonatan o‘rnini Fletcherga qoldirib, yangi ufqlar sari uchadi.' },
+        ],
+      },
+      {
+        title: 'Iblismi, farishta?',
+        emoji: '⚖️',
+        text: 'To‘da Jonatanni goh iblis, goh farishta deb ataydi. Jonatan esa maqtovlarni rad etadi va hamma qush o‘zi kabi ucha olishini ta’kidlaydi.',
+        quote: { text: 'Seni osongina iblisga yo farishtaga chiqarib qo‘yishadi', by: 'Richard Bax' },
+        reveal: [
+          { q: 'Nega u maqtovga qarshilik qiladi?', a: 'Kamtarlik: u o‘zini alohida mavjudot emas, har bir qushdagi imkoniyatning namunasi deb biladi.' },
+          { q: 'Uni o‘ldirmoqchi bo‘lgan to‘dani qanday sevadi?', a: 'Nafratni emas, ulardagi yaxshilik va imkoniyatni ko‘radi — mehr johillikdan kuchli.' },
+        ],
+      },
+      {
+        title: 'Ikki qonun',
+        emoji: '📜',
+        table: {
+          head: ['«Ozodlik qonuni»', '«To‘da qonuni»'],
+          rows: [
+            ['Har bir qush ucha oladi', 'Qoidadan chetga chiqma'],
+            ['Bilim — eng katta boylik', 'Asosiysi — qorinni to‘yg‘azish'],
+            ['…', '…'],
+            ['…', '…'],
+          ],
+        },
+        mission: { t: 'Tanlang', d: '1) Jadvalni matnga tayanib davom ettiring va taqdim eting yoki 2) «Komillik kaliti» mavzusida esse rejasini tuzing.', sec: 900 },
+      },
+    ],
+    pairs: [
+      ['Chiang', 'ulug‘ ustoz'],
+      ['Salliven', 'yo‘l ko‘rsatuvchi do‘st'],
+      ['Fletcher Lind', 'Jonatanning shogirdi'],
+      ['Meynard', 'qanoti singan qush'],
+      ['Telepatik aloqa', 'so‘zsiz tushunish'],
+      ['Quvg‘undi', 'to‘dadan haydalgan'],
+    ],
+    quiz: [
+      { q: 'Jonatanning ulug‘ ustozi:', options: ['Chiang', 'Fletcher', 'Martin', 'Meynard'], answer: 0 },
+      { q: 'Jonatan to‘daga nega qaytadi?', options: ['ilmini berish uchun', 'ovqat uchun', 'qasos olish uchun', 'majburan'], answer: 0 },
+      { q: 'Meynardni nima uchirdi?', options: ['«Sen ozodsan» so‘zi', 'dori', 'shamol', 'ovqat'], answer: 0 },
+      { q: 'Jonatan o‘rnini kimga qoldiradi?', options: ['Fletcherga', 'Chiangga', 'Sallivenga', 'oqsoqolga'], answer: 0 },
+      { q: 'To‘da oqsoqoli nimani buyuradi?', options: ['quvg‘undilarga e’tibor bermaslikni', 'ulardan o‘rganishni', 'bayram qilishni', 'uchishni'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Jonatan fazilati', 'To‘da illati'],
+      items: [
+        { text: 'kamtarlik', cat: 0 }, { text: 'johillik', cat: 1 },
+        { text: 'kechirimlilik', cat: 0 }, { text: 'hasad', cat: 1 },
+        { text: 'murabbiylik', cat: 0 }, { text: 'quvg‘in qilish', cat: 1 },
+      ],
+    },
+    sequences: [{ title: '2-qism voqealari', items: ['Salliven bilan mashg‘ulot', 'Chiangdan saboq', 'Komillik sirini anglash', 'To‘daga qaytish', 'Fletcher va Meynardni o‘rgatish', 'Yangi ufqlar sari ketish'] }],
+    qa: [
+      { q: 'So‘zsiz tushunish uchun qanday yaqinlik kerak?', a: 'Bir maqsad, bir dard, chuqur ishonch va dildoshlik.' },
+      { q: 'Komillik kaliti nima?', a: 'Maqsad, intilish, izlanish va topa olish; mehr va bilimni boshqalarga ulashish.' },
+    ],
+    odd: [{ items: ['Chiang', 'Salliven', 'Fletcher', 'Farhod'], answer: 3, why: 'Farhod — Navoiy qahramoni.' }],
+    debate: [{ claim: 'Haqiqiy ustoz — shogirdni o‘zidan oshirgan ustoz.', pro: 'Jonatan Fletcherni o‘z o‘rniga tayyorladi.', con: 'Ustozning ham hali o‘rganadigani ko‘p — Jonatan ham yangi ufqqa ketdi.' }],
+    creative: [{ task: 'Qanoti singan sinfdoshingizga aytadigan «Sen ozodsan» kabi kuchli bir jumla yozing.', time: 60 }],
+  },
+
+  /* ===================== 57. Halima Xudoyberdiyeva — Shunchaki ===================== */
+  {
+    id: 'ad9-halima-shunchaki',
+    source: 'IV chorak • 57-dars • 206–208-betlar',
+    title: 'Halima Xudoyberdiyeva. «Shunchaki»',
+    short: 'Yarim-yorti yashamaslik: 11 marta takrorlangan so‘z va shoir qat’iyati',
+    theme: { emoji: '🔥', grad: 'from-rose-800 via-red-500 to-orange-300', border: 'border-rose-200', tag: 'Zamonaviy she’riyat • Lirika' },
+    lesson: [
+      {
+        title: 'Xalq shoirasi',
+        emoji: '🌾',
+        facts: [
+          { n: '1947', l: '17-may, Sirdaryo, Boyovut' },
+          { n: '7-sinf', l: 'onasining oti haqida ilk she’r' },
+          { n: 'Xalq shoiri', l: 'va «El-yurt hurmati» ordeni' },
+          { n: '2018', l: '17-avgustda vafot etgan' },
+        ],
+        text: 'Bolalikda u tunlari she’r yozgan, onasi esa uxlasin deb chiroqni o‘chirib ketavergan — u esa yana yoqavergan. 2019-yilda Sirdaryoda shoira nomidagi ijod maktabi ochilgan.',
+        cards: [
+          { e: '📚', t: 'To‘plamlari', d: '«Ilk muhabbat», «Suyanch tog‘larim», «Bu kunlarga yetganlar bor», «To‘marisning aytgani», «Yo‘ldadirman».' },
+        ],
+      },
+      {
+        title: '«She’r bu — sir»',
+        emoji: '🔮',
+        quote: { text: 'She’r bu — sir', by: 'Halima Xudoyberdiyeva' },
+        text: 'Shoiraning fikricha, she’rni izohlab bo‘lmaydi: u qalb qo‘ridan tug‘iladi va to‘g‘ri yurakka yetadi, uni faqat yurak bilan his qilish kerak.',
+      },
+      {
+        title: '«Shunchaki» — nima?',
+        emoji: '📖',
+        text: 'She’rni darslikdan (207-bet) o‘qing. Unda «shunchaki» so‘zi 11 marta takrorlanadi.',
+        reveal: [
+          { q: 'Lug‘atda «shunchaki» ma’nosi?', a: 'Oddiygina, yuzaki, maqsadsiz, chin dildan emas.' },
+          { q: 'She’rda u qaysi fe’llar bilan keladi?', a: 'O‘ylamoq, kuylamoq, sevmoq, sevilmoq, kulmoq, yig‘lamoq, yozmoq...' },
+          { q: 'Takror nimani ta’kidlaydi?', a: 'Lirik qahramon hech narsani yarim-yorti qilishni istamaydi: sevsa — butun yurak bilan, yig‘lasa — boshqalarni ham yig‘latadigan qilib.' },
+        ],
+      },
+      {
+        title: 'Yonib yashash',
+        emoji: '🔥',
+        vs: {
+          q: 'Qaysi hayot afzal?',
+          a: { t: '🕯️ Shunchaki', pts: ['Tinch, xavfsiz', 'Lekin kemtik, to‘liq emas'] },
+          b: { t: '🔥 Butun qalb bilan', pts: ['Bir charsillab yonish', 'So‘nsa ham, chin yashagan bo‘ladi'] },
+        },
+        reveal: [{ q: 'Bu «Farhod va Shirin»dagi ishq falsafasiga qanday bog‘lanadi?', a: 'Farhod ham ishqni «shunchaki» emas, butun borlig‘i bilan yashadi — ishq unda fidoyilik va kamolot yo‘li.' }],
+      },
+      {
+        title: 'Tasviriy ifodalar',
+        emoji: '🎯',
+        table: {
+          head: ['Ifoda', 'Kimlar haqida?', 'Nima uchun?'],
+          rows: [
+            ['g‘aflat bandalari', 'loqayd, uyqudagilar', 'hayot mohiyatini sezmaydi'],
+            ['yuragi toshlar', '…', '…'],
+            ['qurg‘oq ko‘zlar', '…', '…'],
+          ],
+        },
+        reveal: [{ q: 'Yakuniy fikr: shoir uchun «shunchaki yozish» nima?', a: 'O‘lim bilan teng: ijodkor har bir so‘zi uchun javobgar, yuraksiz yozilgan she’r — o‘lik she’r.' }],
+        mission: { t: 'O‘ylab ko‘ring', d: 'Hayotingizdan qaysi «shunchaki»larni o‘chira olasiz? (Shunchaki dars qilish, shunchaki salom berish...) 3 ta yozing.', sec: 180 },
+      },
+    ],
+    pairs: [
+      ['Boyovut', 'shoira tug‘ilgan tuman'],
+      ['Shunchaki', 'yuzaki, oddiygina'],
+      ['Istehzo', 'kinoya, masxaraomuz kulgi'],
+      ['Molik', 'ega, sohib'],
+      ['G‘aflat bandalari', 'loqayd odamlar'],
+      ['Sim sadolari', 'torning ovozi'],
+    ],
+    quiz: [
+      { q: 'Halima Xudoyberdiyeva qayerda tug‘ilgan?', options: ['Sirdaryoda', 'Xorazmda', 'Namanganda', 'Qashqadaryoda'], answer: 0 },
+      { q: '«Shunchaki» so‘zi she’rda necha marta takrorlanadi?', options: ['11', '3', '7', '20'], answer: 0 },
+      { q: 'Shoira ilk she’rini nima haqida yozgan?', options: ['onasining oti haqida', 'maktab haqida', 'Vatan haqida', 'bahor haqida'], answer: 0 },
+      { q: 'She’r qaysi fikr bilan tugaydi?', options: ['shunchaki yozish shoirga o‘lim', 'sevgi abadiy', 'bahor keldi', 'Vatan go‘zal'], answer: 0 },
+      { q: 'Shoira nomidagi ijod maktabi qachon ochilgan?', options: ['2019', '2000', '1991', '2010'], answer: 0 },
+    ],
+    sort: {
+      categories: ['«Shunchaki» (kemtik)', 'Butun qalb bilan'],
+      items: [
+        { text: 'yuzaki kulgi', cat: 0 }, { text: 'charsillab yonish', cat: 1 },
+        { text: 'loqayd sevgi', cat: 0 }, { text: 'so‘zsiz yig‘latadigan yig‘i', cat: 1 },
+        { text: 'maqsadsiz yozish', cat: 0 }, { text: 'yurakdan kuylash', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: '«Shunchaki sevilmoq» nega baxtiqarolik?', a: 'To‘la baxt uchun chin, fidoyi muhabbat kerak; yuzaki sevgi kemtik.' },
+      { q: 'So‘z va his-tuyg‘u munosabati qanday talqin qilingan?', a: 'Chin tuyg‘u so‘zga muhtoj emas — u o‘z-o‘zidan boshqalarga yetib boradi.' },
+    ],
+    odd: [{ items: ['o‘ylamoq', 'kuylamoq', 'sevmoq', 'uxlamoq'], answer: 3, why: 'She’rda «shunchaki» bilan «uxlamoq» kelmaydi.' }],
+    debate: [{ claim: 'Har ishni butun qalb bilan qilish mumkin emas.', pro: 'Kuch va vaqt cheklangan.', con: 'Hech bo‘lmasa muhim ishlarni «shunchaki» qilmaslik kerak.' }],
+    creative: [{ task: '«Men shunchaki ... istamayman, chunki ...» qolipida bir gap yozing.', time: 60 }],
+  },
+
+  /* ===================== 58. Dorilomon kunlar keldi ===================== */
+  {
+    id: 'ad9-halima-dorilomon',
+    source: 'IV chorak • 58-dars • 209–210-betlar',
+    title: 'Halima Xudoyberdiyeva. «Dorilomon kunlar keldi...»',
+    short: 'Onaga murojaat: olcha guli, qorli kunlar ortidagi bahor va «Bu kunlarga yetganlar bor...»',
+    theme: { emoji: '🌸', grad: 'from-pink-600 via-rose-400 to-lime-300', border: 'border-pink-200', tag: 'She’r • Ona va Vatan' },
+    lesson: [
+      {
+        title: '«Ona o‘ylari»',
+        emoji: '🖼️',
+        text: 'Darslikdagi rassom Rahim Ahmedovning «Ona o‘ylari» portretiga razm soling. Rasmni «o‘qing»: ona nima haqida o‘ylayapti?',
+        reveal: [{ q: 'Rasm va she’r o‘rtasidagi uyg‘unlik?', a: 'Ikkalasida ham sokin, o‘ychan, ko‘p narsani boshidan kechirgan ona — xotira va umid aralash nigoh.' }],
+      },
+      {
+        title: 'Dorilomon kunlar',
+        emoji: '🌤️',
+        text: 'She’rni darslikdan (209-bet) o‘qing. Lirik qahramon bahor kelganini, onasi esa olcha gulini behol ko‘zlariga surtib, hasrat bilan bir gapni takrorlashini tasvirlaydi.',
+        quote: { text: 'Bu kunlarga yetganlar bor, yetmaganlar bor', by: 'Halima Xudoyberdiyeva' },
+        reveal: [
+          { q: '«Dorilomon» ma’nosi?', a: 'Tinch, osoyishta, farovon.' },
+          { q: 'Ona nega «behol» va «so‘lg‘in»?', a: 'Yillar azobi, judolik — u bu kunlarni ko‘rmay ketganlarni (balki turmush o‘rtog‘ini) eslaydi.' },
+          { q: 'Farzand xayolida nega otasi qad rostlaydi?', a: 'Ona so‘zi otani yodga soladi: ikkalasi ham yo‘qotish dardini his qiladi, ammo farzand onani hayotga qaytarmoqchi.' },
+        ],
+      },
+      {
+        title: 'Qorli kunlar va bahor',
+        emoji: '❄️',
+        text: 'She’r 1967-yilda, sho‘rolar davrida yozilgan.',
+        vs: {
+          q: 'Ikki metafora',
+          a: { t: '❄️ Qorli kunlar', pts: ['O‘tmish og‘riqlari', 'Urush, yo‘qotishlar, g‘ash'] },
+          b: { t: '🌸 Dorilomon kunlar', pts: ['Umid, tinchlik', 'Tiriklik bayrami'] },
+        },
+      },
+      {
+        title: 'Obrazlar',
+        emoji: '🌳',
+        cards: [
+          { e: '🌸', t: 'Olcha guli', d: 'Bahor, yangilanish, hayot nafisligi.' },
+          { e: '☀️', t: 'Quyosh', d: 'Ona yuzi kabi issiq va mehrli.' },
+          { e: '🍒', t: 'Mevali shox', d: 'Rizq va umid.' },
+          { e: '👦', t: 'O‘g‘lonlar', d: 'Ona hayotining mevasi — eng shirin ne’mat.' },
+        ],
+        reveal: [{ q: '«Beliga tirgak bo‘lmoq» iborasi nimani bildiradi?', a: 'Suyanch bo‘lish: farzand keksa onaga yelkadosh bo‘lishi — sharqona tarbiya va farzandlik burchi.' }],
+      },
+      {
+        title: 'Yashash — tansiq taom',
+        emoji: '🍯',
+        text: 'Shoira yashashni tansiq taomga qiyoslaydi: unga qo‘l urgan sari ishtaha ochilaveradi.',
+        mission: { t: 'Ona uchun', d: 'Onangizga bahor haqida 3 qatorlik nasriy murojaat yozing: «Onajon, dorilomon kunlar keldi...».', sec: 300 },
+        note: 'Uyda Sherali Jo‘rayev ijrosidagi «Onaginam» qo‘shig‘ini tinglang va undagi dardni so‘z bilan tasvirlang.',
+      },
+    ],
+    pairs: [
+      ['Dorilomon', 'tinch, osoyishta'],
+      ['Behol', 'holsiz'],
+      ['Tirgak', 'suyanch, tayanch'],
+      ['Mahvash', 'oydek go‘zal'],
+      ['Tansiq', 'noyob, mazali'],
+      ['Rahim Ahmedov', '«Ona o‘ylari» rassomi'],
+    ],
+    quiz: [
+      { q: 'She’r kimga murojaat?', options: ['onaga', 'otaga', 'do‘stga', 'yorga'], answer: 0 },
+      { q: 'Ona ko‘zlariga nimani surtadi?', options: ['olcha gulini', 'tuproqni', 'suvni', 'atirgulni'], answer: 0 },
+      { q: 'She’r qachon yozilgan?', options: ['1967-yilda', '1991-yilda', '2010-yilda', '1937-yilda'], answer: 0 },
+      { q: '«Qorli kunlar» nimaning ramzi?', options: ['og‘ir o‘tmish', 'qish bayrami', 'boylik', 'bolalik'], answer: 0 },
+      { q: 'O‘g‘lonlar nimaga o‘xshatiladi?', options: ['meva qadar shirinlik', 'tog‘', 'daryo', 'yulduz'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Iztirob', 'Umid'],
+      items: [
+        { text: 'so‘lg‘in lablar', cat: 0 }, { text: 'olcha guli', cat: 1 },
+        { text: 'qorli kunlar', cat: 0 }, { text: 'tiriklik bayrami', cat: 1 },
+        { text: 'dildagi g‘ash', cat: 0 }, { text: 'quchoq ochgan o‘g‘lonlar', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Takrorlanuvchi misra qanday ma’nolarga ega?', a: 'Tarixiy (urush va qatag‘on qurbonlari), ijtimoiy va shaxsiy (oiladagi yo‘qotish) ma’nolar.' },
+      { q: 'Shoira onani nega davralarga chorlaydi?', a: 'O‘tmish g‘amidan chiqib, bugungi tinch hayotdan bahramand bo‘lishga undaydi.' },
+    ],
+    odd: [{ items: ['olcha', 'quyosh', 'mevali shox', 'kishan'], answer: 3, why: 'Kishan — Cho‘lpon she’ridan.' }],
+    debate: [{ claim: 'O‘tmish og‘riqlarini unutish kerak.', pro: 'Bugungi kunga quvonish uchun.', con: 'Xotira qadrlash — «yetmaganlar»ga hurmat.' }],
+    creative: [{ task: '«Bu kunlarga yetganlar bor...» misrasini bugungi kun bilan bog‘lab 2 gap yozing.', time: 120 }],
+  },
+
+  /* ===================== 59. Yo‘ldadirman. Xulosa ===================== */
+  {
+    id: 'ad9-halima-yolda',
+    source: 'IV chorak • 59-dars • 211–212-betlar',
+    title: 'Halima Xudoyberdiyeva. «Yo‘ldadirman». Xulosa-tahlil',
+    short: 'Yozilmagan xat, o‘ttiz yillik intizorlik va shoira ijodi bo‘yicha xulosa',
+    theme: { emoji: '✉️', grad: 'from-emerald-800 via-teal-500 to-amber-200', border: 'border-teal-200', tag: 'She’r • Intizorlik' },
+    lesson: [
+      {
+        title: 'O‘ylab ko‘ring!',
+        emoji: '⏳',
+        text: 'Kutish va intizorlikni boshdan o‘tkazganmisiz? Kimnidir yoki nimanidir uzoq kutganingizda nimani his qildingiz?',
+        note: 'She’rga rus shoiri Andrey Voznesenskiyning «Yigirma yil o‘tdi intizorlikda» satri epigraf qilib olingan.',
+      },
+      {
+        title: '«Men» va «siz»',
+        emoji: '👥',
+        text: 'She’rni darslikdan (211-bet) o‘qing. Lirik qahramon yoriga o‘q kabi uchib borishga va’da beradi, ammo avval xat yuborishi kerak — u xatni esa hali yozmagan.',
+        quote: { text: 'Siz kutasiz. Menam boraman', by: 'Halima Xudoyberdiyeva' },
+        reveal: [
+          { q: 'Nega xat hali yozilmagan?', a: 'Ko‘ngildagini so‘zga solish qiyin; qo‘rquv, ikkilanish, balki taqdir to‘siqlari.' },
+          { q: '«Siz» deb murojaat qilish nimani ko‘rsatadi?', a: 'O‘zbekona hurmat, hayo va ehtirom — muhabbatda ham odob.' },
+        ],
+      },
+      {
+        title: 'Yillar o‘tadi...',
+        emoji: '📅',
+        steps: [
+          { e: '1', t: 'Bir yil, o‘n yil', d: '«Bu ko‘pmi?» — hali umid kuchli.' },
+          { e: '2', t: 'Yigirma, o‘ttiz yil', d: 'Ayriliq o‘tlog‘i o‘sib, g‘ovlab ketadi.' },
+          { e: '3', t: 'Qirq yil', d: '«Ranjimangiz» — uzrxohlik, ammo hali yo‘lda.' },
+        ],
+        reveal: [{ q: 'Birinchi va so‘nggi xat haqidagi misralar farqi?', a: 'Avval «yozganimcha yo‘q» — ishonch bor; keyin «yozolganim yo‘q» — xavotir kuchaygan, ishonch so‘nayotgandek.' }],
+      },
+      {
+        title: 'Ramzlar',
+        emoji: '🗝️',
+        reveal: [
+          { q: '🏹 O‘q', a: 'Shiddatli intilish, sabrsizlik.' },
+          { q: '✉️ Xat', a: 'Ko‘ngil so‘zi, aytilmagan e’tirof.' },
+          { q: '🌿 G‘ovlagan o‘t', a: 'O‘tgan yillar, ayriliq dardi.' },
+          { q: '🌲 O‘rmonzor', a: 'Yo‘ldagi to‘siqlar, chigal hayot.' },
+          { q: '🔪 Chalg‘i', a: 'Ayriliqni «o‘rib» tashlash vositasi — umid quroli.' },
+        ],
+      },
+      {
+        title: 'Shoira ijodi: xulosa',
+        emoji: '🧾',
+        table: {
+          head: ['She’r', 'Asosiy mavzu', 'Yetakchi tuyg‘u'],
+          rows: [
+            ['«Shunchaki»', 'hayot, sevgi, ijodga munosabat', 'qat’iyat, yonib yashash'],
+            ['«Dorilomon kunlar keldi...»', 'ona, Vatan, o‘tmish va bugun', 'hasrat va umid'],
+            ['«Yo‘ldadirman»', 'intizorlik, sadoqat', 'armon va umid'],
+          ],
+        },
+        mission: { t: 'Yozilmagan xat', d: 'Lirik qahramon yozolmagan maktubni yozishga urinib ko‘ring (5–6 gap) — shoira kechinmalariga o‘z hissiyotlaringizni qo‘shing.', sec: 600 },
+      },
+    ],
+    pairs: [
+      ['Intizorlik', 'sabrsiz kutish'],
+      ['Chalg‘i', 'o‘roq turidagi asbob'],
+      ['G‘ovlamoq', 'quyuq o‘sib ketmoq'],
+      ['Voznesenskiy', 'epigraf muallifi'],
+      ['Epigraf', 'asar boshidagi ko‘chirma'],
+      ['Alafzor', 'o‘tloq'],
+    ],
+    quiz: [
+      { q: 'Lirik qahramon nimani hali yozmagan?', options: ['xatni', 'she’rni', 'kitobni', 'kundalikni'], answer: 0 },
+      { q: 'Qahramon o‘zini nimaga o‘xshatadi?', options: ['o‘qqa', 'qushga', 'shamolga', 'daryoga'], answer: 0 },
+      { q: 'Epigraf qaysi shoirdan?', options: ['Andrey Voznesenskiy', 'Pushkin', 'Lorka', 'Bax'], answer: 0 },
+      { q: 'Lirik qahramon nimani charxlaydi?', options: ['chalg‘ini', 'qilichni', 'pichoqni', 'qalamni'], answer: 0 },
+      { q: 'Yorga qanday murojaat qilinadi?', options: ['«siz»', '«sen»', 'ism bilan', 'murojaatsiz'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Umid', 'Armon'],
+      items: [
+        { text: 'borishga va’da', cat: 0 }, { text: 'yozilmagan xat', cat: 1 },
+        { text: 'chalg‘i charxlash', cat: 0 }, { text: 'o‘tib ketgan yillar', cat: 1 },
+        { text: 'birga bo‘lish orzusi', cat: 0 }, { text: 'g‘ovlagan o‘t', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: '«Siz kutasiz. Menam boraman»ni «Men kutaman. Sizam kelasiz»ga almashtirsak?', a: 'Faollik yo‘qoladi: qahramon intiluvchidan kutuvchiga aylanadi, she’rdagi harakat va o‘zini ayblash ohangi so‘nadi.' },
+      { q: 'Qaysi tuyg‘u ustun: umidmi, armonmi?', a: 'Ikkalasi qorishiq; «yo‘ldadirman» deyishning o‘zi umid hali so‘nmaganini ko‘rsatadi.' },
+    ],
+    odd: [{ items: ['xat', 'o‘q', 'chalg‘i', 'olcha guli'], answer: 3, why: 'Olcha guli — «Dorilomon kunlar keldi...»dan.' }],
+    debate: [{ claim: 'Ko‘ngildagini aytishni kechiktirmaslik kerak.', pro: 'Yillar o‘tib ketadi — armon qoladi.', con: 'Ba’zan so‘z pishib yetilishi uchun vaqt kerak.' }],
+    creative: [{ task: 'Halima Xudoyberdiyeva she’rlaridan birini yod oling.', time: 120 }],
+  },
+
+  /* ===================== 60. 4-BSB. Asar tahlili ===================== */
+  {
+    id: 'ad9-bsb-4',
+    source: 'IV chorak • 60-dars • 4-BSB. Asar tahlili (50 ball)',
+    title: '4-BSB. Asar tahlili',
+    short: 'Shavkat Rahmon, Richard Bax yoki Halima Xudoyberdiyeva asarini reja asosida yozma tahlil qilish',
+    theme: { emoji: '🔬', grad: 'from-violet-900 via-blue-700 to-teal-400', border: 'border-blue-200', tag: 'Summativ baholash • Tahlil' },
+    lesson: [
+      {
+        title: 'Bugun siz — adabiyotshunos',
+        emoji: '🔬',
+        text: 'Vazifa: o‘rganilgan asarlardan birini tanlab, reja asosida yozma tahlil qilish.',
+        cards: [
+          { e: '🌗', t: 'Shavkat Rahmon', d: '«Tungi manzara», «Tong ochar ko‘zlarin...», «Jangda o‘lgan emas...»' },
+          { e: '🕊️', t: 'Richard Bax', d: '«Oqchorloq Jonatan Livingston»' },
+          { e: '🌸', t: 'Halima Xudoyberdiyeva', d: '«Shunchaki», «Dorilomon kunlar keldi...», «Yo‘ldadirman»' },
+        ],
+      },
+      {
+        title: 'Tahlil rejasi',
+        emoji: '🧭',
+        steps: [
+          { e: '1', t: 'Kirish', d: 'Muallif, asar, janr, yaratilgan davr.' },
+          { e: '2', t: 'Mavzu va g‘oya', d: 'Asar nima haqida? Muallif nima demoqchi?' },
+          { e: '3', t: 'Obrazlar', d: 'Lirik qahramon yoki personajlar tavsifi.' },
+          { e: '4', t: 'Badiiy vositalar', d: 'Ramz, o‘xshatish, jonlantirish, takror — matndan misollar bilan.' },
+          { e: '5', t: 'Shaxsiy munosabat', d: 'Asar sizga nimani o‘rgatdi? Bugun bilan bog‘lang.' },
+        ],
+      },
+      {
+        title: 'Dalil formulasi',
+        emoji: '🧪',
+        rule: 'FIKR + MISOL (matndan) + IZOH = kuchli dalil',
+        ruleLabel: 'Formula',
+        reveal: [
+          { q: '❌ Zaif javob', a: '«Bu she’r juda yaxshi, menga yoqdi.»' },
+          { q: '✅ Kuchli javob', a: '«Shoira takror orqali qat’iyatni ta’kidlaydi: “shunchaki” so‘zi 11 marta qaytariladi va har safar qahramon yuzaki hayotni rad etadi.»' },
+        ],
+      },
+      {
+        title: 'Baholash mezoni (50 ball)',
+        emoji: '📊',
+        text: 'Taxminiy mezon — ustoz o‘zgartirishi mumkin:',
+        table: {
+          head: ['Mezon', 'Ball'],
+          rows: [
+            ['Mavzu va g‘oyani to‘g‘ri aniqlash', '10'],
+            ['Obrazlar tahlili', '10'],
+            ['Badiiy vositalarni topish va izohlash', '10'],
+            ['Dalillash (matndan misollar)', '10'],
+            ['Shaxsiy munosabat, savodxonlik va tuzilma', '10'],
+          ],
+        },
+      },
+      {
+        title: 'Boshladik!',
+        emoji: '✍️',
+        vs: {
+          q: 'Qaysi asarni tanlaysiz?',
+          a: { t: '📜 She’r', pts: ['Qisqa, ammo ramzlarga boy', 'Badiiy vositalar ko‘p'] },
+          b: { t: '📖 Qissa', pts: ['Voqea va obrazlar ko‘p', 'G‘oyani ochish oson'] },
+        },
+        mission: { t: 'Yozma tahlil', d: 'Rejaga amal qilib, 1–1,5 sahifa tahlil yozing. Oxirida dalil formulasini tekshiring.', sec: 2400 },
+      },
+    ],
+    pairs: [
+      ['Mavzu', 'asar nima haqida'],
+      ['G‘oya', 'muallifning asosiy fikri'],
+      ['Ramz', 'yashirin ma’noli obraz'],
+      ['Lirik qahramon', 'she’rdagi «men»'],
+      ['Dalil', 'matndan olingan misol'],
+      ['Xulosa', 'shaxsiy munosabat va yakun'],
+    ],
+    quiz: [
+      { q: 'Tahlilning birinchi bandi:', options: ['kirish: muallif va asar', 'xulosa', 'badiiy vositalar', 'shaxsiy fikr'], answer: 0 },
+      { q: 'Kuchli dalil formulasi:', options: ['fikr + misol + izoh', 'faqat fikr', 'faqat misol', 'savol'], answer: 0 },
+      { q: 'G‘oya — bu:', options: ['muallifning asosiy fikri', 'asar hajmi', 'muallif ismi', 'nashr yili'], answer: 0 },
+      { q: '«Jangda o‘lgan emas...» muallifi:', options: ['Shavkat Rahmon', 'Halima Xudoyberdiyeva', 'Cho‘lpon', 'Richard Bax'], answer: 0 },
+      { q: '«Oqchorloq Jonatan Livingston» janri (tarjimada):', options: ['rivoyat-qissa', 'g‘azal', 'doston', 'drama'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Shavkat Rahmon', 'Halima Xudoyberdiyeva'],
+      items: [
+        { text: '«Tungi manzara»', cat: 0 }, { text: '«Shunchaki»', cat: 1 },
+        { text: '«Jangda o‘lgan emas...»', cat: 0 }, { text: '«Yo‘ldadirman»', cat: 1 },
+        { text: '«Tong ochar ko‘zlarin...»', cat: 0 }, { text: '«Dorilomon kunlar keldi...»', cat: 1 },
+      ],
+    },
+    sequences: [{ title: 'Tahlil rejasi', items: ['Kirish', 'Mavzu va g‘oya', 'Obrazlar', 'Badiiy vositalar', 'Shaxsiy munosabat'] }],
+    qa: [
+      { q: 'Tahlil va qayta hikoya qilishning farqi?', a: 'Qayta hikoya — voqeani aytib berish; tahlil — nima uchun va qanday yozilganini tushuntirish.' },
+      { q: 'Nega matndan misol shart?', a: 'Misolsiz fikr — taxmin; misol uni isbotlaydi.' },
+    ],
+    odd: [{ items: ['mavzu', 'g‘oya', 'obraz', 'muqova rangi'], answer: 3, why: 'Muqova rangi tahlil qilinmaydi.' }],
+    debate: [{ claim: 'She’rni tahlil qilish uni «buzadi».', pro: 'Shoira aytganidek, she’r — sir, uni faqat his qilish kerak.', con: 'Tahlil she’rni chuqurroq his qilishga yordam beradi.' }],
+    creative: [{ task: 'Tanlagan asaringizga bir jumlali «reklama» yozing.', time: 60 }],
+  },
+];
+
 const CONTENT = {
-  adabiyot: { 8: [...ADABIYOT_8, ...ADABIYOT_8_P2, ...ADABIYOT_8_P3, ...ADABIYOT_8_P4, ...ADABIYOT_8_P5], 9: [...ADABIYOT_9, ...ADABIYOT_9_P2, ...ADABIYOT_9_P3, ...ADABIYOT_9_P4, ...ADABIYOT_9_P5] },
+  adabiyot: { 8: [...ADABIYOT_8, ...ADABIYOT_8_P2, ...ADABIYOT_8_P3, ...ADABIYOT_8_P4, ...ADABIYOT_8_P5], 9: [...ADABIYOT_9, ...ADABIYOT_9_P2, ...ADABIYOT_9_P3, ...ADABIYOT_9_P4, ...ADABIYOT_9_P5, ...ADABIYOT_9_P6] },
   'ona-tili': { 8: [...ONA_TILI_8, ...ONA_TILI_8_PART2, ...ONA_TILI_8_PART3, ...ONA_TILI_8_PART4, ...ONA_TILI_8_PART5, ...ONA_TILI_8_PART6, ...ONA_TILI_8_PART7, ...ONA_TILI_8_PART8], 9: [...ONA_TILI_9, ...ONA_TILI_9_P2, ...ONA_TILI_9_P3, ...ONA_TILI_9_P4, ...ONA_TILI_9_P5, ...ONA_TILI_9_P6, ...ONA_TILI_9_P7, ...ONA_TILI_9_P8] },
 };
 
