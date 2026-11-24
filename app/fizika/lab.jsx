@@ -18,6 +18,7 @@ import {
   ChevronRight, ChevronLeft, Table2, LineChart, Wrench, Target, Plus, Minus, Trash2, Sparkles,
   ShieldAlert, Home, Users, Flame, Snowflake, Hand, Microscope, Atom, Ruler,
 } from 'lucide-react';
+import { PVWorkSim, HeatingSim, HeatingLab, CalorimeterLab, PeaLab } from './thermo';
 
 /* ============================================================
    1. SONLAR: o‘qish va chiroyli yozish
@@ -1007,6 +1008,8 @@ export function FizSim({ sim }) {
     case 'stern': return <SternSim cfg={sim} />;
     case 'scale': return <ScaleSim cfg={sim} />;
     case 'molar': return <MolarSim cfg={sim} />;
+    case 'pvwork': return <PVWorkSim cfg={sim} />;
+    case 'heating': return <HeatingSim cfg={sim} />;
     default: return null;
   }
 }
@@ -1456,7 +1459,8 @@ function GasLab({ lab, onRecord }) {
   const rec = () => {
     const s = cur.current; if (!s) return;
     const pm = (s.p / 1000) * rnd(0.985, 1.015);
-    onRecord({ p: Math.round(pm * 10) / 10, V: Math.round(s.V * 100) / 100, T: Math.round(s.T), N: s.N, nu: s.nu, pV: Math.round(pm * s.V * 10) / 10, pVT: (pm * s.V) / s.T, invV: 1 / s.V });
+    const vm = s.V * rnd(0.993, 1.007);
+    onRecord({ p: Math.round(pm * 10) / 10, V: Math.round(vm * 100) / 100, T: Math.round(s.T), N: s.N, nu: s.nu, pV: Math.round(pm * vm * 10) / 10, pVT: (pm * vm) / s.T, invV: 1 / vm, VT: vm / s.T, pT: pm / s.T });
   };
   return (
     <GasBox
@@ -1488,9 +1492,13 @@ export function FizLab({ lab }) {
     equilibrium: EquilibriumLab,
     stern: SternLab,
     gas: GasLab,
+    heating: HeatingLab,
+    calorimeter: CalorimeterLab,
+    peas: PeaLab,
   };
   const Kind = kinds[lab.kind];
   const graph = lab.graph;
+  const view = lab.derive ? lab.derive(rows) : rows;
   return (
     <div className="mt-6 overflow-hidden rounded-3xl border-[3px] border-ink bg-paper shadow-[6px_6px_0_#14213D]">
       <div className="dp-girih relative border-b-[3px] border-ink bg-ink px-5 py-4 text-white">
@@ -1529,7 +1537,7 @@ export function FizLab({ lab }) {
         {stage === 2 && (
           <div className="grid gap-5 xl:grid-cols-2">
             <div>
-              <DataTable rows={rows} cols={lab.cols} onDelete={(i) => setRows((rs) => rs.filter((_, k) => k !== i))} />
+              <DataTable rows={view} cols={lab.cols} onDelete={(i) => setRows((rs) => rs.filter((_, k) => k !== i))} />
               <div className="mt-3 flex flex-wrap gap-2">
                 <Btn onClick={() => setStage(1)} icon={FlaskConical} color="bg-white text-ink hover:bg-amber-50">Yana o‘lchash</Btn>
                 {rows.length > 0 && <Btn onClick={() => setRows([])} icon={Trash2} color="bg-white text-rose-700 hover:bg-rose-50">Jadvalni tozalash</Btn>}
@@ -1539,10 +1547,10 @@ export function FizLab({ lab }) {
             {graph && (
               <Graph
                 title={graph.title}
-                rows={rows}
+                rows={view}
                 x={graph.x}
                 ys={graph.ys}
-                theory={graph.theory ? (x) => graph.theory(x, rows) : null}
+                theory={graph.theory ? (x) => graph.theory(x, view) : null}
                 zeroX={graph.zeroX !== false}
                 zeroY={graph.zeroY !== false}
                 lines={graph.lines !== false}

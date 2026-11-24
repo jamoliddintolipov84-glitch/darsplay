@@ -24,6 +24,7 @@ import {
 } from 'lucide-react';
 import { FizCalc, FizSim, FizLab, FizExperiment } from './fizika/lab';
 import { FIZIKA_9 } from './fizika/fizika9';
+import { FIZIKA_9_P2 } from './fizika/fizika9b';
 
 /* ============================================================
    1. MOCK MA’LUMOTLAR
@@ -33675,7 +33676,7 @@ const ADABIYOT_9_P7 = [
 ];
 
 const CONTENT = {
-  fizika: { 9: [...FIZIKA_9] },
+  fizika: { 9: [...FIZIKA_9, ...FIZIKA_9_P2] },
   adabiyot: { 8: [...ADABIYOT_8, ...ADABIYOT_8_P2, ...ADABIYOT_8_P3, ...ADABIYOT_8_P4, ...ADABIYOT_8_P5], 9: [...ADABIYOT_9, ...ADABIYOT_9_P2, ...ADABIYOT_9_P3, ...ADABIYOT_9_P4, ...ADABIYOT_9_P5, ...ADABIYOT_9_P6, ...ADABIYOT_9_P7] },
   'ona-tili': { 8: [...ONA_TILI_8, ...ONA_TILI_8_PART2, ...ONA_TILI_8_PART3, ...ONA_TILI_8_PART4, ...ONA_TILI_8_PART5, ...ONA_TILI_8_PART6, ...ONA_TILI_8_PART7, ...ONA_TILI_8_PART8], 9: [...ONA_TILI_9, ...ONA_TILI_9_P2, ...ONA_TILI_9_P3, ...ONA_TILI_9_P4, ...ONA_TILI_9_P5, ...ONA_TILI_9_P6, ...ONA_TILI_9_P7, ...ONA_TILI_9_P8] },
 };
