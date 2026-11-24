@@ -27040,8 +27040,1311 @@ const ADABIYOT_9 = [
   },
 ];
 
+const ADABIYOT_9_P2 = [
+  /* ===================== 11. Chinor ===================== */
+  {
+    id: 'ad9-chinor',
+    source: 'I chorak • 11-dars • 47–52-betlar',
+    title: 'Asqad Muxtor. «Chinor» romanidan parcha',
+    short: 'Ming yillik chinor, 93 yoshli Ochil buva, «Xayrlashuv kitobi» va kutilmagan uchrashuv',
+    theme: { emoji: '🌳', grad: 'from-green-800 via-emerald-600 to-lime-500', border: 'border-emerald-200', tag: 'Roman • Avlodlar xotirasi' },
+    lesson: [
+      {
+        title: 'Mehribonlik uyida o‘sgan adib',
+        emoji: '✍️',
+        facts: [
+          { n: '1920', l: '23-dekabr, Farg‘ona — temiryo‘lchi oilasida' },
+          { n: '11', l: 'yoshida otasidan ayrilib, mehribonlik uyida tarbiyalangan' },
+          { n: '1969', l: '«Chinor» romani nashr etilgan' },
+          { n: '1997', l: '17-aprelda vafot etgan' },
+        ],
+        text: 'O‘n ikki farzandli oilada o‘sgan Asqad Muxtor shoir, qissanavis va romannavis bo‘lib yetishdi. «O‘zbekiston xalq yozuvchisi» unvoni bilan taqdirlangan. «Opa-singillar», «Tug‘ilish», «Amu» romanlari, «Uyqu qochganda» risolasi ham uning qalamiga mansub.',
+      },
+      {
+        title: 'Romanning sirli tuzilishi',
+        emoji: '🧩',
+        text: '«Chinor» qadimiy Sharq an’anasi asosida qurilgan. Har bir bo‘lakni Ochil buva obrazi birlashtirib turadi.',
+        cards: [
+          { e: '📜', t: '5 hikoyat', d: 'Qisqa ibratli voqealar' },
+          { e: '🕯️', t: '5 rivoyat', d: 'Afsonaga yaqin hikoyalar' },
+          { e: '📖', t: '5 qissa', d: 'Kengroq taqdir hikoyalari — Akbarali qissasi ham shular jumlasidan' },
+        ],
+        note: 'Bosh qahramon — 93 yoshli Ochil buva. U tarqalib ketgan avlodlarini izlab, ularning hayotini to‘g‘ri yo‘lga solish uchun safarga chiqadi.',
+      },
+      {
+        title: 'Nega roman chinordan boshlanadi?',
+        emoji: '🌳',
+        facts: [
+          { n: '1000+', l: 'yoshda — chinorning yoshi' },
+          { n: '19', l: 'quloch — g‘o‘dir tanasining yo‘g‘onligi' },
+          { n: '500–600', l: 'yosh — eng «yosh» yettinchi butog‘i' },
+        ],
+        text: 'Qishloq, tog‘, hatto choyxona ham chinor nomi bilan ataladi. Chinor qoyatoshdan o‘sib chiqqan, ammo ildizlari tosh ostidagi ona tuproqqa tutashgan.',
+        reveal: [{ q: 'Chinor nimaning ramzi?', a: 'Avlodlar, el, ildiz va abadiylik ramzi. Ochil buvaning sulolasi ham chinordek — ildizi bir, shoxlari butun o‘lkaga yoyilgan.' }],
+      },
+      {
+        title: 'Chinor bilan xayrlashuv',
+        emoji: '🌅',
+        text: 'Oppoq tongda Ochil buva chinor bilan tirik odamdek pichirlashib xayrlashadi va ko‘zyoshsiz, tovushsiz yig‘lab yuboradi.',
+        reveal: [
+          { q: 'Ochil buvani qanday xotiralar qiynayotgan bo‘lishi mumkin?', a: 'Butun umri, yo‘qotgan yaqinlari, tarqalib ketgan avlodlari, boshidan o‘tgan urushlar va qiyinchiliklar.' },
+          { q: 'Nega u har safar safar oldidan chinor bilan xayrlashadi?', a: 'Chinor — uning dono suhbatdoshi, ota-bobolar ruhi. Undan duo va kuch oladi.' },
+        ],
+      },
+      {
+        title: 'Ikki xil odam',
+        emoji: '👴',
+        cards: [
+          { e: '🏔️', t: 'Ochil buva', d: 'Tog‘dek salobatli, oddiy ko‘n etik, oq yaktak. 137 ta bola-nevarasini biladi. Tabiat bilan «senlab» gaplashadi.' },
+          { e: '🎩', t: 'Azimjon', d: 'Chet elda tug‘ilgan, badavlat qorako‘l mutaxassisi. Yangi beqasam to‘n, yaltiroq etik — hammasi omonatdek. Ota yurtida qarindoshi qolmagan deb o‘ylardi.' },
+        ],
+        quote: { text: 'begona yurtda unib chiqqan bu zaif nihol', by: 'Asqad Muxtor, Azimjon haqida' },
+      },
+      {
+        title: '«Biz go‘dakmiz...»',
+        emoji: '💚',
+        chat: [
+          { who: 'Azimjon', e: '🎩', text: 'Yerning yurak urishi eshitilmaydi-ku!' },
+          { who: 'Ochil buva', e: '👴', side: 'r', text: 'Go‘dakmiz-da. Go‘dak onasini emishni biladi-yu, uning nafas olishi bilan ishi yo‘q...' },
+          { who: 'Azimjon', e: '😄', text: 'Siz ham go‘dakmisiz, bobo?' },
+          { who: 'Ochil buva', e: '👴', side: 'r', text: 'Ha. Yaylovlarda yalangoyoq yurgim, maysalarda chaqaloqdek yumalagim keladi.' },
+        ],
+        reveal: [{ q: '«Onaning nafas olishidan bexabar go‘dak» deganda kimlar nazarda tutilgan?', a: 'Ona tabiatdan, Vatandan faqat foydalanib, uni his qilmaydigan, qadriga yetmaydigan odamlar.' }],
+      },
+      {
+        title: '«Xayrlashuv kitobi»',
+        emoji: '📗',
+        text: 'Ochil buva yozuvchi bo‘lsa, butun umrini bitta kitobga sarflashini aytadi: tabiat, barglar, gullar, to‘rg‘aylar, chashmalar, yulduzlar bilan to‘yib, xo‘rsinib xayrlashuv kitobi. Shunday kitobni yozgan odam bearmon ketar edi.',
+        mission: { t: 'Ijodiy topshiriq', d: 'Siz ham «Xayrlashuv kitobi»ga bir sahifa yozing: tabiatdagi qaysi bir narsani (barg, kapalak, yulduz...) 3 gapda shunday tasvirlangki, uni hech kim ko‘rmagandek ko‘rsin.', sec: 240 },
+      },
+      {
+        title: 'Mehmonxonadagi uchrashuv',
+        emoji: '🫖',
+        steps: [
+          { e: '🚗', t: 'Shodasoyga safar', d: 'Ochil buva va Azimjon nevara Akbaralini izlab kelishadi.' },
+          { e: '🫖', t: 'Bir piyola choy', d: 'Qaynoq suv xonasida notanish odamga choy quyib beradi.' },
+          { e: '😱', t: '«Buva!»', d: 'Bu Akbarali edi — suyagi qolgan, ko‘zlarida nur yo‘q, 30 yoshida qarigan.' },
+          { e: '❓', t: '«Hammasini aytib beraman...»', d: 'Kasal ham, qamoqdan chiqqan ham emas. Uning boshiga og‘ir musibat tushgan.' },
+        ],
+        vs: {
+          q: 'Siz yashaydigan joyda «chinor» bormi?',
+          a: { t: '🌳 Bor', pts: ['Hamma uchun aziz daraxt, buloq, masjid, ko‘prik...'] },
+          b: { t: '🤔 O‘ylab ko‘raman', pts: ['Balki bu bir inson yoki oila an’anasidir?'] },
+        },
+      },
+    ],
+    pairs: [
+      ['Asqad Muxtor', '«Chinor» muallifi'],
+      ['Ochil buva', '93 yoshli bosh qahramon'],
+      ['Azimjon', 'chet eldan kelgan nevara'],
+      ['Akbarali', 'mehmonxonada topilgan nevara'],
+      ['Chinortog‘', 'chinor nomi bilan atalgan tog‘'],
+      ['Shodasoy', 'tog‘ daryosi va qishloq'],
+      ['5 + 5 + 5', 'hikoyat, rivoyat, qissa'],
+    ],
+    quiz: [
+      { q: '«Chinor» romani qaysi yili nashr etilgan?', options: ['1969', '1920', '1997', '1945'], answer: 0 },
+      { q: 'Ochil buva necha yoshda?', options: ['93', '70', '100', '120'], answer: 0 },
+      { q: 'Romanning tuzilishi:', options: ['5 hikoyat, 5 rivoyat, 5 qissa', '3 qism', '12 bob', '7 doston'], answer: 0 },
+      { q: 'Chinorning yoshi qancha deyiladi?', options: ['mingdan oshgan', 'yuz yil', 'besh yuz yil', 'ellik yil'], answer: 0 },
+      { q: 'Azimjon qaysi soha mutaxassisi?', options: ['qorako‘l', 'paxta', 'tibbiyot', 'konchilik'], answer: 0 },
+      { q: 'Ochil buva qanday kitob yozmoqchi bo‘lardi?', options: ['Xayrlashuv kitobi', 'Tarix kitobi', 'Ertaklar kitobi', 'Duolar kitobi'], answer: 0 },
+      { q: 'Ochil buva Akbaralini qayerda uchratadi?', options: ['mehmonxonada', 'konda', 'qabristonda', 'bozorda'], answer: 0 },
+      { q: 'Asqad Muxtor bolaligida qayerda tarbiyalangan?', options: ['mehribonlik uyida', 'madrasada', 'chet elda', 'harbiy maktabda'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Ochil buva', 'Azimjon'],
+      items: [
+        { text: 'tog‘dek salobatli', cat: 0 }, { text: 'jussasi kichik', cat: 1 },
+        { text: 'ko‘n etik, oq yaktak', cat: 0 }, { text: 'yaltiroq etik, ipak ko‘ylak', cat: 1 },
+        { text: 'tabiat bilan gaplashadi', cat: 0 }, { text: 'bobosiga ishonmay qo‘yadi', cat: 1 },
+        { text: '137 avlodini biladi', cat: 0 }, { text: 'begona yurtda o‘sgan', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'Parcha voqealari',
+        items: [
+          'Ochil buva tongda chinor bilan xayrlashadi',
+          'Azimjon bilan mashinada yo‘lga chiqadi',
+          'Yo‘lda «go‘dakmiz» va «Xayrlashuv kitobi» haqida suhbat',
+          'Shodasoydagi mehmonxonaga joylashadi',
+          'Choy damlayotganda Akbarali bilan uchrashadi',
+          'Akbarali hammasini aytib berishga va’da qiladi',
+        ],
+      },
+    ],
+    qa: [
+      { q: 'Nega yozuvchi voqeani Ochil buvadan emas, chinordan boshlaydi?', a: 'Bu joyda chinorsiz hech narsani tushuntirib bo‘lmaydi — u el, ildiz va avlodlar ramzi.' },
+      { q: 'Ochil buva nega Azimjonni safarga olib chiqdi?', a: 'Azimjon uning hikoyalariga ishonmay qo‘ydi; qarindoshlarini o‘z ko‘zi bilan ko‘rsin dedi.' },
+      { q: 'Ochil buva Akbaralini nega kasal yoki qamoqdan chiqqan deb o‘yladi?', a: 'Akbarali juda ozib, qarib, ko‘zlarida nur qolmagan, soch-soqoli o‘sgan edi.' },
+      { q: 'Chinorning yettinchi butog‘i buvaga nimani eslatadi?', a: 'O‘zining yigitlik chog‘ini — o‘shanda ham shu butoq yosh ko‘ringan.' },
+    ],
+    odd: [
+      { items: ['hikoyat', 'rivoyat', 'qissa', 'g‘azal'], answer: 3, why: 'G‘azal romanning tarkibiy qismi emas.' },
+      { items: ['Ochil buva', 'Azimjon', 'Akbarali', 'Ko‘kaldosh'], answer: 3, why: 'Ko‘kaldosh — «Alpomish» qahramoni.' },
+    ],
+    debate: [
+      { claim: 'Chet elda o‘sgan odam baribir ota yurtiga begona bo‘lib qoladi.', pro: 'Til, urf-odat, xotiralar boshqa.', con: 'Ildiz qonda bo‘ladi — Azimjon ham asta-sekin yaqinlashyapti.' },
+    ],
+    creative: [
+      { task: 'Mahallangizdagi bir aziz joy yoki narsa haqida 3 gapli «kichik chinor» hikoyasini ayting.', time: 90 },
+      { task: 'Ochil buva chinorga nima deb pichirlagan bo‘lishi mumkin? Bir gap ayting.', time: 60 },
+    ],
+  },
+
+  /* ===================== 12. Akbarali qissasi (1) ===================== */
+  {
+    id: 'ad9-akbarali-1',
+    source: 'I chorak • 12-dars • 53–59-betlar',
+    title: 'Asqad Muxtor. «Akbarali qissasi» (1-qism)',
+    short: 'Bektemirning taqdiri, kondagi falokat, bir zumlik qo‘rquv va vijdon azobi',
+    theme: { emoji: '⛏️', grad: 'from-slate-800 via-stone-700 to-amber-600', border: 'border-amber-200', tag: 'Qissa • Vijdon sinovi' },
+    lesson: [
+      {
+        title: 'Epigraf — kalit so‘z',
+        emoji: '🗝️',
+        quote: { text: 'Eng dahshatli yirtqich — qo‘rquv', by: 'Nasriddin Afandi (qissa epigrafi)' },
+        reveal: [{ q: 'Nega qo‘rquv sher yoki bo‘ridan ham dahshatli?', a: 'Yirtqich tanani yeydi, qo‘rquv esa insonning vijdonini, nomini, butun hayotini yemiradi.' }],
+        text: 'Epigraf — asar boshidagi hikmatli so‘z. U butun qissaning g‘oyasini oldindan ochib beradi. Keling, o‘qish davomida shu so‘zni yodda tutamiz.',
+      },
+      {
+        title: 'Kechasi kelgan mehmon',
+        emoji: '🌧️',
+        text: 'Bir kechasi Akbaralining derazasini bir ko‘zi ko‘r, yuzi ajinli odam taqillatadi: «Och, Bektemirman. Dadangning o‘rtog‘iman».',
+        steps: [
+          { e: '🚂', t: '1941', d: 'Akbaralining otasi bilan bir eshelonda frontga ketgan.' },
+          { e: '⛓️', t: '1942', d: 'Mozdok yaqinida qurshovda qolib, ochlikdan holsizlanib asirga tushgan.' },
+          { e: '🏚️', t: 'Lagerlar', d: 'Yerosti korxonalari, tonnellar, tosh karyerlari... bir necha til o‘rgangan, necha o‘limdan qolgan.' },
+          { e: '🌍', t: '13 yil sargardonlik', d: 'Yevropada elma-el sudralib yurgan. «Vatangadolik azobi go‘r azobi bilan teng ekan».' },
+          { e: '🏠', t: 'Qaytish', d: 'Yuragini hovuchlab yurtiga qaytdi — lekin oilasiga ko‘rinishga yuzi yo‘q.' },
+        ],
+      },
+      {
+        title: 'Bektemirning orzusi',
+        emoji: '💪',
+        quote: { text: 'Toki odamlar meni ko‘rmasin, faqat mehnatimni ko‘rishsin', by: 'Bektemir' },
+        text: 'U kecha-yu kunduz mehnatga sho‘ng‘ib, keyin xotini va qizining oyog‘iga bosh qo‘yib, kechirim so‘ramoqchi. Akbarali unga konni ko‘rsatishga va’da beradi.',
+        reveal: [{ q: 'Bektemir qanday inson?', a: 'Ochiq ko‘ngil, mehnatkash, vijdonli, tavba qilgan, oilasini sog‘ingan. Uning yuragi poklanishga tashna.' }],
+      },
+      {
+        title: 'Taqdirni o‘zgartirgan pidjak',
+        emoji: '🧥',
+        text: 'Kon darvozasida Bektemirning hujjati yo‘q. Akbarali kulib, o‘zining konchi pidjagini unga kiydiradi: «Yarashdi, yarashdi!» Ikkalasi xandon tashlab kuladi.',
+        note: 'Bu kichik hazil keyin butun voqeaning tugunini yechadi. Pidjak cho‘ntagida Akbaralining guvohnomasi bor edi...',
+        reveal: [{ q: 'Muallif nega bu lavhani shunchalik quvnoq tasvirlaydi?', a: 'Keyingi fojia bilan keskin qarama-qarshilik (kontrast) hosil qilish uchun — baxt va halokat oralig‘i bir qadam.' }],
+      },
+      {
+        title: 'Yer ostidagi bir lahza',
+        emoji: '⚡',
+        chat: [
+          { who: 'Bektemir', e: '🧔', text: 'Transformator! Balkalar bosib tushsa, portlaydi! Zaboylarda odam bor!' },
+          { who: 'Akbarali', e: '😨', side: 'r', text: 'Qoching, Bektemir aka! Bosib qoladi hozir!' },
+          { who: 'Bektemir', e: '🧔', text: 'Ko‘tarishvor! Bir zumda o‘chirib chiqaman! Qayoqdasan?!' },
+          { who: 'Akbarali', e: '🏃', side: 'r', text: '(qochib ketadi...)' },
+        ],
+        text: 'Bektemir transformatorni o‘chirib, yuzlab konchini qutqaradi, ammo o‘zi temir balkalar ostida qoladi.',
+      },
+      {
+        title: '«Bir zum...»',
+        emoji: '⏱️',
+        rule: 'Kimdir qo‘rqmadi, u qo‘rqdi. Bir zumgina qo‘rqdi. O‘sha bir zum hamma narsani hal qildi.',
+        ruleLabel: 'Qissaning yuragi',
+        vs: {
+          q: 'Akbaralini tushunish mumkinmi?',
+          a: { t: '🤝 Tushunsa bo‘ladi', pts: ['Qorong‘i, portlash xavfi — har kim qo‘rqadi', 'U yosh, tajribasiz edi'] },
+          b: { t: '🚫 Oqlab bo‘lmaydi', pts: ['Yashikni ko‘tarishga yordam berishi mumkin edi', 'Qochgandan keyin ham haqiqatni yashirdi'] },
+        },
+      },
+      {
+        title: 'Odam o‘zidan qochib qutulolmaydi',
+        emoji: '🌑',
+        cards: [
+          { e: '🤐', t: 'Yolg‘izlik', d: 'Do‘stlaridan uzoqlashadi, dardini hech kimga aytolmaydi.' },
+          { e: '🍂', t: 'Hayotdan zavq yo‘qoladi', d: 'Na ishda zavq, na uyquda halovat, na oshda ta’m.' },
+          { e: '🥃', t: 'Yolg‘on yupanch', d: 'Ichkilikka berilib, onasining dardiga ham e’tibor bermaydi.' },
+          { e: '💔', t: 'Ona vasiyati', d: '«Shodasoyliklar oldiga borib gunohingni o‘tin... O‘zingni ko‘rsat, bosh eg».' },
+        ],
+      },
+      {
+        title: 'Uch guruh — uch nigoh',
+        emoji: '🎲',
+        text: 'Qur’a tashlab uch guruhga bo‘lining (baraban yordamida):',
+        cards: [
+          { e: '🧍', t: '1-guruh: Akbarali sifatida', d: 'Bu mushkul vaziyatdan qanday chiqqan bo‘lardingiz?' },
+          { e: '👴', t: '2-guruh: Ochil buva sifatida', d: 'Akbaralini qutqara olarmidingiz? Qanday qilib?' },
+          { e: '📖', t: '3-guruh: kitobxon sifatida', d: 'Vijdon azobidan qutulish uchun unga qanday maslahat berardingiz?' },
+        ],
+        mission: { t: 'Guruh taqdimoti', who: '3 guruh', d: 'Har guruh 4 daqiqa muhokama qilib, 1 daqiqada yechimini taqdim etsin.', sec: 240 },
+      },
+    ],
+    pairs: [
+      ['Bektemir', 'Akbaralining otasining do‘sti'],
+      ['Epigraf', '«Eng dahshatli yirtqich — qo‘rquv»'],
+      ['Mozdok', 'Bektemir asirga tushgan joy'],
+      ['Transformator', 'Bektemir o‘chirgan qurilma'],
+      ['Sharofat xola', 'Akbaralining onasi'],
+      ['Zaboy', 'konning faol qazilayotgan qismi'],
+      ['Shtrek', 'yer ostidagi relsli yo‘l'],
+    ],
+    quiz: [
+      { q: 'Qissa epigrafi kimga tegishli?', options: ['Nasriddin Afandi', 'Alisher Navoiy', 'Cho‘lpon', 'Ochil buva'], answer: 0 },
+      { q: 'Bektemir necha yil sargardonlikda yurgan?', options: ['13', '3', '20', '7'], answer: 0 },
+      { q: 'Akbarali Bektemirga nimani kiydiradi?', options: ['konchi pidjagini', 'kaskasini', 'etigini', 'to‘nini'], answer: 0 },
+      { q: 'Bektemir konda nimani o‘chiradi?', options: ['transformatorni', 'chiroqni', 'motorni', 'nasosni'], answer: 0 },
+      { q: 'Falokat paytida Akbarali nima qiladi?', options: ['qochib ketadi', 'Bektemirga yordam beradi', 'odamlarni chaqiradi', 'transformatorni o‘chiradi'], answer: 0 },
+      { q: 'Onasi Akbaraliga nima qilishni maslahat beradi?', options: ['shodasoyliklardan kechirim so‘rashni', 'boshqa shaharga ketishni', 'hech kimga aytmaslikni', 'ichib unutishni'], answer: 0 },
+      { q: 'Bektemir nega oilasiga darhol bormaydi?', options: ['yuzi yo‘qligidan, uyalganidan', 'ular boshqa joyga ko‘chgan', 'kasal edi', 'pul yo‘q edi'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Bektemir', 'Akbarali'],
+      items: [
+        { text: 'asirlikdan qaytgan', cat: 0 }, { text: 'bir zum qo‘rqdi', cat: 1 },
+        { text: '«Mehnat! Mehnat!»', cat: 0 }, { text: 'do‘stlaridan uzoqlashdi', cat: 1 },
+        { text: 'transformatorni o‘chirdi', cat: 0 }, { text: 'pidjagini hazillashib berdi', cat: 1 },
+        { text: 'yuzlab odamni qutqardi', cat: 0 }, { text: 'onasining vasiyatini bajarmadi', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'Voqealar zanjiri',
+        items: [
+          'Bektemir kechasi Akbaralining uyiga keladi',
+          'U asirlik va sargardonlik tarixini aytib beradi',
+          'Akbarali unga konni ko‘rsatgani olib boradi',
+          'Akbarali pidjagini Bektemirga kiydiradi',
+          'Konda falokat yuz beradi, Akbarali qochadi',
+          'Bektemir transformatorni o‘chirib halok bo‘ladi',
+          'Akbarali vijdon azobida yolg‘iz qoladi',
+        ],
+      },
+    ],
+    qa: [
+      { q: 'Vijdon nima va u nega muhim?', a: 'Insonning ichki hakami; u yaxshi va yomonni farqlashga, xatoni tan olishga undaydi.' },
+      { q: 'Akbarali nega «men o‘ldirdim sizni, oyijon» deydi?', a: 'Onasining so‘nggi orzusini bajarmagani, uning dardiga sabab bo‘lganini his qiladi.' },
+      { q: 'Qochmasdan vaziyatni o‘nglashga harakat qilsa bo‘larmidi?', a: 'Ha: falokatdan keyin ham haqiqatni aytib, Bektemirning nomini tiklashi mumkin edi.' },
+      { q: 'Bektemir uchun mehnat nima edi?', a: 'Poklanish, gunohini yuvish va oilasiga qaytish yo‘li.' },
+    ],
+    odd: [
+      { items: ['transformator', 'shtrek', 'zaboy', 'chinor'], answer: 3, why: 'Chinor kon bilan bog‘liq emas.' },
+      { items: ['qo‘rquv', 'yolg‘izlik', 'vijdon azobi', 'fidokorlik'], answer: 3, why: 'Fidokorlik — Bektemirga xos, Akbaraliga emas.' },
+    ],
+    debate: [
+      { claim: 'Bir lahzalik xato butun hayotni belgilaydi.', pro: 'Akbarali misolida shunday bo‘ldi.', con: 'Xatoni tan olish va tuzatish har doim mumkin — jasorat kerak.' },
+      { claim: 'Dardni ichkilik bilan unutish mumkin.', pro: '— (bu fikrni himoya qilish qiyin)', con: 'Qissa ko‘rsatadiki, ichkilik dardni yechmaydi, battar chuqurlashtiradi.' },
+    ],
+    creative: [
+      { task: 'Bektemir oilasiga yozmoqchi bo‘lgan xatni 3 gapda yozing.', time: 90 },
+      { task: '«Agar o‘sha bir zumda Akbarali qaytganida...» — voqeaning boshqa davomini 3 gapda ayting.', time: 90 },
+    ],
+  },
+
+  /* ===================== 13. Akbarali qissasi (2) ===================== */
+  {
+    id: 'ad9-akbarali-2',
+    source: 'I chorak • 13-dars • 60–66-betlar',
+    title: 'Asqad Muxtor. «Akbarali qissasi» (2-qism)',
+    short: 'Akbarobod, bronza haykal, «Odam deb o‘lgan odam doim tirik» va jasorat haqida xulosa',
+    theme: { emoji: '🗿', grad: 'from-amber-800 via-yellow-700 to-orange-500', border: 'border-amber-200', tag: 'Qissa • Haqiqat va jasorat' },
+    lesson: [
+      {
+        title: 'Qorong‘ida ko‘ringan «o‘zi»',
+        emoji: '👤',
+        text: 'Qabristonda Akbarali qorong‘ida o‘ziga juda o‘xshash ulkan bir sharpani ko‘radi va dahshatga tushib qochadi. «Jinni bo‘lyapmanmi?» — deb o‘ylaydi.',
+        reveal: [{ q: 'Yozuvchi Akbaralining o‘z soyasidan qochishi orqali nima demoqchi?', a: 'Odam o‘zidan, o‘z vijdonidan qochib qutula olmaydi. Soya — uning yashirgan haqiqati.' }],
+      },
+      {
+        title: 'Akbarobod',
+        emoji: '🏙️',
+        doc: { title: 'Mehmonxona anketasi', text: '«Akbarobod posyolka mehmonxonasi»... Nega Akbarobod? Shodasoy edi-ku?', from: 'Akbaralining o‘ylari' },
+        text: 'Ertalab anketa varag‘ini o‘qib, Akbarali qotib qoladi: shaharchaga uning nomi berilgan! Ko‘zguda esa soqol bosgan, rangsiz, yovvoyi odamni ko‘radi.',
+      },
+      {
+        title: 'Bronza haykal',
+        emoji: '🗿',
+        doc: { title: 'Qabr toshidagi yozuv', text: 'AKBARALI G‘OZIYEV (1931–1960). Konchi do‘stlarini halokatdan qutqarish yo‘lida qahramonlarcha halok bo‘ldi.' },
+        text: 'Kecha qorong‘ida ko‘ringan sharpa — uning o‘ziga atalgan haykal ekan. Akbarali tirik turib o‘z qabri oldida turibdi.',
+      },
+      {
+        title: 'Haqiqat qanday yashirindi?',
+        emoji: '🧩',
+        steps: [
+          { e: '🔦', t: 'Konchilar topadi', d: 'Transformator yonida yuzini tanib bo‘lmaydigan murda.' },
+          { e: '🧥', t: 'Pidjak cho‘ntagi', d: 'Propusk va guvohnoma: Akbarali G‘oziyev.' },
+          { e: '🎖️', t: 'Shon-sharaf', d: 'Mitinglar, haykal, muzey, bolalar yig‘inlari.' },
+          { e: '🏙️', t: 'Nom berish', d: 'Shodasoy — Akbarobod deb ataladi.' },
+          { e: '👻', t: 'Haqiqiy qahramon', d: 'Bektemir — nom-nishonsiz ketdi.' },
+        ],
+      },
+      {
+        title: 'Ikki satr — butun hikmat',
+        emoji: '💡',
+        cards: [
+          { e: '🕯️', t: 'Odam deb o‘lgan odam — doim tirik', d: 'Azimjon bobosining so‘zini anketa orqasiga yozib qo‘yadi.' },
+          { e: '🥀', t: 'O‘zini deb yashagan — o‘lik', d: 'Uning tagiga Akbarali titroq qo‘l bilan qo‘shib yozadi.' },
+        ],
+        reveal: [{ q: 'Bu hikmat Akbarali voqeasining mohiyatini ifodalaydimi?', a: 'Ha: Bektemir nomsiz bo‘lsa ham, ishi yashaydi; Akbarali tirik bo‘lsa ham, ruhan o‘lik — chunki o‘zini o‘yladi.' }],
+      },
+      {
+        title: 'Fojiali yakun',
+        emoji: '🌫️',
+        text: 'Ertalab Akbarali xonasida yo‘q edi. Ochil buva Shodasoy jari yonidagi izlarni ko‘radi va uning fojiali tarzda hayotdan ketganini anglaydi. Ochil buva: «Bola ahvolni o‘zicha tuzatmoqchi bo‘lgan. Lekin yana qo‘rqoqlik bilan», deydi.',
+        rule: 'Xatoni tuzatish, haqiqatni yuzaga chiqarish uchun jasorat kerak.',
+        ruleLabel: 'Ochil buvaning xulosasi',
+        note: 'Muallif bu yakunni «yechim» sifatida emas, ogohlantirish sifatida beradi: haqiqiy jasorat — odamlar oldiga chiqib, rostini aytish va yordam so‘rash edi. Har qanday og‘ir holatda ham kattalarga, yaqinlarga dardni aytish — kuchsizlik emas, kuchlilik.',
+      },
+      {
+        title: 'Ochil buva nega jim qoldi?',
+        emoji: '🤔',
+        vs: {
+          q: 'Ochil buva Akbaralini na yupatdi, na koyidi. Nega?',
+          a: { t: '😶 Ojizlikdan', pts: ['«Hech qachon bunday ojiz bo‘lmagan edim» deydi', 'To‘g‘ri so‘z topolmadi'] },
+          b: { t: '⏳ Donolikdan', pts: ['«Ertalab miya tiniqroq bo‘ladi» deb vaqt berdi', 'Tez qaror zarar qiladi deb o‘yladi'] },
+        },
+      },
+      {
+        title: 'Keys-stadi',
+        emoji: '🎲',
+        cards: [
+          { e: '🌱', t: '1-guruh', d: 'Azimjon — «begona yurtda unib chiqqan zaif nihol», Akbarali — «bandi mo‘rt». O‘xshash va farqli jihatlar?' },
+          { e: '🗝️', t: '2-guruh', d: 'Voqea epigraf («Eng dahshatli yirtqich — qo‘rquv») bilan qanday bog‘langan?' },
+          { e: '🏛️', t: '3-guruh', d: 'Haykal, muzey, shahar nomi — sobiq Sovet davridagi qanday «qadriyat»larni fosh qiladi?' },
+        ],
+        mission: { t: 'Taqdimot', who: '3 guruh', d: 'Har guruh javobini taqdimot, rasm yoki og‘zaki tarzda tayyorlab, boshqa guruhlar fikr bildirsin.', sec: 300 },
+      },
+    ],
+    pairs: [
+      ['Akbarobod', 'Shodasoyning yangi nomi'],
+      ['Bronza haykal', 'Akbarali nomiga qo‘yilgan'],
+      ['Guvohnoma', 'pidjak cho‘ntagidan chiqqan'],
+      ['«Odam deb o‘lgan odam»', 'doim tirik'],
+      ['«O‘zini deb yashagan»', 'o‘lik'],
+      ['1931–1960', 'qabr toshidagi yillar'],
+      ['Jasorat', 'haqiqatni yuzaga chiqarish uchun kerak'],
+    ],
+    quiz: [
+      { q: 'Shodasoy posyolkasi qanday nom oladi?', options: ['Akbarobod', 'Bektemirobod', 'Chinorobod', 'Konobod'], answer: 0 },
+      { q: 'Akbarali qabristonda kimning haykalini ko‘radi?', options: ['o‘zining', 'Bektemirning', 'otasining', 'Ochil buvaning'], answer: 0 },
+      { q: 'Halok bo‘lgan odamni nega Akbarali deb o‘ylashdi?', options: ['cho‘ntagidan uning guvohnomasi chiqdi', 'Akbarali o‘zi aytdi', 'guvohlar shunday dedi', 'ular o‘xshash edi'], answer: 0 },
+      { q: '«Odam deb o‘lgan odam — doim tirik» kimning so‘zi?', options: ['Ochil buva', 'Azimjon', 'Bektemir', 'Sharofat xola'], answer: 0 },
+      { q: '«O‘zini deb yashagan — o‘lik» satrini kim yozadi?', options: ['Akbarali', 'Azimjon', 'Ochil buva', 'bufetchi'], answer: 0 },
+      { q: 'Ochil buvaning xulosasi:', options: ['xatoni tuzatish uchun jasorat kerak', 'hamma narsani unutish kerak', 'qochish to‘g‘ri', 'vaqt hammasini davolaydi'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Tashqi «shon-sharaf»', 'Ichki haqiqat'],
+      items: [
+        { text: 'bronza haykal', cat: 0 }, { text: 'bir zumlik qo‘rquv', cat: 1 },
+        { text: 'Akbarobod nomi', cat: 0 }, { text: 'Bektemirning fidokorligi', cat: 1 },
+        { text: 'mitinglar', cat: 0 }, { text: 'vijdon azobi', cat: 1 },
+        { text: 'muzey', cat: 0 }, { text: 'yashirilgan rost', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'Ikkinchi qism voqealari',
+        items: [
+          'Akbarali qabristonda «o‘zini» ko‘rib qochadi',
+          'Mehmonxona anketasida «Akbarobod» so‘zini o‘qiydi',
+          'Haykal va qabr toshidagi yozuvni ko‘radi',
+          'Akbarali qissasini Ochil buvaga aytib beradi',
+          'Ochil buva: «Odam deb o‘lgan odam — doim tirik»',
+          'Ertalab Akbarali xonasida bo‘lmaydi',
+        ],
+      },
+    ],
+    qa: [
+      { q: 'Azimjon nega Ochil buvaga «qismat ham sizning qo‘lingizda» deydi?', a: 'Bobosining salobati, donoligi va hayotga ta’sir kuchini ko‘rib hayratlanadi.' },
+      { q: 'Haqiqatni yuzaga chiqarish uchun qanday jasorat kerak?', a: 'Odamlar oldida xatoni tan olish, uyatni ko‘tarish, oqibatiga javob berish jasorati.' },
+      { q: 'Ochil buvaning fe’l-atvoridagi yetakchi xususiyatlar?', a: 'Donolik, mehr, salobat, mas’uliyat, tabiatga muhabbat, haqiqatparvarlik.' },
+      { q: 'Nega haqiqiy qahramon nomsiz qoldi?', a: 'Bir kishining qo‘rquvi va yolg‘oni tufayli; haqiqat yashirildi.' },
+    ],
+    odd: [
+      { items: ['haykal', 'muzey', 'shahar nomi', 'vijdon'], answer: 3, why: 'Vijdon ichki tuyg‘u, qolganlari tashqi shon-sharaf belgilari.' },
+      { items: ['Ochil buva', 'Azimjon', 'Akbarali', 'Barchin'], answer: 3, why: 'Barchin — «Alpomish» qahramoni.' },
+    ],
+    debate: [
+      { claim: 'Akbarali haqiqatni aytganda ham odamlar uni kechirmas edi.', pro: 'Odamlar yolg‘onni kechirmaydi.', con: 'Onasi aytgandek, faqat shodasoyliklar kechira olardi — aytishning o‘zi poklanish edi.' },
+      { claim: 'Muhimi — ish qilinishi, kim qilgani ahamiyatsiz.', pro: 'Konchilar baribir qutqarildi.', con: 'Haqiqiy qahramonning nomi tiklanishi adolat talabi.' },
+    ],
+    creative: [
+      { task: 'Bektemir uchun qabr toshiga yangi, haqqoniy yozuv yozing (2 gap).', time: 90 },
+      { task: '«Odam deb o‘lgan odam — doim tirik» hikmatiga hayotdan bir misol keltiring.', time: 90 },
+    ],
+  },
+
+  /* ===================== 14. Adabiy laboratoriya — ssenariy ===================== */
+  {
+    id: 'ad9-sud-ssenariy',
+    source: 'I chorak • 14-dars • 67-bet',
+    title: 'Adabiy laboratoriya. «Turing, sud kelyapti!» Ssenariy tuzish',
+    short: 'Akbarali qissasi bo‘yicha ramziy sud: rollar, tartib, dalillar va ssenariy qolipi',
+    theme: { emoji: '⚖️', grad: 'from-slate-900 via-blue-900 to-amber-600', border: 'border-amber-200', tag: 'Adabiy laboratoriya • 1-bosqich' },
+    lesson: [
+      {
+        title: 'Bugun sinf — sud zali!',
+        emoji: '🏛️',
+        text: 'Akbarali qissasi voqealari asosida ramziy sud jarayoni o‘tkazamiz. Asosiy epizod — kondagi portlash. Maqsad — Akbaralini «oqlash» yoki «qoralash» bo‘yicha ramziy hukm chiqarish.',
+        steps: [
+          { e: '✍️', t: '1-bosqich: Ssenariy tuzish', d: 'Bugun — rollar, dalillar, nutqlar.' },
+          { e: '🎭', t: '2-bosqich: Sahnalashtirish', d: 'Keyingi dars — mashq va namoyish.' },
+          { e: '📣', t: '3-bosqich: Namoyish', d: 'Sud jarayoni va hukm.' },
+        ],
+      },
+      {
+        title: 'Rollar',
+        emoji: '🎭',
+        cards: [
+          { e: '👨‍⚖️', t: 'Sudya', d: 'Jarayonni boshqaradi, tartibni saqlaydi, hukm o‘qiydi.' },
+          { e: '🗣️', t: 'Prokuror (qoralovchi)', d: 'Akbaralining aybini dalillar bilan isbotlaydi.' },
+          { e: '🛡️', t: 'Advokat (oqlovchi)', d: 'Yengillashtiruvchi holatlarni ko‘rsatadi.' },
+          { e: '🧍', t: 'Akbarali', d: 'Ayblanuvchi — o‘z so‘zini aytadi.' },
+          { e: '👴', t: 'Guvohlar', d: 'Ochil buva, Azimjon, konchi, bufetchi Sonya, Sharofat xolaning qo‘shnisi.' },
+          { e: '👥', t: 'Hakamlar hay’ati', d: 'Qolgan o‘quvchilar — ovoz berib qaror chiqaradi.' },
+        ],
+        mission: { t: 'Rollarni taqsimlash', d: 'Baraban yoki qur’a orqali rollarni taqsimlang. «O‘quvchi tanlash» bo‘limidagi barabandan foydalaning!', sec: 120 },
+      },
+      {
+        title: 'Sud majlisi tartibi',
+        emoji: '📋',
+        steps: [
+          { e: '🔔', t: '«Turing, sud kelyapti!»', d: 'Sudya kiradi, majlisni ochadi.' },
+          { e: '📜', t: 'Ayblov e’loni', d: 'Prokuror ayblovni o‘qiydi.' },
+          { e: '🧍', t: 'Ayblanuvchi so‘zi', d: 'Akbarali o‘z versiyasini aytadi.' },
+          { e: '👀', t: 'Guvohlar so‘rog‘i', d: 'Har bir tomon savol beradi.' },
+          { e: '⚔️', t: 'Munozara', d: 'Prokuror va advokatning yakuniy nutqlari.' },
+          { e: '🗳️', t: 'Hakamlar qarori', d: 'Ovoz berish.' },
+          { e: '⚖️', t: 'Hukm', d: 'Sudya ramziy hukmni o‘qiydi.' },
+        ],
+      },
+      {
+        title: 'Dalillar banki',
+        emoji: '🗂️',
+        vs: {
+          q: 'Har tomon uchun dalil to‘plang',
+          a: { t: '🗣️ Prokuror', pts: ['Yordam bermay qochdi', 'Haqiqatni yillar davomida yashirdi', 'O‘zganing shon-sharafini o‘zlashtirdi (sukut bilan)', 'Onasining vasiyatini bajarmadi'] },
+          b: { t: '🛡️ Advokat', pts: ['Bir lahzalik vahima — ongli qaror emas', 'Hujjatsiz odamni konga olib kirish — yaxshilik niyatida', 'Vijdon azobini chekdi, o‘zini jazoladi', 'Bufetchiga va buvasiga rostini aytdi'] },
+        },
+      },
+      {
+        title: 'Ssenariy qolipi',
+        emoji: '📝',
+        table: {
+          head: ['Sahna', 'Kim gapiradi', 'Mazmun', 'Vaqt'],
+          rows: [
+            ['1', 'Sudya', 'Majlisni ochish, ishni e’lon qilish', '1 daq'],
+            ['2', 'Prokuror', 'Ayblov nutqi', '2 daq'],
+            ['3', 'Akbarali', 'Ko‘rsatma', '2 daq'],
+            ['4', 'Guvohlar', 'So‘roq (3 guvoh)', '6 daq'],
+            ['5', 'Advokat', 'Himoya nutqi', '2 daq'],
+            ['6', 'Hakamlar', 'Muhokama va ovoz', '3 daq'],
+            ['7', 'Sudya', 'Hukm', '1 daq'],
+          ],
+        },
+      },
+      {
+        title: 'Guvohlarga savollar',
+        emoji: '❓',
+        reveal: [
+          { q: 'Ochil buvaga', a: 'Akbarali bolaligida qanday edi? U sizga nima deb aytdi? Siz unga nega maslahat bermadingiz?' },
+          { q: 'Konchiga', a: 'Falokat joyida nimani ko‘rdingiz? Murdani qanday aniqladingiz?' },
+          { q: 'Bufetchi Sonyaga', a: 'Akbarali sizga nima dedi? Siz unga qanday maslahat berdingiz?' },
+          { q: 'Azimjonga', a: 'Akbaralining hikoyasi sizga qanday ta’sir qildi?' },
+        ],
+      },
+      {
+        title: 'Muhim eslatma',
+        emoji: '📌',
+        text: 'Sudya, prokuror va advokat rolidagi o‘quvchilar qonunchiligimizga tayangan holda asosli faktlar tayyorlashi kerak. Konstitutsiyaviy huquq fani o‘qituvchisidan ham maslahat oling.',
+        note: 'Bu — ramziy, adabiy sud. Biz insonni emas, xatti-harakatni va uning ma’naviy oqibatini baholaymiz.',
+        mission: { t: 'Uyga vazifa', d: 'Har bir rol egasi o‘z nutqini (1–2 daqiqalik) yozib kelsin. Guvohlar 3 tadan javobni tayyorlasin.' },
+      },
+    ],
+    pairs: [
+      ['Sudya', 'jarayonni boshqaradi'],
+      ['Prokuror', 'qoralovchi'],
+      ['Advokat', 'oqlovchi'],
+      ['Guvoh', 'voqeadan xabardor shaxs'],
+      ['Hakamlar hay’ati', 'ovoz berib qaror chiqaradi'],
+      ['Hukm', 'sudning yakuniy qarori'],
+      ['Ssenariy', 'sahna matni va tartibi'],
+    ],
+    quiz: [
+      { q: 'Sud jarayonining asosiy epizodi:', options: ['kondagi portlash', 'Bektemirning kelishi', 'onaning vafoti', 'qabristondagi haykal'], answer: 0 },
+      { q: 'Prokurorning vazifasi:', options: ['aybni isbotlash', 'ayblanuvchini himoya qilish', 'hukm o‘qish', 'guvohlik berish'], answer: 0 },
+      { q: 'Advokatning vazifasi:', options: ['himoya qilish', 'ayblash', 'tartibni saqlash', 'ovoz berish'], answer: 0 },
+      { q: 'Sud majlisini kim ochadi?', options: ['sudya', 'prokuror', 'guvoh', 'advokat'], answer: 0 },
+      { q: 'Laboratoriyaning birinchi bosqichi:', options: ['ssenariy tuzish', 'namoyish', 'sahnalashtirish', 'hukm'], answer: 0 },
+      { q: 'Qaysi fan o‘qituvchisidan maslahat olish tavsiya etiladi?', options: ['Konstitutsiyaviy huquq', 'Fizika', 'Kimyo', 'Jismoniy tarbiya'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Prokuror dalili', 'Advokat dalili'],
+      items: [
+        { text: 'yordam bermay qochdi', cat: 0 }, { text: 'bir lahzalik vahima', cat: 1 },
+        { text: 'haqiqatni yashirdi', cat: 0 }, { text: 'vijdon azobini chekdi', cat: 1 },
+        { text: 'onasining so‘zini tinglamadi', cat: 0 }, { text: 'yaxshilik niyatida pidjak berdi', cat: 1 },
+        { text: 'o‘zgalar shon-sharafiga sukut qildi', cat: 0 }, { text: 'buvasiga rostini aytdi', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'Sud majlisi tartibi',
+        items: ['Majlisni ochish', 'Ayblov e’loni', 'Ayblanuvchi so‘zi', 'Guvohlar so‘rog‘i', 'Yakuniy nutqlar', 'Hakamlar qarori', 'Hukm o‘qilishi'],
+      },
+    ],
+    qa: [
+      { q: 'Nega sud «ramziy»?', a: 'Biz badiiy asar qahramonining xatti-harakatini ma’naviy jihatdan baholaymiz.' },
+      { q: 'Advokat qaysi holatlarni yengillashtiruvchi deb ko‘rsatishi mumkin?', a: 'Vahima, yoshlik, niyatining yomon emasligi, vijdon azobi.' },
+      { q: 'Prokurorning eng kuchli dalili nima?', a: 'Akbarali yillar davomida haqiqatni yashirib, haqiqiy qahramonning nomini yo‘qotdi.' },
+    ],
+    odd: [
+      { items: ['sudya', 'prokuror', 'advokat', 'sinchi'], answer: 3, why: 'Sinchi — «Alpomish»dan, sud rollari emas.' },
+    ],
+    debate: [
+      { claim: 'Akbarali aybdor.', pro: 'Qochish va yolg‘onga sukut — ma’naviy jinoyat.', con: 'Qo‘rquv — inson tabiati, u o‘zini allaqachon jazoladi.' },
+    ],
+    creative: [
+      { task: 'Sudyaning ochilish nutqini 3 gapda yozing.', time: 90 },
+      { task: 'Akbaralining sud oldidagi so‘nggi so‘zini 2 gapda ayting.', time: 60 },
+    ],
+  },
+
+  /* ===================== 15. Adabiy laboratoriya — sahnalashtirish ===================== */
+  {
+    id: 'ad9-sud-sahna',
+    source: 'I chorak • 15-dars • 67-bet',
+    title: 'Adabiy laboratoriya. «Turing, sud kelyapti!» Sahnalashtirish',
+    short: 'Mashq, sahna madaniyati, namoyish, hakamlar ovozi va ramziy hukm',
+    theme: { emoji: '🎭', grad: 'from-red-800 via-rose-700 to-amber-500', border: 'border-rose-200', tag: 'Adabiy laboratoriya • 2–3-bosqich' },
+    lesson: [
+      {
+        title: 'Parda ochiladi!',
+        emoji: '🎬',
+        text: 'Ssenariy tayyor. Endi uni jonlantiramiz. Sinf xonasini sud zaliga aylantiring: sudya stoli, ayblanuvchi o‘rni, ikki tomon stollari, hakamlar qatori.',
+        cards: [
+          { e: '🪑', t: 'Mizansahna', d: 'Sudya — markazda; prokuror — chapda, advokat — o‘ngda; guvoh minbari — yon tomonda.' },
+          { e: '🔨', t: 'Rekvizit', d: 'Sudya bolg‘achasi (yoki kitob), «guvohnoma», «pidjak», kaska rasmi.' },
+          { e: '🏷️', t: 'Nom kartochkalari', d: 'Har bir rol egasining stolida rol nomi yozilgan qog‘oz.' },
+        ],
+      },
+      {
+        title: 'Sahna nutqi qoidalari',
+        emoji: '🎤',
+        steps: [
+          { e: '🔊', t: 'Baland va aniq', d: 'Oxirgi partadagi o‘quvchi ham eshitsin.' },
+          { e: '👀', t: 'Ko‘z bilan aloqa', d: 'Qog‘ozga emas, hakamlarga qarang.' },
+          { e: '⏸️', t: 'Pauza', d: 'Muhim gapdan keyin to‘xtang — ta’sir kuchayadi.' },
+          { e: '📚', t: 'Matnga tayaning', d: 'Har bir dalilni qissadagi lavha bilan asoslang.' },
+          { e: '🤝', t: 'Hurmat', d: 'Raqib tomonni bo‘lmang, «Hurmatli sud!» deb murojaat qiling.' },
+        ],
+      },
+      {
+        title: 'Bosh mashq',
+        emoji: '⏱️',
+        mission: { t: 'Mashq', who: 'Barcha rollar', d: 'Ssenariy bo‘yicha bir marta to‘xtovsiz «yugurib» chiqing. Sudya vaqtni nazorat qilsin.', sec: 600 },
+      },
+      {
+        title: 'Namoyish: sud majlisi',
+        emoji: '⚖️',
+        text: '«Turing, sud kelyapti!» — majlis boshlanadi. Ssenariy tartibida o‘tkazing. Hakamlar har bir nutqni diqqat bilan tinglab, qisqa qayd yozib borsin.',
+        mission: { t: 'Sud majlisi', d: 'Ssenariy bo‘yicha to‘liq namoyish (taxminan 17 daqiqa).', sec: 1020 },
+      },
+      {
+        title: 'Hakamlar hay’ati ovozi',
+        emoji: '🗳️',
+        vs: {
+          q: 'Ramziy hukm: Akbarali...',
+          a: { t: '✅ Ma’naviy oqlanadi', pts: ['Qo‘rquv — vahima onidagi xato', 'O‘zini allaqachon jazoladi'] },
+          b: { t: '❌ Ma’naviy qoralanadi', pts: ['Haqiqatni yashirdi', 'Haqiqiy qahramon nomsiz qoldi'] },
+        },
+      },
+      {
+        title: 'Hukmdan keyin',
+        emoji: '🕊️',
+        text: 'Sud qaysi qarorga kelmasin, eng muhim xulosa — Bektemirning nomini tiklash va haqiqatni aytish jasorati.',
+        reveal: [
+          { q: 'Agar qaror sizga bog‘liq bo‘lsa, Bektemir uchun nima qilardingiz?', a: 'Masalan: haykalga uning nomini yozish, oilasini topib haqiqatni aytish, muzeyda uning tarixini ko‘rsatish.' },
+        ],
+      },
+      {
+        title: 'Baholash va refleksiya',
+        emoji: '📊',
+        table: {
+          head: ['Mezon', 'Ball'],
+          rows: [
+            ['Matnni bilish va dalil keltirish', '5'],
+            ['Rolga kirish va sahna nutqi', '5'],
+            ['Jamoaviy ish va tartib', '5'],
+            ['Mantiqiy fikrlash, ishontirish', '5'],
+          ],
+        },
+        mission: { t: 'Refleksiya', d: 'Har kim bir gap yozsin: «Bu sud menga ... ni o‘rgatdi».', sec: 120 },
+      },
+    ],
+    pairs: [
+      ['Mizansahna', 'aktyorlarning sahnadagi joylashuvi'],
+      ['Rekvizit', 'sahna buyumlari'],
+      ['Pauza', 'nutqdagi ta’sirli to‘xtam'],
+      ['Bosh mashq', 'namoyishdan oldingi to‘liq mashq'],
+      ['Hakamlar', 'ovoz berib qaror chiqaradi'],
+      ['Refleksiya', 'o‘z faoliyatini baholash'],
+    ],
+    quiz: [
+      { q: 'Sud zalida sudya qayerda o‘tiradi?', options: ['markazda', 'eshik oldida', 'hakamlar orasida', 'oxirgi qatorda'], answer: 0 },
+      { q: 'Nutq paytida kimga qarash kerak?', options: ['hakamlarga', 'qog‘ozga', 'shiftga', 'derazaga'], answer: 0 },
+      { q: 'Sudga qanday murojaat qilinadi?', options: ['«Hurmatli sud!»', '«Hoy!»', '«Do‘stlar!»', '«Ustoz!»'], answer: 0 },
+      { q: 'Dalilni nima bilan asoslash kerak?', options: ['qissadagi lavha bilan', 'taxmin bilan', 'mish-mish bilan', 'internetdagi izoh bilan'], answer: 0 },
+      { q: 'Sudning eng muhim ma’naviy xulosasi:', options: ['haqiqatni aytish jasorati', 'jazo berish', 'g‘alaba qilish', 'tez tugatish'], answer: 0 },
+    ],
+    sort: {
+      categories: ['To‘g‘ri sahna odobi', 'Noto‘g‘ri'],
+      items: [
+        { text: 'baland va aniq gapirish', cat: 0 }, { text: 'raqibni bo‘lish', cat: 1 },
+        { text: 'ko‘z bilan aloqa', cat: 0 }, { text: 'qog‘ozdan ko‘z uzmaslik', cat: 1 },
+        { text: 'matndan dalil keltirish', cat: 0 }, { text: 'kulib yuborish', cat: 1 },
+        { text: 'vaqtga rioya qilish', cat: 0 }, { text: 'dalilsiz baqirish', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Sizningcha, qaysi tomonning nutqi eng ishonarli bo‘ldi? Nega?', a: 'Erkin javob — dalil va nutq madaniyatiga tayaning.' },
+      { q: 'Akbarali rolini o‘ynash qiyinmi? Nega?', a: 'Erkin javob: uning ichki ziddiyatini his qilish kerak.' },
+      { q: 'Ramziy sud adabiyotni tushunishga qanday yordam berdi?', a: 'Qahramon xatti-harakatini turli nuqtai nazardan ko‘rishga o‘rgatdi.' },
+    ],
+    odd: [
+      { items: ['mizansahna', 'rekvizit', 'pauza', 'qofiya'], answer: 3, why: 'Qofiya — she’riyat atamasi.' },
+    ],
+    debate: [
+      { claim: 'Ramziy sud — adabiyot darsining eng yaxshi usuli.', pro: 'Hamma faol, fikr erkin.', con: 'Ba’zi o‘quvchilar faqat tomoshabin bo‘lib qoladi.' },
+    ],
+    creative: [
+      { task: 'Sud jarayoni haqida gazetaga 3 gapli xabar yozing (sarlavha bilan).', time: 90 },
+      { task: 'Bektemir sud zalida paydo bo‘lsa, nima der edi? Bir gap.', time: 60 },
+    ],
+  },
+
+  /* ===================== 16. Mustaqil o‘qilgan asarlar ===================== */
+  {
+    id: 'ad9-mustaqil-mutolaa',
+    source: 'I chorak • 16-dars • Mustaqil mutolaa',
+    title: 'Mustaqil o‘qilgan asarlar muhokamasi',
+    short: '«Kitob pasporti», kitob taqdimoti, tavsiya ro‘yxati va kitobxonlik o‘yinlari',
+    theme: { emoji: '📚', grad: 'from-violet-700 via-fuchsia-600 to-pink-500', border: 'border-fuchsia-200', tag: 'Kitobxonlik • Muhokama' },
+    lesson: [
+      {
+        title: 'Bugun gap — sizning kitobingiz haqida!',
+        emoji: '📖',
+        text: 'Chorak davomida darslikdan tashqari qanday asarlar o‘qidingiz? Bugun har kim o‘zi o‘qigan kitobni sinfga «sotadi» — boshqalarni o‘qishga qiziqtiradi.',
+        reveal: [
+          { q: 'Kitobni qanday tanlaysiz?', a: 'Muqovasi, muallifi, do‘stlar tavsiyasi, film, ustoz maslahati... Siznikichi?' },
+          { q: 'Yaxshi kitob qanday bo‘ladi?', a: 'O‘ylantiradi, his uyg‘otadi, o‘qib bo‘lgach ham yodingizdan chiqmaydi.' },
+        ],
+      },
+      {
+        title: '«Kitob pasporti»',
+        emoji: '🪪',
+        table: {
+          head: ['Bo‘lim', 'Nima yoziladi?'],
+          rows: [
+            ['Muallif va nomi', 'Kim yozgan, qachon?'],
+            ['Janri', 'Roman, qissa, hikoya, she’r, doston...'],
+            ['Asosiy qahramon', 'Kim va qanday inson?'],
+            ['Eng ta’sirli lavha', 'Bir sahna — nega ta’sir qildi?'],
+            ['Asosiy g‘oya', 'Kitob nimani o‘rgatadi?'],
+            ['Bahoyim', '⭐ 1 dan 5 gacha va bir jumla sabab'],
+          ],
+        },
+        mission: { t: 'Pasport to‘ldirish', d: 'Daftaringizga o‘zingiz o‘qigan kitob pasportini to‘ldiring.', sec: 300 },
+      },
+      {
+        title: '1 daqiqalik kitob taqdimoti',
+        emoji: '⏱️',
+        steps: [
+          { e: '🪝', t: 'Ilgak (10 soniya)', d: 'Qiziqarli savol yoki lavha bilan boshlang: «Agar siz bir zumda qo‘rqib ketsangiz...»' },
+          { e: '👤', t: 'Qahramon (20 soniya)', d: 'Kim u va qanday muammoga duch keldi?' },
+          { e: '🤫', t: 'Sir saqlang (20 soniya)', d: 'Oxirini aytmang! Faqat qiziqtiring.' },
+          { e: '⭐', t: 'Tavsiya (10 soniya)', d: '«Bu kitobni ... ni yaxshi ko‘radiganlarga tavsiya qilaman».' },
+        ],
+        mission: { t: 'Taqdimot', who: '5–6 o‘quvchi', d: 'Baraban orqali tanlangan o‘quvchilar 1 daqiqada kitobini taqdim etsin. Sinf eng qiziqtirgan kitobga ovoz beradi.', sec: 60 },
+      },
+      {
+        title: '9-sinf uchun tavsiya javoni',
+        emoji: '🗃️',
+        cards: [
+          { e: '🌳', t: 'Asqad Muxtor. «Chinor»', d: 'Ochil buvaning boshqa safarlari — to‘liq romanda.' },
+          { e: '🌸', t: 'Oybek. «Bolalik»', d: 'Eski Toshkent va adibning bolalik xotiralari.' },
+          { e: '💌', t: 'Odil Yoqubov. «Muqaddas»', d: 'Yoshlar sevib o‘qigan qissa.' },
+          { e: '🏔️', t: 'Chingiz Aytmatov. «Jamila»', d: 'Muhabbat va erkinlik haqida qissa.' },
+          { e: '📜', t: 'Abdulla Qodiriy. «O‘tkan kunlar»', d: 'Birinchi o‘zbek romani.' },
+          { e: '🕰️', t: 'O‘tkir Hoshimov. «Dunyoning ishlari»', d: 'Ona haqidagi ta’sirli hikoyalar.' },
+        ],
+      },
+      {
+        title: 'Kitobxonlik bahsi',
+        emoji: '💬',
+        vs: {
+          q: 'Qaysi biri yaxshiroq?',
+          a: { t: '📖 Qog‘oz kitob', pts: ['Ko‘zni kam charchatadi', 'Varaqlash zavqi, xotirada yaxshi qoladi'] },
+          b: { t: '🎧 Audio/elektron kitob', pts: ['Har doim yonda', 'Yo‘lda ham «o‘qish» mumkin'] },
+        },
+      },
+      {
+        title: 'Kitobxon vazifalari',
+        emoji: '🎯',
+        reveal: [
+          { q: 'Qahramonga xat', a: 'O‘qigan asaringiz qahramoniga 3 gapli xat yozing: unga nima demoqchisiz?' },
+          { q: 'Muqova dizayni', a: 'Kitobga yangi muqova chizing — doskada yoki daftarda.' },
+          { q: 'Boshqa yakun', a: 'Asar boshqacha tugaganida nima bo‘lardi? 3 gapda ayting.' },
+        ],
+        mission: { t: 'Kitob marafoni', d: 'Ikkinchi chorak uchun o‘zingizga maqsad qo‘ying: nechta kitob o‘qiysiz? Daftaringizga yozib qo‘ying.' },
+      },
+    ],
+    pairs: [
+      ['Roman', 'katta hajmli nasriy asar'],
+      ['Qissa', 'o‘rta hajmli nasriy asar'],
+      ['Hikoya', 'kichik hajmli nasriy asar'],
+      ['«O‘tkan kunlar»', 'Abdulla Qodiriy'],
+      ['«Jamila»', 'Chingiz Aytmatov'],
+      ['«Bolalik»', 'Oybek'],
+      ['«Muqaddas»', 'Odil Yoqubov'],
+    ],
+    quiz: [
+      { q: 'Birinchi o‘zbek romani:', options: ['«O‘tkan kunlar»', '«Chinor»', '«Navoiy»', '«Kecha va kunduz»'], answer: 0 },
+      { q: '«Jamila» qissasining muallifi:', options: ['Chingiz Aytmatov', 'Oybek', 'Asqad Muxtor', 'Odil Yoqubov'], answer: 0 },
+      { q: 'Kitob taqdimotida nimani aytmaslik kerak?', options: ['asarning oxirini', 'muallifini', 'qahramonini', 'janrini'], answer: 0 },
+      { q: '«Muqaddas» qissasini kim yozgan?', options: ['Odil Yoqubov', 'Abdulla Qahhor', 'Cho‘lpon', 'Usmon Azim'], answer: 0 },
+      { q: 'Kichik hajmli nasriy asar:', options: ['hikoya', 'roman', 'doston', 'trilogiya'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Nasriy asar', 'She’riy asar'],
+      items: [
+        { text: 'roman', cat: 0 }, { text: 'g‘azal', cat: 1 },
+        { text: 'qissa', cat: 0 }, { text: 'doston', cat: 1 },
+        { text: 'hikoya', cat: 0 }, { text: 'ruboiy', cat: 1 },
+        { text: 'maqola', cat: 0 }, { text: 'qo‘shiq', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Chorakda o‘qigan eng yaxshi kitobingiz qaysi va nega?', a: 'Erkin javob — bitta lavha bilan asoslang.' },
+      { q: 'Kitob o‘qish odamga nima beradi?', a: 'Tasavvur, so‘z boyligi, fikrlash, hamdardlik, bilim.' },
+      { q: 'Do‘stingizga qaysi kitobni tavsiya qilardingiz?', a: 'Erkin javob — nima uchunligini ayting.' },
+    ],
+    odd: [
+      { items: ['roman', 'qissa', 'hikoya', 'g‘azal'], answer: 3, why: 'G‘azal — she’riy janr.' },
+      { items: ['Oybek', 'Odil Yoqubov', 'Abdulla Qodiriy', 'Pushkin'], answer: 3, why: 'Pushkin — rus shoiri.' },
+    ],
+    debate: [
+      { claim: 'Kitobni o‘qishdan oldin filmini ko‘rish mumkin.', pro: 'Film qiziqish uyg‘otadi.', con: 'Film tasavvurni cheklaydi, kitob zavqini kamaytiradi.' },
+    ],
+    creative: [
+      { task: 'Sevimli kitobingizni 3 ta emoji bilan ifodalang — sinf topsin!', time: 60 },
+      { task: 'Kitobingiz uchun 5 so‘zli reklama shiori o‘ylab toping.', time: 60 },
+    ],
+  },
+
+  /* ===================== 17. 1-CHSB ===================== */
+  {
+    id: 'ad9-chsb-1',
+    source: 'I chorak • 17-dars • 1-CHSB (40 ball)',
+    title: '1-CHSB. Chorak bo‘yicha summativ baholash',
+    short: 'I chorak asarlari bo‘yicha takrorlash, ish tuzilmasi va tayyorgarlik o‘yinlari',
+    theme: { emoji: '🏁', grad: 'from-gray-900 via-indigo-800 to-sky-600', border: 'border-sky-200', tag: 'Chorak summativ baholash' },
+    lesson: [
+      {
+        title: 'Chorak yakuni — 40 ball',
+        emoji: '🏁',
+        text: 'Bugun I chorak davomida o‘rganilgan barcha asarlar bo‘yicha bilimingizni sinaymiz. Avval tez takrorlash, so‘ng yozma ish.',
+        facts: [
+          { n: '40', l: 'ball — maksimal' },
+          { n: '7', l: 'asar va muallif' },
+          { n: '2', l: 'nazariy mavzu' },
+        ],
+      },
+      {
+        title: 'Chorak xaritasi',
+        emoji: '🗺️',
+        steps: [
+          { e: '🖋️', t: 'Cho‘lpon. «Adabiyot nadur?»', d: 'Adabiyot yashasa — millat yashar.' },
+          { e: '🏹', t: '«Alpomish» dostoni', d: 'Milliy qadriyatlar qomusi; Barchin, Qorajon, Boychibor.' },
+          { e: '🌙', t: 'Usmon Azim she’rlari', d: 'Xayrlashuv, Baxshiyona, Karvon ko‘rdim, Tong titraydi.' },
+          { e: '🎼', t: 'She’riy nutq', d: 'Ritm, bo‘g‘in, turoq, misra, band, qofiya, radif.' },
+          { e: '🌳', t: 'Asqad Muxtor. «Chinor»', d: 'Ochil buva, Azimjon, Akbarali qissasi.' },
+        ],
+      },
+      {
+        title: 'Tez takrorlash',
+        emoji: '⚡',
+        reveal: [
+          { q: 'Barchinning to‘rt sharti?', a: 'Poyga, yoy tortish, merganlik (tanga urish), kurash.' },
+          { q: '«Bolamga “Vatan”, de ilk bora» — kimning she’ri?', a: 'Usmon Azim, «Alpomish va Barchinoy xayrlashuvi».' },
+          { q: 'Barmoq tizimida asosiy mezon?', a: 'Bo‘g‘inlar soni va ularning misralarda tengligi.' },
+          { q: 'Akbarali qissasining epigrafi?', a: '«Eng dahshatli yirtqich — qo‘rquv» (Nasriddin Afandi).' },
+          { q: '«Chinor» romanining tuzilishi?', a: '5 hikoyat, 5 rivoyat, 5 qissa.' },
+          { q: 'Elbek baxshining nasihatidagi takror?', a: '«Chidagin, bolam».' },
+        ],
+      },
+      {
+        title: 'Ish tuzilmasi (taxminiy)',
+        emoji: '🧾',
+        text: 'Ustoz o‘z topshiriqlariga ko‘ra o‘zgartirishi mumkin:',
+        table: {
+          head: ['Qism', 'Topshiriq', 'Ball'],
+          rows: [
+            ['1', 'Test: 10 ta savol (har biri 1 ball)', '10'],
+            ['2', 'Moslashtirish: asar — muallif — qahramon', '5'],
+            ['3', 'Nazariy topshiriq: misrani turoqlarga ajratish, qofiya/radif topish', '10'],
+            ['4', 'Qisqa javob: 3 ta savolga 2–3 gapdan', '9'],
+            ['5', 'Ijodiy: bir qahramonga munosabat (5–6 gap)', '6'],
+          ],
+        },
+      },
+      {
+        title: 'Muvaffaqiyat sirlari',
+        emoji: '🔑',
+        cards: [
+          { e: '👀', t: 'Diqqat bilan o‘qing', d: 'Savolni oxirigacha o‘qing, kalit so‘zni belgilang.' },
+          { e: '⏰', t: 'Vaqtni taqsimlang', d: 'Qiyin savolga osilib qolmang — oxirida qayting.' },
+          { e: '📚', t: 'Dalil keltiring', d: 'Qisqa javobda ham asardan misol yozing.' },
+          { e: '✅', t: 'Tekshiring', d: 'Oxirgi 3 daqiqani imlo va javoblarni tekshirishga qoldiring.' },
+        ],
+        mission: { t: 'Yozma ish', d: 'Ish varaqasini oling va vaqt boshlandi! Omad!', sec: 1800 },
+      },
+    ],
+    pairs: [
+      ['Cho‘lpon', '«Adabiyot nadur?»'],
+      ['Fozil Yo‘ldosh o‘g‘li', '«Alpomish» varianti'],
+      ['Usmon Azim', '«Karvon ko‘rdim...»'],
+      ['Asqad Muxtor', '«Chinor»'],
+      ['Bektemir', 'transformatorni o‘chirgan'],
+      ['Elomon', 'Elbek baxshining shogirdi'],
+      ['Turoq', 'barmoqdagi bo‘g‘inlar guruhi'],
+      ['Qorajon', 'qalmoqdan chiqqan do‘st'],
+    ],
+    quiz: [
+      { q: '«Adabiyot yashasa — millat yashar» kimning fikri?', options: ['Cho‘lpon', 'Oybek', 'Usmon Azim', 'Asqad Muxtor'], answer: 0 },
+      { q: 'Alpomishning tulpori:', options: ['Boychibor', 'Ko‘kdo‘nan', 'G‘irot', 'Duldul'], answer: 0 },
+      { q: 'Barchinning xatini Alpomishga kim beradi?', options: ['Qaldirg‘ochoyim', 'Boybo‘ri', 'Qultoy', 'Qorajon'], answer: 0 },
+      { q: '«Karvon ko‘rdim...»dagi qahramon qizning ismi:', options: ['Oytuman', 'Barchin', 'Shirin', 'Komila'], answer: 0 },
+      { q: 'Halqasimon kompozitsiya qaysi she’rda?', options: ['«Tong titraydi...»', '«Karvon ko‘rdim...»', '«Baxshiyona»', '«Xayrlashuv»'], answer: 0 },
+      { q: 'Aruzdagi ritmik bo‘lak:', options: ['rukn', 'turoq', 'band', 'misra'], answer: 0 },
+      { q: 'Ochil buva necha yoshda?', options: ['93', '70', '110', '80'], answer: 0 },
+      { q: 'Shodasoy posyolkasining yangi nomi:', options: ['Akbarobod', 'Chinorobod', 'Konobod', 'Bektemirobod'], answer: 0 },
+      { q: '«Odam deb o‘lgan odam — doim tirik» kimning so‘zi?', options: ['Ochil buva', 'Akbarali', 'Azimjon', 'Bektemir'], answer: 0 },
+      { q: 'Usmon Azim qayerda tug‘ilgan?', options: ['Boysunda', 'Farg‘onada', 'Toshkentda', 'Andijonda'], answer: 0 },
+    ],
+    sort: {
+      categories: ['«Alpomish» dostoni', '«Chinor» romani'],
+      items: [
+        { text: 'Barchin', cat: 0 }, { text: 'Ochil buva', cat: 1 },
+        { text: 'Qorajon', cat: 0 }, { text: 'Azimjon', cat: 1 },
+        { text: 'Boychibor', cat: 0 }, { text: 'Bektemir', cat: 1 },
+        { text: 'Ko‘kaldosh', cat: 0 }, { text: 'Akbarobod', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'Chorakdagi asarlar tartibi',
+        items: ['«Adabiyot nadur?»', '«Alpomish»', '«Baxshiyona»', '«Karvon ko‘rdim...»', '«Tong titraydi...»', '«Chinor»', '«Akbarali qissasi»'],
+      },
+    ],
+    qa: [
+      { q: 'Barchin qanday qiz? Ikki fazilatini ayting.', a: 'Vafodor, jasur, dono, mehribon.' },
+      { q: '«Karvon ko‘rdim...»da naqarot qanday vazifa bajaradi?', a: 'Oshiqning kechirimli qalbini kuchaytiradi, qo‘shiq ohangini beradi.' },
+      { q: 'Akbaralining fojiasi nimadan boshlandi?', a: 'Bir zumlik qo‘rquvdan va haqiqatni yashirishdan.' },
+      { q: 'Ritm nima?', a: 'Hodisalarning muayyan vaqtda takrorlanishi; she’riy nutqning bosh alomati.' },
+    ],
+    odd: [
+      { items: ['Barchin', 'Qaldirg‘och', 'Oytuman', 'Ochil buva'], answer: 3, why: 'Ochil buva — erkak qahramon, qolganlari ayol obrazlar.' },
+      { items: ['Cho‘lpon', 'Usmon Azim', 'Asqad Muxtor', 'Ko‘kaldosh'], answer: 3, why: 'Ko‘kaldosh — qahramon, qolganlari mualliflar.' },
+    ],
+    debate: [
+      { claim: 'Chorakdagi eng kuchli qahramon — Bektemir.', pro: 'U o‘z jonini berib yuzlab odamni qutqardi.', con: 'Barchin va Qorajon ham jasorat ko‘rsatdi, ular hayotda g‘olib bo‘ldi.' },
+    ],
+    creative: [
+      { task: 'Chorakdagi asarlardan biriga 5 so‘zli «reklama» o‘ylab toping.', time: 60 },
+    ],
+  },
+
+  /* ===================== 18. CHSB tahlili ===================== */
+  {
+    id: 'ad9-chsb-tahlil',
+    source: 'I chorak • 18-dars • CHSB tahlili',
+    title: 'CHSB tahlili: xatolar ustida ishlash',
+    short: 'Ko‘p uchragan xatolar, ularni tuzatish usullari, o‘z-o‘zini baholash va qayta mashq',
+    theme: { emoji: '🔍', grad: 'from-teal-700 via-emerald-600 to-lime-500', border: 'border-emerald-200', tag: 'Tahlil • Xatolar ustida ishlash' },
+    lesson: [
+      {
+        title: 'Xato — o‘sish nuqtasi',
+        emoji: '🌱',
+        quote: { text: 'Xato qilmaydigan odam — hech narsa qilmaydigan odam', by: 'Xalq hikmati' },
+        text: 'Bugun natijalarni ko‘rib chiqamiz. Maqsad — kim yutqazganini emas, qanday qilib yanada yaxshiroq bo‘lishni topish.',
+      },
+      {
+        title: 'Natijalar xaritasi',
+        emoji: '📊',
+        text: 'Ustoz sinf natijalarini shu jadvalga to‘ldiradi:',
+        table: {
+          head: ['Qism', 'Eng yaxshi bajarildi', 'Eng ko‘p xato'],
+          rows: [
+            ['Test', '…', '…'],
+            ['Moslashtirish', '…', '…'],
+            ['Nazariy topshiriq', '…', '…'],
+            ['Qisqa javob', '…', '…'],
+            ['Ijodiy qism', '…', '…'],
+          ],
+        },
+        note: 'Maslahat: «Natijalar» bo‘limidagi sinf statistikasidan foydalaning.',
+      },
+      {
+        title: 'Ko‘p uchraydigan xatolar',
+        emoji: '⚠️',
+        cards: [
+          { e: '🔀', t: 'Qahramonlarni chalkashtirish', d: 'Qorajon va Ko‘kaldosh, Elbek va Elomon, Azimjon va Akbarali.' },
+          { e: '📏', t: 'Turoqqa noto‘g‘ri ajratish', d: 'Bo‘g‘inni so‘z bilan aralashtirish; pauzani hisobga olmaslik.' },
+          { e: '🔁', t: 'Qofiya va radifni adashtirish', d: 'Radif — qofiyadan keyin takrorlanadigan so‘z!' },
+          { e: '📚', t: 'Dalilsiz javob', d: '«Menga yoqdi» — lekin nega? Asardan misol yo‘q.' },
+          { e: '✍️', t: 'Imlo', d: 'O‘, g‘ harflari, tutuq belgisi (’), qo‘shtirnoq.' },
+        ],
+      },
+      {
+        title: 'Qanday tuzatamiz?',
+        emoji: '🛠️',
+        steps: [
+          { e: '1', t: 'Xatoni toping', d: 'Ish varaqangizdagi har bir xatoni doiraga oling.' },
+          { e: '2', t: 'Sababini aniqlang', d: 'Bilmadimmi? Shoshildimmi? Savolni noto‘g‘ri tushundimmi?' },
+          { e: '3', t: 'To‘g‘ri javobni yozing', d: 'Darslikdan topib, yoniga to‘g‘ri variantni yozing.' },
+          { e: '4', t: 'Qoida chiqaring', d: '«Keyingi safar ... qilaman» deb bir gap yozing.' },
+        ],
+        mission: { t: 'Xatolar daftari', d: 'Daftaringizda «Xatolar ustida ishlash» sahifasini oching va 4 qadamni bajaring.', sec: 600 },
+      },
+      {
+        title: 'Qayta mashq: turoq va qofiya',
+        emoji: '🎼',
+        poem: {
+          lines: ['Oytuman yor / ketib borar / karvon bilan,', 'Og‘rinma, dil, / mard qoladi / armon bilan.'],
+          author: 'Usmon Azim',
+        },
+        reveal: [
+          { q: 'Turoqlar tartibi?', a: '4 + 4 + 4 = 12 bo‘g‘in.' },
+          { q: 'Qofiya?', a: 'karvon — armon' },
+          { q: 'Radif?', a: 'bilan' },
+        ],
+      },
+      {
+        title: 'O‘zimni baholayman',
+        emoji: '🪞',
+        vs: {
+          q: 'Natijangiz kutganingizdek bo‘ldimi?',
+          a: { t: '😊 Ha', pts: ['Qaysi tayyorgarlik usulim ish berdi?', 'Uni keyingi chorakda ham davom ettiraman'] },
+          b: { t: '🤔 Yo‘q', pts: ['Qaysi mavzuni qayta o‘qishim kerak?', 'Kimdan yordam so‘rayman?'] },
+        },
+        mission: { t: 'Maqsad', d: 'II chorak uchun bitta aniq maqsad yozing: «Men ... ni yaxshilayman, buning uchun ... qilaman».', sec: 120 },
+      },
+    ],
+    pairs: [
+      ['Qorajon', 'Alpomishning do‘sti'],
+      ['Ko‘kaldosh', 'alplarning eng zo‘ri'],
+      ['Elbek', 'ustoz baxshi'],
+      ['Elomon', 'shogird'],
+      ['Azimjon', 'chet eldan kelgan nevara'],
+      ['Akbarali', 'qo‘rquv qurboni'],
+      ['Radif', 'qofiyadan keyingi takror'],
+      ['Turoq', 'bo‘g‘inlar guruhi'],
+    ],
+    quiz: [
+      { q: '«karvon bilan / armon bilan» — «bilan» nima?', options: ['radif', 'qofiya', 'turoq', 'naqarot'], answer: 0 },
+      { q: '«Oytuman yor / ketib borar / karvon bilan» — necha bo‘g‘in?', options: ['12', '10', '8', '14'], answer: 0 },
+      { q: 'Alpomish bilan do‘st tutingan qalmoq alpi:', options: ['Qorajon', 'Ko‘kaldosh', 'Ko‘kaman', 'Toychixon'], answer: 0 },
+      { q: 'Ustoz baxshining ismi:', options: ['Elbek', 'Elomon', 'Ochil', 'Yartiboy'], answer: 0 },
+      { q: 'Xatolar ustida ishlashning birinchi qadami:', options: ['xatoni topish', 'qoidani yodlash', 'ishni yashirish', 'qayta yozish'], answer: 0 },
+      { q: '«O‘», «g‘» harflarida qaysi belgi ishlatiladi?', options: ['‘ (o‘ng tomonga ochilgan)', '’ (tutuq belgisi)', '" (qo‘shtirnoq)', '- (chiziqcha)'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Qofiya misollari', 'Radif misollari'],
+      items: [
+        { text: 'karvon — armon', cat: 0 }, { text: '…bilan …bilan', cat: 1 },
+        { text: 'sarbon — karvon', cat: 0 }, { text: '…ayrilma, yor', cat: 1 },
+        { text: 'oyim — doyim', cat: 0 }, { text: '…deb aytdim', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Siz eng ko‘p qaysi qismda xato qildingiz va nega?', a: 'Erkin javob — sababini aniq ayting.' },
+      { q: 'Qahramonlarni chalkashtirmaslik uchun nima qilish kerak?', a: 'Har bir asar bo‘yicha qahramonlar jadvalini tuzish, qisqa tavsif yozish.' },
+      { q: 'Qisqa javobni qanday qilib to‘liq qilish mumkin?', a: 'Fikr + asardan dalil + xulosa.' },
+    ],
+    odd: [
+      { items: ['xatoni topish', 'sababini aniqlash', 'to‘g‘rilash', 'yashirish'], answer: 3, why: 'Xatoni yashirish — o‘sishga to‘siq.' },
+    ],
+    debate: [
+      { claim: 'Baho — bilimning yagona o‘lchovi.', pro: 'Baho aniq va adolatli.', con: 'Baho bir kunlik natija; o‘sish, harakat va qiziqish ham muhim.' },
+    ],
+    creative: [
+      { task: '«Xatoga xat»: o‘z xatongizga 2 gapli hazil xat yozing — u sizga nimani o‘rgatdi?', time: 90 },
+    ],
+  },
+
+  /* ===================== 19. Oybek — Uzoqdan turib ===================== */
+  {
+    id: 'ad9-oybek-uzoqdan',
+    source: 'II chorak • 19-dars • 68–71-betlar',
+    title: 'Oybek. «Uzoqdan turib...» she’ri',
+    short: 'Shoir, nosir, dramaturg va olim; Zarifaga yo‘llangan she’riy maktub',
+    theme: { emoji: '💌', grad: 'from-sky-700 via-blue-600 to-indigo-500', border: 'border-sky-200', tag: 'Ishqiy lirika • 1928' },
+    lesson: [
+      {
+        title: 'Uch turda ham usta',
+        emoji: '🏆',
+        facts: [
+          { n: '1905', l: '10-yanvar, Toshkent, Gavkush mahallasi — bo‘zchi oilasi' },
+          { n: '1943', l: 'Fanlar akademiyasi akademigi' },
+          { n: '17', l: 'yil og‘ir xastalik bilan kurashib ijod qildi' },
+          { n: '1968', l: '1-iyulda vafot etgan' },
+        ],
+        text: 'Muso Toshmuhammad o‘g‘li Oybek nazm, nasr va dramaning uchalasida ham mohir ijodkor. Adabiyotimiz tarixida bunday adiblar barmoq bilan sanarli.',
+      },
+      {
+        title: 'Oybekning ijod javoni',
+        emoji: '📚',
+        cards: [
+          { e: '🎵', t: 'She’riy to‘plamlar', d: '«Tuyg‘ular», «Ko‘ngil naylari», «Mash’ala», «Quyosh qo‘shig‘i»' },
+          { e: '📜', t: 'Dostonlar', d: '«Dilbar — davr qizi», «Guli va Navoiy», «Mashrab», «Haqgo‘ylar»' },
+          { e: '📘', t: 'Romanlar', d: '«Qutlug‘ qon», «Navoiy», «Ulug‘ yo‘l», «Quyosh qoraymas»' },
+          { e: '🧒', t: 'Qissalar', d: '«Bolalik xotiralarim», «Bola Alisher», «Nur qidirib»' },
+          { e: '🌐', t: 'Tarjimalar', d: 'Pushkinning «Yevgeniy Onegin»i, Lermontovning «Maskarad»i' },
+          { e: '📰', t: 'Jurnal', d: '«O‘zbek tili va adabiyoti» jurnaliga asos solgan' },
+        ],
+      },
+      {
+        title: 'So‘l qo‘l bilan yozilgan asarlar',
+        emoji: '✋',
+        text: '1951-yildan og‘ir xastalik tufayli Oybekning o‘ng qo‘li to‘liq ishlamay qoldi. U chap qo‘li bilan yozishga urindi, keyin turmush o‘rtog‘i Zarifa Saidnosirova uning aytganlarini yozib bordi.',
+        quote: { text: 'Miyamda hammasi tayyor, taxtlangan, tezroq aytib bersam', by: 'Oybek (Zarifa Saidnosirova xotirasidan)' },
+        reveal: [{ q: 'Oybek nega xastaligida ham ijoddan to‘xtamadi?', a: 'Ijod uning hayoti, nafasi edi. Yonida esa uni qo‘llagan sadoqatli yori bor edi.' }],
+      },
+      {
+        title: 'Uch yo‘nalishli lirika',
+        emoji: '🧭',
+        cards: [
+          { e: '💞', t: 'Ishqiy lirika', d: 'Yagona ayolga — Zarifa Saidnosirovaga bag‘ishlangan.' },
+          { e: '🏔️', t: 'Tabiat lirikasi', d: '1936-yili Chimyon bag‘rida bir necha oy yashagani ilhom bergan.' },
+          { e: '🎖️', t: 'Harbiy lirika', d: '1942–1943-yillarda frontdagi hayotining in’ikosi.' },
+        ],
+      },
+      {
+        title: '«Uzoqdan turib...» (1928)',
+        emoji: '💌',
+        text: 'Bu she’r aslida Oybekning Zarifaga yo‘llagan sog‘inchli maktubi edi.',
+        poem: {
+          lines: [
+            'Ko‘zlari cho‘lpondek nozli sevgilim,',
+            'Ko‘zingga bir boqib, men sevdim seni!',
+            'Xayoling eslarkan qonaydi dilim,',
+            'Yolboray, go‘zalim, unutma meni!',
+          ],
+          author: 'Oybek, 1928',
+        },
+        reveal: [{ q: '«Ko‘zlari cho‘lpondek» tashbehini izohlang', a: 'Cho‘lpon — tong yulduzi. Yorning ko‘zlari yulduzdek charaqlaydi, nur sochadi, uzoqdan ham ko‘rinib turadi.' }],
+      },
+      {
+        title: 'Timsollar tili',
+        emoji: '🌊',
+        reveal: [
+          { q: '🌊 «Daryolar singari ko‘nglim jo‘shgindir»', a: 'Oshiqning tuyg‘ulari to‘lqinli, kuchli, to‘xtovsiz.' },
+          { q: '🧵 «Bir tola soching-la bog‘lanib qoldi»', a: 'Mubolag‘a va nozik tasvir: ulkan daryodek ko‘ngil bir tola sochga bog‘lanib qolgan!' },
+          { q: '🔥 «Ayriliq siynamga yong‘inlar soldi»', a: 'Hijron azobi — olovdek kuydiradi.' },
+          { q: '🏖️ «Seni erkalaydi dengiz, qirg‘oqlar»', a: 'Yor uzoqda, dengiz bo‘yida — she’r O‘zbekistondan tashqarida yozilgani shundan bilinadi.' },
+        ],
+      },
+      {
+        title: 'Badiiy san’atlar ovi',
+        emoji: '🔎',
+        text: 'Zarifa Saidnosirova bu she’rni «buloq suvlaridek musaffo qalb» deb ataydi. She’rdan quyidagi san’atlarga misol toping:',
+        cards: [
+          { e: '🔍', t: 'Tashbeh (o‘xshatish)', d: '«ko‘zlari cho‘lpondek», «daryolar singari»' },
+          { e: '🎈', t: 'Mubolag‘a', d: '«ayriliq siynamga yong‘inlar soldi»' },
+          { e: '⚖️', t: 'Tazod (qarama-qarshilik)', d: '«vasl — go‘zal kun» va «ayriliq — yong‘in»' },
+          { e: '🔁', t: 'Takror', d: 'Birinchi misra she’r oxirida qaytadi' },
+        ],
+        mission: { t: 'Javob xati', d: 'Zarifa nomidan Oybekka 3 gapli javob maktubi yozing.', sec: 180 },
+      },
+    ],
+    pairs: [
+      ['Oybek', 'Muso Toshmuhammad o‘g‘li'],
+      ['Zarifa Saidnosirova', 'Oybekning turmush o‘rtog‘i'],
+      ['1928', '«Uzoqdan turib...» yozilgan yil'],
+      ['Cho‘lpon (yulduz)', 'tong yulduzi'],
+      ['«Qutlug‘ qon»', 'Oybek romani'],
+      ['«Oybegim mening»', 'Zarifa Saidnosirovaning kitobi'],
+      ['Chimyon', 'tabiat lirikasiga ilhom bergan joy'],
+    ],
+    quiz: [
+      { q: 'Oybek qayerda tug‘ilgan?', options: ['Toshkentda', 'Samarqandda', 'Farg‘onada', 'Buxoroda'], answer: 0 },
+      { q: '«Uzoqdan turib...» kimga bag‘ishlangan?', options: ['Zarifa Saidnosirovaga', 'onasiga', 'Vatanga', 'do‘stiga'], answer: 0 },
+      { q: 'Oybek qaysi yili akademik bo‘lgan?', options: ['1943', '1928', '1951', '1968'], answer: 0 },
+      { q: 'Xastaligida Oybek qanday yozgan?', options: ['so‘l qo‘l bilan va Zarifaga aytib', 'umuman yozmagan', 'mashinkada', 'shogirdlari orqali'], answer: 0 },
+      { q: '«Ko‘zlari cho‘lpondek» — qaysi san’at?', options: ['tashbeh', 'tazod', 'radif', 'tajnis'], answer: 0 },
+      { q: 'Oybek qaysi jurnalga asos solgan?', options: ['«O‘zbek tili va adabiyoti»', '«Sharq yulduzi»', '«Gulxan»', '«Yoshlik»'], answer: 0 },
+      { q: 'Oybek qaysi rus asarini tarjima qilgan?', options: ['«Yevgeniy Onegin»', '«Urush va tinchlik»', '«Jinoyat va jazo»', '«Ona»'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Oybek she’riyati', 'Oybek nasri'],
+      items: [
+        { text: '«Tuyg‘ular»', cat: 0 }, { text: '«Qutlug‘ qon»', cat: 1 },
+        { text: '«Ko‘ngil naylari»', cat: 0 }, { text: '«Navoiy» romani', cat: 1 },
+        { text: '«Na’matak»', cat: 0 }, { text: '«Bolalik xotiralarim»', cat: 1 },
+        { text: '«Mash’ala»', cat: 0 }, { text: '«Ulug‘ yo‘l»', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'Oybek hayoti',
+        items: ['1905 — Toshkentda tug‘ildi', '1928 — «Uzoqdan turib...»', '1936 — Chimyonda yashadi', '1942–1943 — frontda', '1943 — akademik', '1951 — og‘ir xastalik', '1968 — vafot etdi'],
+      },
+    ],
+    qa: [
+      { q: 'Yorning ko‘ziga bir boqib sevib qolish tabiiy hodisami?', a: 'Erkin javob: she’rda bu kuchli, sof tuyg‘uning ifodasi.' },
+      { q: 'Oshiqning «unutma meni» o‘tinchi zamirida nima bor?', a: 'Ayriliqdan qo‘rquv, sadoqat, sog‘inch.' },
+      { q: 'She’rning qaysi bandi O‘zbekistondan tashqarida yozilganini ko‘rsatadi?', a: 'Uchinchi band — «Seni erkalaydi dengiz, qirg‘oqlar».' },
+      { q: 'Zarifa Saidnosirova kim edi?', a: 'Kimyo fanlari nomzodi, professor, shoira; «Oybegim mening» kitobi muallifi.' },
+    ],
+    odd: [
+      { items: ['«Qutlug‘ qon»', '«Navoiy»', '«Ulug‘ yo‘l»', '«Chinor»'], answer: 3, why: '«Chinor» — Asqad Muxtor romani.' },
+      { items: ['ishqiy', 'tabiat', 'harbiy', 'hajviy'], answer: 3, why: 'Oybek lirikasi uch yo‘nalishda: ishqiy, tabiat, harbiy.' },
+    ],
+    debate: [
+      { claim: 'Buyuk ijodkor ortida doim sadoqatli inson turadi.', pro: 'Zarifa Saidnosirova Oybekning qo‘li bo‘ldi.', con: 'Iste’dod va mehnat ham hal qiluvchi.' },
+    ],
+    creative: [
+      { task: '«Ko‘zlari ...dek» qolipida o‘z tashbehingizni toping.', time: 60 },
+      { task: 'Oybek uy-muzeyiga borganingizda qaysi buyumni birinchi ko‘rmoqchi bo‘lardingiz? Nega?', time: 60 },
+    ],
+  },
+
+  /* ===================== 20. Oybek — Na’matak ===================== */
+  {
+    id: 'ad9-oybek-namatak',
+    source: 'II chorak • 20-dars • 71–72-betlar',
+    title: 'Oybek. «Na’matak» she’ri',
+    short: 'Qoya labida raqs etgan bir tup na’matak: go‘zallik, bardosh va hayotsevarlik ramzi',
+    theme: { emoji: '🌸', grad: 'from-pink-500 via-rose-400 to-sky-500', border: 'border-pink-200', tag: 'Tabiat lirikasi • 1936' },
+    lesson: [
+      {
+        title: 'Chimyon, 1936-yil',
+        emoji: '🏔️',
+        text: 'Oybek Chimyon tog‘lari bag‘rida bir necha oy yashaydi. Shu yerda u o‘zbek she’riyatining eng nafis durdonalaridan biri — «Na’matak»ni yozadi.',
+        reveal: [{ q: 'Na’matak qanday o‘simlik?', a: 'Tog‘larda o‘sadigan yovvoyi atirgul (itburun). Oq yoki pushti gul ochadi, keyin qizil mevasi pishadi.' }],
+      },
+      {
+        title: 'She’rdan bir band',
+        emoji: '🌸',
+        poem: {
+          lines: [
+            'Nafis chayqaladi bir tup na’matak',
+            'Yuksakda, shamolning belanchagida,',
+            'Quyoshga ko‘tarib bir savat oq gul,',
+            'Viqor-la o‘shshaygan qoya labida...',
+          ],
+          author: 'Oybek, «Na’matak», 1936',
+        },
+        reveal: [{ q: '«Shamolning belanchagi» tashbehini izohlang', a: 'Shamol na’matakni belanchakdek tebratadi — tabiat uni ona kabi allalaydi, gul esa quvnoq bola kabi tebranadi.' }],
+      },
+      {
+        title: 'Kontrast: nafis va vahshiy',
+        emoji: '⚖️',
+        vs: {
+          q: 'She’rdagi ikki olam',
+          a: { t: '🌸 Na’matak', pts: ['nafis', 'mayin raqs', 'yorqin tabassum', 'nozik salom'] },
+          b: { t: '🪨 Qoya', pts: ['viqor-la o‘shshaygan', 'vahshiy toshlar', 'yuksak, sovuq'] },
+        },
+        reveal: [{ q: 'Shoir qoyadan minnatdormi yoki norozi?', a: 'Minnatdor: oxirgi bandda gulni «vahshiy qoyalarning ajib ijodi» deydi — qattiq tosh ham go‘zallik tug‘dira oladi.' }],
+      },
+      {
+        title: 'Ramzlarni yeching',
+        emoji: '🗝️',
+        reveal: [
+          { q: '☀️ Quyoshga tutilgan bir savat oq gul', a: 'Hayotga, nurga, yaratuvchiga minnatdorlik va sovg‘a.' },
+          { q: '❄️ «Poyida yig‘laydi kumush qor yum-yum»', a: 'Erta bahor — qor erimoqda. Qor go‘zallikka hayrat yoki qish ketayotganidan yig‘laydi. Shoir bahorda yashagani shundan bilinadi.' },
+          { q: '🧕 Na’matak — o‘zbek kelinchagi', a: 'Boshida «bir savat oq yulduz-chechak», nozik va ma’sum salomlari bilan — kelinchakdek uyatchan va go‘zal.' },
+          { q: '🪨 Qoya labidagi gul', a: 'Eng og‘ir sharoitda ham yashash, gullash va quvonish mumkin — bardosh ramzi.' },
+        ],
+      },
+      {
+        title: 'Takror — she’rning yuragi',
+        emoji: '🔁',
+        text: '«Nafis chayqaladi bir tup na’matak» misrasi she’rda bir necha bor qaytadi. «Quyoshga ... bir savat oq gul» ham takrorlanadi.',
+        cards: [
+          { e: '🎵', t: 'Musiqiylik', d: 'Takror she’rni qo‘shiqdek yangratadi.' },
+          { e: '🌬️', t: 'Harakat', d: 'Gulning to‘xtovsiz tebranishini his qildiradi.' },
+          { e: '🎯', t: 'Ta’kid', d: 'Asosiy obraz — na’matak — markazda turadi.' },
+        ],
+      },
+      {
+        title: 'Obrazlar jadvali',
+        emoji: '📋',
+        table: {
+          head: ['Obraz', 'Sifatlash yoki fe’l'],
+          rows: [
+            ['Na’matak', 'nafis chayqaladi, raqs etar, xursand'],
+            ['Qoya', 'viqor-la o‘shshaygan, vahshiy'],
+            ['Shamol', 'belanchak, injularin separ'],
+            ['Qor', 'kumush, yig‘laydi yum-yum'],
+            ['Tog‘ havosi', 'feruza'],
+          ],
+        },
+      },
+      {
+        title: 'Rasm va she’r',
+        emoji: '🎨',
+        text: 'Darslikdagi rassom Aziza Mamatovaning «Talqin» asariga qarang. Rasm va she’r o‘rtasida qanday uyg‘unlik sezdingiz?',
+        mission: { t: 'Doskada chizamiz', d: '«Doska» tugmasini bosing: bir o‘quvchi qoya va na’matakni chizsin, sinf esa har bir detalga she’rdan misra topsin.', sec: 300 },
+      },
+    ],
+    pairs: [
+      ['Na’matak', 'tog‘ atirguli'],
+      ['Chimyon', 'she’r yozilgan joy'],
+      ['1936', '«Na’matak» yozilgan yil'],
+      ['Shamolning belanchagi', 'tashbeh'],
+      ['Vahshiy qoya', 'na’matakning «ijodkori»'],
+      ['Kumush qor', 'poyida yig‘laydi'],
+      ['Feruza', 'havorang qimmatbaho tosh'],
+    ],
+    quiz: [
+      { q: '«Na’matak» qaysi yili yozilgan?', options: ['1936', '1928', '1944', '1963'], answer: 0 },
+      { q: 'Na’matak qayerda o‘sgan?', options: ['qoya labida', 'bog‘da', 'daryo bo‘yida', 'cho‘lda'], answer: 0 },
+      { q: 'Na’matak quyoshga nimani tutadi?', options: ['bir savat oq gul', 'qizil meva', 'yashil barg', 'oltin toj'], answer: 0 },
+      { q: 'Na’matak poyida nima yig‘laydi?', options: ['kumush qor', 'shamol', 'qush', 'buloq'], answer: 0 },
+      { q: 'She’rda qaysi misra ko‘p takrorlanadi?', options: ['«Nafis chayqaladi bir tup na’matak»', '«Vahshiy qoyalarning ajib ijodi»', '«Tog‘lar havosining feruzasidan»', '«Nozik salomlari naqadar ma’sum»'], answer: 0 },
+      { q: 'Shoir qaysi faslda Chimyonda bo‘lgani she’rdan bilinadi?', options: ['erta bahorda', 'kuzda', 'yozda', 'qishning boshida'], answer: 0 },
+      { q: '«Na’matak» Oybek lirikasining qaysi yo‘nalishiga kiradi?', options: ['tabiat lirikasi', 'harbiy lirika', 'hajviy she’r', 'ishqiy lirika'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Na’matakka oid', 'Qoyaga oid'],
+      items: [
+        { text: 'nafis', cat: 0 }, { text: 'vahshiy', cat: 1 },
+        { text: 'mayin raqs', cat: 0 }, { text: 'viqor-la o‘shshaygan', cat: 1 },
+        { text: 'yorqin tabassum', cat: 0 }, { text: 'tosh', cat: 1 },
+        { text: 'ma’sum salom', cat: 0 }, { text: 'yuksak lab', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'She’r sizda qanday his uyg‘otdi?', a: 'Erkin javob: yengillik, hayrat, quvonch, nafosat.' },
+      { q: 'Nega shoir qoyani avval «viqorli», keyin «vahshiy» deydi?', a: 'Qoyaning qattiqligi va ulug‘vorligini ko‘rsatib, gulning nafosatini yanada bo‘rttiradi.' },
+      { q: 'Na’matak obrazi inson hayotiga qanday tatbiq etiladi?', a: 'Og‘ir sharoitda ham go‘zal, quvnoq va saxiy bo‘lib qolish mumkin.' },
+    ],
+    odd: [
+      { items: ['na’matak', 'qoya', 'shamol', 'dengiz'], answer: 3, why: '«Na’matak»da dengiz yo‘q — u «Uzoqdan turib...»da.' },
+      { items: ['tashbeh', 'takror', 'sifatlash', 'saj'], answer: 3, why: 'Saj — nasrdagi qofiya, she’rda ishlatilmagan.' },
+    ],
+    debate: [
+      { claim: 'Go‘zallik faqat qulay sharoitda yashnaydi.', pro: 'Bog‘dagi gul parvarish bilan chiroyli.', con: 'Na’matak qoya labida ham gullaydi — haqiqiy go‘zallik bardoshdan tug‘iladi.' },
+    ],
+    creative: [
+      { task: 'O‘zingizni bir o‘simlikka o‘xshating va 2 misrada tasvirlang.', time: 90 },
+      { task: 'Na’matak qoyaga nima der edi? Bir jumla.', time: 60 },
+    ],
+  },
+];
+
 const CONTENT = {
-  adabiyot: { 8: [...ADABIYOT_8, ...ADABIYOT_8_P2, ...ADABIYOT_8_P3, ...ADABIYOT_8_P4, ...ADABIYOT_8_P5], 9: [...ADABIYOT_9] },
+  adabiyot: { 8: [...ADABIYOT_8, ...ADABIYOT_8_P2, ...ADABIYOT_8_P3, ...ADABIYOT_8_P4, ...ADABIYOT_8_P5], 9: [...ADABIYOT_9, ...ADABIYOT_9_P2] },
   'ona-tili': { 8: [...ONA_TILI_8, ...ONA_TILI_8_PART2, ...ONA_TILI_8_PART3, ...ONA_TILI_8_PART4, ...ONA_TILI_8_PART5, ...ONA_TILI_8_PART6, ...ONA_TILI_8_PART7, ...ONA_TILI_8_PART8], 9: [...ONA_TILI_9, ...ONA_TILI_9_P2, ...ONA_TILI_9_P3, ...ONA_TILI_9_P4, ...ONA_TILI_9_P5, ...ONA_TILI_9_P6, ...ONA_TILI_9_P7, ...ONA_TILI_9_P8] },
 };
 
