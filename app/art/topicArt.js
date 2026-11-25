@@ -237,6 +237,17 @@ export const TOPIC_ART = {
   'ad9-temir-3': 'teatr',
   'ad9-temir-4': 'robot',
   'ad9-temir-sahna': 'teatr',
+
+  /* ---------- Ona tili, 10-sinf ---------- */
+  'ot10-1': 'gul',
+  'ot10-2': 'qalam',
+  'ot10-3': 'kitob',
+  'ot10-4': 'qalam',
+  'ot10-5': 'oila',
+  'ot10-6': 'telefon',
+  'ot10-7': 'shahar',
+  'ot10-8': 'qishloq',
+  'ot10-9': 'oila',
 };
 
 /** Mavzuning rasmi (yoki null). Mavzu obyektida `art` maydoni bo‘lsa, u ustun. */
