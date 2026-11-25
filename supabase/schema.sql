@@ -20,6 +20,7 @@ create table if not exists public.profiles (
   school_norm text generated always as (public.norm_school(school)) stored,
   region      text,
   subject     text,
+  grades      smallint[],  -- ochiq sinflar (null — barchasi); grade_access.sql
   role        text not null default 'teacher' check (role in ('teacher', 'admin')),
   created_at  timestamptz not null default now()
 );

@@ -80,6 +80,19 @@ function allowedSubjectIds(teacher) {
 
 const GRADES = [5, 6, 7, 8, 9, 10, 11];
 
+/**
+ * O‘qituvchiga ruxsat berilgan sinflar (masalan faqat 9 va 10). Admin biriktiradi (profiles.grades).
+ * grades umuman berilmagan eski hisoblarda — barcha sinflar ochiq.
+ */
+function allowedGradeList(teacher) {
+  return Array.isArray(teacher?.grades) ? teacher.grades.map(Number) : GRADES;
+}
+function gradesLabel(grades) {
+  if (!Array.isArray(grades)) return 'barcha sinflar';
+  if (!grades.length) return 'sinf biriktirilmagan';
+  return grades.length === GRADES.length ? 'barcha sinflar' : `${[...grades].sort((a, b) => a - b).join(', ')}-sinf`;
+}
+
 const REGIONS = [
   'Toshkent shahri', 'Toshkent viloyati', 'Andijon viloyati', 'Buxoro viloyati',
   'Farg‘ona viloyati', 'Jizzax viloyati', 'Xorazm viloyati', 'Namangan viloyati',
@@ -34535,7 +34548,8 @@ const loginToEmail = (login) => `${login.trim().toLowerCase()}@${LOGIN_DOMAIN}`;
 const errText = (e) => e?.message || String(e || 'Noma’lum xato');
 const mapTeacherRow = (r) => ({
   id: r.id, login: r.login, name: r.name, school: r.school, region: r.region || '',
-  subject: r.subject || '', role: r.role, createdAt: Date.parse(r.created_at) || 0,
+  subject: r.subject || '', grades: Array.isArray(r.grades) ? r.grades.map(Number) : null,
+  role: r.role, createdAt: Date.parse(r.created_at) || 0,
 });
 const mapClassRow = (r) => ({
   id: r.id, school: r.school, grade: r.grade, letter: r.letter, students: r.students || [],
@@ -34579,11 +34593,12 @@ async function adminApi(action, p = {}) {
   const calls = {
     createTeacher: () => supabase.rpc('admin_create_teacher', {
       p_login: p.login, p_password: p.password, p_name: p.name, p_school: p.school,
-      p_region: p.region || null, p_subject: p.subject || null,
+      p_region: p.region || null, p_subject: p.subject || null, p_grades: Array.isArray(p.grades) ? p.grades : null,
     }),
     updateTeacher: () => supabase.rpc('admin_update_teacher', {
       p_id: p.id, p_login: p.login, p_name: p.name, p_school: p.school,
       p_region: p.region || null, p_subject: p.subject || null, p_password: p.password || null,
+      p_grades: Array.isArray(p.grades) ? p.grades : null,
     }),
     resetPassword: () => supabase.rpc('admin_reset_password', { p_id: p.id, p_password: p.password }),
     deleteTeacher: () => supabase.rpc('admin_delete_teacher', { p_id: p.id }),
@@ -35134,7 +35149,7 @@ function CredentialsCard({ name, login, password, onClose }) {
 }
 
 function TeachersTab({ db, api }) {
-  const empty = { name: '', school: '', region: '', subject: DEFAULT_PACKAGE, login: '', password: genPassword() };
+  const empty = { name: '', school: '', region: '', subject: DEFAULT_PACKAGE, grades: [], login: '', password: genPassword() };
   const [form, setForm] = useState(empty);
   const [loginTouched, setLoginTouched] = useState(false);
   const [editingId, setEditingId] = useState(null);
@@ -35180,6 +35195,7 @@ function TeachersTab({ db, api }) {
     const errs = {};
     if (form.name.trim().length < 3) errs.name = 'Ism-familiyani kiriting';
     if (!form.school.trim()) errs.school = 'Maktabni kiriting';
+    if (!form.grades?.length) errs.grades = 'Kamida bitta sinfni belgilang';
     if (!/^[a-z0-9._-]{3,30}$/.test(login)) errs.login = 'Kamida 3 ta belgi: lotin harflari, raqam, nuqta, chiziqcha';
     else if (db.teachers.some((t) => t.login.toLowerCase() === login && t.id !== editingId) || login === db.admin.login.toLowerCase()) errs.login = 'Bu login band';
     const pw = form.password.trim();
@@ -35202,7 +35218,7 @@ function TeachersTab({ db, api }) {
     setCreated({ name: data.name, login: data.login, password: data.password || '(o‘zgarmadi)' });
     setEditingId(null);
     setLoginTouched(false);
-    setForm({ ...empty, school: data.school, region: data.region, password: genPassword() });
+    setForm({ ...empty, school: data.school, region: data.region, subject: data.subject, grades: data.grades, password: genPassword() });
     setTimeout(() => resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' }), 30);
   };
 
@@ -35211,7 +35227,7 @@ function TeachersTab({ db, api }) {
     setLoginTouched(true);
     setErrors({});
     setCreated(null);
-    setForm({ name: t.name, school: t.school, region: t.region || '', subject: packageOf(t.subject)?.id || '', login: t.login, password: t.password || '' });
+    setForm({ name: t.name, school: t.school, region: t.region || '', subject: packageOf(t.subject)?.id || '', grades: Array.isArray(t.grades) ? [...t.grades] : [...GRADES], login: t.login, password: t.password || '' });
     if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -35264,6 +35280,25 @@ function TeachersTab({ db, api }) {
             </select>
           </Field>
         </div>
+        <Field label="Ochiladigan sinflar (sotib olingan)" error={errors.grades}>
+          <div className="flex flex-wrap gap-2">
+            {GRADES.map((g) => {
+              const on = form.grades?.includes(g);
+              return (
+                <button key={g} type="button" aria-pressed={on}
+                  onClick={() => set('grades', on ? form.grades.filter((x) => x !== g) : [...(form.grades || []), g].sort((a, b) => a - b))}
+                  className={`h-14 min-w-14 rounded-2xl border-2 px-3 text-xl font-extrabold transition ${on ? 'border-blue-600 bg-blue-600 text-white' : 'border-slate-200 bg-white text-slate-600 hover:border-blue-400'}`}>
+                  {g}
+                </button>
+              );
+            })}
+            <button type="button" onClick={() => set('grades', form.grades?.length === GRADES.length ? [] : [...GRADES])}
+              className="h-14 rounded-2xl border-2 border-dashed border-blue-300 px-4 text-base font-bold text-blue-800 hover:bg-blue-50">
+              {form.grades?.length === GRADES.length ? 'Tozalash' : 'Hammasi'}
+            </button>
+          </div>
+          <p className="mt-2 text-sm font-semibold text-slate-500">Faqat belgilangan sinflar o‘qituvchiga ochiladi, qolganlari qulflangan ko‘rinadi.</p>
+        </Field>
         <Field label="Login (avtomatik, o‘zgartirish mumkin)" error={errors.login}>
           <input className={inputCls} value={form.login} onChange={(e) => { setLoginTouched(true); set('login', e.target.value); }} placeholder="bo‘sh qolsa — avtomatik" autoCapitalize="none" autoCorrect="off" spellCheck={false} />
         </Field>
@@ -35320,7 +35355,7 @@ function TeachersTab({ db, api }) {
                 <div className="min-w-0 flex-1">
                   <div className="text-xl font-extrabold text-blue-950">{t.name}</div>
                   <div className="text-base text-slate-500">
-                    {t.school}{t.region ? ` • ${t.region}` : ''} • {packageOf(t.subject)?.name || 'Fan biriktirilmagan'} • {classCount} ta sinf kiritgan
+                    {t.school}{t.region ? ` • ${t.region}` : ''} • {packageOf(t.subject)?.name || 'Fan biriktirilmagan'} • {gradesLabel(t.grades)} • {classCount} ta sinf kiritgan
                   </div>
                   <div className="mt-2 flex flex-wrap gap-2 text-base">
                     <span className="rounded-xl bg-blue-50 px-3 py-1 font-bold text-blue-800">Login: {t.login}</span>
@@ -36288,21 +36323,23 @@ const HOME_TIPS = [
   ['Imlo o‘yinlari', '9-sinf ona tilida «Qaysi harf?» va «Imlo bellashuvi» bor — dars boshida 5 daqiqalik isinish uchun ideal.'],
 ];
 
-function readyBooks(allowed) {
+function readyBooks(allowed, grades = GRADES) {
   const out = [];
-  SUBJECTS.filter((s) => !allowed || allowed.includes(s.id)).forEach((s) => Object.entries(CONTENT[s.id] || {}).forEach(([g, arr]) => out.push({ s, g: Number(g), n: arr.length })));
+  SUBJECTS.filter((s) => !allowed || allowed.includes(s.id)).forEach((s) => Object.entries(CONTENT[s.id] || {}).forEach(([g, arr]) => {
+    if (grades.includes(Number(g))) out.push({ s, g: Number(g), n: arr.length });
+  }));
   return out;
 }
 
-function HomeScreen({ teacher, allowed = [], onStart, schoolClasses = [], onClassResults, onRating, onQuick, onResume, onGuide, onBoard }) {
+function HomeScreen({ teacher, allowed = [], allowedGrades = GRADES, onStart, schoolClasses = [], onClassResults, onRating, onQuick, onResume, onGuide, onBoard }) {
   const now = new Date();
   const h = now.getHours();
   const greet = h < 11 ? 'Xayrli tong' : h < 17 ? 'Xayrli kun' : 'Xayrli kech';
   const dateStr = `${now.getDate()}-${UZ_MONTHS[now.getMonth()]}, ${UZ_DAYS[now.getDay()]}`;
-  const [recent] = useState(() => loadRecent().filter((r) => allowed.includes(r.subjectId) && schoolClasses.some((c) => c.id === r.classId)).slice(0, 4));
+  const [recent] = useState(() => loadRecent().filter((r) => allowed.includes(r.subjectId) && allowedGrades.includes(Number(r.grade)) && schoolClasses.some((c) => c.id === r.classId)).slice(0, 4));
   const pkg = packageOf(teacher?.subject);
   const tip = HOME_TIPS[now.getDate() % HOME_TIPS.length];
-  const books = readyBooks(allowed);
+  const books = readyBooks(allowed, allowedGrades);
   const classes = [...schoolClasses].sort((a, b) => a.grade - b.grade || a.letter.localeCompare(b.letter));
   const totalStudents = schoolClasses.reduce((a, c) => a + c.students.length, 0);
 
@@ -36511,14 +36548,26 @@ function SubjectScreen({ onPick, onBack, onQuick, allowed = [] }) {
   );
 }
 
-function GradeScreen({ subject, onPick, onBack, schoolClasses = [] }) {
+function GradeScreen({ subject, onPick, onBack, schoolClasses = [], allowedGrades = GRADES }) {
   return (
     <div className="mx-auto max-w-7xl px-4 py-6 md:px-8">
       <PageTitle title="Sinfni tanlang" subtitle={subject?.name} onBack={onBack} />
       <div className="dp-reveal dp-reveal-stagger grid grid-cols-2 gap-5 sm:grid-cols-4 lg:grid-cols-7">
         {GRADES.map((g) => {
-          const arr = CONTENT[subject?.id]?.[g];
+          const locked = !allowedGrades.includes(g);
+          const arr = locked ? null : CONTENT[subject?.id]?.[g];
           const cls = schoolClasses.filter((c) => c.grade === g).length;
+          if (locked) {
+            return (
+              <div key={g} title="Bu sinf hisobingizga ochilmagan" aria-disabled="true"
+                className="dp-arch dp-arch-line dp-sticker-soft relative flex cursor-not-allowed select-none flex-col items-center justify-end gap-1 overflow-hidden bg-slate-100 px-4 pb-6 pt-12 text-slate-400 opacity-70">
+                <Lock size={26} className="absolute left-1/2 top-4 -translate-x-1/2" />
+                <span className="relative text-6xl font-black leading-none">{g}</span>
+                <span className="relative text-lg font-bold">sinf</span>
+                <span className="mt-2 whitespace-nowrap text-sm font-bold">ochilmagan</span>
+              </div>
+            );
+          }
           return (
             <button
               key={g}
@@ -36539,6 +36588,11 @@ function GradeScreen({ subject, onPick, onBack, schoolClasses = [] }) {
           );
         })}
       </div>
+      {allowedGrades.length < GRADES.length && (
+        <p className="mt-6 flex items-center gap-2 rounded-2xl bg-amber-50 px-5 py-4 text-lg font-semibold text-amber-900">
+          <Lock size={20} className="shrink-0" /> Hisobingizga {gradesLabel(allowedGrades)} ochilgan. Boshqa sinflar uchun Dars play administratoriga murojaat qiling.
+        </p>
+      )}
     </div>
   );
 }
@@ -40503,6 +40557,7 @@ export default function DarsPlayApp() {
   const teacher = session?.role === 'teacher' ? db.teachers.find((t) => t.id === session.id) || null : null;
   const isAdmin = session?.role === 'admin';
   const allowed = useMemo(() => allowedSubjectIds(teacher), [teacher]);
+  const allowedGrades = useMemo(() => allowedGradeList(teacher), [teacher]);
   // Paketda bitta fan bo‘lsa, fan tanlash ekrani o‘tkazib yuboriladi
   const flowStart = allowed.length === 1 ? ['home'] : ['home', 'subject'];
   const startLesson = () => { if (allowed.length === 1) { setSubjectId(allowed[0]); resetTo(['home', 'grade']); } else resetTo(['home', 'subject']); };
@@ -40558,8 +40613,9 @@ export default function DarsPlayApp() {
   }, [db.customSets, subject, grade, teacher]);
   const topics = useMemo(() => {
     if (!subject || !grade) return [];
+    if (teacher && !allowedGradeList(teacher).includes(Number(grade))) return []; // ruxsat berilmagan sinf
     return [...customTopics, ...(CONTENT[subject.id]?.[grade] || []), makeGeneralTopic(subject)];
-  }, [subject, grade, customTopics]);
+  }, [subject, grade, customTopics, teacher]);
   const topic = topics.find((t) => t.id === topicId);
   const game = GAMES.find((g) => g.id === gameId);
 
@@ -40887,8 +40943,8 @@ export default function DarsPlayApp() {
   const teacherSteps = ['home', 'subject', 'grade', 'class', 'topic', 'lesson', 'game', 'picker', 'play', 'custom', 'results'];
   const needsTopic = ['lesson', 'game', 'picker', 'play'].includes(step);
   const needsClass = ['topic', 'lesson', 'game', 'picker', 'play', 'custom'].includes(step);
-  const quickOpen = (sid, g) => { if (!allowed.includes(sid)) return; setSubjectId(sid); setGrade(g); resetTo([...flowStart, 'grade', 'class']); };
-  const resumeRecent = (r) => { if (!allowed.includes(r.subjectId)) return; setSubjectId(r.subjectId); setGrade(r.grade); setClassId(r.classId); setTopicId(r.topicId); setGroups(null); resetTo([...flowStart, 'grade', 'class', 'topic', 'lesson']); };
+  const quickOpen = (sid, g) => { if (!allowed.includes(sid) || !allowedGrades.includes(Number(g))) return; setSubjectId(sid); setGrade(g); resetTo([...flowStart, 'grade', 'class']); };
+  const resumeRecent = (r) => { if (!allowed.includes(r.subjectId) || !allowedGrades.includes(Number(r.grade))) return; setSubjectId(r.subjectId); setGrade(r.grade); setClassId(r.classId); setTopicId(r.topicId); setGroups(null); resetTo([...flowStart, 'grade', 'class', 'topic', 'lesson']); };
   const FLOW = ['subject', 'grade', 'class', 'topic'];
   const jumpTo = (key) => setHistory((h) => { const i = h.lastIndexOf(key); return i >= 0 ? h.slice(0, i + 1) : h; });
   let safeStep = step;
@@ -40969,6 +41025,7 @@ export default function DarsPlayApp() {
             teacher={teacher}
             schoolClasses={schoolClasses}
             allowed={allowed}
+            allowedGrades={allowedGrades}
             onStart={startLesson}
             onClassResults={(c) => { setClassId(c.id); setGrade(c.grade); setRatingScope('class'); go('results'); }}
             onRating={(scope) => { setRatingScope(scope); go('results'); }}
@@ -41017,7 +41074,7 @@ export default function DarsPlayApp() {
         )}
 
         {safeStep === 'grade' && (
-          <GradeScreen subject={subject} schoolClasses={schoolClasses} onBack={back} onPick={(g) => { setGrade(g); go('class'); }} />
+          <GradeScreen subject={subject} schoolClasses={schoolClasses} allowedGrades={allowedGrades} onBack={back} onPick={(g) => { if (!allowedGrades.includes(g)) return; setGrade(g); go('class'); }} />
         )}
 
         {safeStep === 'class' && (
