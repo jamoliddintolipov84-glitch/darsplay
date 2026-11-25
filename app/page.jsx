@@ -18,7 +18,7 @@ import {
   Minus, Loader2, UserCheck, KeyRound, ShieldCheck, Copy, EyeOff, Search, UserPlus, Pencil, Building2, LogIn, RefreshCw, Settings, ChevronDown, LayoutGrid, CameraOff, Trash2, Save, Ruler, Bomb, Gift, Repeat, Zap,
   ThumbsUp, ThumbsDown, Puzzle, Heart, Crown, Rocket, Flag, Dices, SpellCheck,
   Volume2, VolumeX, History, Medal, CalendarDays, Star, ListPlus, NotebookPen, CircleHelp,
-  ListOrdered, Shapes, Scale, Palette, Type, SpellCheck2, Projector, PhoneOff, Presentation, MousePointerClick, MousePointer2,
+  ListOrdered, Shapes, Scale, Palette, Type, SpellCheck2, Projector, PhoneOff, Presentation, MousePointerClick, MousePointer2, Orbit, GalleryHorizontalEnd,
   Highlighter, Wand2, MoveUpRight, Square, Circle, Eraser, Undo2, Redo2, FilePlus2, Download,
   Quote, Mail, Pause, Headphones, ExternalLink, Video,
 } from 'lucide-react';
@@ -41126,10 +41126,11 @@ function featuredGames(topic, index) {
 }
 
 const PICKERS = [
-  { id: 'camera', name: 'Kamera', desc: 'Kamera orqali tasodifiy tanlash', icon: Camera },
-  { id: 'list', name: 'Ro‘yxat', desc: 'Ro‘yxatdan tanlash va guruhlash', icon: List },
-  { id: 'wheel', name: 'Doira', desc: 'Barabanni aylantirib tanlash', icon: Disc3 },
-  { id: 'extra', name: 'Qo‘shimcha', desc: 'Keyingi g‘oya uchun joy', icon: PlusCircle, disabled: true },
+  { id: 'wheel', name: 'Baraban', desc: 'Chiroqli koshin barabanni aylantiring', icon: Disc3, grad: 'from-amber-400 to-orange-500' },
+  { id: 'cards', name: 'Sehrli kartalar', desc: 'Kartalar aralashadi — o‘quvchi bittasini ochadi', icon: GalleryHorizontalEnd, grad: 'from-blue-500 to-indigo-700', fresh: true },
+  { id: 'orbit', name: 'Orbita', desc: 'Ismlar quyosh atrofida aylanadi, biri markazga tortiladi', icon: Orbit, grad: 'from-firuza-500 to-blue-700', fresh: true },
+  { id: 'list', name: 'Ro‘yxat', desc: 'Nur ismlar ustida yuguradi • guruhlarga bo‘lish', icon: List, grad: 'from-violet-500 to-fuchsia-600' },
+  { id: 'camera', name: 'Kamera', desc: 'Kamera orqali sinfdan tasodifiy tanlash', icon: Camera, grad: 'from-anor-500 to-rose-700' },
 ];
 
 const TEAM_STYLES = [
@@ -45942,6 +45943,65 @@ function CameraPicker({ students, onPicked }) {
   );
 }
 
+/* ---------- Tanlash sahnasi: umumiy bo‘laklar ---------- */
+const STAGE_COLORS = ['#2F4C9A', '#2A9D8F', '#C8962F', '#E2463F', '#5B4BB7', '#1E7A6E', '#B3741E', '#3D60B0', '#A83A55', '#3E8E5A'];
+
+function StageBtn({ children, onClick, disabled, icon: Icon, tone = 'gold', className = '' }) {
+  const tones = {
+    gold: 'bg-amber-400 text-ink hover:bg-amber-300 shadow-[0_18px_40px_-16px_rgba(220,174,74,.8)]',
+    glass: 'bg-white/10 text-white ring-1 ring-white/20 hover:bg-white/20',
+    light: 'bg-white text-ink hover:bg-paper',
+  };
+  return (
+    <button type="button" onClick={onClick} disabled={disabled}
+      className={`dp-btn inline-flex items-center justify-center gap-2.5 rounded-2xl px-6 py-3.5 text-lg md:text-xl font-black transition active:scale-95 disabled:cursor-not-allowed disabled:opacity-40 ${tones[tone]} ${className}`}>
+      {Icon && <Icon size={24} />} {children}
+    </button>
+  );
+}
+
+function StageToggle({ checked, onChange, children }) {
+  return (
+    <label className="inline-flex cursor-pointer select-none items-center gap-3 text-base font-bold text-blue-100">
+      <span className={`relative h-7 w-12 rounded-full transition ${checked ? 'bg-firuza-500' : 'bg-white/20'}`}>
+        <span className={`absolute top-1 h-5 w-5 rounded-full bg-white shadow transition-all ${checked ? 'left-6' : 'left-1'}`} />
+      </span>
+      <input type="checkbox" className="sr-only" checked={checked} onChange={(e) => onChange(e.target.checked)} />
+      {children}
+    </label>
+  );
+}
+
+/** Tanlangan ism: harflar birma-bir tushadi, orqada nur aylanadi. */
+function WinnerReveal({ name, onRemove, onAgain, removeLabel = 'Ro‘yxatdan chiqarish', againLabel = 'Yana tanlash' }) {
+  useEffect(() => { playSound('win'); }, [name]);
+  const letters = Array.from(name || '');
+  return (
+    <div className="dp-pop relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-amber-300 via-amber-400 to-amber-500 p-1">
+      <div className="relative overflow-hidden rounded-[1.8rem] bg-ink px-6 py-8 text-center">
+        <div className="dp-rays pointer-events-none absolute left-1/2 top-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 opacity-40" />
+        <div className="dp-girih pointer-events-none absolute inset-0 opacity-30" />
+        <div className="relative">
+          <div className="dp-kicker text-amber-300">Javob beradi</div>
+          <div className="mt-3 flex flex-wrap justify-center text-4xl font-black leading-tight text-white md:text-6xl" aria-label={name}>
+            {letters.map((ch, i) => (
+              <span key={i} className="dp-letter inline-block" style={{ animationDelay: `${i * 45}ms` }}>{ch === ' ' ? ' ' : ch}</span>
+            ))}
+          </div>
+          {(onRemove || onAgain) && (
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              {onAgain && <StageBtn tone="gold" icon={RotateCcw} onClick={onAgain}>{againLabel}</StageBtn>}
+              {onRemove && <StageBtn tone="glass" icon={Trash2} onClick={onRemove}>{removeLabel}</StageBtn>}
+            </div>
+          )}
+        </div>
+      </div>
+      <Confetti count={70} />
+    </div>
+  );
+}
+
+/* ---------- 1. Ro‘yxat: yorug‘lik nuri ismlar ustida yuguradi ---------- */
 function ListPicker({ students, teamCount, onGroups, onPicked }) {
   const [highlight, setHighlight] = useState(null);
   const [picked, setPicked] = useState(null);
@@ -45951,110 +46011,80 @@ function ListPicker({ students, teamCount, onGroups, onPicked }) {
   const [localGroups, setLocalGroups] = useState(null);
   const [saved, setSaved] = useState(false);
   const timers = useRef([]);
-
   useEffect(() => () => timers.current.forEach(clearTimeout), []);
-
   const pool = noRepeat ? students.filter((s) => !used.includes(s)) : students;
 
   const pickRandom = () => {
     if (running || pool.length === 0) return;
-    setRunning(true);
-    setPicked(null);
+    setRunning(true); setPicked(null); setLocalGroups(null);
     const final = pool[Math.floor(Math.random() * pool.length)];
-    const steps = 18;
+    const steps = 22;
     let delay = 0;
     for (let i = 0; i < steps; i++) {
-      delay += 50 + i * 14;
+      delay += 45 + i * i * 0.9;
       const isLast = i === steps - 1;
       const name = isLast ? final : pool[Math.floor(Math.random() * pool.length)];
-      timers.current.push(
-        setTimeout(() => {
-          setHighlight(name);
-          if (isLast) {
-            setPicked(final);
-            setRunning(false);
-            setUsed((u) => (u.includes(final) ? u : [...u, final]));
-            onPicked && onPicked(final);
-          }
-        }, delay)
-      );
+      timers.current.push(setTimeout(() => {
+        setHighlight(name);
+        playSound('tick');
+        if (isLast) {
+          setPicked(final); setRunning(false);
+          setUsed((u) => (u.includes(final) ? u : [...u, final]));
+          onPicked && onPicked(final);
+        }
+      }, delay));
     }
   };
-
   const split = () => {
     const n = teamCount;
-    const sh = shuffle(students);
     const g = Array.from({ length: n }, () => []);
-    sh.forEach((s, i) => g[i % n].push(s));
-    setLocalGroups(g);
-    setSaved(false);
+    shuffle(students).forEach((s, i) => g[i % n].push(s));
+    setLocalGroups(g); setSaved(false); setPicked(null);
   };
 
   return (
     <div>
       <div className="flex flex-wrap items-center gap-3">
-        <PrimaryButton onClick={pickRandom} disabled={running || pool.length === 0} icon={Shuffle}>Tasodifiy tanlash</PrimaryButton>
-        <button
-          onClick={split}
-          disabled={teamCount < 2 || students.length < teamCount}
-          className="inline-flex items-center gap-2 rounded-2xl border-2 border-blue-600 px-6 py-4 text-xl font-extrabold text-blue-700 transition hover:bg-blue-50 disabled:cursor-not-allowed disabled:border-slate-200 disabled:text-slate-400"
-        >
-          <Users size={26} /> {teamCount}ta guruhga bo‘lish
-        </button>
-        <label className="ml-auto flex cursor-pointer items-center gap-2 text-lg font-semibold text-slate-600">
-          <input type="checkbox" className="h-6 w-6 accent-blue-600" checked={noRepeat} onChange={(e) => setNoRepeat(e.target.checked)} />
-          Tanlanganlar qayta chiqmasin
-        </label>
-        {used.length > 0 && (
-          <button onClick={() => { setUsed([]); setPicked(null); setHighlight(null); }} className="inline-flex items-center gap-1 text-lg font-bold text-blue-700 hover:underline">
-            <RotateCcw size={20} /> Tozalash
-          </button>
-        )}
-      </div>
-      {teamCount < 2 && <p className="mt-2 text-base text-slate-500">Guruhlarga bo‘lish uchun avval 2–4 jamoa rejimini tanlang.</p>}
-
-      {picked && (
-        <div className="dp-pop mt-5 rounded-3xl bg-blue-600 p-6 text-center text-white">
-          <div className="text-lg font-semibold text-blue-100">Tanlangan o‘quvchi</div>
-          <div className="text-4xl md:text-5xl font-extrabold">{picked}</div>
+        <StageBtn icon={Shuffle} onClick={pickRandom} disabled={running || pool.length === 0}>{running ? 'Tanlanmoqda…' : 'Tasodifiy tanlash'}</StageBtn>
+        <StageBtn tone="glass" icon={Users} onClick={split} disabled={teamCount < 2 || students.length < teamCount}>{teamCount}ta guruhga bo‘lish</StageBtn>
+        <div className="ml-auto flex flex-wrap items-center gap-4">
+          <StageToggle checked={noRepeat} onChange={setNoRepeat}>Takrorlanmasin</StageToggle>
+          {used.length > 0 && <button type="button" onClick={() => { setUsed([]); setPicked(null); setHighlight(null); }} className="inline-flex items-center gap-1 text-base font-bold text-amber-300 hover:underline"><RotateCcw size={18} /> Tozalash ({used.length})</button>}
         </div>
-      )}
+      </div>
+      {teamCount < 2 && <p className="mt-2 text-sm font-semibold text-blue-200">Guruhlarga bo‘lish uchun 2–4 jamoa rejimini tanlang.</p>}
+
+      {picked && <div className="mt-6"><WinnerReveal name={picked} onAgain={pickRandom} /></div>}
 
       {localGroups ? (
         <div className="mt-6">
           <div className={`grid gap-4 ${localGroups.length === 2 ? 'md:grid-cols-2' : localGroups.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2 lg:grid-cols-4'}`}>
             {localGroups.map((g, i) => (
-              <div key={i} className={`rounded-3xl border-2 ${TEAM_STYLES[i].border} ${TEAM_STYLES[i].light} p-4`}>
-                <div className={`mb-3 inline-flex items-center gap-2 rounded-xl ${TEAM_STYLES[i].bg} px-4 py-2 text-xl font-extrabold text-white`}>
-                  <Users size={22} /> {i + 1}-jamoa ({g.length})
+              <div key={i} className="dp-pop rounded-3xl bg-white/[.06] p-4 ring-1 ring-white/15" style={{ animationDelay: `${i * 90}ms` }}>
+                <div className="mb-3 inline-flex items-center gap-2 rounded-xl px-4 py-2 text-xl font-black text-white" style={{ background: STAGE_COLORS[i] }}>
+                  <Users size={22} /> {i + 1}-jamoa • {g.length}
                 </div>
-                <ul className="space-y-1">
-                  {g.map((s) => <li key={s} className="text-lg font-semibold text-slate-800">{s}</li>)}
+                <ul className="space-y-1.5">
+                  {g.map((s, k) => <li key={s} className="dp-letter flex items-center gap-2 text-lg font-bold text-white" style={{ animationDelay: `${(i * 4 + k) * 25}ms` }}><span className="h-2 w-2 rounded-full" style={{ background: STAGE_COLORS[i] }} />{s}</li>)}
                 </ul>
               </div>
             ))}
           </div>
-          <div className="mt-4 flex flex-wrap gap-3">
-            <PrimaryButton onClick={() => { onGroups(localGroups); setSaved(true); }} icon={saved ? CheckCircle2 : Save}>
-              {saved ? 'Saqlandi' : 'Guruhlarni saqlash'}
-            </PrimaryButton>
-            <button onClick={split} className="inline-flex items-center gap-2 rounded-2xl border-2 border-blue-200 px-6 py-4 text-xl font-bold text-blue-900 hover:bg-blue-50">
-              <RotateCcw size={24} /> Qayta bo‘lish
-            </button>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <StageBtn icon={saved ? CheckCircle2 : Save} onClick={() => { onGroups(localGroups); setSaved(true); }}>{saved ? 'Saqlandi' : 'Guruhlarni saqlash'}</StageBtn>
+            <StageBtn tone="glass" icon={RotateCcw} onClick={split}>Qayta bo‘lish</StageBtn>
           </div>
         </div>
       ) : (
-        <div className="mt-6 flex flex-wrap gap-2">
+        <div className="mt-6 grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-5">
           {students.map((s) => {
             const isHi = highlight === s;
             const isUsed = noRepeat && used.includes(s) && picked !== s;
             return (
-              <span
-                key={s}
-                className={`rounded-2xl border-2 px-4 py-2 text-lg font-bold transition ${isHi ? 'scale-110 border-blue-600 bg-blue-600 text-white shadow-lg' : isUsed ? 'border-slate-100 bg-slate-50 text-slate-300 line-through' : 'border-blue-100 bg-white text-blue-950'}`}
-              >
-                {s}
-              </span>
+              <div key={s}
+                className={`relative overflow-hidden rounded-2xl px-4 py-3 text-lg font-bold transition-all duration-150 ${isHi ? 'z-10 scale-[1.08] bg-amber-400 text-ink shadow-[0_0_0_4px_rgba(220,174,74,.35),0_20px_50px_-10px_rgba(220,174,74,.8)]' : isUsed ? 'bg-white/[.03] text-white/25 line-through' : 'bg-white/[.07] text-white ring-1 ring-white/10'}`}>
+                <span className="relative">{s}</span>
+              </div>
             );
           })}
         </div>
@@ -46063,178 +46093,358 @@ function ListPicker({ students, teamCount, onGroups, onPicked }) {
   );
 }
 
+/* ---------- 2. Baraban: koshin doira, chiroqli gardish ---------- */
 function WheelPicker({ students, onPicked }) {
   const [removed, setRemoved] = useState([]);
   const [rotation, setRotation] = useState(0);
   const [spinning, setSpinning] = useState(false);
   const [winner, setWinner] = useState(null);
-  const timer = useRef(null);
-  useEffect(() => () => clearTimeout(timer.current), []);
+  const timers = useRef([]);
+  useEffect(() => () => timers.current.forEach(clearTimeout), []);
 
   const names = students.filter((s) => !removed.includes(s));
   const n = names.length;
   const seg = n > 0 ? 360 / n : 360;
-  const size = 520;
-  const cx = size / 2;
-  const cy = size / 2;
-  const r = size / 2 - 10;
-
-  const pt = (deg, rad) => {
-    const a = (deg * Math.PI) / 180;
-    return [cx + rad * Math.sin(a), cy - rad * Math.cos(a)];
-  };
+  const size = 560; const cx = size / 2; const cy = size / 2; const r = size / 2 - 34;
+  const pt = (deg, rad) => { const a = (deg * Math.PI) / 180; return [cx + rad * Math.sin(a), cy - rad * Math.cos(a)]; };
 
   const spin = () => {
     if (spinning || n < 2) return;
-    setWinner(null);
-    setSpinning(true);
-    const next = rotation + 360 * 6 + Math.random() * 360;
+    setWinner(null); setSpinning(true);
+    const next = rotation + 360 * 7 + Math.random() * 360;
     setRotation(next);
-    timer.current = setTimeout(() => {
+    // pasayib boruvchi «chiq-chiq» ovozi
+    let t = 0;
+    for (let i = 0; i < 26; i++) { t += 40 + i * i * 0.55; if (t > 4500) break; timers.current.push(setTimeout(() => playSound('tick'), t)); }
+    timers.current.push(setTimeout(() => {
       const pointerAngle = (360 - (next % 360)) % 360;
       const idx = Math.floor(pointerAngle / seg) % n;
-      setWinner(names[idx]);
-      setSpinning(false);
+      setWinner(names[idx]); setSpinning(false);
       onPicked && onPicked(names[idx]);
-    }, 4600);
+    }, 5200));
   };
-
   const fontSize = n > 24 ? 13 : n > 16 ? 15 : n > 10 ? 18 : 22;
+  const bulbs = 24;
 
   if (n < 2) {
     return (
-      <div className="rounded-3xl border-2 border-dashed border-blue-200 p-10 text-center">
-        <p className="text-xl text-slate-600">Doira uchun kamida 2 ta o‘quvchi kerak.</p>
-        {removed.length > 0 && (
-          <button onClick={() => setRemoved([])} className="mt-4 rounded-2xl bg-blue-600 px-6 py-3 text-lg font-bold text-white">Barchasini qaytarish</button>
-        )}
+      <div className="rounded-3xl border-2 border-dashed border-white/20 p-10 text-center">
+        <p className="text-xl font-bold text-blue-100">Baraban uchun kamida 2 ta o‘quvchi kerak.</p>
+        {removed.length > 0 && <StageBtn className="mt-4" icon={RotateCcw} onClick={() => setRemoved([])}>Barchasini qaytarish</StageBtn>}
       </div>
     );
   }
-
   return (
-    <div className="grid items-center gap-6 lg:grid-cols-[1fr_320px]">
-      <div className="relative mx-auto w-full max-w-[520px]">
-        <div className="absolute left-1/2 top-0 z-10 -translate-x-1/2 -translate-y-1">
-          <svg width="44" height="50" viewBox="0 0 44 50" aria-hidden="true">
-            <path d="M22 48 L4 8 Q22 -4 40 8 Z" fill="#1E3A8A" stroke="#fff" strokeWidth="3" />
+    <div className="grid items-center gap-8 lg:grid-cols-[1fr_360px]">
+      <div className="relative mx-auto w-full max-w-[560px]">
+        <div className="pointer-events-none absolute inset-6 rounded-full bg-amber-400/25 blur-3xl" />
+        <div className="absolute left-1/2 top-0 z-10 -translate-x-1/2 -translate-y-2 drop-shadow-[0_6px_10px_rgba(0,0,0,.45)]">
+          <svg width="56" height="64" viewBox="0 0 56 64" aria-hidden="true">
+            <path d="M28 60 L8 14 Q28 -2 48 14 Z" fill="#DCAE4A" stroke="#1B2440" strokeWidth="3" strokeLinejoin="round" />
+            <circle cx="28" cy="18" r="7" fill="#E2463F" stroke="#FBF7EF" strokeWidth="2.5" />
           </svg>
         </div>
-        <svg viewBox={`0 0 ${size} ${size}`} className="h-auto w-full drop-shadow-xl">
-          <g
-            style={{
-              transform: `rotate(${rotation}deg)`,
-              transformOrigin: `${cx}px ${cy}px`,
-              transition: spinning ? 'transform 4.5s cubic-bezier(0.17, 0.67, 0.12, 1)' : 'none',
-            }}
-          >
+        <svg viewBox={`0 0 ${size} ${size}`} className="relative h-auto w-full">
+          <circle cx={cx} cy={cy} r={size / 2 - 4} fill="#1B2440" stroke="#DCAE4A" strokeWidth="6" />
+          {Array.from({ length: bulbs }, (_, i) => {
+            const [bx, by] = pt((360 / bulbs) * i, size / 2 - 18);
+            return <circle key={i} cx={bx} cy={by} r="6" className={spinning ? (i % 2 ? 'dp-bulb-a' : 'dp-bulb-b') : ''} fill={i % 2 ? '#F2CF7A' : '#FBF7EF'} />;
+          })}
+          <g style={{ transform: `rotate(${rotation}deg)`, transformOrigin: `${cx}px ${cy}px`, transition: spinning ? 'transform 5s cubic-bezier(0.12, 0.7, 0.08, 1)' : 'none' }}>
             {names.map((name, i) => {
-              const a0 = i * seg;
-              const a1 = (i + 1) * seg;
-              const [x0, y0] = pt(a0, r);
-              const [x1, y1] = pt(a1, r);
-              const large = seg > 180 ? 1 : 0;
+              const a0 = i * seg; const a1 = (i + 1) * seg;
+              const [x0, y0] = pt(a0, r); const [x1, y1] = pt(a1, r);
               const mid = a0 + seg / 2;
-              const label = name.length > 14 ? name.slice(0, 13) + '…' : name;
-              const ty = cy - r + 18;
-              const flip = mid > 180; // chap yarimda matn teskari bo‘lmasligi uchun
+              const label = name.length > 14 ? `${name.slice(0, 13)}…` : name;
+              const ty = cy - r + 22; const flip = mid > 180;
+              const isWin = winner === name && !spinning;
               return (
                 <g key={name}>
-                  <path
-                    d={`M${cx},${cy} L${x0},${y0} A${r},${r} 0 ${large} 1 ${x1},${y1} Z`}
-                    fill={WHEEL_COLORS[i % WHEEL_COLORS.length]}
-                    stroke="#fff"
-                    strokeWidth="2"
-                  />
+                  <path d={`M${cx},${cy} L${x0},${y0} A${r},${r} 0 ${seg > 180 ? 1 : 0} 1 ${x1},${y1} Z`} fill={STAGE_COLORS[i % STAGE_COLORS.length]} stroke="#F4EEE2" strokeOpacity=".55" strokeWidth="1.5" style={isWin ? { filter: 'brightness(1.35)' } : undefined} />
                   <g transform={`rotate(${mid} ${cx} ${cy})`}>
-                    <text
-                      x={cx}
-                      y={ty}
-                      transform={`rotate(${flip ? 90 : -90} ${cx} ${ty})`}
-                      textAnchor={flip ? 'start' : 'end'}
-                      dominantBaseline="middle"
-                      fill="#fff"
-                      fontSize={fontSize}
-                      fontWeight="700"
-                    >
-                      {label}
-                    </text>
+                    <text x={cx} y={ty} transform={`rotate(${flip ? 90 : -90} ${cx} ${ty})`} textAnchor={flip ? 'start' : 'end'} dominantBaseline="middle" fill="#fff" fontSize={fontSize} fontWeight="800">{label}</text>
                   </g>
                 </g>
               );
             })}
+            <circle cx={cx} cy={cy} r={r} fill="none" stroke="#DCAE4A" strokeWidth="3" />
           </g>
-          <circle cx={cx} cy={cy} r="44" fill="#fff" stroke="#1E3A8A" strokeWidth="6" />
-          <path d={`M${cx - 10},${cy - 16} L${cx + 16},${cy} L${cx - 10},${cy + 16} Z`} fill="#2563EB" />
+          <g transform={`translate(${cx} ${cy})`}>
+            <circle r="52" fill="#FBF7EF" stroke="#DCAE4A" strokeWidth="5" />
+            <rect x="-26" y="-26" width="52" height="52" rx="6" fill="#DCAE4A" transform="rotate(45)" />
+            <rect x="-26" y="-26" width="52" height="52" rx="6" fill="#2F4C9A" />
+            <path d="M-8 -14 L16 0 L-8 14 Z" fill="#FBF7EF" />
+          </g>
         </svg>
       </div>
       <div className="space-y-4">
-        <PrimaryButton onClick={spin} disabled={spinning} icon={Disc3} className="w-full">
-          {spinning ? 'Aylanmoqda...' : 'Aylantirish'}
-        </PrimaryButton>
-        {winner && (
-          <div className="dp-pop rounded-3xl bg-blue-600 p-6 text-center text-white">
-            <div className="text-lg font-semibold text-blue-100">Tanlandi</div>
-            <div className="text-3xl md:text-4xl font-extrabold">{winner}</div>
-            <button
-              onClick={() => { setRemoved((x) => [...x, winner]); setWinner(null); }}
-              className="mt-4 inline-flex items-center gap-2 rounded-xl bg-white/20 px-4 py-2 text-lg font-bold hover:bg-white/30"
-            >
-              <Trash2 size={20} /> Doiradan olib tashlash
-            </button>
-          </div>
-        )}
-        <div className="rounded-2xl bg-blue-50 p-4 text-lg text-blue-900">
-          Doirada: <b>{n}</b> ta o‘quvchi
-          {removed.length > 0 && (
-            <button onClick={() => setRemoved([])} className="ml-2 font-bold text-blue-700 underline">qaytarish ({removed.length})</button>
-          )}
+        <StageBtn icon={Disc3} onClick={spin} disabled={spinning} className="w-full py-5 text-2xl">{spinning ? 'Aylanmoqda…' : 'Aylantirish'}</StageBtn>
+        {winner && !spinning && <WinnerReveal name={winner} onRemove={() => { setRemoved((x) => [...x, winner]); setWinner(null); }} removeLabel="Barabandan olib tashlash" />}
+        <div className="rounded-2xl bg-white/[.07] p-4 text-lg font-bold text-blue-100 ring-1 ring-white/10">
+          Barabanda: <b className="text-white">{n}</b> ta o‘quvchi
+          {removed.length > 0 && <button type="button" onClick={() => setRemoved([])} className="ml-2 font-black text-amber-300 underline">qaytarish ({removed.length})</button>}
         </div>
       </div>
     </div>
   );
 }
 
+/* ---------- 3. Sehrli kartalar: aralashtiriladi, o‘quvchi kartani o‘zi tanlaydi ---------- */
+function CardsPicker({ students, onPicked }) {
+  const [noRepeat, setNoRepeat] = useState(true);
+  const [used, setUsed] = useState([]);
+  const pool = noRepeat ? students.filter((s) => !used.includes(s)) : students;
+  const [deck, setDeck] = useState(() => shuffle(pool));
+  const [flipped, setFlipped] = useState(null);
+  const [shuffling, setShuffling] = useState(false);
+  const [round, setRound] = useState(0);
+  const timer = useRef(null);
+  useEffect(() => () => clearTimeout(timer.current), []);
+
+  const reshuffle = (list = pool) => {
+    setFlipped(null); setShuffling(true);
+    let k = 0;
+    const tick = () => { playSound('tick'); if (++k < 6) timer.current = setTimeout(tick, 120); };
+    tick();
+    timer.current = setTimeout(() => { setDeck(shuffle(list)); setRound((r) => r + 1); setShuffling(false); }, 900);
+  };
+  useEffect(() => { reshuffle(noRepeat ? students.filter((s) => !used.includes(s)) : students); }, [noRepeat]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const pick = (i) => {
+    if (flipped !== null || shuffling) return;
+    setFlipped(i); playSound('flip');
+    const name = deck[i];
+    timer.current = setTimeout(() => {
+      onPicked && onPicked(name);
+      if (noRepeat) setUsed((u) => (u.includes(name) ? u : [...u, name]));
+    }, 650);
+  };
+  const next = () => {
+    const rest = noRepeat ? students.filter((s) => !used.includes(s)) : students;
+    reshuffle(rest);
+  };
+  const cols = deck.length > 16 ? 'grid-cols-4 sm:grid-cols-6 lg:grid-cols-8' : deck.length > 8 ? 'grid-cols-4 sm:grid-cols-5 lg:grid-cols-6' : 'grid-cols-3 sm:grid-cols-4';
+
+  return (
+    <div>
+      <div className="flex flex-wrap items-center gap-3">
+        <StageBtn icon={Shuffle} onClick={next} disabled={shuffling || pool.length === 0}>{shuffling ? 'Aralashtirilmoqda…' : 'Aralashtirish'}</StageBtn>
+        <span className="text-lg font-bold text-blue-100">Bitta kartani bosing — kim chiqadi?</span>
+        <div className="ml-auto flex items-center gap-4">
+          <StageToggle checked={noRepeat} onChange={setNoRepeat}>Takrorlanmasin</StageToggle>
+          {used.length > 0 && <button type="button" onClick={() => { setUsed([]); reshuffle(students); }} className="inline-flex items-center gap-1 text-base font-bold text-amber-300 hover:underline"><RotateCcw size={18} /> Tozalash ({used.length})</button>}
+        </div>
+      </div>
+      {pool.length === 0 ? (
+        <div className="mt-6 rounded-3xl border-2 border-dashed border-white/20 p-10 text-center text-xl font-bold text-blue-100">Hamma o‘quvchi tanlandi. «Tozalash»ni bosing.</div>
+      ) : (
+        <div className={`mt-6 grid gap-3 [perspective:1200px] ${cols}`}>
+          {deck.map((name, i) => {
+            const open = flipped === i;
+            const dim = flipped !== null && !open;
+            return (
+              <button key={`${round}-${i}`} type="button" onClick={() => pick(i)} disabled={shuffling}
+                className={`group relative aspect-[4/5] w-full ${shuffling ? 'dp-shuffle' : 'dp-deal'} ${dim ? 'opacity-40' : ''}`}
+                style={{ animationDelay: shuffling ? `${(i % 7) * 40}ms` : `${i * 28}ms`, '--sx': `${((i * 37) % 9) - 4}`, '--sr': `${((i * 53) % 21) - 10}deg` }}
+                aria-label={open ? name : `${i + 1}-karta`}>
+                <span className={`absolute inset-0 rounded-2xl transition-transform duration-700 [transform-style:preserve-3d] ${open ? '[transform:rotateY(180deg)]' : 'group-hover:-translate-y-1.5'}`}>
+                  <span className="absolute inset-0 flex items-center justify-center overflow-hidden rounded-2xl border-2 border-amber-300/70 bg-blue-800 [backface-visibility:hidden]">
+                    <span className="dp-girih absolute inset-0 opacity-80" />
+                    <span className="absolute inset-2 rounded-xl border border-amber-300/50" />
+                    <StarTile size={42} color="#DCAE4A" className="relative transition group-hover:rotate-45" />
+                    <span className="absolute bottom-2 right-3 text-sm font-black text-amber-200/80">{i + 1}</span>
+                  </span>
+                  <span className="absolute inset-0 flex items-center justify-center rounded-2xl border-2 border-amber-300 bg-paper p-2 text-center text-base font-black leading-tight text-ink [backface-visibility:hidden] [transform:rotateY(180deg)] md:text-lg">
+                    {name}
+                  </span>
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      )}
+      {flipped !== null && deck[flipped] && (
+        <div className="mt-6"><WinnerReveal name={deck[flipped]} onAgain={next} againLabel="Keyingi karta" /></div>
+      )}
+    </div>
+  );
+}
+
+/* ---------- 4. Orbita: ismlar quyosh atrofida aylanadi, biri markazga tortiladi ---------- */
+function OrbitPicker({ students, onPicked }) {
+  const [noRepeat, setNoRepeat] = useState(true);
+  const [used, setUsed] = useState([]);
+  const pool = noRepeat ? students.filter((s) => !used.includes(s)) : students;
+  const [phase, setPhase] = useState('idle'); // idle | spin | pull | done
+  const [chosen, setChosen] = useState(null);
+  const [pulledIdx, setPulledIdx] = useState(null);
+  const wrapRef = useRef(null);
+  const pills = useRef([]);
+  const state = useRef({ angle: 0, speed: 0.12, target: 0.12, raf: 0, last: 0 });
+
+  const rings = useMemo(() => {
+    const list = pool.map((name, i) => ({ name, i }));
+    const ringCount = list.length > 18 ? 3 : list.length > 8 ? 2 : 1;
+    const out = Array.from({ length: ringCount }, () => []);
+    list.forEach((x, k) => out[k % ringCount].push(x));
+    const radii = ringCount === 1 ? [0.7] : ringCount === 2 ? [0.5, 0.92] : [0.36, 0.65, 0.94];
+    return out.map((items, ri) => ({ items, radius: radii[ri], dir: ri % 2 ? -1 : 1 }));
+  }, [pool.join('|')]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    const st = state.current;
+    const loop = (t) => {
+      const dt = st.last ? Math.min(48, t - st.last) : 16;
+      st.last = t;
+      st.speed += (st.target - st.speed) * 0.035;
+      st.angle += st.speed * dt * 0.06;
+      const w = wrapRef.current;
+      if (w) {
+        const Rx = w.clientWidth / 2 - 70;
+        const Ry = w.clientHeight / 2 - 22;
+        rings.forEach((ring, ri) => {
+          ring.items.forEach((it, k) => {
+            const el = pills.current[it.i];
+            if (!el || el.dataset.pulled === '1') return;
+            const a = ((st.angle * ring.dir) + (360 / ring.items.length) * k + ri * 17) * (Math.PI / 180);
+            el.style.transform = `translate(-50%, -50%) translate(${Math.cos(a) * Rx * ring.radius}px, ${Math.sin(a) * Ry * ring.radius}px)`;
+          });
+        });
+      }
+      st.raf = requestAnimationFrame(loop);
+    };
+    st.raf = requestAnimationFrame(loop);
+    return () => cancelAnimationFrame(st.raf);
+  }, [rings]);
+
+  const start = () => {
+    if (phase === 'spin' || phase === 'pull' || pool.length === 0) return;
+    pills.current.forEach((el) => { if (el) { el.dataset.pulled = ''; el.style.transition = ''; } });
+    setChosen(null); setPulledIdx(null); setPhase('spin');
+    const st = state.current;
+    st.target = 2.6;
+    let k = 0;
+    const ticker = setInterval(() => { playSound('tick'); if (++k > 14) clearInterval(ticker); }, 180);
+    setTimeout(() => { st.target = 0.05; }, 1700);
+    setTimeout(() => {
+      const idx = Math.floor(Math.random() * pool.length);
+      const el = pills.current[idx];
+      setPhase('pull'); setPulledIdx(idx);
+      if (el) {
+        el.dataset.pulled = '1';
+        el.style.transition = 'transform 1s cubic-bezier(.2,.9,.25,1.2)';
+        el.style.transform = 'translate(-50%, -50%) translate(0px, 0px) scale(1.9)';
+      }
+      setTimeout(() => {
+        const name = pool[idx];
+        setChosen(name); setPhase('done'); state.current.target = 0.12;
+        onPicked && onPicked(name);
+      }, 1050);
+    }, 3300);
+  };
+  const removeChosen = () => {
+    if (!chosen) return;
+    setUsed((u) => (u.includes(chosen) ? u : [...u, chosen]));
+    setChosen(null); setPulledIdx(null); setPhase('idle');
+  };
+
+  return (
+    <div className="grid items-center gap-6 lg:grid-cols-[1fr_340px]">
+      <div ref={wrapRef} className="relative mx-auto aspect-[4/3] w-full max-w-[760px] select-none">
+        {rings.map((ring, ri) => (
+          <div key={ri} className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[50%] border border-dashed border-amber-200/25"
+            style={{ width: `calc((100% - 140px) * ${ring.radius})`, height: `calc((100% - 44px) * ${ring.radius})` }} />
+        ))}
+        <div className={`absolute left-1/2 top-1/2 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full ${phase === 'spin' ? 'dp-sun-fast' : 'dp-sun'}`}>
+          <span className="absolute inset-0 rounded-full bg-amber-400/40 blur-2xl" />
+          <Rosette size={112} color="#F2CF7A" inner="#7FCFC4" className={phase === 'spin' ? 'dp-spin-fast' : 'dp-spin-slow'} />
+        </div>
+        {pool.map((name, i) => (
+          <span key={name} ref={(el) => { pills.current[i] = el; }}
+            className={`absolute left-1/2 top-1/2 whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-black text-white shadow-[0_0_24px_-4px_currentColor] ${pulledIdx === i ? 'dp-orbit-win z-20' : phase === 'pull' || phase === 'done' ? 'dp-orbit-fade' : ''}`}
+            style={{ background: STAGE_COLORS[i % STAGE_COLORS.length], color: '#fff' }}>
+            {name}
+          </span>
+        ))}
+        {pool.length === 0 && <div className="absolute inset-0 flex items-center justify-center text-center text-xl font-bold text-blue-100">Hamma tanlandi — «Tozalash»</div>}
+      </div>
+      <div className="space-y-4">
+        <StageBtn icon={Orbit} onClick={start} disabled={phase === 'spin' || phase === 'pull' || pool.length === 0} className="w-full py-5 text-2xl">
+          {phase === 'spin' ? 'Aylanmoqda…' : phase === 'pull' ? 'Tortilmoqda…' : 'Orbitani boshlash'}
+        </StageBtn>
+        <StageToggle checked={noRepeat} onChange={(v) => { setNoRepeat(v); setChosen(null); setPhase('idle'); }}>Takrorlanmasin</StageToggle>
+        {chosen && <WinnerReveal name={chosen} onRemove={noRepeat ? removeChosen : null} removeLabel="Orbitadan chiqarish" onAgain={() => { if (noRepeat) removeChosen(); setTimeout(start, 50); }} />}
+        <div className="rounded-2xl bg-white/[.07] p-4 text-lg font-bold text-blue-100 ring-1 ring-white/10">
+          Orbitada: <b className="text-white">{pool.length}</b> ta o‘quvchi
+          {used.length > 0 && <button type="button" onClick={() => { setUsed([]); setChosen(null); setPhase('idle'); }} className="ml-2 font-black text-amber-300 underline">qaytarish ({used.length})</button>}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ---------- Sahna (modal) ---------- */
 function PickerModal({ initialTab, students, teamCount, onGroups, onClose, onContinue, context }) {
-  const [tab, setTab] = useState(initialTab || 'list');
+  const [tab, setTab] = useState(initialTab || 'wheel');
   const [picked, setPicked] = useState(null);
   const continueLabel = context === 'play' ? 'O‘yinga qaytish' : 'O‘yinni boshlash';
+  const current = PICKERS.find((p) => p.id === tab) || PICKERS[0];
+  useEffect(() => {
+    const onKey = (e) => e.key === 'Escape' && onClose && onClose();
+    window.addEventListener('keydown', onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { window.removeEventListener('keydown', onKey); document.body.style.overflow = prev; };
+  }, [onClose]);
   return (
-    <Modal onClose={onClose} wide>
-      <h2 className="pr-12 text-3xl font-extrabold text-blue-950">O‘quvchi tanlash</h2>
-      <div className="mt-5 mb-6 flex flex-wrap gap-2">
-        {PICKERS.map((p) => {
-          const I = p.icon;
-          const on = tab === p.id;
-          return (
-            <button
-              key={p.id}
-              disabled={p.disabled}
-              onClick={() => setTab(p.id)}
-              className={`inline-flex items-center gap-2 rounded-2xl px-5 py-3 text-lg font-bold transition disabled:cursor-not-allowed disabled:opacity-50 ${on ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30' : 'border-2 border-blue-100 text-blue-900 hover:bg-blue-50'}`}
-            >
-              <I size={22} /> {p.name}
-              {p.disabled && <span className="text-xs font-semibold">(tez orada)</span>}
-            </button>
-          );
-        })}
+    <div className="fixed inset-0 z-50 flex flex-col overflow-hidden bg-ink text-white" role="dialog" aria-modal="true" aria-label="O‘quvchi tanlash">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="dp-girih absolute inset-0 opacity-25" />
+        <div className="dp-aurora absolute -left-40 -top-40 h-[520px] w-[520px] rounded-full bg-blue-600/40 blur-3xl" />
+        <div className="dp-aurora2 absolute -bottom-48 -right-32 h-[560px] w-[560px] rounded-full bg-firuza-500/30 blur-3xl" />
+        <div className="dp-aurora absolute left-1/2 top-1/3 h-[360px] w-[360px] rounded-full bg-amber-400/15 blur-3xl" />
       </div>
-      {tab === 'camera' && <CameraPicker students={students} onPicked={setPicked} />}
-      {tab === 'list' && <ListPicker students={students} teamCount={teamCount} onGroups={onGroups} onPicked={setPicked} />}
-      {tab === 'wheel' && <WheelPicker students={students} onPicked={setPicked} />}
 
-      {/* Pastki panel: tanlangandan keyin to‘g‘ridan-to‘g‘ri o‘yinga o‘tish */}
-      <div className="sticky bottom-0 -mx-6 -mb-6 mt-8 flex flex-wrap items-center gap-4 border-t-2 border-blue-100 bg-white/95 px-6 py-4 backdrop-blur md:-mx-8 md:-mb-8 md:px-8">
-        <div className="min-w-0 flex-1 text-xl text-slate-600">
-          {picked ? (
-            <span>Javob beradi: <b className="text-2xl text-blue-900">{picked}</b></span>
-          ) : (
-            <span>O‘quvchini tanlang yoki to‘g‘ridan-to‘g‘ri davom eting</span>
-          )}
+      <div className="relative flex flex-wrap items-center gap-3 border-b border-white/10 px-4 py-3 md:px-8">
+        <div className="mr-2 flex items-center gap-3">
+          <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-400 text-ink"><Sparkles size={24} /></span>
+          <div className="leading-tight">
+            <div className="text-xl font-black md:text-2xl">O‘quvchi tanlash</div>
+            <div className="text-sm font-semibold text-blue-200">{students.length} nafar • {current.desc}</div>
+          </div>
         </div>
-        <PrimaryButton onClick={() => onContinue(picked)} icon={Play}>{continueLabel}</PrimaryButton>
+        <div className="order-3 flex w-full gap-1.5 overflow-x-auto rounded-2xl bg-white/[.06] p-1.5 ring-1 ring-white/10 md:order-none md:ml-auto md:w-auto">
+          {PICKERS.map((p) => {
+            const I = p.icon; const on = tab === p.id;
+            return (
+              <button key={p.id} type="button" onClick={() => setTab(p.id)} aria-pressed={on}
+                className={`relative inline-flex shrink-0 items-center gap-2 rounded-xl px-4 py-2.5 text-base font-black transition ${on ? 'bg-amber-400 text-ink shadow-[0_10px_30px_-10px_rgba(220,174,74,.9)]' : 'text-blue-100 hover:bg-white/10 hover:text-white'}`}>
+                <I size={20} /> {p.name}
+                {p.fresh && !on && <span className="absolute -right-1 -top-1 h-2.5 w-2.5 rounded-full bg-anor-500 ring-2 ring-ink" />}
+              </button>
+            );
+          })}
+        </div>
+        <button type="button" onClick={onClose} aria-label="Yopish" className="ml-auto flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-white transition hover:rotate-90 hover:bg-white/20 md:ml-2"><X size={24} /></button>
       </div>
-    </Modal>
+
+      <div className="relative flex-1 overflow-y-auto px-4 py-6 md:px-8">
+        <div key={tab} className="dp-pop mx-auto max-w-6xl">
+          {tab === 'camera' && <div className="rounded-3xl bg-white p-5 text-ink md:p-6"><CameraPicker students={students} onPicked={setPicked} /></div>}
+          {tab === 'list' && <ListPicker students={students} teamCount={teamCount} onGroups={onGroups} onPicked={setPicked} />}
+          {tab === 'wheel' && <WheelPicker students={students} onPicked={setPicked} />}
+          {tab === 'cards' && <CardsPicker students={students} onPicked={setPicked} />}
+          {tab === 'orbit' && <OrbitPicker students={students} onPicked={setPicked} />}
+        </div>
+      </div>
+
+      <div className="relative flex flex-wrap items-center gap-4 border-t border-white/10 bg-ink/80 px-4 py-4 backdrop-blur md:px-8">
+        <div className="min-w-0 flex-1 text-lg font-semibold text-blue-100 md:text-xl">
+          {picked ? <span>Javob beradi: <b className="text-2xl text-amber-300 md:text-3xl">{picked}</b></span> : <span>O‘quvchini tanlang yoki to‘g‘ridan-to‘g‘ri davom eting</span>}
+        </div>
+        <StageBtn icon={Play} onClick={() => onContinue(picked)} className="px-8">{continueLabel}</StageBtn>
+      </div>
+    </div>
   );
 }
 
@@ -46270,23 +46480,20 @@ function PickerSetupScreen({ game, topic, classInfo, students, onSaveStudents, t
 
       <section className="mt-6">
         <h2 className="mb-4 text-2xl font-extrabold text-blue-950">O‘quvchi tanlash usuli</h2>
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
           {PICKERS.map((p, i) => {
             const I = p.icon;
             return (
-              <button
-                key={p.id}
-                disabled={p.disabled}
-                onClick={() => onOpenPicker(p.id)}
-                className="relative flex flex-col items-center gap-3 rounded-3xl border-2 border-blue-100 bg-white p-6 text-center transition enabled:hover:-translate-y-1 enabled:hover:border-blue-500 enabled:hover:shadow-xl enabled:active:scale-95 disabled:cursor-not-allowed disabled:opacity-60"
-              >
-                <span className="absolute left-4 top-3 text-2xl font-extrabold text-blue-100">{i + 1}</span>
-                <div className={`flex h-20 w-20 items-center justify-center rounded-3xl ${p.disabled ? 'bg-slate-300' : 'bg-blue-900'} text-white`}>
-                  <I size={40} />
-                </div>
-                <div className="text-2xl font-extrabold text-blue-950">{p.name}</div>
-                <div className="text-base text-slate-500">{p.desc}</div>
-                {p.disabled && <span className="rounded-full bg-slate-100 px-3 py-1 text-sm font-bold text-slate-500">Tez orada</span>}
+              <button key={p.id} onClick={() => onOpenPicker(p.id)}
+                className="group dp-sticker dp-sticker-hover relative flex flex-col items-start gap-3 overflow-hidden rounded-3xl bg-white p-5 text-left">
+                <span className={`pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-to-br ${p.grad} opacity-15 blur-xl transition group-hover:scale-150 group-hover:opacity-30`} />
+                <span className="dp-hand absolute right-4 top-1 text-4xl text-amber-400">{i + 1}</span>
+                <span className={`relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${p.grad} text-white shadow-[0_14px_28px_-12px_rgba(27,36,64,.6)] transition group-hover:-rotate-6 group-hover:scale-110`}>
+                  <I size={32} />
+                </span>
+                <span className="relative text-xl font-black text-ink">{p.name}</span>
+                <span className="relative text-sm font-semibold text-slate-500">{p.desc}</span>
+                {p.fresh && <span className="absolute left-4 top-4 rounded-full bg-anor-500 px-2 py-0.5 text-xs font-black text-white">Yangi</span>}
               </button>
             );
           })}
