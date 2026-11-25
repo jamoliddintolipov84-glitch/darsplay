@@ -38501,6 +38501,143 @@ function useSoundOn() {
   return v;
 }
 
+/* ============================================================
+   ALIFBO: amaldagi (O‘zbek) ↔ yangi (Özbek, O‘RQ–1184)
+   ------------------------------------------------------------
+   Kontent kodda amaldagi alifboda yoziladi. «Özbek» tanlansa, sahifadagi
+   barcha matn ekranga chiqishda o‘giriladi: o‘→ö, g‘→ğ, sh→ş, ch→ç.
+   Tutuq belgisi (’) o‘zgarmaydi, «s’h» kabi birikmalar ham saqlanadi.
+   data-noconv="1" belgilangan joylar (imlo o‘yinlari) o‘girilmaydi.
+   ============================================================ */
+const ALPHABET_KEY = 'darsplay_alphabet_v1';
+let alphabetMode = 'old';
+try { alphabetMode = localStorage.getItem(ALPHABET_KEY) === 'new' ? 'new' : 'old'; } catch { /* server */ }
+const alphabetListeners = new Set();
+function setAlphabet(v) {
+  alphabetMode = v === 'new' ? 'new' : 'old';
+  try { localStorage.setItem(ALPHABET_KEY, alphabetMode); } catch { /* */ }
+  alphabetListeners.forEach((f) => f(alphabetMode));
+}
+function useAlphabet() {
+  const [v, setV] = useState('old');
+  useEffect(() => {
+    setV(alphabetMode);
+    alphabetListeners.add(setV);
+    return () => alphabetListeners.delete(setV);
+  }, []);
+  return v;
+}
+const OG_MAP = { O: 'Ö', o: 'ö', G: 'Ğ', g: 'ğ' };
+// Chet tilidagi nomlar o‘girilmaydi (masalan «Chrome» — «Çrome» emas)
+const ALPHA_KEEP = /\b(Chrome|Chromebook|Shift|Microsoft|PowerPoint|Push|Flash|Bluetooth|Dashboard|ChatGPT)\b/g;
+/** Amaldagi lotin yozuvidan yangi alifboga. */
+function toNewAlphabet(str) {
+  if (!str || !/[OoGg][‘ʻ'`]|[SsCc][Hh]/.test(str)) return str;
+  const kept = [];
+  return str
+    .replace(ALPHA_KEEP, (w) => { kept.push(w); return `\u0000${kept.length - 1}\u0000`; })
+    .replace(/([OoGg])[‘ʻ'`]/g, (m, c) => OG_MAP[c])
+    .replace(/S[Hh]/g, 'Ş').replace(/sh/g, 'ş')
+    .replace(/C[Hh]/g, 'Ç').replace(/ch/g, 'ç')
+    .replace(/\u0000(\d+)\u0000/g, (m, i) => kept[Number(i)]);
+}
+
+const ALPHA_SKIP = new Set(['SCRIPT', 'STYLE', 'TEXTAREA', 'INPUT', 'CODE', 'PRE', 'NOSCRIPT']);
+const ALPHA_ATTRS = ['placeholder', 'title', 'aria-label', 'data-tip'];
+function alphaSkip(el) {
+  for (let e = el; e && e !== document.body; e = e.parentElement) {
+    if (ALPHA_SKIP.has(e.tagName) || e.isContentEditable || e.dataset?.noconv) return true;
+  }
+  return false;
+}
+
+/** Butun sahifani tanlangan alifboda ko‘rsatadi (asl matnni saqlab, kerak bo‘lsa qaytaradi). */
+function AlphabetConverter() {
+  const mode = useAlphabet();
+  useEffect(() => {
+    if (typeof document === 'undefined') return undefined;
+    const texts = new Map(); // node -> { orig, shown }
+    const attrs = new Map(); // el -> { [attr]: { orig, shown } }
+    let titleOrig = null;
+
+    const convText = (n) => {
+      if (!n.parentElement || alphaSkip(n.parentElement)) return;
+      const rec = texts.get(n);
+      const cur = n.nodeValue;
+      const orig = rec && rec.shown === cur ? rec.orig : cur; // React yangilagan bo‘lsa — yangi asl matn
+      const shown = toNewAlphabet(orig);
+      texts.set(n, { orig, shown });
+      if (shown !== cur) n.nodeValue = shown;
+    };
+    const convAttrs = (el) => {
+      if (alphaSkip(el)) return;
+      ALPHA_ATTRS.forEach((a) => {
+        if (!el.hasAttribute(a)) return;
+        const cur = el.getAttribute(a);
+        const all = attrs.get(el) || {};
+        const rec = all[a];
+        const orig = rec && rec.shown === cur ? rec.orig : cur;
+        const shown = toNewAlphabet(orig);
+        all[a] = { orig, shown };
+        attrs.set(el, all);
+        if (shown !== cur) el.setAttribute(a, shown);
+      });
+    };
+    const walk = (root) => {
+      if (root.nodeType === 3) { convText(root); return; }
+      if (root.nodeType !== 1 || ALPHA_SKIP.has(root.tagName)) return;
+      convAttrs(root);
+      const tw = document.createTreeWalker(root, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT);
+      let n = tw.nextNode();
+      while (n) {
+        if (n.nodeType === 3) convText(n); else convAttrs(n);
+        n = tw.nextNode();
+      }
+    };
+    const convTitle = () => {
+      const cur = document.title;
+      if (titleOrig === null || toNewAlphabet(titleOrig) !== cur) titleOrig = cur;
+      const shown = toNewAlphabet(titleOrig);
+      if (shown !== cur) document.title = shown;
+    };
+
+    if (mode !== 'new') return undefined;
+    walk(document.body);
+    convTitle();
+    const obs = new MutationObserver((list) => {
+      list.forEach((m) => {
+        if (m.type === 'characterData') convText(m.target);
+        else if (m.type === 'attributes') convAttrs(m.target);
+        else m.addedNodes.forEach(walk);
+      });
+    });
+    obs.observe(document.body, { subtree: true, childList: true, characterData: true, attributes: true, attributeFilter: ALPHA_ATTRS });
+    return () => {
+      obs.disconnect();
+      texts.forEach((rec, n) => { if (n.isConnected && n.nodeValue === rec.shown) n.nodeValue = rec.orig; });
+      attrs.forEach((all, el) => Object.entries(all).forEach(([a, rec]) => { if (el.isConnected && el.getAttribute(a) === rec.shown) el.setAttribute(a, rec.orig); }));
+      if (titleOrig !== null) document.title = titleOrig;
+    };
+  }, [mode]);
+  return null;
+}
+
+/** «O‘zbek | Özbek» almashtirgichi. */
+function AlphabetSwitch({ className = '', size = 'md' }) {
+  const mode = useAlphabet();
+  const btn = size === 'sm' ? 'px-2.5 text-sm' : 'px-3 text-[15px]';
+  return (
+    <div data-noconv="1" role="group" aria-label="Alifbo" className={`inline-flex h-11 items-center gap-0.5 rounded-xl border border-line bg-white p-1 ${className}`}>
+      {[['old', 'O‘zbek', 'Amaldagi lotin alifbosi'], ['new', 'Özbek', 'Yangi alifbo (Ö, Ğ, Ş, Ç)']].map(([v, label, tip]) => (
+        <button key={v} type="button" onClick={() => setAlphabet(v)} aria-pressed={mode === v} title={tip}
+          className={`h-full rounded-lg ${btn} font-extrabold transition ${mode === v ? 'bg-ink text-white' : 'text-slate-600 hover:bg-amber-50 hover:text-ink'}`}>
+          {label}
+        </button>
+      ))}
+    </div>
+  );
+}
+
 /** G‘alaba uchun rangli konfetti (faqat CSS). */
 function Confetti({ count = 90 }) {
   const pieces = useMemo(
@@ -38848,6 +38985,7 @@ function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onB
             </button>
           )}
 
+          <AlphabetSwitch className="hidden lg:inline-flex" />
           <div className="hidden h-11 items-center gap-0.5 rounded-xl border border-line bg-white px-0.5 sm:flex">
             {onHelp && (
               <button onClick={onHelp} aria-label="Qo‘llanma" data-tip="Qo‘llanma" className={iconBtn}><CircleHelp size={21} /></button>
@@ -38863,6 +39001,7 @@ function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onB
 
           {guest ? (
             <>
+              <AlphabetSwitch size="sm" className="lg:hidden" />
               <span className="hidden h-11 items-center rounded-xl border border-amber-300 bg-amber-50 px-3 text-sm font-extrabold text-amber-800 md:inline-flex">Mehmon rejimi</span>
               <button onClick={onLogout} className="dp-btn inline-flex h-11 items-center gap-2 rounded-xl bg-blue-600 px-4 text-base font-black text-white hover:bg-blue-700">
                 <LogIn size={20} /> Kirish
@@ -38886,6 +39025,7 @@ function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onB
                     <div className="truncate text-sm text-slate-500">{teacher.school}</div>
                     {ex && <div className={`mt-1 text-sm font-bold ${exCls}`}>Obuna: {ex.text}</div>}
                   </div>
+                  <div className="mt-2 px-1 lg:hidden"><div className="mb-1 text-xs font-bold uppercase tracking-wide text-slate-400">Alifbo</div><AlphabetSwitch size="sm" className="w-full [&>button]:flex-1" /></div>
                   <div className="mt-1 space-y-0.5">
                     {onSubs && <button role="menuitem" onClick={run(onSubs)} className={item}><CalendarDays size={20} className="text-amber-600" /> Obunalarim</button>}
                     {onHelp && <button role="menuitem" onClick={run(onHelp)} className={`${item} sm:hidden`}><CircleHelp size={20} className="text-blue-700" /> Qo‘llanma</button>}
@@ -39198,7 +39338,7 @@ function DemoArena() {
   ];
   const win = scores[0] === scores[1] ? null : scores[0] > scores[1] ? 'Lochinlar' : 'Burgutlar';
   return (
-    <div className="dp-sticker relative rounded-[2rem] bg-white p-4 pt-8 md:p-8 md:pt-10">
+    <div data-noconv="1" className="dp-sticker relative rounded-[2rem] bg-white p-4 pt-8 md:p-8 md:pt-10">
       <div className="dp-atlas absolute inset-x-0 top-0 rounded-t-[1.8rem]" aria-hidden="true" />
       <div className="flex flex-wrap items-center justify-center gap-2">
         {tabs.map(([id, name, I]) => (
@@ -39475,6 +39615,7 @@ function LoginScreen({ onLogin, onGuest }) {
             ))}
           </nav>
           <div className="ml-auto flex shrink-0 items-center gap-2">
+            <AlphabetSwitch className="hidden sm:inline-flex" />
             {onGuest && (
               <button onClick={onGuest} className="hidden h-11 items-center gap-2 whitespace-nowrap rounded-xl border border-line bg-white px-4 text-base font-black text-ink transition hover:border-amber-400 hover:bg-amber-50 md:inline-flex"><BookOpen size={18} /> Darslarni ko‘rish</button>
             )}
@@ -39486,6 +39627,7 @@ function LoginScreen({ onLogin, onGuest }) {
         {menu && (
           <div className="dp-pop border-b border-line bg-paper px-4 py-3 xl:hidden">
             {nav.map(([id, t]) => <button key={id} onClick={() => go(id)} className="block w-full rounded-xl px-3 py-3 text-left text-lg font-bold text-ink hover:bg-amber-50">{t}</button>)}
+            <div className="px-3 py-2 sm:hidden"><AlphabetSwitch size="sm" /></div>
             {onGuest && <button onClick={() => { setMenu(false); onGuest(); }} className="mt-1 block w-full rounded-xl bg-amber-100 px-3 py-3 text-left text-lg font-black text-ink hover:bg-amber-200">Kirmasdan darslarni ko‘rish</button>}
           </div>
         )}
@@ -44861,7 +45003,7 @@ function LetterGame({ topic, award, nextTurn, onFinish, teamName }) {
   const [left, right] = card.w.split('…');
   const shown = picked === null ? null : card.a === 'qo‘shib' ? '' : card.a;
   return (
-    <div className="mx-auto max-w-4xl">
+    <div data-noconv="1" className="mx-auto max-w-4xl">
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
         <span className="text-xl font-bold text-blue-600">{idx + 1} / {cards.length} • Javob beradi: {teamName}</span>
         <TimerPill time={time} limit={LETTER_LIMIT} />
@@ -44932,7 +45074,7 @@ function SpellGame({ topic, award, nextTurn, onFinish, teamName }) {
   };
   const ok = picked === card.right;
   return (
-    <div className="mx-auto max-w-4xl">
+    <div data-noconv="1" className="mx-auto max-w-4xl">
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
         <span className="text-xl font-bold text-blue-600">{idx + 1} / {cards.length} • Javob beradi: {teamName}</span>
         <div className="flex items-center gap-3">
@@ -45771,6 +45913,7 @@ export default function DarsPlayApp() {
 
   return (
     <div className="dp-paper min-h-screen text-ink">
+      <AlphabetConverter />
       <style>{`
         @keyframes dpPop { from { opacity: 0; transform: scale(.96) translateY(6px); } to { opacity: 1; transform: none; } }
         @keyframes dpShake { 0%,100% { transform: translateX(0); } 20%,60% { transform: translateX(-8px); } 40%,80% { transform: translateX(8px); } }
