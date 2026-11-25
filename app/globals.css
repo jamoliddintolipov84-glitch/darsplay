@@ -307,3 +307,6 @@ body {
   .dp-aura::before, .dp-loader *, .dp-ripple-ink { animation: none !important; }
   .dp-js .dp-reveal, .dp-js .dp-reveal-stagger > * { opacity: 1 !important; transform: none !important; }
 }
+
+/* Dars rasmi o‘ngda turganda: fonli bloklar (qoida, jadval, kartalar) rasm ostiga kirib ketmasin */
+@layer components { .dp-floatwrap > div, .dp-floatwrap > figure:not(.dp-artfig), .dp-floatwrap > blockquote { display: flow-root; } }

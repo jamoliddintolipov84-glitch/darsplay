@@ -25,6 +25,8 @@ import {
 import { FizCalc, FizSim, FizLab, FizExperiment } from './fizika/lab';
 import { FIZIKA_9 } from './fizika/fizika9';
 import { FIZIKA_9_P2 } from './fizika/fizika9b';
+import { Scene } from './art/scenes';
+import { artOf } from './art/topicArt';
 
 /* ============================================================
    1. MOCK MA’LUMOTLAR
@@ -36546,7 +36548,14 @@ function TopicCard({ t, i, onPick, onEditSet, onDeleteSet }) {
   return (
     <div className="dp-sticker-soft flex flex-col rounded-3xl bg-white p-6 transition hover:-translate-y-0.5 hover:shadow-[0_22px_40px_-20px_rgba(27,36,64,.38)]">
       <div className="flex items-start gap-4">
-        {t.theme && !t.custom ? (
+        {!t.custom && artOf(t) ? (
+          <div className="relative h-20 w-28 shrink-0">
+            <div className="h-full w-full overflow-hidden rounded-2xl border border-line">
+              <Scene id={artOf(t)} title={t.title} slice rounded={false} className="h-full w-full" />
+            </div>
+            <span className="absolute -bottom-2 -right-2 flex h-7 min-w-7 items-center justify-center rounded-full border-2 border-white bg-blue-700 px-1.5 text-sm font-black text-white">{i + 1}</span>
+          </div>
+        ) : t.theme && !t.custom ? (
           <div className={`relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-line bg-gradient-to-br text-3xl ${t.theme.grad}`}>
             {t.theme.emoji}
             <span className="absolute -bottom-2 -right-2 flex h-6 min-w-6 items-center justify-center rounded-md border border-line bg-amber-400 px-1 text-xs font-black text-ink">{i + 1}</span>
@@ -37558,10 +37567,30 @@ function XVideoLink({ v }) {
   );
 }
 
+/** Dars illyustratsiyasi: matn yonida (o‘ngda) turadi, bosilsa kattalashadi. */
+function ArtFigure({ id, title }) {
+  const [big, setBig] = useState(false);
+  if (!id) return null;
+  return (
+    <figure className={`dp-artfig dp-reveal relative mb-5 ${big ? 'w-full' : 'w-full md:float-right md:ml-8 md:w-[44%]'}`}>
+      <button
+        type="button"
+        onClick={() => setBig((v) => !v)}
+        className="dp-sticker dp-sticker-hover dp-arch-line group block w-full overflow-hidden rounded-[1.75rem] bg-paper p-2"
+        aria-label={big ? 'Rasmni kichraytirish' : 'Rasmni kattalashtirish'}
+        data-tip={big ? 'Kichraytirish' : 'Kattalashtirish'}
+      >
+        <Scene id={id} title={title} className="block h-auto w-full" />
+      </button>
+    </figure>
+  );
+}
+
 function SlideExtras({ s }) {
   const audios = s.audio ? (Array.isArray(s.audio) ? s.audio : [s.audio]) : [];
   return (
     <>
+      {s.art && <ArtFigure id={s.art} title={s.title} />}
       {audios.map((a) => <XAudio key={a.src} a={a} />)}
       {s.video && <XVideoLink v={s.video} />}
 
@@ -37830,13 +37859,15 @@ function LessonScreen({ topic, onBack, onGames }) {
                   <div className="text-lg font-bold">{i + 1}-slayd / {slides.length}</div>
                 </div>
               </div>
-              <div className="p-6 md:p-10">
+              <div className="dp-floatwrap flow-root p-6 md:p-10">
+                {i === 0 && !s.art && <ArtFigure id={artOf(topic)} title={topic.title} />}
                 <h2 className="text-3xl md:text-4xl font-black text-ink"><span className="dp-marker">{s.title}</span></h2>
                 <SlideBody s={s} />
               </div>
             </div>
           ) : (
-            <div key={i} className="dp-pop dp-sticker min-h-[460px] rounded-[2rem] bg-white p-6 md:p-10">
+            <div key={i} className="dp-pop dp-sticker dp-floatwrap flow-root min-h-[460px] rounded-[2rem] bg-white p-6 md:p-10">
+            {i === 0 && !s.art && <ArtFigure id={artOf(topic)} title={topic.title} />}
             <div className="flex items-center gap-3 text-blue-600">
               <Lightbulb size={28} />
               <span className="text-lg font-bold">{i + 1} / {slides.length}</span>
