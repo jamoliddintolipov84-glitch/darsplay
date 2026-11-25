@@ -20,7 +20,7 @@ import {
   Volume2, VolumeX, History, Medal, CalendarDays, Star, ListPlus, NotebookPen, CircleHelp,
   ListOrdered, Shapes, Scale, Palette, Type, SpellCheck2, Projector, PhoneOff, Presentation, MousePointerClick,
   Highlighter, Wand2, MoveUpRight, Square, Circle, Eraser, Undo2, Redo2, FilePlus2, Download,
-  Quote, Mail,
+  Quote, Mail, Pause, Headphones, ExternalLink, Video,
 } from 'lucide-react';
 import { FizCalc, FizSim, FizLab, FizExperiment } from './fizika/lab';
 import { FIZIKA_9 } from './fizika/fizika9';
@@ -553,6 +553,7 @@ const FULL_LESSONS = {
     },
     {
       title: '«Vatan» she’ri',
+      audio: [{ src: 'https://pub-7252bcc0b20d4741a11a90daada643e7.r2.dev/media/8/ona_t/ozbek/1e633de1-cfa5-430f-9784-1d3bbc51523c.mp3', page: 18, title: '«Vatan» she’ri — 1-audio', href: 'https://qr.rtmuzedu.uz/8/ona_t/ozbek?card=1', credit: 'RTM QR' }, { src: 'https://pub-7252bcc0b20d4741a11a90daada643e7.r2.dev/media/8/ona_t/ozbek/ccbcce42-5d1d-48a7-9a67-2ada8267f45f.mp3', page: 18, title: '«Vatan» she’ri — 2-audio', href: 'https://qr.rtmuzedu.uz/8/ona_t/ozbek?card=2', credit: 'RTM QR' }],
       text: 'Darslikda Abdulla Oripovning «Vatan» she’ri audio orqali tinglanadi. She’r muxammas shaklida — har bir band besh misradan iborat.',
       note: 'Kirish savollari: Xotirjamlik nima? Erkinlik-chi? Ular insonga qanchalik zarur? Kishi qanday vaziyatlarda o‘zini xotirjam va erkin his qila oladi?',
       examples: ['bandi bulbul', 'Vatandan ayri ko‘ngil', 'toj-u taxtim'],
@@ -2067,6 +2068,7 @@ const ONA_TILI_8_PART2 = [
         },
       },
       {
+        audio: { src: 'https://pub-7252bcc0b20d4741a11a90daada643e7.r2.dev/media/8/ona_t/ozbek/9047eeda-36a4-4ec0-89a4-db74288a06e7.mp3', page: 44, title: 'Insonparvarlik haqida audiomatn', href: 'https://qr.rtmuzedu.uz/8/ona_t/ozbek?card=3', credit: 'RTM QR' },
         title: 'Audiomatn: insonparvarlik',
         text: '«Insonlarning dard-u tashvishlarini o‘ylab yashash — odamiylikning eng oliy mezoni» nomli audiomatn tinglanadi. Unda Alisher Navoiyning «Hayrat ul-abror» asaridagi komil inson va insonparvarlik g‘oyalari haqida so‘z boradi.',
         note: 'Avval sarlavhaga qarab, audiomatnda nima haqida so‘z borishini taxmin qiling (2.45).',
@@ -2442,9 +2444,10 @@ const ONA_TILI_8_PART2 = [
         note: 'Siz qanday deb o‘ylaysiz? Temur va Oydinoyning savoliga javob bering.',
       },
       {
+        audio: { src: 'https://pub-7252bcc0b20d4741a11a90daada643e7.r2.dev/media/8/ona_t/ozbek/7de24368-b86a-477e-afd0-40a33f31bd67.mp3', page: 54, title: '«Sun’iy tillar»', href: 'https://qr.rtmuzedu.uz/8/ona_t/ozbek?card=4', credit: 'RTM QR' },
         title: 'Audiomatn: «Sun’iy tillar» (3.13)',
         text: 'Sun’iy til — tabiiy ravishda shakllanmagan, balki odamlar tomonidan ataylab yaratilgan til. Globallashuv kuchaygan sari barcha uchun umumiy yordamchi til yaratishga intilish ham kuchaygan.',
-        note: 'Audiomatn darslikdagi QR kod orqali tinglanadi.',
+        note: 'Audiomatnni yuqoridagi pleyer orqali eshittiring.',
       },
       {
         title: 'Mashhur sun’iy tillar',
@@ -3671,7 +3674,8 @@ const ONA_TILI_8_PART3 = [
       {
         title: 'Darsga kirish',
         text: 'Sizga «samolyot», «tayyora», «uchoq» kabi so‘zlarning qay biridan foydalanish qulay? Javobingizni izohlang.',
-        note: '«Samolyot qachon yaratilgan?» audiomatni darslikdagi QR kod orqali tinglanadi (4.27).',
+        audio: { src: 'https://pub-7252bcc0b20d4741a11a90daada643e7.r2.dev/media/8/ona_t/ozbek/c833b21f-ef07-46de-85c0-c43a535b930b.mp3', page: 79, title: '«Samolyot qachon yaratilgan?»', href: 'https://qr.rtmuzedu.uz/8/ona_t/ozbek?card=5', credit: 'RTM QR' },
+        note: '«Samolyot qachon yaratilgan?» audiomatnini yuqoridagi pleyer orqali eshittiring (4.27).',
       },
       {
         title: 'Atamalar boshqotirmasi (4.28)',
@@ -4446,8 +4450,9 @@ const ONA_TILI_8_PART4 = [
     lesson: [
       {
         title: 'Darsga kirish',
+        audio: { src: 'https://pub-7252bcc0b20d4741a11a90daada643e7.r2.dev/media/8/ona_t/ozbek/96edb8b1-5ee4-4263-8852-fa025478dede.mp3', page: 89, title: '«Kasb tanlashda nimalarga e’tibor qaratish kerak?»', href: 'https://qr.rtmuzedu.uz/8/ona_t/ozbek?card=6', credit: 'RTM QR' },
         text: 'Kasb tanlashingizga sabab bo‘lgan omillar haqida so‘zlab bering. Shundan so‘ng «Kasb tanlashda nimalarga e’tibor qaratish kerak?» audiomatni tinglanadi (5.25).',
-        note: 'Audiomatn darslikdagi QR kod orqali tinglanadi.',
+        note: 'Audiomatnni yuqoridagi pleyer orqali eshittiring.',
       },
       {
         title: 'Audiomatndagi so‘zlar (5.26)',
@@ -5743,8 +5748,9 @@ const ONA_TILI_8_PART5 = [
     lesson: [
       {
         title: 'Darsga kirish',
+        audio: { src: 'https://pub-7252bcc0b20d4741a11a90daada643e7.r2.dev/media/8/ona_t/ozbek/17c7a181-68a3-43a0-b184-89a98365080f.mp3', page: 130, title: '«Ona tulki»', href: 'https://qr.rtmuzedu.uz/8/ona_t/ozbek?card=7', credit: 'RTM QR' },
         text: 'Uyingizda qanday hayvon boqasiz? Shundan so‘ng «Ona tulki» hikoyasi audiomatn sifatida tinglanadi (6.38).',
-        note: 'Audiomatn darslikdagi QR kod orqali tinglanadi.',
+        note: 'Audiomatnni yuqoridagi pleyer orqali eshittiring.',
       },
       {
         title: 'Yangi so‘zlar (6.39)',
@@ -6369,8 +6375,9 @@ const ONA_TILI_8_PART6 = [
     lesson: [
       {
         title: 'Darsga kirish',
+        audio: { src: 'https://pub-7252bcc0b20d4741a11a90daada643e7.r2.dev/media/8/ona_t/ozbek/c357f92b-5cf4-47d5-84f6-3f46e662e35f.mp3', page: 148, title: '«Gilamdo‘zlik tarixidan»', href: 'https://qr.rtmuzedu.uz/8/ona_t/ozbek?card=8', credit: 'RTM QR' },
         text: '«Gilamdo‘zlik tarixidan» audiomatni tinglanadi (7.23). Unda gilam va kigiz tayyorlash tarixi hikoya qilinadi.',
-        note: 'Audiomatn darslikdagi QR kod orqali tinglanadi.',
+        note: 'Audiomatnni yuqoridagi pleyer orqali eshittiring.',
       },
       {
         title: 'Hunarmandchilik so‘zlari (7.24)',
@@ -7174,8 +7181,9 @@ const ONA_TILI_8_PART7 = [
     lesson: [
       {
         title: 'Darsga kirish',
+        audio: { src: 'https://pub-7252bcc0b20d4741a11a90daada643e7.r2.dev/media/8/ona_t/ozbek/a29070d6-f986-4d53-9b69-f5e9c8edd40d.mp3', page: 170, title: '«Umrni uzaytiradigan 4 ta sport turi»', href: 'https://qr.rtmuzedu.uz/8/ona_t/ozbek?card=9', credit: 'RTM QR' },
         text: 'Qanday sport turlarini bilasiz? Qaysi biri bilan shug‘ullanasiz? «Umrni uzaytiradigan 4 ta sport turi» audiomatni tinglanadi (8.24).',
-        note: 'Audiomatn darslikdagi QR kod orqali tinglanadi.',
+        note: 'Audiomatnni yuqoridagi pleyer orqali eshittiring.',
       },
       {
         title: 'Yangi so‘zlar (8.25)',
@@ -8137,8 +8145,9 @@ const ONA_TILI_8_PART8 = [
     lesson: [
       {
         title: 'Darsga kirish',
+        audio: { src: 'https://pub-7252bcc0b20d4741a11a90daada643e7.r2.dev/media/8/ona_t/ozbek/3551368e-d680-4142-a288-8ad71aad63a7.mp3', page: 193, title: '«Vijdon kerakdir insonga»', href: 'https://qr.rtmuzedu.uz/8/ona_t/ozbek?card=10', credit: 'RTM QR' },
         text: 'Vijdon deganda nimani tushunasiz? «Vijdon kerakdir insonga» audiomatni tinglanadi.',
-        note: 'Audiomatn darslikdagi QR kod orqali tinglanadi; matn qisqartirib olingan.',
+        note: 'Audiomatnni yuqoridagi pleyer orqali eshittiring; slayddagi matn qisqartirib olingan.',
       },
       {
         title: 'Audiomatn bo‘yicha savollar',
@@ -8629,8 +8638,9 @@ const ONA_TILI_8_PART8 = [
     lesson: [
       {
         title: 'Darsga kirish',
+        audio: { src: 'https://pub-7252bcc0b20d4741a11a90daada643e7.r2.dev/media/8/ona_t/ozbek/f53e61d1-cf3b-4f75-8c62-3a3a7a61ad2a.mp3', page: 212, title: '«Parvoz qilgan orzular»', href: 'https://qr.rtmuzedu.uz/8/ona_t/ozbek?card=11', credit: 'RTM QR' },
         text: '«Parvoz qilgan orzular» audiomatni — «Ibrat farzandlari» loyihasi rahbari Rustam Qoriyev bilan suhbat (10.24).',
-        note: 'Audiomatn darslikdagi QR kod orqali tinglanadi.',
+        note: 'Audiomatnni yuqoridagi pleyer orqali eshittiring.',
       },
       {
         title: 'Suhbatdan fikrlar (10.33)',
@@ -16764,6 +16774,7 @@ const ONA_TILI_9 = [
     short: 'Matn turi, so‘z ma’nolari, fakt va fikrni farqlash, faktcheking',
     lesson: [
       {
+        video: { href: 'https://qr.rtmuzedu.uz/9/ona_t/ozbek?card=1', page: 19, title: 'Darslikdagi videoni ochish' },
         title: 'Sarlavhadan mazmunni taxmin qilish',
         text: 'Matnni o‘qishdan oldin sarlavhaga qarab uning turini taxmin qiling.',
         table: {
@@ -17700,6 +17711,7 @@ const ONA_TILI_9_P2 = [
         ],
       },
       {
+        audio: { src: 'https://pub-7252bcc0b20d4741a11a90daada643e7.r2.dev/media/9/ona_t/ozbek/82c8a1ad-aa5a-48b4-8384-1869d26b3171.mp3', page: 40, title: 'Qo‘shnichilik haqida audiohikoya', href: 'https://qr.rtmuzedu.uz/9/ona_t/ozbek?card=2', credit: 'RTM QR' },
         title: 'Audiomatn mazmuni',
         text: 'Audiomatnda ikki voqea bor. Birinchisida janjalkash, tajang qo‘shni mehnatkash va oqko‘ngil Shodmonqulga hasad qilib, har bahonada janjal chiqaradi va oxiri o‘zi kasallikka yo‘liqadi. Ikkinchisida Zokir aka va Botir aka bir-birini hurmat qiladigan qo‘shnilar: biri ikkinchisining noqulayligini o‘ylab, o‘z molxonasini buzishga ham tayyor.',
         rule: 'Muallif ikki voqeani qiyoslash orqali yomon qo‘shni o‘ziga ham, atrofiga ham zarar keltirishini, yaxshi qo‘shnichilik esa elning tayanchi ekanini ko‘rsatadi.',
@@ -20648,6 +20660,7 @@ const ONA_TILI_9_P4 = [
         ],
       },
       {
+        audio: { src: 'https://pub-7252bcc0b20d4741a11a90daada643e7.r2.dev/media/9/ona_t/ozbek/e8a3ebd7-b538-4df1-8d59-015435c7fd81.mp3', page: 100, title: 'Kasb haqida audiomatn', href: 'https://qr.rtmuzedu.uz/9/ona_t/ozbek?card=3', credit: 'RTM QR' },
         title: 'Audiomatn mazmuni',
         text: 'Muallif bolaligida mahallada oq xalatli shifokorlarning hurmati baland bo‘lgani uchun shifokor bo‘lishni orzu qilgan. Keyinchalik u suv bilan bog‘liq fanlarga (gidrologiya, meteorologiya) qiziqib, boshqa yo‘lni tanlagan. Muallif hayotni irmoqdan daryoga, daryodan ummonga oqayotgan suvga o‘xshatadi.',
         rule: 'O‘z kasbingni sevish va unga sadoqatli bo‘lish — muvaffaqiyat kaliti. Sevmagan kasbida ishlaydigan odam o‘z o‘zanini topa olmagan kichik to‘lqinga o‘xshaydi.',
@@ -21464,6 +21477,7 @@ const ONA_TILI_9_P5 = [
     short: 'Audiomatn tahlili, kaklik tasviri, antonim turlari va she’riyatdagi zidlik',
     lesson: [
       {
+        audio: { src: 'https://pub-7252bcc0b20d4741a11a90daada643e7.r2.dev/media/9/ona_t/ozbek/ea0eb865-0f33-4b95-9f50-546237f2253f.mp3', page: 120, title: 'Kaklik haqida audiomatn', href: 'https://qr.rtmuzedu.uz/9/ona_t/ozbek?card=4', credit: 'RTM QR' },
         title: 'Audiomatn mazmuni',
         text: 'Azim Suyunning hikoyasida cho‘pon bola tuxum bosib yotgan ona kaklikni ko‘rib qoladi va uni tutmoqchi bo‘ladi. Ona kaklik yarador bo‘lgandek dumalab qochib, bolani uyadan uzoqqa chalg‘itadi. Bola qushni quvib daraga tushib qoladi va uyani unutadi.',
         rule: 'Kaklikning dumalab qochishi — instinkt va onalik jasoratining ramzi. Bola sodda deb o‘ylagan qush uni aldab, bo‘lajak jo‘jalarini asrab qoladi. Bolada jonzotlarga mehr va mas’uliyat uyg‘onadi.',
@@ -23246,6 +23260,7 @@ const ONA_TILI_9_P6 = [
         note: 'Mavzudan chetga chiqilsa — 0 ball.',
       },
       {
+        audio: { src: 'https://pub-7252bcc0b20d4741a11a90daada643e7.r2.dev/media/9/ona_t/ozbek/33129053-03b2-41d8-80e7-a02b3d2d033a.mp3', page: 164, title: 'Erta tongda sportning foydasi', href: 'https://qr.rtmuzedu.uz/9/ona_t/ozbek?card=5', credit: 'RTM QR' },
         title: 'Erta tongda sportning foydasi (audiomatn)',
         list: [
           'Kun davomida tetiklik va yaxshi kayfiyat beradi.',
@@ -23775,6 +23790,7 @@ const ONA_TILI_9_P7 = [
     short: 'Dunyodagi eng keksa o‘quvchi Kimani Maruge; ilmga ehtiyoj haqida jadid maqolasi',
     lesson: [
       {
+        audio: { src: 'https://pub-7252bcc0b20d4741a11a90daada643e7.r2.dev/media/9/ona_t/ozbek/cda39088-8586-42d2-aa86-268793e381e9.mp3', page: 181, title: 'Audiomatn', href: 'https://qr.rtmuzedu.uz/9/ona_t/ozbek?card=6', credit: 'RTM QR' },
         title: 'Audiomatn mazmuni',
         text: 'Keniyalik Kimani Maruge 84 yoshida birinchi sinfga bordi. Yoshligida qashshoqlik sabab o‘qiy olmagan, Britaniya mustamlakachiligiga qarshi kurashgan. Keniya hukumati bepul boshlang‘ich ta’lim qonunini e’lon qilgach, u Eldoret shahridagi maktabga keldi.',
         list: [
@@ -24564,6 +24580,7 @@ const ONA_TILI_9_P8 = [
     short: '«Tirbandlik» essesidagi xatolar; esse tili va ko‘p uchraydigan kamchiliklar',
     lesson: [
       {
+        video: { href: 'https://qr.rtmuzedu.uz/9/ona_t/ozbek?card=7', page: 196, title: 'Darslikdagi videoni ochish' },
         title: 'Namuna: «Shahar ko‘chalarida tirbandlikning ortishi»',
         text: 'Darslikdagi esseni o‘qing va mezon asosida baholang. Unda ataylab xatolar qoldirilgan.',
         table: {
@@ -37265,9 +37282,133 @@ function XMission({ m }) {
   );
 }
 
+function fmtTime(t) {
+  if (!Number.isFinite(t) || t < 0) return '0:00';
+  const m = Math.floor(t / 60);
+  return `${m}:${String(Math.floor(t % 60)).padStart(2, '0')}`;
+}
+
+const AUDIO_SPEEDS = [0.75, 1, 1.25];
+
+function XAudio({ a }) {
+  const ref = useRef(null);
+  const [playing, setPlaying] = useState(false);
+  const [cur, setCur] = useState(0);
+  const [dur, setDur] = useState(0);
+  const [speed, setSpeed] = useState(1);
+  const [state, setState] = useState('idle'); // idle | loading | ready | error
+
+  useEffect(() => () => { if (ref.current) ref.current.pause(); }, []);
+
+  const toggle = () => {
+    const el = ref.current;
+    if (!el) return;
+    if (el.paused) {
+      setState((st) => (st === 'ready' ? st : 'loading'));
+      el.play().catch(() => setState('error'));
+    } else {
+      el.pause();
+    }
+  };
+  const jump = (d) => {
+    const el = ref.current;
+    if (!el) return;
+    el.currentTime = Math.max(0, Math.min((el.duration || 0), el.currentTime + d));
+  };
+  const nextSpeed = () => {
+    const ns = AUDIO_SPEEDS[(AUDIO_SPEEDS.indexOf(speed) + 1) % AUDIO_SPEEDS.length];
+    setSpeed(ns);
+    if (ref.current) ref.current.playbackRate = ns;
+  };
+  const pct = dur ? Math.min(100, (cur / dur) * 100) : 0;
+
+  return (
+    <div className="mt-6 overflow-hidden rounded-3xl bg-gradient-to-br from-teal-700 to-emerald-600 p-5 md:p-6 text-white shadow-xl">
+      <audio
+        ref={ref}
+        src={a.src}
+        preload="metadata"
+        onLoadedMetadata={(e) => { setDur(e.currentTarget.duration); e.currentTarget.playbackRate = speed; }}
+        onTimeUpdate={(e) => setCur(e.currentTarget.currentTime)}
+        onPlaying={() => { setPlaying(true); setState('ready'); }}
+        onPause={() => setPlaying(false)}
+        onEnded={() => setPlaying(false)}
+        onWaiting={() => setState('loading')}
+        onError={() => { setPlaying(false); setState('error'); }}
+      />
+      <div className="flex items-center gap-2 text-sm md:text-base font-extrabold uppercase tracking-wide text-emerald-100">
+        <Headphones size={20} /> Audiomatn{a.page ? ` • ${a.page}-bet` : ''}
+      </div>
+      {a.title && <div className="mt-1 text-xl md:text-2xl font-black leading-snug">{a.title}</div>}
+
+      <div className="mt-4 flex flex-wrap items-center gap-3 md:gap-4">
+        <button
+          onClick={toggle}
+          aria-label={playing ? 'To‘xtatish' : 'Tinglash'}
+          className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-white text-teal-700 shadow-lg transition active:scale-95"
+        >
+          {state === 'loading' && !playing ? <Loader2 size={38} className="animate-spin" /> : playing ? <Pause size={40} fill="currentColor" /> : <Play size={40} fill="currentColor" className="ml-1" />}
+        </button>
+        <button onClick={() => jump(-10)} className="inline-flex items-center gap-1 rounded-2xl bg-white/15 px-4 py-3 text-lg font-extrabold hover:bg-white/25 active:scale-95">
+          <RotateCcw size={22} /> 10 s
+        </button>
+        <button onClick={nextSpeed} className="rounded-2xl bg-white/15 px-4 py-3 text-lg font-extrabold tabular-nums hover:bg-white/25 active:scale-95">
+          {speed}×
+        </button>
+        <div className="min-w-[12rem] flex-1">
+          <input
+            type="range"
+            min={0}
+            max={dur || 0}
+            step={0.1}
+            value={Math.min(cur, dur || 0)}
+            onChange={(e) => { if (ref.current) ref.current.currentTime = Number(e.target.value); }}
+            className="h-3 w-full cursor-pointer accent-white"
+            style={{ background: `linear-gradient(to right, #fff ${pct}%, rgba(255,255,255,.3) ${pct}%)`, borderRadius: 999, appearance: 'none' }}
+            aria-label="Audio vaqt chizig‘i"
+          />
+          <div className="mt-1 flex justify-between text-base font-bold tabular-nums text-emerald-100">
+            <span>{fmtTime(cur)}</span><span>{fmtTime(dur)}</span>
+          </div>
+        </div>
+      </div>
+
+      {state === 'error' && (
+        <div className="mt-4 rounded-2xl bg-white/15 p-4 text-lg font-semibold">
+          Audio ochilmadi. Internetni tekshiring
+          {a.href && <> yoki <a href={a.href} target="_blank" rel="noopener noreferrer" className="underline decoration-2 underline-offset-4">RTM sahifasida oching</a></>}.
+        </div>
+      )}
+      {a.credit && <div className="mt-3 text-sm font-semibold text-emerald-100/80">Manba: {a.credit}</div>}
+    </div>
+  );
+}
+
+function XVideoLink({ v }) {
+  return (
+    <a
+      href={v.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="mt-6 flex items-center gap-4 rounded-3xl bg-gradient-to-br from-rose-600 to-orange-500 p-5 md:p-6 text-white shadow-xl transition active:scale-[0.99]"
+    >
+      <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white text-rose-600"><Video size={34} /></span>
+      <span className="flex-1">
+        <span className="block text-sm md:text-base font-extrabold uppercase tracking-wide text-rose-100">Darslik videosi{v.page ? ` • ${v.page}-bet` : ''}</span>
+        <span className="block text-xl md:text-2xl font-black leading-snug">{v.title || 'Videoni ochish'}</span>
+      </span>
+      <ExternalLink size={28} className="shrink-0" />
+    </a>
+  );
+}
+
 function SlideExtras({ s }) {
+  const audios = s.audio ? (Array.isArray(s.audio) ? s.audio : [s.audio]) : [];
   return (
     <>
+      {audios.map((a) => <XAudio key={a.src} a={a} />)}
+      {s.video && <XVideoLink v={s.video} />}
+
       {s.quote && (
         <figure className="relative mt-6 overflow-hidden rounded-3xl bg-gradient-to-br from-stone-50 to-amber-50 p-6 md:p-8 ring-2 ring-amber-100">
           <Quote size={80} className="absolute -right-2 -top-2 text-amber-200" />
