@@ -18,7 +18,7 @@ import {
   Minus, Loader2, UserCheck, KeyRound, ShieldCheck, Copy, EyeOff, Search, UserPlus, Pencil, Building2, LogIn, RefreshCw, Settings, ChevronDown, LayoutGrid, CameraOff, Trash2, Save, Ruler, Bomb, Gift, Repeat, Zap,
   ThumbsUp, ThumbsDown, Puzzle, Heart, Crown, Rocket, Flag, Dices, SpellCheck,
   Volume2, VolumeX, History, Medal, CalendarDays, Star, ListPlus, NotebookPen, CircleHelp,
-  ListOrdered, Shapes, Scale, Palette, Type, SpellCheck2, Projector, PhoneOff, Presentation, MousePointerClick,
+  ListOrdered, Shapes, Scale, Palette, Type, SpellCheck2, Projector, PhoneOff, Presentation, MousePointerClick, MousePointer2,
   Highlighter, Wand2, MoveUpRight, Square, Circle, Eraser, Undo2, Redo2, FilePlus2, Download,
   Quote, Mail, Pause, Headphones, ExternalLink, Video,
 } from 'lucide-react';
@@ -39985,6 +39985,31 @@ function AlphabetConverter() {
   return null;
 }
 
+/* ---------- Katta kursor (proyektor uchun) ---------- */
+const BIGCURSOR_KEY = 'darsplay_bigcursor_v1';
+let bigCursor = false;
+try { bigCursor = localStorage.getItem(BIGCURSOR_KEY) === '1'; } catch { /* server */ }
+const bigCursorListeners = new Set();
+function setBigCursor(v) {
+  bigCursor = !!v;
+  try { localStorage.setItem(BIGCURSOR_KEY, bigCursor ? '1' : '0'); } catch { /* */ }
+  bigCursorListeners.forEach((f) => f(bigCursor));
+}
+function useBigCursor() {
+  const [v, setV] = useState(false);
+  useEffect(() => {
+    setV(bigCursor);
+    bigCursorListeners.add(setV);
+    return () => bigCursorListeners.delete(setV);
+  }, []);
+  return v;
+}
+function CursorPrefs() {
+  const big = useBigCursor();
+  useEffect(() => { document.documentElement.classList.toggle('dp-cursor-lg', big); }, [big]);
+  return null;
+}
+
 /** «O‘zbek | Özbek» almashtirgichi. */
 function AlphabetSwitch({ className = '', size = 'md' }) {
   const mode = useAlphabet();
@@ -40302,6 +40327,7 @@ function Modal({ children, onClose, wide = false }) {
 
 function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onBoard, onSubs, guest }) {
   const sound = useSoundOn();
+  const bigCur = useBigCursor();
   const [menu, setMenu] = useState(false);
   const menuRef = useRef(null);
   useEffect(() => {
@@ -40360,6 +40386,10 @@ function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onB
             <button onClick={toggleFs} aria-label={isFs ? 'To‘liq ekrandan chiqish' : 'To‘liq ekran'} data-tip={isFs ? 'To‘liq ekrandan chiqish' : 'To‘liq ekran'} className={iconBtn}>
               {isFs ? <Minimize size={21} /> : <Maximize size={21} />}
             </button>
+            <button onClick={() => setBigCursor(!bigCur)} aria-pressed={bigCur} aria-label="Katta kursor" data-tip={bigCur ? 'Oddiy kursor' : 'Katta kursor (proyektor)'}
+              className={`${iconBtn} ${bigCur ? 'bg-amber-100 text-amber-800' : ''}`}>
+              <MousePointer2 size={21} />
+            </button>
           </div>
 
           {guest ? (
@@ -40393,6 +40423,7 @@ function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onB
                     {onSubs && <button role="menuitem" onClick={run(onSubs)} className={item}><CalendarDays size={20} className="text-amber-600" /> Obunalarim</button>}
                     {onHelp && <button role="menuitem" onClick={run(onHelp)} className={`${item} sm:hidden`}><CircleHelp size={20} className="text-blue-700" /> Qo‘llanma</button>}
                     <button role="menuitem" onClick={run(() => setSoundOn(!sound))} className={`${item} sm:hidden`}>{sound ? <Volume2 size={20} className="text-blue-700" /> : <VolumeX size={20} className="text-rose-600" />} {sound ? 'Ovozni o‘chirish' : 'Ovozni yoqish'}</button>
+                    <button role="menuitem" onClick={run(() => setBigCursor(!bigCur))} className={`${item} sm:hidden`}><MousePointer2 size={20} className="text-blue-700" /> {bigCur ? 'Oddiy kursor' : 'Katta kursor'}</button>
                     <button role="menuitem" onClick={run(toggleFs)} className={`${item} sm:hidden`}>{isFs ? <Minimize size={20} className="text-blue-700" /> : <Maximize size={20} className="text-blue-700" />} {isFs ? 'To‘liq ekrandan chiqish' : 'To‘liq ekran'}</button>
                   </div>
                   <div className="my-1 border-t border-line" />
@@ -42310,7 +42341,7 @@ function Whiteboard({ mode = 'board', onClose, initial, onChange, onPrev, onNext
     a.click();
   };
 
-  const cursor = tool === 'text' ? 'text' : tool === 'laser' ? 'none' : 'crosshair';
+  const cursor = tool === 'text' ? 'var(--cur-text)' : tool === 'laser' ? 'none' : tool === 'eraser' ? 'var(--cur-eraser)' : tool === 'hl' ? 'var(--cur-marker)' : 'var(--cur-pen)';
   const bgCss = overlay ? { background: 'transparent' } : (BOARD_BGS.find((b) => b.id === bg) || BOARD_BGS[0]).css;
   const barCls = 'pointer-events-auto rounded-3xl bg-white/95 p-2 shadow-2xl shadow-slate-900/20 ring-1 ring-slate-200 backdrop-blur';
   const btn = (active) => `flex h-14 w-14 items-center justify-center rounded-2xl transition active:scale-90 ${active ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30' : 'text-slate-700 hover:bg-blue-50'}`;
@@ -44137,7 +44168,7 @@ function LessonScreen({ topic, onBack, onGames }) {
   }, [i]);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 md:px-8">
+    <div data-cursor="laser" className="mx-auto max-w-7xl px-4 py-8 md:px-8">
       <PageTitle
         title={topic.title}
         subtitle={topic.source ? `Dars tushuntirish • ${topic.source}` : 'Dars tushuntirish'}
@@ -46691,7 +46722,7 @@ function PlayScreen({ game, topic, teams, turn, award, nextTurn, adjust, gameKey
   const props = { topic, award, nextTurn, onFinish };
   const GameIcon = game.icon;
   return (
-    <div className="mx-auto max-w-7xl px-4 py-6 md:px-8">
+    <div data-cursor="game" className="mx-auto max-w-7xl px-4 py-6 md:px-8">
       <div className="mb-5 flex flex-wrap items-center gap-4">
         <BackButton onClick={onBack} />
         <div className="flex flex-1 items-center gap-3 min-w-0">
@@ -47277,6 +47308,7 @@ export default function DarsPlayApp() {
   return (
     <div className="dp-paper min-h-screen text-ink">
       <AlphabetConverter />
+      <CursorPrefs />
       <style>{`
         @keyframes dpPop { from { opacity: 0; transform: scale(.96) translateY(6px); } to { opacity: 1; transform: none; } }
         @keyframes dpShake { 0%,100% { transform: translateX(0); } 20%,60% { transform: translateX(-8px); } 40%,80% { transform: translateX(8px); } }
