@@ -37420,7 +37420,7 @@ function Modal({ children, onClose, wide = false }) {
   );
 }
 
-function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onBoard }) {
+function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onBoard, onSubs }) {
   const sound = useSoundOn();
   return (
     <header className="sticky top-0 z-40 bg-paper/95 backdrop-blur">
@@ -37471,15 +37471,23 @@ function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onB
           </button>
           {teacher && teacher.name && (
             <>
-              <div className="hidden items-center gap-2 rounded-xl border border-line/70 bg-white px-3 py-1 md:flex">
-                <div className="flex h-9 w-9 items-center justify-center rounded-full border border-line bg-amber-400 text-sm font-black text-ink">
-                  {initials(teacher.name)}
-                </div>
-                <div className="leading-tight">
-                  <div className="text-sm font-bold text-blue-950">{teacher.name}</div>
-                  <div className="text-xs text-slate-500">{teacher.school}</div>
-                </div>
-              </div>
+              {(() => {
+                const ex = onSubs ? expiryInfo(teacher) : null;
+                const exCls = ex && { none: 'text-slate-500', ok: 'text-firuza-700', soon: 'text-amber-700', expired: 'text-rose-600' }[ex.tone];
+                const Tag = onSubs ? 'button' : 'div';
+                return (
+                  <Tag {...(onSubs ? { type: 'button', onClick: onSubs, 'data-tip': 'Obunalarim' } : {})}
+                    className={`hidden items-center gap-2 rounded-xl border border-line/70 bg-white px-3 py-1 text-left md:flex ${onSubs ? 'transition hover:border-amber-400 hover:bg-amber-50' : ''}`}>
+                    <div className="flex h-9 w-9 items-center justify-center rounded-full border border-line bg-amber-400 text-sm font-black text-ink">
+                      {initials(teacher.name)}
+                    </div>
+                    <div className="leading-tight">
+                      <div className="text-sm font-bold text-blue-950">{teacher.name}</div>
+                      {ex ? <div className={`text-xs font-bold ${exCls}`}>Obuna: {ex.text}</div> : <div className="text-xs text-slate-500">{teacher.school}</div>}
+                    </div>
+                  </Tag>
+                );
+              })()}
               <button
                 onClick={onLogout}
                 aria-label="Chiqish" data-tip="Chiqish"
@@ -39525,6 +39533,94 @@ function readyBooks(allowed, access = null) {
   return out;
 }
 
+/** «Obunalarim» — o‘qituvchining ochiq fan/sinflari, muddati va uzaytirish tugmalari. */
+function SubscriptionsPanel({ teacher }) {
+  const acc = rawAccess(teacher);
+  const ex = expiryInfo(teacher);
+  const end = expiresAtMs(teacher);
+  const left = daysLeft(teacher);
+  const total = accessPrice(acc);
+  const subjects = SUBJECTS.filter((sj) => acc[sj.id]?.length);
+  const startMs = end != null ? new Date(end).setMonth(new Date(end).getMonth() - SUBSCRIPTION_MONTHS) : null;
+  const pct = end != null ? Math.max(0, Math.min(100, ((end - Date.now()) / (end - startMs)) * 100)) : 100;
+  const listText = subjects.map((sj) => `${sj.name} — ${acc[sj.id].join(', ')}-sinf`).join('; ');
+  const renewMsg = `Assalomu alaykum! Dars play obunamni uzaytirmoqchiman.\nLogin: ${teacher?.login || ''}\n${listText}${end != null ? `\nAmal qiladi: ${fmtDay(end)} gacha` : ''}`;
+  const addMsg = `Assalomu alaykum! Dars play obunamga yangi sinf yoki fan qo‘shmoqchiman.\nLogin: ${teacher?.login || ''}\nHozir: ${listText || 'yo‘q'}`;
+  const tone = {
+    none: { bar: 'bg-firuza-500', chip: 'bg-firuza-50 text-firuza-700', label: 'Faol • muddatsiz' },
+    ok: { bar: 'bg-firuza-500', chip: 'bg-firuza-50 text-firuza-700', label: 'Faol' },
+    soon: { bar: 'bg-amber-400', chip: 'bg-amber-100 text-amber-900', label: 'Tugash arafasida' },
+    expired: { bar: 'bg-rose-500', chip: 'bg-rose-100 text-rose-700', label: 'Muddati tugagan' },
+  }[subjects.length ? ex.tone : 'expired'];
+  return (
+    <section id="obunalarim" className="dp-sticker-soft scroll-mt-28 rounded-[2rem] bg-white p-6">
+      <div className="flex items-center justify-between gap-2">
+        <h2 className="flex items-center gap-2 text-2xl font-black text-ink"><CalendarDays size={26} className="text-amber-600" /> <span className="dp-marker">Obunalarim</span></h2>
+        <span className={`rounded-lg px-2.5 py-1 text-sm font-extrabold ${tone.chip}`}>{subjects.length ? tone.label : 'Obuna yo‘q'}</span>
+      </div>
+
+      {subjects.length ? (
+        <>
+          <div className="mt-5 space-y-3">
+            {subjects.map((sj) => (
+              <div key={sj.id} className="rounded-2xl border border-line bg-paper p-4">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="inline-flex items-center gap-2 text-lg font-black text-ink"><span className={`flex h-9 w-9 items-center justify-center rounded-xl ${sj.color} text-white`}><sj.icon size={20} /></span>{sj.name}</span>
+                  <span className="text-sm font-bold text-slate-500">{formatSum(subjectPrice(acc[sj.id].length))}</span>
+                </div>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {acc[sj.id].map((g) => {
+                    const ready = !!CONTENT[sj.id]?.[g];
+                    return (
+                      <span key={g} className={`rounded-lg border px-2.5 py-1 text-sm font-extrabold ${ready ? 'border-firuza-300 bg-firuza-50 text-firuza-700' : 'border-slate-200 bg-white text-slate-400'}`}>
+                        {g}-sinf{ready ? '' : ' • tez orada'}
+                      </span>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-5 rounded-2xl border border-line p-4">
+            <div className="flex items-baseline justify-between gap-2">
+              <span className="text-base font-bold text-slate-500">Amal qiladi</span>
+              <span className="text-lg font-black text-ink">{end != null ? `${fmtDay(end)} gacha` : 'muddatsiz'}</span>
+            </div>
+            <div className="mt-3 h-3 overflow-hidden rounded-full bg-slate-100">
+              <div className={`h-full rounded-full ${tone.bar}`} style={{ width: `${pct}%` }} />
+            </div>
+            <div className="mt-2 text-sm font-bold text-slate-500">
+              {end == null ? 'Obuna o‘z-o‘zidan yopilmaydi.' : ex.tone === 'expired' ? 'Darslar yopilgan. Uzaytirsangiz, sinflar va natijalaringiz joyida qoladi.' : left === 0 ? 'Bugun oxirgi kun.' : `${left} kun qoldi`}
+            </div>
+            {total > 0 && <div className="mt-1 text-sm font-semibold text-slate-400">Yillik narx: {formatSum(total)}</div>}
+          </div>
+
+          <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+            <a href={telegramLink(renewMsg)} target="_blank" rel="noopener noreferrer"
+              className={`dp-btn inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-3 text-base font-black ${ex.tone === 'soon' || ex.tone === 'expired' ? 'bg-amber-400 text-ink hover:bg-amber-300' : 'bg-blue-600 text-white hover:bg-blue-700'}`}>
+              <RefreshCw size={18} /> Uzaytirish
+            </a>
+            <a href={telegramLink(addMsg)} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-blue-100 px-4 py-3 text-base font-black text-blue-800 hover:bg-blue-50">
+              <Plus size={18} /> Sinf qo‘shish
+            </a>
+          </div>
+        </>
+      ) : (
+        <div className="mt-4 space-y-3">
+          <p className="text-base font-semibold text-slate-600">Hisobingizga hali fan yoki sinf biriktirilmagan. Narxlar: 1 fan, 1 sinf — {formatSum(PRICE_TIERS[0].price)} / yil.</p>
+          <a href={telegramLink(`Assalomu alaykum! Dars play obunasini olmoqchiman.\nLogin: ${teacher?.login || ''}`)} target="_blank" rel="noopener noreferrer"
+            className="dp-btn inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-amber-400 px-4 py-3 text-base font-black text-ink hover:bg-amber-300">
+            <Send size={18} /> Obuna olish — @{TELEGRAM_USER}
+          </a>
+        </div>
+      )}
+      <p className="mt-4 text-center text-sm font-semibold text-slate-400">Savollar bo‘yicha: <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" className="font-bold text-blue-700 underline">@{TELEGRAM_USER}</a></p>
+    </section>
+  );
+}
+
 function HomeScreen({ teacher, allowed = [], access = {}, onStart, schoolClasses = [], onClassResults, onRating, onQuick, onResume, onGuide, onBoard }) {
   const now = new Date();
   const h = now.getHours();
@@ -39642,8 +39738,9 @@ function HomeScreen({ teacher, allowed = [], access = {}, onStart, schoolClasses
           </section>
         </div>
 
-        {/* O‘ng: sinflar + maslahat */}
+        {/* O‘ng: obunalar + sinflar + maslahat */}
         <div className="space-y-8">
+          <SubscriptionsPanel teacher={teacher} />
           <section className="dp-sticker-soft rounded-[2rem] bg-white p-6">
             <h2 className="flex items-center gap-2 text-2xl font-black text-ink"><School size={26} className="text-blue-600" /> <span className="dp-marker">Sinflar</span></h2>
             {classes.length ? (
@@ -44198,6 +44295,7 @@ export default function DarsPlayApp() {
         toggleFs={toggleFs}
         onHelp={teacher || isAdmin ? () => { markGuideSeen(); if (step !== 'guide') go('guide'); } : null}
         onBoard={teacher || isAdmin ? () => setBoardOpen(true) : null}
+        onSubs={teacher ? () => { resetTo(['home']); setTimeout(() => scrollToId('obunalarim'), 120); } : null}
       />}
       {boardOpen && <Whiteboard onClose={() => setBoardOpen(false)} />}
 
