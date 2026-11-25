@@ -37273,7 +37273,7 @@ function Logo({ size = 44, showText = true, textClass = 'text-2xl' }) {
         <span className={`${textClass} whitespace-nowrap font-black tracking-tight leading-none`}>
           <span className="text-ink">Dars</span>{' '}
           <span className="dp-hand text-[1.12em] text-amber-600">play</span>
-          <span className="ml-2 inline-block -translate-y-1 rounded-full border border-amber-300 bg-amber-50 px-2 py-0.5 align-middle text-[0.4em] font-extrabold uppercase tracking-[.16em] text-amber-700">Beta</span>
+          <span className="ml-2 hidden -translate-y-1 sm:inline-block rounded-full border border-amber-300 bg-amber-50 px-2 py-0.5 align-middle text-[0.4em] font-extrabold uppercase tracking-[.16em] text-amber-700">Beta</span>
         </span>
       )}
     </div>
@@ -37435,90 +37435,105 @@ function Modal({ children, onClose, wide = false }) {
 
 function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onBoard, onSubs, guest }) {
   const sound = useSoundOn();
+  const [menu, setMenu] = useState(false);
+  const menuRef = useRef(null);
+  useEffect(() => {
+    if (!menu) return undefined;
+    const close = (e) => { if (menuRef.current && !menuRef.current.contains(e.target)) setMenu(false); };
+    const esc = (e) => { if (e.key === 'Escape') setMenu(false); };
+    document.addEventListener('pointerdown', close);
+    document.addEventListener('keydown', esc);
+    return () => { document.removeEventListener('pointerdown', close); document.removeEventListener('keydown', esc); };
+  }, [menu]);
+  const ex = teacher && onSubs ? expiryInfo(teacher) : null;
+  const exCls = ex && { none: 'text-slate-500', ok: 'text-firuza-700', soon: 'text-amber-700', expired: 'text-rose-600' }[ex.tone];
+  const iconBtn = 'flex h-10 w-10 items-center justify-center rounded-lg text-slate-600 transition hover:bg-amber-50 hover:text-ink';
+  const item = 'flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-base font-bold text-ink transition hover:bg-amber-50';
+  const run = (fn) => () => { setMenu(false); fn?.(); };
   return (
     <header className="sticky top-0 z-40 bg-paper/95 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center gap-2 px-3 py-3 sm:gap-4 md:px-8">
-        <button onClick={onHome} aria-label="Bosh sahifa">
-          <Logo size={44} textClass="text-2xl" />
+      <div className="mx-auto flex h-16 max-w-7xl items-center gap-3 px-3 md:px-8">
+        <button onClick={onHome} aria-label="Bosh sahifa" className="shrink-0">
+          <Logo size={38} textClass="text-xl" />
         </button>
-        <nav className="hidden flex-1 items-center gap-2 overflow-hidden lg:flex">
-          {crumbs.map((c, i) => (
-            <span key={i} className="flex items-center gap-2 text-base font-semibold text-slate-500 whitespace-nowrap">
-              <ChevronRight size={18} className="text-amber-500" strokeWidth={3} />
-              <span className={`rounded-lg border border-line/80 px-3 py-0.5 font-bold text-ink ${['bg-firuza-100', 'bg-amber-100', 'bg-blue-100', 'bg-anor-100', 'bg-white'][i % 5]}`}>{c}</span>
-            </span>
-          ))}
-        </nav>
-        <div className="ml-auto flex items-center gap-2">
-          {onBoard && (
-            <button
-              onClick={onBoard}
-              aria-label="Doska" data-tip="Doska"
-              className="dp-btn inline-flex items-center gap-2 rounded-xl bg-firuza-500 p-2 text-white hover:bg-firuza-600"
-            >
-              <PenLine size={24} /> <span className="hidden text-base font-bold lg:inline">Doska</span>
-            </button>
-          )}
-          {onHelp && (
-            <button
-              onClick={onHelp}
-              aria-label="Qo‘llanma" data-tip="Qo‘llanma"
-              className="inline-flex items-center gap-2 rounded-xl border border-line/70 bg-white p-2.5 text-blue-800 transition hover:bg-blue-50"
-            >
-              <CircleHelp size={24} /> <span className="hidden text-base font-bold xl:inline">Qo‘llanma</span>
-            </button>
-          )}
-          <button
-            onClick={() => setSoundOn(!sound)}
-            aria-label={sound ? 'Ovozni o‘chirish' : 'Ovozni yoqish'} data-tip={sound ? 'Ovozni o‘chirish' : 'Ovozni yoqish'}
-            className={`hidden rounded-xl border p-2.5 transition hover:bg-blue-50 sm:block ${sound ? 'border-blue-100 text-blue-800' : 'border-rose-200 text-rose-600'}`}
-          >
-            {sound ? <Volume2 size={24} /> : <VolumeX size={24} />}
-          </button>
-          <button
-            onClick={toggleFs}
-            aria-label={isFs ? 'To‘liq ekrandan chiqish' : 'To‘liq ekran'} data-tip={isFs ? 'To‘liq ekrandan chiqish' : 'To‘liq ekran'}
-            className="hidden rounded-xl border border-line/70 bg-white p-2.5 text-blue-800 transition hover:bg-blue-50 sm:block"
-          >
-            {isFs ? <Minimize size={24} /> : <Maximize size={24} />}
-          </button>
-          {teacher && teacher.name && (
-            <>
-              {(() => {
-                const ex = onSubs ? expiryInfo(teacher) : null;
-                const exCls = ex && { none: 'text-slate-500', ok: 'text-firuza-700', soon: 'text-amber-700', expired: 'text-rose-600' }[ex.tone];
-                const Tag = onSubs ? 'button' : 'div';
+
+        {crumbs.length > 0 && (
+          <nav aria-label="Joylashuv" className="ml-2 hidden min-w-0 flex-1 items-center border-l border-line pl-4 lg:flex">
+            <ol className="flex min-w-0 items-center gap-1.5 text-base">
+              {crumbs.map((c, i) => {
+                const last = i === crumbs.length - 1;
                 return (
-                  <Tag {...(onSubs ? { type: 'button', onClick: onSubs, 'data-tip': 'Obunalarim' } : {})}
-                    className={`hidden items-center gap-2 rounded-xl border border-line/70 bg-white px-3 py-1 text-left md:flex ${onSubs ? 'transition hover:border-amber-400 hover:bg-amber-50' : ''}`}>
-                    <div className="flex h-9 w-9 items-center justify-center rounded-full border border-line bg-amber-400 text-sm font-black text-ink">
-                      {initials(teacher.name)}
-                    </div>
-                    <div className="leading-tight">
-                      <div className="text-sm font-bold text-blue-950">{teacher.name}</div>
-                      {ex ? <div className={`text-xs font-bold ${exCls}`}>Obuna: {ex.text}</div> : <div className="text-xs text-slate-500">{teacher.school}</div>}
-                    </div>
-                  </Tag>
+                  <li key={i} className={`flex min-w-0 items-center gap-1.5 ${last ? 'shrink' : 'shrink-0'}`}>
+                    {i > 0 && <ChevronRight size={16} className="shrink-0 text-slate-300" strokeWidth={3} />}
+                    <span className={`truncate ${last ? 'font-extrabold text-ink' : 'font-semibold text-slate-500'}`} title={c}>{c}</span>
+                  </li>
                 );
-              })()}
-              {guest ? (
-                <button onClick={onLogout} className="dp-btn inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2.5 text-base font-black text-white hover:bg-blue-700">
-                  <LogIn size={20} /> Kirish
-                </button>
-              ) : (
-                <button
-                  onClick={onLogout}
-                  aria-label="Chiqish" data-tip="Chiqish"
-                  className="rounded-xl border border-line/70 bg-white p-2.5 text-slate-600 transition hover:border-rose-300 hover:text-rose-600"
-                >
-                  <LogOut size={24} />
-                </button>
-              )}
+              })}
+            </ol>
+          </nav>
+        )}
+
+        <div className="ml-auto flex shrink-0 items-center gap-2">
+          {onBoard && (
+            <button onClick={onBoard} aria-label="Doska" data-tip="Doska"
+              className="dp-btn inline-flex h-11 items-center gap-2 rounded-xl bg-firuza-500 px-3 text-base font-black text-white hover:bg-firuza-600 md:px-4">
+              <PenLine size={20} /> <span className="hidden md:inline">Doska</span>
+            </button>
+          )}
+
+          <div className="hidden h-11 items-center gap-0.5 rounded-xl border border-line bg-white px-0.5 sm:flex">
+            {onHelp && (
+              <button onClick={onHelp} aria-label="Qo‘llanma" data-tip="Qo‘llanma" className={iconBtn}><CircleHelp size={21} /></button>
+            )}
+            <button onClick={() => setSoundOn(!sound)} aria-label={sound ? 'Ovozni o‘chirish' : 'Ovozni yoqish'} data-tip={sound ? 'Ovozni o‘chirish' : 'Ovozni yoqish'}
+              className={`${iconBtn} ${sound ? '' : 'text-rose-600'}`}>
+              {sound ? <Volume2 size={21} /> : <VolumeX size={21} />}
+            </button>
+            <button onClick={toggleFs} aria-label={isFs ? 'To‘liq ekrandan chiqish' : 'To‘liq ekran'} data-tip={isFs ? 'To‘liq ekrandan chiqish' : 'To‘liq ekran'} className={iconBtn}>
+              {isFs ? <Minimize size={21} /> : <Maximize size={21} />}
+            </button>
+          </div>
+
+          {guest ? (
+            <>
+              <span className="hidden h-11 items-center rounded-xl border border-amber-300 bg-amber-50 px-3 text-sm font-extrabold text-amber-800 md:inline-flex">Mehmon rejimi</span>
+              <button onClick={onLogout} className="dp-btn inline-flex h-11 items-center gap-2 rounded-xl bg-blue-600 px-4 text-base font-black text-white hover:bg-blue-700">
+                <LogIn size={20} /> Kirish
+              </button>
             </>
+          ) : teacher && teacher.name && (
+            <div ref={menuRef} className="relative">
+              <button type="button" onClick={() => setMenu((v) => !v)} aria-haspopup="menu" aria-expanded={menu}
+                className={`flex h-11 items-center gap-2 rounded-xl border bg-white pl-1.5 pr-2 text-left transition hover:border-amber-400 ${menu ? 'border-amber-400' : 'border-line'}`}>
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-400 text-sm font-black text-ink">{initials(teacher.name)}</span>
+                <span className="hidden max-w-[11rem] leading-tight md:block">
+                  <span className="block truncate text-sm font-extrabold text-ink">{teacher.name}</span>
+                  {ex ? <span className={`block truncate text-xs font-bold ${exCls}`}>Obuna: {ex.text}</span> : <span className="block truncate text-xs text-slate-500">{teacher.school}</span>}
+                </span>
+                <ChevronDown size={18} className={`shrink-0 text-slate-400 transition ${menu ? 'rotate-180' : ''}`} />
+              </button>
+              {menu && (
+                <div role="menu" className="dp-pop absolute right-0 top-[calc(100%+8px)] w-72 rounded-2xl border border-line bg-white p-2 shadow-[0_24px_50px_-20px_rgba(27,36,64,.45)]">
+                  <div className="rounded-xl bg-paper px-3 py-3">
+                    <div className="truncate text-base font-black text-ink">{teacher.name}</div>
+                    <div className="truncate text-sm text-slate-500">{teacher.school}</div>
+                    {ex && <div className={`mt-1 text-sm font-bold ${exCls}`}>Obuna: {ex.text}</div>}
+                  </div>
+                  <div className="mt-1 space-y-0.5">
+                    {onSubs && <button role="menuitem" onClick={run(onSubs)} className={item}><CalendarDays size={20} className="text-amber-600" /> Obunalarim</button>}
+                    {onHelp && <button role="menuitem" onClick={run(onHelp)} className={`${item} sm:hidden`}><CircleHelp size={20} className="text-blue-700" /> Qo‘llanma</button>}
+                    <button role="menuitem" onClick={run(() => setSoundOn(!sound))} className={`${item} sm:hidden`}>{sound ? <Volume2 size={20} className="text-blue-700" /> : <VolumeX size={20} className="text-rose-600" />} {sound ? 'Ovozni o‘chirish' : 'Ovozni yoqish'}</button>
+                    <button role="menuitem" onClick={run(toggleFs)} className={`${item} sm:hidden`}>{isFs ? <Minimize size={20} className="text-blue-700" /> : <Maximize size={20} className="text-blue-700" />} {isFs ? 'To‘liq ekrandan chiqish' : 'To‘liq ekran'}</button>
+                  </div>
+                  <div className="my-1 border-t border-line" />
+                  <button role="menuitem" onClick={run(onLogout)} className={`${item} text-rose-600 hover:bg-rose-50`}><LogOut size={20} /> Chiqish</button>
+                </div>
+              )}
+            </div>
           )}
         </div>
       </div>
-      <div className="dp-atlas" aria-hidden="true" />
+      <div className="dp-atlas-thin" aria-hidden="true" />
     </header>
   );
 }
@@ -38085,23 +38100,26 @@ function LoginScreen({ onLogin, onGuest }) {
     <div className="-mb-16 overflow-x-hidden">
       {/* Navigatsiya */}
       <div className="sticky top-0 z-50 bg-paper/95 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center gap-2 px-3 py-3 sm:gap-4 sm:px-4 md:px-8">
-          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Yuqoriga" className="shrink-0"><Logo size={44} textClass="text-2xl" /></button>
-          <nav className="ml-6 hidden flex-1 items-center gap-1 xl:flex">
-            {nav.map(([id, t]) => (
-              <button key={id} onClick={() => go(id)} className="whitespace-nowrap rounded-xl px-3 py-2 text-base font-extrabold text-ink/75 transition hover:bg-amber-200 hover:text-ink">{t}</button>
+        <div className="mx-auto flex h-16 max-w-7xl items-center gap-3 px-3 sm:px-4 md:px-8">
+          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Yuqoriga" className="shrink-0"><Logo size={38} textClass="text-xl" /></button>
+          <nav className="ml-4 hidden min-w-0 flex-1 items-center justify-center gap-0.5 xl:flex">
+            {nav.filter(([id]) => id !== 'demo').map(([id, t]) => (
+              <button key={id} onClick={() => go(id)} className="whitespace-nowrap rounded-lg px-3 py-2 text-[15px] font-bold text-slate-600 transition hover:bg-amber-100 hover:text-ink">{t}</button>
             ))}
           </nav>
-          <div className="ml-auto flex items-center gap-2">
-            <button onClick={() => go('demo')} className="dp-btn hidden items-center gap-2 whitespace-nowrap rounded-2xl bg-white px-4 py-2 text-base font-black text-ink hover:bg-amber-50 sm:inline-flex"><Play size={18} /> Sinab ko‘rish</button>
-            <button onClick={() => go('kirish')} className="dp-btn inline-flex items-center gap-2 whitespace-nowrap rounded-2xl bg-blue-600 px-3 py-2 text-base font-black text-white hover:bg-blue-700 sm:px-5" aria-label="Kirish"><LogIn size={18} /> <span className="hidden sm:inline">Kirish</span></button>
-            <button onClick={() => setMenu((m) => !m)} className="rounded-xl p-2 text-blue-900 xl:hidden" aria-label="Menyu"><List size={26} /></button>
+          <div className="ml-auto flex shrink-0 items-center gap-2">
+            {onGuest && (
+              <button onClick={onGuest} className="hidden h-11 items-center gap-2 whitespace-nowrap rounded-xl border border-line bg-white px-4 text-base font-black text-ink transition hover:border-amber-400 hover:bg-amber-50 md:inline-flex"><BookOpen size={18} /> Darslarni ko‘rish</button>
+            )}
+            <button onClick={() => go('kirish')} className="dp-btn inline-flex h-11 items-center gap-2 whitespace-nowrap rounded-xl bg-blue-600 px-3 text-base font-black text-white hover:bg-blue-700 sm:px-5" aria-label="Kirish"><LogIn size={18} /> <span className="hidden sm:inline">Kirish</span></button>
+            <button onClick={() => setMenu((m) => !m)} className="flex h-11 w-11 items-center justify-center rounded-xl border border-line bg-white text-ink xl:hidden" aria-label="Menyu" aria-expanded={menu}>{menu ? <X size={22} /> : <List size={22} />}</button>
           </div>
         </div>
-        <div className="dp-atlas" aria-hidden="true" />
+        <div className="dp-atlas-thin" aria-hidden="true" />
         {menu && (
           <div className="dp-pop border-b border-line bg-paper px-4 py-3 xl:hidden">
-            {nav.map(([id, t]) => <button key={id} onClick={() => go(id)} className="block w-full rounded-xl px-3 py-3 text-left text-lg font-bold text-blue-900 hover:bg-blue-50">{t}</button>)}
+            {nav.map(([id, t]) => <button key={id} onClick={() => go(id)} className="block w-full rounded-xl px-3 py-3 text-left text-lg font-bold text-ink hover:bg-amber-50">{t}</button>)}
+            {onGuest && <button onClick={() => { setMenu(false); onGuest(); }} className="mt-1 block w-full rounded-xl bg-amber-100 px-3 py-3 text-left text-lg font-black text-ink hover:bg-amber-200">Kirmasdan darslarni ko‘rish</button>}
           </div>
         )}
       </div>
