@@ -30,7 +30,8 @@ import { FIZIKA_9_P2 } from './fizika/fizika9b';
    1. MOCK MA’LUMOTLAR
    ============================================================ */
 
-const SUBJECTS = [
+/** Barcha fanlar (kodda saqlanadi). Saytda faqat VISIBLE_SUBJECT_IDS dagilar ko‘rinadi. */
+const ALL_SUBJECTS = [
   { id: 'ona-tili', name: 'Ona tili', icon: PenLine, color: 'bg-blue-600' },
   { id: 'adabiyot', name: 'Adabiyot', icon: BookOpen, color: 'bg-indigo-600' },
   { id: 'matematika', name: 'Matematika', icon: Calculator, color: 'bg-sky-600' },
@@ -44,6 +45,13 @@ const SUBJECTS = [
   { id: 'kimyo', name: 'Kimyo', icon: FlaskConical, color: 'bg-rose-600' },
   { id: 'informatika', name: 'Informatika', icon: Monitor, color: 'bg-slate-700' },
 ];
+
+/**
+ * Hozircha faqat Ona tili va Adabiyot ochiq. Boshqa fanlar (masalan Fizika) kodda turadi,
+ * lekin saytda, admin formasida va paketlarda ko‘rinmaydi. Yangi fan ochish uchun id sini shu ro‘yxatga qo‘shing.
+ */
+const VISIBLE_SUBJECT_IDS = ['ona-tili', 'adabiyot'];
+const SUBJECTS = ALL_SUBJECTS.filter((s) => VISIBLE_SUBJECT_IDS.includes(s.id));
 
 /**
  * Fan paketlari — o‘qituvchi bitta paketni sotib oladi va faqat shu paketdagi fanlardan foydalanadi.
@@ -34093,45 +34101,100 @@ function Confetti({ count = 90 }) {
   );
 }
 
-/* ---------- Milliy bezaklar va qo‘lda chizilgan elementlar ---------- */
+/* ---------- Milliy bezaklar: «Koshin va Ravoq» ---------- */
 
-// 8 qirrali girih yulduzi — Dars play belgisi
+// 8 qirrali girih yulduzi ichida «play» belgisi — Dars play logotipi
 function GirihMark({ size = 44, className = '' }) {
   return (
     <svg width={size} height={size} viewBox="0 0 64 64" className={`shrink-0 ${className}`} aria-hidden="true">
+      <defs>
+        <linearGradient id="dpMarkG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#3D60B0" /><stop offset="1" stopColor="#182A58" /></linearGradient>
+      </defs>
       <g transform="translate(32 32)">
-        <rect x="-21" y="-21" width="42" height="42" rx="7" fill="#F5BF1F" stroke="#14213D" strokeWidth="3" transform="rotate(45)" />
-        <rect x="-21" y="-21" width="42" height="42" rx="7" fill="#2445B0" stroke="#14213D" strokeWidth="3" />
-        <circle r="15" fill="none" stroke="#0EA5A4" strokeWidth="2.5" strokeDasharray="3 3.2" />
-        <path d="M-5 -10 L11 0 L-5 10 Z" fill="#FFFFFF" stroke="#FFFFFF" strokeWidth="4" strokeLinejoin="round" />
+        <rect x="-21" y="-21" width="42" height="42" rx="6" fill="#DCAE4A" transform="rotate(45)" />
+        <rect x="-21" y="-21" width="42" height="42" rx="6" fill="url(#dpMarkG)" />
+        <rect x="-16.5" y="-16.5" width="33" height="33" rx="4" fill="none" stroke="#E8C673" strokeOpacity=".55" strokeWidth="1.2" transform="rotate(45)" />
+        <path d="M-5 -9.5 L10 0 L-5 9.5 Z" fill="#FBF7EF" stroke="#FBF7EF" strokeWidth="3.5" strokeLinejoin="round" />
       </g>
     </svg>
   );
 }
 
-// Bitta girih yulduzi (bezak uchun)
-function StarTile({ size = 56, color = '#F5BF1F', stroke = '#14213D', className = '', style }) {
+// Bitta girih yulduzi (bezak uchun) — ingichka oltin chiziq bilan
+function StarTile({ size = 56, color = '#DCAE4A', stroke = 'rgba(255,255,255,.55)', className = '', style }) {
   return (
     <svg width={size} height={size} viewBox="0 0 64 64" className={className} style={style} aria-hidden="true">
-      <g transform="translate(32 32)" stroke={stroke} strokeWidth="3" strokeLinejoin="round">
-        <rect x="-19" y="-19" width="38" height="38" fill={color} transform="rotate(45)" />
-        <rect x="-19" y="-19" width="38" height="38" fill={color} />
-        <circle r="8" fill="#FBF8F1" />
+      <g transform="translate(32 32)" strokeLinejoin="round">
+        <rect x="-19" y="-19" width="38" height="38" rx="2" fill={color} transform="rotate(45)" />
+        <rect x="-19" y="-19" width="38" height="38" rx="2" fill={color} />
+        <rect x="-14" y="-14" width="28" height="28" fill="none" stroke={stroke} strokeWidth="1.2" transform="rotate(45)" />
+        <rect x="-14" y="-14" width="28" height="28" fill="none" stroke={stroke} strokeWidth="1.2" />
+        <circle r="6.5" fill="none" stroke={stroke} strokeWidth="1.2" />
       </g>
     </svg>
   );
 }
 
-// Qo‘lda chizilgan elementlar: yulduzcha, qalam, strelka, spiral
-function Doodle({ kind = 'sparkle', size = 40, color = '#14213D', className = '', style }) {
-  const common = { fill: 'none', stroke: color, strokeWidth: 3, strokeLinecap: 'round', strokeLinejoin: 'round' };
+// Suzani rozetkasi — 8 bargli gul (bezak va medalyon uchun)
+function Rosette({ size = 120, color = '#DCAE4A', inner = '#2A9D8F', className = '', style, opacity = 1 }) {
+  const petals = Array.from({ length: 8 }, (_, i) => i * 45);
+  return (
+    <svg width={size} height={size} viewBox="0 0 120 120" className={`pointer-events-none ${className}`} style={{ opacity, ...style }} aria-hidden="true">
+      <g transform="translate(60 60)" fill="none" strokeLinecap="round" strokeLinejoin="round">
+        <circle r="56" stroke={color} strokeWidth="1.2" strokeOpacity=".6" />
+        <circle r="50" stroke={color} strokeWidth="1" strokeDasharray="2 5" strokeOpacity=".7" />
+        {petals.map((a) => (
+          <g key={a} transform={`rotate(${a})`}>
+            <path d="M0 -12 C 10 -22, 10 -36, 0 -46 C -10 -36, -10 -22, 0 -12 Z" fill={color} fillOpacity=".18" stroke={color} strokeWidth="1.4" />
+            <path d="M0 -18 L0 -38" stroke={color} strokeWidth="1" strokeOpacity=".8" />
+            <circle cx="0" cy="-50" r="2" fill={color} />
+          </g>
+        ))}
+        {petals.map((a) => <path key={'s' + a} transform={`rotate(${a + 22.5})`} d="M0 -14 L4 -24 L0 -30 L-4 -24 Z" fill={inner} fillOpacity=".55" />)}
+        <circle r="11" fill={inner} fillOpacity=".25" stroke={color} strokeWidth="1.4" />
+        <circle r="4" fill={color} />
+      </g>
+    </svg>
+  );
+}
+
+// Ravoq (peshtoq) — mehrob shaklidagi bezak ramka; ichiga kontent qo‘yish mumkin
+function Ravoq({ children, className = '', tone = 'light' }) {
+  const c = tone === 'dark' ? 'rgba(232,198,115,.55)' : 'rgba(200,150,47,.55)';
+  return (
+    <div className={`relative ${className}`}>
+      <svg className="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 400 300" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M6 296 V120 C 6 50, 120 8, 200 6 C 280 8, 394 50, 394 120 V296" fill="none" stroke={c} strokeWidth="1.5" vectorEffect="non-scaling-stroke" />
+        <path d="M18 296 V124 C 18 62, 124 22, 200 20 C 276 22, 382 62, 382 124 V296" fill="none" stroke={c} strokeWidth="1" strokeDasharray="3 6" vectorEffect="non-scaling-stroke" />
+      </svg>
+      <div className="relative">{children}</div>
+    </div>
+  );
+}
+
+// Islimiy ajratgich: chiziq — rozetka — chiziq
+function KoshinDivider({ className = '', light = false }) {
+  const c = light ? '#E8C673' : '#C8962F';
+  return (
+    <div className={`flex items-center justify-center gap-3 ${className}`} aria-hidden="true">
+      <span className="h-px w-16 md:w-24" style={{ background: `linear-gradient(to left, ${c}, transparent)` }} />
+      <svg width="34" height="18" viewBox="0 0 34 18"><g fill="none" stroke={c} strokeWidth="1.4" strokeLinecap="round"><path d="M1 9 C 6 3, 11 3, 17 9 C 23 15, 28 15, 33 9" /><path d="M1 9 C 6 15, 11 15, 17 9 C 23 3, 28 3, 33 9" /></g><path d="M17 4.5 L21.5 9 L17 13.5 L12.5 9 Z" fill={c} /></svg>
+      <span className="h-px w-16 md:w-24" style={{ background: `linear-gradient(to right, ${c}, transparent)` }} />
+    </div>
+  );
+}
+
+// Milliy bezak elementlari (avvalgi «qo‘lda chizilgan» belgilar o‘rnida):
+// sparkle — 8 qirrali yulduz, burst — kichik rozetka, loop/spiral — islimiy novda, arrow — nafis strelka
+function Doodle({ kind = 'sparkle', size = 40, color = '#C8962F', className = '', style }) {
+  const common = { fill: 'none', stroke: color, strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round' };
   const paths = {
-    sparkle: <path {...common} d="M32 6 C 33 22, 38 28, 58 32 C 38 35, 33 41, 32 58 C 30 41, 25 35, 6 32 C 25 29, 30 22, 32 6 Z" />,
-    arrow: <><path {...common} d="M6 44 C 18 18, 38 12, 54 22" /><path {...common} d="M44 14 L55 22 L44 30" /></>,
-    spiral: <path {...common} d="M32 32 m-3 0 a3 3 0 1 1 6 0 a7 7 0 1 1 -14 0 a11 11 0 1 1 22 0 a15 15 0 1 1 -30 0 a19 19 0 1 1 38 0" />,
-    pencil: <><path {...common} d="M12 52 L16 38 L44 10 L54 20 L26 48 Z" fill="#F5BF1F" /><path {...common} d="M38 16 L48 26 M12 52 L22 49" /><path d="M12 52 L14 45 L19 50 Z" fill={color} /></>,
-    burst: <><circle cx="32" cy="32" r="6" fill={color} /><path {...common} d="M32 6 V16 M32 48 V58 M6 32 H16 M48 32 H58 M14 14 L21 21 M43 43 L50 50 M50 14 L43 21 M21 43 L14 50" /></>,
-    loop: <path {...common} d="M4 40 C 14 40, 20 18, 30 18 C 40 18, 36 40, 28 38 C 20 36, 30 14, 46 20 C 56 24, 58 34, 60 34" />,
+    sparkle: <g transform="translate(32 32)"><rect {...common} x="-15" y="-15" width="30" height="30" transform="rotate(45)" /><rect {...common} x="-15" y="-15" width="30" height="30" /><circle r="4" fill={color} /></g>,
+    arrow: <><path {...common} d="M8 40 C 20 24, 36 20, 54 26" /><path {...common} d="M46 19 L55 26 L46 33" /><circle cx="8" cy="40" r="2.5" fill={color} /></>,
+    spiral: <g transform="translate(32 32)">{[0, 60, 120, 180, 240, 300].map((a) => <path key={a} {...common} transform={`rotate(${a})`} d="M0 -6 C 6 -12, 6 -20, 0 -26 C -6 -20, -6 -12, 0 -6 Z" />)}<circle r="3" fill={color} /></g>,
+    pencil: <g transform="translate(32 32)"><path {...common} d="M0 -24 L6 -6 L24 0 L6 6 L0 24 L-6 6 L-24 0 L-6 -6 Z" /><circle r="4" fill={color} /></g>,
+    burst: <g transform="translate(32 32)">{[0, 45, 90, 135, 180, 225, 270, 315].map((a) => <path key={a} {...common} transform={`rotate(${a})`} d="M0 -9 C 4 -14, 4 -20, 0 -25 C -4 -20, -4 -14, 0 -9" />)}<circle r="5" fill={color} /></g>,
+    loop: <><path {...common} d="M4 40 C 16 40, 18 20, 30 20 C 40 20, 40 34, 32 34 C 26 34, 26 26, 32 26" /><path {...common} d="M30 20 C 40 12, 52 18, 60 30" /><path {...common} d="M48 18 C 50 12, 56 12, 58 16 C 54 18, 50 19, 48 18 Z" fill={color} fillOpacity=".25" /></>,
   };
   return (
     <svg width={size} height={size} viewBox="0 0 64 64" className={`pointer-events-none ${className}`} style={style} aria-hidden="true">
@@ -34147,8 +34210,8 @@ function Logo({ size = 44, showText = true, textClass = 'text-2xl' }) {
       {showText && (
         <span className={`${textClass} whitespace-nowrap font-black tracking-tight leading-none`}>
           <span className="text-ink">Dars</span>{' '}
-          <span className="dp-hand relative inline-block text-[1.3em] text-blue-600">play<svg className="absolute -bottom-1 left-0 w-full" height="6" viewBox="0 0 60 6" preserveAspectRatio="none" aria-hidden="true"><path d="M1 4 Q 15 1 30 3.5 T 59 2.5" fill="none" stroke="#F5BF1F" strokeWidth="3" strokeLinecap="round" /></svg></span>
-          <span className="ml-2 inline-block -translate-y-1 rotate-[-4deg] rounded-md border-2 border-ink bg-amber-400 px-1.5 py-0.5 align-middle text-[0.42em] font-black uppercase tracking-wider text-ink">Beta</span>
+          <span className="dp-hand text-[1.12em] text-amber-600">play</span>
+          <span className="ml-2 inline-block -translate-y-1 rounded-full border border-amber-300 bg-amber-50 px-2 py-0.5 align-middle text-[0.4em] font-extrabold uppercase tracking-[.16em] text-amber-700">Beta</span>
         </span>
       )}
     </div>
@@ -34172,7 +34235,7 @@ function PageTitle({ title, subtitle, onBack, right }) {
       {onBack && <BackButton onClick={onBack} />}
       <div className="flex-1 min-w-0">
         <h1 className="text-3xl md:text-4xl font-black text-ink"><span className="dp-squiggle">{title}</span></h1>
-        {subtitle && <p className="mt-3 text-lg md:text-xl font-semibold text-slate-600">{subtitle}</p>}
+        {subtitle && <p className="mt-5 text-lg md:text-xl font-semibold text-slate-600">{subtitle}</p>}
       </div>
       {right}
     </div>
@@ -34206,7 +34269,7 @@ function Modal({ children, onClose, wide = false }) {
           <button
             onClick={onClose}
             aria-label="Yopish"
-            className="absolute right-4 top-5 z-10 rounded-full border-2 border-ink bg-white p-1.5 text-ink transition hover:rotate-90 hover:bg-anor-100"
+            className="absolute right-4 top-5 z-10 rounded-full border border-line bg-white p-1.5 text-ink transition hover:rotate-90 hover:bg-anor-100"
           >
             <X size={28} />
           </button>
@@ -34229,7 +34292,7 @@ function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onB
           {crumbs.map((c, i) => (
             <span key={i} className="flex items-center gap-2 text-base font-semibold text-slate-500 whitespace-nowrap">
               <ChevronRight size={18} className="text-amber-500" strokeWidth={3} />
-              <span className={`rounded-lg border-2 border-ink/80 px-3 py-0.5 font-bold text-ink ${['bg-firuza-100', 'bg-amber-100', 'bg-blue-100', 'bg-anor-100', 'bg-white'][i % 5]}`}>{c}</span>
+              <span className={`rounded-lg border border-line/80 px-3 py-0.5 font-bold text-ink ${['bg-firuza-100', 'bg-amber-100', 'bg-blue-100', 'bg-anor-100', 'bg-white'][i % 5]}`}>{c}</span>
             </span>
           ))}
         </nav>
@@ -34247,7 +34310,7 @@ function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onB
             <button
               onClick={onHelp}
               title="Qo‘llanma"
-              className="inline-flex items-center gap-2 rounded-xl border-2 border-ink/70 bg-white p-2.5 text-blue-800 transition hover:bg-blue-50"
+              className="inline-flex items-center gap-2 rounded-xl border border-line/70 bg-white p-2.5 text-blue-800 transition hover:bg-blue-50"
             >
               <CircleHelp size={24} /> <span className="hidden text-base font-bold xl:inline">Qo‘llanma</span>
             </button>
@@ -34262,14 +34325,14 @@ function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onB
           <button
             onClick={toggleFs}
             title={isFs ? 'To‘liq ekrandan chiqish' : 'To‘liq ekran'}
-            className="hidden rounded-xl border-2 border-ink/70 bg-white p-2.5 text-blue-800 transition hover:bg-blue-50 sm:block"
+            className="hidden rounded-xl border border-line/70 bg-white p-2.5 text-blue-800 transition hover:bg-blue-50 sm:block"
           >
             {isFs ? <Minimize size={24} /> : <Maximize size={24} />}
           </button>
           {teacher && teacher.name && (
             <>
-              <div className="hidden items-center gap-2 rounded-xl border-2 border-ink/70 bg-white px-3 py-1 md:flex">
-                <div className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-ink bg-amber-400 text-sm font-black text-ink">
+              <div className="hidden items-center gap-2 rounded-xl border border-line/70 bg-white px-3 py-1 md:flex">
+                <div className="flex h-9 w-9 items-center justify-center rounded-full border border-line bg-amber-400 text-sm font-black text-ink">
                   {initials(teacher.name)}
                 </div>
                 <div className="leading-tight">
@@ -34280,7 +34343,7 @@ function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onB
               <button
                 onClick={onLogout}
                 title="Chiqish"
-                className="rounded-xl border-2 border-ink/70 bg-white p-2.5 text-slate-600 transition hover:border-rose-300 hover:text-rose-600"
+                className="rounded-xl border border-line/70 bg-white p-2.5 text-slate-600 transition hover:border-rose-300 hover:text-rose-600"
               >
                 <LogOut size={24} />
               </button>
@@ -34494,13 +34557,13 @@ function scrollToId(id) {
   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-function StatBox({ value, suffix = '', label, icon: I, bg = 'bg-paper', tilt = '-rotate-2', tape = '' }) {
+function StatBox({ value, suffix = '', label, icon: I, bg = 'bg-paper', tape = '' }) {
   const v = useCountUp(value);
   return (
-    <div className={`dp-tape ${tape} rounded-xl border-2 border-ink ${bg} ${tilt} p-5 pt-7 text-center text-ink shadow-[5px_5px_0_#14213D]`}>
-      <I size={30} className="mx-auto text-blue-700" />
+    <div className={`dp-tape ${tape} dp-arch-sm dp-sticker relative ${bg} p-5 pt-8 text-center text-ink`}>
+      <I size={28} className="mx-auto text-blue-700" />
       <div className="mt-2 text-4xl md:text-5xl font-black tabular-nums">{v}{suffix}</div>
-      <div className="dp-hand mt-1 text-2xl leading-none text-slate-700">{label}</div>
+      <div className="mt-1 text-lg font-bold leading-tight text-slate-600">{label}</div>
     </div>
   );
 }
@@ -34508,23 +34571,23 @@ function StatBox({ value, suffix = '', label, icon: I, bg = 'bg-paper', tilt = '
 function HeroMockup() {
   return (
     <div className="relative mx-auto w-full max-w-xl">
-      <StarTile size={150} className="dp-spin-slow absolute -left-14 -top-14 hidden opacity-95 sm:block" />
+      <Rosette size={190} color="#E8C673" inner="#7FCFC4" className="dp-spin-slow absolute -left-20 -top-20 hidden sm:block" opacity={0.9} />
       <Doodle kind="spiral" size={80} color="#6BDDD3" className="absolute -bottom-14 -left-10 hidden sm:block" />
-      <div className="relative rotate-[1.5deg] rounded-[2rem] border-[3px] border-ink bg-ink p-3 shadow-[10px_10px_0_rgba(245,191,31,.9)]">
+      <div className="relative  rounded-[2rem] border border-line bg-ink p-3 shadow-[0_18px_40px_-18px_rgba(200,150,47,.55)]">
         <div className="mb-2 flex items-center gap-1.5 px-2">
           <span className="h-3 w-3 rounded-full bg-rose-400" /><span className="h-3 w-3 rounded-full bg-amber-400" /><span className="h-3 w-3 rounded-full bg-emerald-400" />
           <span className="ml-3 text-xs font-semibold text-slate-400">Proyektor • 9-A sinf • Ona tili</span>
         </div>
         <div className="rounded-[1.4rem] bg-white p-4">
           <div className="grid grid-cols-2 gap-2">
-            <div className="flex items-center justify-between rounded-xl border-2 border-ink bg-blue-50 px-3 py-2">
+            <div className="flex items-center justify-between rounded-xl border border-line bg-blue-50 px-3 py-2">
               <span className="text-sm font-extrabold text-blue-700">1-jamoa</span><span className="text-xl font-black text-blue-900">45</span>
             </div>
-            <div className="flex items-center justify-between rounded-xl border-2 border-ink/30 bg-rose-50 px-3 py-2">
+            <div className="flex items-center justify-between rounded-xl border border-line bg-rose-50 px-3 py-2">
               <span className="text-sm font-extrabold text-rose-600">2-jamoa</span><span className="text-xl font-black text-rose-700">40</span>
             </div>
           </div>
-          <div className="dp-girih relative mt-3 rounded-2xl border-2 border-ink bg-blue-700 p-5 text-center text-white">
+          <div className="dp-girih relative mt-3 rounded-2xl border border-line bg-blue-700 p-5 text-center text-white">
             <div className="text-xs font-bold text-violet-100">Nuqtalar o‘rniga qaysi harf?</div>
             <div className="mt-2 text-4xl font-black tracking-wide">kutub<span className="mx-1 inline-block rounded-xl bg-amber-300 px-2 text-indigo-900">x</span>ona</div>
           </div>
@@ -34534,13 +34597,13 @@ function HeroMockup() {
           </div>
         </div>
       </div>
-      <div className="dp-float absolute -top-6 left-10 hidden -rotate-3 rounded-xl border-2 border-ink bg-white px-4 py-2 shadow-[4px_4px_0_#14213D] sm:block">
+      <div className="dp-float absolute -top-6 left-10 hidden  rounded-xl border border-line bg-white px-4 py-2 shadow-[0_14px_30px_-16px_rgba(27,36,64,.35)] sm:block">
         <div className="flex items-center gap-2 text-base font-extrabold text-emerald-600"><CheckCircle2 size={22} /> +15 ball</div>
       </div>
-      <div className="dp-float2 absolute -bottom-7 right-4 hidden rotate-2 rounded-xl border-2 border-ink bg-firuza-100 px-4 py-2 shadow-[4px_4px_0_#14213D] sm:block">
+      <div className="dp-float2 absolute -bottom-7 right-4 hidden  rounded-xl border border-line bg-firuza-100 px-4 py-2 shadow-[0_14px_30px_-16px_rgba(27,36,64,.35)] sm:block">
         <div className="flex items-center gap-2 text-base font-extrabold text-blue-900"><Disc3 size={22} className="text-amber-500" /> Baraban: Madina!</div>
       </div>
-      <div className="dp-float2 absolute -top-5 right-8 hidden rotate-3 rounded-xl border-2 border-ink bg-amber-400 px-4 py-2 shadow-[4px_4px_0_#14213D] sm:block">
+      <div className="dp-float2 absolute -top-5 right-8 hidden  rounded-xl border border-line bg-amber-400 px-4 py-2 shadow-[0_14px_30px_-16px_rgba(27,36,64,.35)] sm:block">
         <div className="flex items-center gap-2 text-sm font-black text-amber-950"><Trophy size={18} /> Sinf reytingi</div>
       </div>
     </div>
@@ -34550,9 +34613,9 @@ function HeroMockup() {
 function SectionHead({ kicker, title, sub, light }) {
   return (
     <div className="mx-auto max-w-3xl text-center">
-      <span className={`dp-hand inline-flex -rotate-2 items-center gap-2 text-3xl md:text-4xl ${light ? 'text-amber-300' : 'text-anor-500'}`}><Doodle kind="sparkle" size={28} color={light ? '#FFD45C' : '#E2463F'} /> {kicker}</span>
-      <h2 className={`mt-2 text-3xl md:text-5xl font-black leading-tight tracking-tight ${light ? 'text-white' : 'text-ink'}`}>{title}</h2>
-      <div className="dp-atlas-thin mx-auto mt-5 w-40 rounded-full" aria-hidden="true" />
+      <span className={`dp-kicker inline-flex items-center gap-2 ${light ? 'text-amber-300' : 'text-amber-600'}`}><Doodle kind="sparkle" size={18} color={light ? '#E8C673' : '#C8962F'} /> {kicker}</span>
+      <h2 className={`mt-3 text-3xl md:text-5xl font-black leading-tight tracking-tight ${light ? 'text-white' : 'text-ink'}`}>{title}</h2>
+      <KoshinDivider light={light} className="mt-5" />
       {sub && <p className={`mt-5 text-lg md:text-xl font-semibold ${light ? 'text-blue-100' : 'text-slate-600'}`}>{sub}</p>}
     </div>
   );
@@ -34623,7 +34686,7 @@ function DemoArena() {
 
 const LANDING_FAQ = [
   ['O‘quvchilarga telefon kerakmi?', 'Yo‘q. Hamma narsa o‘qituvchi kompyuteri va proyektor (yoki interaktiv doska) orqali ishlaydi. O‘quvchilar jamoa bo‘lib doskaga chiqib javob beradi.'],
-  ['Qaysi fan va sinflar tayyor?', '8-sinf Ona tili va Adabiyot, 9-sinf Ona tili — darslik asosida to‘liq. Boshqa fanlar uchun namunaviy mavzular bor, o‘qituvchi o‘z savollarini ham qo‘sha oladi.'],
+  ['Qaysi fan va sinflar tayyor?', '8- va 9-sinf Ona tili hamda Adabiyot — darslik va taqvim-mavzu reja asosida to‘liq tayyor. Boshqa sinflar va fanlar bosqichma-bosqich qo‘shiladi. O‘qituvchi o‘z savollarini ham qo‘sha oladi.'],
   ['Login va parolni qayerdan olaman?', 'Hisobni maktabingiz yoki Dars play administratori yaratib beradi. Ommaviy ro‘yxatdan o‘tish yopiq — bu o‘quvchilar ma’lumotlarini himoya qiladi.'],
   ['Internet bo‘lmasa ishlaydimi?', 'Sahifa bir marta ochilgach, darslar va o‘yinlar brauzerda ishlaydi. Natijalarni saqlash va reyting uchun internet kerak.'],
   ['O‘quvchini qanday tanlayman?', 'To‘rt usul bor: baraban (doira), kamera orqali tasodifiy tanlash, ro‘yxatdan tanlash va avtomatik ravishda jamoalarga bo‘lish.'],
@@ -34636,7 +34699,7 @@ function FaqItem({ q, a }) {
     <div className={`rounded-2xl bg-white transition ${open ? 'dp-sticker' : 'dp-sticker-soft'}`}>
       <button onClick={() => setOpen((o) => !o)} className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left">
         <span className="text-lg md:text-xl font-extrabold text-ink">{q}</span>
-        <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 border-ink transition ${open ? 'rotate-180 bg-amber-400' : 'bg-firuza-100'}`}><ChevronDown size={22} strokeWidth={3} /></span>
+        <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-line transition ${open ? 'rotate-180 bg-amber-400' : 'bg-firuza-100'}`}><ChevronDown size={22} strokeWidth={3} /></span>
       </button>
       {open && <p className="dp-pop px-6 pb-6 text-lg text-slate-600">{a}</p>}
     </div>
@@ -34661,7 +34724,7 @@ function LoginCard({ onLogin }) {
   const submit = (e) => { e.preventDefault(); attempt(login, password); };
   const noAuto = { autoCapitalize: 'none', autoCorrect: 'off', spellCheck: false };
   return (
-    <form onSubmit={submit} noValidate className="dp-sticker dp-tape dp-tape-gold relative rounded-[2rem] bg-white p-8 shadow-[8px_8px_0_#14213D] md:p-10">
+    <form onSubmit={submit} noValidate className="dp-sticker dp-tape dp-tape-gold relative rounded-[2rem] bg-white p-8 shadow-[0_14px_30px_-16px_rgba(27,36,64,.35)] md:p-10">
       <Doodle kind="burst" size={54} color="#F5BF1F" className="absolute -right-6 -top-7" />
       <div className="flex items-center gap-3">
         <GirihMark size={52} />
@@ -34687,7 +34750,7 @@ function LoginCard({ onLogin }) {
           {busy ? <Loader2 size={28} className="animate-spin" /> : <>Kirish <LogIn size={28} /></>}
         </button>
       </div>
-      {!REMOTE && <div className="mt-6 rounded-2xl border-2 border-dashed border-ink/40 bg-paper p-4 text-ink">
+      {!REMOTE && <div className="mt-6 rounded-2xl border border-dashed border-line/40 bg-paper p-4 text-ink">
         <div className="flex items-start gap-3"><KeyRound size={22} className="mt-0.5 shrink-0" /><p className="text-base">Sinov uchun tayyor hisoblar — bir bosishda kiring:</p></div>
         <div className="mt-3 grid gap-2 sm:grid-cols-2">
           <button type="button" onClick={() => attempt('demo', 'demo123')} className="dp-btn inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-3 text-base font-extrabold text-ink hover:bg-amber-50"><User size={20} /> Demo o‘qituvchi</button>
@@ -34701,10 +34764,10 @@ function LoginCard({ onLogin }) {
 }
 
 function LoginScreen({ onLogin }) {
-  const topicCount = useMemo(() => Object.values(CONTENT).reduce((a, g) => a + Object.values(g).reduce((b, arr) => b + arr.length, 0), 0), []);
-  const games = GAMES.filter((g) => !g.disabled);
+  const topicCount = useMemo(() => SUBJECTS.map((x) => CONTENT[x.id] || {}).reduce((a, g) => a + Object.values(g).reduce((b, arr) => b + arr.length, 0), 0), []);
+  const games = GAMES.filter((g) => !g.disabled && !(g.id === 'units' && !VISIBLE_SUBJECT_IDS.includes('fizika')));
   const [menu, setMenu] = useState(false);
-  const nav = [['imkoniyatlar', 'Imkoniyatlar'], ['demo', 'Sinab ko‘ring'], ['oyinlar', 'O‘yinlar'], ['qanday', 'Qanday ishlaydi'], ['fanlar', 'Fanlar'], ['savollar', 'Savollar']];
+  const nav = [['imkoniyatlar', 'Imkoniyatlar'], ['demo', 'Sinab ko‘ring'], ['oyinlar', 'O‘yinlar'], ['qanday', 'Qanday ishlaydi'], ['fanlar', 'Sinflar'], ['savollar', 'Savollar']];
   const go = (id) => { setMenu(false); scrollToId(id); };
 
   const features = [
@@ -34739,7 +34802,7 @@ function LoginScreen({ onLogin }) {
           <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Yuqoriga" className="shrink-0"><Logo size={44} textClass="text-2xl" /></button>
           <nav className="ml-6 hidden flex-1 items-center gap-1 xl:flex">
             {nav.map(([id, t]) => (
-              <button key={id} onClick={() => go(id)} className="whitespace-nowrap rounded-xl px-3 py-2 text-base font-extrabold text-ink/75 transition hover:-rotate-2 hover:bg-amber-200 hover:text-ink">{t}</button>
+              <button key={id} onClick={() => go(id)} className="whitespace-nowrap rounded-xl px-3 py-2 text-base font-extrabold text-ink/75 transition hover:bg-amber-200 hover:text-ink">{t}</button>
             ))}
           </nav>
           <div className="ml-auto flex items-center gap-2">
@@ -34750,23 +34813,23 @@ function LoginScreen({ onLogin }) {
         </div>
         <div className="dp-atlas" aria-hidden="true" />
         {menu && (
-          <div className="dp-pop border-b-2 border-ink bg-paper px-4 py-3 xl:hidden">
+          <div className="dp-pop border-b border-line bg-paper px-4 py-3 xl:hidden">
             {nav.map(([id, t]) => <button key={id} onClick={() => go(id)} className="block w-full rounded-xl px-3 py-3 text-left text-lg font-bold text-blue-900 hover:bg-blue-50">{t}</button>)}
           </div>
         )}
       </div>
 
       {/* Hero */}
-      <section className="relative overflow-hidden border-b-[3px] border-ink bg-blue-800">
+      <section className="relative overflow-hidden border-b border-line bg-blue-800">
         <div className="dp-girih pointer-events-none absolute inset-0" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-blue-950/80 via-transparent to-firuza-700/40" />
         <Doodle kind="sparkle" size={44} color="#FFD45C" className="dp-float absolute left-[46%] top-16 hidden lg:block" />
         <Doodle kind="loop" size={90} color="#6BDDD3" className="absolute bottom-40 left-[40%] hidden lg:block" />
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 pb-20 pt-14 md:px-8 lg:grid-cols-2 lg:pb-28 lg:pt-20">
           <div>
-            <span className="inline-flex -rotate-1 items-center gap-2 rounded-lg border-2 border-ink bg-paper px-4 py-1.5 text-base font-extrabold text-ink shadow-[3px_3px_0_#14213D]"><Sparkles size={18} className="text-anor-500" /> O‘zbekiston maktablari uchun • 5–11-sinflar</span>
+            <span className="inline-flex  items-center gap-2 rounded-lg border border-line bg-paper px-4 py-1.5 text-base font-extrabold text-ink shadow-[0_14px_30px_-16px_rgba(27,36,64,.35)]"><Sparkles size={18} className="text-anor-500" /> Ona tili va adabiyot • 8–9-sinflar</span>
             <h1 className="mt-6 text-4xl font-black leading-[1.08] text-white sm:text-5xl lg:text-7xl">
-              Darsni <span className="relative inline-block"><span className="relative z-10 text-amber-300 [text-shadow:4px_4px_0_#14213D]">o‘yinga</span><svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" preserveAspectRatio="none"><path className="dp-draw" d="M3 8 C 40 2, 70 12, 100 6 S 160 2, 197 8" stroke="#E2463F" strokeWidth="5" fill="none" strokeLinecap="round" /></svg></span> aylantiring!
+              Darsni <span className="relative inline-block"><span className="relative z-10 text-amber-300">o‘yinga</span><svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" preserveAspectRatio="none"><path className="dp-draw" d="M3 8 C 40 2, 70 12, 100 6 S 160 2, 197 8" stroke="#DCAE4A" strokeWidth="3" fill="none" strokeLinecap="round" strokeOpacity=".9" /></svg></span> aylantiring!
             </h1>
             <p className="mt-6 max-w-xl text-xl text-blue-100 md:text-2xl">Darslik asosidagi tushuntirish, {games.length} xil o‘yin, jamoalar va reyting — barchasi proyektor orqali, telefonsiz.</p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -34779,13 +34842,13 @@ function LoginScreen({ onLogin }) {
               ))}
             </div>
           </div>
-          <HeroMockup />
+          <Ravoq tone="dark" className="px-6 pb-2 pt-16 md:px-10"><HeroMockup /></Ravoq>
         </div>
         <div className="relative mx-auto -mt-6 grid max-w-6xl grid-cols-2 gap-5 px-4 pb-16 md:grid-cols-4 md:px-8">
           <StatBox value={topicCount} suffix="+" label="tayyor mavzu" icon={BookOpen} />
-          <StatBox value={games.length} label="xil o‘yin" icon={Dices} bg="bg-amber-200" tilt="rotate-2" tape="dp-tape-anor" />
-          <StatBox value={SUBJECTS.length} label="fan" icon={GraduationCap} bg="bg-firuza-100" tilt="-rotate-1" tape="dp-tape-gold" />
-          <StatBox value={4} label="o‘quvchi tanlash usuli" icon={UserCheck} bg="bg-anor-100" tilt="rotate-1" />
+          <StatBox value={games.length} label="xil o‘yin" icon={Dices} bg="bg-amber-50" tape="dp-tape-anor" />
+          <StatBox value={2} label="sinf: 8 va 9" icon={GraduationCap} bg="bg-firuza-50" tape="dp-tape-gold" />
+          <StatBox value={4} label="o‘quvchi tanlash usuli" icon={UserCheck} bg="bg-paper" />
         </div>
       </section>
 
@@ -34796,7 +34859,7 @@ function LoginScreen({ onLogin }) {
           {features.map((f) => (
             <div key={f.title} className={`dp-sticker dp-sticker-hover group relative overflow-hidden rounded-[2rem] bg-white p-7 ${f.wide ? 'md:col-span-2' : ''}`}>
               <div className="dp-girih-ink pointer-events-none absolute inset-y-0 right-0 w-40 opacity-90 [mask-image:linear-gradient(to_left,black,transparent)]" />
-              <span className={`relative inline-flex h-16 w-16 items-center justify-center rounded-2xl border-2 border-ink bg-gradient-to-br ${f.color} text-white transition group-hover:-rotate-6`}><f.icon size={32} /></span>
+              <span className={`relative inline-flex h-16 w-16 items-center justify-center rounded-2xl border border-line bg-gradient-to-br ${f.color} text-white transition group-hover:-rotate-6`}><f.icon size={32} /></span>
               <h3 className="relative mt-5 text-2xl font-black text-ink">{f.title}</h3>
               <p className="relative mt-2 text-lg text-slate-600">{f.text}</p>
             </div>
@@ -34805,7 +34868,7 @@ function LoginScreen({ onLogin }) {
       </section>
 
       {/* Demo */}
-      <section id="demo" className="scroll-mt-20 relative border-y-[3px] border-ink bg-firuza-50/80 px-4 py-20 md:px-8 md:py-28">
+      <section id="demo" className="scroll-mt-20 relative border-y border-line bg-firuza-50/80 px-4 py-20 md:px-8 md:py-28">
         <SectionHead kicker="Jonli demo" title="Kirmasdan turib o‘ynab ko‘ring" sub="Ikki jamoa: «Lochinlar» va «Burgutlar». Javob bering, ball to‘plang yoki barabanni aylantiring — darsda xuddi shunday ishlaydi." />
         <div className="mx-auto mt-12 max-w-5xl"><DemoArena /></div>
       </section>
@@ -34816,8 +34879,8 @@ function LoginScreen({ onLogin }) {
         <div className="mx-auto mt-14 grid max-w-6xl grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {games.map((g, i) => (
             <div key={g.id} className={`dp-sticker-soft dp-sticker-hover group relative rounded-3xl bg-white p-5 ${i % 3 === 0 ? 'rotate-[-.6deg]' : i % 3 === 1 ? 'rotate-[.5deg]' : ''}`} style={{ animationDelay: `${i * 40}ms` }}>
-              {(g.hot || g.fresh) && <span className={`absolute -right-2 -top-3 rotate-6 rounded-md border-2 border-ink px-2 py-0.5 text-xs font-black uppercase ${g.hot ? 'bg-anor-500 text-white' : 'bg-amber-400 text-ink'}`}>{g.hot ? 'Sevimli' : 'Yangi'}</span>}
-              <span className={`inline-flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-ink ${g.color} text-white transition group-hover:rotate-6 group-hover:scale-110`}><g.icon size={28} /></span>
+              {(g.hot || g.fresh) && <span className={`absolute -right-2 -top-3 rotate-6 rounded-md border border-line px-2 py-0.5 text-xs font-black uppercase ${g.hot ? 'bg-anor-500 text-white' : 'bg-amber-400 text-ink'}`}>{g.hot ? 'Sevimli' : 'Yangi'}</span>}
+              <span className={`inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-line ${g.color} text-white transition group-hover:rotate-6 group-hover:scale-110`}><g.icon size={28} /></span>
               <div className="mt-4 text-xl font-black text-ink">{g.name}</div>
               <div className="mt-1 text-base text-slate-500">{g.desc}</div>
             </div>
@@ -34826,15 +34889,15 @@ function LoginScreen({ onLogin }) {
       </section>
 
       {/* Qanday ishlaydi */}
-      <section id="qanday" className="scroll-mt-20 relative overflow-hidden border-y-[3px] border-ink bg-blue-950 px-4 py-20 md:px-8 md:py-28">
+      <section id="qanday" className="scroll-mt-20 relative overflow-hidden border-y border-line bg-blue-950 px-4 py-20 md:px-8 md:py-28">
         <div className="dp-girih pointer-events-none absolute inset-0 opacity-70" />
         <div className="relative">
           <SectionHead light kicker="Qanday ishlaydi" title="4 qadamda qiziqarli dars" sub="Darsga tayyorlanish — 1 daqiqa. Qolgan vaqt — o‘quvchilar bilan." />
           <div className="mx-auto mt-14 grid max-w-6xl gap-8 md:grid-cols-4 md:gap-12">
             {steps.map((s, i) => (
-              <div key={s.t} className={`dp-tape ${['', 'dp-tape-gold', 'dp-tape-anor', ''][i]} relative rounded-xl border-2 border-ink bg-paper p-7 pt-8 shadow-[6px_6px_0_#F5BF1F] ${['-rotate-2', 'rotate-1', '-rotate-1', 'rotate-2'][i]}`}>
+              <div key={s.t} className={`dp-tape ${['', 'dp-tape-gold', 'dp-tape-anor', ''][i]} relative rounded-xl border border-line bg-paper p-7 pt-8 shadow-[0_18px_40px_-18px_rgba(200,150,47,.55)] ${['', '', '', ''][i]}`}>
                 <div className="flex items-center justify-between">
-                  <span className="flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-ink bg-amber-400 text-ink"><s.icon size={28} /></span>
+                  <span className="flex h-14 w-14 items-center justify-center rounded-2xl border border-line bg-amber-400 text-ink"><s.icon size={28} /></span>
                   <span className="dp-hand text-7xl leading-none text-anor-500">{i + 1}</span>
                 </div>
                 <h3 className="mt-5 text-2xl font-black text-ink">{s.t}</h3>
@@ -34850,15 +34913,15 @@ function LoginScreen({ onLogin }) {
       <section className="px-4 py-20 md:px-8 md:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
           <div>
-            <span className="dp-hand inline-block -rotate-2 text-4xl text-firuza-600">Sinf xonasi uchun</span>
-            <h2 className="mt-2 text-3xl md:text-5xl font-black leading-tight text-ink">Dars paytida telefon <span className="dp-squiggle">shart emas</span></h2>
+            <span className="dp-hand inline-block  text-4xl text-firuza-600">Sinf xonasi uchun</span>
+            <h2 className="mt-2 text-3xl md:text-5xl font-black leading-tight text-ink">Dars paytida telefon <span className="dp-marker">shart emas</span></h2>
             <p className="mt-4 text-xl text-slate-600">Dars play o‘qituvchi kompyuteri va proyektor yoki interaktiv doska uchun yaratilgan. O‘quvchilar jamoa bo‘lib doskaga chiqadi, butun sinf ishtirok etadi.</p>
             <button onClick={() => go('demo')} className="dp-btn mt-8 inline-flex items-center gap-2 rounded-2xl bg-blue-600 px-6 py-4 text-lg font-black text-white hover:bg-blue-700"><MousePointerClick size={22} /> Demoni ochish</button>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {classroom.map(([I, t, d]) => (
               <div key={t} className="dp-sticker-soft flex items-start gap-4 rounded-3xl bg-white p-5">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border-2 border-ink bg-firuza-100 text-ink"><I size={26} /></span>
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-line bg-firuza-100 text-ink"><I size={26} /></span>
                 <div><div className="text-lg font-black text-ink">{t}</div><div className="text-base text-slate-500">{d}</div></div>
               </div>
             ))}
@@ -34867,21 +34930,21 @@ function LoginScreen({ onLogin }) {
       </section>
 
       {/* Fanlar */}
-      <section id="fanlar" className="scroll-mt-20 border-t-[3px] border-ink bg-amber-50/70 px-4 py-20 md:px-8 md:py-28">
-        <SectionHead kicker="Fanlar va sinflar" title={`${SUBJECTS.length} ta fan, 5–11-sinflar`} sub="Yashil belgi — darslik asosida to‘liq tayyorlangan sinflar. Qolganlarida namunaviy mavzular va o‘z savollaringiz." />
-        <div className="mx-auto mt-14 grid max-w-6xl grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+      <section id="fanlar" className="scroll-mt-20 border-t border-line bg-amber-50/70 px-4 py-20 md:px-8 md:py-28">
+        <SectionHead kicker="Fanlar va sinflar" title="Ona tili va adabiyot" sub="Yashil belgi — darslik va taqvim-mavzu reja asosida to‘liq tayyorlangan sinflar. Boshqa fanlar tez orada qo‘shiladi." />
+        <div className="mx-auto mt-14 grid max-w-4xl gap-6 md:grid-cols-2">
           {SUBJECTS.map((s) => {
             const ready = Object.entries(CONTENT[s.id] || {});
             return (
-              <div key={s.id} className={`rounded-3xl bg-white p-5 ${ready.length ? 'dp-sticker' : 'border-2 border-dashed border-ink/30'}`}>
-                <div className="flex items-center gap-3">
-                  <span className={`flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-ink ${s.color} text-white`}><s.icon size={24} /></span>
-                  <span className="text-xl font-black text-ink">{s.name}</span>
-                </div>
-                <div className="mt-4 flex flex-wrap gap-1.5">
-                  {ready.length ? ready.map(([g, arr]) => (
-                    <span key={g} className="inline-flex items-center gap-1 rounded-md border-2 border-ink bg-firuza-100 px-2 py-0.5 text-sm font-extrabold text-ink"><Check size={14} /> {g}-sinf • {arr.length}</span>
-                  )) : <span className="rounded-full bg-slate-100 px-3 py-1 text-sm font-bold text-slate-500">Namunaviy mavzular</span>}
+              <div key={s.id} className="dp-arch dp-arch-line dp-sticker relative overflow-hidden bg-white px-8 pb-8 pt-16 text-center">
+                <div className="dp-girih-ink pointer-events-none absolute inset-0 opacity-70 [mask-image:linear-gradient(to_bottom,black,transparent_70%)]" />
+                <span className={`relative mx-auto flex h-20 w-20 items-center justify-center rounded-3xl ${s.color} text-white shadow-[0_14px_30px_-16px_rgba(27,36,64,.6)]`}><s.icon size={40} /></span>
+                <div className="relative mt-5 text-3xl font-black text-ink">{s.name}</div>
+                <KoshinDivider className="relative mt-3" />
+                <div className="relative mt-5 flex flex-wrap justify-center gap-2">
+                  {ready.map(([g, arr]) => (
+                    <span key={g} className="inline-flex items-center gap-1.5 rounded-full border border-firuza-300 bg-firuza-50 px-4 py-1.5 text-base font-extrabold text-firuza-700"><Check size={16} strokeWidth={3} /> {g}-sinf • {arr.length} dars</span>
+                  ))}
                 </div>
               </div>
             );
@@ -34898,17 +34961,17 @@ function LoginScreen({ onLogin }) {
       </section>
 
       {/* Kirish */}
-      <section id="kirish" className="scroll-mt-20 relative overflow-hidden border-t-[3px] border-ink bg-blue-700 px-4 py-20 md:px-8 md:py-28">
+      <section id="kirish" className="scroll-mt-20 relative overflow-hidden border-t border-line bg-blue-700 px-4 py-20 md:px-8 md:py-28">
         <div className="dp-girih pointer-events-none absolute inset-0" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-blue-950/70 via-transparent to-firuza-700/40" />
-        <StarTile size={240} className="dp-spin-slow pointer-events-none absolute -bottom-28 -left-24 opacity-90" />
+        <Rosette size={300} color="#E8C673" inner="#7FCFC4" className="dp-spin-slow absolute -bottom-36 -left-28" opacity={0.55} />
         <div className="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
           <div className="text-white">
-            <h2 className="text-4xl md:text-6xl font-black leading-tight">Bugungi darsni <span className="text-amber-300 [text-shadow:4px_4px_0_#14213D]">boshqacha</span> o‘tkazing</h2>
+            <h2 className="text-4xl md:text-6xl font-black leading-tight">Bugungi darsni <span className="text-amber-300">boshqacha</span> o‘tkazing</h2>
             <p className="mt-5 text-xl text-blue-100">Kiring, fan va sinfni tanlang — bir daqiqada sinf o‘yinga tayyor.</p>
             <ul className="mt-8 space-y-3 text-lg font-semibold">
               {['Darslik asosidagi tayyor mavzular', `${games.length} xil o‘yin va 2–4 jamoa`, 'Baraban, kamera va ro‘yxat orqali tanlash', 'Sinf va maktab reytingi'].map((t) => (
-                <li key={t} className="flex items-center gap-3"><span className="flex h-8 w-8 items-center justify-center rounded-lg border-2 border-ink bg-amber-400 text-ink"><Check size={18} strokeWidth={3} /></span>{t}</li>
+                <li key={t} className="flex items-center gap-3"><span className="flex h-8 w-8 items-center justify-center rounded-lg border border-line bg-amber-400 text-ink"><Check size={18} strokeWidth={3} /></span>{t}</li>
               ))}
             </ul>
           </div>
@@ -34924,7 +34987,7 @@ function LoginScreen({ onLogin }) {
             <Logo size={40} showText={false} />
             <div>
               <div className="text-xl font-extrabold text-white">Dars play</div>
-              <div className="text-sm">O‘zbekiston maktablari uchun interaktiv darslar • 5–11-sinflar</div>
+              <div className="text-sm">O‘zbekiston maktablari uchun interaktiv darslar • Ona tili va adabiyot</div>
             </div>
           </div>
           <div className="flex flex-wrap justify-center gap-4 text-base font-semibold">
@@ -34941,7 +35004,7 @@ function LoginScreen({ onLogin }) {
 function StatCard({ icon: I, label, value }) {
   return (
     <div className="dp-sticker-soft flex items-center gap-4 rounded-3xl bg-white p-5">
-      <div className="flex h-14 w-14 -rotate-3 items-center justify-center rounded-2xl border-2 border-ink bg-amber-300 text-ink"><I size={28} /></div>
+      <div className="flex h-14 w-14  items-center justify-center rounded-2xl border border-line bg-amber-300 text-ink"><I size={28} /></div>
       <div>
         <div className="text-3xl font-black text-ink tabular-nums">{value}</div>
         <div className="text-base font-semibold text-slate-500">{label}</div>
@@ -36156,18 +36219,18 @@ function HomeScreen({ teacher, allowed = [], onStart, schoolClasses = [], onClas
       <div className="dp-sticker relative overflow-hidden rounded-[2rem] bg-blue-700 p-7 text-white md:p-12">
         <div className="dp-girih pointer-events-none absolute inset-0" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-blue-900/70 via-transparent to-firuza-700/50" />
-        <StarTile size={210} color="#F5BF1F" stroke="#14213D" className="dp-spin-slow pointer-events-none absolute -bottom-24 -right-20 opacity-90" />
+        <Rosette size={280} color="#E8C673" inner="#7FCFC4" className="dp-spin-slow absolute -bottom-32 -right-24" opacity={0.6} />
         <Doodle kind="sparkle" size={46} color="#FFD45C" className="dp-float pointer-events-none absolute right-[38%] top-8 hidden lg:block" />
         <Doodle kind="loop" size={70} color="#6BDDD3" className="pointer-events-none absolute bottom-6 left-[44%] hidden lg:block" />
         <div className="relative grid items-center gap-8 lg:grid-cols-[1.4fr_1fr]">
           <div>
-            <span className="inline-flex items-center gap-2 rounded-lg border-2 border-ink bg-paper px-3 py-1 text-base font-extrabold text-ink"><CalendarDays size={18} /> {dateStr}</span>
-            <h1 className="mt-5 text-4xl md:text-6xl font-black leading-[1.05] tracking-tight">{greet},<br /><span className="text-amber-300 [text-shadow:3px_3px_0_#14213D]">{teacher?.name || 'Ustoz'}</span>!</h1>
+            <span className="inline-flex items-center gap-2 rounded-lg border border-line bg-paper px-3 py-1 text-base font-extrabold text-ink"><CalendarDays size={18} /> {dateStr}</span>
+            <h1 className="mt-5 text-4xl md:text-6xl font-black leading-[1.05] tracking-tight">{greet},<br /><span className="text-amber-300">{teacher?.name || 'Ustoz'}</span>!</h1>
             <p className="mt-4 text-xl font-semibold text-blue-50">{teacher?.school} • <span className="dp-hand text-3xl text-amber-200">bugungi darsni o‘yinga aylantiramiz!</span></p>
             {pkg ? (
-              <span className="mt-3 inline-flex items-center gap-2 rounded-lg border-2 border-ink bg-firuza-500 px-3 py-1 text-base font-extrabold text-white"><BookOpen size={18} /> Fan: {pkg.name}</span>
+              <span className="mt-3 inline-flex items-center gap-2 rounded-lg border border-line bg-firuza-500 px-3 py-1 text-base font-extrabold text-white"><BookOpen size={18} /> Fan: {pkg.name}</span>
             ) : (
-              <p className="mt-4 rounded-2xl border-2 border-ink bg-anor-500 px-4 py-3 text-lg font-bold text-white">Hisobingizga hali fan biriktirilmagan. Dars play administratoriga murojaat qiling.</p>
+              <p className="mt-4 rounded-2xl border border-line bg-anor-500 px-4 py-3 text-lg font-bold text-white">Hisobingizga hali fan biriktirilmagan. Dars play administratoriga murojaat qiling.</p>
             )}
             <div className="mt-8 flex flex-wrap gap-4">
               <button onClick={onStart} disabled={!allowed.length} className="dp-btn dp-glow disabled:pointer-events-none disabled:opacity-40 inline-flex items-center gap-3 rounded-2xl bg-amber-400 px-8 py-4 text-2xl font-black text-ink hover:bg-amber-300">
@@ -36178,8 +36241,8 @@ function HomeScreen({ teacher, allowed = [], onStart, schoolClasses = [], onClas
             </div>
           </div>
           <div className="relative grid grid-cols-3 gap-4 lg:pb-6">
-            {[[School, schoolClasses.length, 'sinf', 'bg-paper', '-rotate-3'], [Users, totalStudents, 'o‘quvchi', 'bg-amber-200', 'rotate-2 translate-y-3'], [BookOpen, books.reduce((a, b) => a + b.n, 0), 'mavzu', 'bg-firuza-100', '-rotate-1']].map(([I, v, l, bg, tilt], i) => (
-              <div key={l} className={`dp-tape ${i === 1 ? 'dp-tape-anor' : ''} rounded-xl border-2 border-ink ${bg} ${tilt} p-4 pt-6 text-center text-ink shadow-[4px_4px_0_#14213D]`}>
+            {[[School, schoolClasses.length, 'sinf', 'bg-paper', ''], [Users, totalStudents, 'o‘quvchi', 'bg-amber-200', ' translate-y-3'], [BookOpen, books.reduce((a, b) => a + b.n, 0), 'mavzu', 'bg-firuza-100', '']].map(([I, v, l, bg, tilt], i) => (
+              <div key={l} className={`dp-tape ${i === 1 ? 'dp-tape-anor' : ''} rounded-xl border border-line ${bg} ${tilt} p-4 pt-6 text-center text-ink shadow-[0_14px_30px_-16px_rgba(27,36,64,.35)]`}>
                 <I size={26} className="mx-auto text-blue-700" />
                 <div className="mt-1 text-3xl md:text-4xl font-black tabular-nums">{v}</div>
                 <div className="dp-hand text-2xl leading-none text-slate-700">{l}</div>
@@ -36202,7 +36265,7 @@ function HomeScreen({ teacher, allowed = [], onStart, schoolClasses = [], onClas
                   const I = subj?.icon || BookOpen;
                   return (
                     <button key={r.topicId + r.classId} onClick={() => onResume(r)} className="dp-sticker dp-sticker-hover group flex items-center gap-4 rounded-2xl bg-paper p-4 text-left">
-                      <span className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border-2 border-ink ${subj?.color || 'bg-blue-600'} text-white`}><I size={28} /></span>
+                      <span className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-line ${subj?.color || 'bg-blue-600'} text-white`}><I size={28} /></span>
                       <span className="min-w-0 flex-1">
                         <span className="block truncate text-lg font-extrabold text-ink">{r.title}</span>
                         <span className="block text-sm font-semibold text-slate-500">{subj?.name} • {classLabel(cls)} • {timeAgo(r.at)}</span>
@@ -36217,7 +36280,7 @@ function HomeScreen({ teacher, allowed = [], onStart, schoolClasses = [], onClas
 
           <section className="dp-sticker-soft relative rounded-[2rem] bg-white p-6">
             <Doodle kind="arrow" size={64} color="#E2463F" className="absolute -top-9 right-10 hidden rotate-12 md:block" />
-            <span className="dp-hand absolute -top-9 right-28 hidden -rotate-3 text-3xl text-anor-500 md:block">bir bosishda!</span>
+            <span className="dp-hand absolute -top-9 right-28 hidden  text-3xl text-anor-500 md:block">bir bosishda!</span>
             <h2 className="flex items-center gap-2 text-2xl font-black text-ink"><Zap size={26} className="fill-amber-400 text-ink" /> <span className="dp-marker">Tayyor darsliklar</span></h2>
             <p className="mt-2 text-base font-semibold text-slate-500">Kerakli sinfga to‘g‘ridan-to‘g‘ri o‘ting — fan va sinfni qayta tanlash shart emas.</p>
             <div className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
@@ -36225,12 +36288,12 @@ function HomeScreen({ teacher, allowed = [], onStart, schoolClasses = [], onClas
                 <button key={s.id + g} onClick={() => onQuick(s.id, g)} className={`dp-sticker dp-sticker-hover group relative overflow-hidden rounded-2xl p-5 text-left ${['bg-paper', 'bg-firuza-50', 'bg-amber-50'][i % 3]}`}>
                   <span className="dp-girih-ink pointer-events-none absolute inset-y-0 right-0 w-24 opacity-80" />
                   <span className="pointer-events-none absolute -right-3 -top-3 text-7xl font-black text-ink/10">{g}</span>
-                  <span className={`relative inline-flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-ink ${s.color} text-white`}><s.icon size={26} /></span>
+                  <span className={`relative inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-line ${s.color} text-white`}><s.icon size={26} /></span>
                   <span className="relative mt-3 block text-xl font-black text-ink">{s.name} • {g}-sinf</span>
-                  <span className="relative mt-2 inline-flex items-center gap-1 rounded-md border-2 border-ink bg-white px-2 py-0.5 text-sm font-extrabold text-firuza-700"><Check size={14} strokeWidth={3} /> {n} ta mavzu</span>
+                  <span className="relative mt-2 inline-flex items-center gap-1 rounded-md border border-line bg-white px-2 py-0.5 text-sm font-extrabold text-firuza-700"><Check size={14} strokeWidth={3} /> {n} ta mavzu</span>
                 </button>
               ))}
-              <button onClick={onStart} disabled={!allowed.length} className="disabled:hidden flex flex-col items-center justify-center gap-2 rounded-2xl border-[3px] border-dashed border-ink/40 p-5 text-ink transition hover:border-ink hover:bg-amber-50">
+              <button onClick={onStart} disabled={!allowed.length} className="disabled:hidden flex flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-line/40 p-5 text-ink transition hover:border-line hover:bg-amber-50">
                 <LayoutGrid size={28} />
                 <span className="text-lg font-black">{allowed.length > 1 ? 'Fanlarim' : 'Boshqa sinflar'}</span>
               </button>
@@ -36264,7 +36327,7 @@ function HomeScreen({ teacher, allowed = [], onStart, schoolClasses = [], onClas
           </section>
 
           {/* Kun maslahati — yopishtirilgan qog‘oz */}
-          <section className="dp-tape dp-tape-gold relative rotate-[1.2deg] rounded-sm bg-amber-200 p-6 pt-8 shadow-[6px_8px_0_rgba(20,33,61,.18)]">
+          <section className="dp-tape dp-tape-gold relative  rounded-sm bg-amber-200 p-6 pt-8 shadow-[0_14px_30px_-16px_rgba(27,36,64,.35)]">
             <Doodle kind="pencil" size={52} className="absolute -bottom-5 -right-4 -rotate-12" />
             <h2 className="flex items-center gap-2 text-xl font-black text-ink"><Lightbulb size={24} className="fill-amber-50" /> Kun maslahati: {tip[0]}</h2>
             <p className="dp-hand mt-2 text-[1.7rem] leading-snug text-ink/85">{tip[1]}</p>
@@ -36288,9 +36351,9 @@ function StepBar({ items, current, onJump }) {
               <button
                 disabled={!done}
                 onClick={() => onJump(it.key)}
-                className={`inline-flex items-center gap-2 rounded-xl px-3 py-2 text-base font-extrabold transition ${active ? 'border-2 border-ink bg-amber-400 text-ink' : done ? 'bg-firuza-50 text-ink hover:bg-firuza-100' : 'text-slate-400'}`}
+                className={`inline-flex items-center gap-2 rounded-xl px-3 py-2 text-base font-extrabold transition ${active ? 'border border-line bg-amber-400 text-ink' : done ? 'bg-firuza-50 text-ink hover:bg-firuza-100' : 'text-slate-400'}`}
               >
-                <span className={`flex h-7 w-7 items-center justify-center rounded-full text-sm ${active ? 'border-2 border-ink bg-white text-ink' : done ? 'bg-firuza-500 text-white' : 'bg-slate-100 text-slate-400'}`}>{done ? <Check size={16} /> : i + 1}</span>
+                <span className={`flex h-7 w-7 items-center justify-center rounded-full text-sm ${active ? 'border border-line bg-white text-ink' : done ? 'bg-firuza-500 text-white' : 'bg-slate-100 text-slate-400'}`}>{done ? <Check size={16} /> : i + 1}</span>
                 <span className="whitespace-nowrap">{done && it.value ? it.value : it.label}</span>
               </button>
               {i < items.length - 1 && <ChevronRight size={18} strokeWidth={3} className="text-amber-500" />}
@@ -36320,10 +36383,10 @@ function SubjectScreen({ onPick, onBack, onQuick, allowed = [] }) {
             <div key={s.id} className="dp-sticker group relative overflow-hidden rounded-[2rem] bg-white p-6">
               <div className="dp-girih-ink pointer-events-none absolute inset-y-0 right-0 w-48 [mask-image:linear-gradient(to_left,black,transparent)]" />
               <button onClick={() => onPick(s.id)} className="flex w-full items-center gap-4 text-left">
-                <span className={`relative flex h-20 w-20 shrink-0 items-center justify-center rounded-3xl border-[2.5px] border-ink ${s.color} text-white transition group-hover:-rotate-6`}><s.icon size={42} /></span>
+                <span className={`relative flex h-20 w-20 shrink-0 items-center justify-center rounded-3xl border border-line ${s.color} text-white transition group-hover:-rotate-6`}><s.icon size={42} /></span>
                 <span className="relative">
                   <span className="block text-3xl font-black text-ink">{s.name}</span>
-                  <span className="mt-1 inline-flex items-center gap-1 rounded-md border-2 border-ink bg-firuza-100 px-2 py-0.5 text-sm font-extrabold text-ink"><Check size={14} strokeWidth={3} /> Darslik asosida tayyor</span>
+                  <span className="mt-1 inline-flex items-center gap-1 rounded-md border border-line bg-firuza-100 px-2 py-0.5 text-sm font-extrabold text-ink"><Check size={14} strokeWidth={3} /> Darslik asosida tayyor</span>
                 </span>
               </button>
               <div className="relative mt-5 flex flex-wrap gap-2">
@@ -36342,7 +36405,7 @@ function SubjectScreen({ onPick, onBack, onQuick, allowed = [] }) {
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
         {rest.map((s) => (
           <button key={s.id} onClick={() => onPick(s.id)} className="dp-sticker-soft dp-sticker-hover flex items-center gap-3 rounded-2xl bg-white p-4 text-left">
-            <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border-2 border-ink ${s.color} text-white`}><s.icon size={26} /></span>
+            <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-line ${s.color} text-white`}><s.icon size={26} /></span>
             <span className="text-lg font-black text-ink">{s.name}</span>
           </button>
         ))}
@@ -36350,7 +36413,7 @@ function SubjectScreen({ onPick, onBack, onQuick, allowed = [] }) {
       {!mine.length && (
         <p className="rounded-3xl border-2 border-rose-200 bg-rose-50 p-6 text-xl font-bold text-rose-800">Hisobingizga hali fan biriktirilmagan. Dars play administratoriga murojaat qiling.</p>
       )}
-      <p className="mt-8 text-base font-semibold text-slate-400">Boshqa fanlarni ulash uchun Dars play administratoriga murojaat qiling.</p>
+      <p className="mt-8 text-base font-semibold text-slate-400">Boshqa fanlar tez orada qo‘shiladi.</p>
     </div>
   );
 }
@@ -36359,7 +36422,7 @@ function GradeScreen({ subject, onPick, onBack, schoolClasses = [] }) {
   return (
     <div className="mx-auto max-w-7xl px-4 py-6 md:px-8">
       <PageTitle title="Sinfni tanlang" subtitle={subject?.name} onBack={onBack} />
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-7">
+      <div className="grid grid-cols-2 gap-5 sm:grid-cols-4 lg:grid-cols-7">
         {GRADES.map((g) => {
           const arr = CONTENT[subject?.id]?.[g];
           const cls = schoolClasses.filter((c) => c.grade === g).length;
@@ -36367,16 +36430,18 @@ function GradeScreen({ subject, onPick, onBack, schoolClasses = [] }) {
             <button
               key={g}
               onClick={() => onPick(g)}
-              className={`relative flex flex-col items-center justify-center gap-1 overflow-hidden rounded-3xl p-6 ${arr ? 'dp-sticker dp-sticker-hover dp-girih bg-blue-600 text-white' : 'dp-sticker-soft dp-sticker-hover bg-white text-ink'}`}
+              className={`dp-arch dp-arch-line group relative flex flex-col items-center justify-end gap-1 overflow-hidden px-4 pb-6 pt-12 transition ${arr ? 'dp-sticker dp-sticker-hover bg-gradient-to-b from-blue-600 to-blue-900 text-white' : 'dp-sticker-soft dp-sticker-hover bg-paper text-ink'}`}
             >
-              <span className={`text-6xl font-black ${arr ? '[text-shadow:3px_3px_0_#14213D]' : ''}`}>{g}</span>
-              <span className={`text-lg font-bold ${arr ? 'text-blue-100' : 'text-slate-400'}`}>sinf</span>
+              {arr && <span className="dp-girih pointer-events-none absolute inset-0 opacity-80" />}
+              {arr && <StarTile size={30} color="#DCAE4A" className="absolute left-1/2 top-4 -translate-x-1/2 transition group-hover:rotate-45" />}
+              <span className="relative text-6xl font-black leading-none">{g}</span>
+              <span className={`relative text-lg font-bold ${arr ? 'text-blue-100' : 'text-slate-400'}`}>sinf</span>
               {arr ? (
-                <span className="mt-2 whitespace-nowrap rounded-md border-2 border-ink bg-amber-400 px-2 py-0.5 text-sm font-black text-ink">{arr.length} mavzu</span>
+                <span className="relative mt-2 whitespace-nowrap rounded-full bg-amber-300 px-3 py-0.5 text-sm font-black text-amber-950">{arr.length} mavzu</span>
               ) : (
-                <span className="mt-2 text-sm font-semibold text-slate-400">namunaviy</span>
+                <span className="mt-2 text-sm font-semibold text-slate-400">tez orada</span>
               )}
-              {cls > 0 && <span className={`absolute right-2 top-2 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-bold ${arr ? 'bg-white/20 text-white' : 'bg-blue-50 text-blue-700'}`}><Users size={12} /> {cls}</span>}
+              {cls > 0 && <span className={`absolute right-1/2 top-[3.2rem] hidden translate-x-1/2 items-center gap-1 rounded-full px-2 py-0.5 text-xs font-bold ${arr ? 'bg-white/15 text-white' : 'bg-blue-50 text-blue-700'}`}><Users size={12} /> {cls}</span>}
             </button>
           );
         })}
@@ -36388,15 +36453,15 @@ function GradeScreen({ subject, onPick, onBack, schoolClasses = [] }) {
 function TopicCard({ t, i, onPick, onEditSet, onDeleteSet }) {
   const [confirmDel, setConfirmDel] = useState(false);
   return (
-    <div className="dp-sticker-soft flex flex-col rounded-3xl bg-white p-6 transition hover:-translate-y-0.5 hover:shadow-[6px_7px_0_#14213D]">
+    <div className="dp-sticker-soft flex flex-col rounded-3xl bg-white p-6 transition hover:-translate-y-0.5 hover:shadow-[0_22px_40px_-20px_rgba(27,36,64,.38)]">
       <div className="flex items-start gap-4">
         {t.theme && !t.custom ? (
-          <div className={`relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border-2 border-ink bg-gradient-to-br text-3xl ${t.theme.grad}`}>
+          <div className={`relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-line bg-gradient-to-br text-3xl ${t.theme.grad}`}>
             {t.theme.emoji}
-            <span className="absolute -bottom-2 -right-2 flex h-6 min-w-6 items-center justify-center rounded-md border-2 border-ink bg-amber-400 px-1 text-xs font-black text-ink">{i + 1}</span>
+            <span className="absolute -bottom-2 -right-2 flex h-6 min-w-6 items-center justify-center rounded-md border border-line bg-amber-400 px-1 text-xs font-black text-ink">{i + 1}</span>
           </div>
         ) : (
-          <div className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border-2 border-ink text-2xl font-black text-white ${t.custom ? 'bg-violet-600' : 'bg-blue-700'}`}>
+          <div className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-line text-2xl font-black text-white ${t.custom ? 'bg-violet-600' : 'bg-blue-700'}`}>
             {t.custom ? <NotebookPen size={28} /> : i + 1}
           </div>
         )}
@@ -36514,7 +36579,7 @@ function TopicScreen({ subject, grade, topics, onPick, onBack, lastTopicId, clas
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Mavzuni qidirish..."
-            className="w-full rounded-2xl border-2 border-ink/70 bg-white py-3 pl-12 pr-4 text-lg font-semibold outline-none focus:border-ink focus:shadow-[4px_4px_0_#F5BF1F]"
+            className="w-full rounded-2xl border border-line/70 bg-white py-3 pl-12 pr-4 text-lg font-semibold outline-none focus:border-line focus:shadow-[0_18px_40px_-18px_rgba(200,150,47,.55)]"
           />
         </div>
         {!q && groups.length > 2 && (
@@ -36550,7 +36615,7 @@ function TopicScreen({ subject, grade, topics, onPick, onBack, lastTopicId, clas
                 className="flex w-full items-center gap-3 rounded-3xl px-5 py-4 text-left transition hover:bg-amber-50"
                 aria-expanded={isOpen}
               >
-                <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border-2 border-ink text-white ${g.custom ? 'bg-violet-600' : 'bg-firuza-500'}`}>
+                <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-line text-white ${g.custom ? 'bg-violet-600' : 'bg-firuza-500'}`}>
                   {g.custom ? <NotebookPen size={26} /> : <BookOpen size={26} />}
                 </div>
                 <div className="min-w-0 flex-1">
@@ -36836,13 +36901,13 @@ const fmtDate = (ms) => {
 const PERIODS = [['all', 'Hammasi', null], ['month', '30 kun', 30], ['week', '7 kun', 7]];
 const periodDays = (p) => (PERIODS.find((x) => x[0] === p) || PERIODS[0])[2];
 const teamPoints = (r) => (r.teams || []).reduce((a, t) => a + (Number(t.score) || 0), 0);
-const MEDAL = ['border-2 border-ink bg-amber-400 text-ink', 'border-2 border-ink bg-slate-300 text-ink', 'border-2 border-ink bg-[#E9A06B] text-ink'];
+const MEDAL = ['border-2 border-line bg-amber-400 text-ink', 'border-2 border-line bg-slate-300 text-ink', 'border-2 border-line bg-[#E9A06B] text-ink'];
 
 /* ---------- Shohsupa: yuqori 3 o‘rin ---------- */
 const PODIUM = [
-  { place: 1, block: 'bg-amber-400', avatar: 'bg-amber-300', h: 'h-44 md:h-56', title: 'Oltin', delay: 900, shadow: 'shadow-[0_8px_0_#14213D]' },
-  { place: 2, block: 'bg-slate-300', avatar: 'bg-slate-200', h: 'h-32 md:h-44', title: 'Kumush', delay: 450, shadow: 'shadow-[0_8px_0_#14213D]' },
-  { place: 3, block: 'bg-[#E9A06B]', avatar: 'bg-[#F6C9A6]', h: 'h-28 md:h-32', title: 'Bronza', delay: 0, shadow: 'shadow-[0_8px_0_#14213D]' },
+  { place: 1, block: 'bg-amber-400', avatar: 'bg-amber-300', h: 'h-44 md:h-56', title: 'Oltin', delay: 900, shadow: 'shadow-[0_18px_34px_-18px_rgba(27,36,64,.45)]' },
+  { place: 2, block: 'bg-slate-300', avatar: 'bg-slate-200', h: 'h-32 md:h-44', title: 'Kumush', delay: 450, shadow: 'shadow-[0_18px_34px_-18px_rgba(27,36,64,.45)]' },
+  { place: 3, block: 'bg-[#E9A06B]', avatar: 'bg-[#F6C9A6]', h: 'h-28 md:h-32', title: 'Bronza', delay: 0, shadow: 'shadow-[0_18px_34px_-18px_rgba(27,36,64,.45)]' },
 ];
 
 function Podium({ items, unit = 'ball', title, icon: TitleIcon = Trophy }) {
@@ -36860,7 +36925,7 @@ function Podium({ items, unit = 'ball', title, icon: TitleIcon = Trophy }) {
       <Doodle kind="sparkle" size={26} color="#FFFFFF" className="dp-float2 absolute right-[24%] top-28 hidden md:block" />
       {title && (
         <h3 className="relative flex items-center justify-center gap-2 text-center text-2xl md:text-3xl font-black">
-          <TitleIcon size={30} className="text-amber-300" /> <span className="[text-shadow:3px_3px_0_#14213D]">{title}</span>
+          <TitleIcon size={30} className="text-amber-300" /> <span className="">{title}</span>
         </h3>
       )}
       <div className="relative mx-auto mt-4 grid max-w-4xl items-end gap-3 md:gap-5" style={{ gridTemplateColumns: `repeat(${order.length}, minmax(0, 1fr))` }}>
@@ -36872,23 +36937,23 @@ function Podium({ items, unit = 'ball', title, icon: TitleIcon = Trophy }) {
               {/* Ishtirokchi */}
               <div className="dp-drop relative flex w-full flex-col items-center text-center" style={{ animationDelay: `${p.delay + 450}ms` }}>
                 {i === 0 && <Crown size={46} className="dp-wiggle -mb-2 fill-amber-300 text-ink" strokeWidth={2} />}
-                <div className={`relative flex items-center justify-center rounded-full border-[3px] border-ink ${p.avatar} font-black text-ink shadow-[4px_4px_0_#14213D] ${i === 0 ? 'h-24 w-24 text-3xl md:h-28 md:w-28 md:text-4xl' : 'h-16 w-16 text-xl md:h-20 md:w-20 md:text-2xl'}`}>
+                <div className={`relative flex items-center justify-center rounded-full border border-line ${p.avatar} font-black text-ink shadow-[0_14px_30px_-16px_rgba(27,36,64,.35)] ${i === 0 ? 'h-24 w-24 text-3xl md:h-28 md:w-28 md:text-4xl' : 'h-16 w-16 text-xl md:h-20 md:w-20 md:text-2xl'}`}>
                   {it.badge || initials(it.name)}
-                  <span className={`absolute -bottom-2 -right-2 flex h-9 w-9 items-center justify-center rounded-full border-2 border-ink ${p.block} text-base font-black text-ink`}>{p.place}</span>
+                  <span className={`absolute -bottom-2 -right-2 flex h-9 w-9 items-center justify-center rounded-full border border-line ${p.block} text-base font-black text-ink`}>{p.place}</span>
                 </div>
-                <div className={`mt-3 line-clamp-2 w-full px-1 font-black leading-tight md:line-clamp-none md:truncate ${i === 0 ? 'text-2xl md:text-3xl text-amber-300 [text-shadow:2px_2px_0_#14213D]' : 'text-lg md:text-2xl'}`} title={it.name}>{it.name}</div>
+                <div className={`mt-3 line-clamp-2 w-full px-1 font-black leading-tight md:line-clamp-none md:truncate ${i === 0 ? 'text-2xl md:text-3xl text-amber-300' : 'text-lg md:text-2xl'}`} title={it.name}>{it.name}</div>
                 {it.sub && <div className="hidden w-full truncate px-1 text-sm md:block md:text-base font-semibold text-blue-100">{it.sub}</div>}
-                <div className={`mt-2 inline-flex items-baseline gap-1 rounded-lg border-2 border-ink bg-paper px-3 py-0.5 font-black text-ink ${i === 0 ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl'}`}>
+                <div className={`mt-2 inline-flex items-baseline gap-1 rounded-lg border border-line bg-paper px-3 py-0.5 font-black text-ink ${i === 0 ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl'}`}>
                   <span className="tabular-nums">{it.value}</span><span className="dp-hand text-lg md:text-xl text-slate-600">{unit}</span>
                 </div>
               </div>
               {/* Pog‘ona */}
               <div
-                className={`dp-rise relative mt-4 w-full overflow-hidden rounded-t-2xl border-[3px] border-b-0 border-ink ${p.block} ${p.h} ${i === 0 ? 'dp-shine' : ''}`}
+                className={`dp-rise relative mt-4 w-full overflow-hidden rounded-t-2xl border border-b-0 border-line ${p.block} ${p.h} ${i === 0 ? 'dp-shine' : ''}`}
                 style={{ animationDelay: `${p.delay}ms` }}
               >
                 <div className="dp-girih-ink pointer-events-none absolute inset-0 opacity-90" />
-                <div className="absolute inset-x-0 top-0 h-3 border-b-2 border-ink/40 bg-white/40" />
+                <div className="absolute inset-x-0 top-0 h-3 border-b border-line/40 bg-white/40" />
                 <div className="relative flex h-full flex-col items-center justify-center text-ink">
                   <span className={`font-black leading-none [text-shadow:3px_3px_0_rgba(255,255,255,.6)] ${i === 0 ? 'text-7xl md:text-8xl' : 'text-5xl md:text-6xl'}`}>{p.place}</span>
                   <span className="dp-hand text-xl md:text-2xl">{p.title}</span>
@@ -36905,13 +36970,13 @@ function Podium({ items, unit = 'ball', title, icon: TitleIcon = Trophy }) {
 
 function RankBadge({ k, active = true }) {
   return (
-    <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-lg font-black ${k < 3 && active ? MEDAL[k] : 'border-2 border-ink/20 bg-paper text-slate-500'}`}>{k + 1}</span>
+    <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-lg font-black ${k < 3 && active ? MEDAL[k] : 'border border-line/20 bg-paper text-slate-500'}`}>{k + 1}</span>
   );
 }
 
 function EmptyBox({ text }) {
   return (
-    <div className="rounded-3xl border-[3px] border-dashed border-ink/30 bg-white p-10 text-center">
+    <div className="rounded-3xl border border-dashed border-line bg-white p-10 text-center">
       <Trophy size={56} className="mx-auto text-amber-400" />
       <p className="mt-3 text-xl text-slate-500">{text}</p>
     </div>
@@ -36971,11 +37036,11 @@ function ClassRatingPanel({ cls, period, loadResults }) {
               O‘yinlar saqlangan, lekin ballar hali o‘quvchilarga bog‘lanmagan. O‘yin oldidan «Ro‘yxat» orqali jamoalarga avtomatik bo‘ling yoki o‘yin paytida «O‘quvchi tanlash» tugmasidan foydalaning.
             </div>
           )}
-          <div className="grid grid-cols-[2.5rem_1fr_4.5rem] items-center gap-2 border-b-2 border-ink bg-amber-100 px-4 py-3 text-sm font-black uppercase tracking-wide text-ink md:grid-cols-[4rem_1fr_repeat(4,7rem)] md:text-base">
+          <div className="grid grid-cols-[2.5rem_1fr_4.5rem] items-center gap-2 border-b border-line bg-amber-100 px-4 py-3 text-sm font-black uppercase tracking-wide text-ink md:grid-cols-[4rem_1fr_repeat(4,7rem)] md:text-base">
             <span>#</span><span>O‘quvchi</span><span className="text-right">Ball</span><span className="hidden text-right md:block">Jamoa</span><span className="hidden text-right md:block">Shaxsiy</span><span className="hidden text-right md:block">G‘alaba</span>
           </div>
           {rating.map((s, k) => (
-            <div key={s.name} className={`grid grid-cols-[2.5rem_1fr_4.5rem] items-center gap-2 border-t border-dashed border-ink/15 px-4 py-3 md:grid-cols-[4rem_1fr_repeat(4,7rem)] ${k < 3 && s.total > 0 ? 'bg-amber-50' : k % 2 ? 'bg-paper/60' : ''}`}>
+            <div key={s.name} className={`grid grid-cols-[2.5rem_1fr_4.5rem] items-center gap-2 border-t border-dashed border-line/15 px-4 py-3 md:grid-cols-[4rem_1fr_repeat(4,7rem)] ${k < 3 && s.total > 0 ? 'bg-amber-50' : k % 2 ? 'bg-paper/60' : ''}`}>
               <RankBadge k={k} active={s.total > 0} />
               <span className="truncate text-xl font-bold text-ink">{s.name}</span>
               <span className="text-right text-2xl font-black text-blue-700 tabular-nums">{s.total}</span>
@@ -37009,7 +37074,7 @@ function ClassRatingPanel({ cls, period, loadResults }) {
                 </div>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {sorted.map((t, k) => (
-                    <span key={k} className={`inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-lg font-bold ${k === 0 && !tie && sorted.length > 1 ? 'border-2 border-ink bg-amber-300 text-ink' : 'bg-slate-100 text-slate-700'}`}>
+                    <span key={k} className={`inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-lg font-bold ${k === 0 && !tie && sorted.length > 1 ? 'border border-line bg-amber-300 text-ink' : 'bg-slate-100 text-slate-700'}`}>
                       {k === 0 && !tie && sorted.length > 1 && <Crown size={18} />} {t.name}: <span className="tabular-nums">{t.score}</span>
                     </span>
                   ))}
@@ -37061,9 +37126,9 @@ function SchoolRatingPanel({ school, schoolClasses, period, loadSchoolResults })
         {topStudents.length > 0 && <Podium title="Maktab yulduzlari" icon={Medal} items={topStudents.map((s) => ({ id: `${s.label}-${s.name}`, name: s.name, sub: `${s.label} sinf`, value: s.total }))} />}
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="dp-sticker-soft overflow-hidden rounded-3xl bg-white">
-            <h3 className="flex items-center gap-2 border-b-2 border-ink bg-amber-100 px-5 py-3 text-xl font-black text-ink"><School size={22} /> Sinflar reytingi</h3>
+            <h3 className="flex items-center gap-2 border-b border-line bg-amber-100 px-5 py-3 text-xl font-black text-ink"><School size={22} /> Sinflar reytingi</h3>
             {byClass.map((e, k) => (
-              <div key={e.cls.id} className={`flex items-center gap-3 border-t border-dashed border-ink/15 px-5 py-3 ${k < 3 && e.points > 0 ? 'bg-amber-50' : ''}`}>
+              <div key={e.cls.id} className={`flex items-center gap-3 border-t border-dashed border-line/15 px-5 py-3 ${k < 3 && e.points > 0 ? 'bg-amber-50' : ''}`}>
                 <RankBadge k={k} active={e.points > 0} />
                 <span className="flex-1 text-xl font-black text-ink">{classLabel(e.cls)} <span className="text-base font-semibold text-slate-400">• {e.cls.students.length} o‘quvchi</span></span>
                 <span className="text-base text-slate-500">{e.games} o‘yin</span>
@@ -37072,14 +37137,14 @@ function SchoolRatingPanel({ school, schoolClasses, period, loadSchoolResults })
             ))}
           </div>
           <div className="dp-sticker-soft overflow-hidden rounded-3xl bg-white">
-            <h3 className="flex items-center gap-2 border-b-2 border-ink bg-firuza-100 px-5 py-3 text-xl font-black text-ink"><Medal size={22} /> Maktabning eng faol o‘quvchilari</h3>
+            <h3 className="flex items-center gap-2 border-b border-line bg-firuza-100 px-5 py-3 text-xl font-black text-ink"><Medal size={22} /> Maktabning eng faol o‘quvchilari</h3>
             {topStudents.length === 0 ? (
               <p className="px-5 py-6 text-lg text-slate-500">Ballar hali o‘quvchilarga bog‘lanmagan. Jamoalarga bo‘lib yoki «O‘quvchi tanlash» bilan o‘ynang.</p>
             ) : topStudents.map((s, k) => (
-              <div key={`${s.label}-${s.name}`} className={`flex items-center gap-3 border-t border-dashed border-ink/15 px-5 py-3 ${k < 3 ? 'bg-amber-50' : ''}`}>
+              <div key={`${s.label}-${s.name}`} className={`flex items-center gap-3 border-t border-dashed border-line/15 px-5 py-3 ${k < 3 ? 'bg-amber-50' : ''}`}>
                 <RankBadge k={k} />
                 <span className="min-w-0 flex-1 truncate text-xl font-bold text-ink">{s.name}</span>
-                <span className="rounded-md border-2 border-ink/70 bg-firuza-50 px-2 py-0.5 text-base font-extrabold text-ink">{s.label}</span>
+                <span className="rounded-md border border-line/70 bg-firuza-50 px-2 py-0.5 text-base font-extrabold text-ink">{s.label}</span>
                 <span className="w-16 text-right text-2xl font-black text-blue-700 tabular-nums">{s.total}</span>
               </div>
             ))}
@@ -37104,7 +37169,7 @@ function GlobalRatingPanel({ mySchool, period, loadGlobal }) {
     <>
       <div className="mb-5 flex flex-wrap items-center gap-3">
         <p className="flex-1 text-lg text-slate-500">Barcha maktablar bo‘yicha jamlangan natijalar. O‘quvchilarning ismlari bu yerda ko‘rsatilmaydi.</p>
-        <div className="inline-flex rounded-2xl border-2 border-ink bg-white p-1">
+        <div className="inline-flex rounded-2xl border border-line bg-white p-1">
           {[['points', 'Jami ball'], ['avg', 'O‘rtacha ball']].map(([id, label]) => (
             <button key={id} onClick={() => setSortBy(id)} className={`rounded-xl px-4 py-2 text-base font-black ${sortBy === id ? 'bg-firuza-500 text-white' : 'text-ink hover:bg-firuza-50'}`}>{label}</button>
           ))}
@@ -37115,14 +37180,14 @@ function GlobalRatingPanel({ mySchool, period, loadGlobal }) {
         <Podium title="Eng faol maktablar" icon={Building2} unit={sortBy === 'avg' ? 'o‘rtacha' : 'ball'} items={schools.filter((s) => (sortBy === 'avg' ? s.avg : s.points) > 0).map((s) => ({ id: s.school, name: s.school, badge: (s.school.match(/\d+/) || [initials(s.school)])[0], sub: `${s.games} o‘yin • ${s.classes} sinf${normSchool(s.school) === mine ? ' • sizning maktab' : ''}`, value: sortBy === 'avg' ? s.avg : s.points }))} />
         <div className="grid gap-6 lg:grid-cols-[3fr_2fr]">
           <div className="dp-sticker-soft overflow-hidden rounded-3xl bg-white">
-            <h3 className="flex items-center gap-2 border-b-2 border-ink bg-amber-100 px-5 py-3 text-xl font-black text-ink"><Building2 size={22} /> Maktablar reytingi</h3>
+            <h3 className="flex items-center gap-2 border-b border-line bg-amber-100 px-5 py-3 text-xl font-black text-ink"><Building2 size={22} /> Maktablar reytingi</h3>
             {schools.map((s, k) => {
               const isMine = normSchool(s.school) === mine;
               return (
-                <div key={s.school} className={`flex items-center gap-3 border-t border-dashed border-ink/15 px-5 py-3 ${isMine ? 'bg-firuza-50 ring-2 ring-inset ring-firuza-500' : k < 3 ? 'bg-amber-50' : ''}`}>
+                <div key={s.school} className={`flex items-center gap-3 border-t border-dashed border-line/15 px-5 py-3 ${isMine ? 'bg-firuza-50 ring-2 ring-inset ring-firuza-500' : k < 3 ? 'bg-amber-50' : ''}`}>
                   <RankBadge k={k} />
                   <div className="min-w-0 flex-1">
-                    <div className="truncate text-xl font-black text-ink">{s.school}{isMine && <span className="ml-2 rounded-md border-2 border-ink bg-firuza-500 px-2 py-0.5 text-sm text-white">Sizning maktab</span>}</div>
+                    <div className="truncate text-xl font-black text-ink">{s.school}{isMine && <span className="ml-2 rounded-md border border-line bg-firuza-500 px-2 py-0.5 text-sm text-white">Sizning maktab</span>}</div>
                     <div className="text-base text-slate-500">{s.games} o‘yin • {s.classes} sinf • {s.teachers} o‘qituvchi • o‘rtacha {s.avg}</div>
                   </div>
                   <span className="text-2xl font-black text-blue-700 tabular-nums">{sortBy === 'avg' ? s.avg : s.points}</span>
@@ -37131,9 +37196,9 @@ function GlobalRatingPanel({ mySchool, period, loadGlobal }) {
             })}
           </div>
           <div className="dp-sticker-soft overflow-hidden rounded-3xl bg-white">
-            <h3 className="flex items-center gap-2 border-b-2 border-ink bg-firuza-100 px-5 py-3 text-xl font-black text-ink"><School size={22} /> Eng faol sinflar</h3>
+            <h3 className="flex items-center gap-2 border-b border-line bg-firuza-100 px-5 py-3 text-xl font-black text-ink"><School size={22} /> Eng faol sinflar</h3>
             {data.classes.slice(0, 20).map((c, k) => (
-              <div key={`${c.school}-${c.grade}-${c.letter}`} className={`flex items-center gap-3 border-t border-dashed border-ink/15 px-5 py-3 ${k < 3 ? 'bg-amber-50' : ''}`}>
+              <div key={`${c.school}-${c.grade}-${c.letter}`} className={`flex items-center gap-3 border-t border-dashed border-line/15 px-5 py-3 ${k < 3 ? 'bg-amber-50' : ''}`}>
                 <RankBadge k={k} />
                 <div className="min-w-0 flex-1">
                   <div className="text-xl font-black text-ink">{c.grade}-{c.letter}</div>
@@ -37169,7 +37234,7 @@ function RatingScreen({ cls, school, schoolClasses, initialScope, loadResults, l
             </button>
           ))}
         </div>
-        <div className="ml-auto inline-flex rounded-2xl border-2 border-ink bg-white p-1">
+        <div className="ml-auto inline-flex rounded-2xl border border-line bg-white p-1">
           {PERIODS.map(([id, label]) => (
             <button key={id} onClick={() => setPeriod(id)} className={`rounded-xl px-4 py-2 text-base font-black ${period === id ? 'bg-amber-400 text-ink' : 'text-ink/70 hover:bg-amber-50'}`}>{label}</button>
           ))}
@@ -37186,7 +37251,7 @@ function AdminRatingTab({ loadGlobal }) {
   const [period, setPeriod] = useState('all');
   return (
     <div>
-      <div className="mb-5 inline-flex rounded-2xl border-2 border-ink bg-white p-1">
+      <div className="mb-5 inline-flex rounded-2xl border border-line bg-white p-1">
         {PERIODS.map(([id, label]) => (
           <button key={id} onClick={() => setPeriod(id)} className={`rounded-xl px-4 py-2 text-base font-black ${period === id ? 'bg-amber-400 text-ink' : 'text-ink/70 hover:bg-amber-50'}`}>{label}</button>
         ))}
@@ -37484,7 +37549,7 @@ function SlideExtras({ s }) {
       )}
 
       {s.doc && (
-        <div className="relative mt-6 rotate-[-0.6deg] rounded-2xl bg-[#fdf6e3] p-6 md:p-8 shadow-xl ring-1 ring-amber-200" style={{ backgroundImage: 'repeating-linear-gradient(transparent, transparent 38px, rgba(180,140,60,.15) 39px)' }}>
+        <div className="relative mt-6  rounded-2xl bg-[#fdf6e3] p-6 md:p-8 shadow-xl ring-1 ring-amber-200" style={{ backgroundImage: 'repeating-linear-gradient(transparent, transparent 38px, rgba(180,140,60,.15) 39px)' }}>
           <div className="mb-2 flex items-center gap-2 text-base font-black uppercase tracking-widest text-amber-800"><Mail size={20} /> {s.doc.title}</div>
           <p className="font-serif text-2xl md:text-3xl italic leading-[39px] text-stone-800">{s.doc.text}</p>
           {s.doc.from && <p className="mt-3 text-right text-lg font-bold text-amber-800">— {s.doc.from}</p>}
@@ -37647,7 +37712,7 @@ function LessonScreen({ topic, onBack, onGames }) {
               <li key={k}>
                 <button
                   onClick={() => setI(k)}
-                  className={`flex w-full items-start gap-2 rounded-xl px-3 py-2 text-left text-base font-semibold transition ${k === i ? 'border-2 border-ink bg-amber-300 font-extrabold text-ink' : k < i ? 'text-ink hover:bg-amber-50' : 'text-slate-500 hover:bg-amber-50'}`}
+                  className={`flex w-full items-start gap-2 rounded-xl px-3 py-2 text-left text-base font-semibold transition ${k === i ? 'border border-line bg-amber-300 font-extrabold text-ink' : k < i ? 'text-ink hover:bg-amber-50' : 'text-slate-500 hover:bg-amber-50'}`}
                 >
                   <span className="w-6 shrink-0 font-extrabold">{k + 1}.</span>
                   <span>{sl.title}</span>
@@ -37665,10 +37730,10 @@ function LessonScreen({ topic, onBack, onGames }) {
           </div>
           {topic.theme ? (
             <div key={i} className="dp-pop dp-sticker min-h-[460px] overflow-hidden rounded-[2rem] bg-white">
-              <div className={`relative flex items-center gap-4 overflow-hidden border-b-[2.5px] border-ink bg-gradient-to-r px-6 py-4 text-white md:px-10 ${topic.theme.grad}`}>
+              <div className={`relative flex items-center gap-4 overflow-hidden border-b border-line bg-gradient-to-r px-6 py-4 text-white md:px-10 ${topic.theme.grad}`}>
                 <div className="dp-girih pointer-events-none absolute inset-0 opacity-70" />
                 <span className="pointer-events-none absolute -right-4 -top-6 select-none text-[8rem] leading-none opacity-20">{s.emoji || topic.theme.emoji}</span>
-                <span className="relative flex h-16 w-16 shrink-0 -rotate-3 items-center justify-center rounded-2xl border-2 border-ink bg-paper text-4xl">{s.emoji || topic.theme.emoji}</span>
+                <span className="relative flex h-16 w-16 shrink-0  items-center justify-center rounded-2xl border border-line bg-paper text-4xl">{s.emoji || topic.theme.emoji}</span>
                 <div className="relative min-w-0">
                   <div className="truncate text-sm font-extrabold uppercase tracking-widest text-white/80">{topic.theme.tag}</div>
                   <div className="text-lg font-bold">{i + 1}-slayd / {slides.length}</div>
@@ -37699,7 +37764,7 @@ function LessonScreen({ topic, onBack, onGames }) {
             </button>
             <div className="hidden flex-1 items-center justify-center gap-1.5 sm:flex">
               {slides.map((_, k) => (
-                <button key={k} aria-label={`${k + 1}-slayd`} onClick={() => setI(k)} className={`h-3 rounded-full transition-all ${k === i ? 'w-10 border-2 border-ink bg-amber-400' : k < i ? 'w-3 bg-firuza-500' : 'w-3 bg-slate-300 hover:bg-firuza-300'}`} />
+                <button key={k} aria-label={`${k + 1}-slayd`} onClick={() => setI(k)} className={`h-3 rounded-full transition-all ${k === i ? 'w-10 border border-line bg-amber-400' : k < i ? 'w-3 bg-firuza-500' : 'w-3 bg-slate-300 hover:bg-firuza-300'}`} />
               ))}
             </div>
             {last ? (
@@ -37739,7 +37804,7 @@ function GameCard({ g, n, onPick, topic, featured, small }) {
     >
       {n && <span className="dp-hand absolute right-5 top-2 text-6xl leading-none text-amber-400">{n}</span>}
       {featured && <div className="dp-girih-ink pointer-events-none absolute inset-x-0 bottom-0 h-20 [mask-image:linear-gradient(to_top,black,transparent)]" />}
-      <div className={`relative flex items-center justify-center rounded-3xl border-[2.5px] border-ink ${g.color} text-white transition group-enabled:group-hover:-rotate-6 ${small ? 'h-14 w-14' : 'h-20 w-20'}`}>
+      <div className={`relative flex items-center justify-center rounded-3xl border border-line ${g.color} text-white transition group-enabled:group-hover:-rotate-6 ${small ? 'h-14 w-14' : 'h-20 w-20'}`}>
         <I size={small ? 30 : 42} />
       </div>
       <div>
@@ -37747,7 +37812,7 @@ function GameCard({ g, n, onPick, topic, featured, small }) {
         <div className={`mt-1 ${small ? 'text-base' : 'text-lg'} text-slate-500`}>{g.desc}</div>
       </div>
       {unavailable && <span className="rounded-full bg-slate-100 px-3 py-1 text-sm font-bold text-slate-500">Bu mavzuda hali yo‘q</span>}
-      {!unavailable && (g.fresh || g.hot) && !small && <span className="absolute left-24 top-5 rotate-[-6deg] rounded-md border-2 border-ink bg-anor-500 px-2 py-0.5 text-sm font-black text-white md:left-28 md:top-7">Yangi</span>}
+      {!unavailable && (g.fresh || g.hot) && !small && <span className="absolute left-24 top-5  rounded-md border border-line bg-anor-500 px-2 py-0.5 text-sm font-black text-white md:left-28 md:top-7">Yangi</span>}
     </button>
   );
 }
@@ -37755,7 +37820,7 @@ function GameCard({ g, n, onPick, topic, featured, small }) {
 function GameSelectScreen({ topic, topicIndex, onPick, onBack }) {
   const featuredIds = useMemo(() => featuredGames(topic, topicIndex), [topic, topicIndex]);
   const featured = featuredIds.map((id) => GAMES.find((g) => g.id === id)).filter(Boolean);
-  const rest = GAMES.filter((g) => !g.disabled && !featuredIds.includes(g.id));
+  const rest = GAMES.filter((g) => !g.disabled && !featuredIds.includes(g.id) && !(g.id === 'units' && !gameAvailable('units', topic)));
   const [showAll, setShowAll] = useState(false);
   const random = () => {
     const pool = featuredIds.length ? featuredIds : rest.filter((g) => gameAvailable(g.id, topic)).map((g) => g.id);
@@ -37765,7 +37830,7 @@ function GameSelectScreen({ topic, topicIndex, onPick, onBack }) {
     <div className="mx-auto max-w-6xl px-4 py-8 md:px-8">
       <PageTitle title="O‘yinni tanlang" subtitle={topic?.title} onBack={onBack} />
       <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
-        <div className="dp-hand inline-flex -rotate-1 items-center gap-2 text-3xl text-anor-500">
+        <div className="dp-hand inline-flex  items-center gap-2 text-3xl text-anor-500">
           <Doodle kind="sparkle" size={26} color="#E2463F" /> bu darsning o‘yinlari
         </div>
         <button onClick={random} className="dp-btn inline-flex items-center gap-2 rounded-2xl bg-amber-400 px-5 py-3 text-xl font-black text-ink hover:bg-amber-300">
@@ -38572,7 +38637,7 @@ function QuizGame({ topic, award, nextTurn, onFinish }) {
   return (
     <div>
       <div className="mb-3 text-center text-xl font-bold text-blue-600">Savol {idx + 1} / {questions.length}</div>
-      <h2 key={idx} className="dp-pop dp-girih-ink mb-6 rounded-3xl border-2 border-dashed border-ink/40 bg-paper p-6 text-center text-3xl md:text-4xl font-black text-ink">{q.q}</h2>
+      <h2 key={idx} className="dp-pop dp-girih-ink mb-6 rounded-3xl border border-dashed border-line/40 bg-paper p-6 text-center text-3xl md:text-4xl font-black text-ink">{q.q}</h2>
       <div className="grid gap-4 md:grid-cols-2">
         {q.opts.map((o, i) => {
           const reveal = picked !== null;
@@ -38583,7 +38648,7 @@ function QuizGame({ topic, award, nextTurn, onFinish }) {
               onClick={() => choose(i)}
               className={`dp-btn flex items-center gap-4 rounded-3xl ${colors[i]} px-6 py-6 text-left text-2xl md:text-3xl font-black text-white ${state}`}
             >
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border-2 border-ink bg-white text-2xl text-ink">{letters[i]}</span>
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-line bg-white text-2xl text-ink">{letters[i]}</span>
               <span className="flex-1">{o.text}</span>
               {reveal && o.correct && <CheckCircle2 size={36} />}
             </button>
@@ -39583,9 +39648,9 @@ function Scoreboard({ teams, turn, adjust }) {
         const st = TEAM_STYLES[i];
         const active = i === turn && teams.length > 1;
         return (
-          <div key={i} className={`relative flex items-center gap-3 rounded-2xl p-3 transition ${active ? `dp-sticker ${st.light} -translate-y-1` : 'border-2 border-ink/25 bg-white'}`}>
+          <div key={i} className={`relative flex items-center gap-3 rounded-2xl p-3 transition ${active ? `dp-sticker ${st.light} -translate-y-1` : 'border-2 border-line/25 bg-white'}`}>
             {active && <Doodle kind="sparkle" size={26} color="#F5BF1F" className="dp-wiggle absolute -right-2 -top-3" />}
-            <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border-2 border-ink ${st.bg} text-white`}>
+            <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-line ${st.bg} text-white`}>
               {teams.length === 1 ? <User size={26} /> : <Users size={26} />}
             </div>
             <div className="min-w-0 flex-1">
@@ -40167,7 +40232,7 @@ function PlayScreen({ game, topic, teams, turn, award, nextTurn, adjust, gameKey
       <div className="mb-5 flex flex-wrap items-center gap-4">
         <BackButton onClick={onBack} />
         <div className="flex flex-1 items-center gap-3 min-w-0">
-          <div className={`flex h-14 w-14 shrink-0 -rotate-3 items-center justify-center rounded-2xl border-[2.5px] border-ink ${game.color} text-white`}><GameIcon size={30} /></div>
+          <div className={`flex h-14 w-14 shrink-0  items-center justify-center rounded-2xl border border-line ${game.color} text-white`}><GameIcon size={30} /></div>
           <div className="min-w-0">
             <h1 className="truncate text-2xl md:text-3xl font-black text-ink">{game.name}</h1>
             <p className="truncate text-lg text-slate-500">{topic.title}</p>
@@ -40945,7 +41010,7 @@ export default function DarsPlayApp() {
       {safeStep !== 'login' && <footer className="relative bg-paper pb-5 pt-7 text-center text-base font-semibold text-slate-500"><div className="dp-atlas-thin absolute inset-x-0 top-0" aria-hidden="true" />
         <span className="inline-flex items-center gap-2"><School size={18} /> Dars play — O‘zbekiston maktablari uchun interaktiv darslar</span>
         <span className="mx-3">•</span>
-        <span className="inline-flex items-center gap-2"><GraduationCap size={18} /> 5–11-sinflar</span>
+        <span className="inline-flex items-center gap-2"><GraduationCap size={18} /> Ona tili va adabiyot • 8–9-sinflar</span>
       </footer>}
     </div>
   );

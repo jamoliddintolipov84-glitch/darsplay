@@ -1,130 +1,196 @@
 @import "tailwindcss";
 
 /* ============================================================
-   DARS PLAY — «Milliy + daftar» dizayn tizimi
-   Ranglar: lojuvard (Samarqand koshinlari ko‘ki), firuza, oltin, anor.
-   Tailwind’ning blue/amber shkalalari lojuvard/oltinga almashtirilgan —
-   shuning uchun eski blue-* klasslar avtomatik yangi rangda chiqadi.
+   DARS PLAY — «Koshin va Ravoq» dizayn tizimi
+   G‘oya: ganch devor (iliq fon), sirlangan koshin (tugmalar),
+   mehrob ravog‘i (sinf kartalari), girih va islimiy bezaklar.
+   Ko‘zni charchatmaslik uchun: ingichka chegaralar, yumshoq soyalar,
+   qiyshaygan elementlar yo‘q, bitta asosiy rang (lojuvard) + oltin urg‘u.
+   Tailwind’ning blue/amber shkalalari lojuvard/oltinga almashtirilgan.
    ============================================================ */
 @theme {
   --font-sans: 'Nunito Variable', 'Nunito', system-ui, sans-serif;
-  --font-hand: 'Caveat', 'Comic Sans MS', cursive;
+  --font-hand: 'Lora', Georgia, 'Times New Roman', serif;
+  --font-serif: 'Lora', Georgia, 'Times New Roman', serif;
 
-  --color-blue-50:  #EFF3FE;
-  --color-blue-100: #DDE5FB;
-  --color-blue-200: #BFCDF5;
-  --color-blue-300: #93A9EB;
-  --color-blue-400: #6280DC;
-  --color-blue-500: #3A5BCB;
-  --color-blue-600: #2445B0;
-  --color-blue-700: #1D3693;
-  --color-blue-800: #1A2E76;
-  --color-blue-900: #182860;
-  --color-blue-950: #0F1838;
+  /* Lojuvard — Samarqand koshinlarining chuqur ko‘ki */
+  --color-blue-50:  #EEF2FA;
+  --color-blue-100: #DCE4F4;
+  --color-blue-200: #BACAE8;
+  --color-blue-300: #8CA5D6;
+  --color-blue-400: #5F7FC2;
+  --color-blue-500: #3D60B0;
+  --color-blue-600: #2B4C9B;
+  --color-blue-700: #233F84;
+  --color-blue-800: #1D336C;
+  --color-blue-900: #182A58;
+  --color-blue-950: #101C3B;
 
-  --color-amber-50:  #FFF9E8;
-  --color-amber-100: #FFF0C2;
-  --color-amber-200: #FFE28A;
-  --color-amber-300: #FFD45C;
-  --color-amber-400: #F5BF1F;
-  --color-amber-500: #E3A70B;
-  --color-amber-600: #C08406;
-  --color-amber-700: #976309;
-  --color-amber-800: #7A4F0E;
-  --color-amber-900: #653F10;
-  --color-amber-950: #3A2104;
+  /* Oltin / za’faron — yumshoq, ko‘zni qamashtirmaydi */
+  --color-amber-50:  #FCF7EA;
+  --color-amber-100: #F8EDCF;
+  --color-amber-200: #F1DCA3;
+  --color-amber-300: #E8C673;
+  --color-amber-400: #DCAE4A;
+  --color-amber-500: #C8962F;
+  --color-amber-600: #A87A22;
+  --color-amber-700: #86601D;
+  --color-amber-800: #6B4D1C;
+  --color-amber-900: #58401B;
+  --color-amber-950: #33230A;
 
-  --color-firuza-50:  #E9FBF9;
-  --color-firuza-100: #C9F4EF;
-  --color-firuza-300: #6BDDD3;
-  --color-firuza-500: #0EA5A4;
-  --color-firuza-600: #0B8584;
-  --color-firuza-700: #0D6A6A;
-  --color-anor-100: #FDE3E1;
-  --color-anor-400: #F0726A;
-  --color-anor-500: #E2463F;
-  --color-anor-600: #C4302A;
-  --color-ink:   #14213D;
-  --color-paper: #FBF8F1;
+  --color-firuza-50:  #ECF8F6;
+  --color-firuza-100: #D2EFEA;
+  --color-firuza-300: #7FCFC4;
+  --color-firuza-500: #2A9D8F;
+  --color-firuza-600: #23827A;
+  --color-firuza-700: #1E6964;
+  --color-anor-100: #F8E1DD;
+  --color-anor-400: #DC7468;
+  --color-anor-500: #C4503F;
+  --color-anor-600: #A63E30;
+
+
+  /* Binafsha va indigo — yumshatilgan (ko‘zni qamashtirmasligi uchun) */
+  --color-violet-50:  #F4F1F8;
+  --color-violet-100: #E7E0F0;
+  --color-violet-200: #D0C3E2;
+  --color-violet-300: #B19ECD;
+  --color-violet-400: #9077B4;
+  --color-violet-500: #775C9E;
+  --color-violet-600: #634A88;
+  --color-violet-700: #523D72;
+  --color-violet-800: #43335C;
+  --color-violet-900: #382B4C;
+  --color-indigo-50:  #EFF1F8;
+  --color-indigo-100: #DFE3F1;
+  --color-indigo-200: #C0C8E3;
+  --color-indigo-300: #97A3CF;
+  --color-indigo-400: #6E7DB9;
+  --color-indigo-500: #5262A3;
+  --color-indigo-600: #42508C;
+  --color-indigo-700: #364273;
+  --color-indigo-800: #2D375E;
+  --color-indigo-900: #262E4D;
+
+
+  /* Yorqin «neon» ranglar milliy ohangga moslab yumshatilgan */
+  --color-fuchsia-500: #B3507E;
+  --color-fuchsia-600: #9C3F6B;
+  --color-fuchsia-700: #82335A;
+  --color-orange-400: #E59A5C;
+  --color-orange-500: #D97B3A;
+  --color-orange-600: #BC642A;
+  --color-rose-400: #E07A73;
+  --color-rose-500: #CF5048;
+  --color-rose-600: #B53F38;
+  --color-rose-700: #95332E;
+  --color-sky-500: #3B8FC4;
+  --color-sky-600: #2F78A8;
+  --color-sky-700: #286389;
+
+  --color-ink:   #1B2440;
+  --color-paper: #FBF7EF;   /* kartalar ichidagi iliq oq */
+  --color-ganch: #F4EEE2;   /* sahifa foni */
+  --color-line:  #E2D7C2;   /* ingichka chegara */
+  --color-line-strong: #CDBB98;
 }
 
 html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-sans);
   color: var(--color-ink);
-  background-color: var(--color-paper);
+  background-color: var(--color-ganch);
+  -webkit-font-smoothing: antialiased;
 }
+::selection { background: rgba(220,174,74,.35); }
 
-/* Daftar varag‘i: katak + chap tomonda qizil hoshiya chizig‘i */
+/* Sahifa foni: ganch devor + juda och girih naqshi (daftar katagi o‘rniga) */
 .dp-paper {
-  background-color: var(--color-paper);
+  background-color: var(--color-ganch);
   background-image:
-    linear-gradient(90deg, transparent 0 46px, rgba(226,70,63,.28) 46px 48px, transparent 48px),
-    linear-gradient(rgba(36,69,176,.075) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(36,69,176,.075) 1px, transparent 1px);
-  background-size: 100% 100%, 28px 28px, 28px 28px;
+    radial-gradient(1200px 500px at 50% -120px, rgba(255,255,255,.75), transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%239C8455' stroke-opacity='0.07' stroke-width='1.2' stroke-linejoin='round'%3E%3Cpath d='M91.5 52.3 L93.4 66.6 L107.7 68.5 L99.0 80.0 L107.7 91.5 L93.4 93.4 L91.5 107.7 L80.0 99.0 L68.5 107.7 L66.6 93.4 L52.3 91.5 L61.0 80.0 L52.3 68.5 L66.6 66.6 L68.5 52.3 L80.0 61.0Z M11.5 -27.7 L13.4 -13.4 L27.7 -11.5 L19.0 0.0 L27.7 11.5 L13.4 13.4 L11.5 27.7 L0.0 19.0 L-11.5 27.7 L-13.4 13.4 L-27.7 11.5 L-19.0 0.0 L-27.7 -11.5 L-13.4 -13.4 L-11.5 -27.7 L-0.0 -19.0Z M171.5 -27.7 L173.4 -13.4 L187.7 -11.5 L179.0 0.0 L187.7 11.5 L173.4 13.4 L171.5 27.7 L160.0 19.0 L148.5 27.7 L146.6 13.4 L132.3 11.5 L141.0 0.0 L132.3 -11.5 L146.6 -13.4 L148.5 -27.7 L160.0 -19.0Z M11.5 132.3 L13.4 146.6 L27.7 148.5 L19.0 160.0 L27.7 171.5 L13.4 173.4 L11.5 187.7 L0.0 179.0 L-11.5 187.7 L-13.4 173.4 L-27.7 171.5 L-19.0 160.0 L-27.7 148.5 L-13.4 146.6 L-11.5 132.3 L-0.0 141.0Z M171.5 132.3 L173.4 146.6 L187.7 148.5 L179.0 160.0 L187.7 171.5 L173.4 173.4 L171.5 187.7 L160.0 179.0 L148.5 187.7 L146.6 173.4 L132.3 171.5 L141.0 160.0 L132.3 148.5 L146.6 146.6 L148.5 132.3 L160.0 141.0Z M80.0 50.0 L80.0 0 M80.0 110.0 L80.0 160 M50.0 80.0 L0 80.0 M110.0 80.0 L160 80.0'/%3E%3Ccircle cx='80.0' cy='80.0' r='6'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 100% 100%, 160px 160px;
   background-attachment: fixed;
-}
-@media (max-width: 768px) {
-  .dp-paper { background-image: linear-gradient(rgba(36,69,176,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(36,69,176,.07) 1px, transparent 1px); background-size: 24px 24px, 24px 24px; }
 }
 
 /* Naqshlar */
-.dp-girih { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.16' stroke-width='1.6' stroke-linejoin='round'%3E%3Crect x='30' y='30' width='36' height='36'/%3E%3Crect x='30' y='30' width='36' height='36' transform='rotate(45 48 48)'/%3E%3Ccircle cx='48' cy='48' r='7'/%3E%3Cpath d='M0 0 L22.5 22.5 M96 0 L73.5 22.5 M0 96 L22.5 73.5 M96 96 L73.5 73.5 M48 0 V22.5 M48 96 V73.5 M0 48 H22.5 M96 48 H73.5'/%3E%3C/g%3E%3C/svg%3E"); background-size: 96px 96px; }
-.dp-girih-ink { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Cg fill='none' stroke='%231D3693' stroke-opacity='.10' stroke-width='1.6' stroke-linejoin='round'%3E%3Crect x='30' y='30' width='36' height='36'/%3E%3Crect x='30' y='30' width='36' height='36' transform='rotate(45 48 48)'/%3E%3Ccircle cx='48' cy='48' r='7'/%3E%3Cpath d='M0 0 L22.5 22.5 M96 0 L73.5 22.5 M0 96 L22.5 73.5 M96 96 L73.5 73.5 M48 0 V22.5 M48 96 V73.5 M0 48 H22.5 M96 48 H73.5'/%3E%3C/g%3E%3C/svg%3E"); background-size: 96px 96px; }
-.dp-atlas { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='14' viewBox='0 0 64 14'%3E%3Crect width='64' height='14' fill='%231D3693'/%3E%3Cpath d='M0 7 L8 0 L16 7 L8 14 Z' fill='%230EA5A4'/%3E%3Cpath d='M16 7 L24 1 L32 7 L24 13 Z' fill='%23F5BF1F'/%3E%3Cpath d='M32 7 L40 0 L48 7 L40 14 Z' fill='%23E2463F'/%3E%3Cpath d='M48 7 L56 1 L64 7 L56 13 Z' fill='%23F5BF1F'/%3E%3Cpath d='M4 7 L8 4 L12 7 L8 10 Z M36 7 L40 4 L44 7 L40 10 Z' fill='%23FBF8F1'/%3E%3Cpath d='M22 7 L24 5.5 L26 7 L24 8.5 Z M54 7 L56 5.5 L58 7 L56 8.5 Z' fill='%231D3693'/%3E%3C/svg%3E"); background-size: 64px 14px; background-repeat: repeat-x; height: 14px; }
-.dp-atlas-thin { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='14' viewBox='0 0 64 14'%3E%3Crect width='64' height='14' fill='%231D3693'/%3E%3Cpath d='M0 7 L8 0 L16 7 L8 14 Z' fill='%230EA5A4'/%3E%3Cpath d='M16 7 L24 1 L32 7 L24 13 Z' fill='%23F5BF1F'/%3E%3Cpath d='M32 7 L40 0 L48 7 L40 14 Z' fill='%23E2463F'/%3E%3Cpath d='M48 7 L56 1 L64 7 L56 13 Z' fill='%23F5BF1F'/%3E%3Cpath d='M4 7 L8 4 L12 7 L8 10 Z M36 7 L40 4 L44 7 L40 10 Z' fill='%23FBF8F1'/%3E%3Cpath d='M22 7 L24 5.5 L26 7 L24 8.5 Z M54 7 L56 5.5 L58 7 L56 8.5 Z' fill='%231D3693'/%3E%3C/svg%3E"); background-size: 40px 9px; background-repeat: repeat-x; height: 9px; }
+.dp-girih { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.06' stroke-width='1.2' stroke-linejoin='round'%3E%3Cpath d='M71.5 32.3 L73.4 46.6 L87.7 48.5 L79.0 60.0 L87.7 71.5 L73.4 73.4 L71.5 87.7 L60.0 79.0 L48.5 87.7 L46.6 73.4 L32.3 71.5 L41.0 60.0 L32.3 48.5 L46.6 46.6 L48.5 32.3 L60.0 41.0Z M11.5 -27.7 L13.4 -13.4 L27.7 -11.5 L19.0 0.0 L27.7 11.5 L13.4 13.4 L11.5 27.7 L0.0 19.0 L-11.5 27.7 L-13.4 13.4 L-27.7 11.5 L-19.0 0.0 L-27.7 -11.5 L-13.4 -13.4 L-11.5 -27.7 L-0.0 -19.0Z M131.5 -27.7 L133.4 -13.4 L147.7 -11.5 L139.0 0.0 L147.7 11.5 L133.4 13.4 L131.5 27.7 L120.0 19.0 L108.5 27.7 L106.6 13.4 L92.3 11.5 L101.0 0.0 L92.3 -11.5 L106.6 -13.4 L108.5 -27.7 L120.0 -19.0Z M11.5 92.3 L13.4 106.6 L27.7 108.5 L19.0 120.0 L27.7 131.5 L13.4 133.4 L11.5 147.7 L0.0 139.0 L-11.5 147.7 L-13.4 133.4 L-27.7 131.5 L-19.0 120.0 L-27.7 108.5 L-13.4 106.6 L-11.5 92.3 L-0.0 101.0Z M131.5 92.3 L133.4 106.6 L147.7 108.5 L139.0 120.0 L147.7 131.5 L133.4 133.4 L131.5 147.7 L120.0 139.0 L108.5 147.7 L106.6 133.4 L92.3 131.5 L101.0 120.0 L92.3 108.5 L106.6 106.6 L108.5 92.3 L120.0 101.0Z M60.0 30.0 L60.0 0 M60.0 90.0 L60.0 120 M30.0 60.0 L0 60.0 M90.0 60.0 L120 60.0'/%3E%3Ccircle cx='60.0' cy='60.0' r='6'/%3E%3C/g%3E%3C/svg%3E"); background-size: 120px 120px; }
+.dp-girih-ink { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%238A6A2F' stroke-opacity='0.09' stroke-width='1.2' stroke-linejoin='round'%3E%3Cpath d='M71.5 32.3 L73.4 46.6 L87.7 48.5 L79.0 60.0 L87.7 71.5 L73.4 73.4 L71.5 87.7 L60.0 79.0 L48.5 87.7 L46.6 73.4 L32.3 71.5 L41.0 60.0 L32.3 48.5 L46.6 46.6 L48.5 32.3 L60.0 41.0Z M11.5 -27.7 L13.4 -13.4 L27.7 -11.5 L19.0 0.0 L27.7 11.5 L13.4 13.4 L11.5 27.7 L0.0 19.0 L-11.5 27.7 L-13.4 13.4 L-27.7 11.5 L-19.0 0.0 L-27.7 -11.5 L-13.4 -13.4 L-11.5 -27.7 L-0.0 -19.0Z M131.5 -27.7 L133.4 -13.4 L147.7 -11.5 L139.0 0.0 L147.7 11.5 L133.4 13.4 L131.5 27.7 L120.0 19.0 L108.5 27.7 L106.6 13.4 L92.3 11.5 L101.0 0.0 L92.3 -11.5 L106.6 -13.4 L108.5 -27.7 L120.0 -19.0Z M11.5 92.3 L13.4 106.6 L27.7 108.5 L19.0 120.0 L27.7 131.5 L13.4 133.4 L11.5 147.7 L0.0 139.0 L-11.5 147.7 L-13.4 133.4 L-27.7 131.5 L-19.0 120.0 L-27.7 108.5 L-13.4 106.6 L-11.5 92.3 L-0.0 101.0Z M131.5 92.3 L133.4 106.6 L147.7 108.5 L139.0 120.0 L147.7 131.5 L133.4 133.4 L131.5 147.7 L120.0 139.0 L108.5 147.7 L106.6 133.4 L92.3 131.5 L101.0 120.0 L92.3 108.5 L106.6 106.6 L108.5 92.3 L120.0 101.0Z M60.0 30.0 L60.0 0 M60.0 90.0 L60.0 120 M30.0 60.0 L0 60.0 M90.0 60.0 L120 60.0'/%3E%3Ccircle cx='60.0' cy='60.0' r='6'/%3E%3C/g%3E%3C/svg%3E"); background-size: 120px 120px; }
 
-/* Stiker kartalar: qalin siyoh chegara + siljigan soya */
+/* Koshin hoshiya — ingichka bezak tasmasi */
+.dp-atlas { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='10' viewBox='0 0 48 10'%3E%3Crect width='48' height='10' fill='%231D336C'/%3E%3Cpath d='M0 5 L6 0 L12 5 L6 10 Z M24 5 L30 0 L36 5 L30 10 Z' fill='%232A9D8F'/%3E%3Cpath d='M12 5 L18 1 L24 5 L18 9 Z M36 5 L42 1 L48 5 L42 9 Z' fill='%23284A9E'/%3E%3Ccircle cx='18' cy='5' r='1.6' fill='%23DCAE4A'/%3E%3Ccircle cx='42' cy='5' r='1.6' fill='%23DCAE4A'/%3E%3Cpath d='M6 3 L8 5 L6 7 L4 5 Z M30 3 L32 5 L30 7 L28 5 Z' fill='%23F5EFE3'/%3E%3C/svg%3E"); background-size: 48px 10px; background-repeat: repeat-x; height: 10px; }
+.dp-atlas-thin { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='10' viewBox='0 0 48 10'%3E%3Crect width='48' height='10' fill='%231D336C'/%3E%3Cpath d='M0 5 L6 0 L12 5 L6 10 Z M24 5 L30 0 L36 5 L30 10 Z' fill='%232A9D8F'/%3E%3Cpath d='M12 5 L18 1 L24 5 L18 9 Z M36 5 L42 1 L48 5 L42 9 Z' fill='%23284A9E'/%3E%3Ccircle cx='18' cy='5' r='1.6' fill='%23DCAE4A'/%3E%3Ccircle cx='42' cy='5' r='1.6' fill='%23DCAE4A'/%3E%3Cpath d='M6 3 L8 5 L6 7 L4 5 Z M30 3 L32 5 L30 7 L28 5 Z' fill='%23F5EFE3'/%3E%3C/svg%3E"); background-size: 34px 7px; background-repeat: repeat-x; height: 7px; }
+
+/* Kartalar: ingichka ganch chegara + yumshoq qatlamli soya */
 .dp-sticker {
-  border: 2.5px solid var(--color-ink) !important;
-  box-shadow: 5px 5px 0 var(--color-ink);
-  transition: transform .15s ease, box-shadow .15s ease;
+  border: 1px solid var(--color-line) !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,.9) inset, 0 1px 2px rgba(27,36,64,.05), 0 14px 30px -18px rgba(27,36,64,.30);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
-.dp-sticker-hover:hover { transform: translate(-2px, -3px) rotate(-.4deg); box-shadow: 8px 9px 0 var(--color-ink); }
-.dp-sticker-hover:active { transform: translate(3px, 3px); box-shadow: 2px 2px 0 var(--color-ink); }
-.dp-sticker-soft { border: 2px solid rgba(20,33,61,.85) !important; box-shadow: 4px 4px 0 rgba(20,33,61,.85); }
+.dp-sticker-hover { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.dp-sticker-hover:hover { transform: translateY(-3px); border-color: var(--color-line-strong) !important; box-shadow: 0 1px 0 rgba(255,255,255,.9) inset, 0 2px 4px rgba(27,36,64,.06), 0 22px 40px -20px rgba(27,36,64,.38); }
+.dp-sticker-hover:active { transform: translateY(0); }
+.dp-sticker-soft { border: 1px solid var(--color-line) !important; box-shadow: 0 1px 2px rgba(27,36,64,.04), 0 8px 20px -16px rgba(27,36,64,.25); }
 
-/* 3D tugma */
+/* Sirlangan koshin tugma: ustida yaltiroq, pastida chuqurlik */
 .dp-btn {
-  border: 2.5px solid var(--color-ink) !important;
-  box-shadow: 0 5px 0 var(--color-ink) !important;
-  transition: transform .1s ease, box-shadow .1s ease, background-color .15s ease;
+  border: 1px solid rgba(27,36,64,.14) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.45), inset 0 -3px 0 rgba(27,36,64,.16), 0 8px 18px -10px rgba(27,36,64,.45) !important;
+  transition: transform .12s ease, box-shadow .12s ease, background-color .15s ease, filter .15s ease;
 }
-.dp-btn:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 6px 0 var(--color-ink) !important; }
-.dp-btn:active:not(:disabled) { transform: translateY(4px) !important; box-shadow: 0 1px 0 var(--color-ink) !important; }
-.dp-btn:disabled { border-color: #cbd5e1 !important; box-shadow: 0 4px 0 #cbd5e1 !important; }
+.dp-btn:hover:not(:disabled) { transform: translateY(-1px); filter: saturate(1.08); }
+.dp-btn:active:not(:disabled) { transform: translateY(1px) !important; box-shadow: inset 0 2px 4px rgba(27,36,64,.22), 0 2px 6px -4px rgba(27,36,64,.4) !important; }
+.dp-btn:disabled { border-color: #E2E8F0 !important; box-shadow: none !important; }
 
-/* Marker bilan belgilash va qo‘lda chizilgan tagchiziq */
-.dp-marker { background: linear-gradient(transparent 58%, rgba(245,191,31,.75) 58%, rgba(245,191,31,.75) 90%, transparent 90%); padding: 0 .12em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
-.dp-marker-firuza { background: linear-gradient(transparent 58%, rgba(14,165,164,.35) 58%, rgba(14,165,164,.35) 90%, transparent 90%); padding: 0 .12em; }
-.dp-squiggle { position: relative; display: inline-block; }
-.dp-squiggle::after { content: ''; position: absolute; left: -2%; right: -2%; bottom: -.28em; height: .38em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='14' viewBox='0 0 120 14' preserveAspectRatio='none'%3E%3Cpath d='M2 9 C 14 2, 24 13, 36 7 S 58 2, 70 8 S 94 13, 104 6 S 116 4, 118 7' fill='none' stroke='%23F5BF1F' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat; pointer-events: none; }
+/* Mehrob ravog‘i shaklidagi karta (yuqorisi gumbazsimon) */
+.dp-arch { border-radius: 50% 50% 1.5rem 1.5rem / 6.5rem 6.5rem 1.5rem 1.5rem; }
+.dp-arch-sm { border-radius: 50% 50% 1.25rem 1.25rem / 4.5rem 4.5rem 1.25rem 1.25rem; }
+/* Ravoq ichidagi oltin ichki chiziq */
+.dp-arch-line { position: relative; }
+.dp-arch-line::before {
+  content: ''; position: absolute; inset: 7px; border: 1px solid rgba(220,174,74,.55);
+  border-radius: inherit; pointer-events: none;
+}
 
-/* Skotch (washi tape) bo‘lakchasi */
+/* Urg‘u: oltin marker (och) */
+.dp-marker { background: linear-gradient(transparent 64%, rgba(220,174,74,.38) 64%, rgba(220,174,74,.38) 92%, transparent 92%); padding: 0 .1em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.dp-marker-firuza { background: linear-gradient(transparent 64%, rgba(42,157,143,.22) 64%, rgba(42,157,143,.22) 92%, transparent 92%); padding: 0 .1em; }
+
+/* Sarlavha ostidagi islimiy bezak (to‘lqinli chiziq o‘rniga) */
+.dp-squiggle { position: relative; display: inline-block; padding-bottom: .1em; }
+.dp-squiggle::after { content: ''; position: absolute; left: 0; bottom: -.5em; width: 7.5rem; height: .9rem; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='14' viewBox='0 0 120 14'%3E%3Cg fill='none' stroke='%23C8962F' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M2 7 H44'/%3E%3Cpath d='M76 7 H118' stroke-opacity='.45'/%3E%3Cpath d='M50 7 C 50 3%2C 56 2%2C 60 7 C 64 12%2C 70 11%2C 70 7'/%3E%3Cpath d='M50 7 C 50 11%2C 56 12%2C 60 7 C 64 2%2C 70 3%2C 70 7'/%3E%3C/g%3E%3Cpath d='M60 3.2 L63.8 7 L60 10.8 L56.2 7 Z' fill='%23C8962F'/%3E%3C/svg%3E") left center / contain no-repeat; pointer-events: none; }
+.text-center .dp-squiggle::after, .dp-squiggle.dp-center::after { left: 50%; transform: translateX(-50%); }
+
+/* Oltin yulduz-mixcha (skotch o‘rniga) */
 .dp-tape { position: relative; }
 .dp-tape::before {
-  content: ''; position: absolute; top: -12px; left: 50%; width: 92px; height: 24px; transform: translateX(-50%) rotate(-3deg);
-  background: repeating-linear-gradient(45deg, rgba(14,165,164,.55) 0 6px, rgba(14,165,164,.38) 6px 12px);
-  border-left: 2px dashed rgba(255,255,255,.6); border-right: 2px dashed rgba(255,255,255,.6);
+  content: ''; position: absolute; top: -14px; left: 50%; width: 28px; height: 28px; transform: translateX(-50%);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cg transform='translate%2814 14%29'%3E%3Crect x='-8' y='-8' width='16' height='16' rx='1.5' fill='%23DCAE4A' transform='rotate%2845%29'/%3E%3Crect x='-8' y='-8' width='16' height='16' rx='1.5' fill='%23DCAE4A'/%3E%3Ccircle r='4.2' fill='none' stroke='%23ffffff' stroke-width='1.6'/%3E%3Ccircle r='1.6' fill='%23ffffff'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat; filter: drop-shadow(0 2px 2px rgba(27,36,64,.18));
   z-index: 2; pointer-events: none;
 }
-.dp-tape-gold::before { background: repeating-linear-gradient(45deg, rgba(245,191,31,.75) 0 6px, rgba(245,191,31,.55) 6px 12px); }
-.dp-tape-anor::before { background: repeating-linear-gradient(45deg, rgba(226,70,63,.55) 0 6px, rgba(226,70,63,.38) 6px 12px); }
+.dp-tape-gold::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cg transform='translate%2814 14%29'%3E%3Crect x='-8' y='-8' width='16' height='16' rx='1.5' fill='%232A9D8F' transform='rotate%2845%29'/%3E%3Crect x='-8' y='-8' width='16' height='16' rx='1.5' fill='%232A9D8F'/%3E%3Ccircle r='4.2' fill='none' stroke='%23ffffff' stroke-width='1.6'/%3E%3Ccircle r='1.6' fill='%23ffffff'/%3E%3C/g%3E%3C/svg%3E"); }
+.dp-tape-anor::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cg transform='translate%2814 14%29'%3E%3Crect x='-8' y='-8' width='16' height='16' rx='1.5' fill='%23C4503F' transform='rotate%2845%29'/%3E%3Crect x='-8' y='-8' width='16' height='16' rx='1.5' fill='%23C4503F'/%3E%3Ccircle r='4.2' fill='none' stroke='%23ffffff' stroke-width='1.6'/%3E%3Ccircle r='1.6' fill='%23ffffff'/%3E%3C/g%3E%3C/svg%3E"); }
 
-.dp-hand { font-family: var(--font-hand); font-weight: 700; letter-spacing: .01em; }
-.dp-tilt-l { transform: rotate(-2deg); }
-.dp-tilt-r { transform: rotate(2deg); }
+/* Bo‘lim yorlig‘i: kursiv serif (qo‘lyozma o‘rniga) */
+.dp-hand { font-family: var(--font-serif); font-style: italic; font-weight: 600; letter-spacing: 0; }
+.dp-tilt-l, .dp-tilt-r { transform: none; }
+
+/* Kichik yorliq: «Bo‘lim» uslubidagi harflar */
+.dp-kicker { font-size: .8rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
 
 @keyframes dpSpin { to { transform: rotate(360deg); } }
-.dp-spin-slow { animation: dpSpin 38s linear infinite; }
-@keyframes dpWiggle { 0%,100% { transform: rotate(-6deg); } 50% { transform: rotate(6deg); } }
-.dp-wiggle { animation: dpWiggle 3.2s ease-in-out infinite; }
+.dp-spin-slow { animation: dpSpin 90s linear infinite; }
+@keyframes dpWiggle { 0%,100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
+.dp-wiggle { animation: dpWiggle 3.6s ease-in-out infinite; }
 @keyframes dpDraw { from { stroke-dashoffset: 400; } to { stroke-dashoffset: 0; } }
 .dp-draw { stroke-dasharray: 400; animation: dpDraw 1.4s ease-out forwards; }
+@keyframes dpGlow { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
+.dp-glow-soft { animation: dpGlow 4s ease-in-out infinite; }
 
 @media (prefers-reduced-motion: reduce) {
-  .dp-spin-slow, .dp-wiggle, .dp-float, .dp-float2 { animation: none !important; }
+  .dp-spin-slow, .dp-wiggle, .dp-float, .dp-float2, .dp-glow-soft { animation: none !important; }
 }
 
 /* Shohsupa (reyting) */
@@ -133,5 +199,5 @@ body {
 @keyframes dpDrop { 0% { transform: translateY(-40px) scale(.6); opacity: 0; } 70% { transform: translateY(4px) scale(1.06); opacity: 1; } 100% { transform: none; } }
 .dp-drop { animation: dpDrop .6s ease-out both; }
 @keyframes dpShine { 0% { transform: translateX(-120%) skewX(-20deg); } 60%,100% { transform: translateX(260%) skewX(-20deg); } }
-.dp-shine::after { content: ''; position: absolute; inset: 0; width: 40%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent); animation: dpShine 3.2s ease-in-out infinite 1.4s; pointer-events: none; }
+.dp-shine::after { content: ''; position: absolute; inset: 0; width: 40%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.45), transparent); animation: dpShine 3.6s ease-in-out infinite 1.4s; pointer-events: none; }
 @media (prefers-reduced-motion: reduce) { .dp-rise, .dp-drop { animation: none !important; } .dp-shine::after { display: none; } }
