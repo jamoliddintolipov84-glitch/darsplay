@@ -265,6 +265,14 @@ export const TOPIC_ART = {
   'ot10-28': 'qishloq',
   'ot10-29': 'til',
   'ot10-30': 'telefon',
+  'ot10-33': 'alloma',
+  'ot10-34': 'kitob',
+  'ot10-35': 'shahar',
+  'ot10-36': 'kasb',
+  'ot10-37': 'gul',
+  'ot10-38': 'telefon',
+  'ot10-39': 'karvon',
+  'ot10-40': 'qishloq',
 };
 
 /** Mavzuning rasmi (yoki null). Mavzu obyektida `art` maydoni bo‘lsa, u ustun. */
