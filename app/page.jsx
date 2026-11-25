@@ -34218,6 +34218,97 @@ function Logo({ size = 44, showText = true, textClass = 'text-2xl' }) {
   );
 }
 
+// Girih yulduzi shaklidagi yuklanish belgisi (oddiy aylanuvchi doira o‘rniga)
+function GirihLoader({ size = 40, className = '' }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 64 64" className={`dp-loader shrink-0 ${className}`} role="status" aria-label="Yuklanmoqda">
+      <g transform="translate(32 32)" fill="none" strokeLinejoin="round">
+        <g className="dp-loader-a">
+          <rect x="-20" y="-20" width="40" height="40" rx="3" stroke="currentColor" strokeOpacity=".25" strokeWidth="4" transform="rotate(45)" />
+          <rect x="-20" y="-20" width="40" height="40" rx="3" stroke="currentColor" strokeOpacity=".25" strokeWidth="4" />
+        </g>
+        <g className="dp-loader-b">
+          <rect x="-20" y="-20" width="40" height="40" rx="3" stroke="#DCAE4A" strokeWidth="4" strokeDasharray="34 126" strokeLinecap="round" transform="rotate(45)" />
+          <rect x="-20" y="-20" width="40" height="40" rx="3" stroke="currentColor" strokeWidth="4" strokeDasharray="34 126" strokeLinecap="round" />
+        </g>
+        <circle r="5" fill="#DCAE4A" className="dp-loader-c" />
+      </g>
+    </svg>
+  );
+}
+
+/**
+ * Interaktiv effektlar (butun ilova uchun bitta joyda):
+ * - kartalar ustida sichqonchaga ergashuvchi yorug‘lik (--mx/--my);
+ * - tugmani bosganda to‘lqin (ripple);
+ * - .dp-reveal elementlari ekranga kirganda silliq ko‘tarilib chiqadi.
+ */
+function useInteractiveFx() {
+  useEffect(() => {
+    if (typeof window === 'undefined') return undefined;
+    const root = document.documentElement;
+    root.classList.add('dp-js');
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    let raf = 0;
+    let last = null;
+    const onMove = (e) => {
+      last = e;
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        const el = last?.target?.closest?.('.dp-sticker-hover, .dp-btn, .dp-spot');
+        if (!el) return;
+        const r = el.getBoundingClientRect();
+        el.style.setProperty('--mx', `${last.clientX - r.left}px`);
+        el.style.setProperty('--my', `${last.clientY - r.top}px`);
+      });
+    };
+
+    const onDown = (e) => {
+      if (reduce) return;
+      const el = e.target?.closest?.('.dp-btn, .dp-ripple');
+      if (!el || el.disabled) return;
+      const r = el.getBoundingClientRect();
+      if (getComputedStyle(el).position === 'static') el.style.position = 'relative';
+      const wrap = document.createElement('span');
+      wrap.className = 'dp-ripple-wrap';
+      const ink = document.createElement('span');
+      ink.className = 'dp-ripple-ink';
+      const d = Math.max(r.width, r.height) * 2.2;
+      ink.style.width = ink.style.height = `${d}px`;
+      ink.style.left = `${e.clientX - r.left - d / 2}px`;
+      ink.style.top = `${e.clientY - r.top - d / 2}px`;
+      wrap.appendChild(ink);
+      el.appendChild(wrap);
+      setTimeout(() => wrap.remove(), 650);
+    };
+
+    const io = 'IntersectionObserver' in window
+      ? new IntersectionObserver((entries) => entries.forEach((en) => {
+        if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
+      }), { threshold: 0.12, rootMargin: '0px 0px -40px 0px' })
+      : null;
+    const scan = () => document.querySelectorAll('.dp-reveal:not(.is-in):not([data-dp-obs])').forEach((el) => {
+      el.setAttribute('data-dp-obs', '1');
+      if (io && !reduce) io.observe(el); else el.classList.add('is-in');
+    });
+    scan();
+    const mo = new MutationObserver(() => scan());
+    mo.observe(document.body, { childList: true, subtree: true });
+
+    document.addEventListener('pointermove', onMove, { passive: true });
+    document.addEventListener('pointerdown', onDown, { passive: true });
+    return () => {
+      document.removeEventListener('pointermove', onMove);
+      document.removeEventListener('pointerdown', onDown);
+      mo.disconnect();
+      if (io) io.disconnect();
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+}
+
 function BackButton({ onClick, label = 'Orqaga' }) {
   return (
     <button
@@ -34300,7 +34391,7 @@ function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onB
           {onBoard && (
             <button
               onClick={onBoard}
-              title="Doska"
+              aria-label="Doska" data-tip="Doska"
               className="dp-btn inline-flex items-center gap-2 rounded-xl bg-firuza-500 p-2 text-white hover:bg-firuza-600"
             >
               <PenLine size={24} /> <span className="hidden text-base font-bold lg:inline">Doska</span>
@@ -34309,7 +34400,7 @@ function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onB
           {onHelp && (
             <button
               onClick={onHelp}
-              title="Qo‘llanma"
+              aria-label="Qo‘llanma" data-tip="Qo‘llanma"
               className="inline-flex items-center gap-2 rounded-xl border border-line/70 bg-white p-2.5 text-blue-800 transition hover:bg-blue-50"
             >
               <CircleHelp size={24} /> <span className="hidden text-base font-bold xl:inline">Qo‘llanma</span>
@@ -34317,14 +34408,14 @@ function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onB
           )}
           <button
             onClick={() => setSoundOn(!sound)}
-            title={sound ? 'Ovozni o‘chirish' : 'Ovozni yoqish'}
-            className={`hidden rounded-xl border-2 p-2.5 transition hover:bg-blue-50 sm:block ${sound ? 'border-blue-100 text-blue-800' : 'border-rose-200 text-rose-600'}`}
+            aria-label={sound ? 'Ovozni o‘chirish' : 'Ovozni yoqish'} data-tip={sound ? 'Ovozni o‘chirish' : 'Ovozni yoqish'}
+            className={`hidden rounded-xl border p-2.5 transition hover:bg-blue-50 sm:block ${sound ? 'border-blue-100 text-blue-800' : 'border-rose-200 text-rose-600'}`}
           >
             {sound ? <Volume2 size={24} /> : <VolumeX size={24} />}
           </button>
           <button
             onClick={toggleFs}
-            title={isFs ? 'To‘liq ekrandan chiqish' : 'To‘liq ekran'}
+            aria-label={isFs ? 'To‘liq ekrandan chiqish' : 'To‘liq ekran'} data-tip={isFs ? 'To‘liq ekrandan chiqish' : 'To‘liq ekran'}
             className="hidden rounded-xl border border-line/70 bg-white p-2.5 text-blue-800 transition hover:bg-blue-50 sm:block"
           >
             {isFs ? <Minimize size={24} /> : <Maximize size={24} />}
@@ -34342,7 +34433,7 @@ function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onB
               </div>
               <button
                 onClick={onLogout}
-                title="Chiqish"
+                aria-label="Chiqish" data-tip="Chiqish"
                 className="rounded-xl border border-line/70 bg-white p-2.5 text-slate-600 transition hover:border-rose-300 hover:text-rose-600"
               >
                 <LogOut size={24} />
@@ -34612,7 +34703,7 @@ function HeroMockup() {
 
 function SectionHead({ kicker, title, sub, light }) {
   return (
-    <div className="mx-auto max-w-3xl text-center">
+    <div className="dp-reveal mx-auto max-w-3xl text-center">
       <span className={`dp-kicker inline-flex items-center gap-2 ${light ? 'text-amber-300' : 'text-amber-600'}`}><Doodle kind="sparkle" size={18} color={light ? '#E8C673' : '#C8962F'} /> {kicker}</span>
       <h2 className={`mt-3 text-3xl md:text-5xl font-black leading-tight tracking-tight ${light ? 'text-white' : 'text-ink'}`}>{title}</h2>
       <KoshinDivider light={light} className="mt-5" />
@@ -34664,7 +34755,7 @@ function DemoArena() {
         </div>
       )}
       <div className="mt-6">
-        {!mounted && <div className="flex h-64 items-center justify-center"><Loader2 size={40} className="animate-spin text-blue-500" /></div>}
+        {!mounted && <div className="flex h-64 items-center justify-center"><GirihLoader size={40} className="text-blue-500" /></div>}
         {mounted && mode === 'wheel' && <div className="mx-auto max-w-xl"><WheelPicker key={round} students={DEMO_NAMES} /></div>}
         {mounted && mode !== 'wheel' && !done && mode === 'letters' && <LetterGame key={round} {...props} />}
         {mounted && mode !== 'wheel' && !done && mode === 'spell' && <SpellGame key={round} {...props} />}
@@ -34747,7 +34838,7 @@ function LoginCard({ onLogin }) {
         </Field>
         {error && <p key={shakeKey} className="dp-shake rounded-2xl bg-rose-50 px-4 py-3 text-lg font-semibold text-rose-700">{error}</p>}
         <button type="submit" className="dp-btn inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-blue-600 px-8 py-4 text-xl md:text-2xl font-black text-white hover:bg-blue-700">
-          {busy ? <Loader2 size={28} className="animate-spin" /> : <>Kirish <LogIn size={28} /></>}
+          {busy ? <GirihLoader size={28} /> : <>Kirish <LogIn size={28} /></>}
         </button>
       </div>
       {!REMOTE && <div className="mt-6 rounded-2xl border border-dashed border-line/40 bg-paper p-4 text-ink">
@@ -34833,7 +34924,7 @@ function LoginScreen({ onLogin }) {
             </h1>
             <p className="mt-6 max-w-xl text-xl text-blue-100 md:text-2xl">Darslik asosidagi tushuntirish, {games.length} xil o‘yin, jamoalar va reyting — barchasi proyektor orqali, telefonsiz.</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <button onClick={() => go('demo')} className="dp-btn dp-glow inline-flex items-center gap-3 rounded-2xl bg-amber-400 px-7 py-4 text-xl font-black text-ink hover:bg-amber-300"><Play size={24} /> Hoziroq sinab ko‘ring</button>
+              <button onClick={() => go('demo')} className="dp-btn dp-aura inline-flex items-center gap-3 rounded-2xl bg-amber-400 px-7 py-4 text-xl font-black text-ink hover:bg-amber-300"><Play size={24} /> Hoziroq sinab ko‘ring</button>
               <button onClick={() => go('kirish')} className="dp-btn inline-flex items-center gap-3 rounded-2xl bg-white px-7 py-4 text-xl font-black text-ink hover:bg-paper"><LogIn size={24} /> Kirish</button>
             </div>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-base font-semibold text-blue-100">
@@ -34855,11 +34946,11 @@ function LoginScreen({ onLogin }) {
       {/* Imkoniyatlar */}
       <section id="imkoniyatlar" className="scroll-mt-20 px-4 py-20 md:px-8 md:py-28">
         <SectionHead kicker="Imkoniyatlar" title="Bir darsga kerak bo‘lgan hamma narsa — bir joyda" sub="Tushuntirishdan tortib o‘yin va baholashgacha. O‘qituvchi tayyorgarlikka vaqt sarflamaydi." />
-        <div className="mx-auto mt-14 grid max-w-6xl gap-5 md:grid-cols-3">
+        <div className="dp-reveal dp-reveal-stagger mx-auto mt-14 grid max-w-6xl gap-5 md:grid-cols-3">
           {features.map((f) => (
             <div key={f.title} className={`dp-sticker dp-sticker-hover group relative overflow-hidden rounded-[2rem] bg-white p-7 ${f.wide ? 'md:col-span-2' : ''}`}>
               <div className="dp-girih-ink pointer-events-none absolute inset-y-0 right-0 w-40 opacity-90 [mask-image:linear-gradient(to_left,black,transparent)]" />
-              <span className={`relative inline-flex h-16 w-16 items-center justify-center rounded-2xl border border-line bg-gradient-to-br ${f.color} text-white transition group-hover:-rotate-6`}><f.icon size={32} /></span>
+              <span className={`relative inline-flex h-16 w-16 items-center justify-center rounded-2xl border border-line bg-gradient-to-br ${f.color} text-white dp-bounce`}><f.icon size={32} /></span>
               <h3 className="relative mt-5 text-2xl font-black text-ink">{f.title}</h3>
               <p className="relative mt-2 text-lg text-slate-600">{f.text}</p>
             </div>
@@ -34876,11 +34967,11 @@ function LoginScreen({ onLogin }) {
       {/* O‘yinlar */}
       <section id="oyinlar" className="scroll-mt-20 px-4 py-20 md:px-8 md:py-28">
         <SectionHead kicker={`${games.length} ta o‘yin`} title="Har bir mavzuga mos o‘yinlar" sub="Bilim, so‘z, jamoaviy, fikrlash va imlo o‘yinlari. Har darsda boshqacha to‘plam tavsiya qilinadi — dars zerikarli bo‘lmaydi." />
-        <div className="mx-auto mt-14 grid max-w-6xl grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="dp-reveal dp-reveal-stagger mx-auto mt-14 grid max-w-6xl grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {games.map((g, i) => (
-            <div key={g.id} className={`dp-sticker-soft dp-sticker-hover group relative rounded-3xl bg-white p-5 ${i % 3 === 0 ? 'rotate-[-.6deg]' : i % 3 === 1 ? 'rotate-[.5deg]' : ''}`} style={{ animationDelay: `${i * 40}ms` }}>
-              {(g.hot || g.fresh) && <span className={`absolute -right-2 -top-3 rotate-6 rounded-md border border-line px-2 py-0.5 text-xs font-black uppercase ${g.hot ? 'bg-anor-500 text-white' : 'bg-amber-400 text-ink'}`}>{g.hot ? 'Sevimli' : 'Yangi'}</span>}
-              <span className={`inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-line ${g.color} text-white transition group-hover:rotate-6 group-hover:scale-110`}><g.icon size={28} /></span>
+            <div key={g.id} className={`dp-sticker-soft dp-sticker-hover group relative rounded-3xl bg-white p-5 `} style={{ animationDelay: `${i * 40}ms` }}>
+              {(g.hot || g.fresh) && <span className={`absolute -right-2 -top-3 rounded-full border border-line px-2 py-0.5 text-xs font-black uppercase ${g.hot ? 'bg-anor-500 text-white' : 'bg-amber-400 text-ink'}`}>{g.hot ? 'Sevimli' : 'Yangi'}</span>}
+              <span className={`inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-line ${g.color} text-white dp-bounce`}><g.icon size={28} /></span>
               <div className="mt-4 text-xl font-black text-ink">{g.name}</div>
               <div className="mt-1 text-base text-slate-500">{g.desc}</div>
             </div>
@@ -34932,7 +35023,7 @@ function LoginScreen({ onLogin }) {
       {/* Fanlar */}
       <section id="fanlar" className="scroll-mt-20 border-t border-line bg-amber-50/70 px-4 py-20 md:px-8 md:py-28">
         <SectionHead kicker="Fanlar va sinflar" title="Ona tili va adabiyot" sub="Yashil belgi — darslik va taqvim-mavzu reja asosida to‘liq tayyorlangan sinflar. Boshqa fanlar tez orada qo‘shiladi." />
-        <div className="mx-auto mt-14 grid max-w-4xl gap-6 md:grid-cols-2">
+        <div className="dp-reveal dp-reveal-stagger mx-auto mt-14 grid max-w-4xl gap-6 md:grid-cols-2">
           {SUBJECTS.map((s) => {
             const ready = Object.entries(CONTENT[s.id] || {});
             return (
@@ -35189,7 +35280,7 @@ function TeachersTab({ db, api }) {
         )}
         <div className="flex flex-wrap gap-3 pt-2">
           <button type="submit" disabled={busy} className="inline-flex flex-1 items-center justify-center gap-3 rounded-2xl bg-blue-600 px-8 py-4 text-xl font-extrabold text-white shadow-lg shadow-blue-600/30 transition hover:bg-blue-700 active:scale-95 disabled:opacity-60">
-            {busy ? <Loader2 size={26} className="animate-spin" /> : <>{editingId ? 'Saqlash' : 'Yaratish'} {editingId ? <Save size={26} /> : <UserPlus size={26} />}</>}
+            {busy ? <GirihLoader size={26} /> : <>{editingId ? 'Saqlash' : 'Yaratish'} {editingId ? <Save size={26} /> : <UserPlus size={26} />}</>}
           </button>
           {editingId && (
             <button type="button" onClick={() => { setEditingId(null); setLoginTouched(false); setErrors({}); setForm(empty); }} className="rounded-2xl border-2 border-slate-200 px-5 text-lg font-bold text-slate-600 hover:bg-slate-50">
@@ -36233,7 +36324,7 @@ function HomeScreen({ teacher, allowed = [], onStart, schoolClasses = [], onClas
               <p className="mt-4 rounded-2xl border border-line bg-anor-500 px-4 py-3 text-lg font-bold text-white">Hisobingizga hali fan biriktirilmagan. Dars play administratoriga murojaat qiling.</p>
             )}
             <div className="mt-8 flex flex-wrap gap-4">
-              <button onClick={onStart} disabled={!allowed.length} className="dp-btn dp-glow disabled:pointer-events-none disabled:opacity-40 inline-flex items-center gap-3 rounded-2xl bg-amber-400 px-8 py-4 text-2xl font-black text-ink hover:bg-amber-300">
+              <button onClick={onStart} disabled={!allowed.length} className="dp-btn dp-aura disabled:pointer-events-none disabled:opacity-40 inline-flex items-center gap-3 rounded-2xl bg-amber-400 px-8 py-4 text-2xl font-black text-ink hover:bg-amber-300">
                 <Play size={30} className="fill-ink" /> Darsni boshlash
               </button>
               <button onClick={onBoard} className="dp-btn inline-flex items-center gap-2 rounded-2xl bg-white px-6 py-4 text-xl font-black text-ink hover:bg-paper"><PenLine size={26} /> Doska</button>
@@ -36283,7 +36374,7 @@ function HomeScreen({ teacher, allowed = [], onStart, schoolClasses = [], onClas
             <span className="dp-hand absolute -top-9 right-28 hidden  text-3xl text-anor-500 md:block">bir bosishda!</span>
             <h2 className="flex items-center gap-2 text-2xl font-black text-ink"><Zap size={26} className="fill-amber-400 text-ink" /> <span className="dp-marker">Tayyor darsliklar</span></h2>
             <p className="mt-2 text-base font-semibold text-slate-500">Kerakli sinfga to‘g‘ridan-to‘g‘ri o‘ting — fan va sinfni qayta tanlash shart emas.</p>
-            <div className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            <div className="dp-reveal dp-reveal-stagger mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
               {books.map(({ s, g, n }, i) => (
                 <button key={s.id + g} onClick={() => onQuick(s.id, g)} className={`dp-sticker dp-sticker-hover group relative overflow-hidden rounded-2xl p-5 text-left ${['bg-paper', 'bg-firuza-50', 'bg-amber-50'][i % 3]}`}>
                   <span className="dp-girih-ink pointer-events-none absolute inset-y-0 right-0 w-24 opacity-80" />
@@ -36422,7 +36513,7 @@ function GradeScreen({ subject, onPick, onBack, schoolClasses = [] }) {
   return (
     <div className="mx-auto max-w-7xl px-4 py-6 md:px-8">
       <PageTitle title="Sinfni tanlang" subtitle={subject?.name} onBack={onBack} />
-      <div className="grid grid-cols-2 gap-5 sm:grid-cols-4 lg:grid-cols-7">
+      <div className="dp-reveal dp-reveal-stagger grid grid-cols-2 gap-5 sm:grid-cols-4 lg:grid-cols-7">
         {GRADES.map((g) => {
           const arr = CONTENT[subject?.id]?.[g];
           const cls = schoolClasses.filter((c) => c.grade === g).length;
@@ -36984,7 +37075,7 @@ function EmptyBox({ text }) {
 }
 
 function Loading() {
-  return <div className="flex items-center justify-center gap-3 py-16 text-xl text-blue-900"><Loader2 className="animate-spin" size={32} /> Yuklanmoqda...</div>;
+  return <div className="flex items-center justify-center gap-3 py-16 text-xl text-blue-900"><GirihLoader size={36} /> Yuklanmoqda...</div>;
 }
 
 function useAsync(fn, deps) {
@@ -37412,7 +37503,7 @@ function XAudio({ a }) {
           aria-label={playing ? 'To‘xtatish' : 'Tinglash'}
           className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-white text-teal-700 shadow-lg transition active:scale-95"
         >
-          {state === 'loading' && !playing ? <Loader2 size={38} className="animate-spin" /> : playing ? <Pause size={40} fill="currentColor" /> : <Play size={40} fill="currentColor" className="ml-1" />}
+          {state === 'loading' && !playing ? <GirihLoader size={38} /> : playing ? <Pause size={40} fill="currentColor" /> : <Play size={40} fill="currentColor" className="ml-1" />}
         </button>
         <button onClick={() => jump(-10)} className="inline-flex items-center gap-1 rounded-2xl bg-white/15 px-4 py-3 text-lg font-extrabold hover:bg-white/25 active:scale-95">
           <RotateCcw size={22} /> 10 s
@@ -37804,7 +37895,7 @@ function GameCard({ g, n, onPick, topic, featured, small }) {
     >
       {n && <span className="dp-hand absolute right-5 top-2 text-6xl leading-none text-amber-400">{n}</span>}
       {featured && <div className="dp-girih-ink pointer-events-none absolute inset-x-0 bottom-0 h-20 [mask-image:linear-gradient(to_top,black,transparent)]" />}
-      <div className={`relative flex items-center justify-center rounded-3xl border border-line ${g.color} text-white transition group-enabled:group-hover:-rotate-6 ${small ? 'h-14 w-14' : 'h-20 w-20'}`}>
+      <div className={`relative flex items-center justify-center rounded-3xl border border-line ${g.color} text-white dp-bounce ${small ? 'h-14 w-14' : 'h-20 w-20'}`}>
         <I size={small ? 30 : 42} />
       </div>
       <div>
@@ -37812,7 +37903,7 @@ function GameCard({ g, n, onPick, topic, featured, small }) {
         <div className={`mt-1 ${small ? 'text-base' : 'text-lg'} text-slate-500`}>{g.desc}</div>
       </div>
       {unavailable && <span className="rounded-full bg-slate-100 px-3 py-1 text-sm font-bold text-slate-500">Bu mavzuda hali yo‘q</span>}
-      {!unavailable && (g.fresh || g.hot) && !small && <span className="absolute left-24 top-5  rounded-md border border-line bg-anor-500 px-2 py-0.5 text-sm font-black text-white md:left-28 md:top-7">Yangi</span>}
+      {!unavailable && (g.fresh || g.hot) && !small && <span className="absolute left-24 top-5 rounded-full bg-anor-500 px-2 py-0.5 text-sm font-black text-white md:left-28 md:top-7">Yangi</span>}
     </button>
   );
 }
@@ -37837,7 +37928,7 @@ function GameSelectScreen({ topic, topicIndex, onPick, onBack }) {
           <Dices size={26} /> Tasodifiy o‘yin
         </button>
       </div>
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+      <div className="dp-reveal dp-reveal-stagger grid grid-cols-2 gap-4 md:grid-cols-3">
         {featured.map((g, i) => <GameCard key={g.id} g={g} n={i + 1} onPick={onPick} topic={topic} featured />)}
       </div>
       {rest.length > 0 && (
@@ -37997,7 +38088,7 @@ function CameraPicker({ students, onPicked }) {
         )}
         {status !== 'on' && status !== 'nocam' && !result?.img && (
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-6 text-center text-white">
-            {status === 'loading' ? <Loader2 size={64} className="animate-spin" /> : status === 'error' ? <CameraOff size={64} /> : <Camera size={64} />}
+            {status === 'loading' ? <GirihLoader size={64} /> : status === 'error' ? <CameraOff size={64} /> : <Camera size={64} />}
             <p className="max-w-lg text-xl">
               {status === 'error' ? errorMsg : status === 'loading' ? 'Kamera yoqilmoqda...' : 'Kamerani yoqing va sinfni ekranga oling'}
             </p>
@@ -40286,6 +40377,7 @@ function PlayScreen({ game, topic, teams, turn, award, nextTurn, adjust, gameKey
    ============================================================ */
 
 export default function DarsPlayApp() {
+  useInteractiveFx();
   const [history, setHistory] = useState(['login']);
   const step = history[history.length - 1];
   const go = useCallback((s) => setHistory((h) => [...h, s]), []);
@@ -40833,7 +40925,7 @@ export default function DarsPlayApp() {
         )}
         {booting && (
           <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 text-blue-900">
-            <Loader2 size={48} className="animate-spin" />
+            <GirihLoader size={48} />
             <p className="text-xl font-semibold">Yuklanmoqda...</p>
           </div>
         )}

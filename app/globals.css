@@ -138,7 +138,7 @@ body {
 .dp-btn {
   border: 1px solid rgba(27,36,64,.14) !important;
   box-shadow: inset 0 1px 0 rgba(255,255,255,.45), inset 0 -3px 0 rgba(27,36,64,.16), 0 8px 18px -10px rgba(27,36,64,.45) !important;
-  transition: transform .12s ease, box-shadow .12s ease, background-color .15s ease, filter .15s ease;
+  transition: transform .12s ease, box-shadow .12s ease, background-color .15s ease, background-position .7s ease, filter .15s ease;
 }
 .dp-btn:hover:not(:disabled) { transform: translateY(-1px); filter: saturate(1.08); }
 .dp-btn:active:not(:disabled) { transform: translateY(1px) !important; box-shadow: inset 0 2px 4px rgba(27,36,64,.22), 0 2px 6px -4px rgba(27,36,64,.4) !important; }
@@ -201,3 +201,109 @@ body {
 @keyframes dpShine { 0% { transform: translateX(-120%) skewX(-20deg); } 60%,100% { transform: translateX(260%) skewX(-20deg); } }
 .dp-shine::after { content: ''; position: absolute; inset: 0; width: 40%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.45), transparent); animation: dpShine 3.6s ease-in-out infinite 1.4s; pointer-events: none; }
 @media (prefers-reduced-motion: reduce) { .dp-rise, .dp-drop { animation: none !important; } .dp-shine::after { display: none; } }
+
+/* ============================================================
+   INTERAKTIV EFFEKTLAR (uiverse.io g‘oyalari asosida, «Koshin» uslubida)
+   @layer components — Tailwind utility klasslari (absolute, bg-gradient va h.k.) ustun qoladi.
+   ============================================================ */
+@property --dp-a { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+
+@layer components {
+  /* 1. Tugma: hoverda koshin yaltirog‘i chapdan o‘ngga o‘tadi */
+  .dp-btn {
+    background-image: linear-gradient(110deg, transparent 38%, rgba(255,255,255,.38) 50%, transparent 62%);
+    background-size: 260% 100%;
+    background-position: 140% 0;
+    background-repeat: no-repeat;
+    transition: transform .12s ease, box-shadow .12s ease, background-color .15s ease, background-position .7s ease, filter .15s ease;
+  }
+  .dp-btn:hover:not(:disabled) { background-position: -40% 0; }
+  .dp-btn svg { transition: transform .25s cubic-bezier(.3,1.5,.5,1); }
+  .dp-btn:hover:not(:disabled) svg { transform: scale(1.12); }
+
+  /* 2. Bosganda to‘lqin (ripple) — JS (useInteractiveFx) span qo‘shadi */
+  .dp-ripple-wrap { position: absolute; inset: 0; overflow: hidden; border-radius: inherit; pointer-events: none; }
+  .dp-ripple-ink { position: absolute; border-radius: 9999px; background: radial-gradient(circle, rgba(255,255,255,.55) 0%, rgba(255,255,255,.25) 40%, transparent 70%); transform: scale(0); animation: dpRipple .6s ease-out forwards; }
+
+  /* 3. Karta: sichqonchaga ergashuvchi oltin yorug‘lik */
+  .dp-sticker-hover { position: relative; }
+  .dp-sticker-hover::after {
+    content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: 1;
+    background: radial-gradient(280px circle at var(--mx, 50%) var(--my, 50%), rgba(232,198,115,.22), transparent 60%);
+    opacity: 0; transition: opacity .3s ease;
+  }
+  .dp-sticker-hover:hover::after { opacity: 1; }
+  .dp-sticker-hover.dp-shine::after { background: none; }
+
+  /* 4. Aylanuvchi nurli chegara — asosiy harakat tugmalari uchun */
+  .dp-aura { position: relative; }
+  .dp-aura::before {
+    content: ''; position: absolute; inset: -4px; padding: 3px; border-radius: inherit; pointer-events: none;
+    background: conic-gradient(from var(--dp-a), transparent 0 35%, #F1DCA3 55%, #FFFFFF 66%, #DCAE4A 74%, #7FCFC4 86%, transparent 97%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+    animation: dpAura 3.2s linear infinite;
+  }
+
+  /* 5. Tooltip: data-tip="..." */
+  [data-tip] { position: relative; }
+  [data-tip]::after {
+    content: attr(data-tip); position: absolute; left: 50%; top: calc(100% + 10px); transform: translate(-50%, -4px);
+    white-space: nowrap; padding: .4rem .7rem; border-radius: .6rem; background: var(--color-ink); color: #FBF7EF;
+    font-size: .85rem; font-weight: 700; letter-spacing: .01em; box-shadow: 0 10px 24px -12px rgba(27,36,64,.6);
+    opacity: 0; pointer-events: none; transition: opacity .18s ease, transform .18s ease; z-index: 60;
+  }
+  [data-tip]::before {
+    content: ''; position: absolute; left: 50%; top: calc(100% + 4px); width: 10px; height: 10px; background: var(--color-ink);
+    transform: translate(-50%, -4px) rotate(45deg); border-radius: 2px; opacity: 0; transition: opacity .18s ease, transform .18s ease; pointer-events: none; z-index: 60;
+  }
+  [data-tip]:hover::after, [data-tip]:focus-visible::after { opacity: 1; transform: translate(-50%, 0); }
+  [data-tip]:hover::before, [data-tip]:focus-visible::before { opacity: 1; transform: translate(-50%, 0) rotate(45deg); }
+
+  /* 6. Maydonlar: fokusda yumshoq oltin halqa */
+  input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]), textarea, select {
+    transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+  }
+  input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]):focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: none; border-color: #DCAE4A !important; box-shadow: 0 0 0 4px rgba(220,174,74,.22);
+  }
+  input[type=checkbox], input[type=radio] { accent-color: #2B4C9B; }
+  input[type=range] { accent-color: #C8962F; }
+
+  /* 7. Ekranga kirganda silliq ko‘tarilish (faqat JS yoqilgan bo‘lsa) */
+  .dp-js .dp-reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
+  .dp-js .dp-reveal.is-in { opacity: 1; transform: none; }
+  .dp-js .dp-reveal-stagger > * { opacity: 0; transform: translateY(22px) scale(.98); transition: opacity .55s ease, transform .55s cubic-bezier(.2,.8,.2,1); }
+  .dp-js .dp-reveal-stagger.is-in > * { opacity: 1; transform: none; }
+  .dp-reveal-stagger.is-in > *:nth-child(2) { transition-delay: .06s; }
+  .dp-reveal-stagger.is-in > *:nth-child(3) { transition-delay: .12s; }
+  .dp-reveal-stagger.is-in > *:nth-child(4) { transition-delay: .18s; }
+  .dp-reveal-stagger.is-in > *:nth-child(5) { transition-delay: .24s; }
+  .dp-reveal-stagger.is-in > *:nth-child(6) { transition-delay: .30s; }
+  .dp-reveal-stagger.is-in > *:nth-child(7) { transition-delay: .36s; }
+  .dp-reveal-stagger.is-in > *:nth-child(n+8) { transition-delay: .42s; }
+
+  /* 8. Mehrob kartasi: hoverda ravoq ichidagi oltin chiziq yorishadi va yulduz aylanadi */
+  .dp-arch-line::before { transition: border-color .3s ease, inset .3s ease; }
+  .dp-arch-line:hover::before { border-color: rgba(232,198,115,.95); inset: 5px; }
+
+  /* 9. Yuklanish belgisi */
+  .dp-loader .dp-loader-a { transform-origin: 0 0; animation: dpSpin 6s linear infinite; }
+  .dp-loader .dp-loader-b { transform-origin: 0 0; animation: dpSpin 1.4s cubic-bezier(.5,.1,.5,.9) infinite; }
+  .dp-loader .dp-loader-b rect { animation: dpDash 1.4s ease-in-out infinite; }
+  .dp-loader .dp-loader-c { transform-origin: 0 0; animation: dpPulse 1.4s ease-in-out infinite; }
+
+  /* 10. Ikonka qutilari: kartaga hover bo‘lganda sakraydi */
+  .dp-sticker-hover:hover .dp-bounce { animation: dpBounce .6s cubic-bezier(.3,1.6,.5,1); }
+}
+
+@keyframes dpRipple { to { transform: scale(1); opacity: 0; } }
+@keyframes dpAura { to { --dp-a: 360deg; } }
+@keyframes dpDash { 0%,100% { stroke-dasharray: 20 140; } 50% { stroke-dasharray: 70 90; } }
+@keyframes dpPulse { 0%,100% { transform: scale(.7); opacity: .7; } 50% { transform: scale(1.15); opacity: 1; } }
+@keyframes dpBounce { 0% { transform: translateY(0); } 35% { transform: translateY(-8px) rotate(-6deg); } 70% { transform: translateY(2px); } 100% { transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .dp-aura::before, .dp-loader *, .dp-ripple-ink { animation: none !important; }
+  .dp-js .dp-reveal, .dp-js .dp-reveal-stagger > * { opacity: 1 !important; transform: none !important; }
+}
