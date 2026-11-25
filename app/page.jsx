@@ -107,6 +107,7 @@ function accessPrice(access) {
 /** Fan → ochiq sinflar (obuna muddatiga qaramasdan). access bo‘lmagan eski hisoblarda paket va grades dan tiklanadi. */
 function rawAccess(teacher) {
   if (!teacher) return {};
+  if (teacher.guest) return Object.fromEntries(SUBJECTS.map((sj) => [sj.id, [...GRADES]]));
   let src = {};
   if (teacher.access && typeof teacher.access === 'object' && !Array.isArray(teacher.access)) src = teacher.access;
   else (packageOf(teacher.subject)?.subjects || []).forEach((id) => { src[id] = Array.isArray(teacher.grades) ? teacher.grades : GRADES; });
@@ -124,6 +125,18 @@ function teacherAccess(teacher) {
 function accessSummary(access) {
   const parts = SUBJECTS.filter((s) => access?.[s.id]?.length).map((s) => `${s.name}: ${gradesLabel(access[s.id])}`);
   return parts.length ? parts.join(' • ') : 'Fan biriktirilmagan';
+}
+
+/* ---------- Mehmon rejimi (login-parolsiz) ----------
+ * Mundarija to‘liq ko‘rinadi, lekin har sinfda faqat GUEST_FREE_LESSONS ta dars ochiq,
+ * o‘sha darsda esa GUEST_FREE_GAMES ta o‘yin o‘ynash mumkin. Natijalar saqlanmaydi.
+ */
+const GUEST_FREE_LESSONS = 1;
+const GUEST_FREE_GAMES = 1;
+const GUEST_CLASS_ID = 'guest-class';
+const GUEST_TEACHER = { id: 'guest', name: 'Mehmon', school: 'Kirmasdan ko‘rish', login: '', guest: true, access: null };
+function guestFreeTopicIds(subjectId, grade) {
+  return (CONTENT[subjectId]?.[grade] || []).slice(0, GUEST_FREE_LESSONS).map((t) => t.id);
 }
 
 /* ---------- Obuna muddati ---------- */
@@ -37420,7 +37433,7 @@ function Modal({ children, onClose, wide = false }) {
   );
 }
 
-function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onBoard, onSubs }) {
+function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onBoard, onSubs, guest }) {
   const sound = useSoundOn();
   return (
     <header className="sticky top-0 z-40 bg-paper/95 backdrop-blur">
@@ -37488,13 +37501,19 @@ function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onB
                   </Tag>
                 );
               })()}
-              <button
-                onClick={onLogout}
-                aria-label="Chiqish" data-tip="Chiqish"
-                className="rounded-xl border border-line/70 bg-white p-2.5 text-slate-600 transition hover:border-rose-300 hover:text-rose-600"
-              >
-                <LogOut size={24} />
-              </button>
+              {guest ? (
+                <button onClick={onLogout} className="dp-btn inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2.5 text-base font-black text-white hover:bg-blue-700">
+                  <LogIn size={20} /> Kirish
+                </button>
+              ) : (
+                <button
+                  onClick={onLogout}
+                  aria-label="Chiqish" data-tip="Chiqish"
+                  className="rounded-xl border border-line/70 bg-white p-2.5 text-slate-600 transition hover:border-rose-300 hover:text-rose-600"
+                >
+                  <LogOut size={24} />
+                </button>
+              )}
             </>
           )}
         </div>
@@ -37856,6 +37875,37 @@ const LANDING_FAQ = [
   ['O‘zim savol qo‘sha olamanmi?', 'Ha. «O‘z to‘plamim» bo‘limida juftliklar, test, savol-javoblarni kiritasiz — ular barcha o‘yinlarda ishlaydi.'],
 ];
 
+/* ---------- Mehmon rejimi: obunaga taklif oynasi ---------- */
+function GuestWall({ what, onClose, onLogin }) {
+  return (
+    <div className="fixed inset-0 z-[80] flex items-center justify-center bg-ink/60 p-4" onClick={onClose}>
+      <div className="dp-pop dp-sticker relative w-full max-w-lg overflow-hidden rounded-[2rem] bg-white p-7 text-center" onClick={(e) => e.stopPropagation()}>
+        <button type="button" onClick={onClose} aria-label="Yopish" className="absolute right-4 top-4 rounded-full p-2 text-slate-500 hover:bg-slate-100"><X size={24} /></button>
+        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-400 text-ink"><Lock size={32} /></div>
+        <h3 className="mt-4 text-2xl font-black text-ink">{what || 'Bu bo‘lim'} obuna bilan ochiladi</h3>
+        <p className="mt-2 text-lg font-semibold text-slate-600">Mehmon rejimida har sinfda {GUEST_FREE_LESSONS} ta dars va {GUEST_FREE_GAMES} ta o‘yin bepul. Barcha darslar va o‘yinlar uchun obuna oling — 1 fan, 1 sinf {formatSum(PRICE_TIERS[0].price)} / yil.</p>
+        <div className="mt-6 grid gap-3 sm:grid-cols-2">
+          <a href={telegramLink('Assalomu alaykum! Dars play obunasini olmoqchiman.')} target="_blank" rel="noopener noreferrer"
+            className="dp-btn inline-flex items-center justify-center gap-2 rounded-2xl bg-amber-400 px-5 py-4 text-lg font-black text-ink hover:bg-amber-300"><Send size={20} /> Obuna olish</a>
+          <button type="button" onClick={onLogin} className="dp-btn inline-flex items-center justify-center gap-2 rounded-2xl bg-blue-600 px-5 py-4 text-lg font-black text-white hover:bg-blue-700"><LogIn size={20} /> Login bilan kirish</button>
+        </div>
+        <p className="mt-4 text-sm font-semibold text-slate-400">Telegram: @{TELEGRAM_USER}</p>
+      </div>
+    </div>
+  );
+}
+
+function GuestBanner({ onLogin }) {
+  return (
+    <div className="mb-6 flex flex-wrap items-center gap-3 rounded-2xl border border-amber-300 bg-amber-50 px-5 py-4">
+      <Gift size={24} className="shrink-0 text-amber-700" />
+      <span className="flex-1 text-lg font-bold text-amber-900">Mehmon rejimi: mundarija to‘liq ochiq, har sinfda {GUEST_FREE_LESSONS}-dars va {GUEST_FREE_GAMES} ta o‘yin bepul. Qolganlari obuna bilan.</span>
+      <a href={telegramLink('Assalomu alaykum! Dars play obunasini olmoqchiman.')} target="_blank" rel="noopener noreferrer" className="rounded-xl bg-amber-400 px-4 py-2 text-base font-black text-ink hover:bg-amber-300">Obuna olish</a>
+      <button type="button" onClick={onLogin} className="rounded-xl bg-white px-4 py-2 text-base font-black text-blue-800 hover:bg-blue-50">Kirish</button>
+    </div>
+  );
+}
+
 /* ---------- Tariflar bo‘limi (landing) ---------- */
 function PricingSection() {
   const [pick, setPick] = useState({ 'ona-tili': [9], adabiyot: [9] });
@@ -38000,7 +38050,7 @@ function LoginCard({ onLogin }) {
   );
 }
 
-function LoginScreen({ onLogin }) {
+function LoginScreen({ onLogin, onGuest }) {
   const topicCount = useMemo(() => SUBJECTS.map((x) => CONTENT[x.id] || {}).reduce((a, g) => a + Object.values(g).reduce((b, arr) => b + arr.length, 0), 0), []);
   const games = GAMES.filter((g) => !g.disabled && !(g.id === 'units' && !VISIBLE_SUBJECT_IDS.includes('fizika')));
   const [menu, setMenu] = useState(false);
@@ -38073,6 +38123,11 @@ function LoginScreen({ onLogin }) {
               <button onClick={() => go('demo')} className="dp-btn dp-aura inline-flex items-center gap-3 rounded-2xl bg-amber-400 px-7 py-4 text-xl font-black text-ink hover:bg-amber-300"><Play size={24} /> Hoziroq sinab ko‘ring</button>
               <button onClick={() => go('kirish')} className="dp-btn inline-flex items-center gap-3 rounded-2xl bg-white px-7 py-4 text-xl font-black text-ink hover:bg-paper"><LogIn size={24} /> Kirish</button>
             </div>
+            {onGuest && (
+              <button onClick={onGuest} className="mt-4 inline-flex items-center gap-2 rounded-2xl border border-white/30 bg-white/10 px-5 py-3 text-lg font-black text-white hover:bg-white/20">
+                <BookOpen size={22} /> Kirmasdan darslarni ko‘rish <ArrowRight size={20} />
+              </button>
+            )}
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-base font-semibold text-blue-100">
               {['Ro‘yxatdan o‘tmasdan demo', 'O‘zbek tilida', 'Bepul sinov rejimi'].map((t) => (
                 <span key={t} className="inline-flex items-center gap-2"><CheckCircle2 size={20} className="text-firuza-300" /> {t}</span>
@@ -38187,6 +38242,14 @@ function LoginScreen({ onLogin }) {
             );
           })}
         </div>
+        {onGuest && (
+          <div className="mt-10 text-center">
+            <button onClick={onGuest} className="dp-btn inline-flex items-center gap-2 rounded-2xl bg-blue-600 px-7 py-4 text-xl font-black text-white hover:bg-blue-700">
+              <BookOpen size={24} /> Mundarijani ko‘rish — kirmasdan
+            </button>
+            <p className="mt-3 text-base font-semibold text-slate-500">Har sinfda {GUEST_FREE_LESSONS}-dars va {GUEST_FREE_GAMES} ta o‘yin bepul</p>
+          </div>
+        )}
       </section>
 
       {/* Tariflar */}
@@ -39905,10 +39968,23 @@ function GradeScreen({ subject, onPick, onBack, schoolClasses = [], allowedGrade
   );
 }
 
-function TopicCard({ t, i, onPick, onEditSet, onDeleteSet }) {
+function TopicCard({ t, i, onPick, onEditSet, onDeleteSet, locked, free, onLocked }) {
   const [confirmDel, setConfirmDel] = useState(false);
+  if (locked) {
+    return (
+      <button type="button" onClick={() => onLocked?.(t)} className="dp-sticker-soft flex items-start gap-4 rounded-3xl bg-white/70 p-6 text-left opacity-80 transition hover:opacity-100">
+        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-line bg-slate-100 text-slate-400"><Lock size={26} /></div>
+        <div className="min-w-0">
+          <h3 className="text-xl md:text-2xl font-black text-slate-600">{i >= 0 ? `${i + 1}. ` : ''}{t.title}</h3>
+          {t.short && <p className="mt-1 text-base text-slate-400">{t.short}</p>}
+          <span className="mt-2 inline-flex items-center gap-1 rounded-md bg-slate-100 px-2 py-0.5 text-sm font-bold text-slate-500"><Lock size={14} /> Obuna bilan ochiladi</span>
+        </div>
+      </button>
+    );
+  }
   return (
-    <div className="dp-sticker-soft flex flex-col rounded-3xl bg-white p-6 transition hover:-translate-y-0.5 hover:shadow-[0_22px_40px_-20px_rgba(27,36,64,.38)]">
+    <div className={`dp-sticker-soft relative flex flex-col rounded-3xl bg-white p-6 transition hover:-translate-y-0.5 hover:shadow-[0_22px_40px_-20px_rgba(27,36,64,.38)] ${free ? 'ring-2 ring-amber-300' : ''}`}>
+      {free && <span className="absolute -top-3 left-6 rounded-full bg-amber-400 px-3 py-0.5 text-sm font-black text-ink">Bepul dars</span>}
       <div className="flex items-start gap-4">
         {!t.custom && artOf(t) ? (
           <div className="relative h-20 w-28 shrink-0">
@@ -39976,7 +40052,7 @@ function TopicCard({ t, i, onPick, onEditSet, onDeleteSet }) {
   );
 }
 
-function TopicScreen({ subject, grade, topics, onPick, onBack, lastTopicId, classInfo, onResults, onNewSet, onEditSet, onDeleteSet }) {
+function TopicScreen({ subject, grade, topics, onPick, onBack, lastTopicId, classInfo, onResults, onNewSet, onEditSet, onDeleteSet, freeIds = null, onLocked, guestNote }) {
   const storeKey = `darsplay_open_bob_${subject?.id}_${grade}`;
   const [query, setQuery] = useState('');
 
@@ -40050,10 +40126,13 @@ function TopicScreen({ subject, grade, topics, onPick, onBack, lastTopicId, clas
             <button onClick={() => setOpenList([])} className="dp-btn rounded-2xl bg-white px-4 py-2.5 text-base font-extrabold text-ink hover:bg-amber-50">Hammasini yopish</button>
           </>
         )}
-        <button onClick={onNewSet} className="dp-btn inline-flex items-center gap-2 rounded-2xl bg-violet-600 px-5 py-3 text-lg font-black text-white hover:bg-violet-700">
-          <ListPlus size={24} /> O‘z savollarim
-        </button>
+        {onNewSet && (
+          <button onClick={onNewSet} className="dp-btn inline-flex items-center gap-2 rounded-2xl bg-violet-600 px-5 py-3 text-lg font-black text-white hover:bg-violet-700">
+            <ListPlus size={24} /> O‘z savollarim
+          </button>
+        )}
       </div>
+      {guestNote}
 
       {regularCount === 0 && !topics.some((t) => t.custom) && (
         <div className="mb-5 flex items-start gap-3 rounded-2xl bg-blue-50 p-4 text-lg text-blue-900">
@@ -40091,7 +40170,8 @@ function TopicScreen({ subject, grade, topics, onPick, onBack, lastTopicId, clas
               {isOpen && (
                 <div className="dp-pop grid gap-4 px-4 pb-5 md:grid-cols-2">
                   {g.items.map(({ t, i }) => (
-                    <TopicCard key={t.id} t={t} i={i} onPick={onPick} onEditSet={onEditSet} onDeleteSet={onDeleteSet} />
+                    <TopicCard key={t.id} t={t} i={i} onPick={onPick} onEditSet={onEditSet} onDeleteSet={onDeleteSet}
+                      locked={!!freeIds && !freeIds.includes(t.id)} free={!!freeIds && freeIds.includes(t.id)} onLocked={onLocked} />
                   ))}
                 </div>
               )}
@@ -41275,13 +41355,13 @@ function LessonScreen({ topic, onBack, onGames }) {
   );
 }
 
-function GameCard({ g, n, onPick, topic, featured, small }) {
+function GameCard({ g, n, onPick, topic, featured, small, locked, onLocked }) {
   const I = g.icon;
   const unavailable = !gameAvailable(g.id, topic);
   return (
     <button
       disabled={unavailable}
-      onClick={() => onPick(g.id)}
+      onClick={() => (locked ? onLocked?.(g) : onPick(g.id))}
       className={`group relative flex flex-col items-start overflow-hidden rounded-3xl bg-white text-left disabled:cursor-not-allowed disabled:opacity-50 ${
         small ? 'dp-sticker-soft gap-3 p-5 enabled:hover:-translate-y-1' : 'dp-sticker dp-sticker-hover gap-4 p-6 md:p-8'
       }`}
@@ -41296,23 +41376,32 @@ function GameCard({ g, n, onPick, topic, featured, small }) {
         <div className={`mt-1 ${small ? 'text-base' : 'text-lg'} text-slate-500`}>{g.desc}</div>
       </div>
       {unavailable && <span className="rounded-full bg-slate-100 px-3 py-1 text-sm font-bold text-slate-500">Bu mavzuda hali yo‘q</span>}
+      {!unavailable && locked && <span className="absolute inset-0 flex items-start justify-end bg-white/55 p-4"><span className="inline-flex items-center gap-1 rounded-full bg-ink px-3 py-1 text-sm font-black text-white"><Lock size={14} /> Obuna bilan</span></span>}
       {!unavailable && (g.fresh || g.hot) && !small && <span className="absolute left-24 top-5 rounded-full bg-anor-500 px-2 py-0.5 text-sm font-black text-white md:left-28 md:top-7">Yangi</span>}
     </button>
   );
 }
 
-function GameSelectScreen({ topic, topicIndex, onPick, onBack }) {
+function GameSelectScreen({ topic, topicIndex, onPick, onBack, freeLimit = null, onLocked }) {
   const featuredIds = useMemo(() => featuredGames(topic, topicIndex), [topic, topicIndex]);
+  const freeIds = freeLimit == null ? null : featuredIds.filter((id) => gameAvailable(id, topic)).slice(0, freeLimit);
+  const isLocked = (id) => !!freeIds && !freeIds.includes(id);
   const featured = featuredIds.map((id) => GAMES.find((g) => g.id === id)).filter(Boolean);
   const rest = GAMES.filter((g) => !g.disabled && !featuredIds.includes(g.id) && !(g.id === 'units' && !gameAvailable('units', topic)));
   const [showAll, setShowAll] = useState(false);
   const random = () => {
+    if (freeIds) { if (freeIds.length) onPick(freeIds[0]); return; }
     const pool = featuredIds.length ? featuredIds : rest.filter((g) => gameAvailable(g.id, topic)).map((g) => g.id);
     if (pool.length) onPick(pool[Math.floor(Math.random() * pool.length)]);
   };
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 md:px-8">
       <PageTitle title="O‘yinni tanlang" subtitle={topic?.title} onBack={onBack} />
+      {freeIds && (
+        <div className="mb-5 flex flex-wrap items-center gap-3 rounded-2xl border border-amber-300 bg-amber-50 px-5 py-4 text-lg font-bold text-amber-900">
+          <Gift size={22} className="shrink-0" /> Mehmon rejimida {GUEST_FREE_GAMES} ta o‘yin bepul: «{GAMES.find((g) => g.id === freeIds[0])?.name || '—'}». Qolgan o‘yinlar obuna bilan ochiladi.
+        </div>
+      )}
       <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
         <div className="dp-hand inline-flex  items-center gap-2 text-3xl text-anor-500">
           <Doodle kind="sparkle" size={26} color="#E2463F" /> bu darsning o‘yinlari
@@ -41322,7 +41411,7 @@ function GameSelectScreen({ topic, topicIndex, onPick, onBack }) {
         </button>
       </div>
       <div className="dp-reveal dp-reveal-stagger grid grid-cols-2 gap-4 md:grid-cols-3">
-        {featured.map((g, i) => <GameCard key={g.id} g={g} n={i + 1} onPick={onPick} topic={topic} featured />)}
+        {featured.map((g, i) => <GameCard key={g.id} g={g} n={i + 1} onPick={onPick} topic={topic} featured locked={isLocked(g.id)} onLocked={onLocked} />)}
       </div>
       {rest.length > 0 && (
         <div className="mt-8">
@@ -41332,7 +41421,7 @@ function GameSelectScreen({ topic, topicIndex, onPick, onBack }) {
           </button>
           {showAll && (
             <div className="dp-pop mt-4 grid grid-cols-2 gap-3 md:grid-cols-4">
-              {rest.map((g) => <GameCard key={g.id} g={g} onPick={onPick} topic={topic} small />)}
+              {rest.map((g) => <GameCard key={g.id} g={g} onPick={onPick} topic={topic} small locked={isLocked(g.id)} onLocked={onLocked} />)}
             </div>
           )}
         </div>
@@ -43862,23 +43951,42 @@ export default function DarsPlayApp() {
     resetTo([firstStep]);
   };
 
-  const teacher = session?.role === 'teacher' ? db.teachers.find((t) => t.id === session.id) || null : null;
+  const isGuest = session?.role === 'guest';
+  const teacher = isGuest ? GUEST_TEACHER : session?.role === 'teacher' ? db.teachers.find((t) => t.id === session.id) || null : null;
   const isAdmin = session?.role === 'admin';
+  const [guestRoster, setGuestRoster] = useState(DEFAULT_ROSTER);
+  const [guestWall, setGuestWall] = useState(null);
+  const startGuest = () => {
+    setSession({ role: 'guest' });
+    setGroups(null);
+    setClassId(GUEST_CLASS_ID);
+    setSubjectId(null);
+    resetTo(['login', 'subject']);
+    if (typeof window !== 'undefined') window.scrollTo({ top: 0 });
+  };
+  const guestToLogin = () => {
+    setGuestWall(null);
+    setSession(null);
+    resetTo(['login']);
+    setTimeout(() => scrollToId('kirish'), 150);
+  };
   const access = useMemo(() => teacherAccess(teacher), [teacher]);
   const allowed = useMemo(() => Object.keys(access), [access]);
   const gradesOf = (sid) => access[sid] || [];
   // Paketda bitta fan bo‘lsa, fan tanlash ekrani o‘tkazib yuboriladi
-  const flowStart = allowed.length === 1 ? ['home'] : ['home', 'subject'];
+  const flowStart = isGuest ? ['login', 'subject'] : allowed.length === 1 ? ['home'] : ['home', 'subject'];
   const startLesson = () => { if (allowed.length === 1) { setSubjectId(allowed[0]); resetTo(['home', 'grade']); } else resetTo(['home', 'subject']); };
   const schoolClasses = useMemo(
-    () => (teacher ? db.classes.filter((c) => normSchool(c.school) === normSchool(teacher.school)) : []),
+    () => (teacher && !teacher.guest ? db.classes.filter((c) => normSchool(c.school) === normSchool(teacher.school)) : []),
     [db.classes, teacher]
   );
-  const selectedClass = schoolClasses.find((c) => c.id === classId) || null;
+  const selectedClass = isGuest
+    ? (classId === GUEST_CLASS_ID ? { id: GUEST_CLASS_ID, school: '', grade, letter: 'A', students: guestRoster } : null)
+    : schoolClasses.find((c) => c.id === classId) || null;
 
   // Birinchi kirishda qo‘llanmani taklif qilamiz (har bir o‘qituvchi uchun bir marta)
   useEffect(() => {
-    if (!teacher || step !== 'home') return;
+    if (!teacher || teacher.guest || step !== 'home') return;
     try { if (!localStorage.getItem(`${GUIDE_KEY}_${teacher.id}`)) setShowWelcome(true); } catch { /* */ }
   }, [teacher?.id, step]); // eslint-disable-line react-hooks/exhaustive-deps
   const markGuideSeen = () => {
@@ -43915,17 +44023,19 @@ export default function DarsPlayApp() {
 
   const subject = SUBJECTS.find((s) => s.id === subjectId);
   const customTopics = useMemo(() => {
-    if (!subject || !grade) return [];
+    if (!subject || !grade || isGuest) return [];
     return (db.customSets || [])
       .filter((x) => x.subject === subject.id && Number(x.grade) === Number(grade) && (x.ownerId === teacher?.id || x.shared))
       .map((x) => customSetToTopic(x, teacher?.id));
-  }, [db.customSets, subject, grade, teacher]);
+  }, [db.customSets, subject, grade, teacher, isGuest]);
   const topics = useMemo(() => {
     if (!subject || !grade) return [];
     if (teacher && !(teacherAccess(teacher)[subject.id] || []).includes(Number(grade))) return []; // ruxsat berilmagan sinf yoki obuna tugagan
     return [...customTopics, ...(CONTENT[subject.id]?.[grade] || []), makeGeneralTopic(subject)];
   }, [subject, grade, customTopics, teacher]);
-  const topic = topics.find((t) => t.id === topicId);
+  const guestFree = useMemo(() => (isGuest && subject && grade ? guestFreeTopicIds(subject.id, grade) : null), [isGuest, subject, grade]);
+  const topicAll = topics.find((t) => t.id === topicId);
+  const topic = guestFree && topicAll && !guestFree.includes(topicAll.id) ? null : topicAll; // mehmon faqat bepul darsni ocha oladi
   const game = GAMES.find((g) => g.id === gameId);
 
   const setTeamCount = (n) => {
@@ -43994,7 +44104,8 @@ export default function DarsPlayApp() {
   };
 
   const goHome = () => {
-    if (teacher) resetTo(['home']);
+    if (isGuest) resetTo(['login', 'subject']);
+    else if (teacher) resetTo(['home']);
     else if (isAdmin) resetTo(['admin']);
   };
 
@@ -44040,7 +44151,7 @@ export default function DarsPlayApp() {
     if (!finished || savedKeyRef.current === gameKey) return;
     savedKeyRef.current = gameKey;
     const total = teams.reduce((a, t) => a + (t.score || 0), 0);
-    if (!selectedClass || !teacher || !topic || !game || total <= 0) { setSaveState(null); return; }
+    if (isGuest || !selectedClass || !teacher || !topic || !game || total <= 0) { setSaveState(null); return; }
     const row = {
       class_id: selectedClass.id, teacher_id: teacher.id, teacher_name: teacher.name, subject: subjectId, grade,
       topic_id: topic.id, topic_title: topic.title, game_id: game.id, game_name: game.name,
@@ -44178,6 +44289,7 @@ export default function DarsPlayApp() {
 
   const saveStudents = async (list) => {
     if (!selectedClass) return;
+    if (isGuest) { setGuestRoster(list); setGroups(null); return; }
     if (REMOTE) {
       const { error } = await supabase.from('classes').update({ students: list }).eq('id', selectedClass.id);
       if (error) { setDataError('Ro‘yxatni saqlab bo‘lmadi: ' + errText(error)); return; }
@@ -44241,7 +44353,7 @@ export default function DarsPlayApp() {
   const crumbs = [];
   if (['grade', 'class', 'topic', 'lesson', 'game', 'picker', 'play'].includes(step) && subject) crumbs.push(subject.name);
   if (['class'].includes(step) && grade) crumbs.push(`${grade}-sinf`);
-  if (['topic', 'lesson', 'game', 'picker', 'play'].includes(step) && selectedClass) crumbs.push(`${classLabel(selectedClass)} sinf`);
+  if (['topic', 'lesson', 'game', 'picker', 'play'].includes(step) && selectedClass) crumbs.push(isGuest ? `${grade}-sinf` : `${classLabel(selectedClass)} sinf`);
   if (['lesson', 'game', 'picker', 'play'].includes(step) && topic) crumbs.push(topic.title);
   if (['picker', 'play'].includes(step) && game) crumbs.push(game.name);
   if (step === 'custom') crumbs.push('O‘z savollarim');
@@ -44252,12 +44364,18 @@ export default function DarsPlayApp() {
   const teacherSteps = ['home', 'subject', 'grade', 'class', 'topic', 'lesson', 'game', 'picker', 'play', 'custom', 'results'];
   const needsTopic = ['lesson', 'game', 'picker', 'play'].includes(step);
   const needsClass = ['topic', 'lesson', 'game', 'picker', 'play', 'custom'].includes(step);
-  const quickOpen = (sid, g) => { if (!gradesOf(sid).includes(Number(g))) return; setSubjectId(sid); setGrade(g); resetTo([...flowStart, 'grade', 'class']); };
+  const quickOpen = (sid, g) => {
+    if (!gradesOf(sid).includes(Number(g))) return;
+    setSubjectId(sid); setGrade(g);
+    if (isGuest) { setClassId(GUEST_CLASS_ID); resetTo([...flowStart, 'grade', 'topic']); } else resetTo([...flowStart, 'grade', 'class']);
+  };
   const resumeRecent = (r) => { if (!gradesOf(r.subjectId).includes(Number(r.grade))) return; setSubjectId(r.subjectId); setGrade(r.grade); setClassId(r.classId); setTopicId(r.topicId); setGroups(null); resetTo([...flowStart, 'grade', 'class', 'topic', 'lesson']); };
   const FLOW = ['subject', 'grade', 'class', 'topic'];
   const jumpTo = (key) => setHistory((h) => { const i = h.lastIndexOf(key); return i >= 0 ? h.slice(0, i + 1) : h; });
   let safeStep = step;
   if (booting) safeStep = 'boot';
+  else if (isGuest && ['home', 'results', 'custom', 'guide'].includes(step)) safeStep = 'subject';
+  else if (isGuest && step === 'class') safeStep = 'grade';
   else if (teacherSteps.includes(step) && !teacher) safeStep = 'login';
   else if (!['home', 'subject', 'results'].includes(step) && teacherSteps.includes(step) && !allowed.includes(subjectId)) safeStep = 'home';
   else if (step === 'admin' && !isAdmin) safeStep = 'login';
@@ -44290,13 +44408,15 @@ export default function DarsPlayApp() {
         teacher={teacher || (isAdmin ? { name: 'Bosh administrator', school: 'Barcha maktablar' } : null)}
         crumbs={crumbs}
         onHome={goHome}
-        onLogout={logout}
+        onLogout={isGuest ? guestToLogin : logout}
         isFs={isFs}
         toggleFs={toggleFs}
-        onHelp={teacher || isAdmin ? () => { markGuideSeen(); if (step !== 'guide') go('guide'); } : null}
+        onHelp={(teacher && !isGuest) || isAdmin ? () => { markGuideSeen(); if (step !== 'guide') go('guide'); } : null}
         onBoard={teacher || isAdmin ? () => setBoardOpen(true) : null}
-        onSubs={teacher ? () => { resetTo(['home']); setTimeout(() => scrollToId('obunalarim'), 120); } : null}
+        onSubs={teacher && !isGuest ? () => { resetTo(['home']); setTimeout(() => scrollToId('obunalarim'), 120); } : null}
+        guest={isGuest}
       />}
+      {guestWall && <GuestWall what={guestWall} onClose={() => setGuestWall(null)} onLogin={guestToLogin} />}
       {boardOpen && <Whiteboard onClose={() => setBoardOpen(false)} />}
 
       <main className="pb-16">
@@ -44307,7 +44427,7 @@ export default function DarsPlayApp() {
             items={[
               { key: 'subject', label: 'Fan', value: subject?.name },
               { key: 'grade', label: 'Sinf', value: grade ? `${grade}-sinf` : '' },
-              { key: 'class', label: 'Sinf guruhi', value: selectedClass ? classLabel(selectedClass) : '' },
+              isGuest ? { key: 'class', label: 'Rejim', value: 'Mehmon' } : { key: 'class', label: 'Sinf guruhi', value: selectedClass ? classLabel(selectedClass) : '' },
               { key: 'topic', label: 'Mavzu' },
             ]}
           />
@@ -44326,7 +44446,7 @@ export default function DarsPlayApp() {
             <p className="text-xl font-semibold">Yuklanmoqda...</p>
           </div>
         )}
-        {safeStep === 'login' && <LoginScreen onLogin={doLogin} />}
+        {safeStep === 'login' && <LoginScreen onLogin={doLogin} onGuest={startGuest} />}
 
         {safeStep === 'admin' && <AdminPanel db={db} api={adminActions} loadGlobal={loadGlobal} />}
 
@@ -44384,7 +44504,8 @@ export default function DarsPlayApp() {
         )}
 
         {safeStep === 'grade' && (
-          <GradeScreen subject={subject} schoolClasses={schoolClasses} allowedGrades={gradesOf(subject?.id)} onBack={back} onPick={(g) => { if (!gradesOf(subject?.id).includes(g)) return; setGrade(g); go('class'); }} />
+          <GradeScreen subject={subject} schoolClasses={schoolClasses} allowedGrades={gradesOf(subject?.id)} onBack={back}
+            onPick={(g) => { if (!gradesOf(subject?.id).includes(g)) return; setGrade(g); if (isGuest) { setClassId(GUEST_CLASS_ID); go('topic'); } else go('class'); }} />
         )}
 
         {safeStep === 'class' && (
@@ -44406,11 +44527,19 @@ export default function DarsPlayApp() {
             grade={grade}
             topics={topics}
             lastTopicId={topicId}
-            classInfo={classLabel(selectedClass)}
+            classInfo={isGuest ? null : classLabel(selectedClass)}
             onBack={back}
-            onPick={(id, mode) => { setTopicId(id); const tp = topics.find((x) => x.id === id); if (tp && classId) pushRecent({ subjectId, grade, classId, topicId: id, title: tp.title }); go(mode === 'lesson' ? 'lesson' : 'game'); }}
-            onResults={() => { setRatingScope('class'); go('results'); }}
-            onNewSet={() => { setEditingSet(null); go('custom'); }}
+            onPick={(id, mode) => {
+              if (guestFree && !guestFree.includes(id)) { setGuestWall('Bu dars'); return; }
+              setTopicId(id); const tp = topics.find((x) => x.id === id);
+              if (tp && classId && !isGuest) pushRecent({ subjectId, grade, classId, topicId: id, title: tp.title });
+              go(mode === 'lesson' ? 'lesson' : 'game');
+            }}
+            onResults={isGuest ? null : () => { setRatingScope('class'); go('results'); }}
+            onNewSet={isGuest ? null : () => { setEditingSet(null); go('custom'); }}
+            freeIds={guestFree}
+            onLocked={() => setGuestWall('Bu dars')}
+            guestNote={isGuest ? <GuestBanner onLogin={guestToLogin} /> : null}
             onEditSet={(t) => { setEditingSet((db.customSets || []).find((x) => x.id === t.customId) || null); go('custom'); }}
             onDeleteSet={deleteCustomSet}
           />
@@ -44421,7 +44550,15 @@ export default function DarsPlayApp() {
         )}
 
         {safeStep === 'game' && topic && (
-          <GameSelectScreen topic={topic} topicIndex={topics.findIndex((t) => t.id === topicId)} onBack={back} onPick={(id) => { setGameId(id); go('picker'); }} />
+          <GameSelectScreen topic={topic} topicIndex={topics.findIndex((t) => t.id === topicId)} onBack={back}
+            freeLimit={isGuest ? GUEST_FREE_GAMES : null} onLocked={(g) => setGuestWall(`«${g.name}» o‘yini`)}
+            onPick={(id) => {
+              if (isGuest) {
+                const free = featuredGames(topic, topics.findIndex((t) => t.id === topicId)).filter((x) => gameAvailable(x, topic)).slice(0, GUEST_FREE_GAMES);
+                if (!free.includes(id)) { setGuestWall('Bu o‘yin'); return; }
+              }
+              setGameId(id); go('picker');
+            }} />
         )}
 
         {safeStep === 'picker' && topic && (
@@ -44493,7 +44630,7 @@ export default function DarsPlayApp() {
           saveState={saveState}
           onReplay={replay}
           onOtherGame={() => { setFinished(false); back(); back(); }}
-          onTopics={() => { setFinished(false); resetTo(['home', 'subject', 'grade', 'class', 'topic']); }}
+          onTopics={() => { setFinished(false); resetTo(isGuest ? ['login', 'subject', 'grade', 'topic'] : ['home', 'subject', 'grade', 'class', 'topic']); }}
         />
       )}
 
