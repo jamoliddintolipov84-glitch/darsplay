@@ -73,20 +73,85 @@ function packageOf(value) {
   return PACKAGES.find((p) => p.id === value) || null;
 }
 
-/** O‘qituvchiga ruxsat berilgan fan id lari. Paket biriktirilmagan bo‘lsa — bo‘sh ro‘yxat. */
+/** O‘qituvchiga ruxsat berilgan fan id lari (obuna amalda bo‘lsa). */
 function allowedSubjectIds(teacher) {
-  return packageOf(teacher?.subject)?.subjects || [];
+  return Object.keys(teacherAccess(teacher));
+}
+
+/* ---------- Aloqa (sotuv va yordam) ---------- */
+const TELEGRAM_USER = 'dars_play_admin';
+const TELEGRAM_URL = `https://t.me/${TELEGRAM_USER}`;
+const telegramLink = (text) => (text ? `${TELEGRAM_URL}?text=${encodeURIComponent(text)}` : TELEGRAM_URL);
+
+/* ---------- Tariflar ----------
+ * Narx — 1 fan uchun, 1 yilga (12 oy). Ona tili va Adabiyot — alohida fanlar, narxlari qo‘shiladi.
+ * 4 va undan ko‘p sinf — «Barcha sinflar» narxi.
+ */
+const PRICE_TIERS = [
+  { n: 1, label: '1 sinf', price: 50000 },
+  { n: 2, label: '2 sinf', price: 90000 },
+  { n: 3, label: '3 sinf', price: 130000 },
+  { n: 4, label: 'Barcha sinflar', price: 160000, all: true },
+];
+const SUBSCRIPTION_MONTHS = 12;
+const EXPIRY_WARN_DAYS = 14;
+const formatSum = (n) => `${String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} so‘m`;
+function subjectPrice(count) {
+  if (!count) return 0;
+  return PRICE_TIERS[Math.min(count, PRICE_TIERS.length) - 1].price;
+}
+function accessPrice(access) {
+  return Object.values(access || {}).reduce((sum, g) => sum + subjectPrice((g || []).length), 0);
+}
+
+/** Fan → ochiq sinflar (obuna muddatiga qaramasdan). access bo‘lmagan eski hisoblarda paket va grades dan tiklanadi. */
+function rawAccess(teacher) {
+  if (!teacher) return {};
+  let src = {};
+  if (teacher.access && typeof teacher.access === 'object' && !Array.isArray(teacher.access)) src = teacher.access;
+  else (packageOf(teacher.subject)?.subjects || []).forEach((id) => { src[id] = Array.isArray(teacher.grades) ? teacher.grades : GRADES; });
+  const out = {};
+  SUBJECTS.forEach((s) => {
+    const g = [...new Set((src[s.id] || []).map(Number).filter((x) => GRADES.includes(x)))].sort((a, b) => a - b);
+    if (g.length) out[s.id] = g;
+  });
+  return out;
+}
+/** Amaldagi ruxsat: obuna tugagan bo‘lsa — hech narsa ochilmaydi. */
+function teacherAccess(teacher) {
+  return isExpired(teacher) ? {} : rawAccess(teacher);
+}
+function accessSummary(access) {
+  const parts = SUBJECTS.filter((s) => access?.[s.id]?.length).map((s) => `${s.name}: ${gradesLabel(access[s.id])}`);
+  return parts.length ? parts.join(' • ') : 'Fan biriktirilmagan';
+}
+
+/* ---------- Obuna muddati ---------- */
+const DAY_MS = 86400000;
+const expiresAtMs = (t) => (t?.expiresAt ? Date.parse(t.expiresAt) : null);
+function isExpired(t) { const e = expiresAtMs(t); return e != null && e < Date.now(); }
+function daysLeft(t) { const e = expiresAtMs(t); return e == null ? null : Math.max(0, Math.floor((e - Date.now()) / DAY_MS)); }
+const pad2 = (n) => String(n).padStart(2, '0');
+const fmtDay = (ms) => { const d = new Date(ms); return `${pad2(d.getDate())}.${pad2(d.getMonth() + 1)}.${d.getFullYear()}`; };
+const toDateInput = (ms) => { const d = new Date(ms); return `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`; };
+function addMonthsInput(fromMs, months) {
+  const d = new Date(fromMs);
+  d.setMonth(d.getMonth() + months);
+  return toDateInput(d.getTime());
+}
+/** Sana maydoni (YYYY-MM-DD) → o‘sha kun oxiri, ISO. */
+const dateInputToIso = (v) => (v ? new Date(`${v}T23:59:59`).toISOString() : null);
+function expiryInfo(t) {
+  const e = expiresAtMs(t);
+  if (e == null) return { tone: 'none', text: 'Muddatsiz' };
+  const d = daysLeft(t);
+  if (d < 0 || e < Date.now()) return { tone: 'expired', text: `Muddati tugagan (${fmtDay(e)})` };
+  if (d <= EXPIRY_WARN_DAYS) return { tone: 'soon', text: d === 0 ? `bugun tugaydi (${fmtDay(e)})` : `${d} kun qoldi (${fmtDay(e)} gacha)` };
+  return { tone: 'ok', text: `${fmtDay(e)} gacha` };
 }
 
 const GRADES = [5, 6, 7, 8, 9, 10, 11];
 
-/**
- * O‘qituvchiga ruxsat berilgan sinflar (masalan faqat 9 va 10). Admin biriktiradi (profiles.grades).
- * grades umuman berilmagan eski hisoblarda — barcha sinflar ochiq.
- */
-function allowedGradeList(teacher) {
-  return Array.isArray(teacher?.grades) ? teacher.grades.map(Number) : GRADES;
-}
 function gradesLabel(grades) {
   if (!Array.isArray(grades)) return 'barcha sinflar';
   if (!grades.length) return 'sinf biriktirilmagan';
@@ -36130,6 +36195,7 @@ const errText = (e) => e?.message || String(e || 'Noma’lum xato');
 const mapTeacherRow = (r) => ({
   id: r.id, login: r.login, name: r.name, school: r.school, region: r.region || '',
   subject: r.subject || '', grades: Array.isArray(r.grades) ? r.grades.map(Number) : null,
+  access: r.access && typeof r.access === 'object' ? r.access : null, expiresAt: r.expires_at || null,
   role: r.role, createdAt: Date.parse(r.created_at) || 0,
 });
 const mapClassRow = (r) => ({
@@ -36175,11 +36241,13 @@ async function adminApi(action, p = {}) {
     createTeacher: () => supabase.rpc('admin_create_teacher', {
       p_login: p.login, p_password: p.password, p_name: p.name, p_school: p.school,
       p_region: p.region || null, p_subject: p.subject || null, p_grades: Array.isArray(p.grades) ? p.grades : null,
+      p_access: p.access || null, p_expires_at: p.expiresAt || null,
     }),
     updateTeacher: () => supabase.rpc('admin_update_teacher', {
       p_id: p.id, p_login: p.login, p_name: p.name, p_school: p.school,
       p_region: p.region || null, p_subject: p.subject || null, p_password: p.password || null,
       p_grades: Array.isArray(p.grades) ? p.grades : null,
+      p_access: p.access || null, p_expires_at: p.expiresAt || null,
     }),
     resetPassword: () => supabase.rpc('admin_reset_password', { p_id: p.id, p_password: p.password }),
     deleteTeacher: () => supabase.rpc('admin_delete_teacher', { p_id: p.id }),
@@ -36373,14 +36441,98 @@ function DemoArena() {
   );
 }
 
+/** Tayyor fan va sinflar matni, masalan: «Ona tili — 8, 9, 10-sinf; Adabiyot — 8, 9-sinf» */
+function readyText() {
+  return SUBJECTS.map((sj) => {
+    const g = Object.keys(CONTENT[sj.id] || {}).map(Number).sort((a, b) => a - b);
+    return g.length ? `${sj.name} — ${g.join(', ')}-sinf` : null;
+  }).filter(Boolean).join('; ');
+}
+
 const LANDING_FAQ = [
   ['O‘quvchilarga telefon kerakmi?', 'Yo‘q. Hamma narsa o‘qituvchi kompyuteri va proyektor (yoki interaktiv doska) orqali ishlaydi. O‘quvchilar jamoa bo‘lib doskaga chiqib javob beradi.'],
-  ['Qaysi fan va sinflar tayyor?', '8- va 9-sinf Ona tili hamda Adabiyot — darslik va taqvim-mavzu reja asosida to‘liq tayyor. Boshqa sinflar va fanlar bosqichma-bosqich qo‘shiladi. O‘qituvchi o‘z savollarini ham qo‘sha oladi.'],
-  ['Login va parolni qayerdan olaman?', 'Hisobni maktabingiz yoki Dars play administratori yaratib beradi. Ommaviy ro‘yxatdan o‘tish yopiq — bu o‘quvchilar ma’lumotlarini himoya qiladi.'],
+  ['Qaysi fan va sinflar tayyor?', `Hozir tayyor: ${readyText()}. Darslar darslik va taqvim-mavzu reja asosida tuzilgan. Boshqa sinflar va fanlar bosqichma-bosqich qo‘shiladi. O‘qituvchi o‘z savollarini ham qo‘sha oladi.`],
+  ['Narxi qancha?', `1 fan, 1 sinf — ${formatSum(PRICE_TIERS[0].price)} / yil. 2 sinf — ${formatSum(PRICE_TIERS[1].price)}, 3 sinf — ${formatSum(PRICE_TIERS[2].price)}, barcha sinflar — ${formatSum(PRICE_TIERS[3].price)}. Ona tili va Adabiyot alohida fanlar: ikkalasi 1 sinf uchun — ${formatSum(PRICE_TIERS[0].price * 2)}.`],
+  ['Login va parolni qayerdan olaman?', `Telegram'da @${TELEGRAM_USER} ga yozing: fan va sinflarni tanlaysiz, to‘lovdan keyin login va parol yuboriladi. Ommaviy ro‘yxatdan o‘tish yopiq — bu o‘quvchilar ma’lumotlarini himoya qiladi.`],
+  ['Obuna muddati tugasa nima bo‘ladi?', `Obuna ${SUBSCRIPTION_MONTHS} oyga beriladi. Tugashiga ${EXPIRY_WARN_DAYS} kun qolganda eslatma chiqadi. Muddat tugagach darslar yopiladi, lekin sinflaringiz va natijalaringiz saqlanib qoladi — uzaytirsangiz, hammasi joyida.`],
   ['Internet bo‘lmasa ishlaydimi?', 'Sahifa bir marta ochilgach, darslar va o‘yinlar brauzerda ishlaydi. Natijalarni saqlash va reyting uchun internet kerak.'],
   ['O‘quvchini qanday tanlayman?', 'To‘rt usul bor: baraban (doira), kamera orqali tasodifiy tanlash, ro‘yxatdan tanlash va avtomatik ravishda jamoalarga bo‘lish.'],
   ['O‘zim savol qo‘sha olamanmi?', 'Ha. «O‘z to‘plamim» bo‘limida juftliklar, test, savol-javoblarni kiritasiz — ular barcha o‘yinlarda ishlaydi.'],
 ];
+
+/* ---------- Tariflar bo‘limi (landing) ---------- */
+function PricingSection() {
+  const [pick, setPick] = useState({ 'ona-tili': [9], adabiyot: [9] });
+  const total = accessPrice(pick);
+  const lines = SUBJECTS.filter((sj) => pick[sj.id]?.length).map((sj) => {
+    const g = pick[sj.id];
+    const soon = g.filter((x) => !CONTENT[sj.id]?.[x]);
+    return `${sj.name} — ${g.join(', ')}-sinf${soon.length ? ` (${soon.join(', ')}-sinf tez orada)` : ''}`;
+  });
+  const msg = lines.length
+    ? `Assalomu alaykum! Dars play obunasini olmoqchiman.\n${lines.join('\n')}\nJami: ${formatSum(total)} (1 yil)`
+    : 'Assalomu alaykum! Dars play obunasi haqida bilmoqchiman.';
+  const perGrade = (t) => (t.all ? null : Math.round(t.price / t.n));
+  return (
+    <section id="tariflar" className="scroll-mt-20 border-t border-line px-4 py-20 md:px-8 md:py-28">
+      <SectionHead kicker="Tariflar" title="Faqat kerakli sinflaringiz uchun to‘lang" sub={`Narx — 1 fan uchun, 1 yilga (${SUBSCRIPTION_MONTHS} oy). Ona tili va Adabiyot — alohida fanlar.`} />
+
+      <div className="dp-reveal dp-reveal-stagger mx-auto mt-14 grid max-w-6xl grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
+        {PRICE_TIERS.map((t, i) => (
+          <div key={t.n} className={`dp-arch dp-arch-line dp-sticker relative flex flex-col items-center overflow-hidden px-3 pb-6 pt-12 text-center sm:px-6 sm:pb-7 sm:pt-14 ${t.all ? 'bg-blue-700 text-white' : 'bg-white text-ink'}`}>
+            {t.all && <span className="dp-girih pointer-events-none absolute inset-0 opacity-70" />}
+            {t.all && <span className="relative mb-2 rounded-full bg-amber-300 px-3 py-0.5 text-sm font-black text-amber-950">Eng foydali</span>}
+            <span className={`relative text-2xl font-black ${t.all ? 'text-white' : 'text-ink'}`}>{t.label}</span>
+            <span className={`relative mt-1 text-sm font-bold ${t.all ? 'text-blue-100' : 'text-slate-500'}`}>{t.all ? '4 va undan ko‘p sinf' : '1 fan'}</span>
+            <span className={`relative mt-4 text-3xl font-black tabular-nums sm:mt-5 sm:text-4xl ${t.all ? 'text-amber-300' : 'text-ink'}`}>{formatSum(t.price).replace(' so‘m', '')}</span>
+            <span className={`relative text-base font-bold ${t.all ? 'text-blue-100' : 'text-slate-500'}`}>so‘m / yil</span>
+            <span className={`relative mt-4 rounded-lg px-3 py-1 text-sm font-extrabold ${t.all ? 'bg-white/15 text-white' : i === 0 ? 'bg-slate-100 text-slate-600' : 'bg-firuza-50 text-firuza-700'}`}>
+              {t.all ? '5–11-sinflar, bitta fan' : i === 0 ? `oyiga ~${formatSum(Math.round(t.price / 12 / 10) * 10)}` : `har sinf ${formatSum(perGrade(t))}`}
+            </span>
+          </div>
+        ))}
+      </div>
+      <p className="dp-reveal mx-auto mt-6 max-w-3xl text-center text-lg font-semibold text-slate-600">
+        Ikkala fan kerak bo‘lsa, narxlar qo‘shiladi: masalan, 1 sinf Ona tili + Adabiyot — <b className="text-ink">{formatSum(PRICE_TIERS[0].price * 2)}</b> / yil.
+      </p>
+
+      {/* Kalkulyator */}
+      <div className="dp-reveal mx-auto mt-12 grid max-w-6xl gap-6 lg:grid-cols-[1.4fr_1fr]">
+        <div className="dp-sticker rounded-[2rem] bg-white p-6 md:p-8">
+          <h3 className="flex items-center gap-2 text-2xl font-black text-ink"><Calculator size={26} className="text-blue-600" /> Narxni hisoblang</h3>
+          <p className="mt-1 text-base font-semibold text-slate-500">Fan va sinflarni belgilang — narx darhol chiqadi.</p>
+          <div className="mt-5">
+            <AccessPicker value={pick} onChange={setPick} title="Qaysi fan va sinflar kerak?" compact />
+          </div>
+        </div>
+        <div className="dp-sticker relative flex flex-col overflow-hidden rounded-[2rem] bg-blue-700 p-6 text-white md:p-8">
+          <div className="dp-girih pointer-events-none absolute inset-0 opacity-60" />
+          <div className="relative">
+            <span className="dp-kicker text-amber-300">Sizning tanlovingiz</span>
+            <div className="mt-3 space-y-1 text-lg font-bold text-blue-50">
+              {lines.length ? lines.map((l) => <div key={l}>• {l}</div>) : <div>Hali hech narsa tanlanmadi</div>}
+            </div>
+            <div className="mt-6 text-base font-bold text-blue-100">Jami, 1 yilga:</div>
+            <div className="text-5xl font-black tabular-nums text-amber-300">{formatSum(total)}</div>
+            <a href={telegramLink(msg)} target="_blank" rel="noopener noreferrer"
+              className="dp-btn dp-aura mt-7 inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-amber-400 px-6 py-4 text-xl font-black text-ink hover:bg-amber-300">
+              <Send size={24} /> Telegram orqali buyurtma
+            </a>
+            <p className="mt-3 text-center text-base font-semibold text-blue-100">@{TELEGRAM_USER}</p>
+          </div>
+          <ol className="relative mt-7 space-y-3 border-t border-white/15 pt-6 text-base font-semibold text-blue-50">
+            {['Fan va sinflarni tanlang', `Telegram'da @${TELEGRAM_USER} ga yozing`, 'To‘lovdan keyin login va parol olasiz', `${SUBSCRIPTION_MONTHS} oy davomida foydalanasiz`].map((t, i) => (
+              <li key={t} className="flex items-center gap-3"><span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-300 font-black text-ink">{i + 1}</span>{t}</li>
+            ))}
+          </ol>
+        </div>
+      </div>
+      <p className="dp-reveal mx-auto mt-6 max-w-3xl text-center text-base font-semibold text-slate-500">
+        Hozir tayyor: {readyText()}. Boshqa sinflar tayyor bo‘lishi bilan obunangizda ochiladi. Avval yuqoridagi demoda bepul sinab ko‘ring.
+      </p>
+    </section>
+  );
+}
 
 function FaqItem({ q, a }) {
   const [open, setOpen] = useState(false);
@@ -36447,7 +36599,7 @@ function LoginCard({ onLogin }) {
         </div>
         <p className="mt-2 text-sm text-blue-800">Qo‘lda: demo / demo123 yoki admin / admin123. Bu demo rejim — ma’lumotlar shu brauzerda saqlanadi.</p>
       </div>}
-      {REMOTE && <p className="mt-6 flex items-start gap-2 rounded-2xl bg-blue-50 p-4 text-base text-blue-900"><KeyRound size={20} className="mt-0.5 shrink-0" /> Login va parolni maktabingiz yoki Dars play administratori beradi.</p>}
+      {REMOTE && <p className="mt-6 flex items-start gap-2 rounded-2xl bg-blue-50 p-4 text-base text-blue-900"><KeyRound size={20} className="mt-0.5 shrink-0" /> <span>Login yo‘qmi? Telegram'da yozing: <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" className="font-black underline">@{TELEGRAM_USER}</a> — tarifni tanlab, login va parol olasiz.</span></p>}
     </form>
   );
 }
@@ -36456,7 +36608,7 @@ function LoginScreen({ onLogin }) {
   const topicCount = useMemo(() => SUBJECTS.map((x) => CONTENT[x.id] || {}).reduce((a, g) => a + Object.values(g).reduce((b, arr) => b + arr.length, 0), 0), []);
   const games = GAMES.filter((g) => !g.disabled && !(g.id === 'units' && !VISIBLE_SUBJECT_IDS.includes('fizika')));
   const [menu, setMenu] = useState(false);
-  const nav = [['imkoniyatlar', 'Imkoniyatlar'], ['demo', 'Sinab ko‘ring'], ['oyinlar', 'O‘yinlar'], ['qanday', 'Qanday ishlaydi'], ['fanlar', 'Sinflar'], ['savollar', 'Savollar']];
+  const nav = [['imkoniyatlar', 'Imkoniyatlar'], ['demo', 'Sinab ko‘ring'], ['oyinlar', 'O‘yinlar'], ['qanday', 'Qanday ishlaydi'], ['fanlar', 'Sinflar'], ['tariflar', 'Tariflar'], ['savollar', 'Savollar']];
   const go = (id) => { setMenu(false); scrollToId(id); };
 
   const features = [
@@ -36641,6 +36793,9 @@ function LoginScreen({ onLogin }) {
         </div>
       </section>
 
+      {/* Tariflar */}
+      <PricingSection />
+
       {/* Savollar */}
       <section id="savollar" className="scroll-mt-20 px-4 py-20 md:px-8 md:py-28">
         <SectionHead kicker="Savol-javob" title="Ko‘p beriladigan savollar" />
@@ -36679,8 +36834,9 @@ function LoginScreen({ onLogin }) {
               <div className="text-sm">O‘zbekiston maktablari uchun interaktiv darslar • Ona tili va adabiyot</div>
             </div>
           </div>
-          <div className="flex flex-wrap justify-center gap-4 text-base font-semibold">
+          <div className="flex flex-wrap items-center justify-center gap-4 text-base font-semibold">
             {nav.map(([id, t]) => <button key={id} onClick={() => go(id)} className="hover:text-white">{t}</button>)}
+            <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-white/10 px-3 py-1.5 font-bold text-white hover:bg-white/20"><Send size={16} /> @{TELEGRAM_USER}</a>
           </div>
         </div>
         <div className="mx-auto mt-8 max-w-6xl border-t border-white/10 pt-6 text-center text-sm">© {new Date().getFullYear()} Dars play. Darslik materiallari O‘zbekiston Respublikasi umumiy o‘rta ta’lim darsliklari asosida tayyorlangan.</div>
@@ -36729,8 +36885,69 @@ function CredentialsCard({ name, login, password, onClose }) {
   );
 }
 
+/** Fan va sinflarni belgilash: har bir fanga alohida sinflar. Narx avtomatik hisoblanadi. */
+function AccessPicker({ value = {}, onChange, error, title = 'Ochiladigan fan va sinflar (sotib olingan)', compact = false }) {
+  const toggle = (sid, g) => {
+    const cur = value[sid] || [];
+    const next = cur.includes(g) ? cur.filter((x) => x !== g) : [...cur, g].sort((a, b) => a - b);
+    const out = { ...value, [sid]: next };
+    if (!next.length) delete out[sid];
+    onChange(out);
+  };
+  const setAll = (sid) => {
+    const out = { ...value };
+    if ((value[sid] || []).length === GRADES.length) delete out[sid]; else out[sid] = [...GRADES];
+    onChange(out);
+  };
+  const total = accessPrice(value);
+  return (
+    <Field label={title} error={error}>
+      <div className="space-y-3">
+        {SUBJECTS.map((sj) => {
+          const sel = value[sj.id] || [];
+          return (
+            <div key={sj.id} className="rounded-2xl border-2 border-slate-100 bg-slate-50/60 p-3">
+              <div className="mb-2 flex items-center justify-between gap-2">
+                <span className="inline-flex items-center gap-2 text-lg font-extrabold text-ink"><span className={`flex h-8 w-8 items-center justify-center rounded-lg ${sj.color} text-white`}><sj.icon size={18} /></span>{sj.name}</span>
+                <span className="text-sm font-bold text-slate-500">{sel.length ? `${sel.length} ta sinf • ${formatSum(subjectPrice(sel.length))}` : 'olinmagan'}</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {GRADES.map((g) => {
+                  const on = sel.includes(g);
+                  const ready = !!CONTENT[sj.id]?.[g];
+                  return (
+                    <button key={g} type="button" aria-pressed={on} onClick={() => toggle(sj.id, g)} title={ready ? 'Darslari tayyor' : 'Tez orada'}
+                      className={`relative ${compact ? 'h-12 min-w-12 text-lg' : 'h-14 min-w-14 text-xl'} rounded-2xl border-2 px-3 font-extrabold transition ${on ? 'border-blue-600 bg-blue-600 text-white' : 'border-slate-200 bg-white text-slate-600 hover:border-blue-400'}`}>
+                      {g}
+                      {ready && <span className={`absolute -right-1 -top-1 h-3 w-3 rounded-full border-2 border-white ${on ? 'bg-amber-300' : 'bg-firuza-500'}`} />}
+                    </button>
+                  );
+                })}
+                <button type="button" onClick={() => setAll(sj.id)} className={`${compact ? 'h-12' : 'h-14'} rounded-2xl border-2 border-dashed border-blue-300 px-3 text-sm font-bold text-blue-800 hover:bg-blue-50`}>
+                  {sel.length === GRADES.length ? 'Tozalash' : 'Hammasi'}
+                </button>
+              </div>
+            </div>
+          );
+        })}
+        <div className="flex flex-wrap items-center justify-between gap-2 rounded-2xl bg-amber-50 px-4 py-3">
+          <span className="text-base font-bold text-amber-900">Narx (1 yil):</span>
+          <span className="text-2xl font-black text-ink tabular-nums">{formatSum(total)}</span>
+        </div>
+        <p className="text-sm font-semibold text-slate-500"><span className="mr-1 inline-block h-2.5 w-2.5 rounded-full bg-firuza-500 align-middle" /> — darslari tayyor sinf. Qolganlari tayyor bo‘lishi bilan ochiladi.</p>
+      </div>
+    </Field>
+  );
+}
+
+function ExpiryChip({ t }) {
+  const { tone, text } = expiryInfo(t);
+  const cls = { none: 'bg-slate-100 text-slate-600', ok: 'bg-emerald-50 text-emerald-700', soon: 'bg-amber-100 text-amber-900', expired: 'bg-rose-100 text-rose-700' }[tone];
+  return <span className={`inline-flex items-center gap-1 rounded-xl px-3 py-1 font-bold ${cls}`}><CalendarDays size={16} /> {text}</span>;
+}
+
 function TeachersTab({ db, api }) {
-  const empty = { name: '', school: '', region: '', subject: DEFAULT_PACKAGE, grades: [], login: '', password: genPassword() };
+  const empty = { name: '', school: '', region: '', access: {}, expires: addMonthsInput(Date.now(), SUBSCRIPTION_MONTHS), login: '', password: genPassword() };
   const [form, setForm] = useState(empty);
   const [loginTouched, setLoginTouched] = useState(false);
   const [editingId, setEditingId] = useState(null);
@@ -36738,6 +36955,7 @@ function TeachersTab({ db, api }) {
   const [created, setCreated] = useState(null);
   const [query, setQuery] = useState('');
   const [schoolFilter, setSchoolFilter] = useState('');
+  const [onlyExpiring, setOnlyExpiring] = useState(false);
   const [reveal, setReveal] = useState({});
   const [confirmDel, setConfirmDel] = useState(null);
   const [busy, setBusy] = useState(false);
@@ -36776,7 +36994,7 @@ function TeachersTab({ db, api }) {
     const errs = {};
     if (form.name.trim().length < 3) errs.name = 'Ism-familiyani kiriting';
     if (!form.school.trim()) errs.school = 'Maktabni kiriting';
-    if (!form.grades?.length) errs.grades = 'Kamida bitta sinfni belgilang';
+    if (!Object.values(form.access || {}).some((g) => g.length)) errs.access = 'Kamida bitta fan va sinfni belgilang';
     if (!/^[a-z0-9._-]{3,30}$/.test(login)) errs.login = 'Kamida 3 ta belgi: lotin harflari, raqam, nuqta, chiziqcha';
     else if (db.teachers.some((t) => t.login.toLowerCase() === login && t.id !== editingId) || login === db.admin.login.toLowerCase()) errs.login = 'Bu login band';
     const pw = form.password.trim();
@@ -36791,7 +37009,15 @@ function TeachersTab({ db, api }) {
       return;
     }
 
-    const data = { ...form, login, password: pw, name: form.name.trim(), school: form.school.trim() };
+    const access = {};
+    SUBJECTS.forEach((sj) => { const g = (form.access?.[sj.id] || []).filter((x) => GRADES.includes(x)); if (g.length) access[sj.id] = [...g].sort((a, b) => a - b); });
+    const ids = Object.keys(access);
+    const data = {
+      name: form.name.trim(), school: form.school.trim(), region: form.region, login, password: pw,
+      access, expiresAt: dateInputToIso(form.expires),
+      // eski ustunlar bilan moslik: paket va sinflar ham yoziladi
+      subject: ids.length === 2 ? 'ona-tili-adabiyot' : ids[0] || '', grades: null,
+    };
     setBusy(true);
     const err = await api.saveTeacher(editingId, data);
     setBusy(false);
@@ -36799,7 +37025,7 @@ function TeachersTab({ db, api }) {
     setCreated({ name: data.name, login: data.login, password: data.password || '(o‘zgarmadi)' });
     setEditingId(null);
     setLoginTouched(false);
-    setForm({ ...empty, school: data.school, region: data.region, subject: data.subject, grades: data.grades, password: genPassword() });
+    setForm({ ...empty, school: data.school, region: data.region, password: genPassword() });
     setTimeout(() => resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' }), 30);
   };
 
@@ -36808,7 +37034,7 @@ function TeachersTab({ db, api }) {
     setLoginTouched(true);
     setErrors({});
     setCreated(null);
-    setForm({ name: t.name, school: t.school, region: t.region || '', subject: packageOf(t.subject)?.id || '', grades: Array.isArray(t.grades) ? [...t.grades] : [...GRADES], login: t.login, password: t.password || '' });
+    setForm({ name: t.name, school: t.school, region: t.region || '', access: rawAccess(t), expires: t.expiresAt ? toDateInput(Date.parse(t.expiresAt)) : '', login: t.login, password: t.password || '' });
     if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -36828,7 +37054,9 @@ function TeachersTab({ db, api }) {
     setConfirmDel(null);
   };
 
+  const expiringCount = db.teachers.filter((t) => ['soon', 'expired'].includes(expiryInfo(t).tone)).length;
   const list = db.teachers
+    .filter((t) => !onlyExpiring || ['soon', 'expired'].includes(expiryInfo(t).tone))
     .filter((t) => !schoolFilter || normSchool(t.school) === schoolFilter)
     .filter((t) => [t.name, t.school, t.login, t.region || ''].join(' ').toLowerCase().includes(query.toLowerCase()))
     .sort((a, b) => a.school.localeCompare(b.school) || a.name.localeCompare(b.name));
@@ -36854,31 +37082,16 @@ function TeachersTab({ db, api }) {
               {REGIONS.map((r) => <option key={r} value={r}>{r}</option>)}
             </select>
           </Field>
-          <Field label="Fan (sotib olingan paket)">
-            <select className={inputCls} value={form.subject} onChange={(e) => set('subject', e.target.value)}>
-              <option value="">— Fan biriktirilmagan (kirish yopiq) —</option>
-              {PACKAGES.map((p) => <option key={p.id} value={p.id}>{p.name}</option>)}
-            </select>
-          </Field>
         </div>
-        <Field label="Ochiladigan sinflar (sotib olingan)" error={errors.grades}>
-          <div className="flex flex-wrap gap-2">
-            {GRADES.map((g) => {
-              const on = form.grades?.includes(g);
-              return (
-                <button key={g} type="button" aria-pressed={on}
-                  onClick={() => set('grades', on ? form.grades.filter((x) => x !== g) : [...(form.grades || []), g].sort((a, b) => a - b))}
-                  className={`h-14 min-w-14 rounded-2xl border-2 px-3 text-xl font-extrabold transition ${on ? 'border-blue-600 bg-blue-600 text-white' : 'border-slate-200 bg-white text-slate-600 hover:border-blue-400'}`}>
-                  {g}
-                </button>
-              );
-            })}
-            <button type="button" onClick={() => set('grades', form.grades?.length === GRADES.length ? [] : [...GRADES])}
-              className="h-14 rounded-2xl border-2 border-dashed border-blue-300 px-4 text-base font-bold text-blue-800 hover:bg-blue-50">
-              {form.grades?.length === GRADES.length ? 'Tozalash' : 'Hammasi'}
-            </button>
+        <AccessPicker value={form.access} onChange={(v) => set('access', v)} error={errors.access} />
+        <Field label="Obuna tugash sanasi">
+          <input type="date" className={inputCls} value={form.expires || ''} onChange={(e) => set('expires', e.target.value)} />
+          <div className="mt-2 flex flex-wrap gap-2">
+            <button type="button" onClick={() => set('expires', addMonthsInput(Date.now(), SUBSCRIPTION_MONTHS))} className="rounded-xl border-2 border-blue-100 px-3 py-1.5 text-sm font-bold text-blue-800 hover:bg-blue-50">Bugundan 12 oy</button>
+            <button type="button" onClick={() => { const cur = form.expires ? Date.parse(`${form.expires}T12:00:00`) : Date.now(); set('expires', addMonthsInput(Math.max(cur, Date.now()), SUBSCRIPTION_MONTHS)); }} className="rounded-xl border-2 border-blue-100 px-3 py-1.5 text-sm font-bold text-blue-800 hover:bg-blue-50">+12 oy uzaytirish</button>
+            <button type="button" onClick={() => set('expires', '')} className="rounded-xl border-2 border-slate-200 px-3 py-1.5 text-sm font-bold text-slate-600 hover:bg-slate-50">Muddatsiz</button>
           </div>
-          <p className="mt-2 text-sm font-semibold text-slate-500">Faqat belgilangan sinflar o‘qituvchiga ochiladi, qolganlari qulflangan ko‘rinadi.</p>
+          <p className="mt-2 text-sm font-semibold text-slate-500">{form.expires ? `Shu kuni oxirigacha ochiq. Tugashiga ${EXPIRY_WARN_DAYS} kun qolganda o‘qituvchiga eslatma chiqadi.` : 'Muddatsiz — obuna o‘z-o‘zidan yopilmaydi.'}</p>
         </Field>
         <Field label="Login (avtomatik, o‘zgartirish mumkin)" error={errors.login}>
           <input className={inputCls} value={form.login} onChange={(e) => { setLoginTouched(true); set('login', e.target.value); }} placeholder="bo‘sh qolsa — avtomatik" autoCapitalize="none" autoCorrect="off" spellCheck={false} />
@@ -36923,7 +37136,14 @@ function TeachersTab({ db, api }) {
             {schools.map((sc) => <option key={sc} value={normSchool(sc)}>{sc}</option>)}
           </select>
         </div>
-        <p className="text-base font-semibold text-slate-500">{list.length} ta o‘qituvchi</p>
+        <div className="flex flex-wrap items-center gap-3">
+          <p className="text-base font-semibold text-slate-500">{list.length} ta o‘qituvchi</p>
+          {(expiringCount > 0 || onlyExpiring) && (
+            <button type="button" onClick={() => setOnlyExpiring((v) => !v)} className={`rounded-xl px-3 py-1.5 text-sm font-bold ${onlyExpiring ? 'bg-anor-500 text-white' : 'bg-rose-50 text-rose-700 hover:bg-rose-100'}`}>
+              {onlyExpiring ? 'Hammasini ko‘rsatish' : `Muddati tugayotganlar: ${expiringCount}`}
+            </button>
+          )}
+        </div>
         {actionError && <p className="rounded-2xl bg-rose-50 px-4 py-3 text-base font-semibold text-rose-700">{actionError}</p>}
         {list.length === 0 ? (
           <div className="rounded-3xl border-2 border-dashed border-blue-200 bg-white p-10 text-center text-xl text-slate-500">O‘qituvchilar topilmadi</div>
@@ -36936,7 +37156,12 @@ function TeachersTab({ db, api }) {
                 <div className="min-w-0 flex-1">
                   <div className="text-xl font-extrabold text-blue-950">{t.name}</div>
                   <div className="text-base text-slate-500">
-                    {t.school}{t.region ? ` • ${t.region}` : ''} • {packageOf(t.subject)?.name || 'Fan biriktirilmagan'} • {gradesLabel(t.grades)} • {classCount} ta sinf kiritgan
+                    {t.school}{t.region ? ` • ${t.region}` : ''} • {classCount} ta sinf kiritgan
+                  </div>
+                  <div className="mt-2 flex flex-wrap gap-2 text-base">
+                    <span className="rounded-xl bg-firuza-50 px-3 py-1 font-bold text-firuza-700">{accessSummary(rawAccess(t))}</span>
+                    <ExpiryChip t={t} />
+                    <span className="rounded-xl bg-amber-50 px-3 py-1 font-bold text-amber-800">{formatSum(accessPrice(rawAccess(t)))} / yil</span>
                   </div>
                   <div className="mt-2 flex flex-wrap gap-2 text-base">
                     <span className="rounded-xl bg-blue-50 px-3 py-1 font-bold text-blue-800">Login: {t.login}</span>
@@ -37268,7 +37493,7 @@ const GUIDE_STEPS = [
 ];
 
 const GUIDE_FAQ = [
-  ['Parolimni unutdim', 'Platforma administratoriga murojaat qiling — u yangi parol berib yuboradi.'],
+  ['Parolimni unutdim', `Telegram'da @${TELEGRAM_USER} ga yozing — yangi parol yuboriladi.`],
   ['Sinf ro‘yxatini o‘zgartirmoqchiman', 'O‘yin oldidagi «Jamoalar va o‘quvchilar» sahifasida ro‘yxatni tahrirlab, saqlang. O‘zgarish maktabingizdagi barcha o‘qituvchilarda ko‘rinadi.'],
   ['Kamera ishlamayapti', 'Saytni Chrome yoki Edge’da oching. Manzil satridagi qulf belgisini bosib, kameraga ruxsat bering va sahifani yangilang. Kamera Zoom yoki Telegram’da ochiq bo‘lsa, o‘sha dasturni yoping.'],
   ['Ovoz kerak emas', 'Yuqoridagi karnay belgisini bosing — ovoz o‘chadi. Qayta bossangiz yoqiladi.'],
@@ -37904,23 +38129,23 @@ const HOME_TIPS = [
   ['Imlo o‘yinlari', '9-sinf ona tilida «Qaysi harf?» va «Imlo bellashuvi» bor — dars boshida 5 daqiqalik isinish uchun ideal.'],
 ];
 
-function readyBooks(allowed, grades = GRADES) {
+function readyBooks(allowed, access = null) {
   const out = [];
   SUBJECTS.filter((s) => !allowed || allowed.includes(s.id)).forEach((s) => Object.entries(CONTENT[s.id] || {}).forEach(([g, arr]) => {
-    if (grades.includes(Number(g))) out.push({ s, g: Number(g), n: arr.length });
+    if (!access || (access[s.id] || []).includes(Number(g))) out.push({ s, g: Number(g), n: arr.length });
   }));
   return out;
 }
 
-function HomeScreen({ teacher, allowed = [], allowedGrades = GRADES, onStart, schoolClasses = [], onClassResults, onRating, onQuick, onResume, onGuide, onBoard }) {
+function HomeScreen({ teacher, allowed = [], access = {}, onStart, schoolClasses = [], onClassResults, onRating, onQuick, onResume, onGuide, onBoard }) {
   const now = new Date();
   const h = now.getHours();
   const greet = h < 11 ? 'Xayrli tong' : h < 17 ? 'Xayrli kun' : 'Xayrli kech';
   const dateStr = `${now.getDate()}-${UZ_MONTHS[now.getMonth()]}, ${UZ_DAYS[now.getDay()]}`;
-  const [recent] = useState(() => loadRecent().filter((r) => allowed.includes(r.subjectId) && allowedGrades.includes(Number(r.grade)) && schoolClasses.some((c) => c.id === r.classId)).slice(0, 4));
-  const pkg = packageOf(teacher?.subject);
+  const [recent] = useState(() => loadRecent().filter((r) => (access[r.subjectId] || []).includes(Number(r.grade)) && schoolClasses.some((c) => c.id === r.classId)).slice(0, 4));
+  const exp = expiryInfo(teacher);
   const tip = HOME_TIPS[now.getDate() % HOME_TIPS.length];
-  const books = readyBooks(allowed, allowedGrades);
+  const books = readyBooks(allowed, access);
   const classes = [...schoolClasses].sort((a, b) => a.grade - b.grade || a.letter.localeCompare(b.letter));
   const totalStudents = schoolClasses.reduce((a, c) => a + c.students.length, 0);
 
@@ -37938,10 +38163,27 @@ function HomeScreen({ teacher, allowed = [], allowedGrades = GRADES, onStart, sc
             <span className="inline-flex items-center gap-2 rounded-lg border border-line bg-paper px-3 py-1 text-base font-extrabold text-ink"><CalendarDays size={18} /> {dateStr}</span>
             <h1 className="mt-5 text-4xl md:text-6xl font-black leading-[1.05] tracking-tight">{greet},<br /><span className="text-amber-300">{teacher?.name || 'Ustoz'}</span>!</h1>
             <p className="mt-4 text-xl font-semibold text-blue-50">{teacher?.school} • <span className="dp-hand text-3xl text-amber-200">bugungi darsni o‘yinga aylantiramiz!</span></p>
-            {pkg ? (
-              <span className="mt-3 inline-flex items-center gap-2 rounded-lg border border-line bg-firuza-500 px-3 py-1 text-base font-extrabold text-white"><BookOpen size={18} /> Fan: {pkg.name}</span>
+            {allowed.length ? (
+              <div className="mt-3 flex flex-wrap gap-2">
+                {SUBJECTS.filter((sj) => access[sj.id]).map((sj) => (
+                  <span key={sj.id} className="inline-flex items-center gap-2 rounded-lg border border-line bg-firuza-500 px-3 py-1 text-base font-extrabold text-white"><sj.icon size={18} /> {sj.name}: {gradesLabel(access[sj.id])}</span>
+                ))}
+                {exp.tone !== 'none' && <span className="inline-flex items-center gap-2 rounded-lg border border-line bg-white/15 px-3 py-1 text-base font-bold text-white"><CalendarDays size={18} /> Obuna: {exp.text}</span>}
+              </div>
+            ) : exp.tone === 'expired' ? (
+              <p className="mt-4 rounded-2xl border border-line bg-anor-500 px-4 py-3 text-lg font-bold text-white">
+                Obunangiz muddati tugagan ({fmtDay(expiresAtMs(teacher))}). Uzaytirish uchun Telegram: <a href={telegramLink(`Assalomu alaykum! Dars play obunamni uzaytirmoqchiman. Login: ${teacher?.login || ''}`)} target="_blank" rel="noopener noreferrer" className="underline decoration-2 underline-offset-4">@{TELEGRAM_USER}</a>
+              </p>
             ) : (
-              <p className="mt-4 rounded-2xl border border-line bg-anor-500 px-4 py-3 text-lg font-bold text-white">Hisobingizga hali fan biriktirilmagan. Dars play administratoriga murojaat qiling.</p>
+              <p className="mt-4 rounded-2xl border border-line bg-anor-500 px-4 py-3 text-lg font-bold text-white">
+                Hisobingizga hali fan biriktirilmagan. Telegram: <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" className="underline decoration-2 underline-offset-4">@{TELEGRAM_USER}</a>
+              </p>
+            )}
+            {exp.tone === 'soon' && allowed.length > 0 && (
+              <a href={telegramLink(`Assalomu alaykum! Dars play obunamni uzaytirmoqchiman. Login: ${teacher?.login || ''}`)} target="_blank" rel="noopener noreferrer"
+                className="mt-4 flex items-center gap-3 rounded-2xl border border-line bg-amber-300 px-4 py-3 text-lg font-bold text-ink hover:bg-amber-200">
+                <CalendarDays size={22} className="shrink-0" /> {daysLeft(teacher) === 0 ? 'Obuna bugun tugaydi.' : `Obuna tugashiga ${daysLeft(teacher)} kun qoldi.`} Uzaytirish uchun bosing — @{TELEGRAM_USER}
+              </a>
             )}
             <div className="mt-8 flex flex-wrap gap-4">
               <button onClick={onStart} disabled={!allowed.length} className="dp-btn dp-aura disabled:pointer-events-none disabled:opacity-40 inline-flex items-center gap-3 rounded-2xl bg-amber-400 px-8 py-4 text-2xl font-black text-ink hover:bg-amber-300">
@@ -38122,7 +38364,7 @@ function SubjectScreen({ onPick, onBack, onQuick, allowed = [] }) {
         ))}
       </div>
       {!mine.length && (
-        <p className="rounded-3xl border-2 border-rose-200 bg-rose-50 p-6 text-xl font-bold text-rose-800">Hisobingizga hali fan biriktirilmagan. Dars play administratoriga murojaat qiling.</p>
+        <p className="rounded-3xl border-2 border-rose-200 bg-rose-50 p-6 text-xl font-bold text-rose-800">Hisobingizda ochiq fan yo‘q (fan biriktirilmagan yoki obuna muddati tugagan). Telegram: <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" className="underline">@{TELEGRAM_USER}</a></p>
       )}
       <p className="mt-8 text-base font-semibold text-slate-400">Boshqa fanlar tez orada qo‘shiladi.</p>
     </div>
@@ -38171,7 +38413,7 @@ function GradeScreen({ subject, onPick, onBack, schoolClasses = [], allowedGrade
       </div>
       {allowedGrades.length < GRADES.length && (
         <p className="mt-6 flex items-center gap-2 rounded-2xl bg-amber-50 px-5 py-4 text-lg font-semibold text-amber-900">
-          <Lock size={20} className="shrink-0" /> Hisobingizga {gradesLabel(allowedGrades)} ochilgan. Boshqa sinflar uchun Dars play administratoriga murojaat qiling.
+          <Lock size={20} className="shrink-0" /> <span>Hisobingizga {subject?.name ? `${subject.name} — ` : ''}{allowedGrades.length ? gradesLabel(allowedGrades) : 'hech qaysi sinf'} ochilgan. Boshqa sinf qo‘shish uchun: <a href={telegramLink(`Assalomu alaykum! Dars play obunamga ${subject?.name || ''} fanidan yana sinf qo‘shmoqchiman.`)} target="_blank" rel="noopener noreferrer" className="font-black underline">@{TELEGRAM_USER}</a> (1 sinf — {formatSum(PRICE_TIERS[0].price)} / yil)</span>
         </p>
       )}
     </div>
@@ -42137,8 +42379,9 @@ export default function DarsPlayApp() {
 
   const teacher = session?.role === 'teacher' ? db.teachers.find((t) => t.id === session.id) || null : null;
   const isAdmin = session?.role === 'admin';
-  const allowed = useMemo(() => allowedSubjectIds(teacher), [teacher]);
-  const allowedGrades = useMemo(() => allowedGradeList(teacher), [teacher]);
+  const access = useMemo(() => teacherAccess(teacher), [teacher]);
+  const allowed = useMemo(() => Object.keys(access), [access]);
+  const gradesOf = (sid) => access[sid] || [];
   // Paketda bitta fan bo‘lsa, fan tanlash ekrani o‘tkazib yuboriladi
   const flowStart = allowed.length === 1 ? ['home'] : ['home', 'subject'];
   const startLesson = () => { if (allowed.length === 1) { setSubjectId(allowed[0]); resetTo(['home', 'grade']); } else resetTo(['home', 'subject']); };
@@ -42194,7 +42437,7 @@ export default function DarsPlayApp() {
   }, [db.customSets, subject, grade, teacher]);
   const topics = useMemo(() => {
     if (!subject || !grade) return [];
-    if (teacher && !allowedGradeList(teacher).includes(Number(grade))) return []; // ruxsat berilmagan sinf
+    if (teacher && !(teacherAccess(teacher)[subject.id] || []).includes(Number(grade))) return []; // ruxsat berilmagan sinf yoki obuna tugagan
     return [...customTopics, ...(CONTENT[subject.id]?.[grade] || []), makeGeneralTopic(subject)];
   }, [subject, grade, customTopics, teacher]);
   const topic = topics.find((t) => t.id === topicId);
@@ -42524,8 +42767,8 @@ export default function DarsPlayApp() {
   const teacherSteps = ['home', 'subject', 'grade', 'class', 'topic', 'lesson', 'game', 'picker', 'play', 'custom', 'results'];
   const needsTopic = ['lesson', 'game', 'picker', 'play'].includes(step);
   const needsClass = ['topic', 'lesson', 'game', 'picker', 'play', 'custom'].includes(step);
-  const quickOpen = (sid, g) => { if (!allowed.includes(sid) || !allowedGrades.includes(Number(g))) return; setSubjectId(sid); setGrade(g); resetTo([...flowStart, 'grade', 'class']); };
-  const resumeRecent = (r) => { if (!allowed.includes(r.subjectId) || !allowedGrades.includes(Number(r.grade))) return; setSubjectId(r.subjectId); setGrade(r.grade); setClassId(r.classId); setTopicId(r.topicId); setGroups(null); resetTo([...flowStart, 'grade', 'class', 'topic', 'lesson']); };
+  const quickOpen = (sid, g) => { if (!gradesOf(sid).includes(Number(g))) return; setSubjectId(sid); setGrade(g); resetTo([...flowStart, 'grade', 'class']); };
+  const resumeRecent = (r) => { if (!gradesOf(r.subjectId).includes(Number(r.grade))) return; setSubjectId(r.subjectId); setGrade(r.grade); setClassId(r.classId); setTopicId(r.topicId); setGroups(null); resetTo([...flowStart, 'grade', 'class', 'topic', 'lesson']); };
   const FLOW = ['subject', 'grade', 'class', 'topic'];
   const jumpTo = (key) => setHistory((h) => { const i = h.lastIndexOf(key); return i >= 0 ? h.slice(0, i + 1) : h; });
   let safeStep = step;
@@ -42606,7 +42849,7 @@ export default function DarsPlayApp() {
             teacher={teacher}
             schoolClasses={schoolClasses}
             allowed={allowed}
-            allowedGrades={allowedGrades}
+            access={access}
             onStart={startLesson}
             onClassResults={(c) => { setClassId(c.id); setGrade(c.grade); setRatingScope('class'); go('results'); }}
             onRating={(scope) => { setRatingScope(scope); go('results'); }}
@@ -42655,7 +42898,7 @@ export default function DarsPlayApp() {
         )}
 
         {safeStep === 'grade' && (
-          <GradeScreen subject={subject} schoolClasses={schoolClasses} allowedGrades={allowedGrades} onBack={back} onPick={(g) => { if (!allowedGrades.includes(g)) return; setGrade(g); go('class'); }} />
+          <GradeScreen subject={subject} schoolClasses={schoolClasses} allowedGrades={gradesOf(subject?.id)} onBack={back} onPick={(g) => { if (!gradesOf(subject?.id).includes(g)) return; setGrade(g); go('class'); }} />
         )}
 
         {safeStep === 'class' && (
