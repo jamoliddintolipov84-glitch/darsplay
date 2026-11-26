@@ -44024,7 +44024,7 @@ const GUIDE_FAQ = [
   ['Reytingda o‘quvchilar bali 0', 'Ballar o‘quvchiga yozilishi uchun o‘yin oldidan jamoalarga bo‘ling yoki o‘yin paytida «O‘quvchi tanlash»dan foydalaning.'],
   ['Obunamni qanday uzaytiraman?', `Ism kartochkangiz → «Obunalarim» → «Uzaytirish». Telegram'da @${TELEGRAM_USER} ochiladi, xabar tayyor bo‘ladi. Muddat tugashiga ${EXPIRY_WARN_DAYS} kun qolganda bosh sahifada eslatma ham chiqadi.`],
   ['Yangi alifboda ko‘rsatish mumkinmi?', 'Ha. Sarlavhadagi (telefonda — menyudagi) «Özbek» tugmasini bosing. Qaytarish uchun «O‘zbek»ni bosing. Tanlov eslab qolinadi.'],
-  ['Sinf maskoti nima?', 'Har sinfning o‘z «Humo» qushi bor (bosh sahifa → «Sinf maskotlari»). O‘yindagi har 10 ball = 1 yulduz, «Sinf tinchligi»da 30 soniya jimlik = 1 yulduz, ustoz +1/+5 bilan rag‘batlantirishi ham mumkin. Yulduzlar bilan qush tuxumdan Afsonaviy Humogacha 8 darajada o‘sadi, do‘ppi, belbog‘, toj kabi sovg‘alar ochiladi. Ismi va rangini o‘zgartirsa bo‘ladi. Hozircha shu kompyuterda saqlanadi.'],
+  ['Sinf maskoti nima?', 'Har sinfning o‘z «Humo» qushi bor (bosh sahifa → «Sinf maskotlari»). O‘yindagi har 10 ball = 1 yulduz, «Sinf tinchligi»da 30 soniya jimlik = 1 yulduz, ustoz +1/+5 bilan rag‘batlantirishi ham mumkin. Yulduzlar bilan qush tuxumdan Afsonaviy Humogacha 8 darajada o‘sadi, do‘ppi, belbog‘, toj kabi sovg‘alar ochiladi. Ismi va rangini o‘zgartirsa bo‘ladi. Maskot bulutda saqlanadi — maktabdagi boshqa o‘qituvchilar va boshqa kompyuterda ham ko‘rinadi.'],
   ['Proyektorda kursor ko‘rinmayapti', 'Sarlavhadagi sichqoncha belgisini bosing — «Katta kursor» yoqiladi.'],
 ];
 
