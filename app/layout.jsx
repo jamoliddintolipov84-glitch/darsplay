@@ -32,8 +32,8 @@ export const metadata = {
     locale: 'uz_UZ',
   },
   robots: { index: true, follow: true },
-  // Google Search Console tasdiqlash kodi shu yerga qo‘yiladi:
-  // verification: { google: 'KOD' },
+  // Google Search Console tasdiqlash kodi
+  verification: { google: '8tLdyDeTqtuJh45oh1xWyfFrWt3FkxJizL7EvS4Ofm0' },
 };
 
 const jsonLd = {
