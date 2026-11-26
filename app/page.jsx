@@ -41218,6 +41218,7 @@ const SOUNDS = {
 };
 
 function playSound(name) {
+  if (name === 'correct' || name === 'wrong') mascotReactListeners.forEach((f) => f(name === 'correct' ? 'happy' : 'sad'));
   if (!soundOn || !SOUNDS[name]) return;
   const now = Date.now();
   if (lastPlayed[name] && now - lastPlayed[name] < 250) return;
@@ -41746,6 +41747,8 @@ let mascotDb = {};
 try { mascotDb = JSON.parse(localStorage.getItem(MASCOT_KEY) || '{}') || {}; } catch { /* server */ }
 const mascotListeners = new Set();
 const mascotEventListeners = new Set();
+/** O‘yindagi to‘g‘ri/xato javobga Bekning munosabati (playSound orqali keladi). */
+const mascotReactListeners = new Set();
 let mascotActiveClass = null;
 function setMascotActiveClass(id) { mascotActiveClass = id || null; }
 function mascotOf(id) {
@@ -41863,7 +41866,8 @@ function MascotArt({ stage = 0, color = 'kulrang', mood = 'idle', wear = [], siz
   const c = MASCOT_COLORS[color] || MASCOT_COLORS.kulrang;
   const w = new Set(wear);
   const happy = mood === 'happy';
-  const sleep = stage === 0 && !happy;
+  const sad = mood === 'sad';
+  const sleep = stage === 0 && !happy && !sad;
   const sc = [0.64, 0.72, 0.8, 0.87, 0.93, 1, 1, 1][stage] ?? 1;
   const uid = `w${stage}${color}`;
   const tailBig = stage >= 4;
@@ -41872,6 +41876,13 @@ function MascotArt({ stage = 0, color = 'kulrang', mood = 'idle', wear = [], siz
     <g stroke="#1B2440" strokeWidth="4" strokeLinecap="round" fill="none"><path d="M79 85 q7 6 14 0" /><path d="M107 85 q7 6 14 0" /></g>
   ) : happy ? (
     <g stroke="#1B2440" strokeWidth="5" strokeLinecap="round" fill="none"><path d="M79 87 q7 -9 14 0" /><path d="M107 87 q7 -9 14 0" /></g>
+  ) : sad ? (
+    <g>
+      <circle cx="86" cy="86" r="5.5" fill="#1B2440" /><circle cx="114" cy="86" r="5.5" fill="#1B2440" />
+      <circle cx="87.5" cy="84" r="1.6" fill="#fff" /><circle cx="115.5" cy="84" r="1.6" fill="#fff" />
+      <path d="M78 74 L94 78 M122 74 L106 78" stroke="#1B2440" strokeWidth="3.5" strokeLinecap="round" />
+      <path d="M120 92 q3 6 0 9 q-3 -3 0 -9 Z" fill="#7FB2FF" />
+    </g>
   ) : (
     <g className="dp-mblink" style={{ transformOrigin: '100px 84px' }}>
       <circle cx="86" cy="84" r="7.5" fill="#E9A23B" /><circle cx="114" cy="84" r="7.5" fill="#E9A23B" />
@@ -41910,7 +41921,7 @@ function MascotArt({ stage = 0, color = 'kulrang', mood = 'idle', wear = [], siz
 
       <ellipse cx="100" cy="190" rx={60 * sc} ry="7" fill="rgba(0,0,0,.18)" />
       <g transform={`translate(${100 - 100 * sc} ${190 - 190 * sc}) scale(${sc})`}>
-        <g className={happy ? 'dp-mjump' : sleep ? '' : 'dp-mbob'}>
+        <g className={happy ? 'dp-mjump' : sad ? 'dp-mshake' : sleep ? '' : 'dp-mbob'} style={{ transformOrigin: '100px 190px' }}>
           {/* dum */}
           <g className={happy ? 'dp-mwag' : ''} style={{ transformOrigin: '136px 172px' }}>
             <path d={tailBig ? 'M132 178 C176 182, 196 136, 174 98 C170 124, 158 144, 130 150 Z' : 'M132 178 C166 180, 182 146, 166 116 C160 136, 150 148, 130 152 Z'} fill={c.body} stroke={c.dark} strokeWidth="2" />
@@ -41961,7 +41972,9 @@ function MascotArt({ stage = 0, color = 'kulrang', mood = 'idle', wear = [], siz
           {eyes}
           <ellipse cx="100" cy="101" rx="14" ry="10" fill="#FFF8EE" />
           <path d="M93 96 Q100 93 107 96 Q104 102 100 103 Q96 102 93 96 Z" fill="#1B2440" />
-          {happy || stage === 0 ? (
+          {sad ? (
+            <path d="M92 110 Q100 103 108 110" stroke="#1B2440" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+          ) : happy || stage === 0 ? (
             <path d="M93 105 Q100 113 107 105 Q100 108 93 105 Z" fill="#E2665F" stroke="#1B2440" strokeWidth="1.5" />
           ) : (
             <path d="M100 103 v3 M100 106 q-5 4 -9 1 M100 106 q5 4 9 1" stroke="#1B2440" strokeWidth="2" strokeLinecap="round" fill="none" />
@@ -42190,6 +42203,58 @@ function MascotStage({ cls, classes = [], onClose }) {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** O‘yin paytida ekran burchagidagi Bek: to‘g‘ri javobda quvonadi, xatoda xafa bo‘ladi. */
+const BEK_HAPPY = ['Barakalla!', 'Zo‘r!', 'Ofarin!', 'Qoyil!', 'Yasha!', 'Aqlli sinf!', 'Super!'];
+const BEK_SAD = ['Hechqisi yo‘q!', 'Yana urinib ko‘r!', 'Keyingisi albatta!', 'Shoshmang, o‘ylang!', 'Xato — o‘rganish!'];
+function MascotCorner({ cls, total = 0, onOpen }) {
+  const m = useMascot(cls.id);
+  const st = mascotStage(m.xp);
+  const [mood, setMood] = useState('idle');
+  const [say, setSay] = useState('');
+  const [hidden, setHidden] = useState(() => { try { return localStorage.getItem('darsplay_bek_corner') === 'off'; } catch { return false; } });
+  const t = useRef(0);
+  const last = useRef('');
+  useEffect(() => {
+    const f = (kind) => {
+      const pool = kind === 'happy' ? BEK_HAPPY : BEK_SAD;
+      let msg = pool[Math.floor(Math.random() * pool.length)];
+      if (msg === last.current) msg = pool[(pool.indexOf(msg) + 1) % pool.length];
+      last.current = msg;
+      setMood(kind); setSay(msg);
+      clearTimeout(t.current);
+      t.current = setTimeout(() => { setMood('idle'); setSay(''); }, kind === 'happy' ? 1800 : 2000);
+    };
+    mascotReactListeners.add(f);
+    return () => { mascotReactListeners.delete(f); clearTimeout(t.current); };
+  }, []);
+  const hide = (v) => { setHidden(v); try { localStorage.setItem('darsplay_bek_corner', v ? 'off' : 'on'); } catch { /* */ } };
+  const est = total > 0 ? Math.max(1, Math.min(30, Math.round(total / 10))) : 0;
+  if (hidden) {
+    return (
+      <button onClick={() => hide(false)} aria-label={`${m.name}ni ko‘rsatish`} data-tip={`${m.name}ni ko‘rsatish`}
+        className="fixed bottom-4 left-4 z-[60] flex h-14 w-14 items-center justify-center rounded-2xl bg-ink shadow-xl ring-1 ring-white/10">
+        <MascotArt stage={st} color={m.color} wear={mascotWorn(m)} size={46} />
+      </button>
+    );
+  }
+  return (
+    <div className="pointer-events-none fixed bottom-3 left-3 z-[60]" aria-live="polite">
+      {say && (
+        <div key={say} className={`dp-pop absolute bottom-full left-6 mb-1 whitespace-nowrap rounded-2xl rounded-bl-sm px-3.5 py-2 text-lg font-black shadow-xl ${mood === 'happy' ? 'bg-amber-400 text-ink' : 'bg-white text-ink ring-1 ring-line'}`}>{say}</div>
+      )}
+      <div className="pointer-events-auto relative">
+        <button onClick={() => onOpen?.(cls)} aria-label={`${m.name} — maskot sahnasini ochish`} title="Bosing — maskot sahnasi">
+          <MascotArt stage={st} color={m.color} mood={mood} wear={mascotWorn(m)} size={[150, 138, 128, 120, 114, 110, 110, 110][st]} className="drop-shadow-[0_14px_18px_rgba(27,36,64,.35)]" />
+        </button>
+        <button onClick={() => hide(true)} aria-label="Yashirish" data-tip="Yashirish" className="absolute -right-3 bottom-6 flex h-7 w-7 items-center justify-center rounded-full bg-ink/80 text-white ring-1 ring-white/20 hover:bg-ink"><X size={14} /></button>
+        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-ink px-2.5 py-0.5 text-xs font-black text-amber-300 ring-1 ring-white/10">
+          {m.name} ⭐{m.xp}{est ? <span className="text-firuza-300"> +{est}</span> : null}
         </div>
       </div>
     </div>
@@ -44074,7 +44139,7 @@ const GUIDE_FAQ = [
   ['Reytingda o‘quvchilar bali 0', 'Ballar o‘quvchiga yozilishi uchun o‘yin oldidan jamoalarga bo‘ling yoki o‘yin paytida «O‘quvchi tanlash»dan foydalaning.'],
   ['Obunamni qanday uzaytiraman?', `Ism kartochkangiz → «Obunalarim» → «Uzaytirish». Telegram'da @${TELEGRAM_USER} ochiladi, xabar tayyor bo‘ladi. Muddat tugashiga ${EXPIRY_WARN_DAYS} kun qolganda bosh sahifada eslatma ham chiqadi.`],
   ['Yangi alifboda ko‘rsatish mumkinmi?', 'Ha. Sarlavhadagi (telefonda — menyudagi) «Özbek» tugmasini bosing. Qaytarish uchun «O‘zbek»ni bosing. Tanlov eslab qolinadi.'],
-  ['Sinf maskoti nima?', 'Har sinfning o‘z «Bek» bo‘risi bor (bosh sahifa → «Sinf maskotlari»). O‘yindagi har 10 ball = 1 yulduz, «Sinf tinchligi»da 30 soniya jimlik = 1 yulduz, ustoz +1/+5 bilan rag‘batlantirishi ham mumkin. Yulduzlar bilan bo‘ri bolasi Afsonaviy Ko‘kbo‘rigacha 8 darajada o‘sadi, milliy kiyimlar ochiladi: tumor, Chust do‘ppisi, belbog‘, atlas chopon, dutor, Bek sallasi. Ochilgan kiyimni bosib kiydirish yoki yechish mumkin. Ismi va rangini o‘zgartirsa bo‘ladi. Maskot bulutda saqlanadi — maktabdagi boshqa o‘qituvchilar va boshqa kompyuterda ham ko‘rinadi.'],
+  ['Sinf maskoti nima?', 'Har sinfning o‘z «Bek» bo‘risi bor (bosh sahifa → «Sinf maskotlari»). O‘yindagi har 10 ball = 1 yulduz, «Sinf tinchligi»da 30 soniya jimlik = 1 yulduz, ustoz +1/+5 bilan rag‘batlantirishi ham mumkin. Yulduzlar bilan bo‘ri bolasi Afsonaviy Ko‘kbo‘rigacha 8 darajada o‘sadi, milliy kiyimlar ochiladi: tumor, Chust do‘ppisi, belbog‘, atlas chopon, dutor, Bek sallasi. Ochilgan kiyimni bosib kiydirish yoki yechish mumkin. O‘yin paytida Bek ekranning pastki chap burchagida turadi: to‘g‘ri javobda quvonadi, xatoda xafa bo‘ladi (× bilan yashirsa bo‘ladi). Ismi va rangini o‘zgartirsa bo‘ladi. Maskot bulutda saqlanadi — maktabdagi boshqa o‘qituvchilar va boshqa kompyuterda ham ko‘rinadi.'],
   ['Proyektorda kursor ko‘rinmayapti', 'Sarlavhadagi sichqoncha belgisini bosing — «Katta kursor» yoqiladi.'],
 ];
 
@@ -50163,6 +50228,7 @@ export default function DarsPlayApp() {
       <AlphabetConverter />
       <CursorPrefs />
       <NoiseMeterHost />
+      {safeStep === 'play' && !isGuest && selectedClass && !finished && <MascotCorner cls={selectedClass} total={teams.reduce((a, t) => a + (t.score || 0), 0)} onOpen={(c) => setMascotCls(c)} />}
       {!isGuest && teacher && <MascotToastHost onOpen={(id) => { const c = schoolClasses.find((x) => x.id === id); if (c) setMascotCls(c); }} />}
       {mascotCls && <MascotStage cls={mascotCls} classes={schoolClasses} onClose={() => setMascotCls(null)} />}
       <style>{`

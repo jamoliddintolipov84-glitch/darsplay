@@ -402,3 +402,5 @@ html.dp-cursor-lg {
 .dp-mwag { animation: dpMWag .35s ease-in-out infinite; }
 @keyframes dpZzz { 0% { opacity: 0; transform: translateY(6px); } 40% { opacity: 1; } 100% { opacity: 0; transform: translateY(-10px); } }
 .dp-zzz { animation: dpZzz 2.4s ease-in-out infinite; }
+@keyframes dpMShake { 0%,100% { transform: translateX(0) rotate(0); } 20% { transform: translateX(-6px) rotate(-4deg); } 40% { transform: translateX(6px) rotate(4deg); } 60% { transform: translateX(-4px) rotate(-2deg); } 80% { transform: translateX(3px) rotate(1deg); } }
+.dp-mshake { animation: dpMShake .7s ease-in-out 2; }
