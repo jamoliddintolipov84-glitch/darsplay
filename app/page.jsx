@@ -43025,8 +43025,11 @@ const LANDING_FAQ = [
   ['Narxi qancha?', `1 fan, 1 sinf — ${formatSum(PRICE_TIERS[0].price)} / yil. 2 sinf — ${formatSum(PRICE_TIERS[1].price)}, 3 sinf — ${formatSum(PRICE_TIERS[2].price)}, barcha sinflar — ${formatSum(PRICE_TIERS[3].price)}. Ona tili va Adabiyot alohida fanlar: ikkalasi 1 sinf uchun — ${formatSum(PRICE_TIERS[0].price * 2)}.`],
   ['Login va parolni qayerdan olaman?', `Telegram'da @${TELEGRAM_USER} ga yozing: fan va sinflarni tanlaysiz, to‘lovdan keyin login va parol yuboriladi. Ommaviy ro‘yxatdan o‘tish yopiq — bu o‘quvchilar ma’lumotlarini himoya qiladi.`],
   ['Obuna muddati tugasa nima bo‘ladi?', `Obuna ${SUBSCRIPTION_MONTHS} oyga beriladi. Tugashiga ${EXPIRY_WARN_DAYS} kun qolganda eslatma chiqadi. Muddat tugagach darslar yopiladi, lekin sinflaringiz va natijalaringiz saqlanib qoladi — uzaytirsangiz, hammasi joyida.`],
-  ['Internet bo‘lmasa ishlaydimi?', 'Sahifa bir marta ochilgach, darslar va o‘yinlar brauzerda ishlaydi. Natijalarni saqlash va reyting uchun internet kerak.'],
-  ['O‘quvchini qanday tanlayman?', 'To‘rt usul bor: baraban (doira), kamera orqali tasodifiy tanlash, ro‘yxatdan tanlash va avtomatik ravishda jamoalarga bo‘lish.'],
+  ['Internet bo‘lmasa ishlaydimi?', 'Sahifa bir marta ochilgach, darslar va o‘yinlar brauzerda ishlaydi. Natijalar, reyting, maskot yulduzlari va doska bulutda saqlanadi — internet uzilsa, yulduzlar navbatda turib, keyin yuboriladi.'],
+  ['O‘quvchini qanday tanlayman?', 'Besh usul bor: Baraban, Sehrli kartalar, Orbita, Ro‘yxat va Kamera. Hammasi to‘liq ekranli sahnada ochiladi, «Takrorlanmasin» yoqilsa bir o‘quvchi qayta chiqmaydi. Ro‘yxat bo‘yicha bir bosishda jamoalarga bo‘lish ham bor.'],
+  ['Sinf maskoti nima?', 'Har sinfning o‘z «Bek» bo‘risi bor. To‘g‘ri javoblar, sinf tinchligi va ustoz rag‘bati yulduz beradi. Yulduzlar bilan bo‘ri bolasi 8 darajada Afsonaviy Ko‘kbo‘rigacha o‘sadi va milliy kiyimlar ochiladi: tumor, Chust do‘ppisi, belbog‘, atlas chopon, dutor, Bek sallasi. O‘yin paytida Bek burchakda turib, javoblarga quvonadi yoki dalda beradi.'],
+  ['Kirmasdan nimalarni ko‘rsa bo‘ladi?', `«Kirmasdan darslarni ko‘rish» tugmasi orqali barcha sinflar mundarijasi ochiq. Har sinfda ${GUEST_FREE_LESSONS} ta dars va ${GUEST_FREE_GAMES} ta o‘yin bepul — darsda qanday ishlashini sinab ko‘rasiz.`],
+  ['Yangi alifboda ko‘rsatish mumkinmi?', 'Ha. Yuqoridagi «O‘zbek | Özbek» tugmasi butun saytni amaldagi yoki yangi lotin alifbosida (Ö, Ğ, Ş, Ç) ko‘rsatadi. Imlo o‘yinlari darslikka mos qoladi.'],
   ['O‘zim savol qo‘sha olamanmi?', 'Ha. «O‘z to‘plamim» bo‘limida juftliklar, test, savol-javoblarni kiritasiz — ular barcha o‘yinlarda ishlaydi.'],
 ];
 
@@ -43205,21 +43208,128 @@ function LoginCard({ onLogin }) {
   );
 }
 
+/* ---------- Landing: «Yangiliklar» bo‘limi ---------- */
+function LandingNews({ onGuest }) {
+  const [st, setSt] = useState(0);
+  const [mood, setMood] = useState('idle');
+  useEffect(() => {
+    const id = setInterval(() => setSt((x) => (x + 1) % MASCOT_STAGES.length), 1800);
+    return () => clearInterval(id);
+  }, []);
+  const wear = mascotUnlocked(MASCOT_STAGES[st].at);
+  const colors = ['kulrang', 'kokbori', 'qongir', 'tun', 'qor', 'kokbori', 'qongir', 'kokbori'];
+  const pet = () => { setMood('happy'); setTimeout(() => setMood('idle'), 1200); };
+  const tools = [
+    { icon: Shapes, t: 'Shakllar va strelkalar' }, { icon: StickyNote, t: 'Yopishqoq qog‘oz' }, { icon: Stamp, t: 'Rag‘bat muhrlari ⭐✅👏' },
+    { icon: ImagePlus, t: 'Rasm qo‘yish (Ctrl+V)' }, { icon: Hourglass, t: 'Taymer 1–15 daqiqa' }, { icon: Cloud, t: 'Bulutda saqlanadi' },
+  ];
+  return (
+    <section id="yangi" className="scroll-mt-20 relative overflow-hidden border-y border-line bg-ink px-4 py-20 text-white md:px-8 md:py-28">
+      <div className="dp-girih pointer-events-none absolute inset-0 opacity-40" />
+      <div className="pointer-events-none absolute -left-40 top-10 h-[30rem] w-[30rem] rounded-full bg-firuza-500/20 blur-3xl" />
+      <div className="pointer-events-none absolute -right-40 bottom-0 h-[30rem] w-[30rem] rounded-full bg-amber-400/20 blur-3xl" />
+      <div className="relative">
+        <SectionHead light kicker="Yangiliklar" title="Hech qayerda yo‘q imkoniyatlar" sub="Sinf xonasi uchun o‘ylab topilgan: o‘quvchilarni ilhomlantiradi, o‘qituvchining ishini yengillatadi." />
+
+        {/* Bek */}
+        <div className="mx-auto mt-14 grid max-w-6xl items-center gap-10 rounded-[2.4rem] bg-white/5 p-6 ring-1 ring-white/10 md:p-10 lg:grid-cols-[1fr_1.1fr]">
+          <div className="flex flex-col items-center">
+            <button onClick={pet} aria-label="Bekni erkalash" className="relative">
+              <div className="absolute inset-6 rounded-full bg-amber-400/20 blur-2xl" />
+              <MascotArt stage={st} color={colors[st]} wear={wear} mood={mood} size={320} className="relative max-w-[70vw]" />
+            </button>
+            <div className="mt-2 rounded-full bg-amber-400 px-4 py-1.5 text-lg font-black text-ink">{st + 1}-daraja • {MASCOT_STAGES[st].n}</div>
+            <div className="mt-3 flex gap-1.5">
+              {MASCOT_STAGES.map((_, i) => <button key={i} aria-label={`${i + 1}-daraja`} onClick={() => setSt(i)} className={`h-2.5 rounded-full transition-all ${i === st ? 'w-8 bg-amber-300' : 'w-2.5 bg-white/30'}`} />)}
+            </div>
+          </div>
+          <div>
+            <span className="inline-flex items-center gap-2 rounded-full bg-anor-500 px-3 py-1 text-sm font-black uppercase tracking-wide">🐺 Yangi • Sinf maskoti</span>
+            <h3 className="mt-4 text-4xl font-black leading-tight md:text-5xl">Har sinfning o‘z <span className="text-amber-300">«Bek»</span> bo‘risi</h3>
+            <p className="mt-4 text-xl text-blue-100">To‘g‘ri javoblar, sinf tinchligi va ustoz rag‘bati yulduz beradi. Bo‘ri bolasi 8 darajada Afsonaviy Ko‘kbo‘rigacha o‘sadi. O‘yin paytida Bek burchakda turib, to‘g‘ri javobga quvonadi, xatoda dalda beradi.</p>
+            <div className="mt-6 grid grid-cols-3 gap-2 sm:grid-cols-4">
+              {MASCOT_ITEMS.filter((it) => it.id !== 'aura').map((it) => (
+                <div key={it.id} className="flex flex-col items-center rounded-2xl bg-white/10 p-2 text-center ring-1 ring-white/10">
+                  <MascotItemIcon id={it.id} size={40} />
+                  <span className="mt-1 text-xs font-black leading-tight">{it.n}</span>
+                </div>
+              ))}
+              <div className="flex flex-col items-center justify-center rounded-2xl bg-amber-400/20 p-2 text-center text-xs font-black text-amber-200 ring-1 ring-amber-300/30">🏆 Maskotlar poygasi</div>
+            </div>
+            <p className="mt-4 text-base font-semibold text-blue-200">Milliy kiyimlar yulduz yig‘ilgani sari ochiladi. Sinflar o‘rtasida sog‘lom raqobat — bolalar har darsni intiqib kutadi.</p>
+          </div>
+        </div>
+
+        {/* Uchta karta */}
+        <div className="mx-auto mt-8 grid max-w-6xl gap-6 lg:grid-cols-3">
+          <div className="rounded-[2rem] bg-white/5 p-6 ring-1 ring-white/10">
+            <div className="flex items-center gap-3"><span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-400 text-ink"><UserCheck size={26} /></span><h3 className="text-2xl font-black">{PICKERS.length} xil tanlash</h3></div>
+            <p className="mt-3 text-base text-blue-100">Javob beruvchini adolatli va qiziqarli tanlash — to‘liq ekranli sahnada, konfetti bilan.</p>
+            <div className="mt-4 space-y-2">
+              {PICKERS.map((pk) => (
+                <div key={pk.id} className="flex items-center gap-3 rounded-xl bg-white/5 px-3 py-2 ring-1 ring-white/10">
+                  <span className={`flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br ${pk.grad}`}><pk.icon size={18} /></span>
+                  <span className="text-base font-black">{pk.name}</span>
+                  {pk.fresh && <span className="ml-auto rounded-full bg-amber-400 px-2 text-[11px] font-black text-ink">yangi</span>}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-[2rem] bg-white/5 p-6 ring-1 ring-white/10">
+            <div className="flex items-center gap-3"><span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-firuza-500"><Ear size={26} /></span><h3 className="text-2xl font-black">Sinf tinchligi</h3></div>
+            <p className="mt-3 text-base text-blue-100">Mikrofon shovqin darajasini o‘lchaydi va ekranning chetida shkala ko‘rsatadi. Sinf 30 soniya jim tursa — 1 yulduz. Ovoz yozilmaydi.</p>
+            <div className="mt-5 flex items-end justify-center gap-5">
+              <div className="relative h-40 w-12 overflow-hidden rounded-2xl bg-white/10 ring-1 ring-white/15">
+                <div className="dp-noise-demo absolute inset-x-0 bottom-0 rounded-b-2xl" style={{ background: 'linear-gradient(to top, #2A9D8F 0%, #2A9D8F 45%, #DCAE4A 70%, #E2463F 100%)', backgroundSize: '100% 160px', backgroundPosition: 'bottom' }} />
+                <div className="absolute inset-x-0 border-t-2 border-dashed border-white" style={{ bottom: '55%' }} />
+              </div>
+              <div className="text-center"><div className="text-6xl">🤫</div><div className="mt-1 text-sm font-black text-amber-300">Jim-jit • Past ovoz • Guruh ishi</div></div>
+            </div>
+          </div>
+          <div className="rounded-[2rem] bg-white/5 p-6 ring-1 ring-white/10">
+            <div className="flex items-center gap-3"><span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-600"><PenLine size={26} /></span><h3 className="text-2xl font-black">Elektron doska</h3></div>
+            <p className="mt-3 text-base text-blue-100">Istalgan joyda bir tugma bilan ochiladi, dars slaydi ustiga ham chizsa bo‘ladi. Soat, taymer va 9 xil fon bilan.</p>
+            <div className="mt-4 grid grid-cols-2 gap-2">
+              {tools.map((tl) => (
+                <div key={tl.t} className="flex items-center gap-2 rounded-xl bg-white/5 px-3 py-2 text-sm font-bold ring-1 ring-white/10"><tl.icon size={18} className="shrink-0 text-amber-300" /> {tl.t}</div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Kichik yangiliklar */}
+        <div className="mx-auto mt-8 flex max-w-6xl flex-wrap justify-center gap-3">
+          {[['🔤', 'O‘zbek | Özbek alifbosi'], ['🖱️', 'Katta kursor va lazer ko‘rsatkich'], ['🕐', 'Sarlavhada real soat'], ['☁️', 'Maskot va doska bulutda'], ['🎁', 'Kirmasdan har sinfda 1 dars bepul']].map(([e, t]) => (
+            <span key={t} className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-base font-bold ring-1 ring-white/15">{e} {t}</span>
+          ))}
+        </div>
+        {onGuest && (
+          <div className="mt-10 text-center">
+            <button onClick={onGuest} className="dp-btn dp-aura inline-flex items-center gap-3 rounded-2xl bg-amber-400 px-8 py-4 text-xl font-black text-ink hover:bg-amber-300"><BookOpen size={24} /> Kirmasdan sinab ko‘rish</button>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
 function LoginScreen({ onLogin, onGuest }) {
   const topicCount = useMemo(() => SUBJECTS.map((x) => CONTENT[x.id] || {}).reduce((a, g) => a + Object.values(g).reduce((b, arr) => b + arr.length, 0), 0), []);
   const games = GAMES.filter((g) => !g.disabled && !(g.id === 'units' && !VISIBLE_SUBJECT_IDS.includes('fizika')));
   const [menu, setMenu] = useState(false);
-  const nav = [['imkoniyatlar', 'Imkoniyatlar'], ['demo', 'Sinab ko‘ring'], ['oyinlar', 'O‘yinlar'], ['qanday', 'Qanday ishlaydi'], ['fanlar', 'Sinflar'], ['tariflar', 'Tariflar'], ['savollar', 'Savollar']];
+  const nav = [['imkoniyatlar', 'Imkoniyatlar'], ['yangi', 'Yangiliklar'], ['demo', 'Sinab ko‘ring'], ['oyinlar', 'O‘yinlar'], ['fanlar', 'Sinflar'], ['tariflar', 'Tariflar'], ['savollar', 'Savollar']];
+  const readyGrades = [...new Set(SUBJECTS.flatMap((sj) => Object.keys(CONTENT[sj.id] || {}).map(Number)))].length;
   const go = (id) => { setMenu(false); scrollToId(id); };
 
   const features = [
     { icon: Presentation, title: 'Darslik asosida tushuntirish', text: 'Har mavzu — qoida, jadval, misol va topshiriqli slaydlar. Proyektorda katta shriftda.', color: 'from-blue-500 to-blue-700', wide: true },
     { icon: LayoutGrid, title: `${games.length} xil o‘yin`, text: 'Test, Millioner, Portlash, Poyga, imlo va fikrlash o‘yinlari.', color: 'from-violet-500 to-indigo-700' },
     { icon: Users, title: '2–4 jamoa yoki yakka', text: 'Jamoalar navbatma-navbat javob beradi, ball avtomatik hisoblanadi.', color: 'from-rose-500 to-pink-600' },
-    { icon: Disc3, title: 'Baraban, kamera, ro‘yxat', text: 'O‘quvchini adolatli tanlash va bir bosishda guruhlarga bo‘lish.', color: 'from-amber-400 to-orange-500' },
+    { icon: Disc3, title: `${PICKERS.length} xil o‘quvchi tanlash`, text: 'Baraban, Sehrli kartalar, Orbita, Ro‘yxat va Kamera — to‘liq ekranli sahnada. Bir bosishda guruhlarga bo‘lish.', color: 'from-amber-400 to-orange-500' },
     { icon: Trophy, title: 'Reyting', text: 'Sinf, maktab va umumiy reyting — o‘quvchilar o‘sishini ko‘rasiz.', color: 'from-firuza-500 to-firuza-700' },
     { icon: ListPlus, title: 'O‘z savollaringiz', text: 'O‘z to‘plamingizni yarating — barcha o‘yinlarda ishlaydi.', color: 'from-sky-500 to-cyan-600' },
-    { icon: History, title: 'Natijalar tarixi', text: 'Har o‘yin natijasi sinf bo‘yicha saqlanadi: kim qachon qancha ball oldi — bir qarashda ko‘rinadi.', color: 'from-fuchsia-500 to-purple-700', wide: true },
+    { icon: PenLine, title: 'Elektron doska', text: 'Qalam, shakllar, yopishqoq qog‘oz, rag‘bat muhrlari, rasm qo‘yish, husnixat va koordinata fonlari. Bulutda saqlanadi — uyda tayyorlab, maktabda oching.', color: 'from-firuza-500 to-teal-700', wide: true },
+    { icon: History, title: 'Natijalar tarixi', text: 'Har o‘yin natijasi sinf bo‘yicha saqlanadi: kim qachon qancha ball oldi.', color: 'from-fuchsia-500 to-purple-700' },
   ];
   const steps = [
     { icon: BookOpen, t: 'Fan, sinf va mavzu', d: 'Bir necha bosishda kerakli darsni oching.' },
@@ -43232,7 +43342,9 @@ function LoginScreen({ onLogin, onGuest }) {
     [Projector, 'Proyektor uchun dizayn', 'Katta shrift, yorqin tugmalar, uzoqdan ko‘rinadi'],
     [Maximize, 'To‘liq ekran rejimi', 'Bir tugma bilan butun sinfga'],
     [Volume2, 'Ovoz effektlari', 'To‘g‘ri javob, portlash, g‘alaba ovozlari'],
-    [Timer, 'Taymerlar', 'Har savolga vaqt — dars sur’ati saqlanadi'],
+    [Clock, 'Real soat va taymer', 'Sarlavhada soat, doskada katta taymer va siferblat'],
+    [Ear, 'Sinf tinchligi', 'Mikrofon shovqinni o‘lchaydi, jimlik uchun yulduz'],
+    [MousePointer2, 'Katta kursor va lazer', 'Proyektorda sichqoncha aniq ko‘rinadi'],
     [ShieldCheck, 'Xavfsiz', 'Har o‘qituvchi faqat o‘z maktabini ko‘radi'],
   ];
 
@@ -43289,7 +43401,7 @@ function LoginScreen({ onLogin, onGuest }) {
               </button>
             )}
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-base font-semibold text-blue-100">
-              {['Ro‘yxatdan o‘tmasdan demo', 'O‘zbek tilida', 'Bepul sinov rejimi'].map((t) => (
+              {['Kirmasdan har sinfda 1 dars bepul', 'O‘zbek | Özbek alifbosi', 'Telefonsiz dars'].map((t) => (
                 <span key={t} className="inline-flex items-center gap-2"><CheckCircle2 size={20} className="text-firuza-300" /> {t}</span>
               ))}
             </div>
@@ -43299,8 +43411,8 @@ function LoginScreen({ onLogin, onGuest }) {
         <div className="relative mx-auto -mt-6 grid max-w-6xl grid-cols-2 gap-5 px-4 pb-16 md:grid-cols-4 md:px-8">
           <StatBox value={topicCount} suffix="+" label="tayyor mavzu" icon={BookOpen} />
           <StatBox value={games.length} label="xil o‘yin" icon={Dices} bg="bg-amber-50" tape="dp-tape-anor" />
-          <StatBox value={2} label="sinf: 8 va 9" icon={GraduationCap} bg="bg-firuza-50" tape="dp-tape-gold" />
-          <StatBox value={4} label="o‘quvchi tanlash usuli" icon={UserCheck} bg="bg-paper" />
+          <StatBox value={readyGrades} label={`sinf: ${readyGradeSpan().replace(/-sinf(lar)?$/, "")}`} icon={GraduationCap} bg="bg-firuza-50" tape="dp-tape-gold" />
+          <StatBox value={PICKERS.length} label="o‘quvchi tanlash usuli" icon={UserCheck} bg="bg-paper" />
         </div>
       </section>
 
@@ -43318,6 +43430,9 @@ function LoginScreen({ onLogin, onGuest }) {
           ))}
         </div>
       </section>
+
+      {/* Yangiliklar */}
+      <LandingNews onGuest={onGuest} />
 
       {/* Demo */}
       <section id="demo" className="scroll-mt-20 relative border-y border-line bg-firuza-50/80 px-4 py-20 md:px-8 md:py-28">
