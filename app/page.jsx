@@ -18,7 +18,7 @@ import {
   Minus, Loader2, UserCheck, KeyRound, ShieldCheck, Copy, EyeOff, Search, UserPlus, Pencil, Building2, LogIn, RefreshCw, Settings, ChevronDown, LayoutGrid, CameraOff, Trash2, Save, Ruler, Bomb, Gift, Repeat, Zap,
   ThumbsUp, ThumbsDown, Puzzle, Heart, Crown, Rocket, Flag, Dices, SpellCheck,
   Volume2, VolumeX, History, Medal, CalendarDays, Star, ListPlus, NotebookPen, CircleHelp,
-  ListOrdered, Shapes, Scale, Palette, Type, SpellCheck2, Projector, PhoneOff, Presentation, MousePointerClick, MousePointer2, Orbit, GalleryHorizontalEnd, Triangle, StickyNote, Stamp, ImagePlus, Clock, Hourglass, PaintBucket, Move, Ear, MicOff, ChevronsRight,
+  ListOrdered, Shapes, Scale, Palette, Type, SpellCheck2, Projector, PhoneOff, Presentation, MousePointerClick, MousePointer2, Orbit, GalleryHorizontalEnd, Triangle, StickyNote, Stamp, ImagePlus, Clock, Hourglass, PaintBucket, Move, Ear, MicOff, ChevronsRight, Cloud, CloudOff,
   Highlighter, Wand2, MoveUpRight, Square, Circle, Eraser, Undo2, Redo2, FilePlus2, Download,
   Quote, Mail, Pause, Headphones, ExternalLink, Video,
 } from 'lucide-react';
@@ -41748,7 +41748,80 @@ function mascotSave(id, m) {
   try { localStorage.setItem(MASCOT_KEY, JSON.stringify(mascotDb)); } catch { /* */ }
   mascotListeners.forEach((f) => f());
 }
-function mascotUpdate(id, patch) { if (id) mascotSave(id, { ...mascotOf(id), ...patch }); }
+
+/* ---- Supabase bilan sinxronlash (REMOTE rejimda) ----
+   Lokal nusxa darhol yangilanadi (ekran kutmaydi), keyin bazaga yoziladi.
+   Internet uzilsa, qo‘shilgan yulduzlar navbatda turadi va keyingi safar yuboriladi. */
+const MASCOT_PENDING_KEY = 'darsplay_mascot_pending_v1';
+let mascotRemoteOn = false;
+const mapMascotRow = (r) => ({ name: r.name, color: r.color, xp: r.xp, log: Array.isArray(r.log) ? r.log : [] });
+function mascotPending(list) {
+  if (list) { try { localStorage.setItem(MASCOT_PENDING_KEY, JSON.stringify(list.slice(-200))); } catch { /* */ } return list; }
+  try { return JSON.parse(localStorage.getItem(MASCOT_PENDING_KEY) || '[]') || []; } catch { return []; }
+}
+async function mascotRpcAdd(id, n, reason) {
+  const { data, error } = await supabase.rpc('mascot_add', { p_class: id, p_n: n, p_reason: reason || '' });
+  if (error) throw error;
+  return data;
+}
+async function mascotFlush() {
+  const list = mascotPending();
+  if (!list.length) return;
+  const left = [];
+  for (const it of list) {
+    try { await mascotRpcAdd(it.id, it.n, it.r); } catch { left.push(it); }
+  }
+  mascotPending(left);
+}
+/** Kirgandan keyin: bazadagi maskotlarni yuklaydi, faqat shu kompyuterda bo‘lganlarini bazaga ko‘chiradi. */
+async function mascotRemoteSync(classIds = []) {
+  if (!REMOTE) return;
+  mascotRemoteOn = true;
+  try {
+    await mascotFlush();
+    const { data, error } = await supabase.from('class_mascots').select('*');
+    if (error) throw error;
+    const have = new Set((data || []).map((r) => r.class_id));
+    const local = mascotDb;
+    const next = { ...local };
+    (data || []).forEach((r) => { next[r.class_id] = mapMascotRow(r); });
+    for (const id of classIds) {
+      const m = local[id];
+      if (!have.has(id) && m && (m.xp > 0 || (m.name && m.name !== 'Humo') || (m.color && m.color !== 'firuza'))) {
+        const row = { class_id: id, name: (m.name || 'Humo').slice(0, 18), color: MASCOT_COLORS[m.color] ? m.color : 'firuza', xp: Math.max(0, m.xp | 0), log: (m.log || []).slice(0, 30) };
+        const { error: e2 } = await supabase.from('class_mascots').upsert(row, { onConflict: 'class_id', ignoreDuplicates: true });
+        if (!e2) next[id] = mapMascotRow(row);
+      }
+    }
+    mascotDb = next;
+    try { localStorage.setItem(MASCOT_KEY, JSON.stringify(mascotDb)); } catch { /* */ }
+    mascotListeners.forEach((f) => f());
+  } catch (e) { console.warn('Maskot sinxronlash:', errText(e)); }
+}
+/** Bitta sinf maskotini bazadan yangilash (sahna ochilganda — boshqa o‘qituvchi qo‘shgan yulduzlar ham ko‘rinsin). */
+async function mascotRefresh(id) {
+  if (!REMOTE || !mascotRemoteOn || !id) return;
+  try {
+    await mascotFlush();
+    const { data, error } = await supabase.from('class_mascots').select('*').eq('class_id', id).maybeSingle();
+    if (!error && data) mascotSave(id, mapMascotRow(data));
+  } catch { /* oflayn */ }
+}
+
+function mascotUpdate(id, patch) {
+  if (!id) return;
+  const m = { ...mascotOf(id), ...patch };
+  mascotSave(id, m);
+  if (REMOTE && mascotRemoteOn) {
+    (async () => {
+      try {
+        const { data, error } = await supabase.from('class_mascots').update({ name: m.name, color: m.color, updated_at: new Date().toISOString() }).eq('class_id', id).select('class_id');
+        if (error) throw error;
+        if (!data?.length) await supabase.from('class_mascots').insert({ class_id: id, name: m.name, color: m.color });
+      } catch (e) { console.warn('Maskot saqlash:', errText(e)); }
+    })();
+  }
+}
 /** Sinf maskotiga yulduz qo‘shadi. */
 function mascotAdd(id, n, reason, label) {
   if (!id || !n) return;
@@ -41757,6 +41830,11 @@ function mascotAdd(id, n, reason, label) {
   const xp = Math.max(0, m.xp + n);
   const log = [{ n, r: reason, t: Date.now() }, ...(m.log || [])].slice(0, 30);
   mascotSave(id, { ...m, xp, log });
+  if (REMOTE && mascotRemoteOn) {
+    mascotRpcAdd(id, n, reason)
+      .then((row) => { if (row) mascotSave(id, mapMascotRow(row)); })
+      .catch(() => { mascotPending([...mascotPending(), { id, n, r: reason }]); });
+  }
   const after = mascotStage(xp);
   mascotEventListeners.forEach((f) => f({ id, n, reason, label, name: m.name, color: m.color, xp, stage: after, levelUp: after > before }));
 }
@@ -41939,6 +42017,7 @@ function MascotStage({ cls, classes = [], onClose }) {
   const [editing, setEditing] = useState(false);
   const [name, setName] = useState(m.name);
   const moodT = useRef(0);
+  useEffect(() => { mascotRefresh(cls.id); }, [cls.id]);
   useEffect(() => {
     const h = (e) => { if (e.key === 'Escape' && !editing) onClose(); };
     window.addEventListener('keydown', h);
@@ -42593,6 +42672,7 @@ async function remoteLoadData(profile) {
   }
   const { data: sets, error: sErr } = await supabase.from('custom_sets').select('*').order('updated_at', { ascending: false });
   if (sErr) throw sErr;
+  if (profile.role !== 'admin') mascotRemoteSync((classes || []).map((c) => c.id));
   return {
     version: 1,
     admin: { login: profile.role === 'admin' ? profile.login : 'admin', password: '' },
@@ -44193,6 +44273,26 @@ function boardDraw(ctx, o) {
   ctx.restore();
 }
 
+/* Doska bazada: teacher_boards (har o‘qituvchiga bitta yozuv). Lokal nusxa ham saqlanadi. */
+async function boardSession() {
+  if (!REMOTE) return null;
+  try { const { data } = await supabase.auth.getSession(); return data?.session?.user?.id || null; } catch { return null; }
+}
+async function boardRemoteLoad() {
+  const uid = await boardSession();
+  if (!uid) return null;
+  const { data, error } = await supabase.from('teacher_boards').select('data, updated_at').eq('teacher_id', uid).maybeSingle();
+  if (error || !data || !Array.isArray(data.data?.pages)) return null;
+  return { ...data.data, ts: Date.parse(data.updated_at) || 0 };
+}
+async function boardRemoteSave(payload) {
+  const uid = await boardSession();
+  if (!uid) return false;
+  const { error } = await supabase.from('teacher_boards').upsert({ teacher_id: uid, data: { bg: payload.bg, pages: payload.pages }, updated_at: new Date(payload.ts).toISOString() }, { onConflict: 'teacher_id' });
+  if (error) console.warn('Doska saqlash:', errText(error));
+  return !error;
+}
+
 function loadBoard() {
   try {
     const d = JSON.parse(localStorage.getItem(BOARD_KEY) || 'null');
@@ -44449,13 +44549,58 @@ function Whiteboard({ mode = 'board', onClose, initial, onChange, onPrev, onNext
   }, []);
 
   /* ---- saqlash ---- */
+  const remoteT = useRef(0);
+  const remotePayload = useRef(null);
+  const [cloud, setCloud] = useState(REMOTE && !overlay ? 'idle' : null); // idle | saving | saved | error
+  const flushRemote = useCallback(async () => {
+    clearTimeout(remoteT.current);
+    const pl = remotePayload.current;
+    if (!pl) return;
+    remotePayload.current = null;
+    setCloud('saving');
+    const ok = await boardRemoteSave(pl);
+    setCloud(ok ? 'saved' : 'error');
+  }, []);
   const persist = useCallback(() => {
     if (overlay) { onChange?.(pagesRef.current[0].items); return; }
+    const payload = { bg, pages: pagesRef.current.map((p) => p.items), ts: Date.now() };
     try {
-      localStorage.setItem(BOARD_KEY, JSON.stringify({ bg, pages: pagesRef.current.map((p) => p.items) }));
+      localStorage.setItem(BOARD_KEY, JSON.stringify(payload));
     } catch { /* joy tugagan bo‘lishi mumkin */ }
-  }, [overlay, onChange, bg]);
-  useEffect(() => { persist(); }, [bg]); // eslint-disable-line react-hooks/exhaustive-deps
+    if (REMOTE) {
+      remotePayload.current = payload;
+      clearTimeout(remoteT.current);
+      remoteT.current = setTimeout(flushRemote, 1500);
+    }
+  }, [overlay, onChange, bg, flushRemote]);
+  // yopilganda saqlanmagan o‘zgarishni darhol yuborish
+  useEffect(() => () => { if (remotePayload.current) flushRemote(); }, [flushRemote]);
+  // ochilganda bazadagi nusxa yangiroq bo‘lsa — o‘shani ko‘rsatish
+  useEffect(() => {
+    if (overlay || !REMOTE) return;
+    let alive = true;
+    (async () => {
+      const remote = await boardRemoteLoad();
+      if (!alive) return;
+      const local = loadBoard();
+      const localTs = local?.ts || 0;
+      if (remote && remote.ts > localTs) {
+        pagesRef.current = remote.pages.map((items) => ({ items: items || [], past: [], future: [] }));
+        if (!pagesRef.current.length) pagesRef.current = [{ items: [], past: [], future: [] }];
+        try { localStorage.setItem(BOARD_KEY, JSON.stringify({ bg: remote.bg || 'grid', pages: remote.pages, ts: remote.ts })); } catch { /* */ }
+        if (remote.bg) setBg(remote.bg);
+        setPage(0);
+        rebuildCache(); paint(); rerender();
+        setCloud('saved');
+      } else if (local && localTs > (remote?.ts || 0) && (local.pages || []).some((pg) => pg?.length)) {
+        remotePayload.current = { bg: local.bg || 'grid', pages: local.pages, ts: localTs || Date.now() };
+        flushRemote();
+      } else if (remote) setCloud('saved');
+    })();
+    return () => { alive = false; };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  const firstBg = useRef(true);
+  useEffect(() => { if (firstBg.current) { firstBg.current = false; return; } persist(); }, [bg]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const commit = (o) => {
     cur.past.push(cur.items);
@@ -44848,6 +44993,12 @@ function Whiteboard({ mode = 'board', onClose, initial, onChange, onPrev, onNext
               <span className="px-1 text-xl font-extrabold text-blue-900 tabular-nums">{page + 1}/{pageCount}</span>
               <button aria-label="Keyingi sahifa" onClick={() => setPage(Math.min(pageCount - 1, page + 1))} disabled={page >= pageCount - 1} className={`${btn(false)} disabled:opacity-30`}><ChevronRight size={30} /></button>
               <button title="Yangi sahifa" aria-label="Yangi sahifa" onClick={addPage} className={btn(false)}><FilePlus2 size={28} /></button>
+              {cloud && (
+                <span title={{ idle: 'Bulutga saqlanadi', saving: 'Saqlanmoqda…', saved: 'Bulutda saqlangan — boshqa kompyuterda ham ochiladi', error: 'Bulutga saqlab bo‘lmadi (internetni tekshiring). Shu kompyuterda saqlangan.' }[cloud]}
+                  className={`flex h-14 w-10 items-center justify-center ${cloud === 'error' ? 'text-rose-500' : cloud === 'saving' ? 'animate-pulse text-blue-400' : 'text-firuza-600'}`}>
+                  {cloud === 'error' ? <CloudOff size={24} /> : <Cloud size={24} />}
+                </span>
+              )}
             </div>
             <div className="relative">
               <div className={`${barCls} flex items-center gap-1`}>
