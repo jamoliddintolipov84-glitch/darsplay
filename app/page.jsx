@@ -41706,6 +41706,422 @@ function Modal({ children, onClose, wide = false }) {
 }
 
 /* ============================================================
+   SINF MASKOTI — «Humo qushi». Har sinfning o‘z qushi bor.
+   O‘yindagi to‘g‘ri javoblar, tinch o‘tirish va ustoz rag‘bati
+   yulduz beradi; yulduzlar bilan qush tuxumdan Afsonaviy Humogacha o‘sadi.
+   Ma’lumot shu kompyuterda saqlanadi (localStorage).
+   ============================================================ */
+const MASCOT_KEY = 'darsplay_mascot_v1';
+const MASCOT_STAGES = [
+  { n: 'Sirli tuxum', at: 0, hint: 'Tuxum ichida kimdir qimirlayapti… Yulduz yig‘ing!' },
+  { n: 'Jo‘ja chiqdi', at: 10, hint: 'Qobiqdan endi chiqdi — hali hammasi yangi.' },
+  { n: 'Momiq jo‘ja', at: 30, hint: 'Momiq patlar chiqdi, qanotchalar o‘smoqda.' },
+  { n: 'Yosh qush', at: 60, gift: 'Do‘ppi', hint: 'Do‘ppi kiyib, birinchi parvozga tayyorlanmoqda.' },
+  { n: 'Qanotli qush', at: 100, gift: 'Belbog‘', hint: 'Qanotlari kuchaydi, tojli patlari chiqdi.' },
+  { n: 'Humo qushi', at: 160, gift: 'Toj', hint: 'Baxt qushi Humo — sinfning faxri!' },
+  { n: 'Oltin Humo', at: 250, gift: 'Oltin nur', hint: 'Patlari oltindek yarqiraydi.' },
+  { n: 'Afsonaviy Humo', at: 400, gift: 'Yulduzlar halqasi', hint: 'Afsonaga aylandi! Eng yuqori daraja.' },
+];
+const MASCOT_COLORS = {
+  firuza: { name: 'Firuza', body: '#2A9D8F', belly: '#CDEFEA', wing: '#1E7A6E', tail: ['#2A9D8F', '#DCAE4A', '#1E7A6E'] },
+  lojuvard: { name: 'Lojuvard', body: '#3D60B0', belly: '#D3DDF6', wing: '#2F4C9A', tail: ['#3D60B0', '#DCAE4A', '#2A9D8F'] },
+  anor: { name: 'Anor', body: '#E2463F', belly: '#FCD9D5', wing: '#B8332D', tail: ['#E2463F', '#DCAE4A', '#B8332D'] },
+  zafaron: { name: 'Za’faron', body: '#E0A93A', belly: '#FDEFCF', wing: '#B98222', tail: ['#E0A93A', '#E2463F', '#2A9D8F'] },
+  binafsha: { name: 'Binafsha', body: '#7C5CC4', belly: '#E6DEF8', wing: '#5B4BB7', tail: ['#7C5CC4', '#DCAE4A', '#E2463F'] },
+};
+let mascotDb = {};
+try { mascotDb = JSON.parse(localStorage.getItem(MASCOT_KEY) || '{}') || {}; } catch { /* server */ }
+const mascotListeners = new Set();
+const mascotEventListeners = new Set();
+let mascotActiveClass = null;
+function setMascotActiveClass(id) { mascotActiveClass = id || null; }
+function mascotOf(id) {
+  return { name: 'Humo', color: 'firuza', xp: 0, log: [], ...(mascotDb[id] || {}) };
+}
+function mascotStage(xp) {
+  let k = 0;
+  MASCOT_STAGES.forEach((s, i) => { if (xp >= s.at) k = i; });
+  return k;
+}
+function mascotSave(id, m) {
+  mascotDb = { ...mascotDb, [id]: m };
+  try { localStorage.setItem(MASCOT_KEY, JSON.stringify(mascotDb)); } catch { /* */ }
+  mascotListeners.forEach((f) => f());
+}
+function mascotUpdate(id, patch) { if (id) mascotSave(id, { ...mascotOf(id), ...patch }); }
+/** Sinf maskotiga yulduz qo‘shadi. */
+function mascotAdd(id, n, reason, label) {
+  if (!id || !n) return;
+  const m = mascotOf(id);
+  const before = mascotStage(m.xp);
+  const xp = Math.max(0, m.xp + n);
+  const log = [{ n, r: reason, t: Date.now() }, ...(m.log || [])].slice(0, 30);
+  mascotSave(id, { ...m, xp, log });
+  const after = mascotStage(xp);
+  mascotEventListeners.forEach((f) => f({ id, n, reason, label, name: m.name, color: m.color, xp, stage: after, levelUp: after > before }));
+}
+function useMascot(id) {
+  const [, set] = useState(0);
+  useEffect(() => { const f = () => set((x) => x + 1); mascotListeners.add(f); return () => mascotListeners.delete(f); }, []);
+  return mascotOf(id);
+}
+
+/** Humo qushi rasmi (o‘zimiz chizgan SVG). */
+function MascotArt({ stage = 0, color = 'firuza', mood = 'idle', size = 200, className = '' }) {
+  const c = MASCOT_COLORS[color] || MASCOT_COLORS.firuza;
+  const gold = stage >= 6;
+  const bodyFill = gold ? 'url(#mGold)' : c.body;
+  const uid = `m${stage}${color}`;
+  const happy = mood === 'happy';
+  const eyes = happy ? (
+    <g stroke="#1B2440" strokeWidth="5" strokeLinecap="round" fill="none">
+      <path d="M78 100 q8 -9 16 0" /><path d="M106 100 q8 -9 16 0" />
+    </g>
+  ) : (
+    <g className="dp-mblink" style={{ transformOrigin: '100px 100px' }}>
+      <circle cx="86" cy="100" r="8" fill="#1B2440" /><circle cx="114" cy="100" r="8" fill="#1B2440" />
+      <circle cx="89" cy="97" r="2.8" fill="#fff" /><circle cx="117" cy="97" r="2.8" fill="#fff" />
+    </g>
+  );
+  const beak = <path d="M93 110 L107 110 L100 120 Z" fill="#F2A33A" stroke="#C9781C" strokeWidth="1.5" strokeLinejoin="round" />;
+  const blush = <g fill="#F28B82" opacity=".55"><ellipse cx="74" cy="114" rx="7" ry="4" /><ellipse cx="126" cy="114" rx="7" ry="4" /></g>;
+
+  if (stage === 0) {
+    return (
+      <svg viewBox="0 0 200 200" width={size} height={size} className={className} aria-hidden="true">
+        <ellipse cx="100" cy="182" rx="46" ry="8" fill="rgba(0,0,0,.18)" />
+        <g className="dp-mwobble" style={{ transformOrigin: '100px 175px' }}>
+          <path d="M100 30 C140 30 160 95 160 125 C160 160 134 180 100 180 C66 180 40 160 40 125 C40 95 60 30 100 30 Z" fill="#FBF3E2" stroke="#E2D7C2" strokeWidth="3" />
+          {[[78, 80], [120, 72], [100, 110], [70, 135], [130, 130], [100, 158]].map(([x, y], i) => (
+            <g key={i} transform={`translate(${x} ${y})`} fill={c.body} opacity=".8">
+              <path d="M0 -9 L3 -3 L9 0 L3 3 L0 9 L-3 3 L-9 0 L-3 -3 Z" />
+            </g>
+          ))}
+          <path d="M60 60 q10 -18 30 -24" stroke="#fff" strokeWidth="6" strokeLinecap="round" fill="none" opacity=".8" />
+        </g>
+      </svg>
+    );
+  }
+
+  const r = stage === 1 ? 40 : stage === 2 ? 46 : 50;
+  const ry = stage <= 2 ? r : r + 6;
+  const cy = stage === 1 ? 112 : 116;
+  const nTail = stage >= 5 ? 7 : stage === 4 ? 5 : stage === 3 ? 3 : 0;
+  const tailLen = stage >= 5 ? 92 : stage === 4 ? 70 : 52;
+  const wingUp = stage >= 5 ? -60 : stage === 4 ? -30 : 0;
+  const wingS = stage >= 5 ? 1.5 : stage === 4 ? 1.25 : stage === 3 ? 1.05 : 0.8;
+
+  return (
+    <svg viewBox="0 0 200 200" width={size} height={size} className={className} aria-hidden="true" style={{ overflow: 'visible' }}>
+      <defs>
+        <linearGradient id="mGold" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#F7D774" /><stop offset=".55" stopColor="#E0A93A" /><stop offset="1" stopColor="#B98222" />
+        </linearGradient>
+        <radialGradient id={`${uid}r`}><stop offset="0" stopColor="#F7D774" stopOpacity=".9" /><stop offset="1" stopColor="#F7D774" stopOpacity="0" /></radialGradient>
+      </defs>
+      {stage >= 6 && (
+        <g className="dp-spin-slow" style={{ transformOrigin: '100px 110px', animationDuration: '30s' }}>
+          <circle cx="100" cy="110" r="96" fill={`url(#${uid}r)`} />
+          {Array.from({ length: 12 }, (_, k) => (
+            <path key={k} d="M100 110 L94 10 L106 10 Z" fill="#F7D774" opacity=".35" transform={`rotate(${k * 30} 100 110)`} />
+          ))}
+        </g>
+      )}
+      <ellipse cx="100" cy="188" rx={r} ry="7" fill="rgba(0,0,0,.18)" />
+      <g className={happy ? 'dp-mjump' : 'dp-mbob'}>
+        {/* dum patlari (orqada, yelpig‘ich) */}
+        {nTail > 0 && Array.from({ length: nTail }, (_, k) => {
+          const ang = -70 + (140 / (nTail - 1)) * k;
+          const col = c.tail[k % c.tail.length];
+          return (
+            <g key={k} transform={`rotate(${ang} 100 ${cy})`}>
+              <path d={`M100 ${cy} C ${88} ${cy - tailLen * 0.5}, ${90} ${cy - tailLen}, 100 ${cy - tailLen - 8} C ${110} ${cy - tailLen}, ${112} ${cy - tailLen * 0.5}, 100 ${cy} Z`} fill={gold ? 'url(#mGold)' : col} stroke="rgba(0,0,0,.12)" strokeWidth="1.5" />
+              {stage >= 5 && <><circle cx="100" cy={cy - tailLen + 6} r="7" fill="#FBF3E2" /><circle cx="100" cy={cy - tailLen + 6} r="4" fill={c.wing} /></>}
+            </g>
+          );
+        })}
+        {/* qanotlar */}
+        {stage >= 2 && [-1, 1].map((sd) => (
+          <g key={sd} transform={`translate(${100 + sd * (r - 6)} ${cy + 4}) rotate(${sd * (20 - wingUp)}) scale(${sd * wingS} ${wingS})`}>
+            <g className={happy ? 'dp-mflap' : ''}>
+              <path d="M0 0 C 18 -6, 30 6, 30 22 C 22 20, 22 28, 14 26 C 10 32, 4 28, 0 22 Z" fill={gold ? 'url(#mGold)' : c.wing} stroke="rgba(0,0,0,.15)" strokeWidth="1.5" />
+            </g>
+          </g>
+        ))}
+        {/* oyoqlar */}
+        <g fill="#F2A33A" stroke="#C9781C" strokeWidth="1.5">
+          <ellipse cx="86" cy={cy + ry - 2} rx="9" ry="5" /><ellipse cx="114" cy={cy + ry - 2} rx="9" ry="5" />
+        </g>
+        {/* tana */}
+        <ellipse cx="100" cy={cy} rx={r} ry={ry} fill={bodyFill} />
+        <ellipse cx="100" cy={cy + ry * 0.35} rx={r * 0.66} ry={ry * 0.55} fill={c.belly} opacity={gold ? 0.75 : 1} />
+        <path d={`M${100 - r * 0.6} ${cy - ry * 0.55} q ${r * 0.25} -${ry * 0.3} ${r * 0.55} -${ry * 0.32}`} stroke="#fff" strokeWidth="5" strokeLinecap="round" fill="none" opacity=".45" />
+        {/* tojli patlar */}
+        {stage === 4 && (
+          <g fill={c.wing}>
+            <path d={`M100 ${cy - ry + 4} C 92 ${cy - ry - 18}, 98 ${cy - ry - 26}, 100 ${cy - ry - 28} C 102 ${cy - ry - 26}, 108 ${cy - ry - 18}, 100 ${cy - ry + 4} Z`} />
+            <path d={`M96 ${cy - ry + 6} C 82 ${cy - ry - 8}, 84 ${cy - ry - 16}, 86 ${cy - ry - 18} C 90 ${cy - ry - 12}, 96 ${cy - ry - 4}, 96 ${cy - ry + 6} Z`} />
+            <path d={`M104 ${cy - ry + 6} C 118 ${cy - ry - 8}, 116 ${cy - ry - 16}, 114 ${cy - ry - 18} C 110 ${cy - ry - 12}, 104 ${cy - ry - 4}, 104 ${cy - ry + 6} Z`} />
+          </g>
+        )}
+        {stage === 1 && (
+          <g>
+            <path d="M52 128 L64 118 L74 130 L86 116 L100 130 L114 116 L126 130 L136 118 L148 128 L148 150 C148 176 128 190 100 190 C72 190 52 176 52 150 Z" fill="#FBF3E2" stroke="#E2D7C2" strokeWidth="3" />
+            <path d="M74 74 L84 64 L94 74 L104 62 L114 74 L126 66 L128 80 C 116 70, 86 70, 72 82 Z" fill="#FBF3E2" stroke="#E2D7C2" strokeWidth="2.5" />
+          </g>
+        )}
+        {eyes}
+        {beak}
+        {blush}
+        {/* belbog‘ */}
+        {stage >= 4 && (
+          <g>
+            <path d={`M${100 - r * 0.86} ${cy + 18} Q 100 ${cy + 30} ${100 + r * 0.86} ${cy + 18} L ${100 + r * 0.82} ${cy + 28} Q 100 ${cy + 40} ${100 - r * 0.82} ${cy + 28} Z`} fill="#E2463F" />
+            <path d={`M${100 - r * 0.84} ${cy + 23} Q 100 ${cy + 35} ${100 + r * 0.84} ${cy + 23}`} stroke="#DCAE4A" strokeWidth="2" strokeDasharray="4 4" fill="none" />
+            <path d={`M${100 + r * 0.55} ${cy + 30} l 6 22 l 6 -4 l -2 -18 Z`} fill="#E2463F" />
+          </g>
+        )}
+        {/* do‘ppi (3–4-daraja) */}
+        {(stage === 3 || stage === 4) && (
+          <g transform={`translate(0 ${cy - ry - 2})`}>
+            <path d="M74 14 L78 -6 Q100 -14 122 -6 L126 14 Q100 20 74 14 Z" fill="#1B2440" />
+            <path d="M74 14 Q100 20 126 14" stroke="#F4EEE2" strokeWidth="2" fill="none" />
+            {[86, 100, 114].map((x) => (
+              <path key={x} d={`M${x} 0 c 4 2 4 8 0 10 c -2 -2 -4 -6 0 -10 Z`} fill="#F4EEE2" />
+            ))}
+          </g>
+        )}
+        {/* toj (5+) */}
+        {stage >= 5 && (
+          <g transform={`translate(0 ${cy - ry - 4})`}>
+            <path d="M78 14 L80 -10 L90 2 L100 -16 L110 2 L120 -10 L122 14 Z" fill="#F7D774" stroke="#B98222" strokeWidth="2" strokeLinejoin="round" />
+            <circle cx="100" cy="4" r="4" fill="#E2463F" /><circle cx="86" cy="8" r="3" fill="#2A9D8F" /><circle cx="114" cy="8" r="3" fill="#2A9D8F" />
+          </g>
+        )}
+      </g>
+      {stage >= 7 && (
+        <g className="dp-spin-slow" style={{ transformOrigin: '100px 110px', animationDuration: '18s' }}>
+          {Array.from({ length: 8 }, (_, k) => {
+            const a = (k / 8) * Math.PI * 2;
+            return <path key={k} transform={`translate(${100 + Math.cos(a) * 92} ${110 + Math.sin(a) * 38})`} d="M0 -8 L2.4 -2.4 L8 0 L2.4 2.4 L0 8 L-2.4 2.4 L-8 0 L-2.4 -2.4 Z" fill="#F7D774" />;
+          })}
+        </g>
+      )}
+    </svg>
+  );
+}
+
+/** Kichik maskot kartochkasi (bosh sahifa uchun). */
+function MascotThumb({ cls, onOpen }) {
+  const m = useMascot(cls.id);
+  const st = mascotStage(m.xp);
+  const next = MASCOT_STAGES[st + 1];
+  const pct = next ? ((m.xp - MASCOT_STAGES[st].at) / (next.at - MASCOT_STAGES[st].at)) * 100 : 100;
+  return (
+    <button onClick={() => onOpen(cls)} className="dp-sticker dp-sticker-hover group rounded-2xl bg-paper p-3 text-left">
+      <div className="flex justify-center"><MascotArt stage={st} color={m.color} size={88} className="transition group-hover:scale-110" /></div>
+      <div className="mt-1 truncate text-base font-black text-ink">{classLabel(cls)} • {m.name}</div>
+      <div className="truncate text-xs font-bold text-slate-500">{MASCOT_STAGES[st].n}</div>
+      <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-line"><div className="h-full rounded-full bg-amber-400" style={{ width: `${pct}%` }} /></div>
+      <div className="mt-1 text-xs font-black text-amber-700">⭐ {m.xp}</div>
+    </button>
+  );
+}
+
+/** Maskot sahnasi — proyektor uchun katta ekran. */
+function MascotStage({ cls, classes = [], onClose }) {
+  const m = useMascot(cls.id);
+  const st = mascotStage(m.xp);
+  const cur = MASCOT_STAGES[st];
+  const next = MASCOT_STAGES[st + 1];
+  const pct = next ? ((m.xp - cur.at) / (next.at - cur.at)) * 100 : 100;
+  const [mood, setMood] = useState('idle');
+  const [editing, setEditing] = useState(false);
+  const [name, setName] = useState(m.name);
+  const moodT = useRef(0);
+  useEffect(() => {
+    const h = (e) => { if (e.key === 'Escape' && !editing) onClose(); };
+    window.addEventListener('keydown', h);
+    const prev = document.body.style.overflow; document.body.style.overflow = 'hidden';
+    return () => { window.removeEventListener('keydown', h); document.body.style.overflow = prev; };
+  }, [onClose, editing]);
+  const cheer = (n) => {
+    mascotAdd(cls.id, n, 'Ustoz rag‘bati', 'silent');
+    setMood('happy'); playSound('correct');
+    clearTimeout(moodT.current); moodT.current = setTimeout(() => setMood('idle'), 1400);
+  };
+  const pet = () => { setMood('happy'); playSound('flip'); clearTimeout(moodT.current); moodT.current = setTimeout(() => setMood('idle'), 1200); };
+  const ranking = classes.map((c) => ({ c, xp: mascotOf(c.id).xp })).sort((a, b) => b.xp - a.xp).slice(0, 6);
+  const gifts = MASCOT_STAGES.filter((s) => s.gift);
+  const ago = (t) => { const d = Math.round((Date.now() - t) / 60000); return d < 1 ? 'hozir' : d < 60 ? `${d} daq oldin` : d < 1440 ? `${Math.round(d / 60)} soat oldin` : `${Math.round(d / 1440)} kun oldin`; };
+
+  return (
+    <div role="dialog" aria-modal="true" aria-label="Sinf maskoti" className="fixed inset-0 z-[80] overflow-y-auto bg-ink text-white">
+      <div className="pointer-events-none fixed inset-0">
+        <div className="absolute -left-40 -top-40 h-[36rem] w-[36rem] rounded-full blur-3xl" style={{ background: `${(MASCOT_COLORS[m.color] || MASCOT_COLORS.firuza).body}55` }} />
+        <div className="absolute -bottom-48 -right-32 h-[34rem] w-[34rem] rounded-full bg-amber-400/20 blur-3xl" />
+        <div className="dp-girih absolute inset-0 opacity-20" />
+      </div>
+      <div className="relative mx-auto flex min-h-full max-w-7xl flex-col px-4 py-5 md:px-8">
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center gap-3">
+            <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-400 text-2xl">🕊️</span>
+            <div>
+              <div className="text-2xl font-black">{classLabel(cls)} sinf maskoti</div>
+              <div className="text-sm font-semibold text-blue-100">To‘g‘ri javoblar, tinchlik va rag‘bat — qushni o‘stiradi</div>
+            </div>
+          </div>
+          <button onClick={onClose} aria-label="Yopish" className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 ring-1 ring-white/15 hover:bg-white/20"><X size={26} /></button>
+        </div>
+
+        <div className="mt-6 grid flex-1 items-center gap-8 lg:grid-cols-[1.2fr_1fr]">
+          <div className="flex flex-col items-center">
+            <button onClick={pet} aria-label="Maskotni erkalash" className="relative" title="Bosing — maskot quvonadi">
+              <MascotArt stage={st} color={m.color} mood={mood} size={420} className="max-w-[80vw] drop-shadow-[0_30px_40px_rgba(0,0,0,.35)]" />
+            </button>
+            <div className="mt-2 flex items-center gap-3">
+              {editing ? (
+                <form onSubmit={(e) => { e.preventDefault(); const v = name.trim().slice(0, 18) || 'Humo'; mascotUpdate(cls.id, { name: v }); setName(v); setEditing(false); }} className="flex gap-2">
+                  <input autoFocus value={name} onChange={(e) => setName(e.target.value)} maxLength={18} className="w-56 rounded-xl bg-white px-3 py-2 text-2xl font-black text-ink outline-none" />
+                  <button className="rounded-xl bg-amber-400 px-4 text-lg font-black text-ink">Saqlash</button>
+                </form>
+              ) : (
+                <>
+                  <span className="text-5xl font-black tracking-tight">{m.name}</span>
+                  <button onClick={() => { setName(m.name); setEditing(true); }} aria-label="Ismini o‘zgartirish" data-tip="Ismini o‘zgartirish" className="rounded-xl bg-white/10 p-2 ring-1 ring-white/15 hover:bg-white/20"><Pencil size={20} /></button>
+                </>
+              )}
+            </div>
+            <div className="mt-2 rounded-full bg-amber-400 px-4 py-1.5 text-lg font-black text-ink">{st + 1}-daraja • {cur.n}</div>
+            <p className="mt-2 max-w-md text-center text-lg font-semibold text-blue-100">{cur.hint}</p>
+          </div>
+
+          <div className="space-y-5">
+            <div className="rounded-[1.8rem] bg-white/10 p-5 ring-1 ring-white/15 backdrop-blur">
+              <div className="flex items-end justify-between">
+                <div><div className="dp-kicker text-amber-300">Yulduzlar</div><div className="text-6xl font-black tabular-nums text-amber-300">⭐ {m.xp}</div></div>
+                {next && <div className="text-right text-base font-bold text-blue-100">Keyingi: <b className="text-white">{next.n}</b><br />yana {next.at - m.xp} ⭐</div>}
+              </div>
+              <div className="mt-4 h-5 overflow-hidden rounded-full bg-white/15">
+                <div className="h-full rounded-full bg-gradient-to-r from-amber-300 to-amber-500 transition-[width] duration-700" style={{ width: `${pct}%` }} />
+              </div>
+              {!next && <div className="mt-2 text-lg font-black text-amber-300">Eng yuqori daraja! 🏆</div>}
+              <div className="mt-4 flex flex-wrap gap-2">
+                <button onClick={() => cheer(1)} className="dp-btn rounded-2xl bg-amber-400 px-5 py-3 text-xl font-black text-ink hover:bg-amber-300">+1 ⭐</button>
+                <button onClick={() => cheer(5)} className="dp-btn rounded-2xl bg-amber-400 px-5 py-3 text-xl font-black text-ink hover:bg-amber-300">+5 ⭐</button>
+                <button onClick={() => mascotAdd(cls.id, -1, 'Tuzatish', 'silent')} disabled={!m.xp} className="rounded-2xl bg-white/10 px-4 py-3 text-lg font-black ring-1 ring-white/15 hover:bg-white/20 disabled:opacity-40">−1</button>
+              </div>
+              <div className="mt-2 text-sm font-semibold text-blue-200">O‘yindagi har 10 ball = 1 ⭐ • «Sinf tinchligi»da 30 soniya jimlik = 1 ⭐</div>
+            </div>
+
+            <div className="rounded-[1.8rem] bg-white/10 p-5 ring-1 ring-white/15">
+              <div className="dp-kicker text-amber-300">Sovg‘alar</div>
+              <div className="mt-3 grid grid-cols-5 gap-2">
+                {gifts.map((g) => {
+                  const open = m.xp >= g.at;
+                  return (
+                    <div key={g.n} className={`rounded-xl p-2 text-center ${open ? 'bg-amber-400 text-ink' : 'bg-white/5 text-blue-200 ring-1 ring-white/10'}`}>
+                      <div className="text-2xl">{open ? { 'Do‘ppi': '🧢', 'Belbog‘': '🎀', Toj: '👑', 'Oltin nur': '✨', 'Yulduzlar halqasi': '🌟' }[g.gift] : <Lock size={20} className="mx-auto" />}</div>
+                      <div className="mt-1 text-[11px] font-black leading-tight">{g.gift}</div>
+                      {!open && <div className="text-[10px] font-bold">{g.at} ⭐</div>}
+                    </div>
+                  );
+                })}
+              </div>
+              <div className="mt-4 flex items-center gap-2">
+                <span className="text-sm font-bold text-blue-100">Rangi:</span>
+                {Object.entries(MASCOT_COLORS).map(([k, v]) => (
+                  <button key={k} aria-label={v.name} data-tip={v.name} onClick={() => mascotUpdate(cls.id, { color: k })}
+                    className={`h-9 w-9 rounded-full ring-offset-2 ring-offset-ink transition ${m.color === k ? 'ring-4 ring-amber-300' : 'ring-1 ring-white/30'}`} style={{ background: v.body }} />
+                ))}
+              </div>
+            </div>
+
+            <div className="grid gap-5 sm:grid-cols-2">
+              <div className="rounded-[1.8rem] bg-white/10 p-5 ring-1 ring-white/15">
+                <div className="dp-kicker text-amber-300">So‘nggi yulduzlar</div>
+                <ul className="mt-2 space-y-1.5">
+                  {(m.log || []).slice(0, 5).map((l, i) => (
+                    <li key={i} className="flex items-center justify-between gap-2 text-sm">
+                      <span className="truncate font-semibold">{l.r}</span>
+                      <span className={`shrink-0 font-black ${l.n > 0 ? 'text-amber-300' : 'text-anor-400'}`}>{l.n > 0 ? '+' : ''}{l.n} ⭐ <span className="font-semibold text-blue-200">· {ago(l.t)}</span></span>
+                    </li>
+                  ))}
+                  {!(m.log || []).length && <li className="text-sm text-blue-200">Hali yulduz yo‘q. Birinchi o‘yinni o‘ynang!</li>}
+                </ul>
+              </div>
+              {ranking.length > 1 && (
+                <div className="rounded-[1.8rem] bg-white/10 p-5 ring-1 ring-white/15">
+                  <div className="dp-kicker text-amber-300">Maskotlar poygasi</div>
+                  <ol className="mt-2 space-y-1.5">
+                    {ranking.map(({ c, xp }, i) => (
+                      <li key={c.id} className={`flex items-center justify-between rounded-lg px-2 py-1 text-sm ${c.id === cls.id ? 'bg-amber-400/25' : ''}`}>
+                        <span className="font-black">{i + 1}. {classLabel(c)} • {mascotOf(c.id).name}</span>
+                        <span className="font-black text-amber-300">⭐ {xp}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** Yulduz qo‘shilganda chiqadigan bildirishnoma va yangi daraja tabrigi. */
+function MascotToastHost({ onOpen }) {
+  const [toast, setToast] = useState(null);
+  const [level, setLevel] = useState(null);
+  const tRef = useRef(0);
+  useEffect(() => {
+    const f = (ev) => {
+      if (ev.levelUp) { setLevel(ev); playSound('win'); return; }
+      if (ev.label === 'silent' || ev.n <= 0) return;
+      setToast(ev);
+      clearTimeout(tRef.current);
+      tRef.current = setTimeout(() => setToast(null), 4200);
+    };
+    mascotEventListeners.add(f);
+    return () => mascotEventListeners.delete(f);
+  }, []);
+  return (
+    <>
+      {toast && (
+        <div className="dp-pop fixed bottom-5 left-5 z-[85] flex items-center gap-3 rounded-[1.6rem] bg-ink py-2 pl-2 pr-5 text-white shadow-2xl ring-1 ring-white/10">
+          <MascotArt stage={toast.stage} color={toast.color} mood="happy" size={76} />
+          <div>
+            <div className="text-2xl font-black text-amber-300">+{toast.n} ⭐</div>
+            <div className="text-sm font-bold text-blue-100">{toast.name} — {toast.reason}</div>
+          </div>
+          {onOpen && <button onClick={() => { setToast(null); onOpen(toast.id); }} className="ml-2 rounded-xl bg-white/10 px-3 py-2 text-sm font-black ring-1 ring-white/15 hover:bg-white/20">Ko‘rish</button>}
+        </div>
+      )}
+      {level && (
+        <div role="dialog" aria-modal="true" className="fixed inset-0 z-[90] flex items-center justify-center bg-ink/85 p-4 backdrop-blur">
+          <div className="dp-pop relative overflow-hidden rounded-[2.4rem] bg-gradient-to-br from-amber-300 via-amber-400 to-amber-500 p-1.5">
+            <div className="relative overflow-hidden rounded-[2.1rem] bg-ink px-8 py-8 text-center text-white md:px-14">
+              <div className="dp-rays pointer-events-none absolute left-1/2 top-1/2 h-[640px] w-[640px] -translate-x-1/2 -translate-y-1/2 opacity-40" />
+              <div className="relative">
+                <div className="dp-kicker text-amber-300">Yangi daraja!</div>
+                <MascotArt stage={level.stage} color={level.color} mood="happy" size={300} className="mx-auto" />
+                <div className="text-5xl font-black">{level.name} — {MASCOT_STAGES[level.stage].n}</div>
+                {MASCOT_STAGES[level.stage].gift && <div className="mt-2 text-2xl font-black text-amber-300">Sovg‘a: {MASCOT_STAGES[level.stage].gift}</div>}
+                <p className="mx-auto mt-2 max-w-md text-lg font-semibold text-blue-100">{MASCOT_STAGES[level.stage].hint}</p>
+                <button onClick={() => setLevel(null)} className="dp-btn mt-6 rounded-2xl bg-amber-400 px-10 py-4 text-2xl font-black text-ink hover:bg-amber-300">Zo‘r! 🎉</button>
+              </div>
+              <Confetti count={90} />
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
+
+/* ============================================================
    SINF TINCHLIGI O‘LCHAGICHI — mikrofon orqali shovqin darajasi.
    Ekranning o‘ng tomonida turadi; sinf jim tursa, yulduz yig‘iladi.
    Ovoz yozilmaydi va hech qayerga yuborilmaydi — faqat daraja o‘lchanadi.
@@ -41801,6 +42217,7 @@ function NoiseMeter({ onClose }) {
               s0.quietStart = now;
               setStars((x) => x + 1);
               playSound('correct');
+              if (mascotActiveClass) mascotAdd(mascotActiveClass, 1, 'Sinf tinchligi', 'silent');
             }
           }
         } else s0.quietStart = now;
@@ -41888,7 +42305,7 @@ function NoiseMeter({ onClose }) {
                     </svg>
                     <div className="absolute inset-0 flex items-center justify-center text-2xl">⭐</div>
                   </div>
-                  <div className="text-sm font-bold text-blue-100">{NOISE_STAR_SEC} soniya jim = 1 yulduz</div>
+                  <div className="text-sm font-bold text-blue-100">{NOISE_STAR_SEC} soniya jim = 1 yulduz{mascotActiveClass ? ' (maskotga)' : ''}</div>
                   <div className="text-4xl font-black tabular-nums text-amber-300">{stars}</div>
                 </div>
               </div>
@@ -43527,6 +43944,7 @@ const GUIDE_FAQ = [
   ['Reytingda o‘quvchilar bali 0', 'Ballar o‘quvchiga yozilishi uchun o‘yin oldidan jamoalarga bo‘ling yoki o‘yin paytida «O‘quvchi tanlash»dan foydalaning.'],
   ['Obunamni qanday uzaytiraman?', `Ism kartochkangiz → «Obunalarim» → «Uzaytirish». Telegram'da @${TELEGRAM_USER} ochiladi, xabar tayyor bo‘ladi. Muddat tugashiga ${EXPIRY_WARN_DAYS} kun qolganda bosh sahifada eslatma ham chiqadi.`],
   ['Yangi alifboda ko‘rsatish mumkinmi?', 'Ha. Sarlavhadagi (telefonda — menyudagi) «Özbek» tugmasini bosing. Qaytarish uchun «O‘zbek»ni bosing. Tanlov eslab qolinadi.'],
+  ['Sinf maskoti nima?', 'Har sinfning o‘z «Humo» qushi bor (bosh sahifa → «Sinf maskotlari»). O‘yindagi har 10 ball = 1 yulduz, «Sinf tinchligi»da 30 soniya jimlik = 1 yulduz, ustoz +1/+5 bilan rag‘batlantirishi ham mumkin. Yulduzlar bilan qush tuxumdan Afsonaviy Humogacha 8 darajada o‘sadi, do‘ppi, belbog‘, toj kabi sovg‘alar ochiladi. Ismi va rangini o‘zgartirsa bo‘ladi. Hozircha shu kompyuterda saqlanadi.'],
   ['Proyektorda kursor ko‘rinmayapti', 'Sarlavhadagi sichqoncha belgisini bosing — «Katta kursor» yoqiladi.'],
 ];
 
@@ -44606,7 +45024,7 @@ function SubscriptionsPanel({ teacher }) {
   );
 }
 
-function HomeScreen({ teacher, allowed = [], access = {}, onStart, schoolClasses = [], onClassResults, onRating, onQuick, onResume, onGuide, onBoard }) {
+function HomeScreen({ teacher, allowed = [], access = {}, onStart, schoolClasses = [], onClassResults, onRating, onQuick, onResume, onGuide, onBoard, onMascot }) {
   const now = new Date();
   const h = now.getHours();
   const greet = h < 11 ? 'Xayrli tong' : h < 17 ? 'Xayrli kun' : 'Xayrli kech';
@@ -44748,6 +45166,16 @@ function HomeScreen({ teacher, allowed = [], access = {}, onStart, schoolClasses
               <button onClick={() => onRating?.('global')} className="dp-btn inline-flex items-center justify-center gap-2 rounded-2xl bg-white px-4 py-3 text-lg font-black text-ink hover:bg-amber-50"><Building2 size={22} /> Maktablararo reyting</button>
             </div>
           </section>
+
+          {classes.length > 0 && onMascot && (
+            <section className="dp-sticker-soft rounded-[2rem] bg-white p-6">
+              <h2 className="flex items-center gap-2 text-2xl font-black text-ink"><span className="text-2xl">🕊️</span> <span className="dp-marker">Sinf maskotlari</span></h2>
+              <p className="mt-2 text-base font-semibold text-slate-500">Har sinfning Humo qushi. To‘g‘ri javob va tinchlik bilan o‘sadi.</p>
+              <div className="mt-4 grid grid-cols-2 gap-3">
+                {classes.map((c) => <MascotThumb key={c.id} cls={c} onOpen={onMascot} />)}
+              </div>
+            </section>
+          )}
 
           {/* Kun maslahati — yopishtirilgan qog‘oz */}
           <section className="dp-tape dp-tape-gold relative  rounded-sm bg-amber-200 p-6 pt-8 shadow-[0_14px_30px_-16px_rgba(27,36,64,.35)]">
@@ -49125,6 +49553,9 @@ export default function DarsPlayApp() {
     ? (classId === GUEST_CLASS_ID ? { id: GUEST_CLASS_ID, school: '', grade, letter: 'A', students: guestRoster } : null)
     : schoolClasses.find((c) => c.id === classId) || null;
 
+  useEffect(() => { setMascotActiveClass(!isGuest && selectedClass ? selectedClass.id : null); }, [isGuest, selectedClass?.id]); // eslint-disable-line react-hooks/exhaustive-deps
+  const [mascotCls, setMascotCls] = useState(null);
+
   // Birinchi kirishda qo‘llanmani taklif qilamiz (har bir o‘qituvchi uchun bir marta)
   useEffect(() => {
     if (!teacher || teacher.guest || step !== 'home') return;
@@ -49293,6 +49724,7 @@ export default function DarsPlayApp() {
     savedKeyRef.current = gameKey;
     const total = teams.reduce((a, t) => a + (t.score || 0), 0);
     if (isGuest || !selectedClass || !teacher || !topic || !game || total <= 0) { setSaveState(null); return; }
+    mascotAdd(selectedClass.id, Math.max(1, Math.min(30, Math.round(total / 10))), `«${game.name}» o‘yini`);
     const row = {
       class_id: selectedClass.id, teacher_id: teacher.id, teacher_name: teacher.name, subject: subjectId, grade,
       topic_id: topic.id, topic_title: topic.title, game_id: game.id, game_name: game.name,
@@ -49530,6 +49962,8 @@ export default function DarsPlayApp() {
       <AlphabetConverter />
       <CursorPrefs />
       <NoiseMeterHost />
+      {!isGuest && teacher && <MascotToastHost onOpen={(id) => { const c = schoolClasses.find((x) => x.id === id); if (c) setMascotCls(c); }} />}
+      {mascotCls && <MascotStage cls={mascotCls} classes={schoolClasses} onClose={() => setMascotCls(null)} />}
       <style>{`
         @keyframes dpPop { from { opacity: 0; transform: scale(.96) translateY(6px); } to { opacity: 1; transform: none; } }
         @keyframes dpShake { 0%,100% { transform: translateX(0); } 20%,60% { transform: translateX(-8px); } 40%,80% { transform: translateX(8px); } }
@@ -49602,6 +50036,7 @@ export default function DarsPlayApp() {
             access={access}
             onStart={startLesson}
             onClassResults={(c) => { setClassId(c.id); setGrade(c.grade); setRatingScope('class'); go('results'); }}
+            onMascot={(c) => setMascotCls(c)}
             onRating={(scope) => { setRatingScope(scope); go('results'); }}
             onQuick={quickOpen}
             onResume={resumeRecent}
