@@ -41546,7 +41546,6 @@ function Logo({ size = 44, showText = true, textClass = 'text-2xl' }) {
         <span className={`${textClass} whitespace-nowrap font-black tracking-tight leading-none`}>
           <span className="text-ink">Dars</span>{' '}
           <span className="dp-hand text-[1.12em] text-amber-600">play</span>
-          <span className="ml-2 hidden -translate-y-1 sm:inline-block rounded-full border border-amber-300 bg-amber-50 px-2 py-0.5 align-middle text-[0.4em] font-extrabold uppercase tracking-[.16em] text-amber-700">Beta</span>
         </span>
       )}
     </div>
