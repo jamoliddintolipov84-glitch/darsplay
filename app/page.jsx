@@ -18,7 +18,7 @@ import {
   Minus, Loader2, UserCheck, KeyRound, ShieldCheck, Copy, EyeOff, Search, UserPlus, Pencil, Building2, LogIn, RefreshCw, Settings, ChevronDown, LayoutGrid, CameraOff, Trash2, Save, Ruler, Bomb, Gift, Repeat, Zap,
   ThumbsUp, ThumbsDown, Puzzle, Heart, Crown, Rocket, Flag, Dices, SpellCheck,
   Volume2, VolumeX, History, Medal, CalendarDays, Star, ListPlus, NotebookPen, CircleHelp,
-  ListOrdered, Shapes, Scale, Palette, Type, SpellCheck2, Projector, PhoneOff, Presentation, MousePointerClick, MousePointer2, Orbit, GalleryHorizontalEnd, Triangle, StickyNote, Stamp, ImagePlus, Clock, Hourglass, PaintBucket, Move,
+  ListOrdered, Shapes, Scale, Palette, Type, SpellCheck2, Projector, PhoneOff, Presentation, MousePointerClick, MousePointer2, Orbit, GalleryHorizontalEnd, Triangle, StickyNote, Stamp, ImagePlus, Clock, Hourglass, PaintBucket, Move, Ear, MicOff, ChevronsRight,
   Highlighter, Wand2, MoveUpRight, Square, Circle, Eraser, Undo2, Redo2, FilePlus2, Download,
   Quote, Mail, Pause, Headphones, ExternalLink, Video,
 } from 'lucide-react';
@@ -41705,6 +41705,215 @@ function Modal({ children, onClose, wide = false }) {
   );
 }
 
+/* ============================================================
+   SINF TINCHLIGI O‘LCHAGICHI — mikrofon orqali shovqin darajasi.
+   Ekranning o‘ng tomonida turadi; sinf jim tursa, yulduz yig‘iladi.
+   Ovoz yozilmaydi va hech qayerga yuborilmaydi — faqat daraja o‘lchanadi.
+   ============================================================ */
+let noiseOpenState = false;
+const noiseListeners = new Set();
+function setNoiseOpen(v) { noiseOpenState = v; noiseListeners.forEach((f) => f(v)); }
+function useNoiseOpen() {
+  const [v, setV] = useState(false);
+  useEffect(() => { setV(noiseOpenState); noiseListeners.add(setV); return () => noiseListeners.delete(setV); }, []);
+  return v;
+}
+const NOISE_KEY = 'darsplay_noise_v1';
+const NOISE_STAR_SEC = 30;
+const NOISE_LEVELS = [
+  { id: 'jim', name: 'Jim-jit', limit: 35 },
+  { id: 'past', name: 'Past ovoz', limit: 55 },
+  { id: 'guruh', name: 'Guruh ishi', limit: 72 },
+];
+function NoiseMeterHost() {
+  const open = useNoiseOpen();
+  return open ? <NoiseMeter onClose={() => setNoiseOpen(false)} /> : null;
+}
+function NoiseMeter({ onClose }) {
+  const [status, setStatus] = useState('idle'); // idle | loading | on | error
+  const [err, setErr] = useState('');
+  const [level, setLevel] = useState(0);
+  const [peak, setPeak] = useState(0);
+  const [modeId, setModeId] = useState(() => { try { return JSON.parse(localStorage.getItem(NOISE_KEY) || '{}').mode || 'past'; } catch { return 'past'; } });
+  const [sens, setSens] = useState(() => { try { return JSON.parse(localStorage.getItem(NOISE_KEY) || '{}').sens ?? 50; } catch { return 50; } });
+  const [stars, setStars] = useState(0);
+  const [quietMs, setQuietMs] = useState(0);
+  const [loud, setLoud] = useState(false);
+  const [mini, setMini] = useState(false);
+  const [paused, setPaused] = useState(false);
+  const streamRef = useRef(null);
+  const ctxRef = useRef(null);
+  const rafRef = useRef(0);
+  const st = useRef({ smooth: 0, quietStart: 0, loudSince: 0, lastWarn: 0, peakT: 0, peak: 0, lastUi: 0 });
+  const limit = NOISE_LEVELS.find((m) => m.id === modeId)?.limit ?? 55;
+  const cfg = useRef({ limit, sens, paused });
+  cfg.current = { limit, sens, paused };
+
+  useEffect(() => { try { localStorage.setItem(NOISE_KEY, JSON.stringify({ mode: modeId, sens })); } catch { /* */ } }, [modeId, sens]);
+
+  const stop = useCallback(() => {
+    cancelAnimationFrame(rafRef.current);
+    streamRef.current?.getTracks().forEach((t) => t.stop());
+    streamRef.current = null;
+    try { ctxRef.current?.close(); } catch { /* */ }
+    ctxRef.current = null;
+  }, []);
+  useEffect(() => stop, [stop]);
+
+  const start = async () => {
+    if (!navigator.mediaDevices?.getUserMedia) { setStatus('error'); setErr('Bu brauzer mikrofonni qo‘llamaydi. Chrome yoki Edge’da oching.'); return; }
+    setStatus('loading');
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false } });
+      streamRef.current = stream;
+      const AC = window.AudioContext || window.webkitAudioContext;
+      const ctx = new AC();
+      ctxRef.current = ctx;
+      const src = ctx.createMediaStreamSource(stream);
+      const an = ctx.createAnalyser();
+      an.fftSize = 2048;
+      src.connect(an);
+      const buf = new Float32Array(an.fftSize);
+      const s0 = st.current;
+      s0.quietStart = performance.now();
+      const loop = () => {
+        an.getFloatTimeDomainData(buf);
+        let sum = 0;
+        for (let k = 0; k < buf.length; k++) sum += buf[k] * buf[k];
+        const rms = Math.sqrt(sum / buf.length);
+        // sezgirlik: 0..100 → -75..-45 dB oralig‘i 0 ga to‘g‘ri keladi
+        const floor = -45 - (cfg.current.sens / 100) * 30;
+        const db = 20 * Math.log10(rms + 1e-8);
+        const raw = Math.max(0, Math.min(100, ((db - floor) / 45) * 100));
+        s0.smooth = raw > s0.smooth ? s0.smooth * 0.6 + raw * 0.4 : s0.smooth * 0.92 + raw * 0.08;
+        const now = performance.now();
+        if (s0.smooth > s0.peak || now - s0.peakT > 1500) { s0.peak = s0.smooth; s0.peakT = now; }
+        if (!cfg.current.paused) {
+          if (s0.smooth > cfg.current.limit) {
+            if (!s0.loudSince) s0.loudSince = now;
+            if (now - s0.loudSince > 1200) {
+              s0.quietStart = now;
+              if (now - s0.lastWarn > 6000) { s0.lastWarn = now; playSound('wrong'); }
+            }
+          } else {
+            s0.loudSince = 0;
+            if (now - s0.quietStart >= NOISE_STAR_SEC * 1000) {
+              s0.quietStart = now;
+              setStars((x) => x + 1);
+              playSound('correct');
+            }
+          }
+        } else s0.quietStart = now;
+        if (now - s0.lastUi > 80) {
+          s0.lastUi = now;
+          setLevel(s0.smooth); setPeak(s0.peak);
+          setLoud(!!s0.loudSince && now - s0.loudSince > 1200);
+          setQuietMs(now - s0.quietStart);
+        }
+        rafRef.current = requestAnimationFrame(loop);
+      };
+      rafRef.current = requestAnimationFrame(loop);
+      setStatus('on');
+    } catch (e) {
+      setStatus('error');
+      setErr(e?.name === 'NotAllowedError' ? 'Mikrofonga ruxsat berilmadi. Manzil satridagi belgini bosib, mikrofonga ruxsat bering.' : e?.name === 'NotFoundError' ? 'Mikrofon topilmadi. Noutbuk mikrofoni yoki tashqi mikrofonni ulang.' : 'Mikrofonni yoqib bo‘lmadi.');
+    }
+  };
+
+  const tone = loud ? 'loud' : level > limit * 0.8 ? 'warn' : 'ok';
+  const face = { ok: '😊', warn: '🤫', loud: '🙉' }[tone];
+  const label = { ok: 'Tinch', warn: 'Ovoz ko‘tarilmoqda', loud: 'Juda shovqin!' }[tone];
+  const progress = Math.min(1, quietMs / (NOISE_STAR_SEC * 1000));
+  const H = 260;
+
+  if (mini) {
+    return (
+      <div className="fixed right-3 top-1/2 z-[75] -translate-y-1/2">
+        <button onClick={() => setMini(false)} aria-label="Tinchlik o‘lchagichini kattalashtirish"
+          className={`dp-sticker flex flex-col items-center gap-2 rounded-[1.6rem] px-2.5 py-3 text-white ${tone === 'loud' ? 'bg-anor-500' : 'bg-ink'}`}>
+          <span className="text-3xl">{face}</span>
+          <span className="relative h-32 w-3 overflow-hidden rounded-full bg-white/15">
+            <span className="absolute inset-x-0 bottom-0 rounded-full transition-[height] duration-100" style={{ height: `${level}%`, background: tone === 'ok' ? '#2A9D8F' : tone === 'warn' ? '#DCAE4A' : '#fff' }} />
+          </span>
+          <span className="text-lg font-black tabular-nums">⭐{stars}</span>
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <aside aria-label="Sinf tinchligi o‘lchagichi" className="fixed right-3 top-1/2 z-[75] w-[248px] -translate-y-1/2">
+      <div className={`dp-sticker relative overflow-hidden rounded-[2rem] p-4 text-white transition-colors ${tone === 'loud' ? 'bg-anor-600' : 'bg-ink'}`}>
+        <div className="dp-girih pointer-events-none absolute inset-0 opacity-25" />
+        <div className="relative">
+          <div className="flex items-center justify-between">
+            <div className="dp-kicker text-amber-300">Sinf tinchligi</div>
+            <div className="flex gap-1">
+              <button onClick={() => setMini(true)} aria-label="Kichraytirish" data-tip="Kichraytirish" className="rounded-lg p-1.5 text-blue-100 hover:bg-white/15"><ChevronsRight size={18} /></button>
+              <button onClick={onClose} aria-label="Yopish" data-tip="Yopish" className="rounded-lg p-1.5 text-blue-100 hover:bg-white/15"><X size={18} /></button>
+            </div>
+          </div>
+
+          {status !== 'on' ? (
+            <div className="mt-3 text-center">
+              <span className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-white/10 ring-1 ring-white/15">
+                {status === 'loading' ? <GirihLoader size={44} /> : status === 'error' ? <MicOff size={40} className="text-anor-400" /> : <Ear size={40} className="text-amber-300" />}
+              </span>
+              <p className="mt-3 text-base font-semibold text-blue-100">
+                {status === 'error' ? err : 'Mikrofon sinfdagi shovqin darajasini o‘lchaydi. Ovoz yozilmaydi.'}
+              </p>
+              <button onClick={start} disabled={status === 'loading'} className="dp-btn mt-4 w-full rounded-2xl bg-amber-400 px-4 py-3.5 text-lg font-black text-ink hover:bg-amber-300 disabled:opacity-60">
+                {status === 'error' ? 'Qayta urinish' : 'Mikrofonni yoqish'}
+              </button>
+            </div>
+          ) : (
+            <>
+              <div className="mt-3 flex items-stretch gap-4">
+                {/* vertikal shkala */}
+                <div className="relative w-14 shrink-0 overflow-hidden rounded-2xl bg-white/10 ring-1 ring-white/15" style={{ height: H }}>
+                  <div className="absolute inset-x-0 bottom-0 transition-[height] duration-100"
+                    style={{ height: `${level}%`, background: 'linear-gradient(to top, #2A9D8F 0%, #2A9D8F 45%, #DCAE4A 70%, #E2463F 100%)', backgroundSize: `100% ${H}px`, backgroundPosition: 'bottom' }} />
+                  <div className="absolute inset-x-1 h-1 rounded-full bg-white/80 transition-[bottom] duration-300" style={{ bottom: `calc(${peak}% - 2px)` }} />
+                  <div className="absolute inset-x-0 border-t-2 border-dashed border-white" style={{ bottom: `${limit}%` }}>
+                    <span className="absolute -top-6 left-1/2 -translate-x-1/2 rounded bg-white px-1 text-[10px] font-black text-ink">chegara</span>
+                  </div>
+                </div>
+                <div className="flex min-w-0 flex-1 flex-col items-center justify-between text-center">
+                  <div className={`text-6xl ${tone === 'loud' ? 'dp-wiggle' : ''}`}>{face}</div>
+                  <div className="text-lg font-black leading-tight">{paused ? 'Pauza' : label}</div>
+                  <div className="relative h-20 w-20">
+                    <svg viewBox="0 0 80 80" className="h-full w-full -rotate-90">
+                      <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(255,255,255,.15)" strokeWidth="8" />
+                      <circle cx="40" cy="40" r="34" fill="none" stroke="#DCAE4A" strokeWidth="8" strokeLinecap="round" strokeDasharray={2 * Math.PI * 34} strokeDashoffset={2 * Math.PI * 34 * (1 - progress)} />
+                    </svg>
+                    <div className="absolute inset-0 flex items-center justify-center text-2xl">⭐</div>
+                  </div>
+                  <div className="text-sm font-bold text-blue-100">{NOISE_STAR_SEC} soniya jim = 1 yulduz</div>
+                  <div className="text-4xl font-black tabular-nums text-amber-300">{stars}</div>
+                </div>
+              </div>
+              <div className="mt-4 grid grid-cols-3 gap-1">
+                {NOISE_LEVELS.map((m) => (
+                  <button key={m.id} onClick={() => setModeId(m.id)} className={`rounded-xl px-1 py-2 text-xs font-black leading-tight ${modeId === m.id ? 'bg-amber-400 text-ink' : 'bg-white/10 ring-1 ring-white/15 hover:bg-white/20'}`}>{m.name}</button>
+                ))}
+              </div>
+              <label className="mt-3 block text-xs font-bold text-blue-100">
+                Sezgirlik
+                <input type="range" min="0" max="100" value={sens} onChange={(e) => setSens(+e.target.value)} className="mt-1 w-full accent-amber-400" />
+              </label>
+              <div className="mt-2 flex gap-1.5">
+                <button onClick={() => setPaused(!paused)} className="flex-1 rounded-xl bg-white/10 px-2 py-2 text-sm font-black ring-1 ring-white/15 hover:bg-white/20">{paused ? <><Play size={14} className="inline" /> Davom</> : <><Pause size={14} className="inline" /> Pauza</>}</button>
+                <button onClick={() => { setStars(0); st.current.quietStart = performance.now(); }} className="flex-1 rounded-xl bg-white/10 px-2 py-2 text-sm font-black ring-1 ring-white/15 hover:bg-white/20"><RotateCcw size={14} className="inline" /> Nol</button>
+                <button onClick={() => { stop(); setStatus('idle'); setLevel(0); }} aria-label="Mikrofonni o‘chirish" data-tip="Mikrofonni o‘chirish" className="rounded-xl bg-white/10 px-2.5 py-2 ring-1 ring-white/15 hover:bg-white/20"><MicOff size={16} /></button>
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+    </aside>
+  );
+}
+
 /* ---------- Real vaqt soati ---------- */
 const UZ_WEEKDAYS = ['Yakshanba', 'Dushanba', 'Seshanba', 'Chorshanba', 'Payshanba', 'Juma', 'Shanba'];
 function useNow(interval = 1000) {
@@ -41732,6 +41941,7 @@ function HeaderClock({ className = '' }) {
 function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onBoard, onSubs, guest }) {
   const sound = useSoundOn();
   const bigCur = useBigCursor();
+  const noise = useNoiseOpen();
   const [menu, setMenu] = useState(false);
   const menuRef = useRef(null);
   useEffect(() => {
@@ -41795,6 +42005,10 @@ function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onB
               className={`${iconBtn} ${bigCur ? 'bg-amber-100 text-amber-800' : ''}`}>
               <MousePointer2 size={21} />
             </button>
+            <button onClick={() => setNoiseOpen(!noise)} aria-pressed={noise} aria-label="Sinf tinchligi" data-tip={noise ? 'Tinchlik o‘lchagichini yopish' : 'Sinf tinchligi o‘lchagichi'}
+              className={`${iconBtn} ${noise ? 'bg-firuza-100 text-firuza-700' : ''}`}>
+              <Ear size={21} />
+            </button>
           </div>
 
           {guest ? (
@@ -41829,6 +42043,7 @@ function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onB
                     {onHelp && <button role="menuitem" onClick={run(onHelp)} className={`${item} sm:hidden`}><CircleHelp size={20} className="text-blue-700" /> Qo‘llanma</button>}
                     <button role="menuitem" onClick={run(() => setSoundOn(!sound))} className={`${item} sm:hidden`}>{sound ? <Volume2 size={20} className="text-blue-700" /> : <VolumeX size={20} className="text-rose-600" />} {sound ? 'Ovozni o‘chirish' : 'Ovozni yoqish'}</button>
                     <button role="menuitem" onClick={run(() => setBigCursor(!bigCur))} className={`${item} sm:hidden`}><MousePointer2 size={20} className="text-blue-700" /> {bigCur ? 'Oddiy kursor' : 'Katta kursor'}</button>
+                    <button role="menuitem" onClick={run(() => setNoiseOpen(!noise))} className={`${item} sm:hidden`}><Ear size={20} className="text-firuza-700" /> {noise ? 'Tinchlik o‘lchagichini yopish' : 'Sinf tinchligi'}</button>
                     <button role="menuitem" onClick={run(toggleFs)} className={`${item} sm:hidden`}>{isFs ? <Minimize size={20} className="text-blue-700" /> : <Maximize size={20} className="text-blue-700" />} {isFs ? 'To‘liq ekrandan chiqish' : 'To‘liq ekran'}</button>
                   </div>
                   <div className="my-1 border-t border-line" />
@@ -43290,6 +43505,7 @@ const GUIDE_STEPS = [
     tips: [
       'Doskani rasm sifatida saqlab olish yoki to‘liq ekranda ochish mumkin. Dars slaydi ustiga ham chizsa bo‘ladi.',
       'Sarlavhada va doskada aniq vaqt ko‘rinib turadi — darsning tugashiga qancha qolganini kuzatish oson.',
+      'Quloq belgisi — «Sinf tinchligi»: mikrofon shovqinni o‘lchaydi, ekranning o‘ng tomonida shkala turadi. Sinf 30 soniya jim tursa — 1 yulduz. Ovoz yozilmaydi.',
     ],
   },
   {
@@ -43721,6 +43937,7 @@ function Whiteboard({ mode = 'board', onClose, initial, onChange, onPrev, onNext
   const [stampIdx, setStampIdx] = useState(0);
   const [noteIdx, setNoteIdx] = useState(0);
   const [widgets, setWidgets] = useState({ clock: false, timer: false });
+  const noiseOpen = useNoiseOpen();
   const [sel, setSel] = useState(-1);
   const selRef = useRef(-1); selRef.current = sel;
   const dragRef = useRef(null);
@@ -44235,6 +44452,7 @@ function Whiteboard({ mode = 'board', onClose, initial, onChange, onPrev, onNext
         <div className={`${barCls} flex items-center gap-1`}>
           <button title="Soat" aria-label="Soat" aria-pressed={widgets.clock} onClick={() => setWidgets((w) => ({ ...w, clock: !w.clock }))} className={btn(widgets.clock)}><Clock size={28} /></button>
           <button title="Taymer" aria-label="Taymer" aria-pressed={widgets.timer} onClick={() => setWidgets((w) => ({ ...w, timer: !w.timer }))} className={btn(widgets.timer)}><Hourglass size={28} /></button>
+          <button title="Sinf tinchligi" aria-label="Sinf tinchligi" aria-pressed={noiseOpen} onClick={() => setNoiseOpen(!noiseOpen)} className={btn(noiseOpen)}><Ear size={28} /></button>
         </div>
         <button
           onClick={onClose}
@@ -46301,7 +46519,7 @@ function CameraPicker({ students, onPicked }) {
         {status !== 'on' && status !== 'nocam' && !result?.img && (
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-6 text-center text-white">
             <span className="flex h-24 w-24 items-center justify-center rounded-3xl bg-white/10 ring-1 ring-white/20">
-              {status === 'loading' ? <GirihLoader size={56} /> : status === 'error' ? <CameraOff size={52} className="text-anor-300" /> : <Camera size={52} className="text-amber-300" />}
+              {status === 'loading' ? <GirihLoader size={56} /> : status === 'error' ? <CameraOff size={52} className="text-anor-400" /> : <Camera size={52} className="text-amber-300" />}
             </span>
             <p className="max-w-lg text-xl font-semibold text-blue-100">
               {status === 'error' ? errorMsg : status === 'loading' ? 'Kamera yoqilmoqda...' : 'Kamerani yoqing va sinfni ekranga oling'}
@@ -49311,6 +49529,7 @@ export default function DarsPlayApp() {
     <div className="dp-paper min-h-screen text-ink">
       <AlphabetConverter />
       <CursorPrefs />
+      <NoiseMeterHost />
       <style>{`
         @keyframes dpPop { from { opacity: 0; transform: scale(.96) translateY(6px); } to { opacity: 1; transform: none; } }
         @keyframes dpShake { 0%,100% { transform: translateX(0); } 20%,60% { transform: translateX(-8px); } 40%,80% { transform: translateX(8px); } }
