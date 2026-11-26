@@ -281,6 +281,17 @@ export const TOPIC_ART = {
   'ot10-47': 'vaqt',
   'ot10-48': 'shaxmat',
   'ot10-49': 'kitob',
+  'ot10-53': 'tabiat',
+  'ot10-54': 'dengiz',
+  'ot10-55': 'bugu',
+  'ot10-56': 'tong',
+  'ot10-57': 'bahor',
+  'ot10-58': 'kosmos',
+  'ot10-60': 'kitob',
+  'ot10-62': 'infografika',
+  'ot10-63': 'dombra',
+  'ot10-65': 'gilam',
+  'ot10-66': 'oila',
 };
 
 /** Mavzuning rasmi (yoki null). Mavzu obyektida `art` maydoni bo‘lsa, u ustun. */
