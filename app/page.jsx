@@ -45303,19 +45303,19 @@ function HomeScreen({ teacher, allowed = [], access = {}, onStart, schoolClasses
   const totalStudents = schoolClasses.reduce((a, c) => a + c.students.length, 0);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 md:px-8">
+    <div className="mx-auto max-w-7xl px-4 py-6 md:px-8">
       {/* Salomlashish — koshin uslubidagi bosh panel */}
-      <div className="dp-sticker relative overflow-hidden rounded-[2rem] bg-blue-700 p-7 text-white md:p-12">
+      <div className="dp-sticker relative overflow-hidden rounded-[2rem] bg-blue-700 p-6 text-white md:px-10 md:py-7">
         <div className="dp-girih pointer-events-none absolute inset-0" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-blue-900/70 via-transparent to-firuza-700/50" />
         <Rosette size={280} color="#E8C673" inner="#7FCFC4" className="dp-spin-slow absolute -bottom-32 -right-24" opacity={0.6} />
         <Doodle kind="sparkle" size={46} color="#FFD45C" className="dp-float pointer-events-none absolute right-[38%] top-8 hidden lg:block" />
         <Doodle kind="loop" size={70} color="#6BDDD3" className="pointer-events-none absolute bottom-6 left-[44%] hidden lg:block" />
-        <div className="relative grid items-center gap-8 lg:grid-cols-[1.4fr_1fr]">
+        <div className="relative grid items-center gap-6 lg:grid-cols-[1.5fr_1fr]">
           <div>
-            <span className="inline-flex items-center gap-2 rounded-lg border border-line bg-paper px-3 py-1 text-base font-extrabold text-ink"><CalendarDays size={18} /> {dateStr}</span>
-            <h1 className="mt-5 text-4xl md:text-6xl font-black leading-[1.05] tracking-tight">{greet},<br /><span className="text-amber-300">{teacher?.name || 'Ustoz'}</span>!</h1>
-            <p className="mt-4 text-xl font-semibold text-blue-50">{teacher?.school} • <span className="dp-hand text-3xl text-amber-200">bugungi darsni o‘yinga aylantiramiz!</span></p>
+            <span className="inline-flex items-center gap-2 rounded-lg border border-line bg-paper px-3 py-1 text-sm font-extrabold text-ink"><CalendarDays size={16} /> {dateStr}</span>
+            <h1 className="mt-3 text-4xl md:text-5xl font-black leading-[1.05] tracking-tight">{greet}, <span className="text-amber-300">{teacher?.name || 'Ustoz'}</span>!</h1>
+            <p className="mt-2 text-lg font-semibold text-blue-50">{teacher?.school} • <span className="dp-hand text-2xl text-amber-200">bugungi darsni o‘yinga aylantiramiz!</span></p>
             {allowed.length ? (
               <div className="mt-3 flex flex-wrap gap-2">
                 {SUBJECTS.filter((sj) => access[sj.id]).map((sj) => (
@@ -45338,15 +45338,15 @@ function HomeScreen({ teacher, allowed = [], access = {}, onStart, schoolClasses
                 <CalendarDays size={22} className="shrink-0" /> {daysLeft(teacher) === 0 ? 'Obuna bugun tugaydi.' : `Obuna tugashiga ${daysLeft(teacher)} kun qoldi.`} Uzaytirish uchun bosing — @{TELEGRAM_USER}
               </a>
             )}
-            <div className="mt-8 flex flex-wrap gap-4">
-              <button onClick={onStart} disabled={!allowed.length} className="dp-btn dp-aura disabled:pointer-events-none disabled:opacity-40 inline-flex items-center gap-3 rounded-2xl bg-amber-400 px-8 py-4 text-2xl font-black text-ink hover:bg-amber-300">
-                <Play size={30} className="fill-ink" /> Darsni boshlash
+            <div className="mt-5 flex flex-wrap gap-3">
+              <button onClick={onStart} disabled={!allowed.length} className="dp-btn dp-aura disabled:pointer-events-none disabled:opacity-40 inline-flex items-center gap-3 rounded-2xl bg-amber-400 px-7 py-3.5 text-2xl font-black text-ink hover:bg-amber-300">
+                <Play size={28} className="fill-ink" /> Darsni boshlash
               </button>
-              <button onClick={onBoard} className="dp-btn inline-flex items-center gap-2 rounded-2xl bg-white px-6 py-4 text-xl font-black text-ink hover:bg-paper"><PenLine size={26} /> Doska</button>
-              <button onClick={onGuide} className="dp-btn inline-flex items-center gap-2 rounded-2xl bg-firuza-500 px-5 py-4 text-lg font-black text-white hover:bg-firuza-600"><CircleHelp size={22} /> Qo‘llanma</button>
+              <button onClick={onBoard} className="dp-btn inline-flex items-center gap-2 rounded-2xl bg-white px-5 py-3.5 text-xl font-black text-ink hover:bg-paper"><PenLine size={24} /> Doska</button>
+              <button onClick={onGuide} className="dp-btn inline-flex items-center gap-2 rounded-2xl bg-firuza-500 px-5 py-3.5 text-lg font-black text-white hover:bg-firuza-600"><CircleHelp size={22} /> Qo‘llanma</button>
             </div>
           </div>
-          <div className="relative grid grid-cols-3 gap-4 lg:pb-6">
+          <div className="relative grid grid-cols-3 gap-4 lg:pb-3">
             {[[School, schoolClasses.length, 'sinf', 'bg-paper', ''], [Users, totalStudents, 'o‘quvchi', 'bg-amber-200', ' translate-y-3'], [BookOpen, books.reduce((a, b) => a + b.n, 0), 'mavzu', 'bg-firuza-100', '']].map(([I, v, l, bg, tilt], i) => (
               <div key={l} className={`dp-tape ${i === 1 ? 'dp-tape-anor' : ''} rounded-xl border border-line ${bg} ${tilt} p-4 pt-6 text-center text-ink shadow-[0_14px_30px_-16px_rgba(27,36,64,.35)]`}>
                 <I size={26} className="mx-auto text-blue-700" />
@@ -45358,7 +45358,7 @@ function HomeScreen({ teacher, allowed = [], access = {}, onStart, schoolClasses
         </div>
       </div>
 
-      <div className="mt-10 grid gap-8 lg:grid-cols-3">
+      <div className="mt-8 grid gap-8 lg:grid-cols-3">
         {/* Chap: davom ettirish + tezkor */}
         <div className="space-y-8 lg:col-span-2">
           {recent.length > 0 && (
@@ -45391,11 +45391,11 @@ function HomeScreen({ teacher, allowed = [], access = {}, onStart, schoolClasses
             <p className="mt-2 text-base font-semibold text-slate-500">Kerakli sinfga to‘g‘ridan-to‘g‘ri o‘ting — fan va sinfni qayta tanlash shart emas.</p>
             <div className="dp-reveal dp-reveal-stagger mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
               {books.map(({ s, g, n }, i) => (
-                <button key={s.id + g} onClick={() => onQuick(s.id, g)} className={`dp-sticker dp-sticker-hover group relative overflow-hidden rounded-2xl p-5 text-left ${['bg-paper', 'bg-firuza-50', 'bg-amber-50'][i % 3]}`}>
+                <button key={s.id + g} onClick={() => onQuick(s.id, g)} className={`dp-sticker dp-sticker-hover group relative overflow-hidden rounded-2xl p-4 text-left ${['bg-paper', 'bg-firuza-50', 'bg-amber-50'][i % 3]}`}>
                   <span className="dp-girih-ink pointer-events-none absolute inset-y-0 right-0 w-24 opacity-80" />
                   <span className="pointer-events-none absolute -right-3 -top-3 text-7xl font-black text-ink/10">{g}</span>
                   <span className={`relative inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-line ${s.color} text-white`}><s.icon size={26} /></span>
-                  <span className="relative mt-3 block text-xl font-black text-ink">{s.name} • {g}-sinf</span>
+                  <span className="relative mt-2 block text-xl font-black text-ink">{s.name} • {g}-sinf</span>
                   <span className="relative mt-2 inline-flex items-center gap-1 rounded-md border border-line bg-white px-2 py-0.5 text-sm font-extrabold text-firuza-700"><Check size={14} strokeWidth={3} /> {n} ta mavzu</span>
                 </button>
               ))}
@@ -45405,21 +45405,34 @@ function HomeScreen({ teacher, allowed = [], access = {}, onStart, schoolClasses
               </button>
             </div>
           </section>
+
+          {classes.length > 0 && onMascot && (
+            <section className="dp-sticker-soft rounded-[2rem] bg-white p-6">
+              <div className="flex flex-wrap items-end justify-between gap-2">
+                <div>
+                  <h2 className="flex items-center gap-2 text-2xl font-black text-ink"><span className="text-2xl">🐺</span> <span className="dp-marker">Sinf maskotlari</span></h2>
+                  <p className="mt-1 text-sm font-semibold text-slate-500">Har sinfning «Bek» bo‘risi: to‘g‘ri javob va tinchlik bilan o‘sadi, milliy kiyimlar ochiladi.</p>
+                </div>
+              </div>
+              <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-4">
+                {[...classes].sort((a, b) => mascotOf(b.id).xp - mascotOf(a.id).xp).map((c, i) => <MascotThumb key={c.id} cls={c} onOpen={onMascot} rank={i} />)}
+              </div>
+            </section>
+          )}
         </div>
 
-        {/* O‘ng: obunalar + sinflar + maslahat */}
+        {/* O‘ng: sinflar va reyting, maslahat, obunalar */}
         <div className="space-y-8">
-          <SubscriptionsPanel teacher={teacher} />
           <section className="dp-sticker-soft rounded-[2rem] bg-white p-6">
-            <h2 className="flex items-center gap-2 text-2xl font-black text-ink"><School size={26} className="text-blue-600" /> <span className="dp-marker">Sinflar</span></h2>
+            <h2 className="flex items-center gap-2 text-2xl font-black text-ink"><School size={26} className="text-blue-600" /> <span className="dp-marker">Sinflar va reyting</span></h2>
             {classes.length ? (
               <>
-                <p className="mt-2 text-base font-semibold text-slate-500">Bosing — natijalar va reyting.</p>
-                <div className="mt-4 grid grid-cols-2 gap-3">
+                <p className="mt-1 text-sm font-semibold text-slate-500">Sinfni bosing — natijalar va reyting.</p>
+                <div className="mt-3 grid grid-cols-3 gap-2">
                   {classes.map((c, i) => (
-                    <button key={c.id} onClick={() => onClassResults?.(c)} className={`dp-sticker dp-sticker-hover rounded-xl px-3 py-3 text-left ${['bg-blue-100', 'bg-firuza-100', 'bg-amber-100', 'bg-anor-100'][i % 4]}`}>
-                      <span className="block text-2xl font-black text-ink">{classLabel(c)}</span>
-                      <span className="flex items-center gap-1 text-sm font-bold text-slate-600"><Users size={14} /> {c.students.length} o‘quvchi</span>
+                    <button key={c.id} onClick={() => onClassResults?.(c)} className={`dp-sticker dp-sticker-hover rounded-xl px-2 py-2 text-center ${['bg-blue-100', 'bg-firuza-100', 'bg-amber-100', 'bg-anor-100'][i % 4]}`}>
+                      <span className="block text-xl font-black text-ink">{classLabel(c)}</span>
+                      <span className="flex items-center justify-center gap-1 text-xs font-bold text-slate-600"><Users size={12} /> {c.students.length}</span>
                     </button>
                   ))}
                 </div>
@@ -45427,28 +45440,20 @@ function HomeScreen({ teacher, allowed = [], access = {}, onStart, schoolClasses
             ) : (
               <p className="mt-2 text-lg text-slate-500">Hali sinf yo‘q. Birinchi darsda sinf va o‘quvchilar ro‘yxatini kiritasiz.</p>
             )}
-            <div className="mt-5 grid gap-3">
-              <button onClick={() => onRating?.('school')} className="dp-btn inline-flex items-center justify-center gap-2 rounded-2xl bg-amber-400 px-4 py-3 text-lg font-black text-ink hover:bg-amber-300"><Trophy size={22} /> Maktab reytingi</button>
-              <button onClick={() => onRating?.('global')} className="dp-btn inline-flex items-center justify-center gap-2 rounded-2xl bg-white px-4 py-3 text-lg font-black text-ink hover:bg-amber-50"><Building2 size={22} /> Maktablararo reyting</button>
+            <div className="mt-4 grid grid-cols-2 gap-2">
+              <button onClick={() => onRating?.('school')} className="dp-btn inline-flex items-center justify-center gap-1.5 rounded-2xl bg-amber-400 px-2 py-3 text-[15px] font-black text-ink hover:bg-amber-300"><Trophy size={20} className="shrink-0" /> <span className="whitespace-nowrap">Maktab reytingi</span></button>
+              <button onClick={() => onRating?.('global')} className="dp-btn inline-flex items-center justify-center gap-1.5 rounded-2xl bg-white px-2 py-3 text-[15px] font-black text-ink hover:bg-amber-50"><Building2 size={20} /> Maktablararo</button>
             </div>
           </section>
-
-          {classes.length > 0 && onMascot && (
-            <section className="dp-sticker-soft rounded-[2rem] bg-white p-6">
-              <h2 className="flex items-center gap-2 text-2xl font-black text-ink"><span className="text-2xl">🐺</span> <span className="dp-marker">Sinf maskotlari</span></h2>
-              <p className="mt-2 text-base font-semibold text-slate-500">Har sinfning «Bek» bo‘risi. To‘g‘ri javob va tinchlik bilan o‘sadi, milliy kiyimlar ochiladi.</p>
-              <div className="mt-4 grid grid-cols-2 gap-3">
-                {[...classes].sort((a, b) => mascotOf(b.id).xp - mascotOf(a.id).xp).map((c, i) => <MascotThumb key={c.id} cls={c} onOpen={onMascot} rank={i} />)}
-              </div>
-            </section>
-          )}
 
           {/* Kun maslahati — yopishtirilgan qog‘oz */}
           <section className="dp-tape dp-tape-gold relative  rounded-sm bg-amber-200 p-6 pt-8 shadow-[0_14px_30px_-16px_rgba(27,36,64,.35)]">
             <Doodle kind="pencil" size={52} className="absolute -bottom-5 -right-4 -rotate-12" />
             <h2 className="flex items-center gap-2 text-xl font-black text-ink"><Lightbulb size={24} className="fill-amber-50" /> Kun maslahati: {tip[0]}</h2>
-            <p className="dp-hand mt-2 text-[1.7rem] leading-snug text-ink/85">{tip[1]}</p>
+            <p className="dp-hand mt-2 text-[1.5rem] leading-snug text-ink/85">{tip[1]}</p>
           </section>
+
+          <SubscriptionsPanel teacher={teacher} />
         </div>
       </div>
     </div>
