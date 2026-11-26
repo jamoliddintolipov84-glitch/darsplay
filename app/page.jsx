@@ -18,7 +18,7 @@ import {
   Minus, Loader2, UserCheck, KeyRound, ShieldCheck, Copy, EyeOff, Search, UserPlus, Pencil, Building2, LogIn, RefreshCw, Settings, ChevronDown, LayoutGrid, CameraOff, Trash2, Save, Ruler, Bomb, Gift, Repeat, Zap,
   ThumbsUp, ThumbsDown, Puzzle, Heart, Crown, Rocket, Flag, Dices, SpellCheck,
   Volume2, VolumeX, History, Medal, CalendarDays, Star, ListPlus, NotebookPen, CircleHelp,
-  ListOrdered, Shapes, Scale, Palette, Type, SpellCheck2, Projector, PhoneOff, Presentation, MousePointerClick, MousePointer2, Orbit, GalleryHorizontalEnd,
+  ListOrdered, Shapes, Scale, Palette, Type, SpellCheck2, Projector, PhoneOff, Presentation, MousePointerClick, MousePointer2, Orbit, GalleryHorizontalEnd, Triangle, StickyNote, Stamp, ImagePlus, Clock, Hourglass, PaintBucket, Move,
   Highlighter, Wand2, MoveUpRight, Square, Circle, Eraser, Undo2, Redo2, FilePlus2, Download,
   Quote, Mail, Pause, Headphones, ExternalLink, Video,
 } from 'lucide-react';
@@ -41706,6 +41706,30 @@ function Modal({ children, onClose, wide = false }) {
   );
 }
 
+/* ---------- Real vaqt soati ---------- */
+const UZ_WEEKDAYS = ['Yakshanba', 'Dushanba', 'Seshanba', 'Chorshanba', 'Payshanba', 'Juma', 'Shanba'];
+function useNow(interval = 1000) {
+  const [now, setNow] = useState(null);
+  useEffect(() => {
+    setNow(new Date());
+    const id = setInterval(() => setNow(new Date()), interval);
+    return () => clearInterval(id);
+  }, [interval]);
+  return now;
+}
+const uzDate = (d) => `${UZ_WEEKDAYS[d.getDay()]}, ${d.getDate()}-${UZ_MONTHS[d.getMonth()]}`;
+function HeaderClock({ className = '' }) {
+  const now = useNow();
+  if (!now) return <span className={`h-11 w-[104px] ${className}`} />;
+  const hh = pad2(now.getHours()); const mm = pad2(now.getMinutes());
+  return (
+    <span className={`h-11 items-center gap-2 rounded-xl border border-line bg-white px-3 ${className}`} title={uzDate(now)} data-tip={uzDate(now)} aria-label={`Soat ${hh}:${mm}`}>
+      <Clock size={18} className="text-firuza-600" />
+      <span className="text-lg font-black tabular-nums text-ink">{hh}<span className="dp-blink">:</span>{mm}</span>
+    </span>
+  );
+}
+
 function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onBoard, onSubs, guest }) {
   const sound = useSoundOn();
   const bigCur = useBigCursor();
@@ -41748,6 +41772,7 @@ function Header({ teacher, crumbs, onHome, onLogout, isFs, toggleFs, onHelp, onB
         )}
 
         <div className="ml-auto flex shrink-0 items-center gap-2">
+          <HeaderClock className="hidden xl:inline-flex" />
           {onBoard && (
             <button onClick={onBoard} aria-label="Doska" data-tip="Doska"
               className="dp-btn inline-flex h-11 items-center gap-2 rounded-xl bg-firuza-500 px-3 text-base font-black text-white hover:bg-firuza-600 md:px-4">
@@ -42153,6 +42178,13 @@ function DemoArena() {
   );
 }
 
+/** Tayyor sinflar oralig‘i, masalan «8–10-sinflar». */
+function readyGradeSpan() {
+  const g = [...new Set(SUBJECTS.flatMap((sj) => Object.keys(CONTENT[sj.id] || {}).map(Number)))].sort((a, b) => a - b);
+  if (!g.length) return 'tez orada';
+  return g.length === 1 ? `${g[0]}-sinf` : `${g[0]}–${g[g.length - 1]}-sinflar`;
+}
+
 /** Tayyor fan va sinflar matni, masalan: «Ona tili — 8, 9, 10-sinf; Adabiyot — 8, 9-sinf» */
 function readyText() {
   return SUBJECTS.map((sj) => {
@@ -42416,7 +42448,7 @@ function LoginScreen({ onLogin, onGuest }) {
         <Doodle kind="loop" size={90} color="#6BDDD3" className="absolute bottom-40 left-[40%] hidden lg:block" />
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 pb-20 pt-14 md:px-8 lg:grid-cols-2 lg:pb-28 lg:pt-20">
           <div>
-            <span className="inline-flex  items-center gap-2 rounded-lg border border-line bg-paper px-4 py-1.5 text-base font-extrabold text-ink shadow-[0_14px_30px_-16px_rgba(27,36,64,.35)]"><Sparkles size={18} className="text-anor-500" /> Ona tili va adabiyot • 8–9-sinflar</span>
+            <span className="inline-flex  items-center gap-2 rounded-lg border border-line bg-paper px-4 py-1.5 text-base font-extrabold text-ink shadow-[0_14px_30px_-16px_rgba(27,36,64,.35)]"><Sparkles size={18} className="text-anor-500" /> Ona tili va adabiyot • {readyGradeSpan()}</span>
             <h1 className="mt-6 text-4xl font-black leading-[1.08] text-white sm:text-5xl lg:text-7xl">
               Darsni <span className="relative inline-block"><span className="relative z-10 text-amber-300">o‘yinga</span><svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" preserveAspectRatio="none"><path className="dp-draw" d="M3 8 C 40 2, 70 12, 100 6 S 160 2, 197 8" stroke="#DCAE4A" strokeWidth="3" fill="none" strokeLinecap="round" strokeOpacity=".9" /></svg></span> aylantiring!
             </h1>
@@ -43229,8 +43261,10 @@ const GUIDE_STEPS = [
   },
   {
     icon: UserCheck, color: 'bg-amber-500', title: 'O‘quvchi tanlash',
-    text: 'Javob beruvchini tanlashning uch usuli: Kamera, Ro‘yxat va Doira (baraban).',
+    text: 'Javob beruvchini tanlashning besh usuli: Baraban, Sehrli kartalar, Orbita, Ro‘yxat va Kamera. Hammasi to‘liq ekranli sahnada ochiladi.',
     tips: [
+      '«Sehrli kartalar»da kartalar aralashadi va o‘quvchining o‘zi bittasini ochadi. «Orbita»da ismlar aylanib, biri markazga tortiladi.',
+      '«Takrorlanmasin» yoqilsa, bir marta chiqqan o‘quvchi qayta chiqmaydi.',
       'Kamera faqat Chrome yoki Edge’da, ruxsat berilganda ishlaydi. Ishlamasa, «Kamerasiz tanlash» tugmasi bor.',
       'Tanlangan o‘quvchi topgan ball uning «shaxsiy» baliga qo‘shiladi.',
     ],
@@ -43251,6 +43285,23 @@ const GUIDE_STEPS = [
       'To‘plamni maktabingizdagi hamkasblarga ko‘rsatish yoki faqat o‘zingiz uchun saqlash mumkin.',
     ],
   },
+  {
+    icon: PenLine, color: 'bg-teal-600', title: 'Doska va soat',
+    text: 'Sarlavhadagi «Doska» tugmasi istalgan joyda elektron doskani ochadi: qalam, marker, shakllar, matn, katak/chiziqli fon, taymer va soat.',
+    tips: [
+      'Doskani rasm sifatida saqlab olish yoki to‘liq ekranda ochish mumkin. Dars slaydi ustiga ham chizsa bo‘ladi.',
+      'Sarlavhada va doskada aniq vaqt ko‘rinib turadi — darsning tugashiga qancha qolganini kuzatish oson.',
+    ],
+  },
+  {
+    icon: CalendarDays, color: 'bg-rose-600', title: 'Obuna va sozlamalar',
+    text: 'Ism kartochkangizni bossangiz menyu ochiladi: «Obunalarim», alifbo, katta kursor va chiqish.',
+    tips: [
+      '«Obunalarim»da ochiq fan va sinflar, muddati va «Uzaytirish» / «Sinf qo‘shish» tugmalari bor (Telegram @dars_play_admin).',
+      '«O‘zbek | Özbek» — butun saytni amaldagi yoki yangi alifboda (Ö, Ğ, Ş, Ç) ko‘rsatadi. Imlo o‘yinlari darslikka mos qoladi.',
+      'Sichqoncha belgisi — «Katta kursor»: proyektorda kursor yaxshi ko‘rinadi. Dars slaydlarida kursor lazer nuqtaga aylanadi.',
+    ],
+  },
 ];
 
 const GUIDE_FAQ = [
@@ -43259,13 +43310,16 @@ const GUIDE_FAQ = [
   ['Kamera ishlamayapti', 'Saytni Chrome yoki Edge’da oching. Manzil satridagi qulf belgisini bosib, kameraga ruxsat bering va sahifani yangilang. Kamera Zoom yoki Telegram’da ochiq bo‘lsa, o‘sha dasturni yoping.'],
   ['Ovoz kerak emas', 'Yuqoridagi karnay belgisini bosing — ovoz o‘chadi. Qayta bossangiz yoqiladi.'],
   ['Reytingda o‘quvchilar bali 0', 'Ballar o‘quvchiga yozilishi uchun o‘yin oldidan jamoalarga bo‘ling yoki o‘yin paytida «O‘quvchi tanlash»dan foydalaning.'],
+  ['Obunamni qanday uzaytiraman?', `Ism kartochkangiz → «Obunalarim» → «Uzaytirish». Telegram'da @${TELEGRAM_USER} ochiladi, xabar tayyor bo‘ladi. Muddat tugashiga ${EXPIRY_WARN_DAYS} kun qolganda bosh sahifada eslatma ham chiqadi.`],
+  ['Yangi alifboda ko‘rsatish mumkinmi?', 'Ha. Sarlavhadagi (telefonda — menyudagi) «Özbek» tugmasini bosing. Qaytarish uchun «O‘zbek»ni bosing. Tanlov eslab qolinadi.'],
+  ['Proyektorda kursor ko‘rinmayapti', 'Sarlavhadagi sichqoncha belgisini bosing — «Katta kursor» yoqiladi.'],
 ];
 
 function GuideScreen({ onBack, onStart }) {
   const [open, setOpen] = useState(0);
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 md:px-8">
-      <PageTitle title="Qo‘llanma" subtitle="Dars play’dan foydalanish — 7 qadamda" onBack={onBack} />
+      <PageTitle title="Qo‘llanma" subtitle={`Dars play’dan foydalanish — ${GUIDE_STEPS.length} qadamda`} onBack={onBack} />
 
       <div className="mb-6 rounded-[2rem] bg-blue-900 p-6 text-white md:p-8">
         <h2 className="text-2xl md:text-3xl font-extrabold">Bir darsning tartibi</h2>
@@ -43364,7 +43418,61 @@ const BOARD_BGS = [
   { id: 'lines', name: 'Chiziqli', dark: false, css: { backgroundColor: '#fffdf5', backgroundImage: 'linear-gradient(#bfdbfe 1px, transparent 1px)', backgroundSize: '100% 48px' } },
   { id: 'chalk', name: 'Yashil doska', dark: true, css: { backgroundColor: '#1f4d3a', backgroundImage: 'radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px)', backgroundSize: '6px 6px' } },
   { id: 'black', name: 'Qora', dark: true, css: { background: '#0f172a' } },
+  { id: 'dots', name: 'Nuqtali', dark: false, css: { backgroundColor: '#ffffff', backgroundImage: 'radial-gradient(#94a3b8 1.4px, transparent 1.6px)', backgroundSize: '32px 32px' } },
+  { id: 'husnixat', name: 'Husnixat', dark: false, css: { backgroundColor: '#fffdf5', backgroundImage: 'linear-gradient(#93c5fd 2px, transparent 2px), repeating-linear-gradient(90deg, #fca5a5 0 10px, transparent 10px 20px), linear-gradient(#93c5fd 2px, transparent 2px)', backgroundSize: '100% 96px, 100% 96px, 100% 96px', backgroundPosition: '0 24px, 0 47px, 0 70px', backgroundRepeat: 'repeat-y, repeat-y, repeat-y' } },
+  { id: 'coord', name: 'Koordinata', dark: false, css: { backgroundColor: '#ffffff', backgroundImage: 'linear-gradient(90deg, transparent calc(50% - 1px), #334155 calc(50% - 1px), #334155 calc(50% + 1px), transparent calc(50% + 1px)), linear-gradient(transparent calc(50% - 1px), #334155 calc(50% - 1px), #334155 calc(50% + 1px), transparent calc(50% + 1px)), linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px)', backgroundSize: '100% 100%, 100% 100%, 40px 40px, 40px 40px', backgroundPosition: '0 0, 0 0, center, center' } },
+  { id: 'koshin', name: 'Lojuvard', dark: true, css: { backgroundColor: '#1B2440', backgroundImage: 'radial-gradient(rgba(242,207,122,.08) 1.5px, transparent 1.6px)', backgroundSize: '28px 28px' } },
 ];
+const BOARD_SHAPES = [
+  { id: 'line', name: 'To‘g‘ri chiziq', icon: Minus, key: 'l' },
+  { id: 'arrow', name: 'Strelka', icon: MoveUpRight, key: 'a' },
+  { id: 'rect', name: 'To‘rtburchak', icon: Square, key: 'r' },
+  { id: 'ellipse', name: 'Doira', icon: Circle, key: 'o' },
+  { id: 'tri', name: 'Uchburchak', icon: Triangle, key: 'y' },
+];
+const BOARD_STAMPS = ['⭐', '✅', '❌', '❓', '❗', '👍', '👏', '🏆', '💡', '❤️', '😊', '🔥', '1️⃣', '2️⃣', '3️⃣', '➕'];
+const NOTE_COLORS = ['#FDE68A', '#BBF7D0', '#BFDBFE', '#FBCFE8', '#FED7AA'];
+const BOARD_IMG = new Map();
+const boardImgListeners = new Set();
+function boardImage(src) {
+  let im = BOARD_IMG.get(src);
+  if (!im) {
+    im = new Image();
+    im.onload = () => boardImgListeners.forEach((f) => f());
+    im.src = src;
+    BOARD_IMG.set(src, im);
+  }
+  return im;
+}
+function boardWrap(ctx, text, maxW) {
+  const out = [];
+  String(text).split('\n').forEach((para) => {
+    let line = '';
+    para.split(' ').forEach((w) => {
+      const t = line ? `${line} ${w}` : w;
+      if (ctx.measureText(t).width > maxW && line) { out.push(line); line = w; } else line = t;
+    });
+    out.push(line);
+  });
+  return out;
+}
+/** Obyekt chegarasi — tanlash va siljitish uchun. */
+function boardBBox(o) {
+  if (o.pts) {
+    let x0 = Infinity; let y0 = Infinity; let x1 = -Infinity; let y1 = -Infinity;
+    for (let k = 0; k < o.pts.length; k += 2) { x0 = Math.min(x0, o.pts[k]); x1 = Math.max(x1, o.pts[k]); y0 = Math.min(y0, o.pts[k + 1]); y1 = Math.max(y1, o.pts[k + 1]); }
+    const p = o.w / 2 + 4;
+    return [x0 - p, y0 - p, x1 + p, y1 + p];
+  }
+  if ('x1' in o) return [Math.min(o.x1, o.x2) - 6, Math.min(o.y1, o.y2) - 6, Math.max(o.x1, o.x2) + 6, Math.max(o.y1, o.y2) + 6];
+  if (o.t === 'text') return [o.x - 4, o.y - 4, o.x + (o.wd || 200) + 4, o.y + o.size * 1.2 * String(o.text).split('\n').length + 4];
+  return [o.x, o.y, o.x + (o.w || 0), o.y + (o.h || 0)];
+}
+function boardMove(o, dx, dy) {
+  if (o.pts) return { ...o, pts: o.pts.map((v, k) => v + (k % 2 ? dy : dx)) };
+  if ('x1' in o) return { ...o, x1: o.x1 + dx, x2: o.x2 + dx, y1: o.y1 + dy, y2: o.y2 + dy };
+  return { ...o, x: o.x + dx, y: o.y + dy };
+}
 const BOARD_COLORS_LIGHT = ['#0f172a', '#2563eb', '#dc2626', '#16a34a', '#f59e0b', '#9333ea', '#ec4899', '#0891b2'];
 const BOARD_COLORS_DARK = ['#ffffff', '#93c5fd', '#fca5a5', '#86efac', '#fde047', '#d8b4fe', '#f9a8d4', '#67e8f9'];
 const BOARD_SIZES = [
@@ -43376,11 +43484,11 @@ const BOARD_TOOLS = [
   { id: 'pen', name: 'Qalam', icon: Pencil, key: 'p' },
   { id: 'hl', name: 'Marker', icon: Highlighter, key: 'm' },
   { id: 'laser', name: 'Lazer ko‘rsatkich', icon: Wand2, key: 'k' },
-  { id: 'line', name: 'To‘g‘ri chiziq', icon: Minus, key: 'l' },
-  { id: 'arrow', name: 'Strelka', icon: MoveUpRight, key: 'a' },
-  { id: 'rect', name: 'To‘rtburchak', icon: Square, key: 'r' },
-  { id: 'ellipse', name: 'Doira', icon: Circle, key: 'o' },
+  { id: 'shape', name: 'Shakllar', icon: Shapes, key: 's' },
   { id: 'text', name: 'Matn', icon: Type, key: 't' },
+  { id: 'note', name: 'Yopishqoq qog‘oz', icon: StickyNote, key: 'n' },
+  { id: 'stamp', name: 'Muhr (rag‘bat belgisi)', icon: Stamp, key: 'b' },
+  { id: 'move', name: 'Tanlash va siljitish', icon: Move, key: 'v' },
   { id: 'eraser', name: 'O‘chirg‘ich', icon: Eraser, key: 'e' },
 ];
 
@@ -43419,12 +43527,31 @@ function boardDraw(ctx, o) {
       ctx.lineTo(o.x2 - len * Math.cos(ang + 0.45), o.y2 - len * Math.sin(ang + 0.45));
       ctx.closePath(); ctx.fill();
     }
-  } else if (o.t === 'rect') {
-    ctx.strokeRect(Math.min(o.x1, o.x2), Math.min(o.y1, o.y2), Math.abs(o.x2 - o.x1), Math.abs(o.y2 - o.y1));
-  } else if (o.t === 'ellipse') {
+  } else if (o.t === 'rect' || o.t === 'ellipse' || o.t === 'tri') {
     ctx.beginPath();
-    ctx.ellipse((o.x1 + o.x2) / 2, (o.y1 + o.y2) / 2, Math.abs(o.x2 - o.x1) / 2, Math.abs(o.y2 - o.y1) / 2, 0, 0, Math.PI * 2);
+    const x = Math.min(o.x1, o.x2); const y = Math.min(o.y1, o.y2); const w = Math.abs(o.x2 - o.x1); const h = Math.abs(o.y2 - o.y1);
+    if (o.t === 'rect') ctx.rect(x, y, w, h);
+    else if (o.t === 'ellipse') ctx.ellipse(x + w / 2, y + h / 2, w / 2, h / 2, 0, 0, Math.PI * 2);
+    else { ctx.moveTo(x + w / 2, y); ctx.lineTo(x + w, y + h); ctx.lineTo(x, y + h); ctx.closePath(); }
+    if (o.fill) { ctx.globalAlpha = 0.28; ctx.fill(); ctx.globalAlpha = 1; }
     ctx.stroke();
+  } else if (o.t === 'note') {
+    ctx.shadowColor = 'rgba(15,23,42,.25)'; ctx.shadowBlur = 14; ctx.shadowOffsetY = 6;
+    ctx.fillStyle = o.bg; ctx.fillRect(o.x, o.y, o.w, o.h);
+    ctx.shadowColor = 'transparent';
+    ctx.fillStyle = 'rgba(0,0,0,.06)'; ctx.fillRect(o.x, o.y, o.w, 18);
+    ctx.fillStyle = '#1B2440';
+    ctx.font = `700 ${o.size}px "Plus Jakarta Sans", system-ui, sans-serif`;
+    ctx.textBaseline = 'top';
+    boardWrap(ctx, o.text, o.w - 28).forEach((ln, k) => { if (28 + (k + 1) * o.size * 1.25 < o.h + o.size) ctx.fillText(ln, o.x + 14, o.y + 28 + k * o.size * 1.25); });
+  } else if (o.t === 'stamp') {
+    ctx.font = `${o.h}px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif`;
+    ctx.textBaseline = 'top';
+    ctx.fillText(o.e, o.x, o.y);
+  } else if (o.t === 'img') {
+    const im = boardImage(o.src);
+    if (im.complete && im.naturalWidth) ctx.drawImage(im, o.x, o.y, o.w, o.h);
+    else { ctx.strokeStyle = '#94a3b8'; ctx.setLineDash([8, 6]); ctx.lineWidth = 2; ctx.strokeRect(o.x, o.y, o.w, o.h); }
   } else if (o.t === 'text') {
     ctx.font = `700 ${o.size}px "Plus Jakarta Sans", system-ui, sans-serif`;
     ctx.textBaseline = 'top';
@@ -43439,6 +43566,120 @@ function loadBoard() {
     if (d && Array.isArray(d.pages) && d.pages.length) return d;
   } catch { /* bo‘sh */ }
   return null;
+}
+
+/* ---------- Doska vidjetlari: soat va taymer ---------- */
+/** Sudrab ko‘chiriladigan vidjet qobig‘i (tugmalardan tashqari joydan ushlanadi). */
+function BoardWidget({ at, children }) {
+  const [off, setOff] = useState({ x: 0, y: 0 });
+  const drag = useRef(null);
+  return (
+    <div
+      className="pointer-events-auto absolute touch-none"
+      style={{ ...at, transform: `translate(${off.x}px, ${off.y}px)`, cursor: 'grab' }}
+      title="Sudrab joyini o‘zgartiring"
+      onPointerDown={(e) => {
+        if (e.target.closest('button')) return;
+        e.currentTarget.setPointerCapture(e.pointerId);
+        drag.current = { x: e.clientX - off.x, y: e.clientY - off.y };
+      }}
+      onPointerMove={(e) => { if (drag.current) setOff({ x: e.clientX - drag.current.x, y: e.clientY - drag.current.y }); }}
+      onPointerUp={() => { drag.current = null; }}
+      onPointerCancel={() => { drag.current = null; }}
+    >
+      {children}
+    </div>
+  );
+}
+function BoardClock({ onClose }) {
+  const now = useNow();
+  const [analog, setAnalog] = useState(false);
+  if (!now) return null;
+  const h = now.getHours(); const m = now.getMinutes(); const sec = now.getSeconds();
+  return (
+    <div className="dp-sticker pointer-events-auto relative min-w-[300px] overflow-hidden rounded-[2rem] bg-ink px-7 py-5 text-center text-white">
+      <div className="dp-girih pointer-events-none absolute inset-0 opacity-25" />
+      <div className="relative">
+        {analog ? (
+          <svg viewBox="0 0 200 200" className="mx-auto h-48 w-48">
+            <circle cx="100" cy="100" r="94" fill="#fff" stroke="#DCAE4A" strokeWidth="6" />
+            {Array.from({ length: 60 }, (_, k) => (
+              <line key={k} x1="100" y1={k % 5 ? 12 : 10} x2="100" y2={k % 5 ? 18 : 26} stroke="#1B2440" strokeWidth={k % 5 ? 1.5 : 4} transform={`rotate(${k * 6} 100 100)`} strokeLinecap="round" />
+            ))}
+            {[12, 3, 6, 9].map((n, k) => <text key={n} x={100 + 62 * Math.sin(k * Math.PI / 2)} y={100 - 62 * Math.cos(k * Math.PI / 2) + 8} textAnchor="middle" fontSize="22" fontWeight="900" fill="#1B2440">{n}</text>)}
+            <line x1="100" y1="100" x2="100" y2="52" stroke="#1B2440" strokeWidth="8" strokeLinecap="round" transform={`rotate(${(h % 12) * 30 + m / 2} 100 100)`} />
+            <line x1="100" y1="100" x2="100" y2="30" stroke="#1B2440" strokeWidth="5" strokeLinecap="round" transform={`rotate(${m * 6 + sec / 10} 100 100)`} />
+            <line x1="100" y1="116" x2="100" y2="24" stroke="#E2463F" strokeWidth="2.5" strokeLinecap="round" transform={`rotate(${sec * 6} 100 100)`} />
+            <circle cx="100" cy="100" r="7" fill="#E2463F" />
+          </svg>
+        ) : (
+          <div className="text-7xl font-black tabular-nums tracking-tight md:text-8xl">
+            {pad2(h)}<span className="dp-blink text-amber-300">:</span>{pad2(m)}<span className="ml-2 text-3xl text-blue-200 md:text-4xl">{pad2(sec)}</span>
+          </div>
+        )}
+        <div className="mt-1 text-lg font-bold text-amber-200">{uzDate(now)}</div>
+        <div className="mt-3 flex justify-center gap-2">
+          <button onClick={() => setAnalog(!analog)} className="rounded-xl bg-white/10 px-3 py-2 text-base font-bold ring-1 ring-white/15 hover:bg-white/20">{analog ? 'Raqamli' : 'Siferblat'}</button>
+          <button onClick={onClose} aria-label="Soatni yopish" className="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20"><X size={18} /></button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const TIMER_PRESETS = [1, 3, 5, 10, 15];
+function BoardTimer({ onClose }) {
+  const [total, setTotal] = useState(5 * 60);
+  const [left, setLeft] = useState(5 * 60);
+  const [run, setRun] = useState(false);
+  const endRef = useRef(0);
+  useEffect(() => {
+    if (!run) return undefined;
+    endRef.current = Date.now() + left * 1000;
+    const id = setInterval(() => {
+      const l = Math.max(0, Math.round((endRef.current - Date.now()) / 1000));
+      setLeft(l);
+      if (l <= 5 && l > 0) playSound('tick');
+      if (l === 0) { setRun(false); playSound('boom'); }
+    }, 250);
+    return () => clearInterval(id);
+  }, [run]); // eslint-disable-line react-hooks/exhaustive-deps
+  const set = (min) => { setRun(false); setTotal(min * 60); setLeft(min * 60); };
+  const add = (sec) => { const v = Math.max(10, left + sec); setLeft(v); setTotal(Math.max(total, v)); if (run) endRef.current += sec * 1000; };
+  const pct = total ? left / total : 0;
+  const done = left === 0;
+  const R = 54; const C = 2 * Math.PI * R;
+  return (
+    <div className={`dp-sticker pointer-events-auto relative overflow-hidden rounded-[2rem] px-6 py-5 text-white ${done ? 'animate-pulse bg-anor-500' : 'bg-ink'}`}>
+      <div className="dp-girih pointer-events-none absolute inset-0 opacity-25" />
+      <div className="relative flex items-center gap-5">
+        <div className="relative h-32 w-32 shrink-0">
+          <svg viewBox="0 0 120 120" className="h-full w-full -rotate-90">
+            <circle cx="60" cy="60" r={R} fill="none" stroke="rgba(255,255,255,.15)" strokeWidth="10" />
+            <circle cx="60" cy="60" r={R} fill="none" stroke={left <= 10 ? '#E2463F' : '#DCAE4A'} strokeWidth="10" strokeLinecap="round" strokeDasharray={C} strokeDashoffset={C * (1 - pct)} style={{ transition: 'stroke-dashoffset .3s linear' }} />
+          </svg>
+          <div className="absolute inset-0 flex items-center justify-center text-3xl font-black tabular-nums">{pad2(Math.floor(left / 60))}:{pad2(left % 60)}</div>
+        </div>
+        <div className="space-y-2">
+          <div className="flex flex-wrap gap-1.5">
+            {TIMER_PRESETS.map((m) => (
+              <button key={m} onClick={() => set(m)} className={`rounded-xl px-3 py-2 text-base font-black ring-1 ring-white/15 ${total === m * 60 && !run ? 'bg-amber-400 text-ink' : 'bg-white/10 hover:bg-white/20'}`}>{m} daq</button>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-1.5">
+            <button onClick={() => (done ? set(total / 60) : setRun(!run))} className="inline-flex items-center gap-1.5 rounded-xl bg-amber-400 px-4 py-2 text-lg font-black text-ink hover:bg-amber-300">
+              {run ? <><Pause size={20} /> Pauza</> : done ? <><RotateCcw size={20} /> Qayta</> : <><Play size={20} /> Boshlash</>}
+            </button>
+            <button onClick={() => add(-30)} className="rounded-xl bg-white/10 px-3 py-2 text-base font-bold ring-1 ring-white/15 hover:bg-white/20">−30s</button>
+            <button onClick={() => add(30)} className="rounded-xl bg-white/10 px-3 py-2 text-base font-bold ring-1 ring-white/15 hover:bg-white/20">+30s</button>
+            <button onClick={() => set(total / 60)} aria-label="Taymerni qayta boshlash" className="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20"><RotateCcw size={18} /></button>
+            <button onClick={onClose} aria-label="Taymerni yopish" className="rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 hover:bg-white/20"><X size={18} /></button>
+          </div>
+          {done && <div className="text-xl font-black">Vaqt tugadi!</div>}
+        </div>
+      </div>
+    </div>
+  );
 }
 
 /*
@@ -43467,6 +43708,7 @@ function Whiteboard({ mode = 'board', onClose, initial, onChange, onPrev, onNext
     }
   }
   const [page, setPage] = useState(0);
+  const pageRef = useRef(0); pageRef.current = page;
   const [bg, setBg] = useState(() => (overlay ? null : (typeof window !== 'undefined' && loadBoard()?.bg) || 'grid'));
   const dark = !overlay && !!BOARD_BGS.find((b) => b.id === bg)?.dark;
   const colors = dark ? BOARD_COLORS_DARK : BOARD_COLORS_LIGHT;
@@ -43475,6 +43717,15 @@ function Whiteboard({ mode = 'board', onClose, initial, onChange, onPrev, onNext
   const [sizeId, setSizeId] = useState('m');
   const [textDraft, setTextDraft] = useState(null);
   const [menu, setMenu] = useState(null); // 'bg' | 'clear'
+  const [shapeId, setShapeId] = useState('rect');
+  const [fill, setFill] = useState(false);
+  const [stampIdx, setStampIdx] = useState(0);
+  const [noteIdx, setNoteIdx] = useState(0);
+  const [widgets, setWidgets] = useState({ clock: false, timer: false });
+  const [sel, setSel] = useState(-1);
+  const selRef = useRef(-1); selRef.current = sel;
+  const dragRef = useRef(null);
+  const fileRef = useRef(null);
   const color = colors[colorIdx];
   const size = BOARD_SIZES.find((s) => s.id === sizeId);
   const cur = pagesRef.current[Math.min(page, pagesRef.current.length - 1)];
@@ -43504,6 +43755,14 @@ function Whiteboard({ mode = 'board', onClose, initial, onChange, onPrev, onNext
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       boardDraw(ctx, draftRef.current);
     }
+    const it = pagesRef.current[Math.min(pageRef.current, pagesRef.current.length - 1)]?.items[selRef.current];
+    if (it) {
+      const [a, b, c2, d] = boardBBox(it);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.setLineDash([10, 6]); ctx.lineWidth = 2.5; ctx.strokeStyle = '#2563eb';
+      ctx.strokeRect(a, b, c2 - a, d - b);
+      ctx.setLineDash([]);
+    }
   }, []);
 
   const resize = useCallback(() => {
@@ -43529,6 +43788,13 @@ function Whiteboard({ mode = 'board', onClose, initial, onChange, onPrev, onNext
   }, [resize]);
 
   useEffect(() => { rebuildCache(); paint(); }, [page, rebuildCache, paint]);
+  useEffect(() => {
+    const f = () => { rebuildCache(); paint(); };
+    boardImgListeners.add(f);
+    return () => boardImgListeners.delete(f);
+  }, [rebuildCache, paint]);
+  useEffect(() => { setSel(-1); }, [tool, page]);
+  useEffect(() => { paint(); }, [sel, paint]);
 
   // overlay: slayd almashganda o‘sha slayd chizmalarini ko‘rsatish
   const firstSlide = useRef(true);
@@ -43579,6 +43845,52 @@ function Whiteboard({ mode = 'board', onClose, initial, onChange, onPrev, onNext
     cur.past.push(cur.items); cur.items = []; cur.future = [];
     rebuildCache(); paint(); persist(); setMenu(null);
   };
+
+  const removeSel = () => {
+    if (sel < 0 || !cur.items[sel]) return;
+    cur.past.push(cur.items);
+    cur.items = cur.items.filter((_, k) => k !== sel);
+    cur.future = [];
+    setSel(-1);
+    rebuildCache(); paint(); persist(); rerender();
+  };
+  const measure = (txt, size0) => {
+    const c = document.createElement('canvas').getContext('2d');
+    c.font = `700 ${size0}px "Plus Jakarta Sans", system-ui, sans-serif`;
+    return Math.max(...String(txt).split('\n').map((l) => c.measureText(l).width), 20);
+  };
+
+  /* ---- rasm qo‘yish ---- */
+  const addImage = (file) => {
+    if (!file || !file.type?.startsWith('image/')) return;
+    const rd = new FileReader();
+    rd.onload = () => {
+      const im = new Image();
+      im.onload = () => {
+        const max = 1400;
+        const k = Math.min(1, max / Math.max(im.width, im.height));
+        const c = document.createElement('canvas');
+        c.width = Math.round(im.width * k); c.height = Math.round(im.height * k);
+        c.getContext('2d').drawImage(im, 0, 0, c.width, c.height);
+        const src = c.toDataURL('image/jpeg', 0.85);
+        const { w, h } = sizeRef.current;
+        const f = Math.min(1, (w * 0.6) / c.width, (h * 0.6) / c.height);
+        const ow = c.width * f; const oh = c.height * f;
+        commit({ t: 'img', src, x: (w - ow) / 2, y: (h - oh) / 2, w: ow, h: oh });
+        setTool('move');
+      };
+      im.src = rd.result;
+    };
+    rd.readAsDataURL(file);
+  };
+  useEffect(() => {
+    const h = (e) => {
+      const f = [...(e.clipboardData?.items || [])].find((x) => x.type.startsWith('image/'));
+      if (f) { e.preventDefault(); addImage(f.getAsFile()); }
+    };
+    window.addEventListener('paste', h);
+    return () => window.removeEventListener('paste', h);
+  });
 
   /* ---- sahifalar ---- */
   const addPage = () => {
@@ -43635,10 +43947,32 @@ function Whiteboard({ mode = 'board', onClose, initial, onChange, onPrev, onNext
     if (e.button !== undefined && e.button > 0 && e.pointerType === 'mouse') return;
     setMenu(null);
     const [x, y] = pos(e);
-    if (tool === 'text') {
+    if (tool === 'text' || tool === 'note') {
       e.preventDefault();
-      if (textDraft?.value?.trim()) commitText();
-      setTextDraft({ x, y, value: '' });
+      if (textDraft) { commitText(); return; }
+      setTextDraft({ x, y, value: '', kind: tool });
+      return;
+    }
+    if (tool === 'stamp') {
+      const hh = sizeId === 's' ? 64 : sizeId === 'l' ? 150 : 100;
+      commit({ t: 'stamp', e: BOARD_STAMPS[stampIdx], x: x - hh / 2, y: y - hh / 2, w: hh * 1.1, h: hh });
+      playSound('flip');
+      return;
+    }
+    if (tool === 'move') {
+      const items = cur.items;
+      let hit = -1;
+      for (let k = items.length - 1; k >= 0; k--) {
+        if (items[k].t === 'eraser') continue;
+        const [a, b, c2, d] = boardBBox(items[k]);
+        if (x >= a && x <= c2 && y >= b && y <= d) { hit = k; break; }
+      }
+      setSel(hit);
+      if (hit >= 0) {
+        e.currentTarget.setPointerCapture?.(e.pointerId);
+        cur.past.push(cur.items); cur.items = [...cur.items]; cur.future = [];
+        dragRef.current = { idx: hit, x, y, orig: cur.items[hit], moved: false };
+      }
       return;
     }
     e.currentTarget.setPointerCapture?.(e.pointerId);
@@ -43646,13 +43980,20 @@ function Whiteboard({ mode = 'board', onClose, initial, onChange, onPrev, onNext
     if (tool === 'pen' || tool === 'hl' || tool === 'eraser') {
       draftRef.current = { t: tool, color, w: tool === 'eraser' ? size.er : tool === 'hl' ? size.pen * 4 : size.pen, pts: [x, y] };
     } else {
-      draftRef.current = { t: tool, color, w: size.pen, x1: x, y1: y, x2: x, y2: y };
+      draftRef.current = { t: tool === 'shape' ? shapeId : tool, color, w: size.pen, fill, x1: x, y1: y, x2: x, y2: y };
     }
     paint();
   };
   const move = (e) => {
     const d = draftRef.current;
     const [x, y] = pos(e);
+    if (dragRef.current) {
+      const g = dragRef.current;
+      g.moved = true;
+      cur.items[g.idx] = boardMove(g.orig, x - g.x, y - g.y);
+      rebuildCache(); paint();
+      return;
+    }
     if (tool === 'laser' && (d || e.pointerType === 'mouse')) {
       const lp = laserPts.current[laserPts.current.length - 1];
       laserPts.current.push({ x, y, t: performance.now(), brk: !lp || Math.hypot(lp.x - x, lp.y - y) > 120 });
@@ -43667,6 +44008,13 @@ function Whiteboard({ mode = 'board', onClose, initial, onChange, onPrev, onNext
     paint();
   };
   const up = () => {
+    if (dragRef.current) {
+      const g = dragRef.current;
+      dragRef.current = null;
+      if (!g.moved) cur.past.pop(); else persist();
+      rerender();
+      return;
+    }
     const d = draftRef.current;
     draftRef.current = null;
     if (!d || d.t === 'laser') return;
@@ -43676,7 +44024,11 @@ function Whiteboard({ mode = 'board', onClose, initial, onChange, onPrev, onNext
   const commitText = () => {
     const td = textDraft;
     setTextDraft(null);
-    if (td && td.value.trim()) commit({ t: 'text', x: td.x, y: td.y, text: td.value, color, size: size.font });
+    if (!td || !td.value.trim()) return;
+    if (td.kind === 'note') {
+      const fs = Math.round(size.font * 0.75);
+      commit({ t: 'note', x: td.x, y: td.y, w: fs * 9, h: fs * 7, bg: NOTE_COLORS[noteIdx], text: td.value, size: fs });
+    } else commit({ t: 'text', x: td.x, y: td.y, text: td.value, color, size: size.font, wd: measure(td.value, size.font) });
   };
 
   /* ---- klaviatura ---- */
@@ -43688,9 +44040,12 @@ function Whiteboard({ mode = 'board', onClose, initial, onChange, onPrev, onNext
     if ((e.ctrlKey || e.metaKey) && k === 'y') { e.preventDefault(); redo(); return; }
     if (e.key === 'Escape') { e.stopImmediatePropagation(); if (menu) setMenu(null); else onClose(); return; }
     if (e.ctrlKey || e.metaKey || e.altKey) return;
+    if ((e.key === 'Delete' || e.key === 'Backspace') && selRef.current >= 0) { e.preventDefault(); e.stopImmediatePropagation(); removeSel(); return; }
     const t = BOARD_TOOLS.find((x) => x.key === k);
+    const sh = BOARD_SHAPES.find((x) => x.key === k);
     if (t) setTool(t.id);
-    if (t || e.key === 'Escape') e.stopImmediatePropagation();
+    if (sh) { setTool('shape'); setShapeId(sh.id); }
+    if (t || sh) e.stopImmediatePropagation();
   };
   useEffect(() => {
     const h = (e) => keyRef.current(e);
@@ -43705,7 +44060,7 @@ function Whiteboard({ mode = 'board', onClose, initial, onChange, onPrev, onNext
     out.width = w * dpr; out.height = h * dpr;
     const ctx = out.getContext('2d');
     const b = BOARD_BGS.find((x) => x.id === bg) || BOARD_BGS[0];
-    ctx.fillStyle = b.id === 'chalk' ? '#1f4d3a' : b.id === 'black' ? '#0f172a' : b.id === 'lines' ? '#fffdf5' : '#ffffff';
+    ctx.fillStyle = b.css.backgroundColor || b.css.background || '#ffffff';
     ctx.fillRect(0, 0, out.width, out.height);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     if (b.id === 'grid' || b.id === 'lines') {
@@ -43722,7 +44077,7 @@ function Whiteboard({ mode = 'board', onClose, initial, onChange, onPrev, onNext
     a.click();
   };
 
-  const cursor = tool === 'text' ? 'var(--cur-text)' : tool === 'laser' ? 'none' : tool === 'eraser' ? 'var(--cur-eraser)' : tool === 'hl' ? 'var(--cur-marker)' : 'var(--cur-pen)';
+  const cursor = tool === 'text' || tool === 'note' ? 'var(--cur-text)' : tool === 'laser' ? 'none' : tool === 'eraser' ? 'var(--cur-eraser)' : tool === 'hl' ? 'var(--cur-marker)' : tool === 'move' ? (dragRef.current ? 'grabbing' : 'var(--cur-pointer)') : tool === 'stamp' ? 'var(--cur-star)' : 'var(--cur-pen)';
   const bgCss = overlay ? { background: 'transparent' } : (BOARD_BGS.find((b) => b.id === bg) || BOARD_BGS[0]).css;
   const barCls = 'pointer-events-auto rounded-3xl bg-white/95 p-2 shadow-2xl shadow-slate-900/20 ring-1 ring-slate-200 backdrop-blur';
   const btn = (active) => `flex h-14 w-14 items-center justify-center rounded-2xl transition active:scale-90 ${active ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30' : 'text-slate-700 hover:bg-blue-50'}`;
@@ -43749,30 +44104,67 @@ function Whiteboard({ mode = 'board', onClose, initial, onChange, onPrev, onNext
             onChange={(e) => setTextDraft({ ...textDraft, value: e.target.value })}
             onBlur={commitText}
             onKeyDown={(e) => {
-              if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); commitText(); }
+              if (e.key === 'Enter' && !e.shiftKey && textDraft.kind !== 'note') { e.preventDefault(); commitText(); }
               if (e.key === 'Escape') setTextDraft(null);
             }}
             placeholder="Matn yozing…"
             rows={Math.max(1, textDraft.value.split('\n').length)}
-            className="absolute resize-none rounded-lg border-2 border-dashed border-blue-400 bg-white/60 px-1 outline-none"
-            style={{ left: textDraft.x - 6, top: textDraft.y - 4, color, font: `700 ${size.font}px "Plus Jakarta Sans", system-ui, sans-serif`, lineHeight: 1.2, minWidth: 220 }}
+            className={`absolute resize-none rounded-lg border-2 border-dashed border-blue-400 px-1 outline-none ${textDraft.kind === 'note' ? 'shadow-xl' : 'bg-white/60'}`}
+            style={textDraft.kind === 'note'
+              ? { left: textDraft.x, top: textDraft.y, width: Math.round(size.font * 0.75) * 9, height: Math.round(size.font * 0.75) * 7, padding: '24px 12px 8px', background: NOTE_COLORS[noteIdx], color: '#1B2440', font: `700 ${Math.round(size.font * 0.75)}px "Plus Jakarta Sans", system-ui, sans-serif`, lineHeight: 1.25 }
+              : { left: textDraft.x - 6, top: textDraft.y - 4, color, font: `700 ${size.font}px "Plus Jakarta Sans", system-ui, sans-serif`, lineHeight: 1.2, minWidth: 220 }}
           />
         )}
       </div>
 
       {/* Asboblar — chapda */}
-      <div className="pointer-events-none absolute left-3 top-1/2 flex -translate-y-1/2 flex-col gap-2">
-        <div className={`${barCls} flex flex-col gap-1`}>
+      <div className="pointer-events-none absolute left-3 top-1/2 z-20 flex -translate-y-1/2 items-center gap-2">
+        <div className={`${barCls} flex max-h-[calc(100vh-11rem)] flex-col gap-1 overflow-y-auto`}>
           {BOARD_TOOLS.map((t) => (
             <button key={t.id} title={`${t.name} (${t.key.toUpperCase()})`} aria-label={t.name} onClick={() => { setTool(t.id); setMenu(null); }} className={btn(tool === t.id)}>
-              <t.icon size={28} />
+              {t.id === 'shape' ? (() => { const I = BOARD_SHAPES.find((x) => x.id === shapeId).icon; return <I size={28} />; })() : <t.icon size={28} />}
             </button>
           ))}
+          {!overlay && (
+            <>
+              <span className="mx-2 my-0.5 h-px bg-slate-200" />
+              <button title="Rasm qo‘yish (yoki Ctrl+V)" aria-label="Rasm qo‘yish" onClick={() => fileRef.current?.click()} className={btn(false)}><ImagePlus size={28} /></button>
+              <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={(e) => { addImage(e.target.files?.[0]); e.target.value = ''; }} />
+            </>
+          )}
         </div>
+        {tool === 'shape' && (
+          <div className={`${barCls} flex flex-col gap-1`}>
+            {BOARD_SHAPES.map((sh) => (
+              <button key={sh.id} title={`${sh.name} (${sh.key.toUpperCase()})`} aria-label={sh.name} onClick={() => setShapeId(sh.id)} className={btn(shapeId === sh.id)}><sh.icon size={26} /></button>
+            ))}
+            <span className="mx-2 my-0.5 h-px bg-slate-200" />
+            <button title={fill ? 'Ichi bo‘yalgan' : 'Faqat chegara'} aria-label="Ichini bo‘yash" aria-pressed={fill} onClick={() => setFill(!fill)} className={btn(fill)}><PaintBucket size={26} /></button>
+          </div>
+        )}
+        {tool === 'stamp' && (
+          <div className={`${barCls} grid grid-cols-4 gap-1`}>
+            {BOARD_STAMPS.map((em, k) => (
+              <button key={em} aria-label={`Muhr ${em}`} onClick={() => setStampIdx(k)} className={`flex h-14 w-14 items-center justify-center rounded-2xl text-3xl transition active:scale-90 ${stampIdx === k ? 'bg-blue-100 ring-2 ring-blue-500' : 'hover:bg-blue-50'}`}>{em}</button>
+            ))}
+          </div>
+        )}
+        {tool === 'note' && (
+          <div className={`${barCls} flex flex-col gap-1.5 p-3`}>
+            {NOTE_COLORS.map((c, k) => (
+              <button key={c} aria-label={`Qog‘oz rangi ${k + 1}`} onClick={() => setNoteIdx(k)} className={`h-12 w-12 rounded-lg shadow transition active:scale-90 ${noteIdx === k ? 'ring-4 ring-blue-500' : 'ring-1 ring-black/10'}`} style={{ background: c }} />
+            ))}
+          </div>
+        )}
+        {tool === 'move' && sel >= 0 && (
+          <div className={`${barCls} flex flex-col gap-1`}>
+            <button title="Tanlanganni o‘chirish (Delete)" aria-label="Tanlanganni o‘chirish" onClick={removeSel} className={`${btn(false)} text-rose-600 hover:bg-rose-50`}><Trash2 size={26} /></button>
+          </div>
+        )}
       </div>
 
       {/* Rang va qalinlik — pastda */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-3 flex justify-center px-3">
+      <div className="pointer-events-none absolute inset-x-0 bottom-3 z-20 flex justify-center px-3">
         <div className={`${barCls} flex flex-wrap items-center justify-center gap-2`}>
           {colors.map((c, k) => (
             <button
@@ -43808,7 +44200,7 @@ function Whiteboard({ mode = 'board', onClose, initial, onChange, onPrev, onNext
       </div>
 
       {/* Yuqori o‘ng — sahifa, fon, saqlash, yopish */}
-      <div className="pointer-events-none absolute right-3 top-3 flex max-w-[calc(100%-1.5rem)] flex-wrap items-start justify-end gap-2">
+      <div className="pointer-events-none absolute right-3 top-3 z-20 flex max-w-[calc(100%-1.5rem)] flex-wrap items-start justify-end gap-2">
         {overlay ? (
           <div className={`${barCls} flex items-center gap-1`}>
             {onPrev && <button title="Oldingi slayd (←)" aria-label="Oldingi slayd" onClick={onPrev} className={btn(false)}><ChevronLeft size={30} /></button>}
@@ -43841,6 +44233,10 @@ function Whiteboard({ mode = 'board', onClose, initial, onChange, onPrev, onNext
             </div>
           </>
         )}
+        <div className={`${barCls} flex items-center gap-1`}>
+          <button title="Soat" aria-label="Soat" aria-pressed={widgets.clock} onClick={() => setWidgets((w) => ({ ...w, clock: !w.clock }))} className={btn(widgets.clock)}><Clock size={28} /></button>
+          <button title="Taymer" aria-label="Taymer" aria-pressed={widgets.timer} onClick={() => setWidgets((w) => ({ ...w, timer: !w.timer }))} className={btn(widgets.timer)}><Hourglass size={28} /></button>
+        </div>
         <button
           onClick={onClose}
           className="pointer-events-auto inline-flex h-[4.5rem] items-center gap-2 rounded-3xl bg-slate-900 px-5 text-lg font-extrabold text-white shadow-2xl transition hover:bg-slate-800 active:scale-95"
@@ -43849,11 +44245,18 @@ function Whiteboard({ mode = 'board', onClose, initial, onChange, onPrev, onNext
         </button>
       </div>
 
+      {(widgets.clock || widgets.timer) && (
+        <>
+          {widgets.clock && <BoardWidget at={{ right: 24, top: 104 }}><BoardClock onClose={() => setWidgets((w) => ({ ...w, clock: false }))} /></BoardWidget>}
+          {widgets.timer && <BoardWidget at={widgets.clock ? { right: 24, bottom: 110 } : { right: 24, top: 104 }}><BoardTimer onClose={() => setWidgets((w) => ({ ...w, timer: false }))} /></BoardWidget>}
+        </>
+      )}
+
       {!overlay && !cur.items.length && !textDraft && (
         <div className={`pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-2 ${dark ? 'text-white/30' : 'text-slate-300'}`}>
           <PenLine size={64} />
           <p className="px-24 text-center text-2xl font-extrabold md:text-3xl">Doska tayyor — yozishni boshlang</p>
-          <p className="hidden text-lg font-semibold md:block">Qalam (P) • Marker (M) • Lazer (K) • Matn (T) • O‘chirg‘ich (E)</p>
+          <p className="hidden text-lg font-semibold md:block">Qalam (P) • Shakl (S) • Matn (T) • Qog‘oz (N) • Muhr (B) • Siljitish (V) • Rasm — Ctrl+V</p>
         </div>
       )}
     </div>
@@ -45232,7 +45635,10 @@ function XAudio({ a }) {
   const pct = dur ? Math.min(100, (cur / dur) * 100) : 0;
 
   return (
-    <div className="mt-6 overflow-hidden rounded-3xl bg-gradient-to-br from-teal-700 to-emerald-600 p-5 md:p-6 text-white shadow-xl">
+    <div className="dp-sticker relative mt-6 overflow-hidden rounded-[2rem] bg-ink p-5 text-white md:p-6">
+      <div className="dp-girih pointer-events-none absolute inset-0 opacity-30" />
+      <div className="pointer-events-none absolute -right-16 -top-20 h-56 w-56 rounded-full bg-firuza-500/30 blur-3xl" />
+      <div className="relative">
       <audio
         ref={ref}
         src={a.src}
@@ -45245,8 +45651,13 @@ function XAudio({ a }) {
         onWaiting={() => setState('loading')}
         onError={() => { setPlaying(false); setState('error'); }}
       />
-      <div className="flex items-center gap-2 text-sm md:text-base font-extrabold uppercase tracking-wide text-emerald-100">
+      <div className="flex items-center gap-2 text-sm md:text-base font-extrabold uppercase tracking-wide text-amber-300">
         <Headphones size={20} /> Audiomatn{a.page ? ` • ${a.page}-bet` : ''}
+        {playing && (
+          <span className="ml-1 flex h-4 items-end gap-0.5" aria-hidden="true">
+            {[0, 1, 2, 3].map((i) => <span key={i} className="dp-eq w-1 rounded-full bg-firuza-400" style={{ animationDelay: `${i * 120}ms` }} />)}
+          </span>
+        )}
       </div>
       {a.title && <div className="mt-1 text-xl md:text-2xl font-black leading-snug">{a.title}</div>}
 
@@ -45254,14 +45665,14 @@ function XAudio({ a }) {
         <button
           onClick={toggle}
           aria-label={playing ? 'To‘xtatish' : 'Tinglash'}
-          className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-white text-teal-700 shadow-lg transition active:scale-95"
+          className="dp-btn flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-amber-400 text-ink shadow-[0_16px_34px_-14px_rgba(220,174,74,.9)] transition hover:bg-amber-300 active:scale-95"
         >
           {state === 'loading' && !playing ? <GirihLoader size={38} /> : playing ? <Pause size={40} fill="currentColor" /> : <Play size={40} fill="currentColor" className="ml-1" />}
         </button>
-        <button onClick={() => jump(-10)} className="inline-flex items-center gap-1 rounded-2xl bg-white/15 px-4 py-3 text-lg font-extrabold hover:bg-white/25 active:scale-95">
+        <button onClick={() => jump(-10)} className="inline-flex items-center gap-1 rounded-2xl bg-white/10 px-4 py-3 text-lg font-extrabold ring-1 ring-white/15 hover:bg-white/20 active:scale-95">
           <RotateCcw size={22} /> 10 s
         </button>
-        <button onClick={nextSpeed} className="rounded-2xl bg-white/15 px-4 py-3 text-lg font-extrabold tabular-nums hover:bg-white/25 active:scale-95">
+        <button onClick={nextSpeed} className="rounded-2xl bg-white/10 px-4 py-3 text-lg font-extrabold tabular-nums ring-1 ring-white/15 hover:bg-white/20 active:scale-95">
           {speed}×
         </button>
         <div className="min-w-[12rem] flex-1">
@@ -45272,23 +45683,24 @@ function XAudio({ a }) {
             step={0.1}
             value={Math.min(cur, dur || 0)}
             onChange={(e) => { if (ref.current) ref.current.currentTime = Number(e.target.value); }}
-            className="h-3 w-full cursor-pointer accent-white"
-            style={{ background: `linear-gradient(to right, #fff ${pct}%, rgba(255,255,255,.3) ${pct}%)`, borderRadius: 999, appearance: 'none' }}
+            className="dp-range h-3 w-full cursor-pointer accent-amber-400"
+            style={{ background: `linear-gradient(to right, #DCAE4A ${pct}%, rgba(255,255,255,.18) ${pct}%)`, borderRadius: 999, appearance: 'none' }}
             aria-label="Audio vaqt chizig‘i"
           />
-          <div className="mt-1 flex justify-between text-base font-bold tabular-nums text-emerald-100">
+          <div className="mt-1 flex justify-between text-base font-bold tabular-nums text-blue-100">
             <span>{fmtTime(cur)}</span><span>{fmtTime(dur)}</span>
           </div>
         </div>
       </div>
 
       {state === 'error' && (
-        <div className="mt-4 rounded-2xl bg-white/15 p-4 text-lg font-semibold">
+        <div className="mt-4 rounded-2xl bg-anor-500/20 p-4 text-lg font-semibold ring-1 ring-anor-500/30">
           Audio ochilmadi. Internetni tekshiring
           {a.href && <> yoki <a href={a.href} target="_blank" rel="noopener noreferrer" className="underline decoration-2 underline-offset-4">RTM sahifasida oching</a></>}.
         </div>
       )}
-      {a.credit && <div className="mt-3 text-sm font-semibold text-emerald-100/80">Manba: {a.credit}</div>}
+      {a.credit && <div className="mt-3 text-sm font-semibold text-blue-200/80">Manba: {a.credit}</div>}
+      </div>
     </div>
   );
 }
@@ -45299,14 +45711,16 @@ function XVideoLink({ v }) {
       href={v.href}
       target="_blank"
       rel="noopener noreferrer"
-      className="mt-6 flex items-center gap-4 rounded-3xl bg-gradient-to-br from-rose-600 to-orange-500 p-5 md:p-6 text-white shadow-xl transition active:scale-[0.99]"
+      className="dp-sticker dp-sticker-hover group relative mt-6 flex items-center gap-4 overflow-hidden rounded-[2rem] bg-ink p-5 text-white md:p-6"
     >
-      <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white text-rose-600"><Video size={34} /></span>
-      <span className="flex-1">
-        <span className="block text-sm md:text-base font-extrabold uppercase tracking-wide text-rose-100">Darslik videosi{v.page ? ` • ${v.page}-bet` : ''}</span>
+      <span className="dp-girih pointer-events-none absolute inset-0 opacity-30" />
+      <span className="pointer-events-none absolute -left-12 -bottom-16 h-48 w-48 rounded-full bg-anor-500/30 blur-3xl" />
+      <span className="relative flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-anor-500 text-white shadow-[0_14px_30px_-12px_rgba(226,70,63,.9)] transition group-hover:scale-110"><Play size={30} fill="currentColor" className="ml-1" /></span>
+      <span className="relative flex-1">
+        <span className="block text-sm md:text-base font-extrabold uppercase tracking-wide text-amber-300">Darslik videosi{v.page ? ` • ${v.page}-bet` : ''}</span>
         <span className="block text-xl md:text-2xl font-black leading-snug">{v.title || 'Videoni ochish'}</span>
       </span>
-      <ExternalLink size={28} className="shrink-0" />
+      <ExternalLink size={26} className="relative shrink-0 text-blue-200 transition group-hover:text-white" />
     </a>
   );
 }
@@ -45855,9 +46269,17 @@ function CameraPicker({ students, onPicked }) {
     }, 2600);
   };
 
+  const corners = (cls) => (
+    <>
+      <span className={`absolute left-0 top-0 h-8 w-8 rounded-tl-xl border-l-4 border-t-4 ${cls}`} />
+      <span className={`absolute right-0 top-0 h-8 w-8 rounded-tr-xl border-r-4 border-t-4 ${cls}`} />
+      <span className={`absolute bottom-0 left-0 h-8 w-8 rounded-bl-xl border-b-4 border-l-4 ${cls}`} />
+      <span className={`absolute bottom-0 right-0 h-8 w-8 rounded-br-xl border-b-4 border-r-4 ${cls}`} />
+    </>
+  );
   return (
-    <div>
-      <div className="relative mx-auto aspect-video w-full max-w-4xl overflow-hidden rounded-3xl bg-blue-950">
+    <div className="grid items-start gap-6 lg:grid-cols-[1fr_340px]">
+      <div className="relative mx-auto aspect-video w-full max-w-4xl overflow-hidden rounded-[2rem] bg-black/40 ring-1 ring-white/15">
         <video
           ref={videoRef}
           autoPlay
@@ -45870,75 +46292,66 @@ function CameraPicker({ students, onPicked }) {
           // eslint-disable-next-line @next/next/no-img-element
           <img src={result.img} alt="Tanlangan lahza" className="absolute inset-0 h-full w-full object-cover" />
         )}
+        {/* ko‘zgu ramkasi */}
+        <div className="pointer-events-none absolute inset-4">{corners('border-amber-300/80')}</div>
+        {status === 'on' && (
+          <div className="pointer-events-none absolute left-6 top-5 flex items-center gap-2 rounded-full bg-black/45 px-3 py-1 text-sm font-black text-white">
+            <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-anor-500" /> JONLI
+          </div>
+        )}
         {status !== 'on' && status !== 'nocam' && !result?.img && (
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-6 text-center text-white">
-            {status === 'loading' ? <GirihLoader size={64} /> : status === 'error' ? <CameraOff size={64} /> : <Camera size={64} />}
-            <p className="max-w-lg text-xl">
+            <span className="flex h-24 w-24 items-center justify-center rounded-3xl bg-white/10 ring-1 ring-white/20">
+              {status === 'loading' ? <GirihLoader size={56} /> : status === 'error' ? <CameraOff size={52} className="text-anor-300" /> : <Camera size={52} className="text-amber-300" />}
+            </span>
+            <p className="max-w-lg text-xl font-semibold text-blue-100">
               {status === 'error' ? errorMsg : status === 'loading' ? 'Kamera yoqilmoqda...' : 'Kamerani yoqing va sinfni ekranga oling'}
             </p>
           </div>
         )}
         {status === 'nocam' && !scanning && !result && (
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-6 text-center text-white">
-            <Users size={64} />
-            <p className="max-w-lg text-xl">Kamerasiz rejim: tugmani bosing — o‘quvchi tasodifiy tanlanadi</p>
+            <span className="flex h-24 w-24 items-center justify-center rounded-3xl bg-white/10 ring-1 ring-white/20"><Users size={52} className="text-amber-300" /></span>
+            <p className="max-w-lg text-xl font-semibold text-blue-100">Kamerasiz rejim: tugmani bosing — o‘quvchi tasodifiy tanlanadi</p>
           </div>
         )}
         {scanning && (
           <>
-            <div
-              className="absolute h-1/3 w-1/4 rounded-2xl border-4 border-amber-400 shadow-[0_0_0_9999px_rgba(15,23,42,0.35)] transition-all duration-100"
-              style={{ left: `${box.x}%`, top: `${box.y}%` }}
-            />
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-2xl bg-white/90 px-6 py-3 text-2xl font-extrabold text-blue-950">{flash}</div>
+            <div className="dp-scanline pointer-events-none absolute inset-x-0 h-24 bg-gradient-to-b from-transparent via-firuza-400/30 to-transparent" />
+            <div className="absolute h-1/3 w-1/4 shadow-[0_0_0_9999px_rgba(10,16,36,0.45)] transition-all duration-100" style={{ left: `${box.x}%`, top: `${box.y}%` }}>
+              {corners('border-amber-300 drop-shadow-[0_0_10px_rgba(242,207,122,.9)]')}
+              <span className="absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-anor-500 ring-4 ring-anor-500/30" />
+            </div>
+            <div className="absolute bottom-5 left-1/2 -translate-x-1/2 rounded-2xl bg-ink/85 px-6 py-3 text-2xl font-black text-amber-300 ring-1 ring-amber-300/40 backdrop-blur">{flash}</div>
           </>
-        )}
-        {result && (
-          <div className="dp-pop absolute inset-x-0 bottom-0 bg-gradient-to-t from-blue-950/95 to-transparent p-6 pt-16 text-center">
-            <div className="text-xl font-semibold text-blue-200">Tanlangan o‘quvchi</div>
-            <div className="text-4xl md:text-6xl font-extrabold text-white">{result.name}</div>
-          </div>
         )}
       </div>
       <canvas ref={canvasRef} className="hidden" />
-      <div className="mt-5 flex flex-wrap justify-center gap-3">
+      <div className="space-y-4">
         {status !== 'on' && status !== 'nocam' ? (
           <>
-            <PrimaryButton onClick={() => start()} disabled={status === 'loading'} icon={Camera}>{status === 'error' ? 'Qayta urinish' : 'Kamerani yoqish'}</PrimaryButton>
-            {status === 'error' && (
-              <button
-                onClick={() => setStatus('nocam')}
-                className="rounded-2xl border-2 border-blue-200 px-6 py-4 text-xl font-bold text-blue-900 hover:bg-blue-50"
-              >
-                Kamerasiz tanlash
-              </button>
-            )}
+            <StageBtn icon={Camera} onClick={() => start()} disabled={status === 'loading'} className="w-full py-5 text-2xl">{status === 'error' ? 'Qayta urinish' : 'Kamerani yoqish'}</StageBtn>
+            <StageBtn tone="glass" icon={Users} onClick={() => setStatus('nocam')} className="w-full">Kamerasiz tanlash</StageBtn>
           </>
         ) : (
           <>
+            <StageBtn icon={UserCheck} onClick={pick} disabled={scanning || students.length === 0} className="w-full py-5 text-2xl">
+              {scanning ? 'Qidirilmoqda...' : result ? 'Yana tanlash' : 'O‘quvchini tanlash'}
+            </StageBtn>
             {status === 'on' && devices.length > 1 && (
-              <select
-                value={deviceId}
-                onChange={(e) => { setDeviceId(e.target.value); start(e.target.value); }}
-                className="rounded-2xl border-2 border-blue-200 bg-white px-4 py-4 text-lg font-bold text-blue-900"
-                title="Kamerani tanlash"
-              >
+              <select value={deviceId} onChange={(e) => { setDeviceId(e.target.value); start(e.target.value); }} title="Kamerani tanlash"
+                className="w-full rounded-2xl bg-white/10 px-4 py-3.5 text-lg font-bold text-white ring-1 ring-white/20 [&>option]:text-ink">
                 {devices.map((d, i) => <option key={d.deviceId || i} value={d.deviceId}>{d.label || `Kamera ${i + 1}`}</option>)}
               </select>
             )}
-            <PrimaryButton onClick={pick} disabled={scanning || students.length === 0} icon={UserCheck}>
-              {scanning ? 'Qidirilmoqda...' : result ? 'Yana tanlash' : 'O‘quvchini tanlash'}
-            </PrimaryButton>
-            <button
-              onClick={() => { stop(); setStatus('idle'); setResult(null); }}
-              className="rounded-2xl border-2 border-slate-200 px-6 py-4 text-xl font-bold text-slate-600 hover:bg-slate-50"
-            >
+            <StageBtn tone="glass" icon={status === 'nocam' ? Camera : CameraOff} onClick={() => { stop(); setStatus('idle'); setResult(null); }} className="w-full">
               {status === 'nocam' ? 'Kamerani qayta yoqish' : 'Kamerani o‘chirish'}
-            </button>
+            </StageBtn>
           </>
         )}
+        {result && !scanning && <WinnerReveal name={result.name} compact />}
+        {students.length === 0 && <p className="rounded-2xl bg-anor-500/20 p-4 text-lg font-bold text-anor-100">Avval sinf ro‘yxatini kiriting.</p>}
       </div>
-      {students.length === 0 && <p className="mt-3 text-center text-lg font-semibold text-rose-600">Avval sinf ro‘yxatini kiriting.</p>}
     </div>
   );
 }
@@ -45973,9 +46386,10 @@ function StageToggle({ checked, onChange, children }) {
 }
 
 /** Tanlangan ism: harflar birma-bir tushadi, orqada nur aylanadi. */
-function WinnerReveal({ name, onRemove, onAgain, removeLabel = 'Ro‘yxatdan chiqarish', againLabel = 'Yana tanlash' }) {
+function WinnerReveal({ name, onRemove, onAgain, removeLabel = 'Ro‘yxatdan chiqarish', againLabel = 'Yana tanlash', compact = false }) {
   useEffect(() => { playSound('win'); }, [name]);
-  const letters = Array.from(name || '');
+  const words = String(name || '').split(' ').filter(Boolean);
+  let li = 0;
   return (
     <div className="dp-pop relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-amber-300 via-amber-400 to-amber-500 p-1">
       <div className="relative overflow-hidden rounded-[1.8rem] bg-ink px-6 py-8 text-center">
@@ -45983,9 +46397,11 @@ function WinnerReveal({ name, onRemove, onAgain, removeLabel = 'Ro‘yxatdan chi
         <div className="dp-girih pointer-events-none absolute inset-0 opacity-30" />
         <div className="relative">
           <div className="dp-kicker text-amber-300">Javob beradi</div>
-          <div className="mt-3 flex flex-wrap justify-center text-4xl font-black leading-tight text-white md:text-6xl" aria-label={name}>
-            {letters.map((ch, i) => (
-              <span key={i} className="dp-letter inline-block" style={{ animationDelay: `${i * 45}ms` }}>{ch === ' ' ? ' ' : ch}</span>
+          <div className={`mt-3 flex flex-wrap justify-center gap-x-[0.3em] font-black leading-tight text-white ${compact ? 'text-3xl md:text-4xl' : 'text-4xl md:text-6xl'}`} aria-label={name}>
+            {words.map((w, wi) => (
+              <span key={wi} className="inline-flex whitespace-nowrap">
+                {Array.from(w).map((ch) => { const n = li++; return <span key={n} className="dp-letter inline-block" style={{ animationDelay: `${n * 45}ms` }}>{ch}</span>; })}
+              </span>
             ))}
           </div>
           {(onRemove || onAgain) && (
@@ -46430,7 +46846,7 @@ function PickerModal({ initialTab, students, teamCount, onGroups, onClose, onCon
 
       <div className="relative flex-1 overflow-y-auto px-4 py-6 md:px-8">
         <div key={tab} className="dp-pop mx-auto max-w-6xl">
-          {tab === 'camera' && <div className="rounded-3xl bg-white p-5 text-ink md:p-6"><CameraPicker students={students} onPicked={setPicked} /></div>}
+          {tab === 'camera' && <CameraPicker students={students} onPicked={setPicked} />}
           {tab === 'list' && <ListPicker students={students} teamCount={teamCount} onGroups={onGroups} onPicked={setPicked} />}
           {tab === 'wheel' && <WheelPicker students={students} onPicked={setPicked} />}
           {tab === 'cards' && <CardsPicker students={students} onPicked={setPicked} />}
@@ -49147,7 +49563,7 @@ export default function DarsPlayApp() {
       {safeStep !== 'login' && <footer className="relative bg-paper pb-5 pt-7 text-center text-base font-semibold text-slate-500"><div className="dp-atlas-thin absolute inset-x-0 top-0" aria-hidden="true" />
         <span className="inline-flex items-center gap-2"><School size={18} /> Dars play — O‘zbekiston maktablari uchun interaktiv darslar</span>
         <span className="mx-3">•</span>
-        <span className="inline-flex items-center gap-2"><GraduationCap size={18} /> Ona tili va adabiyot • 8–9-sinflar</span>
+        <span className="inline-flex items-center gap-2"><GraduationCap size={18} /> Ona tili va adabiyot • {readyGradeSpan()}</span>
       </footer>}
     </div>
   );
