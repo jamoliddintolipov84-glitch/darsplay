@@ -41706,29 +41706,42 @@ function Modal({ children, onClose, wide = false }) {
 }
 
 /* ============================================================
-   SINF MASKOTI — «Humo qushi». Har sinfning o‘z qushi bor.
+   SINF MASKOTI — «Bek» bo‘ri. Har sinfning o‘z bo‘risi bor.
    O‘yindagi to‘g‘ri javoblar, tinch o‘tirish va ustoz rag‘bati
-   yulduz beradi; yulduzlar bilan qush tuxumdan Afsonaviy Humogacha o‘sadi.
-   Ma’lumot shu kompyuterda saqlanadi (localStorage).
+   yulduz beradi; yulduzlar bilan bo‘ri bolasi Afsonaviy Ko‘kbo‘rigacha o‘sadi
+   va milliy kiyim-kechaklar ochiladi (tumor, do‘ppi, belbog‘, chopon, dutor, salla).
    ============================================================ */
-const MASCOT_KEY = 'darsplay_mascot_v1';
+const MASCOT_KEY = 'darsplay_mascot_v2';
+const MASCOT_DEFAULT_NAME = 'Bek';
+try { localStorage.removeItem('darsplay_mascot_v1'); localStorage.removeItem('darsplay_mascot_pending_v1'); } catch { /* server */ }
 const MASCOT_STAGES = [
-  { n: 'Sirli tuxum', at: 0, hint: 'Tuxum ichida kimdir qimirlayapti… Yulduz yig‘ing!' },
-  { n: 'Jo‘ja chiqdi', at: 10, hint: 'Qobiqdan endi chiqdi — hali hammasi yangi.' },
-  { n: 'Momiq jo‘ja', at: 30, hint: 'Momiq patlar chiqdi, qanotchalar o‘smoqda.' },
-  { n: 'Yosh qush', at: 60, gift: 'Do‘ppi', hint: 'Do‘ppi kiyib, birinchi parvozga tayyorlanmoqda.' },
-  { n: 'Qanotli qush', at: 100, gift: 'Belbog‘', hint: 'Qanotlari kuchaydi, tojli patlari chiqdi.' },
-  { n: 'Humo qushi', at: 160, gift: 'Toj', hint: 'Baxt qushi Humo — sinfning faxri!' },
-  { n: 'Oltin Humo', at: 250, gift: 'Oltin nur', hint: 'Patlari oltindek yarqiraydi.' },
-  { n: 'Afsonaviy Humo', at: 400, gift: 'Yulduzlar halqasi', hint: 'Afsonaga aylandi! Eng yuqori daraja.' },
+  { n: 'Bo‘ri bolasi', at: 0, hint: 'Hali ko‘zini ochmagan, shirin uyquda… Yulduz yig‘ib uyg‘oting!' },
+  { n: 'Bo‘richa', at: 10, hint: 'Ko‘zini ochdi! Bo‘ynida birinchi tumor.' },
+  { n: 'Sho‘x bo‘richa', at: 30, hint: 'Do‘ppi kiyib, sinf bo‘ylab yugurmoqda.' },
+  { n: 'Yosh bo‘ri', at: 60, hint: 'Belini bog‘ladi — endi jiddiy ishga tayyor.' },
+  { n: 'Chaqqon bo‘ri', at: 100, hint: 'Chopon kiydi — to‘yga ham, bellashuvga ham shay.' },
+  { n: 'Dovyurak bo‘ri', at: 160, hint: 'Qo‘lida dutor — g‘alaba kuyini chalmoqda.' },
+  { n: 'Bek bo‘ri', at: 250, hint: 'Bek sallasini kiydi — sinfning haqiqiy begi!' },
+  { n: 'Afsonaviy Ko‘kbo‘ri', at: 400, hint: 'Turkiy afsonalardagi Ko‘kbo‘riga aylandi! Eng yuqori daraja.' },
+];
+const MASCOT_ITEMS = [
+  { id: 'tumor', n: 'Tumor', at: 10 },
+  { id: 'doppi', n: 'Chust do‘ppisi', at: 30 },
+  { id: 'belbog', n: 'Belbog‘', at: 60 },
+  { id: 'chopon', n: 'Atlas chopon', at: 100 },
+  { id: 'dutor', n: 'Dutor', at: 160 },
+  { id: 'salla', n: 'Bek sallasi', at: 250 },
+  { id: 'aura', n: 'Ko‘kbo‘ri nuri', at: 400 },
 ];
 const MASCOT_COLORS = {
-  firuza: { name: 'Firuza', body: '#2A9D8F', belly: '#CDEFEA', wing: '#1E7A6E', tail: ['#2A9D8F', '#DCAE4A', '#1E7A6E'] },
-  lojuvard: { name: 'Lojuvard', body: '#3D60B0', belly: '#D3DDF6', wing: '#2F4C9A', tail: ['#3D60B0', '#DCAE4A', '#2A9D8F'] },
-  anor: { name: 'Anor', body: '#E2463F', belly: '#FCD9D5', wing: '#B8332D', tail: ['#E2463F', '#DCAE4A', '#B8332D'] },
-  zafaron: { name: 'Za’faron', body: '#E0A93A', belly: '#FDEFCF', wing: '#B98222', tail: ['#E0A93A', '#E2463F', '#2A9D8F'] },
-  binafsha: { name: 'Binafsha', body: '#7C5CC4', belly: '#E6DEF8', wing: '#5B4BB7', tail: ['#7C5CC4', '#DCAE4A', '#E2463F'] },
+  kulrang: { name: 'Kulrang', body: '#8A94A6', dark: '#5E6778', light: '#EEF1F6' },
+  kokbori: { name: 'Ko‘kbo‘ri', body: '#5B7FB8', dark: '#3B5A8F', light: '#DFE8F7' },
+  qongir: { name: 'Qo‘ng‘ir', body: '#A4774E', dark: '#7A5434', light: '#F4E6D3' },
+  qor: { name: 'Qorbo‘ri', body: '#D5DCE6', dark: '#9BA6B7', light: '#FFFFFF' },
+  tun: { name: 'Tun', body: '#454C61', dark: '#2A3042', light: '#C3CAD9' },
 };
+const mascotUnlocked = (xp) => MASCOT_ITEMS.filter((it) => xp >= it.at).map((it) => it.id);
+const mascotWorn = (m) => { const un = mascotUnlocked(m.xp); return Array.isArray(m.wear) ? m.wear.filter((w) => un.includes(w)) : un; };
 let mascotDb = {};
 try { mascotDb = JSON.parse(localStorage.getItem(MASCOT_KEY) || '{}') || {}; } catch { /* server */ }
 const mascotListeners = new Set();
@@ -41736,7 +41749,7 @@ const mascotEventListeners = new Set();
 let mascotActiveClass = null;
 function setMascotActiveClass(id) { mascotActiveClass = id || null; }
 function mascotOf(id) {
-  return { name: 'Humo', color: 'firuza', xp: 0, log: [], ...(mascotDb[id] || {}) };
+  return { name: MASCOT_DEFAULT_NAME, color: 'kulrang', xp: 0, log: [], wear: null, ...(mascotDb[id] || {}) };
 }
 function mascotStage(xp) {
   let k = 0;
@@ -41752,9 +41765,9 @@ function mascotSave(id, m) {
 /* ---- Supabase bilan sinxronlash (REMOTE rejimda) ----
    Lokal nusxa darhol yangilanadi (ekran kutmaydi), keyin bazaga yoziladi.
    Internet uzilsa, qo‘shilgan yulduzlar navbatda turadi va keyingi safar yuboriladi. */
-const MASCOT_PENDING_KEY = 'darsplay_mascot_pending_v1';
+const MASCOT_PENDING_KEY = 'darsplay_mascot_pending_v2';
 let mascotRemoteOn = false;
-const mapMascotRow = (r) => ({ name: r.name, color: r.color, xp: r.xp, log: Array.isArray(r.log) ? r.log : [] });
+const mapMascotRow = (r) => ({ name: r.name, color: r.color, xp: r.xp, log: Array.isArray(r.log) ? r.log : [], wear: Array.isArray(r.wear) ? r.wear : null });
 function mascotPending(list) {
   if (list) { try { localStorage.setItem(MASCOT_PENDING_KEY, JSON.stringify(list.slice(-200))); } catch { /* */ } return list; }
   try { return JSON.parse(localStorage.getItem(MASCOT_PENDING_KEY) || '[]') || []; } catch { return []; }
@@ -41787,8 +41800,8 @@ async function mascotRemoteSync(classIds = []) {
     (data || []).forEach((r) => { next[r.class_id] = mapMascotRow(r); });
     for (const id of classIds) {
       const m = local[id];
-      if (!have.has(id) && m && (m.xp > 0 || (m.name && m.name !== 'Humo') || (m.color && m.color !== 'firuza'))) {
-        const row = { class_id: id, name: (m.name || 'Humo').slice(0, 18), color: MASCOT_COLORS[m.color] ? m.color : 'firuza', xp: Math.max(0, m.xp | 0), log: (m.log || []).slice(0, 30) };
+      if (!have.has(id) && m && (m.xp > 0 || (m.name && m.name !== MASCOT_DEFAULT_NAME) || (m.color && m.color !== 'kulrang'))) {
+        const row = { class_id: id, name: (m.name || MASCOT_DEFAULT_NAME).slice(0, 18), color: MASCOT_COLORS[m.color] ? m.color : 'kulrang', xp: Math.max(0, m.xp | 0), log: (m.log || []).slice(0, 30), wear: Array.isArray(m.wear) ? m.wear : null };
         const { error: e2 } = await supabase.from('class_mascots').upsert(row, { onConflict: 'class_id', ignoreDuplicates: true });
         if (!e2) next[id] = mapMascotRow(row);
       }
@@ -41815,9 +41828,9 @@ function mascotUpdate(id, patch) {
   if (REMOTE && mascotRemoteOn) {
     (async () => {
       try {
-        const { data, error } = await supabase.from('class_mascots').update({ name: m.name, color: m.color, updated_at: new Date().toISOString() }).eq('class_id', id).select('class_id');
+        const { data, error } = await supabase.from('class_mascots').update({ name: m.name, color: m.color, wear: Array.isArray(m.wear) ? m.wear : null, updated_at: new Date().toISOString() }).eq('class_id', id).select('class_id');
         if (error) throw error;
-        if (!data?.length) await supabase.from('class_mascots').insert({ class_id: id, name: m.name, color: m.color });
+        if (!data?.length) await supabase.from('class_mascots').insert({ class_id: id, name: m.name, color: m.color, wear: Array.isArray(m.wear) ? m.wear : null });
       } catch (e) { console.warn('Maskot saqlash:', errText(e)); }
     })();
   }
@@ -41836,7 +41849,8 @@ function mascotAdd(id, n, reason, label) {
       .catch(() => { mascotPending([...mascotPending(), { id, n, r: reason }]); });
   }
   const after = mascotStage(xp);
-  mascotEventListeners.forEach((f) => f({ id, n, reason, label, name: m.name, color: m.color, xp, stage: after, levelUp: after > before }));
+  const newItems = MASCOT_ITEMS.filter((it) => m.xp < it.at && xp >= it.at);
+  mascotEventListeners.forEach((f) => f({ id, n, reason, label, name: m.name, color: m.color, xp, wear: mascotWorn({ ...m, xp }), newItems, stage: after, levelUp: after > before }));
 }
 function useMascot(id) {
   const [, set] = useState(0);
@@ -41844,160 +41858,180 @@ function useMascot(id) {
   return mascotOf(id);
 }
 
-/** Humo qushi rasmi (o‘zimiz chizgan SVG). */
-function MascotArt({ stage = 0, color = 'firuza', mood = 'idle', size = 200, className = '' }) {
-  const c = MASCOT_COLORS[color] || MASCOT_COLORS.firuza;
-  const gold = stage >= 6;
-  const bodyFill = gold ? 'url(#mGold)' : c.body;
-  const uid = `m${stage}${color}`;
+/** «Bek» bo‘ri rasmi (o‘zimiz chizgan SVG). wear — kiyilgan buyumlar ro‘yxati. */
+function MascotArt({ stage = 0, color = 'kulrang', mood = 'idle', wear = [], size = 200, className = '', style }) {
+  const c = MASCOT_COLORS[color] || MASCOT_COLORS.kulrang;
+  const w = new Set(wear);
   const happy = mood === 'happy';
-  const eyes = happy ? (
-    <g stroke="#1B2440" strokeWidth="5" strokeLinecap="round" fill="none">
-      <path d="M78 100 q8 -9 16 0" /><path d="M106 100 q8 -9 16 0" />
-    </g>
+  const sleep = stage === 0 && !happy;
+  const sc = [0.64, 0.72, 0.8, 0.87, 0.93, 1, 1, 1][stage] ?? 1;
+  const uid = `w${stage}${color}`;
+  const tailBig = stage >= 4;
+
+  const eyes = sleep ? (
+    <g stroke="#1B2440" strokeWidth="4" strokeLinecap="round" fill="none"><path d="M79 85 q7 6 14 0" /><path d="M107 85 q7 6 14 0" /></g>
+  ) : happy ? (
+    <g stroke="#1B2440" strokeWidth="5" strokeLinecap="round" fill="none"><path d="M79 87 q7 -9 14 0" /><path d="M107 87 q7 -9 14 0" /></g>
   ) : (
-    <g className="dp-mblink" style={{ transformOrigin: '100px 100px' }}>
-      <circle cx="86" cy="100" r="8" fill="#1B2440" /><circle cx="114" cy="100" r="8" fill="#1B2440" />
-      <circle cx="89" cy="97" r="2.8" fill="#fff" /><circle cx="117" cy="97" r="2.8" fill="#fff" />
+    <g className="dp-mblink" style={{ transformOrigin: '100px 84px' }}>
+      <circle cx="86" cy="84" r="7.5" fill="#E9A23B" /><circle cx="114" cy="84" r="7.5" fill="#E9A23B" />
+      <circle cx="86" cy="84" r="5" fill="#1B2440" /><circle cx="114" cy="84" r="5" fill="#1B2440" />
+      <circle cx="88.2" cy="81.5" r="2" fill="#fff" /><circle cx="116.2" cy="81.5" r="2" fill="#fff" />
     </g>
   );
-  const beak = <path d="M93 110 L107 110 L100 120 Z" fill="#F2A33A" stroke="#C9781C" strokeWidth="1.5" strokeLinejoin="round" />;
-  const blush = <g fill="#F28B82" opacity=".55"><ellipse cx="74" cy="114" rx="7" ry="4" /><ellipse cx="126" cy="114" rx="7" ry="4" /></g>;
-
-  if (stage === 0) {
-    return (
-      <svg viewBox="0 0 200 200" width={size} height={size} className={className} aria-hidden="true">
-        <ellipse cx="100" cy="182" rx="46" ry="8" fill="rgba(0,0,0,.18)" />
-        <g className="dp-mwobble" style={{ transformOrigin: '100px 175px' }}>
-          <path d="M100 30 C140 30 160 95 160 125 C160 160 134 180 100 180 C66 180 40 160 40 125 C40 95 60 30 100 30 Z" fill="#FBF3E2" stroke="#E2D7C2" strokeWidth="3" />
-          {[[78, 80], [120, 72], [100, 110], [70, 135], [130, 130], [100, 158]].map(([x, y], i) => (
-            <g key={i} transform={`translate(${x} ${y})`} fill={c.body} opacity=".8">
-              <path d="M0 -9 L3 -3 L9 0 L3 3 L0 9 L-3 3 L-9 0 L-3 -3 Z" />
-            </g>
-          ))}
-          <path d="M60 60 q10 -18 30 -24" stroke="#fff" strokeWidth="6" strokeLinecap="round" fill="none" opacity=".8" />
-        </g>
-      </svg>
-    );
-  }
-
-  const r = stage === 1 ? 40 : stage === 2 ? 46 : 50;
-  const ry = stage <= 2 ? r : r + 6;
-  const cy = stage === 1 ? 112 : 116;
-  const nTail = stage >= 5 ? 7 : stage === 4 ? 5 : stage === 3 ? 3 : 0;
-  const tailLen = stage >= 5 ? 92 : stage === 4 ? 70 : 52;
-  const wingUp = stage >= 5 ? -60 : stage === 4 ? -30 : 0;
-  const wingS = stage >= 5 ? 1.5 : stage === 4 ? 1.25 : stage === 3 ? 1.05 : 0.8;
 
   return (
-    <svg viewBox="0 0 200 200" width={size} height={size} className={className} aria-hidden="true" style={{ overflow: 'visible' }}>
+    <svg viewBox="0 0 200 200" width={size} height={size} className={className} style={{ overflow: 'visible', ...style }} aria-hidden="true">
       <defs>
-        <linearGradient id="mGold" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#F7D774" /><stop offset=".55" stopColor="#E0A93A" /><stop offset="1" stopColor="#B98222" />
-        </linearGradient>
-        <radialGradient id={`${uid}r`}><stop offset="0" stopColor="#F7D774" stopOpacity=".9" /><stop offset="1" stopColor="#F7D774" stopOpacity="0" /></radialGradient>
+        <pattern id={`${uid}ikat`} width="16" height="24" patternUnits="userSpaceOnUse">
+          <rect width="16" height="24" fill="#1E4E9C" />
+          <path d="M0 0 L4 6 L0 12 L4 18 L0 24 L8 24 L12 18 L8 12 L12 6 L8 0 Z" fill="#E2463F" />
+          <path d="M8 0 L12 6 L8 12 L12 18 L8 24 L16 24 L16 0 Z" fill="#F2C14E" />
+          <path d="M3 4 L5 6 L3 8 Z M11 16 L13 18 L11 20 Z" fill="#fff" opacity=".8" />
+        </pattern>
+        <radialGradient id={`${uid}aura`}><stop offset="0" stopColor="#7FB2FF" stopOpacity=".85" /><stop offset="1" stopColor="#7FB2FF" stopOpacity="0" /></radialGradient>
+        <radialGradient id={`${uid}gold`}><stop offset="0" stopColor="#F7D774" stopOpacity=".8" /><stop offset="1" stopColor="#F7D774" stopOpacity="0" /></radialGradient>
       </defs>
-      {stage >= 6 && (
-        <g className="dp-spin-slow" style={{ transformOrigin: '100px 110px', animationDuration: '30s' }}>
-          <circle cx="100" cy="110" r="96" fill={`url(#${uid}r)`} />
-          {Array.from({ length: 12 }, (_, k) => (
-            <path key={k} d="M100 110 L94 10 L106 10 Z" fill="#F7D774" opacity=".35" transform={`rotate(${k * 30} 100 110)`} />
-          ))}
+
+      {/* orqa nur: Bek — oltin, Ko‘kbo‘ri — ko‘k nur, oy va yulduzlar */}
+      {stage >= 6 && !w.has('aura') && <circle cx="100" cy="112" r="92" fill={`url(#${uid}gold)`} />}
+      {w.has('aura') && (
+        <g>
+          <circle cx="100" cy="108" r="98" fill={`url(#${uid}aura)`} />
+          <path d="M150 22 a22 22 0 1 0 18 34 a17 17 0 1 1 -18 -34 Z" fill="#F7D774" opacity=".9" />
+          <g className="dp-spin-slow" style={{ transformOrigin: '100px 110px', animationDuration: '20s' }}>
+            {Array.from({ length: 8 }, (_, k) => {
+              const a = (k / 8) * Math.PI * 2;
+              return <path key={k} transform={`translate(${100 + Math.cos(a) * 94} ${112 + Math.sin(a) * 40})`} d="M0 -7 L2 -2 L7 0 L2 2 L0 7 L-2 2 L-7 0 L-2 -2 Z" fill="#DCEBFF" />;
+            })}
+          </g>
         </g>
       )}
-      <ellipse cx="100" cy="188" rx={r} ry="7" fill="rgba(0,0,0,.18)" />
-      <g className={happy ? 'dp-mjump' : 'dp-mbob'}>
-        {/* dum patlari (orqada, yelpig‘ich) */}
-        {nTail > 0 && Array.from({ length: nTail }, (_, k) => {
-          const ang = -70 + (140 / (nTail - 1)) * k;
-          const col = c.tail[k % c.tail.length];
-          return (
-            <g key={k} transform={`rotate(${ang} 100 ${cy})`}>
-              <path d={`M100 ${cy} C ${88} ${cy - tailLen * 0.5}, ${90} ${cy - tailLen}, 100 ${cy - tailLen - 8} C ${110} ${cy - tailLen}, ${112} ${cy - tailLen * 0.5}, 100 ${cy} Z`} fill={gold ? 'url(#mGold)' : col} stroke="rgba(0,0,0,.12)" strokeWidth="1.5" />
-              {stage >= 5 && <><circle cx="100" cy={cy - tailLen + 6} r="7" fill="#FBF3E2" /><circle cx="100" cy={cy - tailLen + 6} r="4" fill={c.wing} /></>}
-            </g>
-          );
-        })}
-        {/* qanotlar */}
-        {stage >= 2 && [-1, 1].map((sd) => (
-          <g key={sd} transform={`translate(${100 + sd * (r - 6)} ${cy + 4}) rotate(${sd * (20 - wingUp)}) scale(${sd * wingS} ${wingS})`}>
-            <g className={happy ? 'dp-mflap' : ''}>
-              <path d="M0 0 C 18 -6, 30 6, 30 22 C 22 20, 22 28, 14 26 C 10 32, 4 28, 0 22 Z" fill={gold ? 'url(#mGold)' : c.wing} stroke="rgba(0,0,0,.15)" strokeWidth="1.5" />
-            </g>
+
+      <ellipse cx="100" cy="190" rx={60 * sc} ry="7" fill="rgba(0,0,0,.18)" />
+      <g transform={`translate(${100 - 100 * sc} ${190 - 190 * sc}) scale(${sc})`}>
+        <g className={happy ? 'dp-mjump' : sleep ? '' : 'dp-mbob'}>
+          {/* dum */}
+          <g className={happy ? 'dp-mwag' : ''} style={{ transformOrigin: '136px 172px' }}>
+            <path d={tailBig ? 'M132 178 C176 182, 196 136, 174 98 C170 124, 158 144, 130 150 Z' : 'M132 178 C166 180, 182 146, 166 116 C160 136, 150 148, 130 152 Z'} fill={c.body} stroke={c.dark} strokeWidth="2" />
+            <path d={tailBig ? 'M174 98 C186 120, 182 140, 170 152 C172 134, 170 116, 174 98 Z' : 'M166 116 C176 132, 174 146, 164 156 C166 142, 165 128, 166 116 Z'} fill={c.light} />
           </g>
-        ))}
-        {/* oyoqlar */}
-        <g fill="#F2A33A" stroke="#C9781C" strokeWidth="1.5">
-          <ellipse cx="86" cy={cy + ry - 2} rx="9" ry="5" /><ellipse cx="114" cy={cy + ry - 2} rx="9" ry="5" />
+          {/* tana */}
+          <path d="M60 186 C50 158, 62 122, 100 118 C138 122, 150 158, 140 186 Z" fill={c.body} stroke={c.dark} strokeWidth="2" />
+          <path d="M78 142 L86 133 L93 142 L100 131 L107 142 L114 133 L122 142 C127 160 127 176 125 186 L75 186 C73 176 73 160 78 142 Z" fill={c.light} />
+          {/* chopon (atlas) */}
+          {w.has('chopon') && (
+            <g>
+              <path d="M58 186 C48 158, 60 122, 94 118 L88 186 Z" fill={`url(#${uid}ikat)`} stroke="#B98222" strokeWidth="2.5" />
+              <path d="M142 186 C152 158, 140 122, 106 118 L112 186 Z" fill={`url(#${uid}ikat)`} stroke="#B98222" strokeWidth="2.5" />
+              <path d="M94 118 L88 186 M106 118 L112 186" stroke="#F2C14E" strokeWidth="4" />
+            </g>
+          )}
+          {/* belbog‘ */}
+          {w.has('belbog') && (
+            <g>
+              <path d="M57 156 Q100 168 143 156 L144 168 Q100 180 56 168 Z" fill="#C8302A" />
+              <path d="M57 162 Q100 174 143 162" stroke="#F2C14E" strokeWidth="2" strokeDasharray="5 4" fill="none" />
+              <path d="M112 168 l-4 20 l7 -3 l3 4 l2 -21 Z" fill="#C8302A" />
+              <path d="M120 167 l6 18 l5 -5 l4 2 l-6 -17 Z" fill="#A9241F" />
+            </g>
+          )}
+          {/* oyoqlar */}
+          <g fill={c.light} stroke={c.dark} strokeWidth="2">
+            <ellipse cx="84" cy="184" rx="13" ry="8" /><ellipse cx="116" cy="184" rx="13" ry="8" />
+          </g>
+          <g stroke={c.dark} strokeWidth="1.6" strokeLinecap="round"><path d="M80 182 v5 M86 182 v5 M112 182 v5 M118 182 v5" /></g>
+          {/* tumor */}
+          {w.has('tumor') && (
+            <g>
+              <path d="M76 120 Q100 136 124 120" stroke="#7A4A22" strokeWidth="2.5" fill="none" />
+              <path d="M92 128 L108 128 L100 144 Z" fill="#C8302A" stroke="#F2C14E" strokeWidth="2" strokeLinejoin="round" />
+              <circle cx="100" cy="134" r="2.6" fill="#F2C14E" />
+            </g>
+          )}
+          {/* quloqlar */}
+          <path d="M64 70 L66 26 L92 52 Z" fill={c.body} stroke={c.dark} strokeWidth="2" strokeLinejoin="round" />
+          <path d="M136 70 L134 26 L108 52 Z" fill={c.body} stroke={c.dark} strokeWidth="2" strokeLinejoin="round" />
+          <path d="M70 62 L70 38 L85 53 Z" fill="#F4B7B0" />
+          <path d="M130 62 L130 38 L115 53 Z" fill="#F4B7B0" />
+          {/* bosh */}
+          <path d="M58 88 C56 60, 76 44, 100 44 C124 44, 144 60, 142 88 L152 98 L139 100 L144 111 L128 108 C120 118, 80 118, 72 108 L56 111 L61 100 L48 98 Z" fill={c.body} stroke={c.dark} strokeWidth="2" strokeLinejoin="round" />
+          <path d="M74 88 C74 72, 92 68, 100 78 C108 68, 126 72, 126 88 C126 104, 112 113, 100 113 C88 113, 74 104, 74 88 Z" fill={c.light} />
+          <path d="M100 50 L106 62 L100 74 L94 62 Z" fill={c.dark} opacity=".8" />
+          {eyes}
+          <ellipse cx="100" cy="101" rx="14" ry="10" fill="#FFF8EE" />
+          <path d="M93 96 Q100 93 107 96 Q104 102 100 103 Q96 102 93 96 Z" fill="#1B2440" />
+          {happy || stage === 0 ? (
+            <path d="M93 105 Q100 113 107 105 Q100 108 93 105 Z" fill="#E2665F" stroke="#1B2440" strokeWidth="1.5" />
+          ) : (
+            <path d="M100 103 v3 M100 106 q-5 4 -9 1 M100 106 q5 4 9 1" stroke="#1B2440" strokeWidth="2" strokeLinecap="round" fill="none" />
+          )}
+          <g fill="#F28B82" opacity=".5"><ellipse cx="74" cy="100" rx="6" ry="3.5" /><ellipse cx="126" cy="100" rx="6" ry="3.5" /></g>
+          {/* do‘ppi yoki salla */}
+          {w.has('salla') ? (
+            <g transform="translate(100 50)">
+              <path d="M0 -8 C 6 -22, 20 -30, 28 -40 C 22 -26, 12 -16, 4 -6 Z" fill="#F2C14E" stroke="#B98222" strokeWidth="1.5" />
+              <path d="M-36 10 C -38 -14, -18 -22, 0 -22 C 18 -22, 38 -14, 36 10 Q 0 20 -36 10 Z" fill="#FBF7EF" stroke="#D8CBB2" strokeWidth="2" />
+              <path d="M-30 -4 Q 0 -14 30 -4 M-34 4 Q 0 -6 34 4" stroke="#D8CBB2" strokeWidth="2" fill="none" />
+              <path d="M-36 10 Q 0 20 36 10 L 35 4 Q 0 14 -35 4 Z" fill="#F2C14E" />
+              <circle cx="0" cy="-6" r="5" fill="#C8302A" stroke="#F2C14E" strokeWidth="2" />
+            </g>
+          ) : w.has('doppi') && (
+            <g transform="translate(100 52)">
+              <path d="M-25 10 L-21 -10 Q0 -17 21 -10 L25 10 Q0 15 -25 10 Z" fill="#1B2440" />
+              <path d="M-25 10 Q0 15 25 10" stroke="#F4EEE2" strokeWidth="2" fill="none" />
+              {[-12, 0, 12].map((x) => <path key={x} d={`M${x} -6 c 4 2 4 8 0 10 c -2 -2 -4 -6 0 -10 Z`} fill="#F4EEE2" />)}
+            </g>
+          )}
+          {/* dutor */}
+          {w.has('dutor') && (
+            <g transform="translate(146 166) rotate(26)">
+              <rect x="-2.5" y="-92" width="5" height="80" rx="2" fill="#8B5A2B" />
+              {[-84, -70, -56, -42, -28].map((y) => <rect key={y} x="-3.5" y={y} width="7" height="1.6" fill="#F2C14E" />)}
+              <rect x="-4" y="-102" width="8" height="12" rx="2" fill="#6B4220" />
+              <circle cx="-6" cy="-98" r="2.2" fill="#F2C14E" /><circle cx="6" cy="-96" r="2.2" fill="#F2C14E" />
+              <ellipse cx="0" cy="0" rx="14" ry="18" fill="#C27C3A" stroke="#7A4A22" strokeWidth="2" />
+              <ellipse cx="0" cy="2" rx="8" ry="11" fill="#A6652B" />
+              <path d="M-1 -92 V12 M1 -92 V12" stroke="#FBF7EF" strokeWidth=".8" />
+            </g>
+          )}
+          {sleep && (
+            <g fill="#9FB3D9" fontWeight="900" fontFamily="system-ui">
+              <text x="136" y="50" fontSize="18" className="dp-zzz">z</text>
+              <text x="150" y="34" fontSize="24" className="dp-zzz" style={{ animationDelay: '.6s' }}>z</text>
+            </g>
+          )}
         </g>
-        {/* tana */}
-        <ellipse cx="100" cy={cy} rx={r} ry={ry} fill={bodyFill} />
-        <ellipse cx="100" cy={cy + ry * 0.35} rx={r * 0.66} ry={ry * 0.55} fill={c.belly} opacity={gold ? 0.75 : 1} />
-        <path d={`M${100 - r * 0.6} ${cy - ry * 0.55} q ${r * 0.25} -${ry * 0.3} ${r * 0.55} -${ry * 0.32}`} stroke="#fff" strokeWidth="5" strokeLinecap="round" fill="none" opacity=".45" />
-        {/* tojli patlar */}
-        {stage === 4 && (
-          <g fill={c.wing}>
-            <path d={`M100 ${cy - ry + 4} C 92 ${cy - ry - 18}, 98 ${cy - ry - 26}, 100 ${cy - ry - 28} C 102 ${cy - ry - 26}, 108 ${cy - ry - 18}, 100 ${cy - ry + 4} Z`} />
-            <path d={`M96 ${cy - ry + 6} C 82 ${cy - ry - 8}, 84 ${cy - ry - 16}, 86 ${cy - ry - 18} C 90 ${cy - ry - 12}, 96 ${cy - ry - 4}, 96 ${cy - ry + 6} Z`} />
-            <path d={`M104 ${cy - ry + 6} C 118 ${cy - ry - 8}, 116 ${cy - ry - 16}, 114 ${cy - ry - 18} C 110 ${cy - ry - 12}, 104 ${cy - ry - 4}, 104 ${cy - ry + 6} Z`} />
-          </g>
-        )}
-        {stage === 1 && (
-          <g>
-            <path d="M52 128 L64 118 L74 130 L86 116 L100 130 L114 116 L126 130 L136 118 L148 128 L148 150 C148 176 128 190 100 190 C72 190 52 176 52 150 Z" fill="#FBF3E2" stroke="#E2D7C2" strokeWidth="3" />
-            <path d="M74 74 L84 64 L94 74 L104 62 L114 74 L126 66 L128 80 C 116 70, 86 70, 72 82 Z" fill="#FBF3E2" stroke="#E2D7C2" strokeWidth="2.5" />
-          </g>
-        )}
-        {eyes}
-        {beak}
-        {blush}
-        {/* belbog‘ */}
-        {stage >= 4 && (
-          <g>
-            <path d={`M${100 - r * 0.86} ${cy + 18} Q 100 ${cy + 30} ${100 + r * 0.86} ${cy + 18} L ${100 + r * 0.82} ${cy + 28} Q 100 ${cy + 40} ${100 - r * 0.82} ${cy + 28} Z`} fill="#E2463F" />
-            <path d={`M${100 - r * 0.84} ${cy + 23} Q 100 ${cy + 35} ${100 + r * 0.84} ${cy + 23}`} stroke="#DCAE4A" strokeWidth="2" strokeDasharray="4 4" fill="none" />
-            <path d={`M${100 + r * 0.55} ${cy + 30} l 6 22 l 6 -4 l -2 -18 Z`} fill="#E2463F" />
-          </g>
-        )}
-        {/* do‘ppi (3–4-daraja) */}
-        {(stage === 3 || stage === 4) && (
-          <g transform={`translate(0 ${cy - ry - 2})`}>
-            <path d="M74 14 L78 -6 Q100 -14 122 -6 L126 14 Q100 20 74 14 Z" fill="#1B2440" />
-            <path d="M74 14 Q100 20 126 14" stroke="#F4EEE2" strokeWidth="2" fill="none" />
-            {[86, 100, 114].map((x) => (
-              <path key={x} d={`M${x} 0 c 4 2 4 8 0 10 c -2 -2 -4 -6 0 -10 Z`} fill="#F4EEE2" />
-            ))}
-          </g>
-        )}
-        {/* toj (5+) */}
-        {stage >= 5 && (
-          <g transform={`translate(0 ${cy - ry - 4})`}>
-            <path d="M78 14 L80 -10 L90 2 L100 -16 L110 2 L120 -10 L122 14 Z" fill="#F7D774" stroke="#B98222" strokeWidth="2" strokeLinejoin="round" />
-            <circle cx="100" cy="4" r="4" fill="#E2463F" /><circle cx="86" cy="8" r="3" fill="#2A9D8F" /><circle cx="114" cy="8" r="3" fill="#2A9D8F" />
-          </g>
-        )}
       </g>
-      {stage >= 7 && (
-        <g className="dp-spin-slow" style={{ transformOrigin: '100px 110px', animationDuration: '18s' }}>
-          {Array.from({ length: 8 }, (_, k) => {
-            const a = (k / 8) * Math.PI * 2;
-            return <path key={k} transform={`translate(${100 + Math.cos(a) * 92} ${110 + Math.sin(a) * 38})`} d="M0 -8 L2.4 -2.4 L8 0 L2.4 2.4 L0 8 L-2.4 2.4 L-8 0 L-2.4 -2.4 Z" fill="#F7D774" />;
-          })}
-        </g>
-      )}
     </svg>
   );
 }
 
+/** Buyum belgisi (sovg‘alar panelida). */
+function MascotItemIcon({ id, size = 34 }) {
+  const box = { width: size, height: size };
+  const icons = {
+    tumor: <><path d="M6 6 Q20 16 34 6" stroke="#7A4A22" strokeWidth="2.5" fill="none" /><path d="M12 14 L28 14 L20 32 Z" fill="#C8302A" stroke="#F2C14E" strokeWidth="2" /></>,
+    doppi: <><path d="M5 30 L9 10 Q20 4 31 10 L35 30 Q20 34 5 30 Z" fill="#1B2440" />{[12, 20, 28].map((x) => <path key={x} d={`M${x} 14 c 3 2 3 7 0 9 c -2 -2 -3 -6 0 -9 Z`} fill="#F4EEE2" />)}</>,
+    belbog: <><path d="M3 14 Q20 20 37 14 L37 24 Q20 30 3 24 Z" fill="#C8302A" /><path d="M24 26 l-2 12 l5 -2 l2 -10 Z" fill="#C8302A" /></>,
+    chopon: <><path d="M8 36 L6 10 Q20 2 34 10 L32 36 Z" fill="#1E4E9C" /><path d="M12 36 L14 8 M28 36 L26 8" stroke="#F2C14E" strokeWidth="3" /><path d="M16 36 L18 10 L22 10 L24 36 Z" fill="#E2463F" /></>,
+    dutor: <g transform="translate(20 22) rotate(30)"><rect x="-1.5" y="-20" width="3" height="18" fill="#8B5A2B" /><ellipse cx="0" cy="4" rx="7" ry="9" fill="#C27C3A" /></g>,
+    salla: <><path d="M4 26 C2 8, 38 8, 36 26 Q20 32 4 26 Z" fill="#FBF7EF" stroke="#D8CBB2" strokeWidth="2" /><path d="M20 14 C24 6, 30 4, 34 0" stroke="#F2C14E" strokeWidth="3" fill="none" /><circle cx="20" cy="16" r="3.5" fill="#C8302A" /></>,
+    aura: <><circle cx="20" cy="20" r="16" fill="#7FB2FF" opacity=".5" /><path d="M24 6 a10 10 0 1 0 8 16 a8 8 0 1 1 -8 -16 Z" fill="#F7D774" /></>,
+  };
+  return <svg viewBox="0 0 40 40" style={box} aria-hidden="true">{icons[id]}</svg>;
+}
+
 /** Kichik maskot kartochkasi (bosh sahifa uchun). */
-function MascotThumb({ cls, onOpen }) {
+function MascotThumb({ cls, onOpen, rank }) {
   const m = useMascot(cls.id);
   const st = mascotStage(m.xp);
   const next = MASCOT_STAGES[st + 1];
   const pct = next ? ((m.xp - MASCOT_STAGES[st].at) / (next.at - MASCOT_STAGES[st].at)) * 100 : 100;
   return (
-    <button onClick={() => onOpen(cls)} className="dp-sticker dp-sticker-hover group rounded-2xl bg-paper p-3 text-left">
-      <div className="flex justify-center"><MascotArt stage={st} color={m.color} size={88} className="transition group-hover:scale-110" /></div>
+    <button onClick={() => onOpen(cls)} className="dp-sticker dp-sticker-hover group relative rounded-2xl bg-paper p-3 text-left">
+      {rank != null && rank < 3 && m.xp > 0 && <span className="absolute left-2 top-2 text-xl">{['🥇', '🥈', '🥉'][rank]}</span>}
+      <div className="flex justify-center"><MascotArt stage={st} color={m.color} wear={mascotWorn(m)} size={92} className="transition group-hover:scale-110" /></div>
       <div className="mt-1 truncate text-base font-black text-ink">{classLabel(cls)} • {m.name}</div>
       <div className="truncate text-xs font-bold text-slate-500">{MASCOT_STAGES[st].n}</div>
       <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-line"><div className="h-full rounded-full bg-amber-400" style={{ width: `${pct}%` }} /></div>
@@ -42006,13 +42040,14 @@ function MascotThumb({ cls, onOpen }) {
   );
 }
 
-/** Maskot sahnasi — proyektor uchun katta ekran. */
+/** Maskot sahnasi — proyektor uchun bitta ekranga sig‘adigan katta sahna. */
 function MascotStage({ cls, classes = [], onClose }) {
   const m = useMascot(cls.id);
   const st = mascotStage(m.xp);
   const cur = MASCOT_STAGES[st];
   const next = MASCOT_STAGES[st + 1];
   const pct = next ? ((m.xp - cur.at) / (next.at - cur.at)) * 100 : 100;
+  const worn = mascotWorn(m);
   const [mood, setMood] = useState('idle');
   const [editing, setEditing] = useState(false);
   const [name, setName] = useState(m.name);
@@ -42024,43 +42059,77 @@ function MascotStage({ cls, classes = [], onClose }) {
     const prev = document.body.style.overflow; document.body.style.overflow = 'hidden';
     return () => { window.removeEventListener('keydown', h); document.body.style.overflow = prev; };
   }, [onClose, editing]);
-  const cheer = (n) => {
-    mascotAdd(cls.id, n, 'Ustoz rag‘bati', 'silent');
-    setMood('happy'); playSound('correct');
-    clearTimeout(moodT.current); moodT.current = setTimeout(() => setMood('idle'), 1400);
+  const joy = (ms = 1400) => { setMood('happy'); clearTimeout(moodT.current); moodT.current = setTimeout(() => setMood('idle'), ms); };
+  const cheer = (n) => { mascotAdd(cls.id, n, 'Ustoz rag‘bati', 'silent'); playSound('correct'); joy(); };
+  const pet = () => { playSound('flip'); joy(1200); };
+  const toggleWear = (id) => {
+    const set = new Set(worn);
+    if (set.has(id)) set.delete(id); else set.add(id);
+    mascotUpdate(cls.id, { wear: [...set] });
+    joy(900);
   };
-  const pet = () => { setMood('happy'); playSound('flip'); clearTimeout(moodT.current); moodT.current = setTimeout(() => setMood('idle'), 1200); };
-  const ranking = classes.map((c) => ({ c, xp: mascotOf(c.id).xp })).sort((a, b) => b.xp - a.xp).slice(0, 6);
-  const gifts = MASCOT_STAGES.filter((s) => s.gift);
-  const ago = (t) => { const d = Math.round((Date.now() - t) / 60000); return d < 1 ? 'hozir' : d < 60 ? `${d} daq oldin` : d < 1440 ? `${Math.round(d / 60)} soat oldin` : `${Math.round(d / 1440)} kun oldin`; };
+  const ranking = classes.map((c) => ({ c, m: mascotOf(c.id) })).sort((a, b) => b.m.xp - a.m.xp);
+  const ago = (t) => { const d = Math.round((Date.now() - t) / 60000); return d < 1 ? 'hozir' : d < 60 ? `${d} daq` : d < 1440 ? `${Math.round(d / 60)} soat` : `${Math.round(d / 1440)} kun`; };
+  const panel = 'rounded-[1.6rem] bg-white/10 p-4 ring-1 ring-white/15 backdrop-blur';
 
   return (
-    <div role="dialog" aria-modal="true" aria-label="Sinf maskoti" className="fixed inset-0 z-[80] overflow-y-auto bg-ink text-white">
+    <div role="dialog" aria-modal="true" aria-label="Sinf maskoti" className="fixed inset-0 z-[80] overflow-y-auto bg-ink text-white lg:overflow-hidden">
       <div className="pointer-events-none fixed inset-0">
-        <div className="absolute -left-40 -top-40 h-[36rem] w-[36rem] rounded-full blur-3xl" style={{ background: `${(MASCOT_COLORS[m.color] || MASCOT_COLORS.firuza).body}55` }} />
+        <div className="absolute -left-40 -top-40 h-[36rem] w-[36rem] rounded-full blur-3xl" style={{ background: `${(MASCOT_COLORS[m.color] || MASCOT_COLORS.kulrang).body}55` }} />
         <div className="absolute -bottom-48 -right-32 h-[34rem] w-[34rem] rounded-full bg-amber-400/20 blur-3xl" />
         <div className="dp-girih absolute inset-0 opacity-20" />
       </div>
-      <div className="relative mx-auto flex min-h-full max-w-7xl flex-col px-4 py-5 md:px-8">
+      <div className="relative mx-auto flex min-h-full max-w-[1500px] flex-col px-4 py-4 md:px-6 lg:h-full">
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-400 text-2xl">🕊️</span>
+            <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-amber-400 text-2xl">🐺</span>
             <div>
               <div className="text-2xl font-black">{classLabel(cls)} sinf maskoti</div>
-              <div className="text-sm font-semibold text-blue-100">To‘g‘ri javoblar, tinchlik va rag‘bat — qushni o‘stiradi</div>
+              <div className="text-sm font-semibold text-blue-100">To‘g‘ri javob • tinchlik • rag‘bat → yulduz → yangi daraja va milliy kiyimlar</div>
             </div>
           </div>
           <button onClick={onClose} aria-label="Yopish" className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 ring-1 ring-white/15 hover:bg-white/20"><X size={26} /></button>
         </div>
 
-        <div className="mt-6 grid flex-1 items-center gap-8 lg:grid-cols-[1.2fr_1fr]">
-          <div className="flex flex-col items-center">
-            <button onClick={pet} aria-label="Maskotni erkalash" className="relative" title="Bosing — maskot quvonadi">
-              <MascotArt stage={st} color={m.color} mood={mood} size={420} className="max-w-[80vw] drop-shadow-[0_30px_40px_rgba(0,0,0,.35)]" />
+        <div className="mt-4 grid min-h-0 flex-1 gap-4 lg:grid-cols-[290px_minmax(0,1fr)_400px]">
+          {/* Chap: poyga va so‘nggi yulduzlar */}
+          <div className="order-3 flex min-h-0 flex-col gap-4 lg:order-1">
+            <div className={`${panel} flex min-h-0 flex-1 flex-col`}>
+              <div className="dp-kicker text-amber-300">Maskotlar poygasi</div>
+              <ol className="mt-2 min-h-0 flex-1 space-y-1.5 overflow-y-auto pr-1">
+                {ranking.map(({ c, m: mm }, i) => (
+                  <li key={c.id} className={`flex items-center gap-2 rounded-xl px-2 py-1.5 ${c.id === cls.id ? 'bg-amber-400/25 ring-1 ring-amber-300/50' : 'bg-white/5'}`}>
+                    <span className="w-7 text-center text-lg font-black">{i < 3 && mm.xp > 0 ? ['🥇', '🥈', '🥉'][i] : i + 1}</span>
+                    <MascotArt stage={mascotStage(mm.xp)} color={mm.color} wear={mascotWorn(mm)} size={38} />
+                    <span className="min-w-0 flex-1 truncate text-sm font-black">{classLabel(c)} • {mm.name}</span>
+                    <span className="text-sm font-black text-amber-300">⭐{mm.xp}</span>
+                  </li>
+                ))}
+                {ranking.length <= 1 && <li className="text-sm text-blue-200">Boshqa sinflar qo‘shilsa, poyga shu yerda ko‘rinadi.</li>}
+              </ol>
+            </div>
+            <div className={panel}>
+              <div className="dp-kicker text-amber-300">So‘nggi yulduzlar</div>
+              <ul className="mt-2 space-y-1">
+                {(m.log || []).slice(0, 4).map((l, i) => (
+                  <li key={i} className="flex items-center justify-between gap-2 text-sm">
+                    <span className="truncate font-semibold">{l.r}</span>
+                    <span className={`shrink-0 font-black ${l.n > 0 ? 'text-amber-300' : 'text-anor-400'}`}>{l.n > 0 ? '+' : ''}{l.n}⭐ <span className="font-semibold text-blue-200">{ago(l.t)}</span></span>
+                  </li>
+                ))}
+                {!(m.log || []).length && <li className="text-sm text-blue-200">Hali yulduz yo‘q. Birinchi o‘yinni o‘ynang!</li>}
+              </ul>
+            </div>
+          </div>
+
+          {/* O‘rta: bo‘ri */}
+          <div className="order-1 flex min-h-0 flex-col items-center justify-center lg:order-2">
+            <button onClick={pet} aria-label="Maskotni erkalash" title="Bosing — Bek quvonadi" className="flex min-h-0 w-full flex-1 items-center justify-center">
+              <MascotArt stage={st} color={m.color} mood={mood} wear={worn} size={null} className="h-auto w-[min(100%,52vh,460px)] drop-shadow-[0_30px_40px_rgba(0,0,0,.35)]" />
             </button>
-            <div className="mt-2 flex items-center gap-3">
+            <div className="mt-1 flex items-center gap-3">
               {editing ? (
-                <form onSubmit={(e) => { e.preventDefault(); const v = name.trim().slice(0, 18) || 'Humo'; mascotUpdate(cls.id, { name: v }); setName(v); setEditing(false); }} className="flex gap-2">
+                <form onSubmit={(e) => { e.preventDefault(); const v = name.trim().slice(0, 18) || MASCOT_DEFAULT_NAME; mascotUpdate(cls.id, { name: v }); setName(v); setEditing(false); }} className="flex gap-2">
                   <input autoFocus value={name} onChange={(e) => setName(e.target.value)} maxLength={18} className="w-56 rounded-xl bg-white px-3 py-2 text-2xl font-black text-ink outline-none" />
                   <button className="rounded-xl bg-amber-400 px-4 text-lg font-black text-ink">Saqlash</button>
                 </form>
@@ -42072,76 +42141,53 @@ function MascotStage({ cls, classes = [], onClose }) {
               )}
             </div>
             <div className="mt-2 rounded-full bg-amber-400 px-4 py-1.5 text-lg font-black text-ink">{st + 1}-daraja • {cur.n}</div>
-            <p className="mt-2 max-w-md text-center text-lg font-semibold text-blue-100">{cur.hint}</p>
+            <p className="mt-1.5 max-w-md text-center text-base font-semibold text-blue-100">{cur.hint}</p>
           </div>
 
-          <div className="space-y-5">
-            <div className="rounded-[1.8rem] bg-white/10 p-5 ring-1 ring-white/15 backdrop-blur">
+          {/* O‘ng: yulduzlar, kiyimlar, rang */}
+          <div className="order-2 flex min-h-0 flex-col gap-4 lg:order-3">
+            <div className={panel}>
               <div className="flex items-end justify-between">
-                <div><div className="dp-kicker text-amber-300">Yulduzlar</div><div className="text-6xl font-black tabular-nums text-amber-300">⭐ {m.xp}</div></div>
-                {next && <div className="text-right text-base font-bold text-blue-100">Keyingi: <b className="text-white">{next.n}</b><br />yana {next.at - m.xp} ⭐</div>}
+                <div><div className="dp-kicker text-amber-300">Yulduzlar</div><div className="text-5xl font-black tabular-nums text-amber-300">⭐ {m.xp}</div></div>
+                {next ? <div className="text-right text-sm font-bold text-blue-100">Keyingi: <b className="text-white">{next.n}</b><br />yana {next.at - m.xp} ⭐</div> : <div className="text-lg font-black text-amber-300">Eng yuqori! 🏆</div>}
               </div>
-              <div className="mt-4 h-5 overflow-hidden rounded-full bg-white/15">
+              <div className="mt-3 h-4 overflow-hidden rounded-full bg-white/15">
                 <div className="h-full rounded-full bg-gradient-to-r from-amber-300 to-amber-500 transition-[width] duration-700" style={{ width: `${pct}%` }} />
               </div>
-              {!next && <div className="mt-2 text-lg font-black text-amber-300">Eng yuqori daraja! 🏆</div>}
-              <div className="mt-4 flex flex-wrap gap-2">
-                <button onClick={() => cheer(1)} className="dp-btn rounded-2xl bg-amber-400 px-5 py-3 text-xl font-black text-ink hover:bg-amber-300">+1 ⭐</button>
-                <button onClick={() => cheer(5)} className="dp-btn rounded-2xl bg-amber-400 px-5 py-3 text-xl font-black text-ink hover:bg-amber-300">+5 ⭐</button>
-                <button onClick={() => mascotAdd(cls.id, -1, 'Tuzatish', 'silent')} disabled={!m.xp} className="rounded-2xl bg-white/10 px-4 py-3 text-lg font-black ring-1 ring-white/15 hover:bg-white/20 disabled:opacity-40">−1</button>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <button onClick={() => cheer(1)} className="dp-btn rounded-2xl bg-amber-400 px-5 py-2.5 text-xl font-black text-ink hover:bg-amber-300">+1 ⭐</button>
+                <button onClick={() => cheer(5)} className="dp-btn rounded-2xl bg-amber-400 px-5 py-2.5 text-xl font-black text-ink hover:bg-amber-300">+5 ⭐</button>
+                <button onClick={() => mascotAdd(cls.id, -1, 'Tuzatish', 'silent')} disabled={!m.xp} className="rounded-2xl bg-white/10 px-4 py-2.5 text-lg font-black ring-1 ring-white/15 hover:bg-white/20 disabled:opacity-40">−1</button>
               </div>
-              <div className="mt-2 text-sm font-semibold text-blue-200">O‘yindagi har 10 ball = 1 ⭐ • «Sinf tinchligi»da 30 soniya jimlik = 1 ⭐</div>
+              <div className="mt-2 text-xs font-semibold text-blue-200">O‘yinda har 10 ball = 1 ⭐ • «Sinf tinchligi»da 30 soniya jimlik = 1 ⭐</div>
             </div>
 
-            <div className="rounded-[1.8rem] bg-white/10 p-5 ring-1 ring-white/15">
-              <div className="dp-kicker text-amber-300">Sovg‘alar</div>
-              <div className="mt-3 grid grid-cols-5 gap-2">
-                {gifts.map((g) => {
-                  const open = m.xp >= g.at;
+            <div className={`${panel} min-h-0 flex-1 overflow-y-auto`}>
+              <div className="flex items-center justify-between">
+                <div className="dp-kicker text-amber-300">Milliy kiyimlar</div>
+                <div className="text-xs font-bold text-blue-200">Ochilganini bosib kiydiring/yeching</div>
+              </div>
+              <div className="mt-3 grid grid-cols-4 gap-2">
+                {MASCOT_ITEMS.map((it) => {
+                  const open = m.xp >= it.at;
+                  const on = worn.includes(it.id);
                   return (
-                    <div key={g.n} className={`rounded-xl p-2 text-center ${open ? 'bg-amber-400 text-ink' : 'bg-white/5 text-blue-200 ring-1 ring-white/10'}`}>
-                      <div className="text-2xl">{open ? { 'Do‘ppi': '🧢', 'Belbog‘': '🎀', Toj: '👑', 'Oltin nur': '✨', 'Yulduzlar halqasi': '🌟' }[g.gift] : <Lock size={20} className="mx-auto" />}</div>
-                      <div className="mt-1 text-[11px] font-black leading-tight">{g.gift}</div>
-                      {!open && <div className="text-[10px] font-bold">{g.at} ⭐</div>}
-                    </div>
+                    <button key={it.id} disabled={!open} onClick={() => toggleWear(it.id)} aria-pressed={on}
+                      className={`flex flex-col items-center rounded-xl p-1.5 text-center transition ${open ? (on ? 'bg-amber-400 text-ink ring-2 ring-amber-200' : 'bg-white/15 text-white hover:bg-white/25') : 'bg-white/5 text-blue-200 ring-1 ring-white/10'}`}>
+                      <span className={open ? '' : 'opacity-30 grayscale'}><MascotItemIcon id={it.id} /></span>
+                      <span className="mt-0.5 text-[11px] font-black leading-tight">{it.n}</span>
+                      <span className="text-[10px] font-bold">{open ? (on ? 'kiyilgan' : 'yechilgan') : <><Lock size={10} className="inline" /> {it.at} ⭐</>}</span>
+                    </button>
                   );
                 })}
               </div>
-              <div className="mt-4 flex items-center gap-2">
+              <div className="mt-4 flex flex-wrap items-center gap-2">
                 <span className="text-sm font-bold text-blue-100">Rangi:</span>
                 {Object.entries(MASCOT_COLORS).map(([k, v]) => (
                   <button key={k} aria-label={v.name} data-tip={v.name} onClick={() => mascotUpdate(cls.id, { color: k })}
                     className={`h-9 w-9 rounded-full ring-offset-2 ring-offset-ink transition ${m.color === k ? 'ring-4 ring-amber-300' : 'ring-1 ring-white/30'}`} style={{ background: v.body }} />
                 ))}
               </div>
-            </div>
-
-            <div className="grid gap-5 sm:grid-cols-2">
-              <div className="rounded-[1.8rem] bg-white/10 p-5 ring-1 ring-white/15">
-                <div className="dp-kicker text-amber-300">So‘nggi yulduzlar</div>
-                <ul className="mt-2 space-y-1.5">
-                  {(m.log || []).slice(0, 5).map((l, i) => (
-                    <li key={i} className="flex items-center justify-between gap-2 text-sm">
-                      <span className="truncate font-semibold">{l.r}</span>
-                      <span className={`shrink-0 font-black ${l.n > 0 ? 'text-amber-300' : 'text-anor-400'}`}>{l.n > 0 ? '+' : ''}{l.n} ⭐ <span className="font-semibold text-blue-200">· {ago(l.t)}</span></span>
-                    </li>
-                  ))}
-                  {!(m.log || []).length && <li className="text-sm text-blue-200">Hali yulduz yo‘q. Birinchi o‘yinni o‘ynang!</li>}
-                </ul>
-              </div>
-              {ranking.length > 1 && (
-                <div className="rounded-[1.8rem] bg-white/10 p-5 ring-1 ring-white/15">
-                  <div className="dp-kicker text-amber-300">Maskotlar poygasi</div>
-                  <ol className="mt-2 space-y-1.5">
-                    {ranking.map(({ c, xp }, i) => (
-                      <li key={c.id} className={`flex items-center justify-between rounded-lg px-2 py-1 text-sm ${c.id === cls.id ? 'bg-amber-400/25' : ''}`}>
-                        <span className="font-black">{i + 1}. {classLabel(c)} • {mascotOf(c.id).name}</span>
-                        <span className="font-black text-amber-300">⭐ {xp}</span>
-                      </li>
-                    ))}
-                  </ol>
-                </div>
-              )}
             </div>
           </div>
         </div>
@@ -42170,7 +42216,7 @@ function MascotToastHost({ onOpen }) {
     <>
       {toast && (
         <div className="dp-pop fixed bottom-5 left-5 z-[85] flex items-center gap-3 rounded-[1.6rem] bg-ink py-2 pl-2 pr-5 text-white shadow-2xl ring-1 ring-white/10">
-          <MascotArt stage={toast.stage} color={toast.color} mood="happy" size={76} />
+          <MascotArt stage={toast.stage} color={toast.color} wear={toast.wear} mood="happy" size={76} />
           <div>
             <div className="text-2xl font-black text-amber-300">+{toast.n} ⭐</div>
             <div className="text-sm font-bold text-blue-100">{toast.name} — {toast.reason}</div>
@@ -42185,9 +42231,13 @@ function MascotToastHost({ onOpen }) {
               <div className="dp-rays pointer-events-none absolute left-1/2 top-1/2 h-[640px] w-[640px] -translate-x-1/2 -translate-y-1/2 opacity-40" />
               <div className="relative">
                 <div className="dp-kicker text-amber-300">Yangi daraja!</div>
-                <MascotArt stage={level.stage} color={level.color} mood="happy" size={300} className="mx-auto" />
+                <MascotArt stage={level.stage} color={level.color} wear={level.wear} mood="happy" size={300} className="mx-auto" />
                 <div className="text-5xl font-black">{level.name} — {MASCOT_STAGES[level.stage].n}</div>
-                {MASCOT_STAGES[level.stage].gift && <div className="mt-2 text-2xl font-black text-amber-300">Sovg‘a: {MASCOT_STAGES[level.stage].gift}</div>}
+                {level.newItems?.length > 0 && (
+                  <div className="mt-3 flex items-center justify-center gap-2 text-2xl font-black text-amber-300">
+                    Yangi sovg‘a: {level.newItems.map((it) => <span key={it.id} className="inline-flex items-center gap-1"><MascotItemIcon id={it.id} size={36} /> {it.n}</span>)}
+                  </div>
+                )}
                 <p className="mx-auto mt-2 max-w-md text-lg font-semibold text-blue-100">{MASCOT_STAGES[level.stage].hint}</p>
                 <button onClick={() => setLevel(null)} className="dp-btn mt-6 rounded-2xl bg-amber-400 px-10 py-4 text-2xl font-black text-ink hover:bg-amber-300">Zo‘r! 🎉</button>
               </div>
@@ -44024,7 +44074,7 @@ const GUIDE_FAQ = [
   ['Reytingda o‘quvchilar bali 0', 'Ballar o‘quvchiga yozilishi uchun o‘yin oldidan jamoalarga bo‘ling yoki o‘yin paytida «O‘quvchi tanlash»dan foydalaning.'],
   ['Obunamni qanday uzaytiraman?', `Ism kartochkangiz → «Obunalarim» → «Uzaytirish». Telegram'da @${TELEGRAM_USER} ochiladi, xabar tayyor bo‘ladi. Muddat tugashiga ${EXPIRY_WARN_DAYS} kun qolganda bosh sahifada eslatma ham chiqadi.`],
   ['Yangi alifboda ko‘rsatish mumkinmi?', 'Ha. Sarlavhadagi (telefonda — menyudagi) «Özbek» tugmasini bosing. Qaytarish uchun «O‘zbek»ni bosing. Tanlov eslab qolinadi.'],
-  ['Sinf maskoti nima?', 'Har sinfning o‘z «Humo» qushi bor (bosh sahifa → «Sinf maskotlari»). O‘yindagi har 10 ball = 1 yulduz, «Sinf tinchligi»da 30 soniya jimlik = 1 yulduz, ustoz +1/+5 bilan rag‘batlantirishi ham mumkin. Yulduzlar bilan qush tuxumdan Afsonaviy Humogacha 8 darajada o‘sadi, do‘ppi, belbog‘, toj kabi sovg‘alar ochiladi. Ismi va rangini o‘zgartirsa bo‘ladi. Maskot bulutda saqlanadi — maktabdagi boshqa o‘qituvchilar va boshqa kompyuterda ham ko‘rinadi.'],
+  ['Sinf maskoti nima?', 'Har sinfning o‘z «Bek» bo‘risi bor (bosh sahifa → «Sinf maskotlari»). O‘yindagi har 10 ball = 1 yulduz, «Sinf tinchligi»da 30 soniya jimlik = 1 yulduz, ustoz +1/+5 bilan rag‘batlantirishi ham mumkin. Yulduzlar bilan bo‘ri bolasi Afsonaviy Ko‘kbo‘rigacha 8 darajada o‘sadi, milliy kiyimlar ochiladi: tumor, Chust do‘ppisi, belbog‘, atlas chopon, dutor, Bek sallasi. Ochilgan kiyimni bosib kiydirish yoki yechish mumkin. Ismi va rangini o‘zgartirsa bo‘ladi. Maskot bulutda saqlanadi — maktabdagi boshqa o‘qituvchilar va boshqa kompyuterda ham ko‘rinadi.'],
   ['Proyektorda kursor ko‘rinmayapti', 'Sarlavhadagi sichqoncha belgisini bosing — «Katta kursor» yoqiladi.'],
 ];
 
@@ -45320,10 +45370,10 @@ function HomeScreen({ teacher, allowed = [], access = {}, onStart, schoolClasses
 
           {classes.length > 0 && onMascot && (
             <section className="dp-sticker-soft rounded-[2rem] bg-white p-6">
-              <h2 className="flex items-center gap-2 text-2xl font-black text-ink"><span className="text-2xl">🕊️</span> <span className="dp-marker">Sinf maskotlari</span></h2>
-              <p className="mt-2 text-base font-semibold text-slate-500">Har sinfning Humo qushi. To‘g‘ri javob va tinchlik bilan o‘sadi.</p>
+              <h2 className="flex items-center gap-2 text-2xl font-black text-ink"><span className="text-2xl">🐺</span> <span className="dp-marker">Sinf maskotlari</span></h2>
+              <p className="mt-2 text-base font-semibold text-slate-500">Har sinfning «Bek» bo‘risi. To‘g‘ri javob va tinchlik bilan o‘sadi, milliy kiyimlar ochiladi.</p>
               <div className="mt-4 grid grid-cols-2 gap-3">
-                {classes.map((c) => <MascotThumb key={c.id} cls={c} onOpen={onMascot} />)}
+                {[...classes].sort((a, b) => mascotOf(b.id).xp - mascotOf(a.id).xp).map((c, i) => <MascotThumb key={c.id} cls={c} onOpen={onMascot} rank={i} />)}
               </div>
             </section>
           )}

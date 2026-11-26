@@ -398,3 +398,7 @@ html.dp-cursor-lg {
 .dp-mblink { animation: dpMBlink 4s infinite; }
 @keyframes dpMFlap { 0%,100% { transform: rotate(0); } 50% { transform: rotate(-25deg); } }
 .dp-mflap { animation: dpMFlap .3s ease-in-out infinite; transform-origin: 0 0; }
+@keyframes dpMWag { 0%,100% { transform: rotate(0); } 50% { transform: rotate(12deg); } }
+.dp-mwag { animation: dpMWag .35s ease-in-out infinite; }
+@keyframes dpZzz { 0% { opacity: 0; transform: translateY(6px); } 40% { opacity: 1; } 100% { opacity: 0; transform: translateY(-10px); } }
+.dp-zzz { animation: dpZzz 2.4s ease-in-out infinite; }

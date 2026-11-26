@@ -18,3 +18,7 @@ create table public.teacher_boards (
   updated_at timestamptz not null default now()
 );
 -- RLS: barcha amallar faqat teacher_id = auth.uid().
+
+-- 2026-11-26, migratsiya mascot_wolf_bek: maskot «Bek» bo‘riga almashdi.
+-- delete from class_mascots (hamma ballar nolga); name default 'Bek'; color default 'kulrang';
+-- color check: kulrang, kokbori, qongir, qor, tun; yangi ustun wear jsonb (kiyilgan buyumlar, null = hammasi).
