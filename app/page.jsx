@@ -43237,9 +43237,2371 @@ const ONA_TILI_10_P6 = [
   },
 ];
 
+const ADABIYOT_10 = [
+  /* ===================== 1. Badiiy tahlil (1) ===================== */
+  {
+    id: 'ad10-tahlil-1',
+    source: 'I chorak • 1-dars • 3–6-betlar',
+    title: 'Kirish: badiiy tahlil asoslari (1). Ijtimoiy metod',
+    short: 'Badiiy asarni davr bilan bog‘lab o‘qish: Cho‘lponning «Ko‘saklar»i va Sviftning liliputlar urushi',
+    theme: { emoji: '🔍', grad: 'from-stone-800 via-amber-800 to-amber-500', border: 'border-amber-200', tag: 'Kirish • Tahlil metodlari' },
+    lesson: [
+      {
+        title: 'Nega bir asarni qayta o‘qiymiz?',
+        emoji: '📖',
+        text: 'Darslik muallifiga ko‘ra, buyuk asar har gal qayta o‘qilganda yangi fikr beradi. Chunki uni tushunishimizga bilimimiz, hayotiy tajribamiz va o‘qish paytidagi kayfiyatimiz ta’sir qiladi.',
+        reveal: [
+          { q: '«O‘zini taftish etish» nima?', a: 'O‘z fikr va xatti-harakatlarini tekshirish, baholash. Asar qahramonlari taqdiri orqali odam o‘zini ham ko‘zguda ko‘rgandek bo‘ladi.' },
+          { q: 'Bir asarni ikki marta o‘qib, har xil xulosaga kelganmisiz?', a: 'Erkin javob. Sabablari: yosh, tajriba, yangi bilim, kayfiyat.' },
+        ],
+      },
+      {
+        title: 'Ijtimoiy (sotsiologik) metod',
+        emoji: '🏛️',
+        rule: 'Ijtimoiy metod asarni u yaratilgan davrning ijtimoiy, siyosiy, diniy, falsafiy va estetik qarashlari bilan bog‘lab o‘rganadi. Matn o‘z davri muhitiga «joylashtiriladi».',
+        ruleLabel: 'Ta’rif',
+        list: [
+          'Matn o‘z davri haqida nimalarni ochib bermoqda?',
+          'Asarning yozilishiga qanday voqealar sabab bo‘lgan?',
+          'Muallif kim uchun va nima maqsadda yozgan?',
+          'U o‘quvchidan qanday xulosa kutadi?',
+          'G‘oyani ifodalash uchun qanday til vositalaridan foydalangan?',
+        ],
+      },
+      {
+        title: 'Cho‘lpon. «Ko‘saklar»',
+        emoji: '❄️',
+        poem: {
+          lines: [
+            'Diydirab yotarkan yerda ko‘saklar,',
+            'Nomard changaliga tushgan ko‘saklar.',
+            'Behisob ko‘saklar butun o‘lkada,',
+            'Shu qishga o‘xshagan qora o‘lkada.',
+          ],
+          author: 'Cho‘lpon',
+        },
+        reveal: [
+          { q: 'Bir qarashda bu qanday she’r?', a: 'Tabiat lirikasi: qish kelib, terilmagan paxta ko‘saklari yerda qolgan.' },
+          { q: 'Davr bilan bog‘lab o‘qisak-chi?', a: 'Turkiston mustamlaka qilingan, xalq ikki tomonlama zulmda. «Qora qish» — «qora o‘lka»: ko‘saklarning bevaqt xazon bo‘lishi o‘lkaning qora kunlariga ramz.' },
+        ],
+      },
+      {
+        title: 'Jadid adabiyotini tushunish kaliti',
+        emoji: '🗝️',
+        text: 'Darslik fikricha, XX asr boshidagi jadid adabiyotini ijtimoiy tahlilsiz anglab bo‘lmaydi: u mustamlakachilikka qarshi kurash ruhidagi siyosiy-ijtimoiy g‘oyalarga qurilgan.',
+        cards: [
+          { e: '🌾', t: 'So‘z', d: 'ko‘sak — xalqning rizqi, mehnati' },
+          { e: '🌑', t: 'Obraz', d: 'qora qish — qora o‘lka' },
+          { e: '🧭', t: 'Davr', d: 'mustamlaka, milliy ozodlik harakati' },
+          { e: '💡', t: 'G‘oya', d: 'o‘lka va xalq taqdiri uchun iztirob' },
+        ],
+      },
+      {
+        title: 'Liliputlar urushi',
+        emoji: '🥚',
+        text: 'Ingliz adibi Jonatan Sviftning «Gulliverning sayohatlari» romanidan (Sotiboldi Yo‘ldoshev tarjimasi; o‘z so‘zimiz bilan): mitti liliputlarning ikki davlati — Liliputiya va Blefusku — tuxumni qaysi tomonidan sindirish kerakligi uchun o‘ttiz olti yildan beri urushadi. Bu bahs uchun qo‘zg‘olonlar ko‘tarilgan, minglab odam qatl etilgan, yuzlab kitob yozilgan.',
+        reveal: [
+          { q: 'Ijtimoiy metod bilan o‘qisak, muallif nimani masxara qilmoqda?', a: 'O‘z davri (XVIII asr) Angliyasidagi arzimas sabablar uchun boshlangan siyosiy va diniy nizolarni, partiyalar janjalini, urushlarning ma’nisizligini.' },
+        ],
+        mission: { t: 'Jamoalarda', d: 'Har jamoa bugungi hayotdan «tuxum mojarosi»ga o‘xshash — arzimas narsa uchun katta janjalga aylangan bir vaziyatni aytadi.', sec: 240 },
+      },
+    ],
+    pairs: [
+      ['ijtimoiy metod', 'asarni davr bilan bog‘lab o‘rganish'],
+      ['«Ko‘saklar»', 'Cho‘lpon'],
+      ['qora qish', 'qora o‘lka (ramz)'],
+      ['jadid adabiyoti', 'XX asr boshi, ozodlik g‘oyasi'],
+      ['«Gulliverning sayohatlari»', 'Jonatan Svift'],
+      ['Liliputiya va Blefusku', 'tuxum uchun urushgan davlatlar'],
+      ['taftish etish', 'tekshirish, baholash'],
+    ],
+    quiz: [
+      { q: 'Ijtimoiy metod asarni nima bilan bog‘lab o‘rganadi?', options: ['yaratilgan davr hayoti bilan', 'muallif tushlari bilan', 'faqat qofiya bilan', 'kitob muqovasi bilan'], answer: 0 },
+      { q: '«Ko‘saklar» she’rining muallifi kim?', options: ['Cho‘lpon', 'Fitrat', 'Oybek', 'Hamza'], answer: 0 },
+      { q: 'She’rda qish qanday ataladi?', options: ['nomard', 'mehribon', 'oppoq', 'sokin'], answer: 0 },
+      { q: '«Qora qish»ni shoir nimaga o‘xshatadi?', options: ['qora o‘lkaga', 'qora tunga', 'qora bulutga', 'qora ko‘mirga'], answer: 0 },
+      { q: 'Liliputlar nima uchun urushadi?', options: ['tuxumni qaysi tomondan sindirish uchun', 'oltin uchun', 'yer uchun', 'malika uchun'], answer: 0 },
+      { q: 'Jadid adabiyoti qaysi g‘oya bilan yo‘g‘rilgan?', options: ['mustamlakachilikka qarshi kurash', 'faqat sevgi', 'faqat tabiat', 'sayohat'], answer: 0 },
+      { q: 'Buyuk asar qayta o‘qilganda nima beradi?', options: ['yangi fikr va xulosalar', 'hech narsa', 'faqat zerikish', 'eski javobning o‘zini'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Ijtimoiy metod savoli', 'Bu metodga xos emas'],
+      items: [
+        { text: 'Asar qaysi davrda yozilgan?', cat: 0 }, { text: 'Kitob necha so‘m turadi?', cat: 1 },
+        { text: 'Qanday voqealar sabab bo‘lgan?', cat: 0 }, { text: 'Muqovasi qanday rangda?', cat: 1 },
+        { text: 'Muallif kim uchun yozgan?', cat: 0 }, { text: 'Necha bet?', cat: 1 },
+        { text: 'Davr muammolari qanday aks etgan?', cat: 0 }, { text: 'Shrift kattaligi qanday?', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Ijtimoiy metodning asosiy savollari?', a: 'Matn davr haqida nima deydi, yozilishiga nima sabab bo‘lgan, kim uchun yozilgan, qanday xulosa kutiladi, qanday til vositalari ishlatilgan.' },
+      { q: '«Ko‘saklar»da qanday ramz bor?', a: '«Qora qish» — «qora o‘lka»: mustamlaka davridagi o‘lka taqdiri.' },
+      { q: 'Nega jadid adabiyotini ijtimoiy tahlilsiz tushunib bo‘lmaydi?', a: 'Chunki u davrning siyosiy-ijtimoiy kurashlari asosiga qurilgan.' },
+      { q: 'Svift tuxum mojarosi orqali nimani tanqid qiladi?', a: 'Arzimas sabablar uchun boshlangan siyosiy va diniy nizolarni, urushlarning ma’nisizligini.' },
+      { q: 'Asarni tushunishga nimalar ta’sir qiladi?', a: 'Bilim, dunyoqarash, hayotiy tajriba, o‘qish paytidagi kayfiyat.' },
+    ],
+    odd: [
+      { items: ['davr', 'siyosat', 'jamiyat', 'shrift'], answer: 3, why: 'Qolganlari ijtimoiy metodda e’tibor beriladigan omillar.' },
+      { items: ['Cho‘lpon', 'Fitrat', 'Behbudiy', 'Svift'], answer: 3, why: 'Svift — ingliz adibi; qolganlari jadidlar.' },
+      { items: ['ko‘sak', 'qish', 'qora o‘lka', 'liliput'], answer: 3, why: 'Liliput Sviftning romanidan; qolganlari «Ko‘saklar»da.' },
+    ],
+    debate: [
+      { claim: 'Asarni tushunish uchun uning yozilgan davrini bilish shart.', pro: 'Davrni bilmasak, ramz va tagma’nolarni sezmaymiz.', con: 'Buyuk asar har qanday davr o‘quvchisiga o‘zicha ta’sir qiladi.' },
+      { claim: 'Svift tasvirlagan «tuxum urushi» bugun ham uchraydi.', pro: 'Odamlar hozir ham arzimas narsa uchun janjallashadi.', con: 'Bugun nizolar ko‘pincha jiddiy iqtisodiy sabablardan chiqadi.' },
+    ],
+    creative: [
+      { task: '«Ko‘saklar» she’riga bugungi kun nuqtayi nazaridan bir gaplik sarlavha o‘ylab toping.', time: 60 },
+      { task: 'Liliputlar urushiga o‘xshash, arzimas sabab bilan boshlangan kulgili «urush» haqida 3 gaplik hikoya tuzing.', time: 120 },
+      { task: 'O‘zingiz o‘qigan bir asarni ijtimoiy metodning bitta savoli bilan tahlil qiling.', time: 90 },
+    ],
+  },
+
+  /* ===================== 2. Badiiy tahlil (2) ===================== */
+  {
+    id: 'ad10-tahlil-2',
+    source: 'I chorak • 2-dars • 6–7-betlar',
+    title: 'Kirish: badiiy tahlil asoslari (2). Biografik metod va turli talqinlar',
+    short: 'Asarni muallif hayoti bilan bog‘lab o‘qish; Cho‘lponning «Aldanish»i ikki xil talqinda; Bobur g‘azali',
+    theme: { emoji: '🪞', grad: 'from-indigo-900 via-indigo-700 to-sky-500', border: 'border-sky-200', tag: 'Kirish • Talqinlar' },
+    lesson: [
+      {
+        title: 'Biografik metod',
+        emoji: '👤',
+        rule: 'Biografik metodda asar ijodkorning hayot yo‘li, shaxsi va tarjimai holi bilan bog‘lab tahlil qilinadi. U asarning yaratilish tarixini va undagi muallif hayotiga daxldor detallarni tushunishga yordam beradi.',
+        ruleLabel: 'Ta’rif',
+        text: 'Misol: ayrim tadqiqotchilar fikricha, Ekzyuperining «Kichkina shahzoda» asaridagi shahzoda va atirgul munosabatlarida adibning rafiqasi Konsuelo bilan murakkab munosabatlari aks etgan.',
+      },
+      {
+        title: 'Cho‘lpon. «Aldanish» (1922)',
+        emoji: '🌫️',
+        poem: {
+          lines: [
+            'Besh yillik yonishim bir yil uchunmi?',
+            'Erkalab o‘tkuvchi bir yel uchunmi?',
+            'Ko‘zimga ko‘ringan sarobmi edi?',
+            'Men shunga aldanib tog‘larmi oshdim?',
+            '…',
+            'Oh, endi bildimki, barchasi xayol,',
+            'Barchasi bir totli, rohat tush ekan.',
+          ],
+          author: 'Cho‘lpon',
+        },
+      },
+      {
+        title: 'Bir she’r — ikki talqin',
+        emoji: '⚖️',
+        vs: {
+          q: 'Qaysi talqin sizga yaqinroq?',
+          a: { t: 'Ijtimoiy talqin', pts: ['1917-yildan millat uchun yaxshilik kutgan shoir', 'Besh yil ichida orzular sarobga aylangan', 'Istiqlol orzusining puchga chiqishi'] },
+          b: { t: 'Biografik talqin', pts: ['She’rda sevgi mavzusi yetakchi', 'Shoirning ilk muhabbati Obidaga atalgan', 'Shaxsiy aldanish iztirobi'] },
+        },
+        mission: { t: 'Bahs', d: 'Sinf ikki guruhga bo‘linadi: har biri o‘z talqinini she’rdan 2 ta misra bilan dalillaydi.', sec: 300 },
+      },
+      {
+        title: 'Bobur g‘azali',
+        emoji: '🌹',
+        poem: {
+          lines: [
+            'Keltursa yuz baloni o‘shal bevafo manga,',
+            'Kelsun agar yuzumni evursam, balo manga.',
+            '…',
+            'Bobur, bo‘lubturur ikki ko‘zum yo‘lida to‘rt,',
+            'Kelsa ne bo‘ldi qoshima bir-bir mango manga.',
+          ],
+          author: 'Zahiriddin Muhammad Bobur',
+        },
+        note: 'Lug‘at: evurish — o‘girish; rafiq — do‘st, sirdosh; za’f — xastalik, holsizlik.',
+        reveal: [
+          { q: 'Badiiy talqin', a: 'Oshiqning vafosiz yorga sadoqati: yor yuz balo keltirsa ham, oshiq yuz o‘girmaydi.' },
+          { q: 'Biografik talqin (taxminiy)', a: 'Vatanidan ayrilgan, yaqinlari vafosizligini ko‘rgan Boburning hijron iztiroblari bilan bog‘lab o‘qish mumkin: «bu ob-u havo manga yarashmas».' },
+        ],
+      },
+      {
+        title: 'Xulosa',
+        emoji: '🎯',
+        rule: 'Badiiy asarni turli yondashuv va metodlar bilan o‘rganish uning turfa talqinlarini yaratadi va asarni chuqurroq anglashga yordam beradi.',
+        ruleLabel: 'Darslik xulosasi',
+        cards: [
+          { e: '🏛️', t: 'Ijtimoiy metod', d: 'Asar — davr ko‘zgusi.' },
+          { e: '👤', t: 'Biografik metod', d: 'Asar — muallif hayotining aksi.' },
+        ],
+      },
+    ],
+    pairs: [
+      ['biografik metod', 'asarni muallif hayoti bilan bog‘lash'],
+      ['«Aldanish»', 'Cho‘lpon, 1922'],
+      ['«Kichkina shahzoda»', 'Ekzyuperi'],
+      ['Konsuelo', 'Ekzyuperining rafiqasi'],
+      ['Obida', 'Cho‘lponning ilk muhabbati (talqinda)'],
+      ['evurmoq', 'o‘girmoq, burmoq'],
+      ['za’f', 'xastalik, holsizlik'],
+    ],
+    quiz: [
+      { q: 'Biografik metod asarni nima bilan bog‘laydi?', options: ['muallif hayoti bilan', 'davr iqtisodi bilan', 'kitob narxi bilan', 'nashriyot bilan'], answer: 0 },
+      { q: '«Aldanish» she’ri qachon yozilgan?', options: ['1922', '1914', '1937', '1905'], answer: 0 },
+      { q: 'Ijtimoiy talqinda «Aldanish» nima bilan bog‘lanadi?', options: ['istiqlol orzusining puchga chiqishi', 'bahor kelishi', 'safar', 'bolalik'], answer: 0 },
+      { q: 'Biografik talqinda she’r kimga atalgan?', options: ['shoirning ilk muhabbatiga', 'onasiga', 'do‘stiga', 'ustoziga'], answer: 0 },
+      { q: '«Kichkina shahzoda» muallifi?', options: ['Ekzyuperi', 'Svift', 'Gyugo', 'Servantes'], answer: 0 },
+      { q: '«Evursam» so‘zining ma’nosi?', options: ['o‘girsam', 'ko‘rsam', 'yursam', 'sevsam'], answer: 0 },
+      { q: 'Turli metodlar bilan o‘qish nimaga olib keladi?', options: ['turfa talqinlarga', 'bitta to‘g‘ri javobga', 'asarni unutishga', 'zerikishga'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Ijtimoiy talqin', 'Biografik talqin'],
+      items: [
+        { text: '1917-yil voqealari', cat: 0 }, { text: 'ilk muhabbat', cat: 1 },
+        { text: 'istiqlol orzusi', cat: 0 }, { text: 'shoirning shaxsiy hayoti', cat: 1 },
+        { text: 'millat kelajagi', cat: 0 }, { text: 'Obida', cat: 1 },
+        { text: 'mustamlaka', cat: 0 }, { text: 'rafiqa bilan munosabat', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Biografik metod nimaga yordam beradi?', a: 'Asarning yaratilish tarixi va muallif hayotiga daxldor detallarni tushunishga.' },
+      { q: '«Aldanish»ning ikki talqini qanday?', a: 'Ijtimoiy: istiqlol orzusi sarobga aylangan; biografik: ilk muhabbatdagi aldanish.' },
+      { q: 'Nega bir she’r turli talqin qilinadi?', a: 'Turli metodlar asarning turli qatlamlarini ochadi; yuksak asar yagona ma’noga ega bo‘lmaydi.' },
+      { q: 'Bobur g‘azalidagi oshiq qanday?', a: 'Vafosiz yordan yuz balo kelsa ham yuz o‘girmaydigan sodiq oshiq.' },
+      { q: '«Kichkina shahzoda»dagi atirgul obraziga qanday biografik talqin bor?', a: 'Unda Ekzyuperining rafiqasi Konsuelo bilan munosabatlari aks etgan, deyiladi.' },
+    ],
+    odd: [
+      { items: ['ijtimoiy', 'biografik', 'qiyosiy', 'arifmetik'], answer: 3, why: 'Qolganlari badiiy tahlil yondashuvlari.' },
+      { items: ['sarob', 'xayol', 'totli tush', 'haqiqat'], answer: 3, why: 'Qolganlari «Aldanish»da aldanish timsollari.' },
+      { items: ['Bobur', 'Cho‘lpon', 'Ekzyuperi', 'Homer'], answer: 3, why: 'Homer bu darsda tahlil qilinmaydi.' },
+    ],
+    debate: [
+      { claim: 'Asarni muallif hayotisiz ham to‘liq tushunsa bo‘ladi.', pro: 'Matnning o‘zi yetarli: o‘quvchi o‘z hayotidan ma’no topadi.', con: 'Muallif hayotini bilsak, ko‘p detallar ochiladi.' },
+      { claim: '«Aldanish» — sevgi she’ri.', pro: 'She’rda «sevgimning boqchasi» bor, ilk muhabbat haqida faktlar bor.', con: 'Yozilgan yili (1922) va davr fojiasi uni ijtimoiy she’rga aylantiradi.' },
+    ],
+    creative: [
+      { task: '«Aldanish»ning uchinchi — o‘zingizning talqiningizni bir gapda ayting.', time: 60 },
+      { task: 'O‘zingiz yaxshi ko‘rgan qo‘shiq yoki she’rni muallif hayoti bilan bog‘lab 3 gapda izohlang.', time: 120 },
+      { task: 'Bobur g‘azalining bir baytini hozirgi tilda nasriy bayon qiling.', time: 90 },
+    ],
+  },
+
+  /* ===================== 3. Go‘ro‘g‘li turkumi ===================== */
+  {
+    id: 'ad10-gorogli-turkum',
+    source: 'I chorak • 3-dars • 12–13-betlar',
+    title: 'O‘zbek xalq dostonlari. «Go‘ro‘g‘li» dostonlari turkumi',
+    short: 'Baxshilar va dostonlar; «Go‘ro‘g‘li»ning g‘arbiy va sharqiy turkumlari; o‘zbekcha variantlar',
+    theme: { emoji: '🐎', grad: 'from-amber-500 via-orange-600 to-red-700', border: 'border-orange-200', tag: 'Xalq og‘zaki ijodi • Turkum' },
+    lesson: [
+      {
+        title: 'Xalq dostonlari',
+        emoji: '🎻',
+        text: 'Dostonlarda qahramonlarning hayoti, sarguzashtlari va kechinmalari bayon qilinadi. Ularni baxshilar («shoirlar» deb ham atalgan) do‘mbira jo‘rligida ijro etgan.',
+        cards: [
+          { e: '📜', t: 'Nasr', d: 'Voqealar bayoni odatda nasrda.' },
+          { e: '🎶', t: 'Nazm', d: 'Dialoglar va ruhiy holat she’rda.' },
+          { e: '🎤', t: 'Ijro', d: 'Baxshi musiqa bilan kuylaydi.' },
+        ],
+        reveal: [{ q: 'Xalq og‘zaki ijodi janrlarini eslang', a: 'Ertak, afsona, rivoyat, maqol, topishmoq, qo‘shiq, doston, latifa.' }],
+      },
+      {
+        title: 'Ikki katta turkum',
+        emoji: '🗺️',
+        text: '«Go‘ro‘g‘li» turkumi Yaqin va O‘rta Sharq, Kavkaz va Markaziy Osiyoning turkiy va boshqa (arman, gruzin, kurd, fors) xalqlari orasida keng tarqalgan.',
+        vs: {
+          q: 'Qaysi qahramon sizga yaqinroq?',
+          a: { t: 'G‘arbiy turkum: Ko‘ro‘g‘li', pts: ['Otasining ko‘zi o‘yilgani uchun qasos oladi', 'Chanlibelda qarorgoh quradi', 'Zolimlarga qarshi isyonkor'] },
+          b: { t: 'Sharqiy turkum: Go‘ro‘g‘li', pts: ['«Go‘rda tug‘ilgan»', 'Chambil yurtini bunyod etadi', 'Vatanparvar, botirlarni tarbiyalagan murabbiy'] },
+        },
+      },
+      {
+        title: 'Tarix va afsona',
+        emoji: '🏺',
+        list: [
+          'Ayrim manbalarga ko‘ra, g‘arbiy turkum XVII asr boshidagi Usmoniylar imperiyasidagi Jaloliylar qo‘zg‘oloni bilan bog‘liq: qo‘zg‘olonchilar orasida Ko‘ro‘g‘li taxallusli shoirning she’rlari mashhur bo‘lgan.',
+          'Boshqa manbalarda Ko‘ro‘g‘li Eron hukmdori Abbos I ning zamondoshi sifatida tasvirlanadi.',
+          'Ayrim tadqiqotchilar fikricha, dastlabki dostonlar XI–XII asrlardan XVII asrgacha shakllangan.',
+        ],
+      },
+      {
+        title: 'Sharqiy turkum: Go‘ro‘g‘li hayoti',
+        emoji: '🌙',
+        steps: [
+          { e: '⚱️', t: 'Tug‘ilish', d: 'Onasi homilador holda vafot etadi; go‘rda o‘lik onadan farzand tug‘iladi.' },
+          { e: '🏰', t: 'Chambil', d: 'Go‘ro‘g‘li Chambil yurtini bunyod etadi, elga xon bo‘ladi.' },
+          { e: '🛡️', t: 'Qirq yigit', d: 'Asrandi o‘g‘illari, nevaralari va qirq bahodir yigit sarguzashtlari.' },
+          { e: '⛰️', t: 'G‘oyib bo‘lish', d: 'Sulduzi tog‘ida g‘oyib bo‘ladi.' },
+        ],
+      },
+      {
+        title: 'O‘zbekcha variantlar',
+        emoji: '📍',
+        cards: [
+          { e: '🏜️', t: 'Xorazm varianti', d: 'Tili, badiiy xususiyatlari va syujeti farq qiladi.' },
+          { e: '🏔️', t: 'Boshqa hududlar varianti', d: 'Masalan, Po‘lkan shoir aytgan variant.' },
+        ],
+        mission: { t: 'Jamoalarda', d: 'Jadvalni to‘ldiring: «O‘zbek xalq dostonlariga xos xususiyatlar» va «Go‘ro‘g‘li turkumiga xos xususiyatlar» — har biriga 3 tadan.', sec: 300 },
+      },
+    ],
+    pairs: [
+      ['baxshi', 'doston ijrochisi'],
+      ['Ko‘ro‘g‘li', 'g‘arbiy turkum qahramoni'],
+      ['Go‘ro‘g‘li', '«go‘rda tug‘ilgan»'],
+      ['Chanlibel', 'Ko‘ro‘g‘li qarorgohi'],
+      ['Chambil', 'Go‘ro‘g‘li bunyod etgan yurt'],
+      ['Sulduzi tog‘i', 'Go‘ro‘g‘li g‘oyib bo‘lgan joy'],
+      ['qirq yigit', 'Go‘ro‘g‘li bahodirlari'],
+      ['Jaloliylar qo‘zg‘oloni', 'XVII asr, Usmoniylar'],
+    ],
+    quiz: [
+      { q: '«Go‘ro‘g‘li» so‘zining ma’nosi?', options: ['go‘rda tug‘ilgan', 'tog‘da o‘sgan', 'ko‘r o‘g‘li', 'otliq botir'], answer: 0 },
+      { q: 'G‘arbiy turkumda Ko‘ro‘g‘li nega qasos oladi?', options: ['otasining ko‘zi o‘yilgani uchun', 'yurti talangani uchun', 'oti o‘g‘irlangani uchun', 'onasi o‘ldirilgani uchun'], answer: 0 },
+      { q: 'Sharqiy turkumda Go‘ro‘g‘li qaysi yurtni bunyod etadi?', options: ['Chambil', 'Chanlibel', 'Qo‘ng‘irot', 'Zargar'], answer: 0 },
+      { q: 'Dostonlarda voqealar bayoni odatda qanday shaklda?', options: ['nasrda', 'faqat she’rda', 'dramada', 'xatda'], answer: 0 },
+      { q: 'Go‘ro‘g‘li qayerda g‘oyib bo‘ladi?', options: ['Sulduzi tog‘ida', 'Asqar tog‘da', 'Kavkazda', 'Orol bo‘yida'], answer: 0 },
+      { q: 'Go‘ro‘g‘lining nechta bahodir yigiti bor?', options: ['qirq', 'yetti', 'o‘n', 'yuz'], answer: 0 },
+      { q: 'O‘zbekcha variantlar nechta guruhga bo‘linadi?', options: ['ikki', 'bir', 'besh', 'o‘n'], answer: 0 },
+    ],
+    sort: {
+      categories: ['G‘arbiy turkum', 'Sharqiy turkum'],
+      items: [
+        { text: 'Ko‘ro‘g‘li', cat: 0 }, { text: 'Go‘ro‘g‘li', cat: 1 },
+        { text: 'Chanlibel', cat: 0 }, { text: 'Chambil', cat: 1 },
+        { text: 'otasi uchun qasos', cat: 0 }, { text: 'go‘rda tug‘ilish', cat: 1 },
+        { text: 'Kavkaz, Yaqin Sharq', cat: 0 }, { text: 'Markaziy Osiyo', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Doston qanday ijro etilgan?', a: 'Baxshilar do‘mbira jo‘rligida, nasr va nazm aralash aytgan.' },
+      { q: 'G‘arbiy va sharqiy turkum qahramonlari farqi?', a: 'Ko‘ro‘g‘li — qasoskor, isyonkor; Go‘ro‘g‘li — go‘rda tug‘ilgan vatanparvar, yurt bunyodkori va murabbiy.' },
+      { q: 'Dostonlar qaysi davrda shakllangan (taxminan)?', a: 'XI–XII asrlardan XVII asrgacha.' },
+      { q: 'Dostonlar millat tarixini o‘rganishda nega muhim?', a: 'Ularda xalqning turmush tarzi, urf-odatlari, tafakkuri va tarixi aks etadi.' },
+      { q: 'O‘zbekcha variantlar qanday guruhlanadi?', a: 'Xorazm varianti va O‘zbekistonning boshqa hududlaridagi variantlar.' },
+    ],
+    odd: [
+      { items: ['Chambil', 'Sulduzi tog‘i', 'qirq yigit', 'Boychibor'], answer: 3, why: 'Boychibor — Alpomishning oti.' },
+      { items: ['arman', 'gruzin', 'kurd', 'yapon'], answer: 3, why: 'Qolganlari orasida «Go‘ro‘g‘li» tarqalgan xalqlar.' },
+      { items: ['ertak', 'doston', 'maqol', 'roman'], answer: 3, why: 'Roman — yozma adabiyot janri.' },
+    ],
+    debate: [
+      { claim: 'Xalq dostonlari bugungi yoshlar uchun ham kerak.', pro: 'Ularda mardlik, vatanparvarlik, sadoqat saboqlari bor.', con: 'Bugun ularni tushunish qiyin: til eskirgan, voqealar uzun.' },
+      { claim: 'Ko‘ro‘g‘li — Go‘ro‘g‘lidan ko‘ra kuchliroq qahramon.', pro: 'U zulmga qarshi ochiq kurashadi.', con: 'Go‘ro‘g‘li yurt quradi va qirq botirni tarbiyalaydi.' },
+    ],
+    creative: [
+      { task: 'Bugungi kunning «baxshisi» kim bo‘lishi mumkin? Bir gapda javob bering.', time: 60 },
+      { task: 'Go‘ro‘g‘li haqida 4 misrali «baxshiyona» she’r to‘qing.', time: 150 },
+      { task: 'O‘zingiz bilgan boshqa xalq qahramonini Go‘ro‘g‘li bilan 2 belgisi bo‘yicha solishtiring.', time: 90 },
+    ],
+  },
+
+  /* ===================== 4. Go‘ro‘g‘lining tug‘ilishi ===================== */
+  {
+    id: 'ad10-gorogli-tugilishi',
+    source: 'I chorak • 4-dars • 14–22-betlar',
+    title: '«Go‘ro‘g‘lining tug‘ilishi» dostonidan parcha',
+    short: 'Po‘lkan shoir varianti: Ravshanbek va Bibi Hilol, go‘rda tug‘ilgan bola, baytal, Rustambek va Xizr',
+    theme: { emoji: '🌙', grad: 'from-gray-900 via-indigo-800 to-amber-500', border: 'border-indigo-200', tag: 'Doston • Po‘lkan varianti' },
+    lesson: [
+      {
+        title: 'Variant haqida',
+        emoji: '🎙️',
+        text: 'Darslikdagi parcha Muhammadqul Jomrot o‘g‘li Po‘lkan aytgan variantdan qisqartirib olingan. Voqealar Yovmit, Taka turkman, Mari va Zargar yurtlarida kechadi.',
+        cards: [
+          { e: '👑', t: 'Odilxon', d: 'Yovmit podshosi' },
+          { e: '🐎', t: 'To‘liboy sinchi', d: 'Otlarni biluvchi, Bibi Oyshaga uylanadi' },
+          { e: '👦', t: 'Ravshanbek', d: 'Ularning o‘g‘li, Go‘ro‘g‘lining otasi' },
+          { e: '⚔️', t: 'Shohdorxon', d: 'Zargar podshosi' },
+          { e: '🌸', t: 'Bibi Hilol', d: 'Gajdumbekning singlisi, Go‘ro‘g‘lining onasi' },
+        ],
+      },
+      {
+        title: 'Voqealar ketma-ketligi',
+        emoji: '🧭',
+        steps: [
+          { e: '⚔️', t: 'Urush', d: 'Shohdorxon Yovmitga qo‘shin tortadi; Ravshanbek bolalar bilan Asqar tog‘da asir tushadi.' },
+          { e: '📦', t: 'Sandiq', d: 'Hamza Ravshanni sandiqqa yashirib, o‘g‘il qilmoqchi bo‘ladi; Gajdumbek va Bibi Hilol ham asir.' },
+          { e: '💬', t: 'Uchrashuv', d: 'Hiloloy sakkiz qavatli imoratdan Ravshanbekni ko‘rib, she’r bilan so‘z qotadi.' },
+          { e: '💍', t: 'Nikoh', d: 'Hamza Ravshanni qul bozoriga soladi; Gajdumbek uni sotib olib, singlisini nikohlab beradi.' },
+          { e: '⚱️', t: 'Bibi Hilol vafoti', d: 'Shohdorxon uni o‘ldirmoqchi bo‘ladi; Bibi Hilol Xudodan o‘lim tilab, jon beradi.' },
+        ],
+      },
+      {
+        title: 'Go‘rda tug‘ilgan bola',
+        emoji: '✨',
+        text: 'Bibi Hilol o‘lganidan uch oy, to‘qqiz kun, to‘qqiz soat, to‘qqiz daqiqa o‘tib go‘rda o‘g‘il tug‘iladi. Bolaning yuzi nuridan go‘r yorishadi. Azizlar unga «Go‘ro‘g‘li» deb ot qo‘yadi, qirq chiltanlar suyadi, Xizr «farzandim» deydi.',
+        poem: {
+          lines: [
+            'Bachaning yuzining oydinlig‘iga',
+            'Barq urib go‘r yop-yorug‘ bo‘ladi.',
+          ],
+          author: '«Go‘ro‘g‘lining tug‘ilishi»',
+        },
+        reveal: [{ q: 'Bu tasvirda xalqning qanday orzusi bor?', a: 'O‘limdan ham kuchli hayot, adolat uchun tug‘iladigan qahramon, ilohiy homiylik orzusi.' }],
+      },
+      {
+        title: 'Baytal, yilqichilar va Rustambek',
+        emoji: '🐴',
+        list: [
+          'Go‘rda chiroq o‘chib, ona suti tugagach, Xizr go‘rni teshadi; bola quyosh nuriga qo‘l cho‘zib tashqariga chiqadi.',
+          'Xizr bolasi o‘lgan baytalni olib keladi — baytal bolani emizadi.',
+          'Yilqichilar bolani «arvoh» deb qo‘rqib, kasal bo‘lib qolishadi.',
+          'Rustambek go‘r yoniga egar, oshiq, qo‘g‘irchoq va ro‘mol qo‘yib, bolaning o‘g‘il ekanini bilib oladi.',
+          'Bibi Hilol arvohi o‘g‘lini «tutingan tog‘asi» Rustambekka topshiradi.',
+        ],
+      },
+      {
+        title: 'Ota yurtiga',
+        emoji: '🛤️',
+        text: 'Go‘ro‘g‘li yetti yoshga to‘lganda Xizr uning tushiga onasi ovozida kirib, Yovmit yurtiga ketishni buyuradi. Rustambek urug‘-ajdodini aytib, yarim kechada uni yo‘lga kuzatadi.',
+        mission: { t: 'Jamoalarda', d: 'Har jamoa dostondagi bitta «ajoyib» (fantastik) epizodni tanlab, u qanday xalq e’tiqodi yoki orzusini aks ettirishini 2 gapda tushuntiradi.', sec: 300 },
+      },
+    ],
+    pairs: [
+      ['Odilxon', 'Yovmit podshosi'],
+      ['Shohdorxon', 'Zargar podshosi'],
+      ['To‘liboy sinchi', 'otlarni biluvchi'],
+      ['Ravshanbek', 'Go‘ro‘g‘lining otasi'],
+      ['Bibi Hilol', 'Go‘ro‘g‘lining onasi'],
+      ['Rustambek', 'tutingan tog‘a'],
+      ['Xizr', 'bolaning homiysi'],
+      ['baytal', 'urg‘ochi ot'],
+    ],
+    quiz: [
+      { q: 'Darslikdagi parcha kimning variantidan olingan?', options: ['Po‘lkan shoir', 'Fozil Yo‘ldosh o‘g‘li', 'Ergash Jumanbulbul o‘g‘li', 'Islom shoir'], answer: 0 },
+      { q: 'Ravshanbekni sandiqqa yashirgan kim?', options: ['Hamza', 'Gajdumbek', 'Rustambek', 'Shohdorxon'], answer: 0 },
+      { q: 'Go‘ro‘g‘lini kim emizadi?', options: ['bolasi o‘lgan baytal', 'Xizr', 'Rustambekning xotini', 'bir sigir'], answer: 0 },
+      { q: 'Yilqichilar bolani kim deb o‘ylashadi?', options: ['arvoh', 'farishta', 'dev', 'podsho'], answer: 0 },
+      { q: 'Rustambek bolaning o‘g‘il ekanini qanday bildi?', options: ['egar va oshiqni tanlagani', 'ovozidan', 'kiyimidan', 'tushidan'], answer: 0 },
+      { q: 'Go‘ro‘g‘li necha yoshda ota yurtiga yo‘l oladi?', options: ['yetti', 'uch', 'o‘n besh', 'qirq'], answer: 0 },
+      { q: 'Go‘ro‘g‘lining otasining yurti?', options: ['Yovmit', 'Zargar', 'Mari', 'Chambil'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Real hayotiy voqea', 'Fantastik (afsonaviy) voqea'],
+      items: [
+        { text: 'qo‘shin tortish', cat: 0 }, { text: 'go‘rda tug‘ilish', cat: 1 },
+        { text: 'qul bozori', cat: 0 }, { text: 'arvohning gapirishi', cat: 1 },
+        { text: 'nikoh to‘yi', cat: 0 }, { text: 'Xizrning sherni urishi', cat: 1 },
+        { text: 'yilqichilarning ishi', cat: 0 }, { text: 'qirq chiltanlarning kelishi', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'Doston voqealarini tartiblang',
+        items: [
+          'Shohdorxon qo‘shini Asqar tog‘da bolalarni asir oladi',
+          'Hamza Ravshanbekni sandiqqa yashiradi',
+          'Hiloloy Ravshanbekni ko‘rib, so‘z qotadi',
+          'Gajdumbek Ravshanni sotib olib, singlisini nikohlaydi',
+          'Bibi Hilol vafot etadi',
+          'Go‘rda Go‘ro‘g‘li tug‘iladi',
+          'Rustambek Go‘ro‘g‘lini uyiga olib ketadi',
+        ],
+      },
+    ],
+    qa: [
+      { q: 'Doston nega urush bilan boshlanadi?', a: 'Qahramonning tug‘ilishiga sabab bo‘lgan voqealar — asirlik va ayriliq — urushdan boshlanadi; bu epik ko‘lam beradi.' },
+      { q: '«Endi so‘zni ...dan eshiting» jumlalari nimaga xizmat qiladi?', a: 'Baxshi bir voqeadan ikkinchisiga o‘tadi, tinglovchi diqqatini boshqaradi.' },
+      { q: 'Bibi Hilol portreti qanday?', a: 'Mubolag‘ali, an’anaviy: hur tal’atli, maloyika kelbatli, shirin so‘zli, jodu ko‘zli.' },
+      { q: 'Rustambek nega bolani olishga jur’at qildi?', a: '«Musofir bo‘lib o‘lgandan jiyanimning qo‘lida o‘lganim yaxshi» deb qaror qildi.' },
+      { q: 'Go‘ro‘g‘lining tug‘ilishida qanday raqamlar takrorlanadi?', a: '3, 9, 40: uch oy, to‘qqiz kun, qirq chiltan.' },
+    ],
+    odd: [
+      { items: ['Odilxon', 'Shohdorxon', 'Qovishtixon', 'Boysari'], answer: 3, why: 'Boysari — «Alpomish» qahramoni.' },
+      { items: ['egar', 'oshiq', 'qo‘g‘irchoq', 'qilich'], answer: 3, why: 'Rustambek go‘r yoniga qilich qo‘ymagan.' },
+      { items: ['Xizr', 'qirq chiltan', 'abdallar', 'Hamza'], answer: 3, why: 'Hamza — oddiy odam; qolganlari afsonaviy homiylar.' },
+    ],
+    debate: [
+      { claim: 'Rustambek — dostondagi eng olijanob qahramon.', pro: 'U qo‘rquvni yengib, yetimni bag‘riga oladi va ota yurtiga kuzatadi.', con: 'U avval Gajdumbek mol-mulkiga ega bo‘lib, o‘zini o‘ylagan.' },
+      { claim: 'Fantastik epizodlarsiz doston qiziq bo‘lmasdi.', pro: 'Ajoyib voqealar tinglovchini sehrlaydi.', con: 'Asosiy kuch — insoniy tuyg‘ular: mehr, sadoqat, vatan sog‘inchi.' },
+    ],
+    creative: [
+      { task: 'Go‘ro‘g‘lining go‘rdan chiqib quyoshni birinchi ko‘rgan lahzasini 3 gapda tasvirlang.', time: 120 },
+      { task: 'Rustambek o‘rnida Go‘ro‘g‘liga yo‘l oldidan qanday nasihat qilardingiz? 2 gap.', time: 90 },
+      { task: 'Hiloloyning Ravshanbekka aytgan so‘zlariga javoban 2 misra she’r to‘qing.', time: 120 },
+    ],
+  },
+
+  /* ===================== 5. Dostonlarga xos xususiyatlar ===================== */
+  {
+    id: 'ad10-gorogli-xususiyat',
+    source: 'I chorak • 5-dars • 12–22-betlar',
+    title: '«Go‘ro‘g‘li» turkumi misolida dostonlarga xos xususiyatlarni umumlashtirish',
+    short: 'Nasr va nazm, baxshiyona formulalar, mubolag‘a, raqamlar ramzi, homiylar va epik qahramon',
+    theme: { emoji: '🎶', grad: 'from-orange-600 via-amber-600 to-yellow-400', border: 'border-amber-200', tag: 'Doston poetikasi' },
+    lesson: [
+      {
+        title: 'Doston poetikasi',
+        emoji: '🧩',
+        cards: [
+          { e: '📜', t: 'Nasr + nazm', d: 'Voqea — nasrda, kechinma va dialog — she’rda.' },
+          { e: '🔁', t: 'Formulalar', d: '«Endi so‘zni ...dan eshiting», «bir so‘z dedi», «Alqissa».' },
+          { e: '🔭', t: 'Mubolag‘a', d: '«Ajal yomg‘iri yog‘di», «yer tebrandi».' },
+          { e: '🔢', t: 'Ramziy sonlar', d: '3, 7, 9, 40: uch oy, to‘qqiz kun, qirq chiltan.' },
+          { e: '🕊️', t: 'Homiylar', d: 'Xizr, qirq chiltan, abdallar.' },
+          { e: '🦅', t: 'Epik qahramon', d: 'G‘ayrioddiy tug‘ilish, kuch, el uchun kurash.' },
+        ],
+      },
+      {
+        title: 'Baxshi formulalari',
+        emoji: '🗣️',
+        reveal: [
+          { q: '«Ana endi gapni Zargar degan shahardan eshiting»', a: 'Voqea joyini almashtirish, parallel syujetlarga o‘tish.' },
+          { q: '«Shunda ... bir so‘z dedi»', a: 'Nasrdan she’riy qismga o‘tish belgisi.' },
+          { q: '«Bularni bu turishda qo‘yib…»', a: 'Bir qahramondan ikkinchisiga o‘tish, tinglovchini kuttirib qo‘yish.' },
+        ],
+      },
+      {
+        title: 'Portret va mubolag‘a',
+        emoji: '🎨',
+        text: 'Bibi Hilol portreti xalq dostonlariga xos an’anaviy tasvir: hur tal’atli, maloyika kelbatli, shirin so‘zli, jodu ko‘zli, zulfi tol-tol. Ravshanbek uni ko‘rib «og‘zi angrayib, burni tangrayib» qoladi.',
+        vs: {
+          q: 'Doston portreti zamonaviy hikoyadagi portretdan nimasi bilan farq qiladi?',
+          a: { t: 'Doston portreti', pts: ['An’anaviy, takrorlanuvchi iboralar', 'Mubolag‘a va o‘xshatish', 'Ideal go‘zallik'] },
+          b: { t: 'Zamonaviy portret', pts: ['Individual belgilar', 'Ruhiy holat bilan bog‘liq', 'Real detallar'] },
+        },
+      },
+      {
+        title: 'Epik qahramon belgilari',
+        emoji: '🛡️',
+        steps: [
+          { e: '✨', t: 'G‘ayrioddiy tug‘ilish', d: 'Go‘rda, o‘lik onadan.' },
+          { e: '🕊️', t: 'Ilohiy homiylik', d: 'Xizr va qirq chiltan.' },
+          { e: '💪', t: 'Erta ulg‘ayish', d: 'Uch yoshida go‘rlar ustida o‘ynaydi.' },
+          { e: '🛤️', t: 'Safar', d: 'Yetti yoshida ota yurtiga yo‘l oladi.' },
+          { e: '🏰', t: 'El uchun kurash', d: 'Chambil yurtini quradi, elga xon bo‘ladi.' },
+        ],
+        mission: { t: 'Jamoalarda', d: 'Jamoa «Go‘ro‘g‘li» va «Alpomish» qahramonlarida umumiy bo‘lgan 3 ta epik belgi topadi.', sec: 300 },
+      },
+    ],
+    pairs: [
+      ['formula', '«Endi so‘zni ...dan eshiting»'],
+      ['mubolag‘a', 'bo‘rttirib tasvirlash'],
+      ['ramziy son', '3, 7, 9, 40'],
+      ['homiy', 'Xizr'],
+      ['nasr', 'voqealar bayoni'],
+      ['nazm', 'kechinma va dialog'],
+      ['«Alqissa»', 'yakunlovchi formula'],
+      ['epik qahramon', 'el uchun kurashuvchi botir'],
+    ],
+    quiz: [
+      { q: 'Dostonlarda kechinmalar qanday ifodalanadi?', options: ['she’rda', 'faqat nasrda', 'sahnada', 'xatda'], answer: 0 },
+      { q: '«Endi so‘zni ...dan eshiting» nimaga xizmat qiladi?', options: ['voqeadan voqeaga o‘tish', 'xulosa', 'sarlavha', 'tanishtiruv'], answer: 0 },
+      { q: 'Qaysi biri mubolag‘a?', options: ['Ajal yomg‘iri yog‘di', 'Kun botdi', 'U uyga keldi', 'Ot yugurdi'], answer: 0 },
+      { q: 'Dostonlarda tez-tez uchraydigan ramziy son?', options: ['40', '12', '5', '100'], answer: 0 },
+      { q: 'Go‘ro‘g‘lining homiysi kim?', options: ['Xizr', 'Hamza', 'Shohdorxon', 'Qovishtixon'], answer: 0 },
+      { q: 'Epik qahramonning birinchi belgisi?', options: ['g‘ayrioddiy tug‘ilish', 'boylik', 'kasallik', 'qo‘rqoqlik'], answer: 0 },
+      { q: 'Doston portreti qanday?', options: ['an’anaviy, mubolag‘ali', 'faqat realistik', 'kulgili', 'yo‘q'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Doston poetikasi', 'Doston uchun xos emas'],
+      items: [
+        { text: 'nasr va nazm aralash', cat: 0 }, { text: 'faqat ilmiy uslub', cat: 1 },
+        { text: 'baxshi formulalari', cat: 0 }, { text: 'izohli lug‘at', cat: 1 },
+        { text: 'ramziy sonlar', cat: 0 }, { text: 'statistik jadval', cat: 1 },
+        { text: 'ilohiy homiylar', cat: 0 }, { text: 'gazeta sarlavhasi', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Xalq dostonlarining 3 asosiy xususiyati?', a: 'Nasr va nazm uyg‘unligi, baxshiyona formulalar, mubolag‘a va ramziy sonlar.' },
+      { q: 'Nega dostonda Xizr kabi homiylar bor?', a: 'Xalq e’tiqodicha, adolatli qahramonni ilohiy kuchlar asraydi.' },
+      { q: 'Ramziy sonlar nimani bildiradi?', a: 'Muqaddaslik, to‘liqlik, sinov muddatini.' },
+      { q: 'Doston nega og‘izdan og‘izga o‘tib o‘zgaradi?', a: 'Har bir baxshi o‘z mahorati, hududi tili va tinglovchiga moslab aytadi.' },
+      { q: 'Epik qahramonning hayot yo‘li qanday bosqichlardan iborat?', a: 'G‘ayrioddiy tug‘ilish, homiylik, erta ulg‘ayish, safar, el uchun kurash.' },
+    ],
+    odd: [
+      { items: ['3', '9', '40', '13'], answer: 3, why: 'Qolganlari dostondagi ramziy sonlar.' },
+      { items: ['Xizr', 'qirq chiltan', 'abdal', 'Gajdumbek'], answer: 3, why: 'Gajdumbek oddiy inson.' },
+      { items: ['formula', 'mubolag‘a', 'nazm', 'jadval'], answer: 3, why: 'Jadval doston unsuri emas.' },
+    ],
+    debate: [
+      { claim: 'Baxshi formulalari dostonni zerikarli qiladi.', pro: 'Takrorlar ortiqcha cho‘ziladi.', con: 'Ular tinglovchiga yo‘l ko‘rsatadi va ritm beradi.' },
+      { claim: 'Mubolag‘asiz qahramonlik dostoni bo‘lmaydi.', pro: 'Qahramonlik bo‘rttirilgan tasvir talab qiladi.', con: 'Insoniy, real tasvir ham kuchli ta’sir qiladi.' },
+    ],
+    creative: [
+      { task: 'Bugungi bir voqeani baxshi formulasi bilan boshlang: «Endi so‘zni ... dan eshiting».', time: 60 },
+      { task: 'Sinfdoshingiz portretini doston uslubida 2 gapda yarating (hurmat bilan!).', time: 120 },
+      { task: 'Bir mubolag‘ali gap tuzing: masalan, futbolchi yoki sportchi haqida.', time: 60 },
+    ],
+  },
+
+  /* ===================== 6. Xorazm varianti ===================== */
+  {
+    id: 'ad10-gorogli-xorazm',
+    source: 'I chorak • 6-dars • 23–25-betlar',
+    title: '«Go‘ro‘g‘lining tug‘ilishi» dostonining Xorazm variantidan',
+    short: 'Jig‘olibek va uch o‘g‘il, echki emizgan bola, sirishli egar, «Ravshan»mi yoki «Go‘ro‘g‘li»?',
+    theme: { emoji: '🏜️', grad: 'from-amber-700 via-orange-500 to-yellow-300', border: 'border-amber-200', tag: 'Doston • Xorazm varianti' },
+    lesson: [
+      {
+        title: 'Xorazm shevasida',
+        emoji: '🗣️',
+        text: 'Bu variant Urganch davlat universiteti nashridan (2004) olingan va Xorazm shevasida yozib olingan. Notanish so‘zlarni kontekstdan tushunishga harakat qiling.',
+        table: {
+          head: ['Shevada', 'Adabiy tilda'],
+          rows: [
+            ['do‘radi', 'tug‘ildi'],
+            ['ulli', 'katta'],
+            ['od', 'ot (ism)'],
+            ['go‘z', 'ko‘z'],
+            ['gechi', 'echki'],
+            ['dadi', 'dedi'],
+            ['galavardi', 'kelaverdi'],
+          ],
+        },
+        note: 'Ma’nolar kontekstdan taxminiy berildi.',
+      },
+      {
+        title: 'Jig‘olibek va uch o‘g‘il',
+        emoji: '👴',
+        cards: [
+          { e: '💰', t: 'Ganjimbek', d: 'Katta o‘g‘il — dunyoparast.' },
+          { e: '😶', t: 'Mo‘minbek', d: 'O‘rtancha — beozor, salav (sodda).' },
+          { e: '🔥', t: 'Odibek', d: 'Kenja — qiziqqon, chopqir; yurt unga topshiriladi.' },
+        ],
+        reveal: [{ q: 'Nega Jig‘olibek yurtni kenja o‘g‘liga topshirdi?', a: 'Katta o‘g‘il mol-dunyoga o‘ch, o‘rtanchasi bo‘shang; kenjasining g‘ayrati va chaqqonligi yurt boshqarishga yaraydi, deb o‘yladi. Odibek taxtga o‘tirgach, yoshlikdagi sho‘xliklarini tashladi.' }],
+      },
+      {
+        title: 'Go‘rdagi bola',
+        emoji: '🐐',
+        steps: [
+          { e: '⚱️', t: 'Judolik', d: 'Odibek vafot etadi, ko‘p o‘tmay xotini ham homilador holda vafot etadi.' },
+          { e: '🐐', t: 'Echki', d: 'Echkilardan biri kunduzi mozorga borib, go‘rdagi bolani emizadi.' },
+          { e: '🦴', t: 'Oshiq va qurjoq', d: 'Bola oshiqni o‘ynaydi — o‘g‘il ekani ma’lum bo‘ladi.' },
+          { e: '🐎', t: 'Sirishli egar', d: 'Egarga sirish surtiladi; bola minib yopishib qoladi va qo‘lga olinadi.' },
+          { e: '🎉', t: 'To‘y', d: 'Jig‘olibek elga to‘y beradi.' },
+        ],
+      },
+      {
+        title: 'Ism: Ravshanmi yoki Go‘ro‘g‘li?',
+        emoji: '🏷️',
+        text: 'Katxudolar bolaga «qorong‘ilikdan yorug‘likka chiqdi» deb Ravshan ism qo‘yadi. Ammo xalq uni «go‘rda tug‘ilgan» — Go‘ro‘g‘li deb atay boshlaydi va keyin Ravshan desa, hech kim tanimaydigan bo‘ladi.',
+        reveal: [{ q: 'Bu epizod nimani ko‘rsatadi?', a: 'Xalq nomini xalq beradi: qahramon taqdiri ism ichiga joylanadi.' }],
+      },
+      {
+        title: 'Sho‘x Go‘ro‘g‘li',
+        emoji: '😄',
+        text: 'Xorazm variantida Go‘ro‘g‘li juda sho‘x, tinim bilmas bola: ko‘prik ustida ot hurkitadi, eshaklarning dumiga jang‘al bog‘laydi, tengdoshlari bilan kurash tushadi.',
+        mission: { t: 'Jamoalarda', d: 'Har jamoa bitta sheva so‘zini adabiy tilga o‘girib, uni gapda ishlatadi; qolganlar topadi.', sec: 240 },
+      },
+    ],
+    pairs: [
+      ['Jig‘olibek', 'Chamlibel begi'],
+      ['Ganjimbek', 'dunyoparast katta o‘g‘il'],
+      ['Mo‘minbek', 'sodda o‘rtancha o‘g‘il'],
+      ['Odibek', 'Go‘ro‘g‘lining otasi (Xorazm varianti)'],
+      ['gechi', 'echki'],
+      ['sirish', 'yopishqoq yelim'],
+      ['Ravshan', '«qorong‘ilikdan yorug‘likka»'],
+      ['katxudo', 'el kattasi'],
+    ],
+    quiz: [
+      { q: 'Xorazm variantida Go‘ro‘g‘lini kim emizadi?', options: ['echki', 'baytal', 'sigir', 'tuya'], answer: 0 },
+      { q: 'Bolani qanday qo‘lga olishadi?', options: ['sirish surtilgan egar bilan', 'tuzoq bilan', 'arqon bilan', 'qafas bilan'], answer: 0 },
+      { q: 'Jig‘olibek yurtni kimga topshiradi?', options: ['kenja o‘g‘li Odibekka', 'Ganjimbekka', 'Mo‘minbekka', 'Go‘ro‘g‘liga'], answer: 0 },
+      { q: 'Katxudolar bolaga qanday ism qo‘yadi?', options: ['Ravshan', 'Rustam', 'Ahmad', 'Hasan'], answer: 0 },
+      { q: '«Gechi» so‘zining ma’nosi?', options: ['echki', 'kecha', 'kechik', 'kechir'], answer: 0 },
+      { q: 'Ganjimbek qanday odam?', options: ['dunyoparast', 'qo‘rqoq', 'shoir', 'kasal'], answer: 0 },
+      { q: 'Xorazm varianti qanday tilda yozib olingan?', options: ['Xorazm shevasida', 'fors tilida', 'adabiy tilda', 'arab tilida'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Sheva so‘zi', 'Adabiy til'],
+      items: [
+        { text: 'do‘radi', cat: 0 }, { text: 'tug‘ildi', cat: 1 },
+        { text: 'gechi', cat: 0 }, { text: 'echki', cat: 1 },
+        { text: 'go‘z', cat: 0 }, { text: 'ko‘z', cat: 1 },
+        { text: 'dadi', cat: 0 }, { text: 'dedi', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'Xorazm varianti voqealari',
+        items: [
+          'Jig‘olibek yurtni kenja o‘g‘li Odibekka topshiradi',
+          'Odibek va xotini vafot etadi',
+          'Echki mozordagi bolani emizadi',
+          'Bola oshiqni o‘ynab, o‘g‘il ekani bilinadi',
+          'Sirishli egar bilan bola qo‘lga olinadi',
+          'Elga to‘y berilib, bolaga ism qo‘yiladi',
+        ],
+      },
+    ],
+    qa: [
+      { q: 'Jig‘olibekning o‘g‘illari qanday farq qiladi?', a: 'Ganjimbek — dunyoparast, Mo‘minbek — sodda, Odibek — qiziqqon va chaqqon.' },
+      { q: 'Bolaning o‘g‘il ekani qanday aniqlanadi?', a: 'Mozor yoniga oshiq va qurjoq qo‘yiladi; bola oshiqni o‘ynaydi.' },
+      { q: 'Nega xalq bolani Go‘ro‘g‘li deb atadi?', a: 'Chunki u go‘rda tug‘ilgan; ism uning taqdirini bildiradi.' },
+      { q: 'Xorazm variantida Go‘ro‘g‘li xarakteri qanday?', a: 'Juda sho‘x, tinim bilmas, ko‘pchilikni bezor qiladigan bola.' },
+      { q: 'Sirishli egar epizodida xalqning qanday xususiyati aks etgan?', a: 'Topqirlik, maslahat bilan ish qilish, kattalar donoligi.' },
+    ],
+    odd: [
+      { items: ['Ganjimbek', 'Mo‘minbek', 'Odibek', 'Ravshanbek'], answer: 3, why: 'Qolganlari Jig‘olibekning o‘g‘illari.' },
+      { items: ['gechi', 'go‘z', 'dadi', 'echki'], answer: 3, why: 'Echki — adabiy til so‘zi.' },
+      { items: ['egar', 'sirish', 'oshiq', 'sandiq'], answer: 3, why: 'Sandiq Po‘lkan variantida (Hamza); qolganlari Xorazm variantida.' },
+    ],
+    debate: [
+      { claim: 'Jig‘olibek yurtni kenja o‘g‘liga to‘g‘ri topshirgan.', pro: 'Odibek g‘ayratli, taxtga o‘tirgach o‘zgardi.', con: 'Katta o‘g‘ilni chetlatish oilada nizo keltiradi.' },
+      { claim: 'Sheva so‘zlari dostonni boyitadi.', pro: 'Mahalliy ruh va jonli nutqni beradi.', con: 'Boshqa hudud o‘quvchisiga tushunish qiyin.' },
+    ],
+    creative: [
+      { task: 'Bir gapni Xorazm shevasidagi so‘zlar bilan aytib ko‘ring (darsdagi jadvaldan foydalaning).', time: 90 },
+      { task: 'Sho‘x Go‘ro‘g‘lining bitta yangi «qilig‘i»ni o‘ylab toping va 2 gapda tasvirlang.', time: 90 },
+      { task: 'Bolaga ism qo‘yish marosimida oqsoqol nutqini 3 gapda yozing.', time: 120 },
+    ],
+  },
+
+  /* ===================== 7. Variantlarni solishtirish ===================== */
+  {
+    id: 'ad10-gorogli-qiyos',
+    source: 'I chorak • 7-dars • 14–25-betlar',
+    title: '«Go‘ro‘g‘lining tug‘ilishi» dostoni variantlarini solishtirish',
+    short: 'Po‘lkan va Xorazm variantlarida nasl-nasab, tug‘ilish, xarakter, til va e’tiqodlar',
+    theme: { emoji: '⚖️', grad: 'from-red-800 via-orange-600 to-amber-400', border: 'border-orange-200', tag: 'Qiyosiy tahlil' },
+    lesson: [
+      {
+        title: 'Ikki variant — bitta qahramon',
+        emoji: '🔀',
+        table: {
+          head: ['Belgi', 'Po‘lkan varianti', 'Xorazm varianti'],
+          rows: [
+            ['Otasi', 'Ravshanbek', 'Odibek'],
+            ['Onasi', 'Bibi Hilol', 'Odibekning xotini (ismi aytilmaydi)'],
+            ['Tarbiyachi', 'tutingan tog‘a Rustambek', 'bobosi Jig‘olibek'],
+            ['Emizgan jonivor', 'baytal', 'echki'],
+            ['Homiylar', 'Xizr, qirq chiltan, Bibi Hilol arvohi', 'pir va Xudo karomati (umumiy)'],
+            ['Qo‘lga olish', 'go‘rga kirish yo‘lini to‘sish', 'sirishli egar'],
+            ['Xarakter', 'mehrli, yig‘loqi, ona sog‘inchi', 'sho‘x, tinim bilmas'],
+          ],
+        },
+        note: 'Jadval darslikdagi parchalar asosida; to‘liq dostonda farqlar ko‘proq.',
+      },
+      {
+        title: 'Nega farq bor?',
+        emoji: '🤔',
+        cards: [
+          { e: '🎤', t: 'Ijrochi', d: 'Har baxshi o‘z mahorati va tinglovchisiga moslab aytadi.' },
+          { e: '🗺️', t: 'Hudud', d: 'Xorazmning tili, urf-odati, turkmanlar bilan yaqinligi.' },
+          { e: '⏳', t: 'Zamon', d: 'Asrlar davomida og‘izdan og‘izga o‘tib o‘zgargan.' },
+        ],
+      },
+      {
+        title: 'Umumiylik',
+        emoji: '🤝',
+        list: [
+          'Ikkalasida ham bola go‘rda, o‘lik onadan tug‘iladi.',
+          'Ikkalasida ham jonivor bolani emizadi.',
+          'Ikkalasida ham bolaning jinsi oshiq va qo‘g‘irchoq bilan aniqlanadi.',
+          'Ikkalasida ham egar muhim detal.',
+          'Ikkalasida ham ism taqdirni bildiradi: Go‘ro‘g‘li.',
+        ],
+        reveal: [{ q: 'Bu umumiylik nimani ko‘rsatadi?', a: 'Turli hududlardagi variantlarning asosi — bitta qadimgi afsona va xalqning umumiy e’tiqodlari.' }],
+      },
+      {
+        title: 'Muhokama (darslik savollari)',
+        emoji: '💬',
+        reveal: [
+          { q: 'Xorazm variantida qaysi epizodlar yo‘q?', a: 'Go‘rdagi chiroq, quyosh nuri, Xizrning sherni urishi, Bibi Hilol arvohining gapirishi, Go‘ro‘g‘lining yig‘lab ona bilan xayrlashuvi.' },
+          { q: 'Bu epizodlar mazmunga qanday ta’sir qiladi?', a: 'Po‘lkan variantida ilohiy homiylik va ona mehri kuchliroq, voqea fojiaviyroq va sehrliroq.' },
+          { q: 'Tili qanday farq qiladi?', a: 'Xorazm varianti shevada, nasriy bayon ko‘proq; Po‘lkan variantida she’riy parchalar ko‘p.' },
+        ],
+        mission: { t: 'Ovoz berish', d: 'Qaysi variant ko‘proq yoqdi? Har o‘quvchi tanlovini bir dalil bilan aytadi.', sec: 300 },
+      },
+    ],
+    pairs: [
+      ['Po‘lkan varianti', 'baytal emizadi'],
+      ['Xorazm varianti', 'echki emizadi'],
+      ['Ravshanbek', 'Po‘lkan variantidagi ota'],
+      ['Odibek', 'Xorazm variantidagi ota'],
+      ['Rustambek', 'tutingan tog‘a'],
+      ['Jig‘olibek', 'Xorazm variantidagi bobo'],
+      ['sirishli egar', 'bolani tutish usuli'],
+    ],
+    quiz: [
+      { q: 'Po‘lkan variantida bolani kim emizadi?', options: ['baytal', 'echki', 'sigir', 'ona bo‘ri'], answer: 0 },
+      { q: 'Xorazm variantida Go‘ro‘g‘lining otasi?', options: ['Odibek', 'Ravshanbek', 'Rustambek', 'Gajdumbek'], answer: 0 },
+      { q: 'Ikkala variantda umumiy detal?', options: ['oshiq va qo‘g‘irchoq', 'sandiq', 'qul bozori', 'sher'], answer: 0 },
+      { q: 'Variantlar farqining bir sababi?', options: ['har baxshining o‘z ijrosi', 'kitob narxi', 'qog‘oz rangi', 'televizor'], answer: 0 },
+      { q: 'Xorazm variantida qaysi epizod yo‘q?', options: ['Xizrning sherni urishi', 'egar', 'oshiq', 'to‘y'], answer: 0 },
+      { q: 'Qaysi variantda she’riy parchalar ko‘proq?', options: ['Po‘lkan varianti', 'Xorazm varianti', 'teng', 'ikkalasida yo‘q'], answer: 0 },
+      { q: 'Xorazm variantida Go‘ro‘g‘li qanday bola?', options: ['sho‘x, tinim bilmas', 'kasalmand', 'jim', 'qo‘rqoq'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Po‘lkan varianti', 'Xorazm varianti'],
+      items: [
+        { text: 'baytal', cat: 0 }, { text: 'echki', cat: 1 },
+        { text: 'Rustambek', cat: 0 }, { text: 'Jig‘olibek', cat: 1 },
+        { text: 'Bibi Hilol arvohi', cat: 0 }, { text: 'sirishli egar', cat: 1 },
+        { text: 'Zargar shahri', cat: 0 }, { text: 'Chamlibel', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Ikki variantdagi asosiy umumiylik?', a: 'Go‘rda tug‘ilish, jonivor emizishi, oshiq-qo‘g‘irchoq sinovi, Go‘ro‘g‘li ismi.' },
+      { q: 'Asosiy farqlar?', a: 'Nasl-nasab, tarbiyachi, emizgan jonivor, homiylar, xarakter, til.' },
+      { q: 'Nega xalq dostonlari variantlarga ega?', a: 'Ular og‘zaki yashaydi: har baxshi va hudud o‘zgartirish kiritadi.' },
+      { q: 'Qaysi variantda ilohiy homiylik kuchli?', a: 'Po‘lkan variantida: Xizr, qirq chiltan, arvoh.' },
+      { q: 'Variantlarni solishtirish nima beradi?', a: 'Xalqning umumiy va mahalliy tafakkurini, doston qanday o‘zgarganini ko‘rsatadi.' },
+    ],
+    odd: [
+      { items: ['baytal', 'Rustambek', 'Zargar', 'sirishli egar'], answer: 3, why: 'Sirishli egar — Xorazm variantida.' },
+      { items: ['echki', 'Odibek', 'Chamlibel', 'Xizr va sher'], answer: 3, why: 'Xizr va sher — Po‘lkan variantida.' },
+      { items: ['ijrochi', 'hudud', 'zamon', 'qog‘oz'], answer: 3, why: 'Qolganlari variantlar farqining sabablari.' },
+    ],
+    debate: [
+      { claim: 'Dostonning «asl» varianti bo‘lishi kerak.', pro: 'Bitta nusxa adashishning oldini oladi.', con: 'Og‘zaki ijodning boyligi — variantlarida.' },
+      { claim: 'Po‘lkan varianti Xorazm variantidan badiiyroq.', pro: 'Unda she’r, ramz, fojiaviylik ko‘p.', con: 'Xorazm varianti jonli, sodda va xalqona.' },
+    ],
+    creative: [
+      { task: 'O‘zingizning «uchinchi variant»ingizda Go‘ro‘g‘lini qaysi jonivor emizardi? Nega? 2 gap.', time: 90 },
+      { task: 'Ikki variant qahramonlari uchrashib qolsa, nima deyishardi? 4 replikali dialog.', time: 150 },
+      { task: 'Variantlar farqini bitta o‘xshatish bilan tushuntiring: «Variantlar — bu …».', time: 60 },
+    ],
+  },
+
+  /* ===================== 8. 1-BSB ===================== */
+  {
+    id: 'ad10-bsb-1',
+    source: 'I chorak • 8-dars • 1-BSB (50 ball)',
+    title: '1-BSB. Taassurot yozish',
+    short: '«Go‘ro‘g‘li» dostonidan olgan taassurotni yozish: tuzilma, iboralar va baholash mezoni',
+    theme: { emoji: '✍️', grad: 'from-gray-900 via-indigo-800 to-sky-600', border: 'border-sky-200', tag: 'Bo‘lim summativ baholash' },
+    lesson: [
+      {
+        title: 'Taassurot nima?',
+        emoji: '💭',
+        text: 'Taassurot — asar o‘quvchida qoldirgan his-tuyg‘u va fikrlarning yozma ifodasi. Unda «nima bo‘lgani» emas, «menga qanday ta’sir qilgani» muhim.',
+        facts: [
+          { n: '50', l: 'ball — maksimal' },
+          { n: '150–200', l: 'so‘z (tavsiya)' },
+          { n: '30', l: 'daqiqa' },
+        ],
+      },
+      {
+        title: 'Taassurot tuzilishi',
+        emoji: '🏗️',
+        steps: [
+          { e: '🚪', t: 'Kirish', d: 'Asar nomi, ijrochi (Po‘lkan yoki Xorazm varianti) va birinchi tuyg‘u.' },
+          { e: '🎬', t: 'Eng ta’sirli lavha', d: 'Qaysi epizod va nega? (Go‘rdan chiqish, ona bilan xayrlashuv…)' },
+          { e: '🦸', t: 'Qahramonga munosabat', d: 'Go‘ro‘g‘li, Rustambek yoki Bibi Hilol haqida fikringiz.' },
+          { e: '💡', t: 'Saboq', d: 'Dostondan o‘zingiz uchun nima oldingiz?' },
+          { e: '🏁', t: 'Xulosa', d: 'Bir gaplik umumiy baho.' },
+        ],
+      },
+      {
+        title: 'Foydali iboralar',
+        emoji: '🧰',
+        cards: [
+          { e: '❤️', t: 'Tuyg‘u', d: 'meni hayajonga soldi, yuragimni ezdi, beixtiyor jilmaydim' },
+          { e: '🔎', t: 'Dalil', d: 'ayniqsa … lavhasi, … degan misralar' },
+          { e: '🏁', t: 'Xulosa', d: 'shunday qilib, men uchun bu doston …' },
+        ],
+      },
+      {
+        title: 'Baholash mezoni (50 ball)',
+        emoji: '📊',
+        text: 'Taxminiy — ustoz o‘zgartirishi mumkin:',
+        table: {
+          head: ['Mezon', 'Ball'],
+          rows: [
+            ['Shaxsiy taassurot va samimiylik', '10'],
+            ['Matndan dalil (lavha, misra)', '10'],
+            ['Tuzilish: kirish, asosiy qism, xulosa', '10'],
+            ['Uslub va so‘z boyligi', '10'],
+            ['Imlo va tinish belgilari', '10'],
+            ['Jami', '50'],
+          ],
+        },
+        mission: { t: 'Taassurot', d: '«Go‘ro‘g‘lining tug‘ilishi» dostonidan olgan taassurotingizni yozing.', sec: 1800 },
+      },
+    ],
+    pairs: [
+      ['taassurot', 'asardan olingan tuyg‘u va fikr'],
+      ['kirish', 'asar nomi va ilk tuyg‘u'],
+      ['dalil', 'lavha yoki misra'],
+      ['saboq', 'o‘zingiz uchun xulosa'],
+      ['samimiylik', 'chin dildan yozish'],
+      ['uslub', 'so‘z tanlash mahorati'],
+      ['50', 'BSB maksimal bali'],
+    ],
+    quiz: [
+      { q: 'Taassurotda eng muhim narsa?', options: ['asarning menga ta’siri', 'voqeani to‘liq qayta aytish', 'muallif tarjimai holi', 'kitob narxi'], answer: 0 },
+      { q: 'BSB necha ball?', options: ['50', '40', '100', '20'], answer: 0 },
+      { q: 'Taassurot qaysi qism bilan boshlanadi?', options: ['kirish', 'xulosa', 'saboq', 'dalil'], answer: 0 },
+      { q: 'Dalil sifatida nima keltiriladi?', options: ['asardan lavha yoki misra', 'gazeta', 'reklama', 'hech narsa'], answer: 0 },
+      { q: 'Qaysi ibora tuyg‘uni bildiradi?', options: ['yuragimni ezdi', 'xulosa qilib', 'birinchidan', 'masalan'], answer: 0 },
+      { q: 'Taassurotning oxirgi qismi?', options: ['xulosa', 'kirish', 'lavha', 'reja'], answer: 0 },
+      { q: 'Tavsiya etilgan hajm?', options: ['150–200 so‘z', '10 so‘z', '1000 so‘z', '1 gap'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Taassurotga mos', 'Mos emas'],
+      items: [
+        { text: 'menga ta’sir qilgan lavha', cat: 0 }, { text: 'butun syujetni qayta aytish', cat: 1 },
+        { text: 'qahramonga munosabat', cat: 0 }, { text: 'dalilsiz «zo‘r» deyish', cat: 1 },
+        { text: 'asardan misra', cat: 0 }, { text: 'mavzudan chetga chiqish', cat: 1 },
+        { text: 'shaxsiy saboq', cat: 0 }, { text: 'boshqa asarni ko‘chirish', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Taassurot qanday tuziladi?', a: 'Kirish, eng ta’sirli lavha, qahramonga munosabat, saboq, xulosa.' },
+      { q: 'Taassurot va qayta hikoya qilish farqi?', a: 'Taassurotda asosiy narsa — o‘quvchining tuyg‘u va fikri, qayta hikoyada — voqea.' },
+      { q: 'Qanday dalil keltirish mumkin?', a: 'Asardan lavha, misra, qahramon so‘zi.' },
+      { q: 'Taassurotda qanday xatodan qochish kerak?', a: 'Butun syujetni ko‘chirish, dalilsiz baho, mavzudan chetga chiqish.' },
+      { q: 'Samimiylik nega muhim?', a: 'Taassurot shaxsiy janr: soxta tuyg‘u o‘quvchini ishontirmaydi.' },
+    ],
+    odd: [
+      { items: ['kirish', 'lavha', 'xulosa', 'mundarija'], answer: 3, why: 'Qolganlari taassurot qismlari.' },
+      { items: ['hayajon', 'iztirob', 'quvonch', 'jadval'], answer: 3, why: 'Qolganlari tuyg‘ular.' },
+      { items: ['Go‘ro‘g‘li', 'Rustambek', 'Bibi Hilol', 'Axilles'], answer: 3, why: 'Axilles «Iliada» qahramoni.' },
+    ],
+    debate: [
+      { claim: 'Taassurotda xatolik bo‘lmaydi — har kim o‘zicha his qiladi.', pro: 'Tuyg‘u shaxsiy, uni noto‘g‘ri deb bo‘lmaydi.', con: 'Asarni noto‘g‘ri tushunish ham bo‘ladi; dalil kerak.' },
+      { claim: 'Taassurotni og‘zaki aytish yozishdan oson.', pro: 'Gapirganda tuyg‘u tabiiy chiqadi.', con: 'Yozganda o‘ylab, chiroyli ifoda tanlash mumkin.' },
+    ],
+    creative: [
+      { task: 'Taassurotingizni bitta sarlavhada ifodalang.', time: 60 },
+      { task: '«Doston meni … ga o‘rgatdi» deb boshlanadigan 2 gap yozing.', time: 90 },
+      { task: 'Dostondagi eng ta’sirli misrani tanlab, nega tanlaganingizni bir gapda ayting.', time: 60 },
+    ],
+  },
+
+  /* ===================== 9. Qadimgi dunyo adabiyoti ===================== */
+  {
+    id: 'ad10-qadimgi-dunyo',
+    source: 'I chorak • 9-dars • 26–31-betlar',
+    title: 'Qadimgi dunyo adabiyoti: umumlashtiruvchi kirish darsi',
+    short: 'Gilgamesh, «Marhumlar kitobi», «Vedalar», «Mahabharata», «Qo‘shiqlar kitobi», «Avesto», antik adabiyot',
+    theme: { emoji: '🏺', grad: 'from-stone-800 via-amber-700 to-yellow-500', border: 'border-amber-200', tag: 'Qadimgi dunyo • Umumlashtiruvchi' },
+    lesson: [
+      {
+        title: 'Yozma adabiyot qachon paydo bo‘ldi?',
+        emoji: '🧱',
+        text: 'Yozma adabiyot miloddan avvalgi IV–II mingyilliklarda qadimgi Sharqda — Shumer, Akkad, Bobil (Mesopotamiya, hozirgi Iroq) va Qadimgi Misrda yozuv ixtiro qilinishi bilan paydo bo‘ldi. Dastlabki namunalar — miflar, eposlar, madhiyalar, qo‘shiq va maqollar.',
+        rule: 'Mif — qadimgi xalqlarning dunyo paydo bo‘lishi, tabiat hodisalari sababi va ma’budlarning odamlar hayotiga ta’siri haqidagi e’tiqodlari aks etgan asar.',
+        ruleLabel: 'Ta’rif',
+      },
+      {
+        title: 'Qadimgi Sharq durdonalari',
+        emoji: '🌍',
+        cards: [
+          { e: '🦁', t: 'Gilgamesh dostoni', d: 'Mesopotamiya, akkad tili. Zolim shoh Gilgamesh va yovvoyi Enkidu do‘stlashib, yovuzlikka qarshi kurashadi; Gilgamesh hayot suvini izlaydi.' },
+          { e: '⚱️', t: '«Marhumlar kitobi»', d: 'Misr, mil. avv. XV asr. Narigi dunyo, abadiy hayot; qahramon hakamlar oldida hisob beradi.' },
+          { e: '🕉️', t: '«Vedalar»', d: 'Hindiston. Madhiyalar, duolar, hikmatli so‘zlar.' },
+          { e: '🏹', t: '«Mahabharata» va «Ramayana»', d: 'Hind eposlari: sulolalar kurashi; Ramaning Sitani qutqarishi.' },
+          { e: '🎋', t: '«Qo‘shiqlar kitobi»', d: 'Xitoy, mil. avv. XI–VII asrlar. Tabiat bilan uyg‘unlik falsafasi.' },
+          { e: '🔥', t: '«Avesto»', d: 'Zardushtiylikning muqaddas kitobi, O‘rta Osiyo. Ezgulik va yovuzlik kurashi.' },
+        ],
+      },
+      {
+        title: 'Qadimgi hikmat',
+        emoji: '📜',
+        text: 'Qadimgi Misr qabrtoshlaridagi bitiklardan (darslik tarjimasi):',
+        quote: { text: 'Olimlik bilan maqtanma. Bir o‘zim hamma narsani bilaman deb o‘ylama.', by: 'Qadimgi Misr bitigi' },
+        reveal: [{ q: 'Bu fikr bugun ham to‘g‘rimi?', a: 'Erkin javob: kamtarlik va o‘rganishdan to‘xtamaslik har zamonda qadrli.' }],
+      },
+      {
+        title: 'O‘rta Osiyo: afsona va «Avesto»',
+        emoji: '🏔️',
+        list: [
+          'Qadimgi manbalar orqali bizgacha «To‘maris», «Shiroq» afsonalari yetib kelgan — ularda ajdodlarimizning donoligi, irodasi, yurt ozodligi uchun jasorati aks etgan.',
+          '«Avesto»da O‘rta Osiyo, Eron va Ozarbayjon xalqlarining hayoti, tarixi, ezgulik va yovuzlik haqidagi qarashlari bor.',
+          'Mitra — zardushtiylikda Quyosh va yorug‘lik ma’budi; Ranxa — Sirdaryo.',
+        ],
+      },
+      {
+        title: 'Antik adabiyot',
+        emoji: '🏛️',
+        rule: 'Antik (lotincha «qadimiy») adabiyot — taxminan mil. avv. I mingyillikdan milodiy V asrgacha (Rim imperiyasi qulashigacha) Yunoniston va Rimda yaratilgan adabiyot.',
+        ruleLabel: 'Ta’rif',
+        steps: [
+          { e: '⚡', t: 'Mifologiya', d: 'Olimp tog‘ida Zevs boshliq ma’budlar; Herakl kabi yarim ma’bud qahramonlar.' },
+          { e: '📖', t: 'Epos', d: '«Iliada», «Odisseya» (Homer), «Eneida» (Vergiliy).' },
+          { e: '🎭', t: 'Drama', d: 'Esxil («Zanjirband Prometey»), Sofokl («Shoh Edip»), Yevripid; komediyada Aristofan.' },
+          { e: '🎼', t: 'Lirika', d: 'Alkey, Sapfo, Anakreont; Rimda Vergiliy, Horatsiy, Ovidiy.' },
+          { e: '🌿', t: 'Nasr', d: '«Dafnis va Xloya» — pastoral romanning ilk namunasi.' },
+        ],
+      },
+      {
+        title: 'Antik teatr va bugungi kun',
+        emoji: '🎭',
+        text: 'Yunon teatri ochiq havoda, tepalikka qurilgan; sahnada 3 tagacha aktyor, 12–15 kishilik xor voqealarni sharhlaydi. Antik madaniyatdan bizga Olimpiada o‘yinlari, lotin yozuvi, sayyora nomlari, ilmiy atamalar va adabiy turlar (epos, lirika, drama) qolgan.',
+        vs: {
+          q: 'Qaysi biri bugun ko‘proq sezilmoqda?',
+          a: { t: 'Qadimgi Sharq merosi', pts: ['Hikmat va pand-nasihat', 'Ezgulik va yovuzlik kurashi'] },
+          b: { t: 'Antik meros', pts: ['Olimpiada, teatr', 'Lotin yozuvi, ilmiy atamalar'] },
+        },
+        mission: { t: 'Jamoalarda', d: 'Har jamoa bugungi hayotdan antik madaniyat izini topib aytadi (masalan, so‘z, sport, ramz).', sec: 240 },
+      },
+    ],
+    pairs: [
+      ['Gilgamesh', 'Mesopotamiya eposi'],
+      ['«Marhumlar kitobi»', 'Qadimgi Misr'],
+      ['«Vedalar»', 'Qadimgi Hindiston'],
+      ['«Qo‘shiqlar kitobi»', 'Qadimgi Xitoy'],
+      ['«Avesto»', 'zardushtiylik kitobi'],
+      ['«Zanjirband Prometey»', 'Esxil'],
+      ['«Shoh Edip»', 'Sofokl'],
+      ['«Eneida»', 'Vergiliy'],
+    ],
+    quiz: [
+      { q: 'Gilgamesh haqidagi doston qaysi tilda?', options: ['akkad', 'yunon', 'lotin', 'sanskrit'], answer: 0 },
+      { q: '«Avesto» qaysi dinning muqaddas kitobi?', options: ['zardushtiylik', 'buddizm', 'hinduizm', 'konfutsiylik'], answer: 0 },
+      { q: '«Antik» so‘zi lotinchada nimani bildiradi?', options: ['qadimiy', 'yangi', 'go‘zal', 'jasur'], answer: 0 },
+      { q: 'Tragediya janrining asoschisi?', options: ['Esxil', 'Aristofan', 'Homer', 'Vergiliy'], answer: 0 },
+      { q: '«Ramayana»da Rama kimni qutqaradi?', options: ['rafiqasi Sitani', 'otasini', 'shaharini', 'do‘stini'], answer: 0 },
+      { q: 'Yunon teatrida sahnada nechta aktyor bo‘lgan?', options: ['uchtagacha', 'yuzta', 'bitta', 'o‘nta'], answer: 0 },
+      { q: 'Ranxa qaysi daryo?', options: ['Sirdaryo', 'Amudaryo', 'Nil', 'Furot'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Qadimgi Sharq', 'Antik (Yunon–Rim)'],
+      items: [
+        { text: 'Gilgamesh', cat: 0 }, { text: '«Iliada»', cat: 1 },
+        { text: '«Vedalar»', cat: 0 }, { text: '«Shoh Edip»', cat: 1 },
+        { text: '«Avesto»', cat: 0 }, { text: '«Eneida»', cat: 1 },
+        { text: '«Qo‘shiqlar kitobi»', cat: 0 }, { text: 'Sapfo lirikasi', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'Xronologik tartib (darslik jadvali bo‘yicha)',
+        items: [
+          'Gilgamesh eposi shakllana boshlaydi (mil. avv. III mingyillik)',
+          '«Marhumlar kitobi» (mil. avv. II mingyillik)',
+          '«Iliada» va «Odisseya» (mil. avv. VIII–VII asrlar)',
+          'Afinaning oltin davri: Esxil, Sofokl, Yevripid (mil. avv. V asr)',
+          'Rim adabiyotining oltin davri: Vergiliy, Horatsiy, Ovidiy (mil. avv. I asr – milodiy I asr)',
+        ],
+      },
+    ],
+    qa: [
+      { q: 'Yozma adabiyot qayerda va qachon paydo bo‘lgan?', a: 'Mil. avv. IV–II mingyilliklarda Mesopotamiya va Qadimgi Misrda.' },
+      { q: 'Mif nima?', a: 'Dunyo, tabiat va ma’budlar haqidagi qadimgi e’tiqodlar aks etgan asar.' },
+      { q: 'Qadimgi Sharq adabiyotining asosiy mavzulari?', a: 'Ma’budlar, narigi dunyo, abadiy hayot, ezgulik va yovuzlik, pand-nasihat, muhabbat.' },
+      { q: 'Antik adabiyot qaysi davrni o‘z ichiga oladi?', a: 'Mil. avv. I mingyillikdan milodiy V asrgacha.' },
+      { q: 'Antik madaniyatning bugungi izlari?', a: 'Olimpiada, lotin yozuvi, sayyora nomlari, ilmiy atamalar, epos-lirika-drama.' },
+    ],
+    odd: [
+      { items: ['Esxil', 'Sofokl', 'Yevripid', 'Gilgamesh'], answer: 3, why: 'Qolganlari yunon dramaturglari.' },
+      { items: ['Zevs', 'Afina', 'Apollon', 'Mitra'], answer: 3, why: 'Mitra — zardushtiylik ma’budi; qolganlari yunon ma’budlari.' },
+      { items: ['To‘maris', 'Shiroq', '«Avesto»', '«Eneida»'], answer: 3, why: '«Eneida» — Rim eposi.' },
+    ],
+    debate: [
+      { claim: 'Qadimgi asarlarni o‘qish bugun kerak emas.', pro: 'Ular juda eski, hayotimizdan uzoq.', con: 'Ularda insoniyatning abadiy savollari bor; zamonaviy madaniyat ularga tayanadi.' },
+      { claim: 'Mif va ertak — bir narsa.', pro: 'Ikkalasida ham g‘ayritabiiy voqealar bor.', con: 'Mifga qadimgi odamlar ishongan, ertakni esa uydirma deb bilishgan.' },
+    ],
+    creative: [
+      { task: 'Bugungi bir tabiat hodisasi (masalan, kamalak) uchun qisqa «mif» o‘ylab toping — 3 gap.', time: 150 },
+      { task: 'Qadimgi Misr hikmatiga o‘xshash, o‘zingizning bitta hikmatli so‘zingizni yozing.', time: 60 },
+      { task: 'Antik teatr xorining o‘rnida bugungi sinf voqeasiga 2 gaplik sharh yozing.', time: 90 },
+    ],
+  },
+
+  /* ===================== 10. Homer. Iliada ===================== */
+  {
+    id: 'ad10-iliada-tarix',
+    source: 'I chorak • 10-dars • 32–33-betlar',
+    title: 'Homer. «Iliada» dostoni. Tarixiy davr. Asarning yaratilish tarixi',
+    short: 'Yunon polislari, afsonaviy shoir Homer, oltin olma va Troya urushi, Shliman topilmasi',
+    theme: { emoji: '🏛️', grad: 'from-sky-900 via-blue-700 to-amber-400', border: 'border-sky-200', tag: 'Antik epos • Homer' },
+    lesson: [
+      {
+        title: 'Tarixiy davr',
+        emoji: '⛵',
+        text: 'Mil. avv. VIII–VII asrlarda dehqonchilik, hunarmandchilik va savdo rivojlanib, yunon polislari — shahar-davlatlar paydo bo‘ldi. Tili, dini bir bo‘lgan bu shaharlar tez-tez urushardi, lekin rivojlanib, O‘rta va Qora dengiz sohillarida koloniyalar qurdi. Finikiya yozuvi asosida yunon alifbosi yaratildi.',
+      },
+      {
+        title: 'Muallif: Homer',
+        emoji: '🧔',
+        facts: [
+          { n: 'mil. avv. VIII asr', l: 'yashagan (taxminan)' },
+          { n: '2', l: 'doston: «Iliada», «Odisseya»' },
+          { n: 'Ioniya', l: 'hozirgi Turkiya' },
+        ],
+        text: 'Homerning qachon va qayerda tug‘ilgani ma’lum emas. Ayrim manbalarda u shahardan shaharga ko‘chib doston aytgan ko‘zi ojiz shoir sifatida tasvirlanadi. Aflotun uni «yunonlarning ilk tarbiyachisi» deb atagan.',
+      },
+      {
+        title: 'Oltin olma',
+        emoji: '🍎',
+        steps: [
+          { e: '💒', t: 'To‘y', d: 'Shoh Peley va ma’buda Fetida to‘yiga taklif qilinmagan Erida «Eng go‘zal ayolga» deb yozilgan oltin olma tashlaydi.' },
+          { e: '👑', t: 'Bahs', d: 'Hera, Afina va Afrodita olma uchun talashadi.' },
+          { e: '⚖️', t: 'Hakam', d: 'Troya shohi Priamning o‘g‘li Paris olmani Afroditaga beradi.' },
+          { e: '💔', t: 'Va’da', d: 'Afrodita evaziga Parisga Sparta shohi Menelayning xotini Yelenani beradi.' },
+          { e: '⚔️', t: 'Urush', d: 'Paris Yelenani olib qochadi; Menelay va Agamemnon Troyaga urush ochadi — urush 10 yil davom etadi.' },
+        ],
+      },
+      {
+        title: '«Iliada» nima haqida?',
+        emoji: '🛡️',
+        text: '«Iliada» (Ilion — Troyaning ikkinchi nomi) urushning o‘ninchi yili voqealari haqida. Troya qahramoni Hektor yunonlarning yengilmas qahramoni Axillesning do‘sti Patroklni o‘ldiradi va uning Axilles sovutini yechib oladi. G‘azablangan Axilles Hektor bilan yakkama-yakka jangga chiqadi.',
+        cards: [
+          { e: '🏰', t: 'Troyaliklar', d: 'Priam, Hekuba, Hektor, Andromaxa, Paris, Yelena' },
+          { e: '⛵', t: 'Yunonlar (axeylar)', d: 'Agamemnon, Menelay, Axilles, Patrokl' },
+          { e: '⚡', t: 'Ma’budlar', d: 'Zevs, Afina (Pallada), Apollon (Feb)' },
+        ],
+      },
+      {
+        title: 'Afsona va haqiqat',
+        emoji: '⛏️',
+        text: 'XIX asrda nemis tadbirkori Genrix Shliman hozirgi Turkiya hududida Troya qoldiqlarini topdi. Arxeologlar fikricha, taxminan mil. avv. XII asrda shahar dushman hujumiga uchragan. Troya qoldiqlari YuNESKO butunjahon merosi ro‘yxatida.',
+        vs: {
+          q: 'Troya urushi bo‘lganmi?',
+          a: { t: 'Ha, tarixiy voqea', pts: ['Shahar qoldiqlari topilgan', 'Hujum izlari bor'] },
+          b: { t: 'Asosan afsona', pts: ['Ma’budlar, oltin olma — mif', 'Doston voqeadan 400 yil keyin yaratilgan'] },
+        },
+        mission: { t: 'Jamoalarda', d: 'Oltin olma afsonasini 5 ta rasmli kadr (komiks) qilib chizing yoki og‘zaki aytib bering.', sec: 300 },
+      },
+    ],
+    pairs: [
+      ['Homer', '«Iliada» va «Odisseya»'],
+      ['Ilion', 'Troya'],
+      ['Erida', 'oltin olma tashlagan ma’buda'],
+      ['Paris', 'olmani Afroditaga bergan'],
+      ['Yelena', 'Menelayning xotini'],
+      ['Hektor', 'Troya qahramoni'],
+      ['Axilles', 'yunonlarning yengilmas qahramoni'],
+      ['Genrix Shliman', 'Troya qoldiqlarini topgan'],
+    ],
+    quiz: [
+      { q: 'Oltin olmada nima yozilgan edi?', options: ['Eng go‘zal ayolga', 'Eng aqllisiga', 'Eng kuchlisiga', 'Zevsga'], answer: 0 },
+      { q: 'Paris olmani kimga berdi?', options: ['Afroditaga', 'Heraga', 'Afinaga', 'Eridaga'], answer: 0 },
+      { q: 'Troya urushi necha yil davom etgan?', options: ['10', '3', '30', '100'], answer: 0 },
+      { q: '«Iliada» urushning qaysi yili haqida?', options: ['o‘ninchi', 'birinchi', 'beshinchi', 'yigirmanchi'], answer: 0 },
+      { q: 'Patroklni kim o‘ldiradi?', options: ['Hektor', 'Paris', 'Axilles', 'Priam'], answer: 0 },
+      { q: 'Homerni «yunonlarning ilk tarbiyachisi» deb kim atagan?', options: ['Aflotun', 'Arastu', 'Sokrat', 'Gerodot'], answer: 0 },
+      { q: 'Troya qoldiqlarini kim topgan?', options: ['Genrix Shliman', 'Kolumb', 'Darvin', 'Nyuton'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Troyaliklar', 'Yunonlar (axeylar)'],
+      items: [
+        { text: 'Hektor', cat: 0 }, { text: 'Axilles', cat: 1 },
+        { text: 'Priam', cat: 0 }, { text: 'Agamemnon', cat: 1 },
+        { text: 'Paris', cat: 0 }, { text: 'Menelay', cat: 1 },
+        { text: 'Andromaxa', cat: 0 }, { text: 'Patrokl', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'Troya urushining boshlanishi',
+        items: [
+          'Erida to‘yga oltin olma tashlaydi',
+          'Uch ma’buda olma uchun talashadi',
+          'Paris olmani Afroditaga beradi',
+          'Paris Yelenani Spartadan olib qochadi',
+          'Menelay va Agamemnon Troyaga urush ochadi',
+        ],
+      },
+    ],
+    qa: [
+      { q: 'Yunon polislari nima?', a: 'Tili, dini bir bo‘lgan mustaqil shahar-davlatlar.' },
+      { q: 'Homer haqida nimalar ma’lum?', a: 'Afsonaviy shoir, taxminan mil. avv. VIII asrda yashagan, ko‘zi ojiz sayyor shoir deyiladi.' },
+      { q: 'Troya urushining sababi (afsonaga ko‘ra)?', a: 'Erida tashlagan oltin olma, Parisning hukmi va Yelenaning olib qochilishi.' },
+      { q: '«Iliada» nomi qayerdan?', a: 'Troyaning ikkinchi nomi — Ilion.' },
+      { q: 'Shliman topilmasi nimani isbotladi?', a: 'Troya haqiqatda bo‘lgan va mil. avv. XII asrda hujumga uchragan.' },
+    ],
+    odd: [
+      { items: ['Hera', 'Afina', 'Afrodita', 'Yelena'], answer: 3, why: 'Yelena — inson; qolganlari olma talashgan ma’budalar.' },
+      { items: ['Hektor', 'Paris', 'Priam', 'Axilles'], answer: 3, why: 'Axilles yunonlar tomonida.' },
+      { items: ['Ilion', 'Troya', 'Pergam', 'Sparta'], answer: 3, why: 'Qolganlari Troyaning nomlari va qal’asi.' },
+    ],
+    debate: [
+      { claim: 'Troya urushida Paris aybdor.', pro: 'U birovning xotinini olib qochdi.', con: 'Afsonaga ko‘ra hammasini ma’budlar boshlagan.' },
+      { claim: 'Afsonani arxeologiya bilan tekshirish kerak.', pro: 'Haqiqatni bilish muhim.', con: 'Adabiyotning qadri tarixiy aniqlikda emas.' },
+    ],
+    creative: [
+      { task: 'Paris o‘rnida olmani kimga bergan bo‘lardingiz? Nega? 2 gap.', time: 90 },
+      { task: 'Troya qoldiqlarini topgan Shliman kundaligidan bir sahifa yozing — 3 gap.', time: 120 },
+      { task: '«Oltin olma» iborasini bugungi «nizo sababi» ma’nosida gapda ishlating.', time: 60 },
+    ],
+  },
+];
+
+const ADABIYOT_10_P2 = [
+  /* ===================== 11. Oltinchi qo‘shiq ===================== */
+  {
+    id: 'ad10-iliada-6',
+    source: 'I chorak • 11-dars • 34–40-betlar',
+    title: 'Homer. «Iliada» dostonidan parchalar (Oltinchi qo‘shiq)',
+    short: 'Hektor va Paris, Yelenaning pushaymoni, Hektor va Andromaxaning xayrlashuvi',
+    theme: { emoji: '🛡️', grad: 'from-blue-900 via-sky-700 to-amber-300', border: 'border-sky-200', tag: '«Iliada» • 6-qo‘shiq' },
+    lesson: [
+      {
+        title: 'Hektor Paris uyida',
+        emoji: '🏠',
+        text: 'Qodir Mirmuhamedov tarjimasidan (o‘z so‘zimiz bilan): shahar devori ostida qon to‘kilayotgan paytda Hektor ukasi Parisning hashamatli uyiga kirib boradi. Paris sovutini taqib, uyda yasanib o‘tiribdi. Hektor uni koyiydi: bu urush aynan uning tufayli boshlangan-ku!',
+        reveal: [
+          { q: 'Paris qanday javob beradi?', a: 'Akasining koyishini haqli deb tan oladi, xotini ham jangga undaganini aytadi va orqasidan yetib borishga va’da beradi.' },
+          { q: 'Yelena o‘zi haqida nima deydi?', a: 'O‘zini «badbaxt» deb ataydi: tug‘ilgan kuni o‘lib ketganida bu qirg‘inlar bo‘lmasdi; Paris esa hanuz tentak, deydi.' },
+        ],
+      },
+      {
+        title: 'Andromaxa kim?',
+        emoji: '👩',
+        text: 'Andromaxa — kilik eli shohi Etionning qizi, Hektorning rafiqasi. Ularning yakka-yolg‘iz farzandi — Astianaks («shahar hukmdori»): troyaliklar uni shunday atagan, chunki Hektor Troyaning panohi edi.',
+        reveal: [{ q: 'Andromaxaning oilasiga nima bo‘lgan?', a: 'Axilles uning otasini va yetti akasini o‘ldirgan; onasi asirlikdan to‘lov bilan ozod bo‘lgach, vafot etgan. Endi Hektor uning uchun ham ota, ham ona, ham aka.' }],
+      },
+      {
+        title: 'Askey darvozasi oldida',
+        emoji: '🚪',
+        vs: {
+          q: 'Hektor qaysi burchni tanlashi kerak?',
+          a: { t: 'Andromaxaning iltijosi', pts: ['Qolgin biz bilan', 'O‘g‘lingni yetim, meni tul qilma', 'Qo‘shinni anjir daraxti yonida tut'] },
+          b: { t: 'Hektorning javobi', pts: ['Jangdan qochsam, el oldida xijolat', 'Mardlikka odatlanganman', 'Shon — otam va o‘zim uchun'] },
+        },
+        reveal: [{ q: 'Hektorni eng ko‘p nima qiynaydi?', a: 'Troyaning vayron bo‘lishidan ham ko‘ra Andromaxaning asir bo‘lib, yov yurtida cho‘ri bo‘lishi.' }],
+      },
+      {
+        title: 'Dubulg‘a va o‘g‘ilcha',
+        emoji: '⛑️',
+        text: 'Hektor o‘g‘lini quchmoqchi bo‘ladi, lekin go‘dak yaraqlagan dubulg‘a va ot yolidan qo‘rqib, enagaga yopishadi. Ota-ona jilmayadi. Hektor dubulg‘ani yerga qo‘yib, o‘g‘lini erkalaydi va ma’budlardan uni o‘zidan ham nomdor qilishni so‘raydi.',
+        quote: { text: 'Otasidan o‘tib ketdi, deb aytishsin', by: '«Iliada», Hektorning duosi' },
+        note: 'Dubulg‘ani yechish — urush qiyofasini yechib, ota bo‘lib qolish ramzi (taxminiy talqin).',
+      },
+      {
+        title: 'Taqdir va burch',
+        emoji: '⚖️',
+        text: 'Hektor xotinini ovutadi: taqdir zid bo‘lmasa, hech kim uni o‘ldira olmaydi; ammo hech bir inson taqdirdan qochib qutula olmagan. Andromaxa uyga qaytib, joriyalar bilan tirik Hektorga aza ochadi. Shu payt Paris ham shod-xurram jangga chiqadi.',
+        mission: { t: 'Jamoalarda (darslik savoli)', d: 'Hektor–Paris va Andromaxa–Yelena juftliklarini 3 ta belgi bo‘yicha solishtiring.', sec: 300 },
+      },
+    ],
+    pairs: [
+      ['Hektor', 'Troya panohi'],
+      ['Paris', 'Aleksandr, urush sababchisi'],
+      ['Andromaxa', 'Hektorning rafiqasi'],
+      ['Astianaks', 'Hektorning o‘g‘li'],
+      ['Etion', 'Andromaxaning otasi'],
+      ['Askey darvozasi', 'xayrlashuv joyi'],
+      ['akropol', 'shahar qal’asi'],
+      ['danay, axey', 'yunon'],
+    ],
+    quiz: [
+      { q: 'Hektor Parisni nima uchun koyiydi?', options: ['urush payti uyda o‘tirgani uchun', 'qo‘rqoq bo‘lgani uchun', 'Yelenani tashlab ketgani uchun', 'qal’ani qurmagani uchun'], answer: 0 },
+      { q: 'Hektor Andromaxani qayerda uchratadi?', options: ['Askey darvozasi oldida', 'uyda', 'ma’badda', 'dengiz bo‘yida'], answer: 0 },
+      { q: 'Andromaxaning otasini kim o‘ldirgan?', options: ['Axilles', 'Paris', 'Agamemnon', 'Menelay'], answer: 0 },
+      { q: 'Go‘dak nega qo‘rqib ketadi?', options: ['yaraqlagan dubulg‘adan', 'onasidan', 'shovqindan', 'itdan'], answer: 0 },
+      { q: 'Hektorni eng ko‘p nima qayg‘uga soladi?', options: ['Andromaxaning asir bo‘lishi', 'boyligi', 'qasri', 'oti'], answer: 0 },
+      { q: 'Hektor o‘g‘li uchun nimani so‘raydi?', options: ['otasidan ham nomdor bo‘lishini', 'boy bo‘lishini', 'shoir bo‘lishini', 'uzoq yashashini'], answer: 0 },
+      { q: 'Andromaxa uyga qaytib nima qiladi?', options: ['tirik Hektorga aza ochadi', 'kashta tikadi', 'uxlaydi', 'qasrdan qochadi'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Hektor', 'Paris'],
+      items: [
+        { text: 'xalq uchun jang qiladi', cat: 0 }, { text: 'uyda yasanib o‘tiradi', cat: 1 },
+        { text: 'xijolatdan qo‘rqadi', cat: 0 }, { text: 'sustkash, yalqov', cat: 1 },
+        { text: 'xotini bilan vidolashadi', cat: 0 }, { text: 'shod-xurram chiqib boradi', cat: 1 },
+        { text: 'Troya panohi', cat: 0 }, { text: 'urush sababchisi', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'Oltinchi qo‘shiq voqealari',
+        items: [
+          'Hektor Parisning uyiga kiradi',
+          'Yelena Hektorga pushaymonini aytadi',
+          'Hektor uyida Andromaxani topolmaydi',
+          'Askey darvozasida Andromaxa bilan uchrashadi',
+          'Go‘dak dubulg‘adan qo‘rqib ketadi',
+          'Hektor o‘g‘li uchun ma’budlarga duo qiladi',
+          'Paris Hektorga yetib oladi',
+        ],
+      },
+    ],
+    qa: [
+      { q: 'Hektor va Paris qanday farqlanadi?', a: 'Hektor — mas’uliyatli, el uchun jang qiladi; Paris — sustkash, shod-xurram, urush sababchisi.' },
+      { q: 'Andromaxa va Yelena farqi?', a: 'Andromaxa — sodiq, erini jangdan qaytarmoqchi; Yelena — pushaymon, o‘zini aybdor sanaydi.' },
+      { q: 'Andromaxaning ota-onasi haqidagi lavha nega kiritilgan?', a: 'Uning Hektordan boshqa hech kimi qolmaganini ko‘rsatib, xayrlashuv fojiasini kuchaytirish uchun.' },
+      { q: 'Nega Hektor jangdan qaytmaydi?', a: 'Vijdoni yo‘l qo‘ymaydi: el oldida xijolat, mardlik va shon uning uchun muhim.' },
+      { q: 'Dubulg‘a epizodi nimani ko‘rsatadi?', a: 'Hektorda jangchi va mehribon ota birga yashashini.' },
+    ],
+    odd: [
+      { items: ['Hektor', 'Andromaxa', 'Astianaks', 'Axilles'], answer: 3, why: 'Qolganlari Hektor oilasi.' },
+      { items: ['dubulg‘a', 'nayza', 'qalqon', 'kashta'], answer: 3, why: 'Qolganlari jangchi anjomlari.' },
+      { items: ['Paris', 'Aleksandr', 'Priam o‘g‘li', 'Peleyzod'], answer: 3, why: 'Peleyzod — Axilles; qolganlari Paris nomlari.' },
+    ],
+    debate: [
+      { claim: 'Hektor oilasini emas, el-yurtni tanlab to‘g‘ri qildi.', pro: 'Uning burchi — shahar va xalqni himoya qilish.', con: 'U o‘lsa, xotini va o‘g‘li baribir asir bo‘ladi.' },
+      { claim: 'Yelena urushda aybdor emas.', pro: 'Afsonaga ko‘ra uni Afrodita sehrlagan.', con: 'U o‘zi ham aybini tan oladi.' },
+    ],
+    creative: [
+      { task: 'Andromaxa Hektorga yozgan xatni 3 gapda yozing.', time: 120 },
+      { task: 'Astianaks katta bo‘lib, otasini qanday eslardi? 2 gap.', time: 90 },
+      { task: 'Xayrlashuv sahnasiga sarlavha qo‘ying va nega tanlaganingizni bir gapda ayting.', time: 60 },
+    ],
+  },
+
+  /* ===================== 12. Yigirma ikkinchi qo‘shiq ===================== */
+  {
+    id: 'ad10-iliada-22',
+    source: 'I chorak • 12-dars • 41–53-betlar',
+    title: 'Homer. «Iliada» dostonidan parchalar (Yigirma ikkinchi qo‘shiq)',
+    short: 'Priam va Hekubaning iltijosi, Hektorning ikkilanishi, Troya atrofidagi quvlash, Afinaning nayrangi va Hektor halokati',
+    theme: { emoji: '⚔️', grad: 'from-gray-900 via-red-800 to-amber-500', border: 'border-red-200', tag: '«Iliada» • 22-qo‘shiq' },
+    lesson: [
+      {
+        title: 'Yolg‘iz Hektor',
+        emoji: '🏹',
+        text: 'Troyaliklar shaharga qochib kirgan, faqat Hektor Askey minorasi oldida qolgan. Apollon Axillesni chalg‘itganini oshkor qiladi; Axilles ma’budga g‘azab bilan javob qaytaradi.',
+        reveal: [{ q: 'Axillesning ma’bud bilan bunday gaplashishi uni qanday tavsiflaydi?', a: 'Hech kimdan qo‘rqmaydigan, g‘azabi jilovsiz, shon-shuhratga o‘ch qahramon.' }],
+      },
+      {
+        title: 'Ota-onaning iltijosi',
+        emoji: '😢',
+        cards: [
+          { e: '👴', t: 'Priam', d: 'Oppoq sochini yulib, shaharga kirishni so‘raydi: Axilles undan kuchliroq, Troya uningsiz qoladi.' },
+          { e: '👵', t: 'Hekuba', d: 'O‘g‘liga emizgan ko‘ksini ko‘rsatib, «qattol er qarshisida yolg‘iz turma» deb yolvoradi.' },
+        ],
+        note: 'Muallif ota-ona kechinmalarini imo-ishora (soch yulish, ko‘ks ko‘rsatish), nutq va kelajak dahshatlari tasviri orqali beradi.',
+      },
+      {
+        title: 'Hektorning ikkilanishi',
+        emoji: '🤔',
+        steps: [
+          { e: '😔', t: 'Uyat', d: 'Polidamasning maslahatini tinglamagani uchun xalqi halok bo‘ldi — shaharga qochsa, isnodga qoladi.' },
+          { e: '🤝', t: 'Sulh xayoli', d: 'Qurolni qo‘yib, Yelenani va boyliklarni qaytarishni o‘ylaydi.' },
+          { e: '🛑', t: 'Rad etish', d: 'Axilles rahm qilmaydi, qurolsiz bo‘lsa o‘ldiradi — yaxshisi jang!' },
+        ],
+      },
+      {
+        title: 'Uch marta Troya atrofida',
+        emoji: '🌀',
+        text: 'Axillesni ko‘rib, Hektor qo‘rqib qochadi; Axilles lochin kabi uning ortidan quvadi. Ular issiq va sovuq buloqlar yonidan o‘tib, Troyani uch marta aylanadi. Zevs oltin tarozida ikki o‘lim qur’asini tortadi — Hektorning pallasi og‘ir keladi.',
+        quote: { text: 'Biri qochib ketolmay hech, biri quvib yetolmagandek', by: '«Iliada»' },
+      },
+      {
+        title: 'Afinaning nayrangi va so‘nggi jang',
+        emoji: '🗡️',
+        list: [
+          'Afina Hektorning ukasi Deifob qiyofasida kelib, birga jang qilishga ko‘ndiradi.',
+          'Hektor Axillesga shart qo‘yadi: g‘olib mag‘lubning jasadini tahqirlamasin. Axilles rad etadi.',
+          'Hektorning nayzasi Axilles qalqonidan qaytadi; «Deifob» g‘oyib bo‘ladi — Hektor aldanganini tushunadi.',
+          'U qilich bilan hamla qiladi; Axilles uning halqumiga nayza sanchadi.',
+          'O‘layotgan Hektor jasadini qaytarishni so‘raydi; Axilles rad etadi va jasadni arobaga bog‘lab sudraydi.',
+        ],
+        reveal: [{ q: 'Hektor oxirgi lahzada nimani istaydi?', a: '«Bekorga o‘lmam, avlodlarga dovrug‘im yetadigan jasorat ko‘rsatay» deydi.' }],
+      },
+      {
+        title: 'Troya azada',
+        emoji: '🕯️',
+        text: 'Priam o‘zini darvozaga otadi, Hekuba nola qiladi. Kashta tikayotgan Andromaxa faryodni eshitib minoraga chiqadi va jasadni ko‘rib hushidan ketadi; keyin yetim qolgan Astianaksning kelajagi haqida yig‘laydi.',
+        vs: {
+          q: 'Priamning Axill oldiga borishidan naf chiqadimi?',
+          a: { t: 'Ha', pts: ['Axillesning ham keksa otasi bor', 'Ota qalbi ota qalbini tushunadi'] },
+          b: { t: 'Yo‘q', pts: ['Axilles toshbag‘ir', 'G‘azabi hali bosilmagan'] },
+        },
+        mission: { t: 'Jamoalarda', d: 'Har jamoa bitta qahramon nomidan (Priam, Hekuba, Andromaxa, Axilles) shu kuni haqida 3 gaplik ichki monolog tuzadi.', sec: 360 },
+      },
+    ],
+    pairs: [
+      ['Priam', 'Troya shohi, Hektorning otasi'],
+      ['Hekuba', 'Hektorning onasi'],
+      ['Apollon (Feb)', 'troyaliklar homiysi'],
+      ['Afina (Pallada)', 'Deifob qiyofasiga kirgan ma’buda'],
+      ['Deifob', 'Hektorning ukasi'],
+      ['Polidamas', 'Hektorning do‘sti'],
+      ['Zevsning tarozisi', 'o‘lim qur’asi'],
+      ['Peleyzod', 'Axilles'],
+    ],
+    quiz: [
+      { q: 'Hektor Axillesni ko‘rib dastlab nima qiladi?', options: ['qochadi', 'hujum qiladi', 'yolvoradi', 'qurolini tashlaydi'], answer: 0 },
+      { q: 'Ular Troyani necha marta aylanadi?', options: ['uch', 'bir', 'yetti', 'o‘n'], answer: 0 },
+      { q: 'Afina kimning qiyofasiga kiradi?', options: ['Deifob', 'Paris', 'Priam', 'Patrokl'], answer: 0 },
+      { q: 'Axilles Hektorning qayeriga nayza sanchadi?', options: ['halqumiga', 'yuragiga', 'tovoniga', 'yelkasiga'], answer: 0 },
+      { q: 'Zevs taqdirni qanday aniqlaydi?', options: ['oltin tarozida', 'chaqmoq bilan', 'tush ko‘rib', 'qur’a tashlab tosh bilan'], answer: 0 },
+      { q: 'Hektor Axillesga qanday shart qo‘yadi?', options: ['jasadni tahqirlamaslik', 'oltin berish', 'Yelenani qaytarish', 'sulh tuzish'], answer: 0 },
+      { q: 'Andromaxa xabar kelganda nima qilayotgan edi?', options: ['qirmizi mato to‘qiyotgan edi', 'uxlayotgan edi', 'ma’badda edi', 'minorada edi'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Hektorga yordam/hamdardlik', 'Hektorga qarshi'],
+      items: [
+        { text: 'Priamning iltijosi', cat: 0 }, { text: 'Afinaning nayrangi', cat: 1 },
+        { text: 'Hekubaning ko‘z yoshi', cat: 0 }, { text: 'Axillesning nayzasi', cat: 1 },
+        { text: 'Apollonning madadi', cat: 0 }, { text: 'Zevs tarozisining og‘ir pallasi', cat: 1 },
+        { text: 'Zevsning achinishi', cat: 0 }, { text: 'soxta Deifob', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'Yigirma ikkinchi qo‘shiq voqealari',
+        items: [
+          'Priam va Hekuba Hektorga yolvoradi',
+          'Hektor o‘z-o‘zi bilan maslahatlashadi',
+          'Hektor qochadi, Axilles quvadi',
+          'Zevs o‘lim qur’asini tortadi',
+          'Afina Deifob qiyofasida Hektorni aldaydi',
+          'Axilles Hektorni halok qiladi',
+          'Andromaxa jasadni ko‘rib hushidan ketadi',
+        ],
+      },
+    ],
+    qa: [
+      { q: 'Nega Priam va Hekuba Hektordan shaharga kirishni so‘raydi?', a: 'Axilles kuchliroq, Hektor o‘lsa, Troya himoyasiz qoladi va ularni dahshatli kunlar kutadi.' },
+      { q: 'Hektor nega sulh fikridan qaytdi?', a: 'Axilles rahm qilmasligini, qurolsiz bo‘lsa uni o‘ldirishini tushundi.' },
+      { q: 'Afinaning nayrangi nima?', a: 'Deifob qiyofasida kelib, Hektorni yolg‘iz jangga undadi, keyin g‘oyib bo‘ldi.' },
+      { q: 'Axillesning jasadga munosabati qanday?', a: 'Shafqatsiz: jasadni qaytarmaydi, arobaga bog‘lab sudraydi.' },
+      { q: 'Hektor halokati Troya uchun nimani anglatadi?', a: 'Shaharning panohi yo‘qoldi; Troyaning vayron bo‘lishi muqarrar.' },
+    ],
+    odd: [
+      { items: ['Priam', 'Hekuba', 'Andromaxa', 'Afina'], answer: 3, why: 'Afina Hektorga qarshi.' },
+      { items: ['lochin', 'kabutar', 'tozi', 'Cho‘lpon yulduzi'], answer: 3, why: 'Qolganlari quvlash sahnasidagi o‘xshatishlar (ov tasviri).' },
+      { items: ['nayza', 'qalqon', 'qilich', 'tarozi'], answer: 3, why: 'Tarozi Zevsning taqdir ramzi.' },
+    ],
+    debate: [
+      { claim: 'Hektorning qochishi uni qo‘rqoq qilmaydi.', pro: 'U insoniy qo‘rquvni yengib, oxirida jangga kirdi.', con: 'Qahramon qochmasligi kerak.' },
+      { claim: 'Axilles adolatli qasos oldi.', pro: 'Hektor uning do‘sti Patroklni o‘ldirgan.', con: 'Jasadni tahqirlash har qanday qasos chegarasidan chiqadi.' },
+    ],
+    creative: [
+      { task: 'Quvlash sahnasini bitta yangi o‘xshatish bilan tasvirlang (masalan, «Hektor xuddi …»).', time: 60 },
+      { task: 'Zevs tarozisi o‘rnida qanday ramz o‘ylab topardingiz? Bir gap.', time: 60 },
+      { task: 'Hektorning so‘nggi so‘zlarini o‘g‘liga atab 3 gapda yozing.', time: 120 },
+    ],
+  },
+
+  /* ===================== 13. Matn bilan ishlash ===================== */
+  {
+    id: 'ad10-iliada-tahlil',
+    source: 'I chorak • 13-dars • 54–55-betlar',
+    title: 'Homer. «Iliada» dostonidan parchalar: asar matni bilan ishlash',
+    short: 'Asosiy mavzu va g‘oya, urushga munosabat, psixologizm, Hektor va Axill qiyosi, taqdiri azal',
+    theme: { emoji: '🧠', grad: 'from-indigo-900 via-violet-700 to-sky-400', border: 'border-violet-200', tag: '«Iliada» • Tahlil' },
+    lesson: [
+      {
+        title: 'Doston boshlanmasi',
+        emoji: '📯',
+        text: 'Doston ma’budaga murojaat bilan boshlanadi: undan Axillesning g‘azabini kuylash so‘raladi — bu g‘azab ko‘p yunonlarni halok qilgan, va u Agamemnon bilan Axilles nizosidan boshlangan.',
+        reveal: [{ q: 'Dostonning asosiy mavzusi nima?', a: 'Axillesning g‘azabi va uning dahshatli oqibatlari; kengroq — urush, shon-shuhrat va inson taqdiri.' }],
+      },
+      {
+        title: 'Muallifning urushga munosabati',
+        emoji: '🕊️',
+        list: [
+          'Andromaxaning yetimlik va asirlik haqidagi nolasi.',
+          'Priam va Hekubaning iltijosi.',
+          'Tinchlik davrida ayollar kir yuvgan hovuzlar tasviri.',
+          'Jasadning tahqirlanishi va shaharning azaga botishi.',
+        ],
+        reveal: [{ q: 'Bu o‘rinlar nimani ko‘rsatadi?', a: 'Homer qahramonlikni madh etsa ham, urushning dahshati va insoniy fojiasini yashirmaydi (taxminiy talqin).' }],
+      },
+      {
+        title: 'Psixologizm',
+        emoji: '💭',
+        rule: 'Asarda qahramonning ichki dunyosi, o‘y-kechinmalarining tasvirlanishi psixologizm deyiladi. Kechinmalar bevosita (o‘ylari, hislari bayoni) yoki bilvosita (xatti-harakati, nutqi, boshqalarga munosabati) ochiladi.',
+        ruleLabel: 'Ta’rif',
+        table: {
+          head: ['Usul', 'Hektordan misol'],
+          rows: [
+            ['Bevosita', 'Hektorning o‘z-o‘zi bilan suhbati: «Jangdan qochib shaharga kirsam, isnodga qolgum!»'],
+            ['Bilvosita', 'Dubulg‘ani yechib, o‘g‘lini erkalashi; Axillesni ko‘rib qochishi'],
+          ],
+        },
+      },
+      {
+        title: 'Hektor va Axill',
+        emoji: '⚔️',
+        table: {
+          head: ['Xususiyat', 'Hektor', 'Axill'],
+          rows: [
+            ['Maqsad', 'shahar va oilani himoya', 'do‘st qasosi, shon'],
+            ['Kuch', 'jasur, lekin insoniy qo‘rquv bor', 'ma’buda farzandi, deyarli yengilmas'],
+            ['Munosabat', 'mehribon ota va er', 'g‘azabi jilovsiz'],
+            ['Raqibga', 'jasadni tahqirlamaslikni taklif qiladi', 'rad etadi, jasadni sudraydi'],
+          ],
+        },
+        vs: {
+          q: 'Muallif kimga ko‘proq xayrixoh?',
+          a: { t: 'Hektor', pts: ['Uning oilasi, kechinmalari batafsil', 'Zevs ham unga achinadi'] },
+          b: { t: 'Axill', pts: ['Doston uning g‘azabi haqida', 'U g‘olib va yunonlar qahramoni'] },
+        },
+      },
+      {
+        title: 'Taqdiri azal',
+        emoji: '⚖️',
+        text: 'Yunonlar e’tiqodida ma’budlar irodasi va taqdir hamma narsani hal qiladi: Apollon Hektorga madad beradi, Afina aldaydi, Zevs tarozida o‘lim qur’asini tortadi.',
+        reveal: [{ q: 'Ma’budlar aralashmasa, voqea qanday kechardi?', a: 'Erkin javob: balki Hektor shaharga qochib qutulardi yoki jang uzoqroq davom etardi.' }],
+        mission: { t: 'Guruhlarda (darslik)', d: 'Dostondan sizga eng ta’sir qilgan lavhani tanlab, 3 daqiqalik taqdimot tayyorlang: nega tanladingiz, qanday badiiy vosita bor?', sec: 600 },
+      },
+    ],
+    pairs: [
+      ['psixologizm', 'qahramon ichki dunyosi tasviri'],
+      ['bevosita tasvir', 'o‘y va hislar bayoni'],
+      ['bilvosita tasvir', 'xatti-harakat va nutq orqali'],
+      ['taqdiri azal', 'oldindan belgilangan qismat'],
+      ['Axillesning g‘azabi', 'dostonning bosh mavzusi'],
+      ['Agamemnon', 'Axilles bilan nizolashgan sarkarda'],
+      ['muqaddima murojaati', 'ma’budaga iltijo'],
+    ],
+    quiz: [
+      { q: 'Doston nima bilan boshlanadi?', options: ['ma’budaga murojaat', 'urush tasviri', 'Hektor nutqi', 'Troya tavsifi'], answer: 0 },
+      { q: 'Dostonning bosh mavzusi?', options: ['Axillesning g‘azabi', 'Odisseyning qaytishi', 'Yelenaning go‘zalligi', 'Troyaning qurilishi'], answer: 0 },
+      { q: 'Psixologizm nima?', options: ['qahramon ichki dunyosi tasviri', 'peyzaj', 'qofiya', 'syujet'], answer: 0 },
+      { q: 'Dubulg‘ani yechish — qanday tasvir?', options: ['bilvosita', 'bevosita', 'peyzaj', 'portret'], answer: 0 },
+      { q: 'Kim jasadni tahqirlamaslikni taklif qiladi?', options: ['Hektor', 'Axilles', 'Afina', 'Zevs'], answer: 0 },
+      { q: 'Qaysi ma’bud Hektorga oxirigacha madad beradi?', options: ['Apollon', 'Afina', 'Hera', 'Ares'], answer: 0 },
+      { q: 'Axilles nizosi kim bilan boshlangan?', options: ['Agamemnon', 'Menelay', 'Priam', 'Paris'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Bevosita tasvir', 'Bilvosita tasvir'],
+      items: [
+        { text: 'Hektorning ichki monologi', cat: 0 }, { text: 'Hektorning qochishi', cat: 1 },
+        { text: '«isnodga qolgum» degan o‘yi', cat: 0 }, { text: 'dubulg‘ani yechishi', cat: 1 },
+        { text: 'qo‘rquvining bayoni', cat: 0 }, { text: 'Parisni koyishi', cat: 1 },
+        { text: '«Ne nadomat!» degan o‘yi', cat: 0 }, { text: 'qilich bilan hamlasi', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Psixologizmning ikki usuli?', a: 'Bevosita — o‘y va hislar bayoni; bilvosita — xatti-harakat, nutq, munosabat.' },
+      { q: 'Hektor qayerda epik qahramon, qayerda oddiy inson?', a: 'Jangda — epik qahramon; xotini va o‘g‘li bilan — mehribon er va ota, qochganda — qo‘rquvni his qiluvchi inson.' },
+      { q: 'Homerning urushga munosabati qanday?', a: 'Qahramonlikni ulug‘laydi, lekin urushning fojiasini ham ko‘rsatadi.' },
+      { q: 'Taqdiri azal dostonda qanday aks etgan?', a: 'Ma’budlar voqealarga aralashadi, Zevs tarozida qismatni hal qiladi.' },
+      { q: '«Iliada» nega jahon durdonasi?', a: 'Abadiy mavzular — burch, sevgi, g‘azab, o‘lim — va ta’sirli tasvir; ko‘plab san’at asarlariga asos bo‘lgan.' },
+    ],
+    odd: [
+      { items: ['g‘azab', 'burch', 'taqdir', 'telefon'], answer: 3, why: 'Qolganlari doston mavzulari.' },
+      { items: ['Apollon', 'Afina', 'Zevs', 'Mitra'], answer: 3, why: 'Mitra yunon ma’budi emas.' },
+      { items: ['monolog', 'nutq', 'xatti-harakat', 'qofiya'], answer: 3, why: 'Qolganlari psixologizm vositalari.' },
+    ],
+    debate: [
+      { claim: 'Homer Hektorga ko‘proq xayrixoh.', pro: 'Hektorning ichki dunyosi batafsil, uning o‘limi fojiali tasvirlangan.', con: 'Doston yunonlar uchun yaratilgan, uning qahramoni — Axilles.' },
+      { claim: 'Odam taqdiridan qochib qutula olmaydi.', pro: 'Doston shuni ko‘rsatadi: Hektor qochsa ham taqdir uni topdi.', con: 'Inson tanlovi va harakati taqdirni o‘zgartira oladi.' },
+    ],
+    creative: [
+      { task: 'Hektorning bir lahzadagi kechinmasini bevosita usulda 2 gapda yozing.', time: 90 },
+      { task: 'Xuddi shu kechinmani bilvosita — faqat harakat orqali ko‘rsating.', time: 90 },
+      { task: '«Iliada»ga o‘zingizning muqobil yakuningizni 3 gapda yozing.', time: 150 },
+    ],
+  },
+
+  /* ===================== 14. Odisseya va Alpomish ===================== */
+  {
+    id: 'ad10-odisseya-alpomish',
+    source: 'I chorak • 14-dars • 56–65-betlar',
+    title: 'Antik adabiyot va o‘zbek xalq og‘zaki ijodi: «Odisseya» va «Alpomish» dostonlari qiyosiy tahlili',
+    short: 'Odisseyning qaytishi, Penelopa va kuyovlar, kamon sinovi; Qultoy qiyofasidagi Alpomish va Ultontozning to‘yi',
+    theme: { emoji: '🏹', grad: 'from-sky-800 via-amber-600 to-orange-500', border: 'border-amber-200', tag: 'Qiyosiy tahlil • Epos' },
+    lesson: [
+      {
+        title: '«Odisseya» syujeti',
+        emoji: '⛵',
+        steps: [
+          { e: '🌊', t: 'Adashish', d: 'Troya urushidan keyin Itaka shohi Odissey Poseydon g‘azabi tufayli 10 yil uyiga qaytolmaydi.' },
+          { e: '🧶', t: 'Penelopa', d: 'Kuyovlar unga uylanmoqchi; u kafanlik to‘qib bo‘lgach turmushga chiqaman deb, kechasi so‘kib yuboradi.' },
+          { e: '👦', t: 'Telemax', d: 'O‘g‘li otasini izlaydi; Odissey Kalipso orolidan ozod bo‘ladi.' },
+          { e: '🧓', t: 'Gadoy qiyofasi', d: 'Afina yordamida qiyofasini o‘zgartirib uyiga keladi; enagasi uni chandig‘idan taniydi.' },
+          { e: '🏹', t: 'Kamon sinovi', d: 'Odissey kamonidan o‘qni 12 halqadan o‘tkazgan kishiga Penelopa turmushga chiqadi — buni faqat Odissey uddalaydi va kuyovlarni jazolaydi.' },
+        ],
+      },
+      {
+        title: '«Odisseya»dan: kamon',
+        emoji: '🎯',
+        text: 'Qodir Mirmuhamedov tarjimasidan (o‘z so‘zimiz bilan): kuyovlar kamonni ega olmay, xijolatga qolishadi. Gadoy-musofir kamonni sinashga ruxsat so‘raydi, kuyovlar uni mazax qiladi. Penelopa ruxsat beradi, Telemax kamonni otasiga yetkazishni buyuradi. Odissey kamon ipini xuddi soz torini chertgandek tortadi va o‘qni hamma halqalardan o‘tkazadi.',
+        quote: { text: 'u ko‘kdagi qaldirg‘ochday vizillab ketdi', by: '«Odisseya», kamon ipi haqida' },
+      },
+      {
+        title: '«Alpomish»dan: Ultontozning to‘yi',
+        emoji: '🎉',
+        text: 'Yetti yil qalmoq yurtida bandi bo‘lgan Alpomish qul Qultoy qiyofasida Barchinga uylanayotgan Ultontozning to‘yiga keladi.',
+        list: [
+          'O‘t yoqqich bo‘lib, bir qozon oshni pishmay turib quritib qo‘yadi.',
+          'Bakovul Farmonqul Yodgorni kapgir bilan urganda, «Qultoy» uni koyib, Yodgorga ilik beradi.',
+          'Barchin o‘g‘lining kulib kelganini ko‘rib, «Qultoy bo‘lib otang kelgan» deb sezadi.',
+          'Qullarning yoylari «Qultoy» qo‘lida sinib ketadi.',
+          'Yodgor otasining o‘n to‘rt botmonlik yoyini sudrab keladi; «Qultoy» uni tortib, chinor shoxini o‘q bilan yulib tushiradi.',
+        ],
+      },
+      {
+        title: 'O‘xshash motivlar',
+        emoji: '🔗',
+        table: {
+          head: ['«Odisseya»', '«Alpomish»'],
+          rows: [
+            ['gadoy qiyofasidagi Odissey', 'Qultoy qiyofasidagi Alpomish'],
+            ['vafodor Penelopa', 'vafodor Barchin'],
+            ['o‘g‘li Telemax', 'o‘g‘li Yodgor'],
+            ['kuyovlar', 'Ultontoz'],
+            ['enaga chandiqdan taniydi', 'Barchin sezadi; Qultoy belgidan taniydi'],
+            ['Odissey kamoni', 'o‘n to‘rt botmonlik yoy'],
+          ],
+        },
+      },
+      {
+        title: 'Nega o‘xshaydi?',
+        emoji: '🤔',
+        vs: {
+          q: 'O‘xshashlik sababi nimada?',
+          a: { t: 'Umumiy inson tajribasi', pts: ['Uzoq safar va qaytish har xalqda bor', 'Vafo, sadoqat, adolat — umuminsoniy qadriyat'] },
+          b: { t: 'Madaniy aloqalar', pts: ['Qadimdan xalqlar savdo va ko‘chishlar orqali hikoya almashgan', 'Mushtarak qadimiy afsonalar'] },
+        },
+        mission: { t: 'Guruhlarda (darslik)', d: 'Uch ustunli jadval to‘ldiring: «Odisseya»ga xos, «Alpomish»ga xos, ikkalasiga xos jihatlar — har biriga kamida 3 tadan.', sec: 420 },
+      },
+    ],
+    pairs: [
+      ['Odissey', 'Itaka shohi'],
+      ['Penelopa', 'Odisseyning vafodor rafiqasi'],
+      ['Telemax', 'Odisseyning o‘g‘li'],
+      ['Alpomish', 'Qultoy qiyofasida qaytgan botir'],
+      ['Barchin', 'Alpomishning vafodor yori'],
+      ['Yodgor', 'Alpomishning o‘g‘li'],
+      ['Ultontoz', 'Barchinga uylanmoqchi bo‘lgan'],
+      ['Poseydon', 'dengiz ma’budi'],
+    ],
+    quiz: [
+      { q: 'Odissey nega uyiga qaytolmaydi?', options: ['Poseydon g‘azabi tufayli', 'urush davom etgani uchun', 'yo‘lni unutgani uchun', 'kasal bo‘lgani uchun'], answer: 0 },
+      { q: 'Penelopa kuyovlarni qanday aldaydi?', options: ['kunduz to‘qiganini kechasi so‘kib', 'qochib ketib', 'kasal bo‘lib', 'sehr bilan'], answer: 0 },
+      { q: 'Odisseyni chandig‘idan kim taniydi?', options: ['enagasi', 'Penelopa', 'Telemax', 'kuyovlar'], answer: 0 },
+      { q: 'Alpomish qaysi qiyofada qaytadi?', options: ['Qultoy', 'gadoy', 'savdogar', 'baxshi'], answer: 0 },
+      { q: 'Yodgorni kim urib yig‘latadi?', options: ['bakovul Farmonqul', 'Ultontoz', 'Qultoy', 'Barchin'], answer: 0 },
+      { q: 'Alpomish yoyi necha botmon?', options: ['o‘n to‘rt', 'yetti', 'qirq', 'uch'], answer: 0 },
+      { q: 'Telemaxga «Alpomish»da kim mos keladi?', options: ['Yodgor', 'Qultoy', 'Ultontoz', 'Boysari'], answer: 0 },
+    ],
+    sort: {
+      categories: ['«Odisseya»', '«Alpomish»'],
+      items: [
+        { text: 'Penelopa', cat: 0 }, { text: 'Barchin', cat: 1 },
+        { text: 'Telemax', cat: 0 }, { text: 'Yodgor', cat: 1 },
+        { text: '12 halqa', cat: 0 }, { text: 'chinor shoxi', cat: 1 },
+        { text: 'Itaka', cat: 0 }, { text: 'Qo‘ng‘irot', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'Ultontozning to‘yidagi voqealar',
+        items: [
+          '«Qultoy» to‘yga kelib, o‘t yoqqich bo‘ladi',
+          'Bakovul Yodgorni kapgir bilan uradi',
+          '«Qultoy» Yodgorga ilik beradi',
+          'Barchin «Qultoy» — Alpomish ekanini sezadi',
+          'Qullarning yoylari «Qultoy» qo‘lida sinadi',
+          'Yodgor otasining yoyini olib keladi',
+          'O‘q chinor shoxini yulib ketadi',
+        ],
+      },
+    ],
+    qa: [
+      { q: '«Odisseya» nima haqida?', a: 'Itaka shohi Odisseyning Troya urushidan keyin uyiga qaytish yo‘lidagi sarguzashtlari.' },
+      { q: 'Penelopa qanday sinov qo‘yadi?', a: 'Odissey kamonidan o‘qni 12 halqadan o‘tkazgan kishiga turmushga chiqadi.' },
+      { q: 'Alpomish to‘yda kuchini qanday ko‘rsatadi?', a: 'Qullarning yoylarini sindiradi, o‘n to‘rt botmonlik yoyni tortib, chinor shoxini o‘q bilan yuladi.' },
+      { q: 'Ikki dostondagi o‘xshash motivlar?', a: 'Uzoq ayriliq, qiyofa o‘zgartirib qaytish, vafodor yor, o‘g‘il, raqib kuyovlar, qahramon kamoni.' },
+      { q: 'Farqlari nimada?', a: '«Odisseya»da ma’budlar faol; «Alpomish»da xalq turmushi, to‘y urf-odatlari, baxshiyona she’rlar.' },
+    ],
+    odd: [
+      { items: ['Penelopa', 'Telemax', 'Odissey', 'Barchin'], answer: 3, why: 'Barchin «Alpomish»dan.' },
+      { items: ['Yodgor', 'Ultontoz', 'Qultoy', 'Evrikleya'], answer: 3, why: 'Evrikleya — Odisseyning enagasi.' },
+      { items: ['kamon', 'yoy', 'o‘q', 'tarozi'], answer: 3, why: 'Qolganlari ikkala dostondagi sinov qurollari.' },
+    ],
+    debate: [
+      { claim: 'Barchin Penelopadan ham vafodorroq.', pro: 'U yetti yil kutdi va o‘g‘lini yolg‘iz o‘stirdi.', con: 'Penelopa yigirma yil kutdi va kuyovlarni aql bilan aldadi.' },
+      { claim: 'Qahramon kuchini emas, aqlini ko‘rsatishi kerak.', pro: 'Odissey ayyorligi bilan mashhur.', con: 'Xalq dostonlarida kuch — adolat timsoli.' },
+    ],
+    creative: [
+      { task: 'Odissey va Alpomish uchrashib qolsa, bir-biriga nima deyishardi? 4 replikali dialog.', time: 150 },
+      { task: 'Yodgor va Telemax uchun umumiy bitta sifat toping va dalillang.', time: 60 },
+      { task: 'Ultontozning to‘yi sahnasiga sarlavha o‘ylab toping.', time: 60 },
+    ],
+  },
+
+  /* ===================== 15. O‘xshash motivlar ===================== */
+  {
+    id: 'ad10-motivlar',
+    source: 'I chorak • 15-dars • 56–65-betlar',
+    title: '«Odisseya» va «Alpomish» dostonlaridagi o‘xshash motivlarni solishtirish',
+    short: 'Motiv tushunchasi; qaytish, tanib olish, sinov, vafodor yor motivlari; farqlar sababi',
+    theme: { emoji: '🧭', grad: 'from-amber-700 via-orange-600 to-sky-600', border: 'border-orange-200', tag: 'Motivlar • Qiyos' },
+    lesson: [
+      {
+        title: 'Motiv nima?',
+        emoji: '🔁',
+        rule: 'Motiv — turli asarlarda takrorlanadigan barqaror syujet unsuri yoki holat (masalan, uzoq safardan qaytish, qiyofa o‘zgartirish, tanib olish).',
+        ruleLabel: 'Ta’rif (taxminiy, darslikdan tashqari)',
+        cards: [
+          { e: '🛤️', t: 'Qaytish', d: 'Uzoq ayriliqdan keyin uyga qaytish.' },
+          { e: '🎭', t: 'Qiyofa', d: 'Qahramon tanilmay yuradi.' },
+          { e: '🔎', t: 'Tanib olish', d: 'Belgi, chandiq yoki ishora orqali.' },
+          { e: '🏹', t: 'Sinov', d: 'Faqat qahramon uddalaydigan ish.' },
+          { e: '💍', t: 'Vafo', d: 'Yor kutadi, majburiy nikohdan qochadi.' },
+          { e: '👦', t: 'O‘g‘il', d: 'Ota ishini davom ettiradigan farzand.' },
+        ],
+      },
+      {
+        title: 'Motivlar qiyosi',
+        emoji: '📊',
+        table: {
+          head: ['Motiv', '«Odisseya»', '«Alpomish»'],
+          rows: [
+            ['Ayriliq muddati', '20 yil (10 yil urush, 10 yil safar)', '7 yil asirlik'],
+            ['Kim yordam beradi', 'ma’buda Afina', 'xalq, Qultoy, o‘g‘li Yodgor'],
+            ['Qiyofa', 'gadoy chol', 'qul Qultoy'],
+            ['Sinov quroli', 'Odissey kamoni, 12 halqa', 'o‘n to‘rt botmonlik yoy, chinor'],
+            ['Raqib', 'ko‘p kuyovlar', 'Ultontoz'],
+          ],
+        },
+        note: '«Odisseya» uchun 20 yil — umumiy ma’lumot; darslikda «urush tugaganidan o‘n yil o‘tib» deyilgan.',
+      },
+      {
+        title: 'Farqlar nimani ko‘rsatadi?',
+        emoji: '🌍',
+        vs: {
+          q: 'Farqlarning asosiy sababi?',
+          a: { t: 'Yunon dunyoqarashi', pts: ['Ma’budlar irodasi va mifologiya', 'Dengiz va orollar dunyosi'] },
+          b: { t: 'O‘zbek (turkiy) dunyoqarashi', pts: ['Xalq turmushi, to‘y, urf-odat', 'Dasht, chorvachilik, el-yurt birligi'] },
+        },
+      },
+      {
+        title: 'Tez tahlil',
+        emoji: '⚡',
+        reveal: [
+          { q: 'Odisseyning qiyofasini kim o‘zgartiradi?', a: 'Afina.' },
+          { q: 'Alpomish Qultoy qiyofasini qanday oladi?', a: 'Qul Qultoyning kiyimini kiyib, uning qiyofasida keladi (dostonning to‘liq matnida).' },
+          { q: 'Ikkalasida ham qahramon nega darhol o‘zini oshkor qilmaydi?', a: 'Avval vaziyatni bilib, yovni ehtiyotsiz qoldirib, adolatli jazo berish uchun.' },
+        ],
+        mission: { t: 'Motivlar ovi', d: 'Har jamoa o‘zi bilgan boshqa ertak, film yoki asardan «qaytish» yoki «tanib olish» motivini topib aytadi.', sec: 300 },
+      },
+    ],
+    pairs: [
+      ['motiv', 'takrorlanuvchi syujet unsuri'],
+      ['qaytish motivi', 'ayriliqdan keyin uyga kelish'],
+      ['tanib olish', 'belgi yoki chandiq orqali'],
+      ['sinov motivi', 'kamon yoki yoy'],
+      ['Afina', 'Odisseyga yordam beradi'],
+      ['Qultoy', 'Alpomish kiygan qiyofa'],
+      ['12 halqa', 'Penelopa sinovi'],
+    ],
+    quiz: [
+      { q: 'Motiv nima?', options: ['takrorlanuvchi syujet unsuri', 'she’r vazni', 'kitob nomi', 'muallif taxallusi'], answer: 0 },
+      { q: 'Alpomish necha yil asirlikda bo‘lgan?', options: ['yetti', 'yigirma', 'uch', 'qirq'], answer: 0 },
+      { q: 'Odisseyga kim yordam beradi?', options: ['Afina', 'Poseydon', 'Zevsning o‘g‘li', 'Kalipso'], answer: 0 },
+      { q: 'Ikkala dostonda umumiy sinov quroli?', options: ['kamon/yoy', 'qilich', 'nayza', 'tarozi'], answer: 0 },
+      { q: '«Odisseya»dagi raqiblar?', options: ['kuyovlar', 'qalmoqlar', 'devlar', 'troyaliklar'], answer: 0 },
+      { q: 'Farqlarning sababi?', options: ['xalqlar dunyoqarashi', 'qog‘oz sifati', 'kitob hajmi', 'muqova'], answer: 0 },
+      { q: 'Qahramon nega darhol o‘zini oshkor qilmaydi?', options: ['vaziyatni bilib, adolatli jazo berish uchun', 'qo‘rqqani uchun', 'unutgani uchun', 'uyalgani uchun'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Motiv', 'Motiv emas'],
+      items: [
+        { text: 'uzoq safardan qaytish', cat: 0 }, { text: 'kitob muqovasi', cat: 1 },
+        { text: 'qiyofa o‘zgartirish', cat: 0 }, { text: 'sahifa raqami', cat: 1 },
+        { text: 'tanib olish', cat: 0 }, { text: 'nashriyot nomi', cat: 1 },
+        { text: 'qahramon sinovi', cat: 0 }, { text: 'shrift turi', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Ikki dostondagi asosiy umumiy motivlar?', a: 'Qaytish, qiyofa o‘zgartirish, tanib olish, kamon sinovi, vafodor yor, o‘g‘il.' },
+      { q: 'Nega turli xalqlarda o‘xshash motivlar bor?', a: 'Umumiy inson tajribasi va qadimiy madaniy aloqalar tufayli.' },
+      { q: 'Farqlar xalqlar haqida nima deydi?', a: 'Yunonlarda ma’budlar va dengiz dunyosi, o‘zbeklarda el-yurt, to‘y va dasht hayoti muhim.' },
+      { q: '«Tanib olish» qanday amalga oshadi?', a: '«Odisseya»da enaga chandiqdan taniydi; «Alpomish»da Barchin o‘g‘lining kulib kelishidan sezadi.' },
+      { q: 'Sinov motivi nimani ko‘rsatadi?', a: 'Haqiqiy qahramonni soxta raqiblardan ajratadi.' },
+    ],
+    odd: [
+      { items: ['qaytish', 'tanib olish', 'sinov', 'muqova'], answer: 3, why: 'Muqova motiv emas.' },
+      { items: ['Afina', 'Poseydon', 'Kalipso', 'Barchin'], answer: 3, why: 'Barchin «Alpomish»dan.' },
+      { items: ['gadoy', 'Qultoy', 'cho‘pon', 'shoh'], answer: 3, why: 'Shoh — yashirin qiyofa emas.' },
+    ],
+    debate: [
+      { claim: 'O‘xshash motivlar bir dostondan ikkinchisiga ko‘chgan.', pro: 'Qadimdan xalqlar hikoya almashgan.', con: 'Har xalq o‘z hayotidan mustaqil yaratgan.' },
+      { claim: '«Alpomish» «Odisseya»dan qolishmaydi.', pro: 'U ham ming yillik, boy va betakror epos.', con: '«Odisseya» butun jahon adabiyotiga ko‘proq ta’sir qilgan.' },
+    ],
+    creative: [
+      { task: 'Bugungi hayotdan «qaytish» motivi bilan 3 gaplik hikoya tuzing.', time: 150 },
+      { task: 'Bir zamonaviy film yoki multfilmdan «tanib olish» motivini toping va bir gapda tushuntiring.', time: 60 },
+      { task: 'O‘zingiz yangi motiv o‘ylab toping va nomlang.', time: 60 },
+    ],
+  },
+
+  /* ===================== 16. Takrorlash ===================== */
+  {
+    id: 'ad10-takrorlash-1',
+    source: 'I chorak • 16-dars • 66–67-betlar',
+    title: 'Takrorlash',
+    short: 'I chorak: tahlil metodlari, «Go‘ro‘g‘li», qadimgi dunyo, «Iliada», «Odisseya» va «Alpomish»; qadimgi asarlarda mushtarak g‘oyalar',
+    theme: { emoji: '🗺️', grad: 'from-gray-800 via-amber-700 to-orange-400', border: 'border-amber-200', tag: 'Takrorlash • I chorak' },
+    lesson: [
+      {
+        title: 'Chorak xaritasi',
+        emoji: '🗺️',
+        steps: [
+          { e: '🔍', t: 'Badiiy tahlil', d: 'Ijtimoiy va biografik metodlar; «Ko‘saklar», «Aldanish».' },
+          { e: '🐎', t: '«Go‘ro‘g‘li»', d: 'Turkumlar, Po‘lkan va Xorazm variantlari, doston poetikasi.' },
+          { e: '🏺', t: 'Qadimgi dunyo', d: 'Gilgamesh, «Avesto», «Mahabharata», antik adabiyot.' },
+          { e: '🛡️', t: '«Iliada»', d: 'Hektor va Axill, psixologizm, taqdiri azal.' },
+          { e: '🏹', t: '«Odisseya» va «Alpomish»', d: 'O‘xshash motivlar.' },
+        ],
+      },
+      {
+        title: 'Epik qahramon belgilari',
+        emoji: '🦸',
+        reveal: [
+          { q: 'Go‘ro‘g‘li, Alpomish, Axill, Odisseyda umumiy 3 xususiyat?', a: 'G‘ayrioddiy kuch yoki tug‘ilish, el va yaqinlar uchun kurash, homiylik (ilohiy yoki xalq).' },
+          { q: 'Nega epik qahramon shunday tasvirlangan?', a: 'Xalq ideali — adolat, kuch va sadoqat timsoli.' },
+          { q: 'Mif va ertak farqi?', a: 'Mifga qadimgi odamlar chin deb ishongan; ertak uydirma ekani ma’lum bo‘lgan.' },
+        ],
+      },
+      {
+        title: 'Mushtarak g‘oyalar',
+        emoji: '🌐',
+        text: 'Darslikda turli sivilizatsiyalardan parchalar berilgan: Bobil dostonidagi «Hasratchi va dono do‘st» suhbati, «Mahabharata», «Avesto» va Sofoklning «Shoh Edip»i.',
+        table: {
+          head: ['Asar', 'G‘oya'],
+          rows: [
+            ['Bobil dostoni', 'G‘amga botma, yaxshi niyat qil — yaxshi kunlar qaytadi'],
+            ['«Mahabharata»', 'Gunoh izsiz yo‘qolmaydi — tabiat va qalb hammasini ko‘radi'],
+            ['«Avesto»', 'Ezgulik yolg‘on va yovuzlikka qarshi kurashadi'],
+            ['«Shoh Edip»', 'Haddidan oshgan, haromdan qaytmagan odam jazodan qutulmas'],
+          ],
+        },
+        reveal: [{ q: 'Bu g‘oyalar nega o‘xshash?', a: 'Hamma xalqlar ezgulik, adolat va axloq haqida bir xil savollarni o‘ylagan.' }],
+        note: 'G‘oyalar mazmunan o‘z so‘zimiz bilan berildi.',
+      },
+      {
+        title: 'O‘yin: kim, qayerdan?',
+        emoji: '🎲',
+        reveal: [
+          { q: 'Rustambek', a: '«Go‘ro‘g‘lining tug‘ilishi» (Po‘lkan varianti) — tutingan tog‘a.' },
+          { q: 'Andromaxa', a: '«Iliada» — Hektorning rafiqasi.' },
+          { q: 'Enkidu', a: 'Gilgamesh dostoni — Gilgameshning do‘sti.' },
+          { q: 'Telemax', a: '«Odisseya» — Odisseyning o‘g‘li.' },
+          { q: 'Jig‘olibek', a: '«Go‘ro‘g‘li» Xorazm varianti — bobo.' },
+        ],
+        mission: { t: 'Yozma (darslik)', d: 'Qadimgi dunyo asarlaridan o‘zingiz kashf qilgan 3 yangi ma’lumotni jadvalga yozing: ma’lumot — sivilizatsiya — asar.', sec: 600 },
+      },
+    ],
+    pairs: [
+      ['ijtimoiy metod', 'davr bilan bog‘lab o‘qish'],
+      ['biografik metod', 'muallif hayoti bilan bog‘lab o‘qish'],
+      ['Po‘lkan', '«Go‘ro‘g‘lining tug‘ilishi» varianti'],
+      ['Gilgamesh', 'Mesopotamiya eposi'],
+      ['Hektor', '«Iliada»'],
+      ['Penelopa', '«Odisseya»'],
+      ['Yodgor', '«Alpomish»'],
+      ['psixologizm', 'ichki dunyo tasviri'],
+    ],
+    quiz: [
+      { q: '«Ko‘saklar»ni qaysi metod bilan tahlil qildik?', options: ['ijtimoiy', 'biografik', 'statistik', 'lingvistik'], answer: 0 },
+      { q: 'Go‘ro‘g‘lini Xorazm variantida kim emizadi?', options: ['echki', 'baytal', 'sigir', 'tuya'], answer: 0 },
+      { q: '«Avesto» qaysi dinning kitobi?', options: ['zardushtiylik', 'buddizm', 'hinduizm', 'yahudiylik'], answer: 0 },
+      { q: 'Hektorni kim halok qiladi?', options: ['Axilles', 'Paris', 'Menelay', 'Odissey'], answer: 0 },
+      { q: 'Alpomish qaysi qiyofada qaytadi?', options: ['Qultoy', 'gadoy', 'savdogar', 'cho‘pon'], answer: 0 },
+      { q: '«Shoh Edip» muallifi?', options: ['Sofokl', 'Homer', 'Esxil', 'Vergiliy'], answer: 0 },
+      { q: 'Mif va ertak farqi?', options: ['mifga chin deb ishonilgan', 'mif uzunroq', 'ertak she’rda', 'farqi yo‘q'], answer: 0 },
+    ],
+    sort: {
+      categories: ['O‘zbek xalq og‘zaki ijodi', 'Jahon adabiyoti'],
+      items: [
+        { text: '«Go‘ro‘g‘li»', cat: 0 }, { text: '«Iliada»', cat: 1 },
+        { text: '«Alpomish»', cat: 0 }, { text: '«Odisseya»', cat: 1 },
+        { text: 'Po‘lkan shoir', cat: 0 }, { text: 'Homer', cat: 1 },
+        { text: 'To‘maris afsonasi', cat: 0 }, { text: 'Gilgamesh', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Badiiy tahlilning qaysi ikki metodini o‘rgandik?', a: 'Ijtimoiy va biografik.' },
+      { q: '«Go‘ro‘g‘li»ning ikki turkumi?', a: 'G‘arbiy (Ko‘ro‘g‘li) va sharqiy (Go‘ro‘g‘li).' },
+      { q: 'Antik adabiyot qaysi davr?', a: 'Mil. avv. I mingyillikdan milodiy V asrgacha.' },
+      { q: '«Iliada»ning asosiy qahramonlari?', a: 'Hektor va Axill; Priam, Andromaxa, Paris, Yelena.' },
+      { q: '«Odisseya» va «Alpomish»dagi umumiy motivlar?', a: 'Qaytish, qiyofa, tanib olish, kamon sinovi, vafodor yor.' },
+    ],
+    odd: [
+      { items: ['Go‘ro‘g‘li', 'Alpomish', 'Axilles', 'Cho‘lpon'], answer: 3, why: 'Cho‘lpon — shoir; qolganlari epik qahramonlar.' },
+      { items: ['«Iliada»', '«Odisseya»', '«Eneida»', '«Avesto»'], answer: 3, why: '«Avesto» antik epos emas.' },
+      { items: ['Rustambek', 'Hamza', 'Bibi Hilol', 'Penelopa'], answer: 3, why: 'Penelopa «Odisseya»dan.' },
+    ],
+    debate: [
+      { claim: 'Qadimgi asarlardagi g‘oyalar bugun ham dolzarb.', pro: 'Adolat, sadoqat, ezgulik — abadiy qadriyatlar.', con: 'Bugungi muammolar boshqacha: texnologiya, ekologiya.' },
+      { claim: 'Epik qahramon bugun ham kerak.', pro: 'Yoshlarga ibrat bo‘ladi.', con: 'Bugun qahramon — oddiy halol inson.' },
+    ],
+    creative: [
+      { task: 'Choraqdagi eng yoqqan qahramoningizga bir gaplik «tabrik» yozing.', time: 60 },
+      { task: 'Go‘ro‘g‘li va Hektorni bitta sahnada uchrashtiring — 3 gap.', time: 120 },
+      { task: 'Chorak mavzulari bo‘yicha 3 ta test savoli tuzing.', time: 120 },
+    ],
+  },
+
+  /* ===================== 17. 1-CHSB ===================== */
+  {
+    id: 'ad10-chsb-1',
+    source: 'I chorak • 17-dars • 1-CHSB (40 ball)',
+    title: '1-CHSB. Test (40 ball)',
+    short: 'I chorak asarlari bo‘yicha tez takrorlash, test tuzilmasi va tayyorgarlik o‘yinlari',
+    theme: { emoji: '🏁', grad: 'from-gray-900 via-indigo-800 to-sky-600', border: 'border-sky-200', tag: 'Chorak summativ baholash' },
+    lesson: [
+      {
+        title: 'Chorak yakuni — 40 ball',
+        emoji: '🏁',
+        text: 'Bugun I chorak davomida o‘rganilgan asarlar bo‘yicha test topshiramiz. Avval tez takrorlash.',
+        facts: [
+          { n: '40', l: 'ball — maksimal' },
+          { n: '6', l: 'asosiy asar' },
+          { n: '2', l: 'tahlil metodi' },
+        ],
+      },
+      {
+        title: 'Tez takrorlash',
+        emoji: '⚡',
+        reveal: [
+          { q: '«Qora qish» — «qora o‘lka» — qaysi she’r?', a: 'Cho‘lpon, «Ko‘saklar».' },
+          { q: '«Aldanish»ning ikki talqini?', a: 'Ijtimoiy (istiqlol orzusi) va biografik (ilk muhabbat).' },
+          { q: 'Go‘ro‘g‘lining tutingan tog‘asi?', a: 'Rustambek.' },
+          { q: 'Gilgameshning do‘sti?', a: 'Enkidu.' },
+          { q: 'Troyani uch marta aylanib quvlagan kim?', a: 'Axilles Hektorni.' },
+          { q: 'Penelopa sinovi?', a: 'Odissey kamonidan o‘qni 12 halqadan o‘tkazish.' },
+          { q: 'Alpomish yoyining og‘irligi?', a: 'O‘n to‘rt botmon.' },
+        ],
+      },
+      {
+        title: 'Test tuzilmasi (taxminiy)',
+        emoji: '🧾',
+        text: 'Ustoz o‘z topshiriqlariga ko‘ra o‘zgartirishi mumkin:',
+        table: {
+          head: ['Qism', 'Topshiriq', 'Ball'],
+          rows: [
+            ['1', 'Test: 20 ta savol (har biri 1 ball)', '20'],
+            ['2', 'Moslashtirish: qahramon — asar (10 juft)', '10'],
+            ['3', 'Qisqa javob: 2 ta savolga 3–4 gapdan', '10'],
+          ],
+        },
+      },
+      {
+        title: 'Muvaffaqiyat sirlari',
+        emoji: '🔑',
+        cards: [
+          { e: '👀', t: 'Diqqat bilan o‘qing', d: 'Savolni oxirigacha o‘qing, kalit so‘zni belgilang.' },
+          { e: '⏰', t: 'Vaqtni taqsimlang', d: 'Qiyin savolga osilib qolmang — oxirida qayting.' },
+          { e: '📚', t: 'Dalil keltiring', d: 'Qisqa javobda asardan misol yozing.' },
+          { e: '✅', t: 'Tekshiring', d: 'Oxirgi 3 daqiqani tekshirishga qoldiring.' },
+        ],
+        mission: { t: 'Test', d: 'Ish varaqasini oling, vaqt boshlandi! Omad!', sec: 1800 },
+      },
+    ],
+    pairs: [
+      ['Cho‘lpon', '«Ko‘saklar», «Aldanish»'],
+      ['Po‘lkan', '«Go‘ro‘g‘lining tug‘ilishi»'],
+      ['Homer', '«Iliada», «Odisseya»'],
+      ['Esxil', '«Zanjirband Prometey»'],
+      ['Sofokl', '«Shoh Edip»'],
+      ['Svift', '«Gulliverning sayohatlari»'],
+      ['Fozil Yo‘ldosh o‘g‘li', '«Alpomish»'],
+      ['Vergiliy', '«Eneida»'],
+    ],
+    quiz: [
+      { q: 'Biografik metod asarni nima bilan bog‘laydi?', options: ['muallif hayoti bilan', 'davr iqtisodi bilan', 'nashriyot bilan', 'qofiya bilan'], answer: 0 },
+      { q: 'G‘arbiy turkum qahramoni?', options: ['Ko‘ro‘g‘li', 'Go‘ro‘g‘li', 'Alpomish', 'Rustam'], answer: 0 },
+      { q: 'Go‘ro‘g‘li Po‘lkan variantida necha yoshda ota yurtiga ketadi?', options: ['yetti', 'uch', 'o‘n besh', 'qirq'], answer: 0 },
+      { q: '«Marhumlar kitobi» qaysi xalqniki?', options: ['Qadimgi Misr', 'Hindiston', 'Xitoy', 'Yunoniston'], answer: 0 },
+      { q: 'Oltin olmani Paris kimga beradi?', options: ['Afroditaga', 'Heraga', 'Afinaga', 'Eridaga'], answer: 0 },
+      { q: 'Hektorning o‘g‘li?', options: ['Astianaks', 'Telemax', 'Patrokl', 'Deifob'], answer: 0 },
+      { q: 'Afina Hektorni aldash uchun kimning qiyofasiga kiradi?', options: ['Deifob', 'Priam', 'Paris', 'Polidamas'], answer: 0 },
+      { q: 'Odisseyni chandig‘idan kim taniydi?', options: ['enagasi', 'Penelopa', 'Telemax', 'kuyovlar'], answer: 0 },
+      { q: 'Yodgorga ilik bergan kim?', options: ['Qultoy qiyofasidagi Alpomish', 'Ultontoz', 'Barchin', 'bakovul'], answer: 0 },
+      { q: 'Psixologizm nima?', options: ['qahramon ichki dunyosi tasviri', 'peyzaj', 'vazn', 'syujet'], answer: 0 },
+    ],
+    sort: {
+      categories: ['I chorakning birinchi yarmi', 'I chorakning ikkinchi yarmi'],
+      items: [
+        { text: 'ijtimoiy metod', cat: 0 }, { text: '«Iliada»', cat: 1 },
+        { text: '«Go‘ro‘g‘li» turkumi', cat: 0 }, { text: '«Odisseya»', cat: 1 },
+        { text: 'Xorazm varianti', cat: 0 }, { text: 'Hektor va Axill', cat: 1 },
+        { text: 'taassurot (1-BSB)', cat: 0 }, { text: 'o‘xshash motivlar', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Ijtimoiy va biografik metod farqi?', a: 'Ijtimoiy — davr bilan, biografik — muallif hayoti bilan bog‘lab o‘rganadi.' },
+      { q: 'Go‘ro‘g‘lining tug‘ilishida qanday fantastik voqealar bor?', a: 'Go‘rda tug‘ilish, jonivor emizishi, Xizr va qirq chiltan homiyligi, arvohning gapirishi.' },
+      { q: 'Antik dramada xorning vazifasi?', a: 'Sahnadagi voqealarni sharhlash, ba’zan voqealarda qatnashish.' },
+      { q: 'Hektor nega jangdan qaytmadi?', a: 'Vijdoni, el oldidagi or-nomus va mardlik odati yo‘l qo‘ymadi.' },
+      { q: '«Odisseya» va «Alpomish»dagi 3 umumiy motiv?', a: 'Qiyofa o‘zgartirib qaytish, vafodor yor, kamon/yoy sinovi.' },
+    ],
+    odd: [
+      { items: ['Hektor', 'Priam', 'Andromaxa', 'Penelopa'], answer: 3, why: 'Penelopa «Odisseya»dan; qolganlari «Iliada» troyaliklari.' },
+      { items: ['Esxil', 'Sofokl', 'Yevripid', 'Po‘lkan'], answer: 3, why: 'Po‘lkan — o‘zbek baxshisi.' },
+      { items: ['Rustambek', 'Xizr', 'Bibi Hilol', 'Barchin'], answer: 3, why: 'Barchin «Alpomish»dan.' },
+    ],
+    debate: [
+      { claim: 'Test adabiyot bilimini to‘liq tekshira oladi.', pro: 'Ko‘p mavzuni tez va xolis tekshiradi.', con: 'Asarni his qilish va tahlilni test bilan o‘lchab bo‘lmaydi.' },
+      { claim: 'I chorakning eng muhim asari — «Iliada».', pro: 'U jahon adabiyotining asosi.', con: '«Go‘ro‘g‘li» bizning milliy merosimiz, u muhimroq.' },
+    ],
+    creative: [
+      { task: 'Chorak asarlaridan biriga bitta test savoli tuzing va sinfdoshingizga bering.', time: 60 },
+      { task: 'Eng qiyin bo‘lgan mavzuni bir gapda tushuntirib bering.', time: 60 },
+      { task: 'Chorak qahramonlaridan «sevimli»ngizni tanlab, nega tanlaganingizni yozing.', time: 90 },
+    ],
+  },
+
+  /* ===================== 18. CHSB tahlili ===================== */
+  {
+    id: 'ad10-chsb-1-tahlil',
+    source: 'I chorak • 18-dars • CHSB tahlili',
+    title: 'CHSB tahlili',
+    short: '1-CHSB natijalari, ko‘p uchragan xatolar, ularni tuzatish va qayta mashq',
+    theme: { emoji: '🌱', grad: 'from-gray-800 via-emerald-700 to-sky-500', border: 'border-sky-200', tag: 'Xatolar ustida ishlash' },
+    lesson: [
+      {
+        title: 'Xato — o‘sish nuqtasi',
+        emoji: '🌱',
+        text: 'Natijalarni ko‘rib chiqamiz. Maqsad — kim yutqazganini emas, qanday qilib yaxshiroq bo‘lishni topish.',
+      },
+      {
+        title: 'Natijalar xaritasi',
+        emoji: '📊',
+        text: 'Ustoz sinf natijalarini shu jadvalga to‘ldiradi:',
+        table: {
+          head: ['Qism', 'Eng yaxshi bajarildi', 'Eng ko‘p xato'],
+          rows: [
+            ['Test', '…', '…'],
+            ['Moslashtirish', '…', '…'],
+            ['Qisqa javob', '…', '…'],
+          ],
+        },
+        note: 'Maslahat: «Natijalar» bo‘limidagi sinf statistikasidan foydalaning.',
+      },
+      {
+        title: 'Ko‘p uchraydigan xatolar',
+        emoji: '⚠️',
+        cards: [
+          { e: '🔀', t: 'Qahramonlarni chalkashtirish', d: 'Telemax — Yodgor, Hektor — Axilles, Rustambek — Jig‘olibek.' },
+          { e: '🏛️', t: 'Metodlarni adashtirish', d: 'Ijtimoiy va biografik metodlarni farqlamaslik.' },
+          { e: '📜', t: 'Variantlarni aralashtirish', d: 'Baytal (Po‘lkan) va echki (Xorazm).' },
+          { e: '✏️', t: 'Dalilsiz javob', d: 'Qisqa javobda asardan misol keltirmaslik.' },
+        ],
+      },
+      {
+        title: 'Qanday tuzatamiz?',
+        emoji: '🛠️',
+        steps: [
+          { e: '1️⃣', t: 'Xatoni toping', d: 'Ish varaqangizdagi har bir xatoni doiraga oling.' },
+          { e: '2️⃣', t: 'Sababini aniqlang', d: 'Bilmadimmi? Shoshildimmi? Savolni noto‘g‘ri tushundimmi?' },
+          { e: '3️⃣', t: 'To‘g‘risini yozing', d: 'Darslikdan topib, yoniga to‘g‘ri javobni yozing.' },
+          { e: '4️⃣', t: 'Qoida chiqaring', d: '«Keyingi safar … qilaman» deb bir gap yozing.' },
+        ],
+        mission: { t: 'Xatolar daftari', d: 'Daftaringizda «Xatolar ustida ishlash» sahifasini oching va 4 qadamni bajaring.', sec: 600 },
+      },
+      {
+        title: 'II chorakka tayyorlanamiz',
+        emoji: '🚀',
+        vs: {
+          q: 'II chorakda nimaga ko‘proq e’tibor berasiz?',
+          a: { t: 'Asar matnini o‘qish', pts: ['Parchalarni to‘liq o‘qish', 'Qahramonlarni yozib borish'] },
+          b: { t: 'Tahlil ko‘nikmasi', pts: ['Dalil bilan javob berish', 'Metodlarni qo‘llash'] },
+        },
+      },
+    ],
+    pairs: [
+      ['Telemax', '«Odisseya»'],
+      ['Yodgor', '«Alpomish»'],
+      ['baytal', 'Po‘lkan varianti'],
+      ['echki', 'Xorazm varianti'],
+      ['Rustambek', 'tutingan tog‘a'],
+      ['Jig‘olibek', 'Xorazm variantidagi bobo'],
+      ['ijtimoiy metod', 'davr bilan'],
+      ['biografik metod', 'muallif hayoti bilan'],
+    ],
+    quiz: [
+      { q: 'Telemax qaysi asar qahramoni?', options: ['«Odisseya»', '«Alpomish»', '«Iliada»', '«Go‘ro‘g‘li»'], answer: 0 },
+      { q: 'Po‘lkan variantida Go‘ro‘g‘lini kim emizadi?', options: ['baytal', 'echki', 'sigir', 'bo‘ri'], answer: 0 },
+      { q: '«Aldanish»ni Obidaga bog‘lagan talqin — qaysi metod?', options: ['biografik', 'ijtimoiy', 'qiyosiy', 'statistik'], answer: 0 },
+      { q: 'Xato ustida ishlashning oxirgi qadami?', options: ['qoida chiqarish', 'xatoni topish', 'bahoni so‘rash', 'ishni yashirish'], answer: 0 },
+      { q: 'Hektorni kim o‘ldirgan?', options: ['Axilles', 'Paris', 'Odissey', 'Menelay'], answer: 0 },
+      { q: 'Jig‘olibek qaysi variantda?', options: ['Xorazm', 'Po‘lkan', '«Iliada»', '«Alpomish»'], answer: 0 },
+      { q: 'Qisqa javobdagi ko‘p xato?', options: ['dalil keltirmaslik', 'chiroyli yozish', 'reja tuzish', 'misol berish'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Po‘lkan varianti', 'Xorazm varianti'],
+      items: [
+        { text: 'baytal', cat: 0 }, { text: 'echki', cat: 1 },
+        { text: 'Rustambek', cat: 0 }, { text: 'Jig‘olibek', cat: 1 },
+        { text: 'Ravshanbek', cat: 0 }, { text: 'Odibek', cat: 1 },
+        { text: 'Zargar', cat: 0 }, { text: 'Chamlibel', cat: 1 },
+      ],
+    },
+    qa: [
+      { q: 'Xato ustida ishlashning 4 qadami?', a: 'Xatoni topish, sababini aniqlash, to‘g‘risini yozish, qoida chiqarish.' },
+      { q: 'Qahramonlarni chalkashtirmaslik uchun nima qilish kerak?', a: 'Har asar uchun qahramonlar jadvalini yuritish.' },
+      { q: 'Ijtimoiy va biografik metodni qanday farqlaymiz?', a: 'Savol berish: davr haqida gapiryapmanmi yoki muallif hayoti haqidami?' },
+      { q: 'Qisqa javob qanday bo‘lishi kerak?', a: 'Aniq fikr va asardan bitta dalil.' },
+      { q: 'II chorakda nima o‘rganamiz?', a: 'VII–XIV asrlar o‘zbek adabiyoti, «Qutadg‘u bilig», «Saddi Iskandariy», «Don Kixot».' },
+    ],
+    odd: [
+      { items: ['xatoni topish', 'sababini aniqlash', 'qoida chiqarish', 'ishni yashirish'], answer: 3, why: 'Qolganlari xato ustida ishlash qadamlari.' },
+      { items: ['Telemax', 'Penelopa', 'Odissey', 'Yodgor'], answer: 3, why: 'Yodgor «Alpomish»dan.' },
+      { items: ['baytal', 'Rustambek', 'Zargar', 'echki'], answer: 3, why: 'Echki — Xorazm variantida.' },
+    ],
+    debate: [
+      { claim: 'Xatolarni tahlil qilish yangi mavzudan muhimroq.', pro: 'Xato tuzatilmasa, takrorlanadi.', con: 'Vaqt cheklangan, oldinga yurish kerak.' },
+      { claim: 'Baho emas, bilim muhim.', pro: 'Bilim hayotda kerak bo‘ladi.', con: 'Baho bilimning o‘lchovi va rag‘bat.' },
+    ],
+    creative: [
+      { task: '«Mening eng foydali xatom» haqida 2 gap yozing.', time: 90 },
+      { task: 'Sinfdoshingiz uchun bitta eslatma-maslahat yozing.', time: 60 },
+      { task: 'I chorak qahramonlari jadvalini 5 qatorda tuzing.', time: 120 },
+    ],
+  },
+
+  /* ===================== 19. VII–XIV asrlar ===================== */
+  {
+    id: 'ad10-vii-xiv',
+    source: 'II chorak • 19-dars • 72–77-betlar',
+    title: 'O‘zbek adabiyoti tarixi: VII asrdan XIV asrning birinchi yarmigacha. Umumlashtiruvchi kirish darsi',
+    short: 'O‘rxun–Enasoy bitiklari, «Irq bitigi», Islom oltin davri, Koshg‘ariy, Yassaviy, Yugnakiy, mo‘g‘ul bosqini va Rabg‘uziy',
+    theme: { emoji: '📜', grad: 'from-stone-800 via-amber-800 to-yellow-500', border: 'border-amber-200', tag: 'Adabiyot tarixi • VII–XIV asrlar' },
+    lesson: [
+      {
+        title: 'Tosh bitiklar',
+        emoji: '🪨',
+        text: 'Turkiy adabiyot ham og‘zaki ijoddan — miflardan boshlangan. Yozma yodgorliklardan:',
+        cards: [
+          { e: '🔮', t: '«Irq bitigi» (IX–X asrlar)', d: 'O‘rxun yozuvida; turkiylarning turmushi, yaxshilik va yomonlik haqidagi qarashlari.' },
+          { e: '🪨', t: 'O‘rxun–Enasoy yodgorliklari', d: 'Runiy yozuvdagi tosh bitiklar. Eng yiriklari — VIII asr: Bilga xoqon, Kultegin, To‘nyuquq haqida.' },
+        ],
+        note: 'To‘nyuquq bitiktoshi XIX asr oxirida Shimoliy Mo‘g‘ulistondan topilgan.',
+      },
+      {
+        title: 'Islom oltin davri',
+        emoji: '🕌',
+        text: 'Islom kirib kelgach, arab yozuvi tarqaldi va XX asrgacha ilmiy-adabiy asarlar shu yozuvda bitildi. «Musulmon Renessansi»da ajdodlarimiz ham dunyoviy va diniy ilm ravnaqiga hissa qo‘shdi.',
+        list: [
+          'Imom Buxoriy (IX asr): «Al-jomi’ as-sahih» va «Al-adab al-mufrad».',
+          'Qoraxoniylar davlati (IX–XII asrlar): Buxoro, Samarqand, Shosh, Qashqar — ilm markazlari.',
+        ],
+      },
+      {
+        title: 'Mahmud Koshg‘ariy: munozara',
+        emoji: '❄️',
+        text: '«Devonu lug‘atit turk» — turkiy tillar haqidagi arabcha qomus. Unda XI asr turkiy xalqlarining tili, tarixi, maqollari va she’riy parchalari bor; munozara janrining ilk namunalari ham shu yerda.',
+        table: {
+          head: ['Qadimgi turkiy', 'Hozirgi tilda'],
+          rows: [
+            ['Qish yay bila to‘qushti,', 'Qish yoz bilan to‘qnashdi,'],
+            ['Qing‘ir ko‘zun baqishti.', 'Yomon ko‘z bilan qarashdi.'],
+            ['Turlug‘ chechak yarildi,', 'Turfa chechak ochildi,'],
+            ['Barchin yazim kerildi.', 'Ipak gilam yoyildi.'],
+          ],
+        },
+        reveal: [{ q: 'Nega munozara uchun qish va yoz tanlangan?', a: 'Ular qarama-qarshi hodisalar: ko‘chmanchi turkiylar hayotida fasllar almashuvi juda muhim bo‘lgan.' }],
+      },
+      {
+        title: 'Yassaviy va didaktik adabiyot',
+        emoji: '🕯️',
+        cards: [
+          { e: '🌿', t: 'Ahmad Yassaviy (XII asr)', d: '«Devoni hikmat»: mehr-oqibat, ruhiy kamolot, sabr; mehrsizlik va axloqsizlik tanqidi.' },
+          { e: '📖', t: 'Yusuf Xos Hojib', d: '«Qutadg‘u bilig» — davlat boshqaruvi, odob, adolat.' },
+          { e: '💎', t: 'Ahmad Yugnakiy', d: '«Hibat ul-haqoyiq» — ilm, saxiylik, kamtarlik, til odobi.' },
+        ],
+        poem: {
+          lines: [
+            'Na onoda rahm qoldi, na otoda,',
+            'Og‘o, ini bir-birig‘a mojaroda.',
+          ],
+          author: 'Ahmad Yassaviy',
+        },
+      },
+      {
+        title: 'Til yarasi',
+        emoji: '🗡️',
+        text: 'Ahmad Yugnakiy hikmatining mazmuni (darslik tarjimasi): «Tiling bilan o‘ch hissini qo‘zg‘ama: o‘q yarasi bitib ketadi-yu, til yarasi bitmaydi».',
+        vs: {
+          q: 'Qaysi yara og‘irroq?',
+          a: { t: 'O‘q yarasi', pts: ['Tanani jarohatlaydi', 'Davolash qiyin'] },
+          b: { t: 'Til yarasi', pts: ['Qalbni jarohatlaydi', 'Yillar o‘tsa ham unutilmaydi'] },
+        },
+      },
+      {
+        title: 'Tanazzul va qayta tiklanish',
+        emoji: '🔥',
+        steps: [
+          { e: '🐎', t: 'XIII asr', d: 'Chingizxon bosqini: kitoblar yo‘q qilindi, ilm ahli halok bo‘ldi yoki xorijga ketdi (Jaloliddin Rumiyning oilasi Rumga ko‘chdi).' },
+          { e: '📚', t: 'XIII asr oxiri – XIV asr', d: 'Nosiriddin Rabg‘uziy («Qisasi Rabg‘uziy»), Pahlavon Mahmud adabiy bo‘shliqni to‘ldirdi.' },
+        ],
+        mission: { t: 'Loyiha (darslik)', d: '1-guruh: VII–XIII asr adabiy hayotidan bir hodisa haqida «tarixchi-kuzatuvchi» essesi. 2-guruh: XIII–XIV asr hodisasi haqida sayt uchun maqola rejasi. Darsda reja va 3 asosiy fikr tayyorlanadi.', sec: 600 },
+      },
+    ],
+    pairs: [
+      ['«Irq bitigi»', 'IX–X asrlar, O‘rxun yozuvi'],
+      ['To‘nyuquq', 'Turk xoqonligi maslahatchisi'],
+      ['«Devonu lug‘atit turk»', 'Mahmud Koshg‘ariy'],
+      ['«Devoni hikmat»', 'Ahmad Yassaviy'],
+      ['«Hibat ul-haqoyiq»', 'Ahmad Yugnakiy'],
+      ['«Qisasi Rabg‘uziy»', 'Nosiriddin Rabg‘uziy'],
+      ['«Al-jomi’ as-sahih»', 'Imom Buxoriy'],
+      ['munozara', 'qarama-qarshi hodisalar bahsi'],
+    ],
+    quiz: [
+      { q: 'O‘rxun–Enasoy bitiklari qaysi yozuvda?', options: ['runiy', 'arab', 'lotin', 'kirill'], answer: 0 },
+      { q: '«Devonu lug‘atit turk» qaysi tilda yozilgan?', options: ['arab', 'turkiy', 'fors', 'yunon'], answer: 0 },
+      { q: 'Munozara janrining ilk namunalari qayerda?', options: ['«Devonu lug‘atit turk»da', '«Avesto»da', '«Iliada»da', '«Boburnoma»da'], answer: 0 },
+      { q: '«Devoni hikmat» muallifi?', options: ['Ahmad Yassaviy', 'Yusuf Xos Hojib', 'Rabg‘uziy', 'Navoiy'], answer: 0 },
+      { q: 'Yugnakiy fikricha qaysi yara bitmaydi?', options: ['til yarasi', 'o‘q yarasi', 'qilich yarasi', 'tosh yarasi'], answer: 0 },
+      { q: 'XIII asrda adabiyot nega tanazzulga yuz tutdi?', options: ['mo‘g‘ul bosqini tufayli', 'qurg‘oqchilik tufayli', 'qog‘oz yo‘qligidan', 'zilziladan'], answer: 0 },
+      { q: '«Qisasi Rabg‘uziy» qanday asar?', options: ['turkiy nasrning yirik dastlabki namunasi', 'g‘azallar devoni', 'lug‘at', 'doston'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Islomdan oldingi davr', 'Islomdan keyingi davr'],
+      items: [
+        { text: 'O‘rxun–Enasoy bitiklari', cat: 0 }, { text: '«Devoni hikmat»', cat: 1 },
+        { text: 'runiy yozuv', cat: 0 }, { text: 'arab yozuvi', cat: 1 },
+        { text: 'Kultegin bitigi', cat: 0 }, { text: '«Qutadg‘u bilig»', cat: 1 },
+        { text: '«Irq bitigi»', cat: 0 }, { text: '«Qisasi Rabg‘uziy»', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'Xronologik tartib',
+        items: [
+          'O‘rxun–Enasoy bitiklari (VIII asr)',
+          'Imom Buxoriy asarlari (IX asr)',
+          '«Devonu lug‘atit turk» va «Qutadg‘u bilig» (XI asr)',
+          'Ahmad Yassaviy hikmatlari (XII asr)',
+          'Mo‘g‘ul bosqini (XIII asr)',
+          '«Qisasi Rabg‘uziy» (XIV asr boshi)',
+        ],
+      },
+    ],
+    qa: [
+      { q: 'O‘rxun–Enasoy yodgorliklari nimani o‘rganishga yordam beradi?', a: 'Turkiylarning tili, urf-odati, madaniyati, tarixi va islomdan oldingi e’tiqodlarini.' },
+      { q: 'Qoraxoniylar davrida qaysi shaharlar ilm markazi bo‘lgan?', a: 'Buxoro, Samarqand, Shosh, Qashqar.' },
+      { q: 'Yassaviy hikmatlarida qanday mavzular bor?', a: 'Mehr-oqibat, ruhiy kamolot, iymon, nafs, sabr; mehrsizlik tanqidi.' },
+      { q: 'XI–XII asrlarda didaktik asarlarga ehtiyoj nega oshgan?', a: 'Davlat boshqaruvi, axloq va ilm masalalarini tartibga solish, yoshlarni tarbiyalash zarurati (taxminiy).' },
+      { q: 'Mo‘g‘ul bosqinining adabiyotga ta’siri?', a: 'Kitoblar yo‘q qilindi, ijodkorlar halok bo‘ldi yoki xorijga ketdi — tanazzul.' },
+    ],
+    odd: [
+      { items: ['Bilga xoqon', 'Kultegin', 'To‘nyuquq', 'Rabg‘uziy'], answer: 3, why: 'Qolganlari O‘rxun bitiklari qahramonlari.' },
+      { items: ['Koshg‘ariy', 'Yugnakiy', 'Yassaviy', 'Homer'], answer: 3, why: 'Homer — yunon shoiri.' },
+      { items: ['Buxoro', 'Samarqand', 'Qashqar', 'Afina'], answer: 3, why: 'Qolganlari Qoraxoniylar davri ilm markazlari.' },
+    ],
+    debate: [
+      { claim: 'Yassaviy ko‘targan muammolar bugun ham dolzarb.', pro: 'Mehrsizlik va nizo hozir ham bor.', con: 'Bugungi jamiyat ancha o‘zgargan.' },
+      { claim: 'Til yarasi o‘q yarasidan og‘ir.', pro: 'Qalbga tekkan so‘z umrbod esda qoladi.', con: 'Jismoniy jarohat hayotga xavf soladi.' },
+    ],
+    creative: [
+      { task: 'Koshg‘ariy uslubida bugungi ikki qarama-qarshi narsa (masalan, telefon va kitob) munozarasini 4 misrada yozing.', time: 150 },
+      { task: 'Yugnakiyning «til yarasi» fikriga hayotiy misol keltiring — 2 gap.', time: 90 },
+      { task: 'O‘rxun bitigi uslubida o‘zingiz haqida 2 gaplik «tosh bitik» yozing.', time: 90 },
+    ],
+  },
+
+  /* ===================== 20. Qutadg‘u bilig ===================== */
+  {
+    id: 'ad10-qutadgu-bilig',
+    source: 'II chorak • 20-dars • 78–85-betlar',
+    title: 'Yusuf Xos Hojib. «Qutadg‘u bilig» asari. Asar matni bilan ishlash',
+    short: 'Muallif va davr; to‘rt ramziy obraz; bahor tasviri; Oyto‘ldining saroyga kelishi va koptok sirri',
+    theme: { emoji: '👑', grad: 'from-amber-800 via-yellow-600 to-sky-500', border: 'border-amber-200', tag: 'Didaktik doston • XI asr' },
+    lesson: [
+      {
+        title: 'Muallif va davr',
+        emoji: '🧑‍🏫',
+        facts: [
+          { n: 'XI asr 20-yillari', l: 'Bolasog‘unda tug‘ilgan' },
+          { n: '1070-yillar', l: 'asar yakunlangan' },
+          { n: '«Xos Hojib»', l: 'eshik og‘asi unvoni' },
+        ],
+        text: 'XI asrda Qashqardan Amudaryogacha bo‘lgan hudud Qoraxoniylar davlati tarkibida edi; ichki nizolarga qaramay, ilm-fan va hunarmandchilik rivojlandi. Yusuf Xos Hojib arab va fors tillarini bilgan, ko‘p shaharlarni kezgan. Asarini Qashqar hukmdori Tavg‘ach Bug‘roxonga taqdim etib, «Xos Hojib» unvonini olgan.',
+      },
+      {
+        title: '«Saodatga eltuvchi bilim»',
+        emoji: '📖',
+        rule: '«Qutadg‘u bilig» — turkiy yozma adabiyotdagi ilk badiiy doston; didaktik (pand-nasihat) yo‘nalishda, aruzning mutaqorib bahrida yozilgan.',
+        ruleLabel: 'Asar haqida',
+        table: {
+          head: ['Obraz', 'Kim?', 'Ramzi'],
+          rows: [
+            ['Kuntug‘di', 'adolatli hukmdor', 'Adolat'],
+            ['Oyto‘ldi', 'halolligi va aqli bilan vazir bo‘lgan', 'Qut-baxt (davlat)'],
+            ['O‘gdulmish', 'Oyto‘ldining dono o‘g‘li', 'Aql (uquv-idrok)'],
+            ['O‘zg‘urmish', 'tarki dunyo qilgan donishmand', 'Qanoat (ofiyat)'],
+          ],
+        },
+        note: 'Asarni Qayum Karimov va Boqijon To‘xliyev hozirgi o‘zbek tiliga o‘girgan.',
+      },
+      {
+        title: 'Asar tili va vazni',
+        emoji: '🎼',
+        text: 'Mutaqorib bahri: bir qisqa va ikki cho‘ziq hijo (V – –) takrorlanadi. Darslikdagi asl misralar:',
+        poem: {
+          lines: [
+            'Qara bash / yag‘isi / qizil til / turur,',
+            'Necha bash / yedi bu / taqi ma / yeyur.',
+          ],
+          author: 'Yusuf Xos Hojib (asl qadimgi turkiy matn)',
+        },
+        reveal: [{ q: 'Mazmuni (taxminiy)', a: 'Qora boshning (insonning) dushmani — qizil til: u qancha boshni yedi va yana yeydi.' }],
+      },
+      {
+        title: 'Bahor tasviri',
+        emoji: '🌸',
+        text: 'Boqijon To‘xliyev tarjimasidan (o‘z so‘zimiz bilan): Sharqdan bahor yeli esib, qor-muz ketadi; daraxtlar sariq, ko‘k, yashil, qizil liboslar kiyadi, yer yuzi Chin karvoni yoygan rang-barang matolarga o‘xshaydi; turnalar tizilib uchadi, kaklik sayraydi, bulbul chechaklar orasida kuylaydi, bug‘ular o‘ynaydi.',
+        reveal: [{ q: 'Qanday badiiy vositalar bor?', a: 'O‘xshatish (yer — harir kiyimli qizlar, Chin karvoni), jonlantirish (bahor qishdan g‘olib keldi), ranglar tasviri.' }],
+      },
+      {
+        title: 'Oyto‘ldi saroyga keladi',
+        emoji: '🐎',
+        steps: [
+          { e: '🎒', t: 'Maqsad', d: 'Bilim va hunari zoye ketmasligi uchun adolatli Kuntug‘di xizmatiga yo‘l oladi.' },
+          { e: '🤝', t: 'Do‘st', d: 'Kusamish bilan do‘stlashadi; u xos hojib Ersig bilan tanishtiradi.' },
+          { e: '👑', t: 'Saroy', d: 'Elig uning bilim va odobini ko‘rib, saroyga oladi.' },
+          { e: '📈', t: 'Martaba', d: 'Sadoqati va har ishda bilimga tayanishi tufayli martabasi oshadi.' },
+        ],
+        quote: { text: 'Uquv qadrini ham uquvli bilar', by: '«Qutadg‘u bilig» (B. To‘xliyev tarjimasi)' },
+      },
+      {
+        title: 'Koptok sirri',
+        emoji: '⚽',
+        text: 'Elig Oyto‘ldini sinaydi. Oyto‘ldi o‘tirishga koptok qo‘yadi, elig kulib boqqanda ko‘zini yumadi. Elig g‘azablanib, uni shoshib yaqin tutganidan o‘kinadi.',
+        reveal: [{ q: 'Oyto‘ldi buni qanday izohlaydi?', a: 'Koptok — davlat (boylik): bir joyda turmay yumalab ketadi. Ko‘z yumishi — davlatning ko‘zi ko‘r: kim qo‘lidan tutsa, yaxshi-yomonni ajratmay ergashadi. Oqar suv, til va baxt ham bir joyda turmaydi.' }],
+        mission: { t: 'Loyiha (darslik)', d: 'Guruhlar uch yo‘nalishdan birini tanlaydi: davlat boshqaruvi, ilm-fan yoki odob-axloq. Darsda reja va 3 asosiy fikr tayyorlanadi, keyingi darsda taqdimot.', sec: 600 },
+      },
+    ],
+    pairs: [
+      ['Kuntug‘di', 'Adolat'],
+      ['Oyto‘ldi', 'Qut-baxt (davlat)'],
+      ['O‘gdulmish', 'Aql'],
+      ['O‘zg‘urmish', 'Qanoat (ofiyat)'],
+      ['Bolasog‘un', 'Yusuf Xos Hojib tug‘ilgan shahar'],
+      ['Tavg‘ach Bug‘roxon', 'asar taqdim etilgan hukmdor'],
+      ['mutaqorib', 'asar yozilgan aruz bahri'],
+      ['koptok', 'davlat ramzi'],
+    ],
+    quiz: [
+      { q: '«Qutadg‘u bilig» nomining ma’nosi?', options: ['Saodatga eltuvchi bilim', 'Haqiqatlar armug‘oni', 'Turkiy so‘zlar devoni', 'Hikmatlar kitobi'], answer: 0 },
+      { q: 'Kuntug‘di nimaning ramzi?', options: ['adolat', 'aql', 'qanoat', 'davlat'], answer: 0 },
+      { q: 'O‘gdulmish kim?', options: ['Oyto‘ldining o‘g‘li', 'hukmdor', 'darvesh', 'xos hojib'], answer: 0 },
+      { q: 'Asar qaysi bahrda yozilgan?', options: ['mutaqorib', 'hazaj', 'ramal', 'rajaz'], answer: 0 },
+      { q: 'Yusuf Xos Hojib qayerda tug‘ilgan?', options: ['Bolasog‘un', 'Qashqar', 'Buxoro', 'Samarqand'], answer: 0 },
+      { q: 'Oyto‘ldining koptoki nimaning ramzi?', options: ['davlat (boylik)', 'o‘yin', 'yer shari', 'quyosh'], answer: 0 },
+      { q: 'Oyto‘ldi nega ko‘zini yumadi?', options: ['davlatning ko‘zi ko‘r ekanini ko‘rsatish uchun', 'uxlagani uchun', 'qo‘rqqani uchun', 'charchagani uchun'], answer: 0 },
+    ],
+    sort: {
+      categories: ['Kuntug‘di va Oyto‘ldi', 'O‘gdulmish va O‘zg‘urmish'],
+      items: [
+        { text: 'adolat', cat: 0 }, { text: 'aql', cat: 1 },
+        { text: 'hukmdor', cat: 0 }, { text: 'donishmand qarindosh', cat: 1 },
+        { text: 'qut-baxt', cat: 0 }, { text: 'qanoat', cat: 1 },
+        { text: 'koptok sirri', cat: 0 }, { text: 'tarki dunyo', cat: 1 },
+      ],
+    },
+    sequences: [
+      {
+        title: 'Oyto‘ldining yo‘li',
+        items: [
+          'Oyto‘ldi Kuntug‘di shuhratini eshitadi',
+          'Poytaxtga yo‘lga chiqadi',
+          'Kusamish bilan do‘stlashadi',
+          'Xos hojib Ersig bilan uchrashadi',
+          'Elig uni saroyga oladi',
+          'Koptok sinovi bo‘ladi',
+        ],
+      },
+    ],
+    qa: [
+      { q: 'Asar asosida qanday to‘rt narsa yotadi?', a: 'Adolat, davlat (qut), aql va qanoat.' },
+      { q: 'Muallif asarni nega hukmdorga taqdim etgan bo‘lishi mumkin?', a: 'Adolatli boshqaruv qoidalarini yetkazish, saroyda xizmat qilish uchun (taxminiy).' },
+      { q: '«Qutadg‘u bilig»da xaraktonim bormi?', a: 'Ha: obrazlar nomi ularning ramziy mohiyatini bildiradi (Kuntug‘di — kun tug‘di, adolat; O‘gdulmish — aql bilan ziynatlangan).' },
+      { q: 'Oyto‘ldining martabasi nega oshdi?', a: 'Xizmatda og‘ishmasligi, sadoqati va har ishda bilimga tayanishi tufayli.' },
+      { q: 'Elig koptok voqeasidan qanday saboq chiqaradi?', a: 'Shoshqaloqlik — balo: kishini to‘liq sinamay yaqin tutmaslik kerak.' },
+    ],
+    odd: [
+      { items: ['Kuntug‘di', 'Oyto‘ldi', 'O‘gdulmish', 'Gajdumbek'], answer: 3, why: 'Gajdumbek — «Go‘ro‘g‘li» qahramoni.' },
+      { items: ['adolat', 'davlat', 'aql', 'shon'], answer: 3, why: 'Qolganlari asar asosidagi to‘rt narsa (qanoat bilan).' },
+      { items: ['Kusamish', 'Ersig', 'Oyto‘ldi', 'Odissey'], answer: 3, why: 'Odissey «Odisseya»dan.' },
+    ],
+    debate: [
+      { claim: 'Davlat (boylik) haqiqatan ham «ko‘zi ko‘r».', pro: 'Boylik ko‘pincha munosib bo‘lmaganga ham nasib etadi.', con: 'Mehnat va aql bilan topilgan boylik adolatli.' },
+      { claim: '«Qutadg‘u bilig» maslahatlari bugungi rahbarlar uchun ham foydali.', pro: 'Adolat, bilim va sabr har zamonda kerak.', con: 'Zamonaviy boshqaruv boshqa qonunlarga tayanadi.' },
+    ],
+    creative: [
+      { task: 'Davlat yoki boylikni o‘zingiz nimaga o‘xshatardingiz? Bir gapda dalillang.', time: 60 },
+      { task: 'Kuntug‘di o‘rnida yangi vazir tanlash uchun bitta sinov o‘ylab toping.', time: 90 },
+      { task: 'Bahor tasvirini o‘z so‘zingiz bilan, bitta yangi o‘xshatish qo‘shib, 2 gapda yozing.', time: 90 },
+    ],
+  },
+];
+
 const CONTENT = {
   fizika: { 9: [...FIZIKA_9, ...FIZIKA_9_P2] },
-  adabiyot: { 8: [...ADABIYOT_8, ...ADABIYOT_8_P2, ...ADABIYOT_8_P3, ...ADABIYOT_8_P4, ...ADABIYOT_8_P5], 9: [...ADABIYOT_9, ...ADABIYOT_9_P2, ...ADABIYOT_9_P3, ...ADABIYOT_9_P4, ...ADABIYOT_9_P5, ...ADABIYOT_9_P6, ...ADABIYOT_9_P7] },
+  adabiyot: { 8: [...ADABIYOT_8, ...ADABIYOT_8_P2, ...ADABIYOT_8_P3, ...ADABIYOT_8_P4, ...ADABIYOT_8_P5], 9: [...ADABIYOT_9, ...ADABIYOT_9_P2, ...ADABIYOT_9_P3, ...ADABIYOT_9_P4, ...ADABIYOT_9_P5, ...ADABIYOT_9_P6, ...ADABIYOT_9_P7], 10: [...ADABIYOT_10, ...ADABIYOT_10_P2] },
   'ona-tili': { 8: [...ONA_TILI_8, ...ONA_TILI_8_PART2, ...ONA_TILI_8_PART3, ...ONA_TILI_8_PART4, ...ONA_TILI_8_PART5, ...ONA_TILI_8_PART6, ...ONA_TILI_8_PART7, ...ONA_TILI_8_PART8], 9: [...ONA_TILI_9, ...ONA_TILI_9_P2, ...ONA_TILI_9_P3, ...ONA_TILI_9_P4, ...ONA_TILI_9_P5, ...ONA_TILI_9_P6, ...ONA_TILI_9_P7, ...ONA_TILI_9_P8], 10: [...ONA_TILI_10, ...ONA_TILI_10_P2, ...ONA_TILI_10_P3, ...ONA_TILI_10_P4, ...ONA_TILI_10_P5, ...ONA_TILI_10_P6] },
 };
 

@@ -292,6 +292,22 @@ export const TOPIC_ART = {
   'ot10-63': 'dombra',
   'ot10-65': 'gilam',
   'ot10-66': 'oila',
+  'ad10-tahlil-1': 'paxta',
+  'ad10-tahlil-2': 'sher',
+  'ad10-gorogli-turkum': 'doston',
+  'ad10-gorogli-tugilishi': 'tun',
+  'ad10-gorogli-xususiyat': 'dombra',
+  'ad10-gorogli-xorazm': 'sahro',
+  'ad10-gorogli-qiyos': 'doston',
+  'ad10-qadimgi-dunyo': 'lavh',
+  'ad10-iliada-tarix': 'jang',
+  'ad10-iliada-6': 'oila',
+  'ad10-iliada-22': 'jang',
+  'ad10-iliada-tahlil': 'teatr',
+  'ad10-odisseya-alpomish': 'dengiz',
+  'ad10-motivlar': 'karvon',
+  'ad10-vii-xiv': 'alloma',
+  'ad10-qutadgu-bilig': 'bahor',
 };
 
 /** Mavzuning rasmi (yoki null). Mavzu obyektida `art` maydoni bo‘lsa, u ustun. */
