@@ -45781,13 +45781,13 @@ function gameAvailable(gameId, topic) {
   if (!topic) return false;
   if (gameId === 'match' || gameId === 'memory') return (topic.pairs || []).length >= 3;
   if (gameId === 'sort') return !!(topic.sort && topic.sort.items.length);
-  if (gameId === 'quiz') return (topic.quiz || []).length > 0;
+  if (gameId === 'quiz') return questionBank(topic).length > 0;
   if (gameId === 'qa') return (topic.qa || []).length > 0;
-  if (gameId === 'boom') return (topic.quiz || []).length + (topic.qa || []).length >= 4;
-  if (gameId === 'truefalse') return (topic.pairs || []).length + (topic.quiz || []).length >= 4;
+  if (gameId === 'boom') return questionBank(topic).length + (topic.qa || []).length >= 4;
+  if (gameId === 'truefalse') return (topic.pairs || []).length + questionBank(topic).length >= 4;
   if (gameId === 'anagram' || gameId === 'hangman') return wordCards(topic).length >= 3;
-  if (gameId === 'millioner') return (topic.quiz || []).length >= 3;
-  if (gameId === 'race') return (topic.quiz || []).length + (topic.pairs || []).length >= 6;
+  if (gameId === 'millioner') return questionBank(topic).filter((q) => q.options.filter(Boolean).length >= 3).length >= 3;
+  if (gameId === 'race') return questionBank(topic).length + (topic.pairs || []).length >= 6;
   if (gameId === 'sequence') return (topic.sequences || []).some((x) => (x.items || []).length >= 3);
   if (gameId === 'odd') return (topic.odd || []).length >= 2;
   if (gameId === 'debate') return (topic.debate || []).length > 0;
@@ -52869,7 +52869,7 @@ function MemoryGame({ topic, award, nextTurn, onFinish }) {
 /* 3) Test */
 function QuizGame({ topic, award, nextTurn, onFinish }) {
   const questions = useMemo(
-    () => shuffle(topic.quiz).map((q) => ({ ...q, opts: shuffle(q.options.map((o, i) => ({ text: o, correct: i === q.answer }))) })),
+    () => prepQuiz(topic, 10, { prefer: ['quiz', 'pairs', 'sort'] }),
     [topic]
   );
   const [idx, setIdx] = useState(0);
@@ -53058,8 +53058,8 @@ const BOOM_SPECIALS = {
 
 function buildBoomTiles(topic) {
   const questions = shuffle([
-    ...(topic.quiz || []).map((x) => ({ q: x.q, options: x.options, answer: x.answer })),
-    ...(topic.qa || []).map((x) => ({ q: x.q, a: x.a })),
+    ...drawQuestions(topic, 11, { prefer: ['sort', 'seq', 'odd', 'lesson'] }).map((x) => ({ q: x.q, options: x.options, answer: x.answer })),
+    ...shuffle(topic.qa || []).slice(0, 4).map((x) => ({ q: x.q, a: x.a })),
   ]);
   // Bir xil savol takrorlanmasin (umumiy mavzuda quiz va qa bir xil savollardan iborat)
   const seen = new Set();
@@ -53364,6 +53364,200 @@ function wordCards(topic) {
   return out;
 }
 
+/* ============================================================
+   SAVOLLAR BANKI
+   Muammo (ustozlar fikri): bitta mavzudagi barcha o‘yinlarda bir xil 6–7 ta test savoli aylanardi.
+   Yechim: mavzuning boshqa materiallaridan ham (juftliklar, guruhlash, savol-javob, voqealar tartibi,
+   ortiqchasini top, dars slaydlaridagi savollar) avtomatik test savollari yasaladi va o‘yinlar
+   bankdan oldin chiqmagan savollarni oladi.
+   ============================================================ */
+const qClip = (t) => String(t ?? '').replace(/\s+/g, ' ').trim();
+const qFits = (t, n) => { const v = qClip(t); return v.length > 0 && v.length <= n; };
+/** Matnni «» ichiga oladi (agar o‘zi qo‘shtirnoqda bo‘lmasa). */
+const qQuote = (t) => { const v = qClip(t); return /^[«"“].*[»"”]$/.test(v) ? v : `«${v}»`; };
+
+/** Matn «shakli»: chiziqcha bilan boshlanadimi (qo‘shimcha), raqammi, katta harfmi va h.k. */
+const qShape = (t) => {
+  const v = qClip(t);
+  if (/^[-–]/.test(v)) return 'suffix';
+  if (/^\d/.test(v)) return 'num';
+  if (/^[«"“]/.test(v)) return 'quote';
+  if (/^\p{Lu}/u.test(v)) return 'upper';
+  return 'lower';
+};
+
+/** To‘g‘ri javobga shakli va uzunligi o‘xshash noto‘g‘ri variantlarni tanlaydi (aldamchi, lekin adolatli). */
+function qDistractors(correct, pool, k = 3) {
+  const c = qClip(correct);
+  const seen = new Set([c.toLowerCase()]);
+  const shape = qShape(c);
+  const len = Math.max(1, c.length);
+  const words = c.split(' ').length;
+  const cands = [];
+  pool.forEach((x) => {
+    const v = qClip(x);
+    const key = v.toLowerCase();
+    if (!v || seen.has(key)) return;
+    seen.add(key);
+    const ratio = Math.max(len, v.length) / Math.max(1, Math.min(len, v.length));
+    const score = (qShape(v) === shape ? 0 : 3) + Math.min(3, ratio - 1) + Math.min(2, Math.abs(v.split(' ').length - words) / 3) + Math.random() * 1.2;
+    cands.push({ v, score });
+  });
+  return cands.sort((a, b) => a.score - b.score).slice(0, k).map((o) => o.v);
+}
+
+function qMake(key, q, correct, distractors, src, min = 3, extra = {}) {
+  const options = [qClip(correct), ...distractors];
+  if (!options[0] || options.length < min) return null;
+  return { key, q: qClip(q), options, answer: 0, src, ...extra };
+}
+
+const QUESTION_BANK_CACHE = new WeakMap();
+
+/** Mavzudagi barcha materiallardan yig‘ilgan test savollari (to‘g‘ri javob indeksi `answer`da). */
+function questionBank(topic) {
+  if (!topic) return [];
+  if (QUESTION_BANK_CACHE.has(topic)) return QUESTION_BANK_CACHE.get(topic);
+  const out = [];
+  const seenPair = new Set();
+  const seenText = new Set();
+  const push = (x, { uniqueText = false } = {}) => {
+    if (!x || !x.q) return;
+    const t = x.q.toLowerCase();
+    const k = `${t}|${qClip(x.options[x.answer]).toLowerCase()}`;
+    if (seenPair.has(k) || (uniqueText && seenText.has(t))) return;
+    seenPair.add(k);
+    seenText.add(t);
+    out.push(x);
+  };
+
+  // 1) Ustoz/darslik test savollari — asosiy manba
+  (topic.quiz || []).forEach((x, i) => {
+    if (!x || !x.q || !Array.isArray(x.options) || x.options.filter(Boolean).length < 2) return;
+    push({ key: `quiz:${i}`, q: qClip(x.q), options: x.options, answer: x.answer ?? 0, src: 'quiz' });
+  });
+
+  // 2) Juftliklar — ikki yo‘nalishda
+  const pairs = (topic.pairs || []).filter((p) => Array.isArray(p) && qClip(p[0]) && qClip(p[1]));
+  if (pairs.length >= 3) {
+    pairs.forEach(([a, b], i) => {
+      const others = pairs.filter((_, j) => j !== i);
+      if (qFits(a, 70) && qFits(b, 120)) push(qMake(`pa:${i}`, `${qQuote(a)} — unga qaysi javob mos keladi?`, b, qDistractors(b, others.map((p) => p[1])), 'pairs'));
+      if (qFits(a, 60) && qFits(b, 120)) push(qMake(`pb:${i}`, `Qaysi biri bunga mos keladi: ${qQuote(b)}?`, a, qDistractors(a, others.map((p) => p[0])), 'pairs'));
+    });
+  }
+
+  // 3) Guruhlash
+  const sort = topic.sort;
+  if (sort && Array.isArray(sort.categories) && sort.categories.length >= 2 && (sort.items || []).length >= 4) {
+    sort.categories.forEach((cat, ci) => {
+      const inCat = sort.items.filter((x) => x.cat === ci).map((x) => x.text);
+      const outCat = sort.items.filter((x) => x.cat !== ci).map((x) => x.text);
+      if (outCat.length < 2) return;
+      inCat.forEach((t, k) => push(qMake(`so:${ci}:${k}`, `Qaysi biri ${qQuote(cat)} guruhiga kiradi?`, t, qDistractors(t, outCat), 'sort')));
+    });
+    sort.items.forEach((it, k) => {
+      const cat = sort.categories[it.cat];
+      if (!cat || !qFits(it.text, 80)) return;
+      push(qMake(`sg:${k}`, `${qQuote(it.text)} qaysi guruhga kiradi?`, cat, qDistractors(cat, sort.categories), 'sort', 2));
+    });
+  }
+
+  // 4) Savol-javob: to‘g‘ri javob + shu mavzudagi boshqa javoblar
+  const qa = (topic.qa || []).filter((x) => x && qClip(x.q) && qClip(x.a));
+  if (qa.length >= 3) {
+    qa.forEach((x, i) => {
+      if (!qFits(x.a, 120)) return;
+      const others = qa.filter((_, j) => j !== i).map((y) => y.a).filter((a) => qFits(a, 120));
+      push(qMake(`qa:${i}`, x.q, x.a, qDistractors(x.a, others), 'qa'), { uniqueText: true });
+    });
+  }
+
+  // 5) Voqealar tartibi
+  (topic.sequences || []).forEach((sq, si) => {
+    const items = (sq.items || []).map(qClip).filter(Boolean);
+    if (items.length < 4) return;
+    push(qMake(`sf:${si}`, `${qClip(sq.title) || 'Tartib'}: qaysi biri eng birinchi keladi?`, items[0], qDistractors(items[0], items.slice(1)), 'seq'));
+    push(qMake(`sl:${si}`, `${qClip(sq.title) || 'Tartib'}: qaysi biri eng oxirida keladi?`, items[items.length - 1], qDistractors(items[items.length - 1], items.slice(0, -1)), 'seq'));
+    items.slice(0, -1).forEach((it, k) => {
+      if (!qFits(it, 110)) return;
+      const next = items[k + 1];
+      push(qMake(`sn:${si}:${k}`, `${qQuote(it)} — bundan keyin nima keladi?`, next, qDistractors(next, items.filter((_, j) => j !== k && j !== k + 1)), 'seq'));
+    });
+  });
+
+  // 6) Ortiqchasini top
+  (topic.odd || []).forEach((o, i) => {
+    const items = (o.items || []).map(qClip).filter(Boolean);
+    if (items.length < 3 || o.answer == null || !items[o.answer]) return;
+    const right = items[o.answer];
+    push(qMake(`od:${i}`, 'Qaysi biri ortiqcha?', right, items.filter((_, k) => k !== o.answer), 'odd', 3, { why: o.why }));
+  });
+
+  // 7) Dars slaydlaridagi «bosib ochiladigan» savollar
+  const reveals = [];
+  (Array.isArray(topic.lesson) ? topic.lesson : []).forEach((sl) => (Array.isArray(sl?.reveal) ? sl.reveal : []).forEach((r) => {
+    if (r && qClip(r.q) && qFits(r.a, 120)) reveals.push(r);
+  }));
+  if (reveals.length >= 3) {
+    reveals.forEach((r, i) => push(qMake(`rv:${i}`, r.q, r.a, qDistractors(r.a, reveals.filter((_, j) => j !== i).map((y) => y.a)), 'lesson'), { uniqueText: true }));
+  }
+
+  QUESTION_BANK_CACHE.set(topic, out);
+  return out;
+}
+
+/** Qaysi savol necha marta chiqqani (mavzu bo‘yicha). Sahifa yangilansa ham sessiya davomida saqlanadi. */
+const Q_USED_KEY = 'darsplay_q_used_v1';
+let Q_USED = null;
+function qUsedStore() {
+  if (Q_USED) return Q_USED;
+  Q_USED = {};
+  try { Q_USED = JSON.parse(sessionStorage.getItem(Q_USED_KEY) || '{}') || {}; } catch { Q_USED = {}; }
+  return Q_USED;
+}
+function qUsedSave() {
+  try { sessionStorage.setItem(Q_USED_KEY, JSON.stringify(Q_USED || {})); } catch { /* sessionStorage yopiq bo‘lishi mumkin */ }
+}
+
+/**
+ * Bankdan n ta savol oladi: avval hali chiqmaganlari, keyin kamroq chiqqanlari.
+ * prefer — shu manbalar biroz oldinroq keladi (masalan Millioner uchun ['quiz', 'qa']).
+ */
+function drawQuestions(topic, n, { filter, prefer = [] } = {}) {
+  let bank = questionBank(topic);
+  if (filter) bank = bank.filter(filter);
+  if (!bank.length) return [];
+  const store = qUsedStore();
+  const id = String(topic.id || topic.title || 'mavzu');
+  const used = store[id] || (store[id] = {});
+  const order = bank
+    .map((x) => ({ x, s: (used[x.key] || 0) * 10 + (prefer.includes(x.src) ? 0 : 1) + Math.random() * 1.5 }))
+    .sort((a, b) => a.s - b.s)
+    .map((o) => o.x);
+  // Bir o‘yinda bitta faktni ikki xil so‘rash bo‘lmasin: to‘g‘ri javoblari bir xil savollar birga tushmaydi
+  const ranked = [];
+  const answers = new Set();
+  const texts = {};
+  const srcN = {};
+  // Savol-javobdan yasalgan testlarda variantlar osonroq topiladi — bitta o‘yinda ko‘pi bilan 2 tasi
+  const SRC_CAP = { qa: 2, odd: 2, lesson: 3 };
+  order.forEach((x) => {
+    if (ranked.length >= n) return;
+    const a = qClip(x.options[x.answer]).toLowerCase();
+    const t = x.q.toLowerCase();
+    if (answers.has(a) || (texts[t] || 0) >= 2 || (srcN[x.src] || 0) >= (SRC_CAP[x.src] ?? n)) return;
+    answers.add(a);
+    texts[t] = (texts[t] || 0) + 1;
+    srcN[x.src] = (srcN[x.src] || 0) + 1;
+    ranked.push(x);
+  });
+  if (ranked.length < n) order.forEach((x) => { if (ranked.length < n && !ranked.includes(x)) ranked.push(x); });
+  ranked.forEach((x) => { used[x.key] = (used[x.key] || 0) + 1; });
+  qUsedSave();
+  return shuffle(ranked);
+}
+
 /** «Rostmi?» o‘yini uchun to‘g‘ri/noto‘g‘ri tasdiqlar. */
 function tfCards(topic) {
   const out = [];
@@ -53377,7 +53571,7 @@ function tfCards(topic) {
       out.push({ a: p[0], b: p[1], ok: true, right: p[1] });
     }
   });
-  (topic.quiz || []).forEach((q) => {
+  drawQuestions(topic, 8, { filter: (q) => q.src !== 'odd' && q.src !== 'seq' }).forEach((q) => {
     const right = q.options[q.answer];
     if (Math.random() < 0.5) out.push({ q: q.q, b: right, ok: true, right });
     else {
@@ -53388,10 +53582,10 @@ function tfCards(topic) {
   return shuffle(out).slice(0, 12);
 }
 
-function prepQuiz(topic) {
-  return shuffle(topic.quiz || []).map((q) => ({
+function prepQuiz(topic, n = 10, opts = {}) {
+  return drawQuestions(topic, n, opts).map((q) => ({
     ...q,
-    opts: shuffle(q.options.map((o, i) => ({ text: o, correct: i === q.answer }))),
+    opts: shuffle(q.options.map((o, i) => ({ text: o, correct: i === q.answer })).filter((o) => qClip(o.text))),
   }));
 }
 
@@ -53711,7 +53905,10 @@ function HangmanRound({ card, idx, total, award, onNext, teamName }) {
 
 /* 10) Millioner — narvon bo‘ylab ko‘tarilish */
 function MillionerGame({ topic, award, nextTurn, onFinish, teamName }) {
-  const questions = useMemo(() => prepQuiz(topic).slice(0, 10), [topic]);
+  const questions = useMemo(() => {
+    const four = prepQuiz(topic, 10, { filter: (q) => q.options.filter(Boolean).length >= 4, prefer: ['quiz', 'pairs'] });
+    return four.length >= 5 ? four : prepQuiz(topic, 10, { filter: (q) => q.options.filter(Boolean).length >= 3, prefer: ['quiz'] });
+  }, [topic]);
   const LIMIT = 30;
   const [idx, setIdx] = useState(0);
   const [picked, setPicked] = useState(null);
@@ -53812,7 +54009,7 @@ function MillionerGame({ topic, award, nextTurn, onFinish, teamName }) {
 function RaceGame({ topic, award, nextTurn, onFinish, teams, turn }) {
   const TRACK = teams.length > 1 ? 6 : 8;
   const questions = useMemo(() => {
-    const qs = prepQuiz(topic);
+    const qs = prepQuiz(topic, 12, { prefer: ['pairs', 'sort', 'seq'] });
     const tf = tfCards(topic).map((c) => ({
       q: c.q ? `${c.q} — «${c.b}». Bu to‘g‘rimi?` : `«${c.a}» = «${c.b}». Bu to‘g‘rimi?`,
       opts: [{ text: 'Ha, to‘g‘ri', correct: c.ok }, { text: 'Yo‘q, noto‘g‘ri', correct: !c.ok }],
